@@ -1,6 +1,6 @@
 # load aliases
-if [ -f ~/.zsh_aliases ]; then
-	source ~/.zsh_aliases
+if [ -f ~/.aliases ]; then
+	source ~/.aliases
 fi
 
 # initialize pyenv
