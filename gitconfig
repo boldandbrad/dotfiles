@@ -1,0 +1,27 @@
+[init]
+	defaultBranch = main
+[core]
+	eol = lf
+	autocrlf = input
+	editor = code --wait
+[alias]
+	aa = add --all
+	co = checkout
+	st = status
+	df = difftool
+	mg = mergetool
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+[merge]
+	ff = only
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE

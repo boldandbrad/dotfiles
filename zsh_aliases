@@ -1,0 +1,10 @@
+# unix
+
+alias la="ls -a"
+alias ll="ls -al"
+alias mkdir="mkdir -p"
+
+# custom
+
+# pretty print path
+alias path='echo $PATH | tr -s ":" "\n"'
