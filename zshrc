@@ -17,6 +17,9 @@ fi
 [ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
 
 # Set Spaceship ZSH as the prompt
+export SPACESHIP_DIR_COLOR="blue"
+export SPACESHIP_GIT_BRANCH_COLOR="yellow"
+export SPACESHIP_PYENV_COLOR="green"
 autoload -U promptinit; promptinit
 prompt spaceship
 

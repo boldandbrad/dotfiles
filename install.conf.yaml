@@ -1,0 +1,17 @@
+- defaults:
+      link:
+          create: true
+          relink: true
+
+- clean: ["~"]
+
+- link:
+      ~/.aliases: aliases
+      ~/.bashrc: bashrc
+      ~/.gitconfig: gitconfig
+      ~/.gitignore: gitignore
+      ~/.hyper.js: hyper.js
+      ~/.zshrc: zshrc
+
+- shell:
+      - git submodule update --remote dotbot

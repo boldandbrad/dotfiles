@@ -1,13 +1,18 @@
+[user]
+	name = Bradley Wojcik
+	email = bradleywojcik@gmail.com
 [init]
 	defaultBranch = main
 [core]
 	eol = lf
 	autocrlf = input
 	editor = code --wait
+	excludesfile = ~/.gitignore
 [alias]
 	aa = add --all
+	cm = commit
 	co = checkout
-	st = status
+	st = status -s
 	df = difftool
 	mg = mergetool
 [fetch]

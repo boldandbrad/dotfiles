@@ -1,0 +1,10 @@
+# Virtual Environments
+.venv
+
+# Editor and IDE Files
+.vscode
+.idea
+
+# OS Files
+.DS_Store
+.Trashes
