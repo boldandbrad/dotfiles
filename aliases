@@ -8,3 +8,9 @@ alias mkdir="mkdir -p"
 
 # pretty print path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+# open current directory in finder
+alias finder='open -a Finder .'
+
+# uninstall an app with appcleaner
+alias uninstall='open -a AppCleaner'
