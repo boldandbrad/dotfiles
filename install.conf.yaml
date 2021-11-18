@@ -11,8 +11,4 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
-    ~/Library/Application Support/Code/User/settings.json:
-      if: "[ `uname` = Darwin ]"
-      force: true
-      path: vscode/settings.json
     ~/.zshrc: zshrc
