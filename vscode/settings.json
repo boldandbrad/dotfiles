@@ -1,0 +1,56 @@
+{
+    "code-runner.executorMap": {
+        "python": "python3"
+    },
+    "debug.console.fontSize": 14,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "editor.linkedEditing": true,
+    "editor.minimap.renderCharacters": false,
+    "eslint.run": "onSave",
+    "eslint.validate": [
+        "vue",
+        "javascript",
+        "typescript"
+    ],
+    "python.pythonPath": "/usr/bin/python3",
+    "python.formatting.provider": "black",
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontSize": 14,
+    "todo-tree.general.enableFileWatcher": true,
+    "todo-tree.regex.regex": "((//|#|>|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "projectManager.git.baseFolders": [
+        "~/Documents/dev/"
+    ],
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.iconTheme": "helium-icon-theme",
+    "markdownlint.run": "onSave",
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    }
+}
