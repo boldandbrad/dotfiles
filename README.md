@@ -7,3 +7,12 @@ dotfiles uses [Dotbot](https://github.com/anishathalye/dotbot) for installation.
 ## License
 
 Copyright (c) 2021 Bradley Wojcik. Released under the MIT License. See [LICENSE](LICENSE) for details.
+
+## File structure
+
+mac-setup/
+    dotfiles/
+    macos/
+    vscode/
+    Brewfile
+    init
