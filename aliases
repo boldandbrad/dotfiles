@@ -14,3 +14,11 @@ alias finder='open -a Finder .'
 
 # uninstall an app with appcleaner
 alias uninstall='open -a AppCleaner'
+
+# simplify python venv setup
+alias venv='\
+    python -m venv --clear --copies .venv && \
+    source .venv/bin/activate && \
+    pip -q install --upgrade pip && \
+    echo "New venv activated."
+'
