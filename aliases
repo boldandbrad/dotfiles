@@ -22,3 +22,6 @@ alias venv='\
     pip -q install --upgrade pip && \
     echo "New venv activated."
 '
+
+# activate python venv in the current directory
+alias sourcepy='source .venv/bin/activate'
