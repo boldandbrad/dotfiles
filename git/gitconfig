@@ -1,6 +1,6 @@
 [user]
 	name = Bradley Wojcik
-	email = bradleywojcik@gmail.com
+	email = bradleycwojcik@gmail.com
 [init]
 	defaultBranch = main
 [core]
@@ -30,3 +30,8 @@
 	tool = vscode
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
