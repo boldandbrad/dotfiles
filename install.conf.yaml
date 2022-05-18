@@ -8,6 +8,7 @@
 - link:
     ~/.aliases: aliases
     ~/.bashrc: bashrc
+    ~/.fig/settings.json: fig/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js

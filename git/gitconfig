@@ -10,7 +10,7 @@
 	excludesfile = ~/.gitignore
 [alias]
 	aa = add --all
-	cm = commit
+	cm = commit -m
 	co = checkout
 	st = status -s
 	df = difftool

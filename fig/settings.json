@@ -1,0 +1,8 @@
+{
+    "app.hideMenubarIcon": false,
+    "autocomplete.fontFamily": "firacode",
+    "autocomplete.immediatelyRunGitAliases": true,
+    "autocomplete.theme": "github-dark",
+    "dotfiles.syncImmediately": false,
+    "telemetry.disabled": true
+}
