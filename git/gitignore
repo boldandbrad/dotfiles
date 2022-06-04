@@ -3,6 +3,7 @@
 
 # Editor and IDE Files
 .vscode
+.vscodium
 .idea
 
 # OS Files

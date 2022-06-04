@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Fira Code", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -55,9 +55,6 @@ module.exports = {
     // custom CSS to embed in the main window
     css: '',
 
-    // custom CSS to embed in the terminal window
-    termCSS: '',
-
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
@@ -72,9 +69,6 @@ module.exports = {
     // for environment variables
     env: {},
 
-    // set to `false` for no bell
-    bell: 'SOUND',
-
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: true,
 
@@ -85,18 +79,6 @@ module.exports = {
     // selection is present (`true` by default on Windows and disables the context menu feature)
     quickEdit: false,
 
-    // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
-    // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
-    // (inside tmux or vim with mouse mode enabled for example).
-    macOptionSelectionMode: 'vertical',
-
-    // URL to custom bell
-    // bellSoundURL: 'http://example.com/bell.mp3',
-
-    // Whether to use the WebGL renderer. Set it to false to use canvas-based
-    // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: false,
-
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
 
@@ -104,7 +86,6 @@ module.exports = {
   // format: [@org/]project[#version]
   plugins: [
     "hyper-font-ligatures",
-    "hyperalfred",
     "hyper-quit",
     "hyper-drop-file",
     "hyper-github-dark-dimmed",

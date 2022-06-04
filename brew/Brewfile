@@ -1,0 +1,147 @@
+################################################################
+# setup (required)                                             #
+################################################################
+
+# homebrew taps #
+tap 'homebrew/core'
+tap 'homebrew/cask'
+tap 'homebrew/autoupdate'
+tap 'homebrew/bundle'
+tap 'homebrew/cask-drivers'
+tap 'homebrew/cask-fonts'
+
+# mac app store installer #
+brew 'mas'
+
+################################################################
+# core formulae                                                #
+################################################################
+
+# cli #
+brew 'autojump'                 # recent directory hopper
+brew 'bat'                      # cat alternative
+brew 'direnv'                   # directory level envs
+brew 'dotbot'                   # dotfile manager
+brew 'exa'                      # ls alternative
+# brew 'exiftool'                 # image metadata tool
+brew 'gh'                       # github cli
+brew 'git'                      # version control
+brew 'httpie'                   # rest client
+brew 'just'                     # project specific commands
+brew 'm-cli'                    # macos cli
+brew 'macos-trash'              # trash manager
+brew 'nodenv'                   # nodejs version manager
+# brew 'ocrmypdf'                 # pdf ocr tool
+brew 'pipx'                     # global python installer
+brew 'pyenv'                    # python version manager
+brew 'safe-rm'                  # rm safety wrapper
+brew 'spaceship'                # zsh prompt
+brew 'tldr'                     # community driven man pages
+brew 'travis'                   # travis ci cli
+brew 'tree'                     # display directories as trees
+brew 'yank'                     # terminal clipboard utility
+brew 'zsh-autosuggestions'      # zsh autosuggestions
+brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
+
+# dev #
+brew 'cocoapods'                # apple app development
+
+################################################################
+# casks                                                        #
+################################################################
+
+# apps #
+cask 'aldente'                  # battery manager ($?)
+cask 'appcleaner'               # app uninstaller
+cask 'bartender'                # menu bar organizer ($)
+# cask 'bitwarden'                # password manager
+# cask 'cleanshot'                # screen captures ($)
+# cask 'codeedit'                 # editor (not yet available)
+cask 'commandq'                 # safe app quits ($)
+cask 'daisydisk'                # disk space visualizer ($)
+cask 'datweatherdoe'            # menu bar weather
+cask 'devutils'                 # dev utility suite ($)
+cask 'discord'                  # digital communities
+cask 'displaperture'            # rounded display corners
+cask 'elmedia-player'           # media player
+cask 'fig'                      # terminal autocomplete
+cask 'firefox'                  # web browser
+cask 'github'                   # git client
+cask 'geekbench'                # system benchmarking
+# cask 'hazel'                    # file automation ($$)
+# cask 'httpie'                   # rest client (not yet available)
+cask 'hush'                     # safari content blocker
+cask 'hyper'                    # terminal replacement
+cask 'kap'                      # screen captures
+cask 'keka'                     # archive handler
+cask 'kekaexternalhelper'         # keka helper
+cask 'linear-linear'            # issue tracker
+cask 'mactracker'               # apple product info
+cask 'menuwhere'                # quick menu access ($)
+cask 'numi'                     # notepad calculator ($?)
+cask 'openinterminal'           # terminal/ide finder toolbar
+# cask 'glance'                   # quicklook enhancer
+cask 'raspberry-pi-imager'      # pi boot drive imager
+cask 'raycast'                  # spotlight replacement
+cask 'rectangle'                # window management
+cask 'signal'                   # secure messaging
+cask 'spotify'                  # music and podcasts
+cask 'stats'                    # menu bar system stats
+cask 'todoist'                  # task tracker
+cask 'vscodium'                 # editor
+
+# dev #
+cask 'flutter'                  # app development
+# cask 'temurin'                  # jdk
+
+# games #
+cask 'minecraft'                # minecraft launcher
+# cask 'obs'                      # streaming suite
+# cask 'openemu'                  # game emulator
+# cask 'retroarch'                # game emulator
+# cask 'steam'                    # game storefront
+
+################################################################
+# cask-drivers                                                 #
+################################################################
+
+# cask 'elgato-game-capture-hd'   # elgato peripheral suite
+cask 'logitech-options'         # logitech peripheral manager
+
+################################################################
+# cask-fonts                                                   #
+################################################################
+
+cask 'font-cascadia-code'
+cask 'font-camingocode'
+cask 'font-fira-code'
+cask 'font-inconsolata'
+cask 'font-jetbrains-mono'
+
+################################################################
+# mas                                                          #
+################################################################
+
+mas 'adguard', id: 1440147259       # safari ad blocker
+mas 'bear', id: 1091189122          # markdown notes ($)
+mas 'canary-mail', id: 1236045954   # email client ($)
+mas 'color-picker', id: 1545870783  # color picker
+mas 'dark-noise', id: 1465439395    # white noise ($)
+mas 'dashlane', id: 517914548       # password manager ($)
+mas 'duckduckgo', id: 1482920575    # safari privacy
+mas 'hotspotshield', id: 771076721  # vpn
+mas 'numbers', id: 409203825        # spreadsheets
+mas 'parcel', id: 639968404         # package tracking
+mas 'peek', id: 1554235898          # quicklook enhancer ($)
+mas 'twitter', id: 1482454543       # social feed
+mas 'xcode', id: 497799835          # apple ide
+
+################################################################
+# custom taps                                                  #
+################################################################
+
+tap 'boldandbrad/homebrew-tap'
+  brew 'makey-cli'              # cli passkey maker
+
+tap 'teamookla/speedtest'
+  brew 'speedtest'              # cli internet speed tester

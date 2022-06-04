@@ -1,5 +1,9 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
+
+export DOTFILES="~/dotfiles"
+export HOMEBREW_BUNDLE_FILE="~/.Brewfile"
+
 # load aliases
 if [ -f ~/.aliases ]; then
 	source ~/.aliases
@@ -39,10 +43,13 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# auto jump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# append sbin to path for homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# direnv hook
 eval "$(direnv hook zsh)"
 
 # Fig post block. Keep at the bottom of this file.

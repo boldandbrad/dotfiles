@@ -1,0 +1,39 @@
+
+alias cat="bat"
+alias code="codium"
+alias ls="exa --classify"
+alias la="exa -a --classify"
+alias ll="exa -al --classify"
+alias mkdir="mkdir -p"
+alias tree="tree -C"
+
+# navigation
+alias ap="cd /Applications"
+alias dc="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dv="cd ~/Developer"
+alias dots="cd $DOTFILES"
+
+# dotfile refresh
+alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
+
+# pretty print PATH
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# open pwd in Finder
+alias finder='open -a Finder .'
+
+# uninstall an app with appcleaner
+alias uninstall='open -a AppCleaner'
+
+# simplify python venv setup
+alias venv='\
+    python -m venv --clear --copies .venv && \
+    source .venv/bin/activate && \
+    pip -q install --upgrade pip && \
+    echo "New venv activated."
+'
+
+# activate python venv in the current directory
+alias sourcepy='source .venv/bin/activate'

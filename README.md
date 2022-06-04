@@ -5,53 +5,88 @@ source to serve as an example for others. If you wish to
 use it, please fork and make your own customizations to the
 contained files before install.
 
-*dotfiles* uses [Dotbot](https://github.com/anishathalye/dotbot)
-for dotfile install and management.
-
 > Currently only compatible with macOS.
 
-## Install
+## Toolset
 
-Clone this repo into your home directory:
-
-```zsh
-git clone git://github.com/bradleycwojcik/dotfiles.git ~/dotfiles
-```
-
-Install [Dotbot](https://github.com/anishathalye/dotbot):
-
-```zsh
-brew install dotbot
-```
+- [Homebrew](https://brew.sh): install and manage apps and tools
+- [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
 
 > I prefer a global `dotbot` install with homebrew over
 > a submodule because it allows for a cleaner repo,
 > and I can include it in a Brewfile for install alongside
-> the rest of my dependencies during machine setup.
+> the rest of my dependencies.
 
-Install the dotfiles:
+## Features
+
+- Ensures Apple Developer Command Line Tools are installed
+- Ensures Preinstalled software is up to date via `softwareupdate`
+- Ensures Homebrew is installed
+- Ensures all apps and tools are installed via Homebrew Bundle
+- Ensures Homebrew autoupdate is setup and running
+- Ensures user dotfiles are installed
+
+### Coming Soon
+
+- Ensures user system preferences are setup
+- Ensures user's github repos are cloned
+
+## Install
+
+Clone this repo into your home directory
+
+```zsh
+git clone git://github.com/boldandbrad/dotfiles.git ~/dotfiles
+```
+
+Install apps, tools, and dotfiles
 
 ```zsh
 cd ~/dotfiles
-dotbot -c install.conf.yaml
+./install.zsh
 ```
 
-> Note that `dotbot` installation should be an idempotent
+> Note that installation should be an idempotent
 > operation. Meaning it can be safely run multiple times.
 
-## Updates
+## Maintenance
 
-Any local modifications made to your dotfiles can be easily
-pushed at any time with `git` to ensure that updates are
+Any local dotfile modifications can be easily pushed github
+at any time with 'git'. This ensures that updates are
 backed-up and can be pulled from other devices.
 
-Likewise, be sure to periodically `git pull` the latest
-updates.
-
 For a more seamless experience, consider scheduling these
-tasks to run.
+tasks to run periodically.
+
+### Dotbot
+
+Install new/modified dotfiles:
+
+```zsh
+dotbot
+```
+
+### Homebrew
+
+Check if all ~/.Brewfile dependencies are installed
+
+```zsh
+brew bundle check -v
+```
+
+Install everything from ~/.Brewfile
+
+```zsh
+brew bundle install
+```
+
+Uninstall dependencies not listed in ~/.Brewfile
+
+```zsh
+brew bundle cleanup
+```
 
 ## License
 
-Copyright (c) 2021 Bradley Wojcik. Released under the MIT
+Copyright (c) 2022 Bradley Wojcik. Released under the MIT
 License. See [LICENSE](LICENSE) for details.

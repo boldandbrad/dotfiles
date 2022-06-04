@@ -1,5 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/bashrc.pre.bash"
+
 # load aliases
 if [ -f ~/.aliases ]; then
 	source ~/.aliases

@@ -2,14 +2,20 @@
     link:
       create: true
       relink: true
+      force: true
 
 - clean: ["~"]
 
+- create:
+    - ~/Developer
+    - ~/Setup
+
 - link:
-    ~/.aliases: aliases
-    ~/.bashrc: bashrc
+    ~/.aliases: shell/aliases
+    ~/.bashrc: shell/bashrc
+    ~/.Brewfile: brew/Brewfile
     ~/.fig/settings.json: fig/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
-    ~/.zshrc: zshrc
+    ~/.zshrc: shell/zshrc
