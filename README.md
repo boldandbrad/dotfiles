@@ -11,6 +11,7 @@ contained files before install.
 
 - [Homebrew](https://brew.sh): install and manage apps and tools
 - [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
+- [GitHub CLI](https://cli.github.com): clone and manage user public repos
 
 > I prefer a global `dotbot` install with homebrew over
 > a submodule because it allows for a cleaner repo,
@@ -25,18 +26,18 @@ contained files before install.
 - Ensures all apps and tools are installed via Homebrew Bundle
 - Ensures Homebrew autoupdate is setup and running
 - Ensures user dotfiles are installed
+- Ensures user's github repos are cloned
 
 ### Coming Soon
 
 - Ensures user system preferences are setup
-- Ensures user's github repos are cloned
 
 ## Install
 
-Clone this repo into your home directory
+Clone this repo into `~/Setup/dotfiles`
 
 ```zsh
-git clone git://github.com/boldandbrad/dotfiles.git ~/dotfiles
+git clone git://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
 ```
 
 Install apps, tools, and dotfiles
@@ -68,7 +69,7 @@ dotbot
 
 ### Homebrew
 
-Check if all ~/.Brewfile dependencies are installed
+Check if all `~/.Brewfile` dependencies are installed
 
 ```zsh
 brew bundle check -v

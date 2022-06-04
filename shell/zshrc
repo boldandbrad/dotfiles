@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 . "$HOME/.fig/shell/zshrc.pre.zsh"
 
-export DOTFILES="~/dotfiles"
+export DOTFILES="~/Setup/dotfiles"
 export HOMEBREW_BUNDLE_FILE="~/.Brewfile"
 
 # load aliases

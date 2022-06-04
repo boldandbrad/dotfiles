@@ -8,6 +8,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   export DOTFILES=$(pwd)
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/brew/Brewfile"
+  export GH_USER="boldandbrad"
 
   # install macos command line tools
   $DOTFILES/macos/install.zsh
@@ -22,9 +23,8 @@ if [[ $(uname) == "Darwin" ]]; then
   # setup system preferences
   $DOTFILES/macos/set-defaults.zsh
 
-  # TODO: clone repos into ~/Developer/repos
-
-  # TODO: move dotfiles dir to ~/Setup/dotfiles and adjust global exports to point to that
+  # clone repos and forks into ~/Developer
+  $DOTFILES/gh/install.zsh
 
   echo
   echo "Installation and setup complete!"
