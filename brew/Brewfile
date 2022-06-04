@@ -22,6 +22,7 @@ brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
 brew 'direnv'                   # directory level envs
 brew 'dotbot'                   # dotfile manager
+brew 'duti'                     # default app utility
 brew 'exa'                      # ls alternative
 # brew 'exiftool'                 # image metadata tool
 brew 'gh'                       # github cli
