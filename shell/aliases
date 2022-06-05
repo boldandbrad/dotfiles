@@ -21,7 +21,9 @@ alias dots="cd $DOTFILES"
 
 # other shortcuts
 
-alias mkdir="mkdir -p"
+alias mkdir="mkdir -pv"
+alias mv="mv -iv"
+alias cp="cp -Riv"
 alias tree="tree -C"
 
 # dotfile refresh
