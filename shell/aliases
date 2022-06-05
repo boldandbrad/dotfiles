@@ -1,19 +1,28 @@
 
+# tool replacements
+
 alias cat="bat"
 alias code="codium"
 alias ls="exa --classify"
 alias la="exa -a --classify"
 alias ll="exa -al --classify"
-alias mkdir="mkdir -p"
-alias tree="tree -C"
 
 # navigation
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias -- -="cd -"
 alias ap="cd /Applications"
 alias dc="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dv="cd ~/Developer"
 alias dots="cd $DOTFILES"
+
+# other shortcuts
+
+alias mkdir="mkdir -p"
+alias tree="tree -C"
 
 # dotfile refresh
 alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
@@ -27,6 +36,11 @@ alias finder='open -a Finder .'
 # uninstall an app with appcleaner
 alias uninstall='open -a AppCleaner'
 
+# python
+
+# activate python venv in the current directory
+alias sourcepy='source .venv/bin/activate'
+
 # simplify python venv setup
 alias venv='\
     python -m venv --clear --copies .venv && \
@@ -34,6 +48,3 @@ alias venv='\
     pip -q install --upgrade pip && \
     echo "New venv activated."
 '
-
-# activate python venv in the current directory
-alias sourcepy='source .venv/bin/activate'
