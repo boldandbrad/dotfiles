@@ -9,6 +9,7 @@
 	editor = codium --wait
 	excludesfile = ~/.gitignore
 [alias]
+	a = add
 	aa = add --all
 	cm = commit -m
 	co = checkout
