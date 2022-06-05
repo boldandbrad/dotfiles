@@ -21,6 +21,7 @@ brew 'mas'
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
 brew 'direnv'                   # directory level envs
+cask 'hpedrorodrigues/tools/dockutil'  # dock manager (temporary cask tap due to issues with official formula)
 brew 'dotbot'                   # dotfile manager
 brew 'duti'                     # default app utility
 brew 'exa'                      # ls alternative

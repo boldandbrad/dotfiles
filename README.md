@@ -12,20 +12,22 @@ contained files before install.
 - [Homebrew](https://brew.sh): install and manage apps and tools
 - [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
 - [GitHub CLI](https://cli.github.com): clone and manage user public repos
+- [Dockutil](https://github.com/kcrawford/dockutil): setup and manage macOS dock
 
 > I prefer a global `dotbot` install with homebrew over
 > a submodule because it allows for a cleaner repo,
-> and I can include it in a Brewfile for install alongside
+> and I can include it in my [Brewfile](/brew/Brewfile) for install alongside
 > the rest of my dependencies.
 
 ## Features
 
 - Ensures Apple Developer Command Line Tools are installed
-- Ensures Preinstalled software is up to date via `softwareupdate`
+- Ensures preinstalled software is up to date via `softwareupdate`
 - Ensures Homebrew is installed
 - Ensures all apps and tools are installed via Homebrew Bundle
 - Ensures Homebrew autoupdate is setup and running
 - Ensures user dotfiles are installed
+- Ensures macOS dock is setup
 - Ensures user's github repos are cloned
 
 ### Coming Soon

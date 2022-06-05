@@ -23,6 +23,9 @@ if [[ $(uname) == "Darwin" ]]; then
   # setup system preferences
   $DOTFILES/macos/set-defaults.zsh
 
+  # setup macOS dock
+  $DOTFILES/dockutil/install.zsh
+
   # clone repos and forks into ~/Developer
   $DOTFILES/gh/install.zsh
 
