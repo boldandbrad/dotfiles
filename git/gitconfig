@@ -6,7 +6,7 @@
 [core]
 	eol = lf
 	autocrlf = input
-	editor = code --wait
+	editor = codium --wait
 	excludesfile = ~/.gitignore
 [alias]
 	aa = add --all
