@@ -2,6 +2,7 @@
 
 # install homebrew, apps and tools via brew bundle, and perform updates.
 echo
+echo "Checking for Homebrew..."
 if ! type brew &>/dev/null; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit 1

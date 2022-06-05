@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+echo
 echo "Configuring macOS Dock..."
 
 dockutil --no-restart --remove all

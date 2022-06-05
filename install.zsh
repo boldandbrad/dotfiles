@@ -2,9 +2,12 @@
 
 # setup or validate a new macOS env
 
+# quit on first failure
+set -e
+
 # only macos is supported at this time
 if [[ $(uname) == "Darwin" ]]; then
-  echo "Setting up new macOS env...\n"
+  echo "Setting up new macOS env..."
 
   export DOTFILES=$(pwd)
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/brew/Brewfile"
@@ -32,3 +35,5 @@ if [[ $(uname) == "Darwin" ]]; then
   echo
   echo "Installation and setup complete!"
 fi
+
+set +e

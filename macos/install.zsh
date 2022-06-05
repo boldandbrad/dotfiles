@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 # install command line developer tools
-
+echo
+echo "Checking for Command Line Developer Tools..."
 if [[ ! -a $(xcode-select -p 2>/dev/null) ]]; then
   echo "Installing Command Line Developer Tools. Follow the actions in the GUI."
   sudo xcode-select --install
@@ -14,4 +15,11 @@ else
   echo "Command Line Developer Tools are already installed!"
 fi
 
-softwareupdate --all --install
+# install available software updates
+echo
+echo "Checking for available software updates..."
+if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
+	echo "Your system is up to date!"
+else
+	sudo softwareupdate --install --all
+fi

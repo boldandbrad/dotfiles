@@ -33,6 +33,8 @@ contained files before install.
 ### Coming Soon
 
 - Ensures user system preferences are setup
+- Remote install script?
+- Debian support?
 
 ## Install
 
@@ -93,6 +95,7 @@ brew bundle cleanup
 
 - [dotfiles-stefanzweifel](https://github.com/stefanzweifel/dotfiles)
 - [dotfiles-superatomic](https://github.com/superatomic/dotfiles)
+- [dotfiles-webpro](https://github.com/webpro/dotfiles)
 
 ## License
 
