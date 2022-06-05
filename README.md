@@ -87,6 +87,11 @@ Uninstall dependencies not listed in ~/.Brewfile
 brew bundle cleanup
 ```
 
+## Inspiration
+
+- [dotfiles-stefanzweifel](https://github.com/stefanzweifel/dotfiles)
+- [dotfiles-superatomic](https://github.com/superatomic/dotfiles)
+
 ## License
 
 Copyright (c) 2022 Bradley Wojcik. Released under the MIT
