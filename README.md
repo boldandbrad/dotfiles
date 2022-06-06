@@ -56,8 +56,8 @@ cd ~/dotfiles
 
 ## Maintenance
 
-Any local dotfile modifications can be easily pushed github
-at any time with 'git'. This ensures that updates are
+Any local dotfile modifications can be easily pushed to github
+at any time with `git`. This ensures that updates are
 backed-up and can be pulled from other devices.
 
 For a more seamless experience, consider scheduling these
@@ -65,7 +65,7 @@ tasks to run periodically.
 
 ### Dotbot
 
-Install new/modified dotfiles:
+Refresh dotfiles
 
 ```zsh
 dotbot
@@ -79,13 +79,13 @@ Check if all `~/.Brewfile` dependencies are installed
 brew bundle check -v
 ```
 
-Install everything from ~/.Brewfile
+Install everything from `~/.Brewfile`
 
 ```zsh
 brew bundle install
 ```
 
-Uninstall dependencies not listed in ~/.Brewfile
+Uninstall dependencies not listed in `~/.Brewfile`
 
 ```zsh
 brew bundle cleanup
