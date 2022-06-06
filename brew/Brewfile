@@ -18,12 +18,13 @@ brew 'mas'
 ################################################################
 
 # cli #
+# brew 'asdf'                     # runtime version manager
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
 brew 'direnv'                   # directory level envs
 cask 'hpedrorodrigues/tools/dockutil'  # dock manager (temporary cask tap due to issues with official formula)
 brew 'dotbot'                   # dotfile manager
-brew 'duti'                     # default app utility
+# brew 'duti'                     # default app utility
 brew 'exa'                      # ls alternative
 # brew 'exiftool'                 # image metadata tool
 brew 'gh'                       # github cli
@@ -79,7 +80,7 @@ cask 'keka'                     # archive handler
 cask 'kekaexternalhelper'         # keka helper
 cask 'linear-linear'            # issue tracker
 cask 'mactracker'               # apple product info
-cask 'menuwhere'                # quick menu access ($)
+# cask 'menuwhere'                # quick menu access ($)
 cask 'numi'                     # notepad calculator ($?)
 cask 'openinterminal'           # terminal/ide finder toolbar
 # cask 'glance'                   # quicklook enhancer
