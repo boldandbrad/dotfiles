@@ -144,7 +144,14 @@ mas 'xcode', id: 497799835          # apple ide
 ################################################################
 
 tap 'boldandbrad/homebrew-tap'
-  brew 'makey-cli'              # cli passkey maker
+  brew 'makey-cli'                  # cli passkey maker
+
+tap 'superatomic/bundle-extensions' # additional brew commands
 
 tap 'teamookla/speedtest'
-  brew 'speedtest'              # cli internet speed tester
+  brew 'speedtest'                  # cli internet speed tester
+
+################################################################
+# new additions (via 'brew add')                               #
+################################################################
+
