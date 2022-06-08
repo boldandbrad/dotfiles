@@ -32,7 +32,8 @@ contained files before install.
 
 ### Coming Soon
 
-- Ensures user system preferences are setup
+- Ensures user system preferences are setup via `defaults`
+- Ensure default applications for file types are setup?
 - Remote install script?
 - Debian support?
 
@@ -47,7 +48,7 @@ git clone git://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
 Install apps, tools, and dotfiles
 
 ```zsh
-cd ~/dotfiles
+cd ~/Setup/dotfiles
 ./install.zsh
 ```
 
