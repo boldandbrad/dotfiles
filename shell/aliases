@@ -29,11 +29,14 @@ alias tree="tree -C"
 # dotfile refresh
 alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
 
+# gh repo clone refresh
+alias clone="source $DOTFILES/gh/install.zsh"
+
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # open pwd in Finder
-alias finder='open -a Finder .'
+alias finder='open .'
 
 # uninstall an app with appcleaner
 alias uninstall='open -a AppCleaner'
