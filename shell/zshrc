@@ -23,13 +23,6 @@ fi
 # added by travis gem
 [ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
 
-# Set Spaceship ZSH as the prompt
-export SPACESHIP_DIR_COLOR="blue"
-export SPACESHIP_GIT_BRANCH_COLOR="yellow"
-export SPACESHIP_PYENV_COLOR="green"
-autoload -U promptinit; promptinit
-prompt spaceship
-
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -49,6 +42,9 @@ fi
 
 # append sbin to path for homebrew
 export PATH="/usr/local/sbin:$PATH"
+
+# starship prompt
+eval "$(starship init zsh)"
 
 # direnv hook
 eval "$(direnv hook zsh)"

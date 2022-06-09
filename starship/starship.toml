@@ -1,0 +1,11 @@
+[character]
+success_symbol = "[➜](bold green)"
+
+[directory]
+style = "bold blue"
+
+[git_branch]
+style = "bold yellow"
+
+[python]
+style = "bold green"
