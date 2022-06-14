@@ -16,6 +16,7 @@
     ~/.Brewfile: brew/Brewfile
     ~/.config/starship.toml: starship/starship.toml
     ~/.fig/settings.json: fig/settings.json
+    ~/.functions: shell/functions
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js

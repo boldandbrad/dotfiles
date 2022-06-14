@@ -10,6 +10,11 @@ if [ -f ~/.aliases ]; then
 	source ~/.aliases
 fi
 
+# load functions
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
+
 # initialize pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"

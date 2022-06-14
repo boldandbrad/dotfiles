@@ -44,12 +44,5 @@ alias uninstall='open -a AppCleaner'
 # python
 
 # activate python venv in the current directory
-alias sourcepy='source .venv/bin/activate'
+alias pysrc='source .venv/bin/activate'
 
-# simplify python venv setup
-alias venv='\
-    python -m venv --clear --copies .venv && \
-    source .venv/bin/activate && \
-    pip -q install --upgrade pip && \
-    echo "New venv activated."
-'
