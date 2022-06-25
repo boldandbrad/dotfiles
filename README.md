@@ -1,9 +1,8 @@
 # dotfiles
 
-This is my personal dotfiles repo. I have made it open
-source to serve as an example for others. If you wish to
-use it, please fork and make your own customizations to the
-contained files before install.
+This is my personal dotfiles repo. I have made it open source to serve as an
+example for others. If you wish to use it, please fork and make your own
+customizations to the contained files before install.
 
 > Currently only compatible with macOS.
 
@@ -11,13 +10,14 @@ contained files before install.
 
 - [Homebrew](https://brew.sh): install and manage apps and tools
 - [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
+    > I prefer a global `dotbot` install with `homebrew` over a submodule
+    > because it allows for a cleaner repo, and I can include it in my
+    > [Brewfile](/brew/Brewfile) for install alongside the rest of my
+    > dependencies.
 - [GitHub CLI](https://cli.github.com): clone and manage user public repos
 - [Dockutil](https://github.com/kcrawford/dockutil): setup and manage macOS dock
-
-> I prefer a global `dotbot` install with homebrew over
-> a submodule because it allows for a cleaner repo,
-> and I can include it in my [Brewfile](/brew/Brewfile) for install alongside
-> the rest of my dependencies.
+- [apply-user-defaults](https://github.com/zero-sh/apply-user-defaults): setup
+  and manage macOS system and app preferences (Coming soon)
 
 ## Features
 
@@ -32,8 +32,10 @@ contained files before install.
 
 ### Coming Soon
 
-- Ensures user system preferences are setup via `defaults`
-- Ensure default applications for file types are setup?
+- Ensures user system preferences are setup via `defaults` or
+  `apply-user-defaults`
+- Ensure default applications for file types are setup via `duti` or
+  alternative?
 - Remote install script?
 - Debian support?
 
@@ -52,17 +54,17 @@ cd ~/Setup/dotfiles
 ./install.zsh
 ```
 
-> Note that installation should be an idempotent
-> operation. Meaning it can be safely run multiple times.
+> Note that installation should be an idempotent operation. Meaning it can be
+> safely run multiple times.
 
 ## Maintenance
 
-Any local dotfile modifications can be easily pushed to github
-at any time with `git`. This ensures that updates are
-backed-up and can be pulled from other devices.
+Any local dotfile modifications can be easily pushed to github at any time with
+`git`. This ensures that updates are backed-up and can be pulled from other
+devices.
 
-For a more seamless experience, consider scheduling these
-tasks to run periodically.
+For a more seamless experience, consider scheduling these tasks to run
+periodically.
 
 ### Dotbot
 
@@ -100,5 +102,5 @@ brew bundle cleanup
 
 ## License
 
-Copyright (c) 2022 Bradley Wojcik. Released under the MIT
-License. See [LICENSE](LICENSE) for details.
+Copyright (c) 2022 Bradley Wojcik. Released under the MIT License. See
+[LICENSE](LICENSE) for details.
