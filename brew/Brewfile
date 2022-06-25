@@ -33,10 +33,8 @@ brew 'httpie'                   # rest client
 brew 'just'                     # project specific commands
 brew 'm-cli'                    # macos cli
 brew 'macos-trash'              # trash manager
-brew 'nodenv'                   # nodejs version manager
 # brew 'ocrmypdf'                 # pdf ocr tool
-brew 'pipx'                     # global python installer
-brew 'pyenv'                    # python version manager
+brew 'pipx'                     # globally isolated pip installs
 brew 'safe-rm'                  # rm safety wrapper
 brew 'starship'                 # cross-shell prompt
 brew 'tldr'                     # community driven man pages
@@ -47,7 +45,10 @@ brew 'zsh-autosuggestions'      # zsh autosuggestions
 brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 
 # dev #
-brew 'cocoapods'                # apple app development
+brew 'cocoapods'                # native apple development
+brew 'nodenv'                   # nodejs installer
+brew 'pyenv'                    # python installer
+brew "rustup-init"              # rust installer
 
 ################################################################
 # casks                                                        #
@@ -71,6 +72,7 @@ cask 'fig'                      # terminal autocomplete
 cask 'firefox'                  # web browser
 cask 'github'                   # git client
 cask 'geekbench'                # system benchmarking
+# cask 'glance'                   # quicklook enhancer
 # cask 'hazel'                    # file automation ($$)
 # cask 'httpie'                   # rest client (not yet available)
 cask 'hush'                     # safari content blocker
@@ -82,8 +84,8 @@ cask 'linear-linear'            # issue tracker
 cask 'mactracker'               # apple product info
 # cask 'menuwhere'                # quick menu access ($)
 cask 'numi'                     # notepad calculator ($?)
+# cask 'obs'                      # streaming suite
 cask 'openinterminal'           # terminal/ide finder toolbar
-# cask 'glance'                   # quicklook enhancer
 cask 'raspberry-pi-imager'      # pi boot drive imager
 cask 'raycast'                  # spotlight replacement
 cask 'rectangle'                # window management
@@ -99,7 +101,6 @@ cask 'flutter'                  # app development
 
 # games #
 cask 'minecraft'                # minecraft launcher
-# cask 'obs'                      # streaming suite
 # cask 'openemu'                  # game emulator
 # cask 'retroarch'                # game emulator
 # cask 'steam'                    # game storefront
