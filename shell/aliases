@@ -25,6 +25,7 @@ alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias cp="cp -Riv"
 alias tree="tree -C"
+alias cwd='pwd | pbcopy'
 
 # dotfile refresh
 alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
@@ -38,6 +39,9 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # open pwd in Finder
 alias finder='open .'
 
+# quicklook from the terminal
+alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
+
 # uninstall an app with appcleaner
 alias uninstall='open -a AppCleaner'
 
@@ -45,4 +49,3 @@ alias uninstall='open -a AppCleaner'
 
 # activate python venv in the current directory
 alias pysrc='source .venv/bin/activate'
-
