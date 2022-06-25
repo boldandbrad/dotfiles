@@ -20,4 +20,5 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
+    ~/.zprofile: shell/zprofile
     ~/.zshrc: shell/zshrc
