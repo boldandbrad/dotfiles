@@ -1,6 +1,4 @@
-
 # tool replacements
-
 alias cat="bat"
 alias code="codium"
 alias ls="exa --classify"
@@ -8,7 +6,6 @@ alias la="exa -a --classify"
 alias ll="exa -al --classify"
 
 # navigation
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
@@ -20,7 +17,6 @@ alias dv="cd ~/Developer"
 alias dots="cd $DOTFILES"
 
 # other shortcuts
-
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias cp="cp -Riv"
@@ -44,8 +40,6 @@ alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
 
 # uninstall an app with appcleaner
 alias uninstall='open -a AppCleaner'
-
-# python
 
 # activate python venv in the current directory
 alias pysrc='source .venv/bin/activate'

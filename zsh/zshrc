@@ -15,6 +15,11 @@ if [ -f ~/.functions ]; then
   source ~/.functions
 fi
 
+# load options
+if [ -f ~/.zoptions ]; then
+  source ~/.zoptions
+fi
+
 # initialize pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -24,6 +29,9 @@ fi
 if command -v nodenv 1>/dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
+
+# fnm
+eval "$(fnm env --use-on-cd)"
 
 # added by travis gem
 [ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
@@ -40,6 +48,15 @@ if type brew &>/dev/null; then
 
   autoload -Uz compinit
   compinit
+fi
+
+# pipx bash completions
+# TODO: this doesn't seem to work
+if command -v pipx 1>/dev/null 2>&1; then
+  autoload -U bashcompinit
+  bashcompinit
+
+  eval "$(register-python-argcomplete pipx)"
 fi
 
 # auto jump

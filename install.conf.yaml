@@ -11,14 +11,15 @@
     - ~/Setup
 
 - link:
-    ~/.aliases: shell/aliases
-    ~/.bashrc: shell/bashrc
+    ~/.aliases: zsh/aliases
+    ~/.bashrc: bash/bashrc
     ~/.Brewfile: brew/Brewfile
     ~/.config/starship.toml: starship/starship.toml
     ~/.fig/settings.json: fig/settings.json
-    ~/.functions: shell/functions
+    ~/.functions: zsh/functions
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
-    ~/.zprofile: shell/zprofile
-    ~/.zshrc: shell/zshrc
+    ~/.zoptions: zsh/zoptions
+    ~/.zprofile: zsh/zprofile
+    ~/.zshrc: zsh/zshrc

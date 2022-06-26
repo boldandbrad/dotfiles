@@ -96,6 +96,7 @@ brew bundle cleanup
 
 ## Inspiration
 
+- [dotfiles-nikitavoloboev](https://github.com/nikitavoloboev/dotfiles)
 - [dotfiles-stefanzweifel](https://github.com/stefanzweifel/dotfiles)
 - [dotfiles-superatomic](https://github.com/superatomic/dotfiles)
 - [dotfiles-webpro](https://github.com/webpro/dotfiles)
