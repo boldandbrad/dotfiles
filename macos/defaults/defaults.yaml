@@ -1,0 +1,28 @@
+"Apple Global Domain":
+  # System Preferences -> General -> Appearance
+  AppleInterfaceStyle: "Dark" # doesn't seem to take effect immediately, may require restart
+
+  # System Preferences -> General -> Sidebar icon size
+  NSTableViewDefaultSizeMode: 2
+
+  # System Preferences -> Dock & Menu Bar ->
+  AppleActionOnDoubleClick: "Minimize"
+
+  # Do not auto hide menubar on desktop
+  _HIHideMenuBar: false
+
+  # Do not auto hide menubar in fullscreen
+  AppleMenuBarVisibleInFullscreen: false
+
+com.apple.dock:
+  tilesize: 36
+  magnification: true
+  largesize: 42
+  mineffect: "scale"
+  minimize-to-application: false
+  launchanim: true
+  autohide: false
+  show-recents: false
+
+com.apple.controlcenter:
+  "NSStatusItem Visible WiFi": false

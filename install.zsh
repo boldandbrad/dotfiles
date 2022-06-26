@@ -23,8 +23,8 @@ if [[ $(uname) == "Darwin" ]]; then
   echo "\nInstalling dotfiles..."
   dotbot -c $DOTFILES/install.conf.yaml
 
-  # setup system preferences
-  $DOTFILES/macos/set-defaults.zsh
+  # setup macOS system preferences
+  $DOTFILES/macos/defaults/install.zsh
 
   # setup macOS dock
   $DOTFILES/macos/dockutil/install.zsh
