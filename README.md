@@ -17,7 +17,7 @@ customizations to the contained files before install.
 - [GitHub CLI](https://cli.github.com): clone and manage user public repos
 - [Dockutil](https://github.com/kcrawford/dockutil): setup and manage macOS dock
 - [apply-user-defaults](https://github.com/zero-sh/apply-user-defaults): setup
-  and manage macOS system and app preferences (Coming soon)
+  and manage macOS system and app preferences
 
 ## Features
 
@@ -32,7 +32,7 @@ customizations to the contained files before install.
 
 ### Coming Soon
 
-- Ensures user system preferences are setup via `defaults` or
+- Ensures all user system preferences are setup via `defaults` or
   `apply-user-defaults`
 - Ensure default applications for file types are setup via `duti` or
   alternative?
