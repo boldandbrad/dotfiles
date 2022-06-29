@@ -34,6 +34,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   echo
   echo "Installation and setup complete!"
+  echo "Restart for all changes to take effect - sudo shutdown -r now"
 fi
 
 set +e

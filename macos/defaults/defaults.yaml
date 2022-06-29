@@ -26,3 +26,9 @@ com.apple.dock:
 
 com.apple.controlcenter:
   "NSStatusItem Visible WiFi": false
+
+com.apple.AppleMultitouchTrackpad:
+  Clicking: true  # enable tap to click
+
+com.apple.driver.AppleBluetoothMultitouch.trackpad:
+  Clicking: true  # enable tap to click for external trackpads
