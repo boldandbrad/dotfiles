@@ -32,23 +32,23 @@ brew 'git'                      # version control
 brew 'httpie'                   # rest client
 brew 'just'                     # project specific commands
 brew 'm-cli'                    # macos cli
-brew 'macos-trash'              # trash manager
 # brew 'ocrmypdf'                 # pdf ocr tool
 brew 'pipx'                     # globally isolated pip installs
 brew 'safe-rm'                  # rm safety wrapper
 brew 'starship'                 # cross-shell prompt
 brew 'tldr'                     # community driven man pages
 brew 'travis'                   # travis ci cli
-brew 'tree'                     # display directories as trees
 brew 'yank'                     # terminal clipboard utility
 brew 'zsh-autosuggestions'      # zsh autosuggestions
 brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 
 # dev #
 brew 'cocoapods'                # native apple development
-brew 'nodenv'                   # nodejs installer
-brew 'pyenv'                    # python installer
-brew "rustup-init"              # rust installer
+brew 'fnm'                      # nodejs version manager
+# brew 'nodenv'                   # nodejs installer
+brew 'pyenv'                    # python version manager
+brew 'rbenv'                    # ruby version manager
+# brew 'rustup-init'              # rust installer
 
 ################################################################
 # casks                                                        #
@@ -70,9 +70,8 @@ cask 'displaperture'            # rounded display corners
 cask 'elmedia-player'           # media player
 cask 'fig'                      # terminal autocomplete
 cask 'firefox'                  # web browser
-cask 'github'                   # git client
 cask 'geekbench'                # system benchmarking
-# cask 'glance'                   # quicklook enhancer
+cask 'github'                   # git client
 # cask 'hazel'                    # file automation ($$)
 # cask 'httpie'                   # rest client (not yet available)
 cask 'hush'                     # safari content blocker
@@ -133,7 +132,6 @@ mas 'color-picker', id: 1545870783  # color picker
 mas 'dark-noise', id: 1465439395    # white noise ($)
 mas 'dashlane', id: 517914548       # password manager ($)
 mas 'duckduckgo', id: 1482920575    # safari privacy
-mas 'hotspotshield', id: 771076721  # vpn
 mas 'numbers', id: 409203825        # spreadsheets
 mas 'parcel', id: 639968404         # package tracking
 mas 'peek', id: 1554235898          # quicklook enhancer ($)
@@ -151,6 +149,9 @@ tap 'superatomic/bundle-extensions' # additional brew commands
 
 tap 'teamookla/speedtest'
   brew 'speedtest'                  # cli internet speed tester
+
+tap 'zero-sh/tap'
+  brew 'apply-user-defaults'        # macos defaults installer
 
 ################################################################
 # new additions (via 'brew add')                               #
