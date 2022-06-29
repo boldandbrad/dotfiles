@@ -58,7 +58,7 @@ function groot() {
   fi
 }
 
-# re <files> - move files to trash
-function re() {
+# trash <files> - move files to trash
+function trash() {
   mv "$@" ~/.Trash
 }

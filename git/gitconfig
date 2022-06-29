@@ -11,6 +11,7 @@
 [alias]
 	a = add
 	aa = add --all
+	br = checkout -b
 	cm = commit -m
 	co = checkout
 	st = status -s

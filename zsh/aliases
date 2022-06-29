@@ -2,8 +2,12 @@
 alias cat="bat"
 alias code="codium"
 alias ls="exa --classify"
-alias la="exa -a --classify"
-alias ll="exa -al --classify"
+alias la="exa --all --classify"
+alias ll="exa --all --long --classify"
+alias lt="exa --tree --classify --sort=type"
+alias lta="exa --all --tree --classify --sort=type"
+alias ld="exa --only-dirs --classify"
+alias lda="exa --all --only-dirs --classify"
 
 # navigation
 alias ..="cd .."
@@ -20,7 +24,6 @@ alias dots="cd $DOTFILES"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias cp="cp -Riv"
-alias tree="tree -C"
 alias cwd='pwd | pbcopy'
 
 # dotfile refresh
