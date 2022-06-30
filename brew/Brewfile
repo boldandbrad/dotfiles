@@ -81,7 +81,6 @@ cask 'keka'                     # archive handler
 cask 'kekaexternalhelper'         # keka helper
 cask 'linear-linear'            # issue tracker
 cask 'mactracker'               # apple product info
-# cask 'menuwhere'                # quick menu access ($)
 cask 'numi'                     # notepad calculator ($?)
 # cask 'obs'                      # streaming suite
 cask 'openinterminal'           # terminal/ide finder toolbar
@@ -96,7 +95,7 @@ cask 'vscodium'                 # editor
 
 # dev #
 cask 'flutter'                  # app development
-# cask 'temurin'                  # jdk
+cask 'temurin'                  # jdk
 
 # games #
 cask 'minecraft'                # minecraft launcher
