@@ -45,7 +45,8 @@ brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 # dev #
 brew 'cocoapods'                # native apple development
 brew 'fnm'                      # nodejs version manager
-# brew 'nodenv'                   # nodejs installer
+# brew 'nodenv'                   # nodejs version manager
+brew 'plenv'                    # perl version manager
 brew 'pyenv'                    # python version manager
 brew 'rbenv'                    # ruby version manager
 # brew 'rustup-init'              # rust installer
@@ -78,7 +79,7 @@ cask 'hush'                     # safari content blocker
 cask 'hyper'                    # terminal replacement
 cask 'kap'                      # screen captures
 cask 'keka'                     # archive handler
-cask 'kekaexternalhelper'         # keka helper
+cask 'kekaexternalhelper'       # keka helper
 cask 'linear-linear'            # issue tracker
 cask 'mactracker'               # apple product info
 cask 'numi'                     # notepad calculator ($?)

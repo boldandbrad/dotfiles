@@ -26,6 +26,9 @@ alias mv="mv -iv"
 alias cp="cp -Riv"
 alias cwd='pwd | pbcopy'
 
+# remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
 # dotfile refresh
 alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
 
