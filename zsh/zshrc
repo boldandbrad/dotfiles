@@ -6,57 +6,47 @@ export DOTFILES=~/Setup/dotfiles
 export HOMEBREW_BUNDLE_FILE=~/.Brewfile
 
 # load aliases
-if [ -f ~/.aliases ]; then
-	source ~/.aliases
-fi
+[ -f ~/.aliases ] && . ~/.aliases
 
 # load functions
-if [ -f ~/.functions ]; then
-  source ~/.functions
-fi
+[ -f ~/.functions ] && . ~/.functions
 
 # load options
-if [ -f ~/.zoptions ]; then
-  source ~/.zoptions
-fi
-
-# fnm
-if type fnm > /dev/null; then
-  eval "$(fnm env --use-on-cd)"
-fi
-
-# initialize nodenv
-if type nodenv > /dev/null; then
-  eval "$(nodenv init -)"
-fi
-
-# initialize plenv
-if type plenv > /dev/null; then
-  eval "$(plenv init - zsh)"
-fi
+[ -f ~/.zoptions ] && . ~/.zoptions
 
 # initialize pyenv
-if type pyenv > /dev/null; then
+if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
 
+# initialize plenv
+if (( $+commands[plenv] )); then
+  eval "$(plenv init - zsh)"
+fi
+
 # initialize rbenv
-if type rbenv > /dev/null; then
+if (( $+commands[rbenv] )); then
   eval "$(rbenv init - zsh)"
 fi
 
+# fnm
+if (( $+commands[fnm] )); then
+  eval "$(fnm env --use-on-cd)"
+fi
+
 # added by travis gem
-[ ! -s ~/.travis/travis.sh ] || source ~/.travis/travis.sh
+[ ! -s ~/.travis/travis.sh ] || . ~/.travis/travis.sh
 
-# zsh syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh auto suggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# brew autocompletion
-if type brew &>/dev/null; then
+# brew setup
+if (( $+commands[brew] )); then
+  # brew autocompletion
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  # zsh auto suggestions
+  . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+  # zsh syntax highlighting
+  . $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   autoload -Uz compinit
   compinit
@@ -64,24 +54,28 @@ fi
 
 # pipx bash completions
 # TODO: this doesn't seem to work
-if command -v pipx 1>/dev/null 2>&1; then
-  autoload -U bashcompinit
-  bashcompinit
+# if (( $+commands[pipx] )); then
+#   autoload -U bashcompinit
+#   bashcompinit
 
-  eval "$(register-python-argcomplete pipx)"
-fi
+#   eval "$(register-python-argcomplete pipx)"
+# fi
 
 # auto jump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-# append sbin to path for homebrew
-export PATH="/usr/local/sbin:$PATH"
 
 # starship prompt
 eval "$(starship init zsh)"
 
 # direnv hook
 eval "$(direnv hook zsh)"
+
+# append sbin to path for homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# remove duplicates from PATH and FPATH
+typeset -U PATH
+typeset -U FPATH
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

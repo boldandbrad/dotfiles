@@ -27,7 +27,7 @@ alias cp="cp -Riv"
 alias cwd='pwd | pbcopy'
 
 # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # dotfile refresh
 alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
@@ -37,6 +37,7 @@ alias clone="source $DOTFILES/gh/install.zsh"
 
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
+alias fpath='echo $FPATH | tr -s ":" "\n"'
 
 # open pwd in Finder
 alias finder='open .'
