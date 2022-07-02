@@ -19,7 +19,6 @@ brew 'mas'
 ################################################################
 
 # cli #
-# brew 'asdf'                     # runtime version manager
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
 # brew 'bitwarden-cli'            # password manager cli
@@ -52,6 +51,7 @@ brew 'zsh-autosuggestions'      # zsh autosuggestions
 brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 
 # dev #
+# brew 'asdf'                     # runtime version manager
 brew 'cocoapods'                # native apple development
 brew 'fnm'                      # nodejs version manager
 # brew 'nodenv'                   # nodejs version manager

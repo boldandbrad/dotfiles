@@ -18,10 +18,15 @@ brew developer off
 
 export PATH=$PATH:/usr/local/bin  # TODO: is this necessary?
 
+# install homebrew bundle
+brew tap homebrew/bundle
+
+# install everything from brewfile via homebrew bundle
 if ! brew bundle check; then
   brew bundle install --no-lock --cleanup
 fi
 
+# perform upgrades and cleanup
 brew upgrade
 brew cleanup
 brew info
