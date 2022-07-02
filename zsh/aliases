@@ -42,6 +42,9 @@ alias fpath='echo $FPATH | tr -s ":" "\n"'
 # open pwd in Finder
 alias finder='open .'
 
+# glow markdown viewer with pager
+alias glow='glow -p'
+
 # quicklook from the terminal
 alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
 

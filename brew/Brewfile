@@ -29,6 +29,7 @@ brew 'exa'                      # ls alternative
 # brew 'exiftool'                 # image metadata tool
 brew 'gh'                       # github cli
 brew 'git'                      # version control
+brew 'glow'                     # terminal markdown viewer
 brew 'httpie'                   # rest client
 brew 'just'                     # project specific commands
 brew 'm-cli'                    # macos cli
