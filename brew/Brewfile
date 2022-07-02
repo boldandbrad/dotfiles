@@ -116,8 +116,10 @@ cask 'logitech-options'         # logitech peripheral manager
 ################################################################
 
 cask 'font-cascadia-code'
+# cask "font-caskaydia-cove-nerd-font"
 cask 'font-camingocode'
 cask 'font-fira-code'
+cask "font-fira-code-nerd-font"
 cask 'font-inconsolata'
 cask 'font-jetbrains-mono'
 

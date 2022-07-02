@@ -6,7 +6,7 @@ module.exports = {
   // prefer default configs except
   config: {
     fontSize: 14,
-    fontFamily: '"Fira Code", monospace',
+    fontFamily: '"FiraCode Nerd Font", "Fira Code", monospace',
     copyOnSelect: true,
   },
 
