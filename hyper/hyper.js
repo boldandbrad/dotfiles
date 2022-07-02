@@ -8,6 +8,10 @@ module.exports = {
     fontSize: 14,
     fontFamily: '"FiraCode Nerd Font", "Fira Code", monospace',
     copyOnSelect: true,
+
+    // hyperTransparentDynamic: {
+    //   alpha: 0.55 // default 50%
+    // },
   },
 
   // a list of plugins to fetch and install from npm
@@ -15,7 +19,7 @@ module.exports = {
   plugins: [
     "hyper-font-ligatures",
     "hyper-github-dark-dimmed",
-    "hyper-transparent-dynamic",
+    // "hyper-transparent-dynamic",
     "hyperterm-paste",
     "hyperterm-close-on-left",
     "hyper-quit",
