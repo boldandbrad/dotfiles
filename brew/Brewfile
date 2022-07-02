@@ -9,6 +9,7 @@ tap 'homebrew/autoupdate'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
+# tap 'homebrew/services'
 
 # mac app store installer #
 brew 'mas'
@@ -21,6 +22,7 @@ brew 'mas'
 # brew 'asdf'                     # runtime version manager
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
+# brew 'bitwarden-cli'            # password manager cli
 brew 'direnv'                   # directory level envs
 cask 'hpedrorodrigues/tools/dockutil'  # dock manager (temporary cask tap due to issues with official formula)
 brew 'dotbot'                   # dotfile manager
@@ -32,14 +34,20 @@ brew 'git'                      # version control
 brew 'glow'                     # terminal markdown viewer
 brew 'httpie'                   # rest client
 brew 'just'                     # project specific commands
+brew 'macchina'                 # system info
 brew 'm-cli'                    # macos cli
+# brew 'noti'                     # trigger macos notifications
 # brew 'ocrmypdf'                 # pdf ocr tool
+brew 'pastel'                   # color manipulation
 brew 'pipx'                     # globally isolated pip installs
 brew 'safe-rm'                  # rm safety wrapper
+brew 'scc'                      # lines of code counter
+brew 'spotify-tui'              # spotify cli
 brew 'starship'                 # cross-shell prompt
 brew 'tldr'                     # community driven man pages
 brew 'travis'                   # travis ci cli
 brew 'yank'                     # terminal clipboard utility
+# brew 'zsh'                      # updated z shell
 brew 'zsh-autosuggestions'      # zsh autosuggestions
 brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 
@@ -57,6 +65,7 @@ brew 'rbenv'                    # ruby version manager
 ################################################################
 
 # apps #
+# cask 'adguard'                  # ad and content blocker
 cask 'aldente'                  # battery manager ($?)
 cask 'appcleaner'               # app uninstaller
 cask 'bartender'                # menu bar organizer ($)
@@ -68,7 +77,6 @@ cask 'daisydisk'                # disk space visualizer ($)
 cask 'datweatherdoe'            # menu bar weather
 cask 'devutils'                 # dev utility suite ($)
 cask 'discord'                  # digital communities
-cask 'displaperture'            # rounded display corners
 cask 'elmedia-player'           # media player
 cask 'fig'                      # terminal autocomplete
 cask 'firefox'                  # web browser
@@ -90,6 +98,7 @@ cask 'raspberry-pi-imager'      # pi boot drive imager
 cask 'raycast'                  # spotlight replacement
 cask 'rectangle'                # window management
 cask 'signal'                   # secure messaging
+# cask 'spacedrive'               # file database (not yet available)
 cask 'spotify'                  # music and podcasts
 cask 'stats'                    # menu bar system stats
 cask 'todoist'                  # task tracker
@@ -128,8 +137,8 @@ cask 'font-jetbrains-mono'
 # mas                                                          #
 ################################################################
 
-mas 'adguard', id: 1440147259       # safari ad blocker
 mas 'bear', id: 1091189122          # markdown notes ($)
+# mas 'bitwarden', id: 1352778147     # password manager
 mas 'canary-mail', id: 1236045954   # email client ($)
 mas 'color-picker', id: 1545870783  # color picker
 mas 'dark-noise', id: 1465439395    # white noise ($)
