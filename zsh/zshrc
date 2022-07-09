@@ -4,6 +4,8 @@
 export EDITOR=codium
 export DOTFILES=~/Setup/dotfiles
 export HOMEBREW_BUNDLE_FILE=~/.Brewfile
+export PNPM_HOME=~/Library/pnpm
+export PATH="$PNPM_HOME:$PATH"
 
 # load aliases
 [ -f ~/.aliases ] && . ~/.aliases

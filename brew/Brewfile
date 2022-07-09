@@ -22,7 +22,9 @@ brew 'mas'
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
 # brew 'bitwarden-cli'            # password manager cli
+brew 'ddgr'                     # duckduckgo cli
 brew 'direnv'                   # directory level envs
+# brew 'docker'                   # containerization
 cask 'hpedrorodrigues/tools/dockutil'  # dock manager (temporary cask tap due to issues with official formula)
 brew 'dotbot'                   # dotfile manager
 # brew 'duti'                     # default app utility
@@ -56,9 +58,10 @@ brew 'cocoapods'                # native apple development
 brew 'fnm'                      # nodejs version manager
 # brew 'nodenv'                   # nodejs version manager
 brew 'plenv'                    # perl version manager
+brew 'pnpm'                     # nodejs package installer
 brew 'pyenv'                    # python version manager
 brew 'rbenv'                    # ruby version manager
-# brew 'rustup-init'              # rust installer
+brew 'rustup-init'              # rust installer
 
 ################################################################
 # casks                                                        #
@@ -70,7 +73,7 @@ cask 'aldente'                  # battery manager ($?)
 cask 'appcleaner'               # app uninstaller
 cask 'bartender'                # menu bar organizer ($)
 # cask 'bitwarden'                # password manager
-# cask 'cleanshot'                # screen captures ($)
+cask 'cleanshot'                # screen captures ($)
 # cask 'codeedit'                 # editor (not yet available)
 cask 'commandq'                 # safe app quits ($)
 cask 'daisydisk'                # disk space visualizer ($)
@@ -86,7 +89,6 @@ cask 'github'                   # git client
 # cask 'httpie'                   # rest client (not yet available)
 cask 'hush'                     # safari content blocker
 cask 'hyper'                    # terminal replacement
-cask 'kap'                      # screen captures
 cask 'keka'                     # archive handler
 cask 'kekaexternalhelper'       # keka helper
 cask 'linear-linear'            # issue tracker
@@ -126,10 +128,10 @@ cask 'logitech-options'         # logitech peripheral manager
 ################################################################
 
 cask 'font-cascadia-code'
-# cask "font-caskaydia-cove-nerd-font"
+# cask 'font-caskaydia-cove-nerd-font'
 cask 'font-camingocode'
 cask 'font-fira-code'
-cask "font-fira-code-nerd-font"
+cask 'font-fira-code-nerd-font'
 cask 'font-inconsolata'
 cask 'font-jetbrains-mono'
 

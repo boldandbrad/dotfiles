@@ -45,6 +45,9 @@ alias finder='open .'
 # glow markdown viewer with pager
 alias glow='glow -p'
 
+# duck for duckduckgo
+alias duck='ddgr'
+
 # quicklook from the terminal
 alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
 

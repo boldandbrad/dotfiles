@@ -22,4 +22,5 @@
     ~/.hyper.js: hyper/hyper.js
     ~/.zoptions: zsh/zoptions
     ~/.zprofile: zsh/zprofile
+    ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
