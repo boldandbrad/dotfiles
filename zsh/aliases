@@ -48,6 +48,9 @@ alias glow='glow -p'
 # duck for duckduckgo
 alias duck='ddgr'
 
+# prefer safer mv to trash function over rm
+alias rm='trash'
+
 # quicklook from the terminal
 alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
 

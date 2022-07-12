@@ -7,23 +7,14 @@ export HOMEBREW_BUNDLE_FILE=~/.Brewfile
 export PNPM_HOME=~/Library/pnpm
 export PATH="$PNPM_HOME:$PATH"
 
-# load aliases
-[ -f ~/.aliases ] && . ~/.aliases
-
-# load functions
-[ -f ~/.functions ] && . ~/.functions
-
-# load options
-[ -f ~/.zoptions ] && . ~/.zoptions
+# load dotfiles
+for DOTFILE in ~/.{aliases,functions,zoptions}; do
+  [ -f "$DOTFILE" ] && source "$DOTFILE"
+done
 
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
-fi
-
-# initialize plenv
-if (( $+commands[plenv] )); then
-  eval "$(plenv init - zsh)"
 fi
 
 # initialize rbenv

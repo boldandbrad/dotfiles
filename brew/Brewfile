@@ -5,10 +5,10 @@
 # homebrew taps #
 tap 'homebrew/core'
 tap 'homebrew/cask'
-tap 'homebrew/autoupdate'
-tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
+tap 'homebrew/autoupdate'
+tap 'homebrew/bundle'
 # tap 'homebrew/services'
 
 # mac app store installer #
@@ -21,7 +21,6 @@ brew 'mas'
 # cli #
 brew 'autojump'                 # recent directory hopper
 brew 'bat'                      # cat alternative
-# brew 'bitwarden-cli'            # password manager cli
 brew 'ddgr'                     # duckduckgo cli
 brew 'direnv'                   # directory level envs
 # brew 'docker'                   # containerization
@@ -29,7 +28,6 @@ cask 'hpedrorodrigues/tools/dockutil'  # dock manager (temporary cask tap due to
 brew 'dotbot'                   # dotfile manager
 # brew 'duti'                     # default app utility
 brew 'exa'                      # ls alternative
-# brew 'exiftool'                 # image metadata tool
 brew 'gh'                       # github cli
 brew 'git'                      # version control
 brew 'glow'                     # terminal markdown viewer
@@ -38,10 +36,8 @@ brew 'just'                     # project specific commands
 brew 'macchina'                 # system info
 brew 'm-cli'                    # macos cli
 # brew 'noti'                     # trigger macos notifications
-# brew 'ocrmypdf'                 # pdf ocr tool
 brew 'pastel'                   # color manipulation
 brew 'pipx'                     # globally isolated pip installs
-brew 'safe-rm'                  # rm safety wrapper
 brew 'scc'                      # lines of code counter
 brew 'spotify-tui'              # spotify cli
 brew 'starship'                 # cross-shell prompt
@@ -57,30 +53,27 @@ brew 'zsh-syntax-highlighting'  # zsh syntax highlighting
 brew 'cocoapods'                # native apple development
 brew 'fnm'                      # nodejs version manager
 # brew 'nodenv'                   # nodejs version manager
-brew 'plenv'                    # perl version manager
 brew 'pnpm'                     # nodejs package installer
 brew 'pyenv'                    # python version manager
 brew 'rbenv'                    # ruby version manager
-brew 'rustup-init'              # rust installer
+brew 'rustup-init'              # rust toolchain installer
 
 ################################################################
 # casks                                                        #
 ################################################################
 
 # apps #
-# cask 'adguard'                  # ad and content blocker
 cask 'aldente'                  # battery manager ($?)
 cask 'appcleaner'               # app uninstaller
 cask 'bartender'                # menu bar organizer ($)
-# cask 'bitwarden'                # password manager
 cask 'cleanshot'                # screen captures ($)
 # cask 'codeedit'                 # editor (not yet available)
-cask 'commandq'                 # safe app quits ($)
+cask 'commandq'                 # delayed app quits ($)
 cask 'daisydisk'                # disk space visualizer ($)
 cask 'datweatherdoe'            # menu bar weather
 cask 'devutils'                 # dev utility suite ($)
 cask 'discord'                  # digital communities
-cask 'elmedia-player'           # media player
+# cask "docker"                   # containerization
 cask 'fig'                      # terminal autocomplete
 cask 'firefox'                  # web browser
 cask 'geekbench'                # system benchmarking
@@ -96,6 +89,7 @@ cask 'mactracker'               # apple product info
 cask 'numi'                     # notepad calculator ($?)
 # cask 'obs'                      # streaming suite
 cask 'openinterminal'           # terminal/ide finder toolbar
+cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask 'raspberry-pi-imager'      # pi boot drive imager
 cask 'raycast'                  # spotlight replacement
 cask 'rectangle'                # window management
@@ -107,14 +101,13 @@ cask 'todoist'                  # task tracker
 cask 'vscodium'                 # editor
 
 # dev #
-cask 'flutter'                  # app development
+# cask 'flutter'                  # app development
 cask 'temurin'                  # jdk
 
 # games #
 cask 'minecraft'                # minecraft launcher
 # cask 'openemu'                  # game emulator
 # cask 'retroarch'                # game emulator
-# cask 'steam'                    # game storefront
 
 ################################################################
 # cask-drivers                                                 #
@@ -122,6 +115,7 @@ cask 'minecraft'                # minecraft launcher
 
 # cask 'elgato-game-capture-hd'   # elgato peripheral suite
 cask 'logitech-options'         # logitech peripheral manager
+# cask 'sonos'                    # sonos sound system manager
 
 ################################################################
 # cask-fonts                                                   #
@@ -139,17 +133,20 @@ cask 'font-jetbrains-mono'
 # mas                                                          #
 ################################################################
 
+# apps #
 mas 'bear', id: 1091189122          # markdown notes ($)
 # mas 'bitwarden', id: 1352778147     # password manager
 mas 'canary-mail', id: 1236045954   # email client ($)
 mas 'color-picker', id: 1545870783  # color picker
-mas 'dark-noise', id: 1465439395    # white noise ($)
 mas 'dashlane', id: 517914548       # password manager ($)
-mas 'duckduckgo', id: 1482920575    # safari privacy
+mas 'duckduckgo', id: 1482920575    # safari tracker blocker
+mas 'magic-lasso', id: 1198047227   # safari ad blocker
 mas 'numbers', id: 409203825        # spreadsheets
 mas 'parcel', id: 639968404         # package tracking
 mas 'peek', id: 1554235898          # quicklook enhancer ($)
 mas 'twitter', id: 1482454543       # social feed
+
+# dev #
 mas 'xcode', id: 497799835          # apple ide
 
 ################################################################
@@ -157,15 +154,15 @@ mas 'xcode', id: 497799835          # apple ide
 ################################################################
 
 tap 'boldandbrad/homebrew-tap'
-  brew 'makey-cli'                  # cli passkey maker
+brew 'makey-cli'                    # cli passkey maker
 
 tap 'superatomic/bundle-extensions' # additional brew commands
 
 tap 'teamookla/speedtest'
-  brew 'speedtest'                  # cli internet speed tester
+brew 'speedtest'                    # cli internet speed tester
 
 tap 'zero-sh/tap'
-  brew 'apply-user-defaults'        # macos defaults installer
+brew 'apply-user-defaults'          # macos defaults installer
 
 ################################################################
 # new additions (via 'brew add')                               #
