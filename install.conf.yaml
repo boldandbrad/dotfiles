@@ -20,6 +20,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
+    ~/Library/Application Support/VSCodium/User/settings.json: vscodium/settings.json
     ~/.zoptions: zsh/zoptions
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv

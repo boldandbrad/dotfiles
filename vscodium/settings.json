@@ -1,0 +1,63 @@
+{
+    "back-n-forth.iconStyle": "chevron",
+    "back-n-forth.withLastEditLocation": true,
+    "debug.console.fontFamily": "FiraCode-Retina",
+    "debug.console.fontSize": 14,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "discord.suppressNotifications": true,
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.codeLensFontFamily": "FiraCode-Retina",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.foldingImportsByDefault": true,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "errorLens.fontFamily": "FiraCode-Retina",
+    "errorLens.onSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 8,
+    "markdownlint.run": "onSave",
+    "python.envFile": "${workspaceFolder}/.venv",
+    "python.formatting.provider": "black",
+    "search.showLineNumbers": true,
+    "scm.defaultViewMode": "tree",
+    "scm.inputFontSize": 14,
+    "telemetry.telemetryLevel": "off",
+    "terminal.external.osxExec": "Hyper.app",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "todo-tree.tree.expanded": true,
+    "todo-tree.general.enableFileWatcher": true,
+    "todo-tree.regex.regex": "((\/\/|#|>|<!--|;|\/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "todo-tree.tree.groupedByTag": true,
+    "todo-tree.tree.hideIconsWhenGroupedByTag": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "trailing-spaces.trimOnSave": true,
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+    "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+    "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "workbench.settings.editor": "json",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "readme",
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    }
+}
