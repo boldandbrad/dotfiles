@@ -32,6 +32,9 @@ if [[ $(uname) == "Darwin" ]]; then
   # clone repos and forks into ~/Developer
   $DOTFILES/gh/install.zsh
 
+  # install VSCodium extensions
+  $DOTFILES/vscodium/install.zsh
+
   echo
   echo "Installation and setup complete!"
   echo "Restart for all changes to take effect - sudo shutdown -r now"

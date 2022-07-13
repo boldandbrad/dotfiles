@@ -35,6 +35,10 @@ alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
 # gh repo clone refresh
 alias clone="source $DOTFILES/gh/install.zsh"
 
+# codium extension export and install
+alias codexp="codium --list-extensions > $DOTFILES/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'"
+alias codein="source $DOTFILES/vscodium/install.zsh"
+
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
 alias fpath='echo $FPATH | tr -s ":" "\n"'
