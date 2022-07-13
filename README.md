@@ -29,6 +29,7 @@ customizations to the contained files before install.
 - Ensures user dotfiles are installed
 - Ensures macOS dock is setup
 - Ensures user's github repos are cloned
+- Ensures user's preferred VSCodium extensions are installed
 
 ### Coming Soon
 
@@ -38,6 +39,8 @@ customizations to the contained files before install.
   alternative?
 - Remote install script?
 - Debian support?
+- Customization guide
+- More verbose and explicit documentation
 
 ## Install
 
