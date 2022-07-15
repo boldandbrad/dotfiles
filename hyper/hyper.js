@@ -17,7 +17,7 @@ module.exports = {
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
   plugins: [
-    "hyper-font-ligatures",
+    // "hyper-font-ligatures",
     "hyper-github-dark-dimmed",
     // "hyper-transparent-dynamic",
     "hyperterm-paste",
