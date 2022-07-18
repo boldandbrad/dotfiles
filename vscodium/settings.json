@@ -17,10 +17,14 @@
     "editor.formatOnSave": true,
     "editor.linkedEditing": true,
     "editor.minimap.renderCharacters": false,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        120
+    ],
     "editor.suggestSelection": "first",
-    "editor.tabSize": 4,
-    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    // "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
     "editor.wrappingIndent": "indent",
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 8,
@@ -56,11 +60,17 @@
     "workbench.startupEditor": "readme",
     "workbench.tree.indent": 12,
     // Language specific configs
-    "[html]": {
-        "editor.tabSize": 2
+    "[python]": {
+        "editor.tabSize": 4
     },
-    "[javascript]": {
-        "editor.tabSize": 2
+    "[markdown]": {
+        "editor.rulers": [
+            80
+        ],
+        "editor.tabSize": 4
+    },
+    "[rust]": {
+        "editor.tabSize": 4
     },
     "python.envFile": "${workspaceFolder}/.venv",
     "python.formatting.provider": "black",
