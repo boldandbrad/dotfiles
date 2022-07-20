@@ -15,6 +15,7 @@ echo
 echo "Setting up Homebrew..."
 
 brew developer off
+brew analytics off
 
 export PATH=$PATH:/usr/local/bin  # TODO: is this necessary?
 
@@ -40,6 +41,15 @@ echo "Setting up Homebrew autoupdate..."
 if ! brew autoupdate status | grep "running"; then
   brew autoupdate start --cleanup
 fi
+
+echo
+echo "Setting up Homebrew aliases..."
+brew alias check='bundle check -v'
+brew alias apply='bundle install'
+brew alias prune='bundle cleanup'
+brew alias stale='outdated'
+brew alias purge='autoremove'
+brew alias clean='cleanup'
 
 echo
 echo "Homebrew setup complete!"

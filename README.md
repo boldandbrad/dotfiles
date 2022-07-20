@@ -82,19 +82,19 @@ dotbot
 Check if all `~/.Brewfile` dependencies are installed
 
 ```zsh
-brew bundle check -v
+brew check
 ```
 
-Install everything from `~/.Brewfile`
+Install everything listed in `~/.Brewfile`
 
 ```zsh
-brew bundle install
+brew apply
 ```
 
-Uninstall dependencies not listed in `~/.Brewfile`
+Uninstall everything not listed in `~/.Brewfile`
 
 ```zsh
-brew bundle cleanup
+brew prune
 ```
 
 ## Inspiration
