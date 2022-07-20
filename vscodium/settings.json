@@ -27,7 +27,7 @@
     "editor.wordWrapColumn": 120,
     "editor.wrappingIndent": "indent",
     "explorer.confirmDragAndDrop": false,
-    "explorer.openEditors.visible": 8,
+    "explorer.openEditors.visible": 0,
     "explorer.sortOrder": "type",
     "extensions.autoUpdate": true,
     "git.untrackedChanges": "separate",
@@ -80,6 +80,13 @@
     "discord.suppressNotifications": true,
     "errorLens.fontFamily": "FiraCode-Retina",
     "errorLens.onSave": true,
+    "eslint.enable": true,
+    "eslint.validate": [
+        "vue",
+        "typescript",
+        "html",
+        "javascript"
+    ],
     "liveServer.settings.donotShowInfoMsg": true,
     "markdownlint.run": "onSave",
     "todo-tree.tree.expanded": true,
