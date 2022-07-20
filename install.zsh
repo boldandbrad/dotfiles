@@ -5,7 +5,7 @@
 # quit on first failure
 set -e
 
-# only macos is supported at this time
+# only macOS is supported at this time
 if [[ $(uname) == "Darwin" ]]; then
   echo "Setting up new macOS env..."
 
@@ -13,7 +13,7 @@ if [[ $(uname) == "Darwin" ]]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/brew/Brewfile"
   export GH_USER="boldandbrad"
 
-  # install macos command line tools
+  # install macOS Xcode command line tools
   $DOTFILES/macos/install.zsh
 
   # install and setup homebrew
