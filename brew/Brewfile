@@ -37,6 +37,7 @@ brew "just"                     # project specific commands
 brew "macchina"                 # system info
 brew "m-cli"                    # macos cli
 brew "noti"                     # trigger macos notifications
+# brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
 brew "pipx"                     # globally isolated pip installs
 brew "scc"                      # lines of code counter
@@ -50,10 +51,11 @@ brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 
 # dev #
 # brew "asdf"                     # runtime version manager
-brew "cocoapods"                # native apple development
+# brew "cocoapods"                # native apple development
 brew "fnm"                      # nodejs version manager
 # brew "nodenv"                   # nodejs version manager
 brew "pnpm"                     # nodejs package installer
+# brew "postgresql"               # postgres DB
 brew "pyenv"                    # python version manager
 brew "rbenv"                    # ruby version manager
 brew "rustup-init"              # rust toolchain installer
@@ -76,6 +78,7 @@ cask "datweatherdoe"            # menu bar weather
 cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
 # cask "docker"                   # containerization
+cask "eloston-chromium"         # ungoogled chromium browser
 cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
 cask "geekbench"                # system benchmarking
