@@ -3,6 +3,7 @@ bradlc.vscode-tailwindcss
 bungcip.better-toml
 csstools.postcss
 DavidAnson.vscode-markdownlint
+dbaeumer.vscode-eslint
 GitHub.github-vscode-theme
 Gruntfuggly.todo-tree
 IBM.output-colorizer

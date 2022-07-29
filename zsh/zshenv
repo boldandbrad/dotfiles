@@ -1,1 +1,13 @@
+export EDITOR=codium
+export DOTFILES=~/Setup/dotfiles
+export HOMEBREW_BUNDLE_FILE=~/.Brewfile
+export PNPM_HOME=~/Library/pnpm
+
+# export XDG_CACHE_HOME=~/.cache
+# export XDG_DATA_HOME=~/.local/share
+# export XDG_STATE_HOME=~/.local/state
+
+export PATH="$PNPM_HOME:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 . "$HOME/.cargo/env"

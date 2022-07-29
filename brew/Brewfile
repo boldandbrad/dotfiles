@@ -10,6 +10,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/aliases"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
+tap "homebrew/command-not-found"
 # tap "homebrew/services"
 
 # mac app store installer #
@@ -29,6 +30,7 @@ cask "hpedrorodrigues/tools/dockutil"  # dock manager (temporary cask tap due to
 brew "dotbot"                   # dotfile manager
 # brew "duti"                     # default app utility
 brew "exa"                      # ls alternative
+# brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
 brew "git"                      # version control
 brew "glow"                     # terminal markdown viewer
@@ -45,13 +47,14 @@ brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
 brew "travis"                   # travis ci cli
 brew "yank"                     # terminal clipboard utility
-# brew "zsh"                      # updated z shell
+brew "zsh"                      # updated z shell
 brew "zsh-autosuggestions"      # zsh autosuggestions
 brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 
 # dev #
 # brew "asdf"                     # runtime version manager
 # brew "cocoapods"                # native apple development
+# brew "deno"                     # js/ts runtime
 brew "fnm"                      # nodejs version manager
 # brew "nodenv"                   # nodejs version manager
 brew "pnpm"                     # nodejs package installer

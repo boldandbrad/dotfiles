@@ -1,12 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
-export EDITOR=codium
-export DOTFILES=~/Setup/dotfiles
-export HOMEBREW_BUNDLE_FILE=~/.Brewfile
-export PNPM_HOME=~/Library/pnpm
-export PATH="$PNPM_HOME:$PATH"
-
 # load dotfiles
 for DOTFILE in ~/.{aliases,functions,zoptions}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
@@ -27,7 +21,7 @@ if (( $+commands[fnm] )); then
   eval "$(fnm env --use-on-cd)"
 fi
 
-# added by travis gem
+# travis tab completions
 [ ! -s ~/.travis/travis.sh ] || . ~/.travis/travis.sh
 
 # brew setup
@@ -45,14 +39,17 @@ if (( $+commands[brew] )); then
   compinit
 fi
 
-# pipx bash completions
-# TODO: this doesn't seem to work
-# if (( $+commands[pipx] )); then
-#   autoload -U bashcompinit
-#   bashcompinit
+HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [ -f "$HB_CNF_HANDLER" ]; then
+  source "$HB_CNF_HANDLER";
+fi
 
-#   eval "$(register-python-argcomplete pipx)"
-# fi
+# pipx bash tab completions
+if (( $+commands[pipx] )); then
+  autoload -U bashcompinit
+  bashcompinit
+  eval "$(register-python-argcomplete pipx)"
+fi
 
 # auto jump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -62,9 +59,6 @@ eval "$(starship init zsh)"
 
 # direnv hook
 eval "$(direnv hook zsh)"
-
-# append sbin to path for homebrew
-export PATH="/usr/local/sbin:$PATH"
 
 # remove duplicates from PATH and FPATH
 typeset -U PATH
