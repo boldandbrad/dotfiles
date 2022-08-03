@@ -76,12 +76,14 @@ cask "bartender"                # menu bar organizer ($)
 cask "cleanshot"                # screen captures ($)
 # cask "codeedit"                 # editor (not yet available)
 cask "commandq"                 # delayed app quits ($)
+# cask "cryptomator"              # cloud data encryption
 cask "daisydisk"                # disk space visualizer ($)
 cask "datweatherdoe"            # menu bar weather
 cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
 # cask "docker"                   # containerization
 cask "eloston-chromium"         # ungoogled chromium browser
+cask "eul"                      # menu bar system stats
 cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
 cask "geekbench"                # system benchmarking
@@ -89,13 +91,14 @@ cask "github"                   # git client
 # cask "hazel"                    # file automation ($$)
 # cask "httpie"                   # rest client (not yet available)
 cask "hush"                     # safari content blocker
-cask "hyper"                    # terminal replacement
+cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "linear-linear"            # issue tracker
 cask "mactracker"               # apple product info
 cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
+cask "obsidian"                 # markdown knowledge base
 cask "openinterminal"           # terminal/ide finder toolbar
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
@@ -104,10 +107,10 @@ cask "rectangle"                # window management
 cask "signal"                   # secure messaging
 # cask "spacedrive"               # file database (not yet available)
 cask "spotify"                  # music and podcasts
-cask "stats"                    # menu bar system stats
 cask "todoist"                  # task tracker
 # cask "utm"                      # virtual machines
 cask "vscodium"                 # editor
+# cask "warp"                     # terminal emulator
 
 # dev #
 cask "temurin"                  # jdk
