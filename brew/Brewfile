@@ -78,7 +78,6 @@ cask "cleanshot"                # screen captures ($)
 cask "commandq"                 # delayed app quits ($)
 # cask "cryptomator"              # cloud data encryption
 cask "daisydisk"                # disk space visualizer ($)
-cask "datweatherdoe"            # menu bar weather
 cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
 # cask "docker"                   # containerization
@@ -99,7 +98,6 @@ cask "mactracker"               # apple product info
 cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
-cask "openinterminal"           # terminal/ide finder toolbar
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
@@ -137,17 +135,13 @@ cask "font-cascadia-code"
 cask "font-camingocode"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
-cask "font-inconsolata"
 cask "font-inter"
-cask "font-jetbrains-mono"
 
 ################################################################
 # mas                                                          #
 ################################################################
 
 # apps #
-mas "bear", id: 1091189122          # markdown notes ($)
-# mas "bitwarden", id: 1352778147     # password manager
 mas "canary-mail", id: 1236045954   # email client ($)
 mas "color-picker", id: 1545870783  # color picker
 mas "dashlane", id: 517914548       # password manager ($)
