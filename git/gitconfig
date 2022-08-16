@@ -17,6 +17,7 @@
 	st = status -s
 	df = difftool
 	mg = mergetool
+	r = reset HEAD
 [fetch]
 	prune = true
 [pull]
