@@ -24,7 +24,8 @@ alias dots="cd $DOTFILES"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias cp="cp -Riv"
-alias cwd='pwd | pbcopy'
+alias cwd="pwd | pbcopy"
+alias reload=". ~/.zshrc"
 
 # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
@@ -44,22 +45,23 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias fpath='echo $FPATH | tr -s ":" "\n"'
 
 # open pwd in Finder
-alias finder='open .'
+alias finder="open ."
 
 # glow markdown viewer with pager
-alias glow='glow -p'
-
-# duck for duckduckgo
-alias duck='ddgr'
+alias glow="glow -p"
 
 # prefer safer mv to trash function over rm
-alias rm='trash'
+alias rm="trash"
 
 # quicklook from the terminal
 alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null"
 
+# browsers
+alias safari="open -a Safari"
+alias firefox="open -a Firefox"
+
 # uninstall an app with appcleaner
-alias uninstall='open -a AppCleaner'
+alias uninstall="open -a AppCleaner"
 
 # activate python venv in the current directory
-alias pysrc='source .venv/bin/activate'
+alias pysrc="source .venv/bin/activate"
