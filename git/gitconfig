@@ -27,7 +27,7 @@
 	ff = only
 	tool = codium
 [mergetool "codium"]
-	cmd = codium --wait $MERGED
+	cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [diff]
 	tool = codium
 [difftool]
