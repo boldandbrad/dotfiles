@@ -41,6 +41,8 @@ customizations to the contained files before install.
 - Debian support?
 - Customization guide
 - More verbose and explicit documentation
+- Raycast configs/extensions?
+- Obsidian configs/extensions?
 
 ## Install
 
