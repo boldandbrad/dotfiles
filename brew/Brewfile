@@ -110,6 +110,7 @@ cask "vscodium"                 # editor
 
 # dev #
 cask "temurin"                  # jdk
+cask "trunk-io"                 # devex lint and merge toolset
 
 # games #
 cask "minecraft"                # minecraft launcher
@@ -159,6 +160,9 @@ mas "xcode", id: 497799835          # apple ide
 
 tap "boldandbrad/homebrew-tap"
 brew "makey-cli"                    # cli passkey maker
+
+tap "snyk/tap"
+brew "snyk"                       # code vulnerability scanner
 
 tap "superatomic/bundle-extensions" # additional brew commands
 
