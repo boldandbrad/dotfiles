@@ -23,12 +23,10 @@ brew "mas"
 # cli #
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
-brew "ddgr"                     # duckduckgo cli
 brew "direnv"                   # directory level envs
 # brew "docker"                   # containerization
 cask "hpedrorodrigues/tools/dockutil"  # dock manager (temporary cask tap due to issues with official formula)
 brew "dotbot"                   # dotfile manager
-# brew "duti"                     # default app utility
 brew "exa"                      # ls alternative
 # brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
@@ -60,7 +58,7 @@ brew "fnm"                      # nodejs version manager
 brew "pnpm"                     # nodejs package installer
 # brew "postgresql"               # postgres DB
 brew "pyenv"                    # python version manager
-brew "rbenv"                    # ruby version manager
+# brew "rbenv"                    # ruby version manager
 brew "rustup-init"              # rust toolchain installer
 # brew "vercel-cli"               # deployments and hosting
 # brew "vue-cli"                  # vue.js tooling cli
@@ -102,7 +100,7 @@ cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
 cask "rectangle"                # window management
-cask "signal"                   # secure messaging
+cask "signal"                   # encrypted messaging
 # cask "spacedrive"               # file database (not yet available)
 cask "spotify"                  # music and podcasts
 cask "todoist"                  # task tracker
