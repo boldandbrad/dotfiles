@@ -24,13 +24,12 @@ brew "mas"
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
 brew "direnv"                   # directory level envs
-# brew "docker"                   # containerization
-cask "hpedrorodrigues/tools/dockutil"  # dock manager (temporary cask tap due to issues with official formula)
 brew "dotbot"                   # dotfile manager
+# brew "eget"                     # pre-built binary installer
 brew "exa"                      # ls alternative
 # brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
-brew "git"                      # version control
+brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
@@ -40,6 +39,7 @@ brew "noti"                     # trigger macos notifications
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
 brew "pipx"                     # globally isolated pip installs
+brew "podman"                   # containerization
 brew "scc"                      # lines of code counter
 brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
@@ -78,7 +78,6 @@ cask "commandq"                 # delayed app quits ($)
 cask "daisydisk"                # disk space visualizer ($)
 cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
-# cask "docker"                   # containerization
 cask "eloston-chromium"         # ungoogled chromium browser
 cask "eul"                      # menu bar system stats
 cask "fig"                      # terminal autocomplete
@@ -96,6 +95,7 @@ cask "mactracker"               # apple product info
 cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
+cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
@@ -160,6 +160,8 @@ mas "xcode", id: 497799835          # apple ide
 
 tap "boldandbrad/homebrew-tap"
 brew "makey-cli"                    # cli passkey maker
+
+cask "hpedrorodrigues/tools/dockutil"  # macOS dock manager (temporary cask tap due to issues with official formula)
 
 tap "snyk/tap"
 brew "snyk"                       # code vulnerability scanner

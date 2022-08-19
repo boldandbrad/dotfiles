@@ -1,6 +1,7 @@
 # tool replacements
 alias cat="bat"
 alias code="codium"
+alias docker="podman"
 alias ls="exa --classify"
 alias la="exa --all --classify"
 alias ll="exa --all --long --classify"
