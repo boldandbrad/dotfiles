@@ -32,7 +32,7 @@ module.exports = {
 
   // keymap overrides
   keymaps: {
-    'window:reload': 'command+r',
-    'window:reloadFull': 'command+shift+r'
+    "window:reload": "command+r",
+    "window:reloadFull": "command+shift+r",
   },
 };
