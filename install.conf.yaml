@@ -11,17 +11,17 @@
     - ~/Setup
 
 - link:
-    ~/.aliases: zsh/aliases
     ~/.bashrc: bash/bashrc
     ~/.Brewfile: brew/Brewfile
-    ~/.config/starship.toml: starship/starship.toml
+    ~/.config/starship/starship.toml: starship/starship.toml
+    ~/.config/zsh/.aliases: zsh/aliases
+    ~/.config/zsh/.functions: zsh/functions
+    ~/.config/zsh/.options: zsh/options
     ~/.fig/settings.json: fig/settings.json
-    ~/.functions: zsh/functions
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
     ~/Library/Application Support/VSCodium/User/settings.json: vscodium/settings.json
-    ~/.zoptions: zsh/zoptions
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc

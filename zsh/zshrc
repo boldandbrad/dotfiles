@@ -2,7 +2,7 @@
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # load dotfiles
-for DOTFILE in ~/.{aliases,functions,zoptions}; do
+for DOTFILE in ~/.config/zsh/.{aliases,functions,zoptions}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
