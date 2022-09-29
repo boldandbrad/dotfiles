@@ -1,26 +1,46 @@
 {
-  "debug.console.fontFamily": "FiraCode-Retina",
+  "debug.console.fontFamily": "Anonymous Pro",
   "debug.console.fontSize": 14,
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.codeLensFontFamily": "FiraCode-Retina",
+  "editor.codeLensFontFamily": "Anonymous Pro",
   "editor.cursorBlinking": "solid",
   "editor.cursorStyle": "block",
   "editor.foldingImportsByDefault": true,
-  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontFamily": "Anonymous Pro",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.linkedEditing": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [120],
+  "editor.rulers": [
+    120
+  ],
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "comment.line.double-slash",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
   // "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "indent",
@@ -40,16 +60,16 @@
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "Hyper.app",
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Anonymice Nerd Font",
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
   "trailing-spaces.trimOnSave": true,
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
   "workbench.preferredLightColorTheme": "GitHub Light Default",
@@ -62,7 +82,9 @@
     "editor.tabSize": 4
   },
   "[markdown]": {
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     "editor.tabSize": 4
   },
   "[rust]": {
@@ -74,10 +96,15 @@
   "back-n-forth.iconStyle": "chevron",
   "back-n-forth.withLastEditLocation": true,
   "discord.suppressNotifications": true,
-  "errorLens.fontFamily": "FiraCode-Retina",
+  "errorLens.fontFamily": "Anonymous Pro",
   "errorLens.onSave": true,
   "eslint.enable": true,
-  "eslint.validate": ["vue", "typescript", "html", "javascript"],
+  "eslint.validate": [
+    "vue",
+    "typescript",
+    "html",
+    "javascript"
+  ],
   "liveServer.settings.donotShowInfoMsg": true,
   "markdownlint.run": "onSave",
   "todo-tree.tree.expanded": true,

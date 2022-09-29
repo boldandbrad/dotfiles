@@ -5,8 +5,8 @@
 module.exports = {
   // prefer default configs except
   config: {
-    fontSize: 14,
-    fontFamily: '"FiraCode Nerd Font", "Fira Code", monospace',
+    fontSize: 16,
+    fontFamily: '"Anonymice Nerd Font", "FiraCode Nerd Font", "Fira Code", monospace',
     copyOnSelect: true,
 
     // hyperTransparentDynamic: {
@@ -18,7 +18,7 @@ module.exports = {
   // format: [@org/]project[#version]
   plugins: [
     // "hyper-font-ligatures",
-    "hyper-github-dark-dimmed",
+    "hyper-github-dark-default",
     // "hyper-transparent-dynamic",
     "hyperterm-paste",
     "hyperterm-close-on-left",
