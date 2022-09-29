@@ -29,6 +29,8 @@ alias mv="mv -iv"
 alias cp="cp -Riv"
 alias cwd="pwd | pbcopy"
 alias reload=". ~/.zshrc"
+alias ncdu="ncdu --color off"
+alias awake="caffeinate"
 
 # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'

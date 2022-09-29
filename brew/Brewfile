@@ -27,6 +27,7 @@ brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
 # brew "eget"                     # pre-built binary installer
 brew "exa"                      # ls alternative
+brew "exercism"                 # learn code through exercises
 # brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
 brew "git"                      # version control system
@@ -35,7 +36,9 @@ brew "httpie"                   # rest client
 brew "just"                     # project specific commands
 brew "macchina"                 # system info
 brew "m-cli"                    # macos cli
+brew "ncdu"                     # disk space analyzer
 brew "noti"                     # trigger macos notifications
+# brew "nushell"                  # modern shell
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
 brew "pipx"                     # globally isolated pip installs
@@ -52,10 +55,10 @@ brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 # dev #
 # brew "asdf"                     # runtime version manager
 # brew "cocoapods"                # native apple development
-# brew "deno"                     # js/ts runtime
-brew "fnm"                      # nodejs version manager
-# brew "nodenv"                   # nodejs version manager
-brew "pnpm"                     # nodejs package installer
+brew "deno"                     # js/ts runtime
+brew "fnm"                      # node version manager
+# brew "nodenv"                   # node version manager
+brew "pnpm"                     # node package installer
 # brew "postgresql"               # postgres DB
 brew "pyenv"                    # python version manager
 # brew "rbenv"                    # ruby version manager
@@ -68,14 +71,12 @@ brew "rustup-init"              # rust toolchain installer
 ################################################################
 
 # apps #
-cask "aldente"                  # battery manager ($?)
 cask "appcleaner"               # app uninstaller
 cask "bartender"                # menu bar organizer ($)
 cask "cleanshot"                # screen captures ($)
 # cask "codeedit"                 # editor (not yet available)
 cask "commandq"                 # delayed app quits ($)
 # cask "cryptomator"              # cloud data encryption
-cask "daisydisk"                # disk space visualizer ($)
 cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
 cask "eloston-chromium"         # ungoogled chromium browser
@@ -95,6 +96,7 @@ cask "mactracker"               # apple product info
 cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
+cask "orion"                    # safari web browser clone
 cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
@@ -104,7 +106,7 @@ cask "signal"                   # encrypted messaging
 # cask "spacedrive"               # file database (not yet available)
 cask "spotify"                  # music and podcasts
 cask "todoist"                  # task tracker
-# cask "utm"                      # virtual machines
+cask "utm"                      # virtualization
 cask "vscodium"                 # editor
 # cask "warp"                     # terminal emulator
 
@@ -129,6 +131,8 @@ cask "logitech-options"         # logitech peripheral manager
 # cask-fonts                                                   #
 ################################################################
 
+cask "font-anonymice-nerd-font"
+cask "font-anonymous-pro"
 cask "font-cascadia-code"
 # cask "font-caskaydia-cove-nerd-font"
 cask "font-camingocode"
