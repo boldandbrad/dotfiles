@@ -50,6 +50,7 @@ brew alias prune='bundle cleanup'
 brew alias stale='outdated'
 brew alias purge='autoremove'
 brew alias clean='cleanup'
+brew alias mas="bundle install --file=~/.Masfile"
 
 echo
 echo "Homebrew setup complete!"

@@ -1,0 +1,25 @@
+################################################################
+# mac app store installer                                      #
+################################################################
+
+brew "mas"
+
+################################################################
+# apps                                                         #
+################################################################
+
+mas "canary-mail", id: 1236045954   # email client ($) # TODO: stop using
+mas "color-picker", id: 1545870783  # color picker
+mas "dashlane", id: 517914548       # password manager ($)
+mas "numbers", id: 409203825        # spreadsheets
+mas "parcel", id: 639968404         # package tracking
+mas "peek", id: 1554235898          # quicklook enhancer ($)
+mas "twitter", id: 1482454543       # social feed
+mas "xcode", id: 497799835          # apple ide
+
+################################################################
+# safari extensions                                            #
+################################################################
+
+mas "duckduckgo", id: 1482920575    # safari tracker blocker
+mas "magic-lasso", id: 1198047227   # safari ad blocker

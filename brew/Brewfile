@@ -1,8 +1,7 @@
 ################################################################
-# setup (required)                                             #
+# homebrew taps                                                #
 ################################################################
 
-# homebrew taps #
 tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -13,21 +12,21 @@ tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 # tap "homebrew/services"
 
-# mac app store installer #
-brew "mas"
-
 ################################################################
 # core formulae                                                #
 ################################################################
 
-# cli #
+# brew "asdf"                     # runtime version manager
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
+# brew "cocoapods"                # native apple development
+brew "deno"                     # js/ts runtime
 brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
 # brew "eget"                     # pre-built binary installer
 brew "exa"                      # ls alternative
 brew "exercism"                 # learn code through exercises
+brew "fnm"                      # node version manager
 # brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
 brew "git"                      # version control system
@@ -35,42 +34,35 @@ brew "glow"                     # terminal markdown viewer
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
 brew "macchina"                 # system info
-brew "m-cli"                    # macos cli
 brew "ncdu"                     # disk space analyzer
 brew "noti"                     # trigger macos notifications
 # brew "nushell"                  # modern shell
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
 brew "pipx"                     # globally isolated pip installs
+brew "pnpm"                     # node package installer
 brew "podman"                   # containerization
+# brew "postgresql"               # postgres DB
+brew "pyenv"                    # python version manager # TODO: switch to asdf
+# brew "rbenv"                    # ruby version manager # TODO: switch to asdf
+brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
 brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
 brew "travis"                   # travis ci cli
+# brew "vercel-cli"               # deployments and hosting
+# brew "viddy"                    # watch alternative
+# brew "vue-cli"                  # vue.js tooling cli
+# brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
 brew "zsh-autosuggestions"      # zsh autosuggestions
 brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 
-# dev #
-# brew "asdf"                     # runtime version manager
-# brew "cocoapods"                # native apple development
-brew "deno"                     # js/ts runtime
-brew "fnm"                      # node version manager
-# brew "nodenv"                   # node version manager
-brew "pnpm"                     # node package installer
-# brew "postgresql"               # postgres DB
-brew "pyenv"                    # python version manager
-# brew "rbenv"                    # ruby version manager
-brew "rustup-init"              # rust toolchain installer
-# brew "vercel-cli"               # deployments and hosting
-# brew "vue-cli"                  # vue.js tooling cli
-
 ################################################################
 # casks                                                        #
 ################################################################
 
-# apps #
 cask "appcleaner"               # app uninstaller
 cask "bartender"                # menu bar organizer ($)
 cask "cleanshot"                # screen captures ($)
@@ -85,7 +77,6 @@ cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
 cask "geekbench"                # system benchmarking
 cask "github"                   # git client
-# cask "hazel"                    # file automation ($$)
 # cask "httpie"                   # rest client (not yet available)
 cask "hush"                     # safari content blocker
 cask "hyper"                    # terminal emulator
@@ -93,31 +84,27 @@ cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "linear-linear"            # issue tracker
 cask "mactracker"               # apple product info
+cask "minecraft"                # minecraft launcher
 cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
+# cask "openemu"                  # game emulator
 cask "orion"                    # safari web browser clone
 cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
 cask "rectangle"                # window management
+# cask "retroarch"                # game emulator
 cask "signal"                   # encrypted messaging
 # cask "spacedrive"               # file database (not yet available)
 cask "spotify"                  # music and podcasts
+cask "temurin"                  # jdk
 cask "todoist"                  # task tracker
+cask "trunk-io"                 # devex lint and merge toolset
 cask "utm"                      # virtualization
 cask "vscodium"                 # editor
 # cask "warp"                     # terminal emulator
-
-# dev #
-cask "temurin"                  # jdk
-cask "trunk-io"                 # devex lint and merge toolset
-
-# games #
-cask "minecraft"                # minecraft launcher
-# cask "openemu"                  # game emulator
-# cask "retroarch"                # game emulator
 
 ################################################################
 # cask-drivers                                                 #
@@ -141,42 +128,15 @@ cask "font-fira-code-nerd-font"
 cask "font-inter"
 
 ################################################################
-# mas                                                          #
-################################################################
-
-# apps #
-mas "canary-mail", id: 1236045954   # email client ($)
-mas "color-picker", id: 1545870783  # color picker
-mas "dashlane", id: 517914548       # password manager ($)
-mas "duckduckgo", id: 1482920575    # safari tracker blocker
-mas "magic-lasso", id: 1198047227   # safari ad blocker
-mas "numbers", id: 409203825        # spreadsheets
-mas "parcel", id: 639968404         # package tracking
-mas "peek", id: 1554235898          # quicklook enhancer ($)
-mas "twitter", id: 1482454543       # social feed
-
-# dev #
-mas "xcode", id: 497799835          # apple ide
-
-################################################################
 # custom taps                                                  #
 ################################################################
 
-tap "boldandbrad/homebrew-tap"
-brew "makey-cli"                    # cli passkey maker
-
-cask "hpedrorodrigues/tools/dockutil"  # macOS dock manager (temporary cask tap due to issues with official formula)
-
-tap "snyk/tap"
-brew "snyk"                       # code vulnerability scanner
-
-tap "superatomic/bundle-extensions" # additional brew commands
-
-tap "teamookla/speedtest"
-brew "speedtest"                    # cli internet speed tester
-
-tap "zero-sh/tap"
-brew "apply-user-defaults"          # macos defaults installer
+brew "boldandbrad/homebrew-tap/makey-cli" # cli passkey maker
+cask "hpedrorodrigues/tools/dockutil"     # macOS dock manager (temporary cask tap due to issues with official formula)
+brew "snyk/tap/snyk"                      # code vuln  scanner
+tap "superatomic/bundle-extensions"       # extra  brew commands
+brew "teamookla/speedtest/speedtest"      # internet speed tester
+tap "zero-sh/tap/apply-user-defaults"     # macos defaults installer
 
 ################################################################
 # new additions (via "brew add")                               #

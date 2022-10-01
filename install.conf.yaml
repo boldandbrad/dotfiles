@@ -22,6 +22,7 @@
     ~/.gitignore: git/gitignore
     ~/.hyper.js: hyper/hyper.js
     ~/Library/Application Support/VSCodium/User/settings.json: vscodium/settings.json
+    ~/.Masfile: brew/Masfile
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc

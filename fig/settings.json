@@ -1,6 +1,6 @@
 {
   "autocomplete.fontFamily": "Anonymous Pro",
-  "autocomplete.fontSize": 12,
+  "autocomplete.fontSize": 14,
   "autocomplete.height": 140,
   "autocomplete.scrollWrapAround": true,
   "autocomplete.theme": "github-dark",
