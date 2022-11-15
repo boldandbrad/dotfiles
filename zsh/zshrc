@@ -1,18 +1,14 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # load dotfiles
-for DOTFILE in ~/.config/zsh/.{aliases,functions,zoptions}; do
+for DOTFILE in ~/.config/zsh/.{aliases,functions,options}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
-fi
-
-# initialize rbenv
-if (( $+commands[rbenv] )); then
-  eval "$(rbenv init - zsh)"
 fi
 
 # fnm
@@ -28,10 +24,8 @@ if (( $+commands[brew] )); then
   # brew autocompletion
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  # zsh auto suggestions
+  # zsh auto suggestions and syntax highlighting
   . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # zsh syntax highlighting
   . $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   autoload -Uz compinit

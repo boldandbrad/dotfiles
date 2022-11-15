@@ -1,3 +1,6 @@
+
+format = """$env_var  > $all"""
+
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
@@ -13,4 +16,10 @@ style = "bold green"
 
 [shell]
 style = "purple"
+disabled = false
+
+# Shows an icon that should be included by zshrc script based on the distribution or os
+[env_var.DISTRO_ICON]
+format = '[$env_value](white)'
+variable = "DISTRO_ICON"
 disabled = false
