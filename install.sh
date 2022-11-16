@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# setup or validate a new macOS env
+# setup or validate a new env
 
 # quit on first failure
 set -e
@@ -41,6 +41,19 @@ if [[ $(uname) == "Darwin" ]]; then
   echo
   echo "Installation and setup complete!"
   echo "Restart for all changes to take effect - sudo shutdown -r now"
+fi
+
+if [[ $(uname) == "Linux" ]]; then
+  echo "Setting up new linux env..."
+  export DOTFILES=$(pwd)
+  export GH_USER="boldandbrad"
+
+  # install apps and packages
+  $DOTFILES/pi/install.sh
+
+  # install dotfiles
+  echo "\nInstalling dotfiles..."
+  dotbot -c $DOTFILES/install-rpi.conf.yaml
 fi
 
 set +e

@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ["~"]
+
+- create:
+    - ~/Developer
+    - ~/Setup
+
+- link:
+    # ~/.bashrc: bash/bashrc
+    # ~/.config/starship/starship.toml: starship/starship.toml
+    # ~/.config/zsh/.aliases: zsh/aliases
+    # ~/.config/zsh/.functions: zsh/functions
+    # ~/.config/zsh/.options: zsh/options
+    # ~/.gitconfig: git/gitconfig
+    # ~/.gitignore: git/gitignore
+    ~/.config/VSCodium/User/settings.json: vscodium/settings.json
+    # ~/.zprofile: zsh/zprofile
+    # ~/.zshenv: zsh/zshenv
+    # ~/.zshrc: zsh/zshrc
