@@ -10,13 +10,12 @@ tap "homebrew/aliases"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
-# tap "homebrew/services"
+tap "homebrew/services"
 
 ################################################################
 # core formulae                                                #
 ################################################################
 
-# brew "asdf"                     # runtime version manager
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
 # brew "cocoapods"                # native apple development
@@ -27,15 +26,13 @@ brew "dotbot"                   # dotfile manager
 brew "exa"                      # ls alternative
 brew "exercism"                 # learn code through exercises
 brew "fnm"                      # node version manager
-# brew "fzf"                      # cli fuzzy finder
 brew "gh"                       # github cli
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
-brew "macchina"                 # system info
+# brew "lefthook"                 # git hook manager
 brew "ncdu"                     # disk space analyzer
-brew "noti"                     # trigger macos notifications
 # brew "nushell"                  # modern shell
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
@@ -43,8 +40,7 @@ brew "pipx"                     # globally isolated pip installs
 brew "pnpm"                     # node package installer
 brew "podman"                   # containerization
 # brew "postgresql"               # postgres DB
-brew "pyenv"                    # python version manager # TODO: switch to asdf
-# brew "rbenv"                    # ruby version manager # TODO: switch to asdf
+brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
 brew "starship"                 # cross-shell prompt
@@ -65,23 +61,26 @@ brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 
 cask "appcleaner"               # app uninstaller
 cask "bartender"                # menu bar organizer ($)
+# cask "bricklink-studio"         # lego designer
 cask "cleanshot"                # screen captures ($)
 # cask "codeedit"                 # editor (not yet available)
 cask "commandq"                 # delayed app quits ($)
 # cask "cryptomator"              # cloud data encryption
-cask "devutils"                 # dev utility suite ($)
+# cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
 cask "eloston-chromium"         # ungoogled chromium browser
+# cask "equinox"                  # dynamic wallpapers
 cask "eul"                      # menu bar system stats
 cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
-cask "geekbench"                # system benchmarking
+# cask "geekbench"                # system benchmarking
 cask "github"                   # git client
-# cask "httpie"                   # rest client (not yet available)
+cask "httpie"                   # rest client
 cask "hush"                     # safari content blocker
 cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
+# cask "kitty"                    # terminal emulator
 cask "linear-linear"            # issue tracker
 cask "mactracker"               # apple product info
 cask "minecraft"                # minecraft launcher
@@ -89,12 +88,10 @@ cask "numi"                     # notepad calculator ($?)
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
 # cask "openemu"                  # game emulator
-cask "orion"                    # safari web browser clone
 cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
-cask "rectangle"                # window management
 # cask "retroarch"                # game emulator
 cask "signal"                   # encrypted messaging
 # cask "spacedrive"               # file database (not yet available)
@@ -104,7 +101,6 @@ cask "todoist"                  # task tracker
 cask "trunk-io"                 # devex lint and merge toolset
 cask "utm"                      # virtualization
 cask "vscodium"                 # editor
-# cask "warp"                     # terminal emulator
 
 ################################################################
 # cask-drivers                                                 #
@@ -112,7 +108,6 @@ cask "vscodium"                 # editor
 
 # cask "elgato-game-capture-hd"   # elgato peripheral suite
 cask "logitech-options"         # logitech peripheral manager
-# cask "sonos"                    # sonos sound system manager
 
 ################################################################
 # cask-fonts                                                   #
@@ -133,12 +128,10 @@ cask "font-inter"
 
 brew "boldandbrad/homebrew-tap/makey-cli" # cli passkey maker
 cask "hpedrorodrigues/tools/dockutil"     # macOS dock manager (temporary cask tap due to issues with official formula)
-brew "snyk/tap/snyk"                      # code vuln  scanner
-tap "superatomic/bundle-extensions"       # extra  brew commands
-brew "teamookla/speedtest/speedtest"      # internet speed tester
-tap "zero-sh/tap/apply-user-defaults"     # macos defaults installer
+brew "snyk/tap/snyk"                      # code vuln scanner
+tap "superatomic/bundle-extensions"       # extra brew commands
+brew "zero-sh/homebrew-tap/apply-user-defaults" # macos defaults installer
 
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
-
