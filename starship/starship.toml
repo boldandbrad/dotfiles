@@ -1,25 +1,41 @@
 
-format = """$env_var  > $all"""
+format = '''$env_var \($shell\) at $all'''
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
 
 [directory]
 style = "bold blue"
+read_only = " "
 
 [git_branch]
+symbol = " "
 style = "bold white"
 
+[hostname]
+ssh_symbol = "  "
+
+[package]
+symbol = "  "
+
 [python]
+symbol = "  "
 style = "bold green"
+
+[rust]
+symbol = "  "
 
 [shell]
 style = "purple"
+format = "[$indicator]($style)"
 disabled = false
+
+[sudo]
+symbol = "  "
 
 # Shows an icon that should be included by zshrc script based on the distribution or os
 [env_var.DISTRO_ICON]
-format = '[$env_value](white)'
+format = '''[$env_value](bold white)'''
 variable = "DISTRO_ICON"
 disabled = false

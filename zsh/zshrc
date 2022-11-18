@@ -37,21 +37,14 @@ if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
 
-# pipx bash tab completions
-if (( $+commands[pipx] )); then
-  autoload -U bashcompinit
-  bashcompinit
-  eval "$(register-python-argcomplete pipx)"
-fi
-
 # auto jump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# starship prompt
-eval "$(starship init zsh)"
-
 # direnv hook
 eval "$(direnv hook zsh)"
+
+# starship prompt
+eval "$(starship init zsh)"
 
 # remove duplicates from PATH and FPATH
 typeset -U PATH
