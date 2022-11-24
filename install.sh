@@ -52,8 +52,8 @@ if [[ $(uname) == "Linux" ]]; then
   $DOTFILES/pi/install.sh
 
   # install dotfiles
-  echo "\nInstalling dotfiles..."
-  dotbot -c $DOTFILES/install-rpi.conf.yaml
+  echo "Installing dotfiles..."
+  dotbot -c $DOTFILES/install.conf.yaml
 fi
 
 set +e

@@ -6,7 +6,7 @@
 # 	source ~/.aliases
 # fi
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 eval "$(direnv hook bash)"
 eval "$(starship init bash)"

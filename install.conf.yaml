@@ -12,17 +12,32 @@
 
 - link:
     ~/.bashrc: bash/bashrc
-    ~/.Brewfile: brew/Brewfile
     ~/.config/starship/starship.toml: starship/starship.toml
     ~/.config/zsh/.aliases: zsh/aliases
     ~/.config/zsh/.functions: zsh/functions
     ~/.config/zsh/.options: zsh/options
-    ~/.fig/settings.json: fig/settings.json
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
-    ~/.hyper.js: hyper/hyper.js
-    ~/Library/Application Support/VSCodium/User/settings.json: vscodium/settings.json
-    ~/.Masfile: brew/Masfile
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
+    # mac only
+    ~/.Brewfile:
+      if: '[ `uname` = Darwin ]'
+      path: brew/Brewfile
+    ~/.Masfile:
+      if: '[ `uname` = Darwin ]'
+      path: brew/Masfile
+    ~/.fig/settings.json:
+      if: '[ `uname` = Darwin ]'
+      path: fig/settings.json
+    ~/.hyper.js:
+      if: '[ `uname` = Darwin ]'
+      path: hyper/hyper.js
+    ~/Library/Application Support/VSCodium/User/settings.json:
+      if: '[ `uname` = Darwin ]'
+      path: vscodium/settings.json
+    # linux only
+    ~/.config/VSCodium/User/settings.json:
+      if: '[ `uname` = Linux ]'
+      path: vscodium/settings.json

@@ -2,23 +2,30 @@
 sudo apt update
 sudo apt upgrade
 
+# install pipx
+if ! type pipx > /dev/null; then
+  pip install pipx
+  export PATH="~/.local/bin:$PATH"
+fi
 
-pip install pipx
-pipx install dotbot
+# install dotbot
+if ! type dotbot > /dev/null; then
+  pipx install dotbot
+fi
 
-
-# apt install autojump
-# apt install bat
-# apt install direnv
-# apt install exa
-# apt install git
-# apt install httpie
-# apt install ncdu
-# apt install podman
-# apt install yank
-# apt install zsh
-# apt install zsh-autosuggestions
-# apt install zsh-syntax-highlighting
+# install apt packages
+apt install -y autojump
+apt install -y bat
+apt install -y direnv
+apt install -y exa
+# apt install -y git
+# apt install -y httpie
+# apt install -y ncdu
+# apt install -y podman
+apt install -y yank
+apt install -y zsh
+apt install -y zsh-autosuggestions
+apt install -y zsh-syntax-highlighting
 
 # apt install snapd
 

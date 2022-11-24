@@ -50,4 +50,4 @@ export DISTRO_ICON="$ICON"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
