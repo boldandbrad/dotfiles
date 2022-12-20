@@ -1,5 +1,5 @@
 
-format = '''$env_var \($shell\) at $all'''
+format = '''$os\($shell\) at $all'''
 
 [character]
 success_symbol = "[](bold green)"
@@ -15,6 +15,9 @@ style = "bold white"
 
 [hostname]
 ssh_symbol = "  "
+
+[os]
+disabled = false
 
 [package]
 symbol = "  "
@@ -33,9 +36,3 @@ disabled = false
 
 [sudo]
 symbol = "  "
-
-# Shows an icon that should be included by zshrc script based on the distribution or os
-[env_var.DISTRO_ICON]
-format = '''[$env_value](bold white)'''
-variable = "DISTRO_ICON"
-disabled = false

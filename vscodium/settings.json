@@ -57,6 +57,7 @@
     "**/node_modules": true
   },
   "search.showLineNumbers": true,
+  "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "Hyper.app",
   "terminal.integrated.copyOnSelection": true,
@@ -78,6 +79,9 @@
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 12,
   // Language specific configs
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "[python]": {
     "editor.tabSize": 4
   },
@@ -112,8 +116,5 @@
   "todo-tree.regex.regex": "((//|#|>|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
   "todo-tree.tree.groupedByTag": true,
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
-  "todo-tree.tree.showCountsInTree": true,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  "todo-tree.tree.showCountsInTree": true
 }

@@ -6,7 +6,7 @@ module.exports = {
   // prefer default configs except
   config: {
     fontSize: 16,
-    fontFamily: '"Anonymice Nerd Font", "FiraCode Nerd Font", "Fira Code", monospace',
+    fontFamily: '"Anonymice Nerd Font", monospace',
     copyOnSelect: true,
 
     // hyperTransparentDynamic: {
