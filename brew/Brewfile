@@ -18,11 +18,9 @@ tap "homebrew/services"
 
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
-# brew "cocoapods"                # native apple development
-brew "deno"                     # js/ts runtime
 brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
-# brew "eget"                     # pre-built binary installer
+brew "dust"                     # disk space analyzer
 brew "exa"                      # ls alternative
 brew "exercism"                 # learn code through exercises
 brew "fnm"                      # node version manager
@@ -32,7 +30,6 @@ brew "glow"                     # terminal markdown viewer
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
 # brew "lefthook"                 # git hook manager
-brew "ncdu"                     # disk space analyzer
 # brew "nushell"                  # modern shell
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
@@ -48,7 +45,6 @@ brew "tldr"                     # community driven man pages
 brew "travis"                   # travis ci cli
 # brew "vercel-cli"               # deployments and hosting
 # brew "viddy"                    # watch alternative
-# brew "vue-cli"                  # vue.js tooling cli
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
@@ -59,28 +55,23 @@ brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 # casks                                                        #
 ################################################################
 
-cask "appcleaner"               # app uninstaller
 cask "bartender"                # menu bar organizer ($)
 # cask "bricklink-studio"         # lego designer
 cask "cleanshot"                # screen captures ($)
 # cask "codeedit"                 # editor (not yet available)
 cask "commandq"                 # delayed app quits ($)
-# cask "cryptomator"              # cloud data encryption
-# cask "devutils"                 # dev utility suite ($)
 cask "discord"                  # digital communities
-cask "eloston-chromium"         # ungoogled chromium browser
+# cask "eloston-chromium"         # ungoogled chromium browser
 # cask "equinox"                  # dynamic wallpapers
 cask "eul"                      # menu bar system stats
 cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
-# cask "geekbench"                # system benchmarking
 cask "github"                   # git client
 cask "httpie"                   # rest client
 cask "hush"                     # safari content blocker
 cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
-# cask "kitty"                    # terminal emulator
 cask "linear-linear"            # issue tracker
 cask "mactracker"               # apple product info
 cask "minecraft"                # minecraft launcher
@@ -90,6 +81,7 @@ cask "obsidian"                 # markdown knowledge base
 # cask "openemu"                  # game emulator
 cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
+cask "protonvpn"                # vpn
 cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast"                  # spotlight replacement
 # cask "retroarch"                # game emulator
@@ -99,7 +91,6 @@ cask "spotify"                  # music and podcasts
 cask "temurin"                  # jdk
 cask "todoist"                  # task tracker
 cask "trunk-io"                 # devex lint and merge toolset
-cask "utm"                      # virtualization
 cask "vscodium"                 # editor
 
 ################################################################
@@ -117,10 +108,8 @@ cask "font-anonymice-nerd-font"
 cask "font-anonymous-pro"
 cask "font-cascadia-code"
 # cask "font-caskaydia-cove-nerd-font"
-cask "font-camingocode"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
-cask "font-inter"
 
 ################################################################
 # custom taps                                                  #

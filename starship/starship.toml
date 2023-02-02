@@ -10,7 +10,7 @@ style = "bold blue"
 read_only = " "
 
 [git_branch]
-symbol = " "
+symbol = " "
 style = "bold white"
 
 [hostname]

@@ -47,9 +47,6 @@ echo "Setting up Homebrew aliases..."
 brew alias check='bundle check -v'
 brew alias apply='bundle install'
 brew alias prune='bundle cleanup'
-brew alias stale='outdated'
-brew alias purge='autoremove'
-brew alias clean='cleanup'
 brew alias mas="bundle install --file=~/.Masfile"
 
 echo

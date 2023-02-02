@@ -8,7 +8,6 @@ brew "mas"
 # apps                                                         #
 ################################################################
 
-mas "color-picker", id: 1545870783  # color picker
 mas "dashlane", id: 517914548       # password manager ($)
 mas "numbers", id: 409203825        # spreadsheets
 mas "parcel", id: 639968404         # package tracking

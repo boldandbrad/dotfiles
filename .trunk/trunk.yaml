@@ -1,10 +1,24 @@
 version: 0.1
 cli:
-  version: 0.16.1-beta
+  version: 1.4.1
 lint:
   enabled:
+    - shellcheck@0.9.0
+    - shfmt@3.5.0
     - git-diff-check@SYSTEM
-    - gitleaks@8.11.0
-    - markdownlint@0.32.1
-    - prettier@2.7.1
-    - taplo@release-taplo-cli-0.6.8
+    - gitleaks@8.15.3
+    - markdownlint@0.33.0
+    - prettier@2.8.3
+    - taplo@0.7.0
+actions:
+  enabled:
+    - trunk-upgrade-available
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.9
+      uri: https://github.com/trunk-io/plugins
+runtimes:
+  enabled:
+    - go@1.18.3
+    - node@18.12.1
