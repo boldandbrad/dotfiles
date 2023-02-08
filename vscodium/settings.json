@@ -116,5 +116,9 @@
   "todo-tree.regex.regex": "((//|#|>|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
   "todo-tree.tree.groupedByTag": true,
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
-  "todo-tree.tree.showCountsInTree": true
+  "todo-tree.tree.showCountsInTree": true,
+  "vscord.status.resetElapsedTimePerFile": true,
+  "vscord.ignore.workspaces": [
+    "~/Developer/local/"
+  ]
 }
