@@ -9,6 +9,7 @@
 - create:
     - ~/Developer
     - ~/Setup
+    - ~/.config/brew-aliases
 
 - link:
     ~/.bashrc: bash/bashrc
@@ -16,16 +17,16 @@
     ~/.config/zsh/.aliases: zsh/aliases
     ~/.config/zsh/.functions: zsh/functions
     ~/.config/zsh/.options: zsh/options
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore
+    ~/.config/git/config: git/gitconfig
+    ~/.config/git/gitignore: git/gitignore
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     # mac only
-    ~/.Brewfile:
+    ~/.config/homebrew/Brewfile:
       if: '[ `uname` = Darwin ]'
       path: brew/Brewfile
-    ~/.Masfile:
+    ~/.config/homebrew/Masfile:
       if: '[ `uname` = Darwin ]'
       path: brew/Masfile
     ~/.fig/settings.json:

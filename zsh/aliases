@@ -18,10 +18,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
 alias ap="cd /Applications"
-alias dc="cd ~/Documents"
-alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dv="cd ~/Developer"
+alias dc="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias sp="cd ~/Setup"
 alias dots="cd $DOTFILES"
 
 # other replacements
@@ -38,7 +39,7 @@ alias finder="open ." # open pwd in Finder
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # dotfile refresh
-alias dotbot="dotbot -c $DOTFILES/install.conf.yaml"
+alias refresh="dotbot -c $DOTFILES/install.conf.yaml"
 
 # gh repo clone refresh
 alias clone="source $DOTFILES/gh/install.zsh"

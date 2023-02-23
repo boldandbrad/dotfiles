@@ -1,6 +1,6 @@
 export EDITOR=codium
 export DOTFILES=~/Setup/dotfiles
-export HOMEBREW_BUNDLE_FILE=~/.Brewfile
+export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
 export PNPM_HOME=~/Library/pnpm
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 

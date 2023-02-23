@@ -81,19 +81,19 @@ dotbot
 
 ### Homebrew
 
-Check if all `~/.Brewfile` dependencies are installed
+Check if all `~/.config/homebrew/Brewfile` dependencies are installed
 
 ```zsh
 brew check
 ```
 
-Install everything listed in `~/.Brewfile`
+Install everything listed in `~/.config/homebrew/Brewfile`
 
 ```zsh
 brew apply
 ```
 
-Uninstall everything not listed in `~/.Brewfile`
+Uninstall everything not listed in `~/.config/homebrew/Brewfile`
 
 ```zsh
 brew prune

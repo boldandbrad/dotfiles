@@ -23,6 +23,9 @@ if [[ $(uname) == "Darwin" ]]; then
   echo "\nInstalling dotfiles..."
   dotbot -c $DOTFILES/install.conf.yaml
 
+  # setup homebrew aliases
+  $DOTFILES/brew/aliases.zsh
+
   # change default shell to homebrew zsh for future sessions
   $DOTFILES/zsh/install.zsh
 

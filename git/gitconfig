@@ -7,7 +7,7 @@
 	eol = lf
 	autocrlf = input
 	editor = codium --wait
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/gitignore
 [alias]
 	a = add
 	aa = add --all

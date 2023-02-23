@@ -62,7 +62,6 @@ cask "cleanshot"                # screen captures ($)
 cask "commandq"                 # delayed app quits ($)
 cask "discord"                  # digital communities
 # cask "eloston-chromium"         # ungoogled chromium browser
-# cask "equinox"                  # dynamic wallpapers
 cask "eul"                      # menu bar system stats
 cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
@@ -124,3 +123,5 @@ brew "zero-sh/homebrew-tap/apply-user-defaults" # macos defaults installer
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
+
+cask "balenaetcher"
