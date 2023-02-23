@@ -43,11 +43,4 @@ if ! brew autoupdate status | grep "running"; then
 fi
 
 echo
-echo "Setting up Homebrew aliases..."
-brew alias check='bundle check -v'
-brew alias apply='bundle install'
-brew alias prune='bundle cleanup'
-brew alias mas="bundle install --file=~/.Masfile"
-
-echo
 echo "Homebrew setup complete!"
