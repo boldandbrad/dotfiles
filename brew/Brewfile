@@ -29,7 +29,6 @@ brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
-# brew "lefthook"                 # git hook manager
 # brew "nushell"                  # modern shell
 # brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
@@ -37,12 +36,12 @@ brew "pipx"                     # globally isolated pip installs
 brew "pnpm"                     # node package installer
 brew "podman"                   # containerization
 # brew "postgresql"               # postgres DB
+brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
 brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
-brew "travis"                   # travis ci cli
 # brew "vercel-cli"               # deployments and hosting
 # brew "viddy"                    # watch alternative
 # brew "xxh"                      # ssh shell preservation
@@ -89,7 +88,6 @@ cask "signal"                   # encrypted messaging
 cask "spotify"                  # music and podcasts
 cask "temurin"                  # jdk
 cask "todoist"                  # task tracker
-cask "trunk-io"                 # devex lint and merge toolset
 cask "vscodium"                 # editor
 
 ################################################################
