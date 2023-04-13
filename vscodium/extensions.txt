@@ -11,13 +11,12 @@ IBM.output-colorizer
 KevinRose.vsc-python-indent
 LeonardSSH.vscord
 mechatroner.rainbow-csv
-mrmlnc.vscode-duplicate
 ms-python.python
-nick-rudenko.back-n-forth
 njpwerner.autodocstring
 rust-lang.rust-analyzer
 shardulm94.trailing-spaces
 skellock.just
+tauri-apps.tauri-vscode
 usernamehw.errorlens
 Vue.volar
 withfig.fig

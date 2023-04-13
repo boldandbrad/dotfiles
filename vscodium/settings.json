@@ -18,9 +18,7 @@
   "editor.linkedEditing": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
@@ -41,7 +39,6 @@
       }
     ]
   },
-  // "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "indent",
   "explorer.confirmDragAndDrop": false,
@@ -78,7 +75,6 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 12,
-  // Language specific configs
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -86,9 +82,7 @@
     "editor.tabSize": 4
   },
   "[markdown]": {
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.tabSize": 4
   },
   "[rust]": {
@@ -96,20 +90,11 @@
   },
   "python.envFile": "${workspaceFolder}/.venv",
   "python.formatting.provider": "black",
-  // Extension configs
-  "back-n-forth.iconStyle": "chevron",
-  "back-n-forth.withLastEditLocation": true,
   "discord.suppressNotifications": true,
   "errorLens.fontFamily": "Anonymous Pro",
   "errorLens.onSave": true,
   "eslint.enable": true,
-  "eslint.validate": [
-    "vue",
-    "typescript",
-    "html",
-    "javascript"
-  ],
-  "liveServer.settings.donotShowInfoMsg": true,
+  "eslint.validate": ["vue", "typescript", "html", "javascript"],
   "markdownlint.run": "onSave",
   "todo-tree.tree.expanded": true,
   "todo-tree.general.enableFileWatcher": true,
@@ -118,7 +103,5 @@
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
   "todo-tree.tree.showCountsInTree": true,
   "vscord.status.resetElapsedTimePerFile": true,
-  "vscord.ignore.workspaces": [
-    "~/Developer/local/"
-  ]
+  "vscord.ignore.workspaces": ["~/Developer/local/"]
 }
