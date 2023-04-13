@@ -40,6 +40,7 @@ brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
+brew "semgrep"                  # code vuln scanner
 brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
 # brew "vercel-cli"               # deployments and hosting
@@ -114,7 +115,6 @@ cask "font-fira-code-nerd-font"
 
 brew "boldandbrad/homebrew-tap/makey-cli" # cli passkey maker
 cask "hpedrorodrigues/tools/dockutil"     # macOS dock manager (temporary cask tap due to issues with official formula)
-brew "snyk/tap/snyk"                      # code vuln scanner
 tap "superatomic/bundle-extensions"       # extra brew commands
 brew "zero-sh/homebrew-tap/apply-user-defaults" # macos defaults installer
 
