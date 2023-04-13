@@ -1,4 +1,3 @@
-#!/bin/zsh
 
 # upgrade pip on all pyenv python versions
 function pipup() {
