@@ -29,9 +29,6 @@
     ~/.config/homebrew/Masfile:
       if: "[ `uname` = Darwin ]"
       path: brew/Masfile
-    ~/.fig/settings.json:
-      if: "[ `uname` = Darwin ]"
-      path: fig/settings.json
     ~/.hyper.js:
       if: "[ `uname` = Darwin ]"
       path: hyper/hyper.js
