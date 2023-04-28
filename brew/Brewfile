@@ -4,10 +4,8 @@
 
 tap "homebrew/core"
 tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/aliases"
-tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
@@ -55,15 +53,14 @@ brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 # casks                                                        #
 ################################################################
 
+cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
 cask "bartender"                # menu bar organizer ($)
 # cask "bricklink-studio"         # lego designer
 cask "cleanshot"                # screen captures ($)
-# cask "codeedit"                 # editor (not yet available)
-cask "commandq"                 # delayed app quits ($)
+cask "codeedit"                 # editor
 cask "discord"                  # digital communities
-# cask "eloston-chromium"         # ungoogled chromium browser
+cask "eloston-chromium"         # ungoogled chromium browser
 cask "eul"                      # menu bar system stats
-cask "fig"                      # terminal autocomplete
 cask "firefox"                  # web browser
 cask "github"                   # git client
 cask "httpie"                   # rest client
@@ -72,31 +69,23 @@ cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "linear-linear"            # issue tracker
+cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 cask "minecraft"                # minecraft launcher
 cask "numi"                     # notepad calculator ($?)
-# cask "obs"                      # streaming suite
+cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
-# cask "openemu"                  # game emulator
 cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "protonvpn"                # vpn
-cask "raspberry-pi-imager"      # pi boot drive imager
+cask "raspberry-pi-imager", args: { appdir: "~/Applications" } # pi boot drive imager
 cask "raycast"                  # spotlight replacement
-# cask "retroarch"                # game emulator
-cask "signal"                   # encrypted messaging
-# cask "spacedrive"               # file database (not yet available)
+# cask "retroarch"                # video game emulation launcher
 cask "spotify"                  # music and podcasts
+cask "steam"                    # video game marketplace and launcher
 cask "temurin"                  # jdk
 cask "todoist"                  # task tracker
 cask "vscodium"                 # editor
-
-################################################################
-# cask-drivers                                                 #
-################################################################
-
-# cask "elgato-game-capture-hd"   # elgato peripheral suite
-cask "logitech-options"         # logitech peripheral manager
 
 ################################################################
 # cask-fonts                                                   #
@@ -113,13 +102,12 @@ cask "font-fira-code-nerd-font"
 # custom taps                                                  #
 ################################################################
 
-brew "boldandbrad/homebrew-tap/makey-cli" # cli passkey maker
-cask "hpedrorodrigues/tools/dockutil"     # macOS dock manager (temporary cask tap due to issues with official formula)
-tap "superatomic/bundle-extensions"       # extra brew commands
+brew "boldandbrad/tap/makey-cli"        # cli passkey maker
+brew "boldandbrad/tap/meeple-cli"       # board game collection manager
+cask "hpedrorodrigues/tools/dockutil"   # macOS dock manager (temporary cask tap due to issues with official formula)
+tap "superatomic/bundle-extensions"     # extra brew commands
 brew "zero-sh/homebrew-tap/apply-user-defaults" # macos defaults installer
 
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
-
-cask "balenaetcher"

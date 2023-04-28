@@ -1,10 +1,10 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # load dotfiles
 for DOTFILE in ~/.config/zsh/.{aliases,functions,options}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
+
+# meeple-cli completions
+eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
 
 # initialize pyenv
 if (( $+commands[pyenv] )); then
@@ -15,9 +15,6 @@ fi
 if (( $+commands[fnm] )); then
   eval "$(fnm env --use-on-cd)"
 fi
-
-# travis tab completions
-[ ! -s ~/.travis/travis.sh ] || . ~/.travis/travis.sh
 
 # brew setup
 if (( $+commands[brew] )); then
@@ -49,6 +46,3 @@ eval "$(starship init zsh)"
 # remove duplicates from PATH and FPATH
 typeset -U PATH
 typeset -U FPATH
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
