@@ -37,10 +37,4 @@ echo "Running brew doctor..."
 brew doctor
 
 echo
-echo "Setting up Homebrew autoupdate..."
-if ! brew autoupdate status | grep "running"; then
-  brew autoupdate start --cleanup
-fi
-
-echo
 echo "Homebrew setup complete!"
