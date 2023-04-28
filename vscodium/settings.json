@@ -60,9 +60,6 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.fontFamily": "Anonymice Nerd Font",
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
   "trailing-spaces.trimOnSave": true,
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.editor.closeOnFileDelete": true,
@@ -103,5 +100,10 @@
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
   "todo-tree.tree.showCountsInTree": true,
   "vscord.status.resetElapsedTimePerFile": true,
-  "vscord.ignore.workspaces": ["~/Developer/local/"]
+  "vscord.ignore.workspaces": ["~/Developer/local/"],
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconsEnabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

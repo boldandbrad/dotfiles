@@ -3,7 +3,7 @@ bradlc.vscode-tailwindcss
 bungcip.better-toml
 csstools.postcss
 DavidAnson.vscode-markdownlint
-dbaeumer.vscode-eslint
+esbenp.prettier-vscode
 GitHub.github-vscode-theme
 Gruntfuggly.todo-tree
 Hamza-Aziane.obsidian-dark
@@ -19,5 +19,4 @@ skellock.just
 tauri-apps.tauri-vscode
 usernamehw.errorlens
 Vue.volar
-withfig.fig
 yzhang.markdown-all-in-one
