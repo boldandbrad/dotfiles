@@ -8,22 +8,11 @@ module.exports = {
     fontSize: 16,
     fontFamily: '"Anonymice Nerd Font", monospace',
     copyOnSelect: true,
-
-    // hyperTransparentDynamic: {
-    //   alpha: 0.55 // default 50%
-    // },
   },
 
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
-  plugins: [
-    // "hyper-font-ligatures",
-    "hyper-github-dark-default",
-    // "hyper-transparent-dynamic",
-    "hyperterm-paste",
-    "hyperterm-close-on-left",
-    "hyper-quit",
-  ],
+  plugins: ["hyper-github-dark-default", "hyper-quit"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
