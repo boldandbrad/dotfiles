@@ -7,13 +7,13 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
-tap "homebrew/command-not-found"
 tap "homebrew/services"
 
 ################################################################
 # core formulae                                                #
 ################################################################
 
+brew "antigen"                  # zsh plugin manager
 brew "autojump"                 # recent directory hopper
 brew "bat"                      # cat alternative
 brew "direnv"                   # directory level envs
@@ -46,8 +46,6 @@ brew "tldr"                     # community driven man pages
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
-brew "zsh-autosuggestions"      # zsh autosuggestions
-brew "zsh-syntax-highlighting"  # zsh syntax highlighting
 
 ################################################################
 # casks                                                        #
@@ -91,8 +89,8 @@ cask "vscodium"                 # editor
 # cask-fonts                                                   #
 ################################################################
 
-cask "font-anonymice-nerd-font"
 cask "font-anonymous-pro"
+cask "font-anonymice-nerd-font"
 cask "font-cascadia-code"
 # cask "font-caskaydia-cove-nerd-font"
 cask "font-fira-code"
