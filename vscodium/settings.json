@@ -105,5 +105,6 @@
   "errorLens.gutterIconsEnabled": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler"
 }
