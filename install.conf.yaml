@@ -13,6 +13,7 @@
 
 - link:
     ~/.bashrc: bash/bashrc
+    ~/.config/bat/config: bat/config.conf
     ~/.config/starship/starship.toml: starship/starship.toml
     ~/.config/zsh/.aliases: zsh/aliases
     ~/.config/zsh/.functions: zsh/functions
