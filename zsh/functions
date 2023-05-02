@@ -67,18 +67,3 @@ function groot() {
 function trash() {
   mv "$@" ~/.Trash
 }
-
-# use iconsur to set application icons
-function icons() {
-  if type iconsur &>/dev/null; then
-    sudo iconsur set /Applications/Canary\ Mail.app
-    iconsur set /Applications/Firefox.app
-    iconsur set /Applications/Geekbench\ 5.app
-    sudo iconsur set /Applications/Magic\ Lasso.app
-    iconsur set /Applications/Minecraft.app
-    iconsur set /Applications/ProtonMail\ Bridge.app
-    iconsur set /Applications/Spotify.app
-  else
-    echo "iconsur not found. Install with 'brew install iconsur'"
-  fi
-}

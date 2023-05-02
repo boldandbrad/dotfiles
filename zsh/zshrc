@@ -4,7 +4,13 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-# pick up completions from fpath
+# brew completions
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+# meeple-cli completions
+eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
+
+# initialize zsh completions
 autoload -Uz compinit
 compinit
 
@@ -13,38 +19,28 @@ for DOTFILE in ~/.config/zsh/.{aliases,functions,options}; do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
-# meeple-cli completions
-eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
+# initialize autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && source /usr/local/etc/profile.d/autojump.sh
+
+# initialize direnv
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+
+# initialize fnm
+if (( $+commands[fnm] )); then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
 
-# fnm
-if (( $+commands[fnm] )); then
-  eval "$(fnm env --use-on-cd)"
+# initialize starship
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
 fi
-
-# brew setup
-if (( $+commands[brew] )); then
-  # brew autocompletion
-  # FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-  if [ -f "$HB_CNF_HANDLER" ]; then
-    source "$HB_CNF_HANDLER";
-  fi
-fi
-
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-# direnv hook
-eval "$(direnv hook zsh)"
-
-# starship prompt
-eval "$(starship init zsh)"
 
 # remove duplicates from PATH and FPATH
 typeset -U PATH
