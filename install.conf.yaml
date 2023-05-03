@@ -12,6 +12,7 @@
     - ~/.config/brew-aliases
 
 - link:
+    ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
     ~/.config/bat/config: bat/config.conf
     ~/.config/starship/starship.toml: starship/starship.toml
