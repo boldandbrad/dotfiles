@@ -22,7 +22,7 @@ clone_dotfiles
 
 # prompt to install dotfiles
 while true; do
-    read -p "Do you wish to install the dotfiles now? " yn
+    read -p "Do you wish to install the dotfiles now? " yn </dev/tty
     case $yn in
         [Yy]* ) source "$DOTFILE_DIR/install.sh"; break;;
         [Nn]* ) echo "Install dotfiles via '. $DOTFILE_DIR/install.sh'"; exit;;
