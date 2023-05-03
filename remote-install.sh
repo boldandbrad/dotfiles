@@ -50,6 +50,7 @@ function install_dotfiles {
       esac
   done
   # install dotfiles
+  cd $DOTFILE_DIR
   $DOTFILE_DIR/install.sh
 }
 
