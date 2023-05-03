@@ -1,10 +1,10 @@
 # dotfiles
 
+![macOS](https://badgen.net/badge/icon/macOS/blue?icon=apple&label)
+
 This is my personal dotfiles repo. I have made it open source to serve as an
 example for others. If you wish to use it, please fork and make your own
 customizations to the contained files before install.
-
-> Currently only compatible with macOS.
 
 ## Toolset
 
@@ -56,7 +56,7 @@ Install apps, tools, and dotfiles
 
 ```zsh
 cd ~/Setup/dotfiles
-./install.zsh
+./install.sh
 ```
 
 > Note that installation should be an idempotent operation. Meaning it can be

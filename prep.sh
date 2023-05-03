@@ -5,9 +5,9 @@
 
 REPOSITORY="https://github.com/boldandbrad/dotfiles.git"
 
-function pull_dotfiles {
+function clone_dotfiles {
   # TODO: check for git
-  git clone $REPOSITORY ~/Setup/dotfiles
+  git clone $REPOSITORY ~/Setup/test
 }
 
-pull_dotfiles
+clone_dotfiles
