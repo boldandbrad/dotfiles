@@ -15,6 +15,7 @@ tap "homebrew/services"
 
 brew "antigen"                  # zsh plugin manager
 brew "autojump"                 # recent directory hopper
+brew "bash"                     # updated bash
 brew "bat"                      # cat alternative
 brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
