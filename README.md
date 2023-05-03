@@ -46,17 +46,26 @@ customizations to the contained files before install.
 
 ## Install
 
-Clone this repo into `~/Setup/dotfiles`
+### Remote Installation
 
-```zsh
-git clone git://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
+> The [remote install script](./remote-install.sh) explains what it will do and prompts before doing so.
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote-install.sh)"
 ```
 
-Install apps, tools, and dotfiles
+### Manual Installation
 
-```zsh
-cd ~/Setup/dotfiles
-./install.sh
+Clone this repo into `~/Setup/dotfiles`:
+
+```sh
+git clone https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
+```
+
+Install apps, tools, and dotfiles:
+
+```sh
+cd ~/Setup/dotfiles && ./install.sh
 ```
 
 > Note that installation should be an idempotent operation. Meaning it can be

@@ -2,7 +2,7 @@
 
 # setup or validate a new env
 
-# quit on first failure
+# terminate on first failure
 set -e
 
 # only macOS is supported at this time
