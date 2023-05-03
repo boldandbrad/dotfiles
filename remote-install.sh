@@ -12,7 +12,7 @@ set -e
 
 function clone_dotfiles {
   # check for git
-  echo "Cloning dotfiles\n"
+  echo -e "Cloning dotfiles\n"
   if ! type git > /dev/null; then
     echo "git not installed."
     exit 1
@@ -25,10 +25,10 @@ clone_dotfiles
 
 # prompt to install dotfiles
 while true; do
-    read -p "\nDo you wish to install the dotfiles now? " yn </dev/tty
+    read -p "Do you wish to install the dotfiles now? " yn </dev/tty
     case $yn in
         [Yy]* ) source "$DOTFILE_DIR/install.sh"; break;;
-        [Nn]* ) echo "\tInstall dotfiles via '. $DOTFILE_DIR/install.sh'"; exit;;
-        * ) echo "Please answer yes or no.";;
+        [Nn]* ) echo -e "\tInstall dotfiles via '. $DOTFILE_DIR/install.sh'"; exit;;
+        * ) echo -e "\tPlease answer yes or no.";;
     esac
 done
