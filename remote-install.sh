@@ -7,9 +7,12 @@ REPOSITORY="https://github.com/boldandbrad/dotfiles.git"
 
 DOTFILE_DIR=~/Setup/test-dotfiles
 
+# terminate on errors
+set -e
+
 function clone_dotfiles {
   # check for git
-  echo "Cloning dotfiles"
+  echo "Cloning dotfiles\n"
   if ! type git > /dev/null; then
     echo "git not installed."
     exit 1
@@ -22,10 +25,10 @@ clone_dotfiles
 
 # prompt to install dotfiles
 while true; do
-    read -p "Do you wish to install the dotfiles now? " yn </dev/tty
+    read -p "\nDo you wish to install the dotfiles now? " yn </dev/tty
     case $yn in
         [Yy]* ) source "$DOTFILE_DIR/install.sh"; break;;
-        [Nn]* ) echo "Install dotfiles via '. $DOTFILE_DIR/install.sh'"; exit;;
+        [Nn]* ) echo "\tInstall dotfiles via '. $DOTFILE_DIR/install.sh'"; exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
