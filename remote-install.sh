@@ -6,7 +6,7 @@
 # curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote-install.sh | bash
 
 DOTFILE_REPO="https://github.com/boldandbrad/dotfiles.git"
-DOTFILE_DIR=~/Setup/test-dotfiles
+DOTFILE_DIR=~/Setup/dotfiles
 
 # terminate on first failure
 set -e
