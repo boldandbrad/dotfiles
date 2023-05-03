@@ -7,7 +7,7 @@ REPOSITORY="https://github.com/boldandbrad/dotfiles.git"
 
 function clone_dotfiles {
   # TODO: check for git
-  git clone $REPOSITORY ~/Setup/test
+  git clone $REPOSITORY ~/Setup/test-dotfiles
 }
 
 clone_dotfiles
