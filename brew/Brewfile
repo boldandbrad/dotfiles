@@ -26,10 +26,10 @@ brew "fnm"                      # node version manager
 brew "gh"                       # github cli
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
+# brew "gradle"                   # java build tool
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
 # brew "nushell"                  # modern shell
-# brew "pandoc"                   # markup document converter
 brew "pastel"                   # color manipulation
 brew "pipx"                     # globally isolated pip installs
 brew "pnpm"                     # node package installer
@@ -44,6 +44,7 @@ brew "starship"                 # cross-shell prompt
 brew "tldr"                     # community driven man pages
 # brew "vercel-cli"               # deployments and hosting
 # brew "viddy"                    # watch alternative
+# brew "volta"                    # js toolchain manager
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
