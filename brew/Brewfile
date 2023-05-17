@@ -60,7 +60,6 @@ cask "cleanshot"                # screen captures ($)
 cask "codeedit"                 # editor
 cask "discord"                  # digital communities
 cask "eloston-chromium"         # ungoogled chromium browser
-cask "eul"                      # menu bar system stats
 cask "firefox"                  # web browser
 cask "github"                   # git client
 cask "httpie"                   # rest client
@@ -82,6 +81,7 @@ cask "raspberry-pi-imager", args: { appdir: "~/Applications" } # pi boot drive i
 cask "raycast"                  # spotlight replacement
 # cask "retroarch"                # video game emulation launcher
 cask "spotify"                  # music and podcasts
+cask "stats"                    # menu bar system stats
 cask "steam"                    # video game marketplace and launcher
 cask "temurin"                  # jdk
 cask "todoist"                  # task tracker
