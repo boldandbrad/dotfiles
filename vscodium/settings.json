@@ -106,5 +106,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler"
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
+  "workbench.iconTheme": "catppuccin-mocha"
 }

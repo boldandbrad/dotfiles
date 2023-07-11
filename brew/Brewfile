@@ -2,8 +2,6 @@
 # homebrew taps                                                #
 ################################################################
 
-tap "homebrew/core"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
