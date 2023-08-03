@@ -95,7 +95,16 @@
   "markdownlint.run": "onSave",
   "todo-tree.tree.expanded": true,
   "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.regex.regex": "((//|#|>|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
   "todo-tree.tree.groupedByTag": true,
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
   "todo-tree.tree.showCountsInTree": true,
