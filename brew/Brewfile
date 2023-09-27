@@ -19,30 +19,25 @@ brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
 brew "dust"                     # disk space analyzer
 brew "exa"                      # ls alternative
-brew "exercism"                 # learn code through exercises
-brew "fnm"                      # node version manager
+brew "exercism"                 # coding exercises
+brew "ferium"                   # minecraft mod manager
 brew "gh"                       # github cli
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 # brew "gradle"                   # java build tool
 brew "httpie"                   # rest client
 brew "just"                     # project specific commands
-# brew "nushell"                  # modern shell
 brew "pastel"                   # color manipulation
-brew "pipx"                     # globally isolated pip installs
-brew "pnpm"                     # node package installer
-brew "podman"                   # containerization
+# brew "podman"                   # containerization
 # brew "postgresql"               # postgres DB
+brew "quilt-installer"          # minecraft mod loader
 brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
-brew "semgrep"                  # code vuln scanner
 brew "starship"                 # cross-shell prompt
-brew "tldr"                     # community driven man pages
 # brew "vercel-cli"               # deployments and hosting
 # brew "viddy"                    # watch alternative
-# brew "volta"                    # js toolchain manager
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
@@ -51,11 +46,11 @@ brew "zsh"                      # updated z shell
 # casks                                                        #
 ################################################################
 
-cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
+# cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
 cask "bartender"                # menu bar organizer ($)
 # cask "bricklink-studio"         # lego designer
-cask "codeedit"                 # editor
 cask "discord"                  # digital communities
+cask "duckduckgo"               # web browser
 cask "eloston-chromium"         # ungoogled chromium browser
 cask "firefox"                  # web browser
 cask "github"                   # git client
@@ -68,13 +63,12 @@ cask "linear-linear"            # issue tracker
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 cask "minecraft"                # minecraft launcher
-cask "numi"                     # notepad calculator ($?)
 cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
-cask "podman-desktop"           # containerization
+# cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "protonvpn"                # vpn
-cask "raspberry-pi-imager", args: { appdir: "~/Applications" } # pi boot drive imager
+# cask "raspberry-pi-imager", args: { appdir: "~/Applications" } # pi boot drive imager
 cask "raycast"                  # spotlight replacement
 # cask "retroarch"                # video game emulation launcher
 cask "spotify"                  # music and podcasts
@@ -89,19 +83,16 @@ cask "vscodium"                 # editor
 
 cask "font-anonymous-pro"
 cask "font-anonymice-nerd-font"
-# cask "font-cascadia-code"
-# cask "font-caskaydia-cove-nerd-font"
-# cask "font-fira-code"
-# cask "font-fira-code-nerd-font"
 
 ################################################################
 # custom taps                                                  #
 ################################################################
 
-brew "boldandbrad/tap/makey-cli"        # cli passkey maker
 brew "boldandbrad/tap/meeple-cli"       # board game collection manager
+brew "oven-sh/bun/bun"                  # js runtime and package manager
 tap "superatomic/bundle-extensions"     # extra brew commands
 
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
+cask "krita"

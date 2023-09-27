@@ -12,7 +12,6 @@ mas "dashlane", id: 517914548       # password manager ($)
 mas "numbers", id: 409203825        # spreadsheets
 mas "parcel", id: 639968404         # package tracking
 mas "peek", id: 1554235898          # quicklook enhancer ($)
-mas "twitter", id: 1482454543       # social feed
 mas "xcode", id: 497799835          # apple ide
 
 ################################################################
