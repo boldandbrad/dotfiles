@@ -45,3 +45,5 @@ fi
 # remove duplicates from PATH and FPATH
 typeset -U PATH
 typeset -U FPATH
+
+source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode

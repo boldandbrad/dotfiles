@@ -90,6 +90,7 @@ cask "font-anonymice-nerd-font"
 
 brew "boldandbrad/tap/meeple-cli"       # board game collection manager
 brew "oven-sh/bun/bun"                  # js runtime and package manager
+brew "pkgxdev/made/pkgx"                # everything runner
 tap "superatomic/bundle-extensions"     # extra brew commands
 
 ################################################################
