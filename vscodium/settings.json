@@ -41,11 +41,18 @@
   },
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "indent",
+  "errorLens.fontFamily": "Anonymous Pro",
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.onSave": true,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "explorer.openEditors.visible": 0,
+  "explorer.openEditors.visible": 1,
   "explorer.sortOrder": "type",
   "extensions.autoUpdate": true,
   "git.untrackedChanges": "separate",
+  "markdownlint.run": "onSave",
+  "python.envFile": "${workspaceFolder}/.venv",
   "scm.defaultViewMode": "tree",
   "scm.diffDecorationsGutterWidth": 4,
   "scm.inputFontSize": 14,
@@ -60,42 +67,8 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.fontFamily": "Anonymice Nerd Font",
   "terminal.integrated.fontSize": 16,
-  "trailing-spaces.trimOnSave": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
-  "workbench.settings.editor": "json",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "readme",
-  "workbench.tree.indent": 12,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[python]": {
-    "editor.tabSize": 4
-  },
-  "[markdown]": {
-    "editor.rulers": [80],
-    "editor.tabSize": 4
-  },
-  "[rust]": {
-    "editor.tabSize": 4
-  },
-  "python.envFile": "${workspaceFolder}/.venv",
-  "python.formatting.provider": "black",
-  "discord.suppressNotifications": true,
-  "errorLens.fontFamily": "Anonymous Pro",
-  "errorLens.onSave": true,
-  "eslint.enable": true,
-  "eslint.validate": ["vue", "typescript", "html", "javascript"],
-  "markdownlint.run": "onSave",
-  "todo-tree.tree.expanded": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
   "todo-tree.general.enableFileWatcher": true,
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -105,17 +78,42 @@
     "[ ]",
     "[x]"
   ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.tree.expanded": true,
   "todo-tree.tree.groupedByTag": true,
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
   "todo-tree.tree.showCountsInTree": true,
-  "vscord.status.resetElapsedTimePerFile": true,
+  "trailing-spaces.trimOnSave": true,
+  "vscord.behaviour.suppressNotifications": true,
   "vscord.ignore.workspaces": ["~/Developer/local/"],
-  "errorLens.fontStyleItalic": true,
-  "errorLens.gutterIconsEnabled": true,
+  "vscord.status.resetElapsedTimePerFile": true,
+  "window.density.editorTabHeight": "compact",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.settings.editor": "json",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "readme",
+  "workbench.tree.indent": 12,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "explorer.confirmDelete": false
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.rulers": [80],
+    "editor.tabSize": 4
+  },
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[rust]": {
+    "editor.tabSize": 4
+  }
 }
