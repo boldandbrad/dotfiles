@@ -85,7 +85,7 @@ periodically.
 Refresh dotfiles
 
 ```zsh
-dotbot
+refresh
 ```
 
 ### Homebrew
@@ -117,5 +117,5 @@ brew prune
 
 ## License
 
-Copyright (c) 2022 Bradley Wojcik. Released under the MIT License. See
+Copyright (c) 2021-present Bradley Wojcik. Released under the MIT License. See
 [LICENSE](LICENSE) for details.
