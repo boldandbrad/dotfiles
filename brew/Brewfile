@@ -46,12 +46,12 @@ brew "zsh"                      # updated z shell
 # casks                                                        #
 ################################################################
 
+cask "arc"                      # web browser of the future
 # cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
 cask "bartender"                # menu bar organizer ($)
 # cask "bricklink-studio"         # lego designer
 cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
-cask "eloston-chromium"         # ungoogled chromium browser
 cask "firefox"                  # web browser
 cask "github"                   # git client
 cask "httpie"                   # rest client
@@ -96,4 +96,5 @@ tap "superatomic/bundle-extensions"     # extra brew commands
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
+
 cask "krita"
