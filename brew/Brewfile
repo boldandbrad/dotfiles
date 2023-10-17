@@ -48,7 +48,6 @@ brew "zsh"                      # updated z shell
 
 cask "arc"                      # web browser of the future
 # cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
-cask "bartender"                # menu bar organizer ($)
 # cask "bricklink-studio"         # lego designer
 cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
