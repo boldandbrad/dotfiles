@@ -1,14 +1,15 @@
 export EDITOR=codium
 export DOTFILES=~/Setup/dotfiles
 export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
-export PNPM_HOME=~/Library/pnpm
+# export PKGX_DIR=~/.cache/pkgx
+# export PNPM_HOME=~/Library/pnpm
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # export XDG_CACHE_HOME=~/.cache
 # export XDG_DATA_HOME=~/.local/share
 # export XDG_STATE_HOME=~/.local/state
 
-export PATH="$PNPM_HOME:$PATH"
+# export PATH="$PNPM_HOME:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

@@ -4,9 +4,18 @@ HISTSIZE=2048 # number of history entries loaded in memory
 HISTFILESIZE=2048
 HISTFILE=~/.zsh_history
 
-setopt append_history # append to history file without overwriting
-setopt auto_cd # auto change to dir without cd
-setopt hist_ignore_dups # ignore contiguous history duplicates
+# history
+
+setopt APPEND_HISTORY # append to history file without overwriting
+setopt HIST_IGNORE_DUPS # ignore contiguous history duplicates
+setopt SHARE_HISTORY # share history across terminals
+
 # setopt hist_save_no_dups # remove older history entries that are dups of newer ones
 # setopt inc_append_history # immediately append to history file, not just on term exit
-setopt share_history # share history across terminals
+
+# other
+
+setopt auto_cd # auto change to dir without cd
+setopt no_case_glob # enable case-insensitive tab completion and globbing
+# setopt correct
+# setopt correct_all

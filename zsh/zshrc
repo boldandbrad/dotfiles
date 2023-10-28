@@ -1,5 +1,6 @@
 # source antidote and initialize zsh plugins
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+zstyle ':antidote:bundle' file $HOME/.config/zsh/.plugins
 antidote load
 
 # initialize zsh completions
