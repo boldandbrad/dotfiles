@@ -22,6 +22,7 @@
     ~/.config/git/config: git/gitconfig
     ~/.config/git/gitignore: git/gitignore
     ~/.zprofile: zsh/zprofile
+    ~/.zsh_plugins.txt: zsh/zsh_plugins
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     # mac only

@@ -11,7 +11,7 @@ tap "homebrew/services"
 # core formulae                                                #
 ################################################################
 
-brew "antigen"                  # zsh plugin manager
+brew "antidote"                 # zsh plugin manager
 brew "autojump"                 # recent directory hopper
 brew "bash"                     # updated bash
 brew "bat"                      # cat alternative

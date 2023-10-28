@@ -1,18 +1,13 @@
-# install zsh plugins with antigen
-source /usr/local/share/antigen/antigen.zsh
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen apply
-
-# brew completions
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-# meeple-cli completions
-eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
+# source antidote and initialize zsh plugins
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 # initialize zsh completions
 autoload -Uz compinit
 compinit
+
+# meeple-cli completions
+eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
 
 # load dotfiles
 for DOTFILE in ~/.config/zsh/.{aliases,functions,options}; do
@@ -42,8 +37,7 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
-# remove duplicates from PATH and FPATH
-typeset -U PATH
-typeset -U FPATH
-
 source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
+
+# remove duplicates from path arrays
+typeset -gU PATH FPATH
