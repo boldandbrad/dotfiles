@@ -6,6 +6,7 @@ bungcip.better-toml
 Catppuccin.catppuccin-vsc-icons
 csstools.postcss
 DavidAnson.vscode-markdownlint
+DotJoshJohnson.xml
 esbenp.prettier-vscode
 GitHub.github-vscode-theme
 Gruntfuggly.todo-tree
