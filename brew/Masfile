@@ -1,3 +1,17 @@
+
+################################################################
+# Masfile - macOS app store software installs                  #
+#                                                              #
+# dotbot symlinks this file to ~/.config/homebrew/Masfile      #
+#                                                              #
+# Apps and extensions to be installed via `mas`.               #
+# Be sure to remove / comment out tools you do not need.       #
+#                                                              #
+# Note: `mas` is only able to install apps that have been      #
+# previously downloaded from the app store by your apple id.   #
+#                                                              #
+################################################################
+
 ################################################################
 # mac app store installer                                      #
 ################################################################
@@ -5,7 +19,7 @@
 brew "mas"
 
 ################################################################
-# apps                                                         #
+# desktop apps                                                 #
 ################################################################
 
 mas "dashlane", id: 517914548       # password manager ($)

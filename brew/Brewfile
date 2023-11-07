@@ -1,99 +1,127 @@
-################################################################
-# homebrew taps                                                #
-################################################################
-
-tap "homebrew/cask-fonts"
-tap "homebrew/aliases"
-tap "homebrew/bundle"
-tap "homebrew/services"
 
 ################################################################
-# core formulae                                                #
+# Brewfile - macOS software installs                           #
+#                                                              #
+# dotbot symlinks this file to ~/.config/homebrew/Brewfile     #
+#                                                              #
+# Packages and apps to be installed / updated via Homebrew.    #
+# Be sure to remove / comment out tools you do not need.       #
+#                                                              #
+################################################################
+
+################################################################
+# options                                                      #
+################################################################
+
+# cask_args appdir: '~/Applications', require_sha: true
+
+################################################################
+# taps                                                         #
+################################################################
+
+# tap "homebrew/core"                   # packages & clis
+# tap "homebrew/cask"                   # desktop apps
+tap "homebrew/cask-fonts"             # fonts
+tap "homebrew/aliases"                # brew alias support
+tap "homebrew/bundle"                 # brewfile commands
+tap "homebrew/services"               # system services
+
+tap "boldandbrad/tap"                 # stuff made by me :)
+tap "oven-sh/bun"                     # bun tools
+tap "pkgxdev/made"                    # pkgx tools
+tap "superatomic/bundle-extensions"   # extra brew commands
+
+################################################################
+# packages & command line tools                                #
 ################################################################
 
 brew "antidote"                 # zsh plugin manager
 brew "autojump"                 # recent directory hopper
 brew "bash"                     # updated bash
 brew "bat"                      # cat alternative
+brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "direnv"                   # directory level envs
 brew "dotbot"                   # dotfile manager
 brew "dust"                     # disk space analyzer
 brew "exa"                      # ls alternative
-brew "exercism"                 # coding exercises
-brew "ferium"                   # minecraft mod manager
-brew "gh"                       # github cli
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
-# brew "gradle"                   # java build tool
-brew "httpie"                   # rest client
 brew "just"                     # project specific commands
 brew "pastel"                   # color manipulation
-# brew "podman"                   # containerization
-# brew "postgresql"               # postgres DB
-brew "quilt-installer"          # minecraft mod loader
-brew "pre-commit"               # git hook manager
-brew "pyenv"                    # python version manager
-brew "rustup-init"              # rust toolchain installer
-brew "scc"                      # lines of code counter
 brew "starship"                 # cross-shell prompt
-# brew "vercel-cli"               # deployments and hosting
 # brew "viddy"                    # watch alternative
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "zsh"                      # updated z shell
 
 ################################################################
-# casks                                                        #
+# desktop apps                                                 #
 ################################################################
 
 cask "arc"                      # web browser of the future
-# cask "balenaetcher", args: { appdir: "~/Applications" } # boot drive imager
+# cask "balenaetcher"             # boot drive imager
 # cask "bricklink-studio"         # lego designer
 cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
 cask "firefox"                  # web browser
-cask "github"                   # git client
-cask "httpie"                   # rest client
 cask "hush"                     # safari content blocker
 cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
-cask "linear-linear"            # issue tracker
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
-cask "minecraft"                # minecraft launcher
-cask "obs"                      # streaming suite
+# cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
-# cask "podman-desktop"           # containerization
 cask "protonmail-bridge"        # proton.me local IMAP bridge
 cask "protonvpn"                # vpn
-# cask "raspberry-pi-imager", args: { appdir: "~/Applications" } # pi boot drive imager
-cask "raycast"                  # spotlight replacement
-# cask "retroarch"                # video game emulation launcher
-cask "spotify"                  # music and podcasts
+# cask "raspberry-pi-imager"      # pi boot drive imager
+cask "raycast", args: { require_sha: false } # spotlight replacement
+cask "spotify", args: { require_sha: false } # music and podcasts
 cask "stats"                    # menu bar system stats
-cask "steam"                    # video game marketplace and launcher
-cask "temurin"                  # jdk
 cask "vscodium"                 # editor
 
 ################################################################
-# cask-fonts                                                   #
+# software development                                         #
+################################################################
+
+brew "exercism"                 # coding exercise cli
+brew "gh"                       # github cli
+cask "github"                   # github client
+# brew "gradle"                   # java build tool
+brew "httpie"                   # cli rest client
+cask "httpie"                   # rest client
+cask "linear-linear"            # issue tracker
+brew "oven-sh/bun/bun"          # js runtime and tooling
+brew "pkgxdev/made/pkgx"        # everything runner
+# brew "podman"                   # container cli
+# cask "podman-desktop"           # container client
+# brew "postgresql"               # postgres DB
+brew "pre-commit"               # git hook manager
+brew "pyenv"                    # python version manager
+brew "rustup-init"              # rust toolchain installer
+brew "scc"                      # lines of code counter
+cask "temurin"                  # jdk
+# brew "vercel-cli"               # deployments and hosting
+
+################################################################
+# fonts                                                        #
 ################################################################
 
 cask "font-anonymous-pro"
 cask "font-anonymice-nerd-font"
 
 ################################################################
-# custom taps                                                  #
+# games                                                        #
 ################################################################
 
-brew "boldandbrad/tap/meeple-cli"       # board game collection manager
-brew "oven-sh/bun/bun"                  # js runtime and package manager
-brew "pkgxdev/made/pkgx"                # everything runner
-tap "superatomic/bundle-extensions"     # extra brew commands
+# cask "clone-hero"               # guitar hero clone
+brew "ferium"                   # minecraft mod manager
+cask "minecraft"                # minecraft launcher
+cask "modrinth"                 # minecraft launcher & mod manager
+brew "quilt-installer"          # minecraft mod loader
+# cask "retroarch"                # game emulator launcher
+cask "steam"                    # game marketplace and launcher
 
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
-
-cask "krita"
