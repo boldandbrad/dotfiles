@@ -101,6 +101,7 @@ brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
 brew "scc"                      # lines of code counter
 cask "temurin"                  # jdk
+# cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
 
 ################################################################
