@@ -1,7 +1,12 @@
+# .zshrc
+
 # source antidote and initialize zsh plugins
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 zstyle ':antidote:bundle' file $HOME/.config/zsh/.plugins
 antidote load
+
+# allow tab completion menu selection
+zstyle ':completion:*' menu select
 
 # allow partial tab completions: cd /u/lo/b⇥ -> /usr/local/bin
 zstyle ':completion:*' list-suffixes zstyle ':completion:*'
