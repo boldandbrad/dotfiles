@@ -110,10 +110,15 @@ brew prune
 
 ## Inspiration
 
-- [dotfiles-nikitavoloboev](https://github.com/nikitavoloboev/dotfiles)
-- [dotfiles-stefanzweifel](https://github.com/stefanzweifel/dotfiles)
-- [dotfiles-superatomic](https://github.com/superatomic/dotfiles)
-- [dotfiles-webpro](https://github.com/webpro/dotfiles)
+There are tons of great dotfile and machine setup repos out there. In
+particular, I took inspiration from these gems:
+
+- [lissy93/brewfile](https://github.com/lissy93/brewfile)
+- [lissy93/dotfiles](https://github.com/lissy93/dotfiles)
+- [nikitavoloboev/dotfiles](https://github.com/nikitavoloboev/dotfiles)
+- [stefanzweifel/dotfiles](https://github.com/stefanzweifel/dotfiles)
+- [superatomic/dotfiles](https://github.com/superatomic/dotfiles)
+- [webpro/dotfiles](https://github.com/webpro/dotfiles)
 
 ## License
 

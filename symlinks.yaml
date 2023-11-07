@@ -7,7 +7,10 @@
 - clean: ["~"]
 
 - create:
+    - ~/Applications
     - ~/Developer
+    - ~/Documents
+    - ~/Downloads
     - ~/Setup
     - ~/.config/brew-aliases
 

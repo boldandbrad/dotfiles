@@ -21,7 +21,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   # install dotfiles
   echo "\nInstalling dotfiles..."
-  dotbot -c $DOTFILES/install.conf.yaml
+  dotbot -c $DOTFILES/symlinks.yaml
 
   # setup homebrew aliases
   $DOTFILES/brew/aliases.zsh
@@ -56,7 +56,7 @@ if [[ $(uname) == "Linux" ]]; then
 
   # install dotfiles
   echo "Installing dotfiles..."
-  dotbot -c $DOTFILES/install.conf.yaml
+  dotbot -c $DOTFILES/symlinks.yaml
 fi
 
 set +e

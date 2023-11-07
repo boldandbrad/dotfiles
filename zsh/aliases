@@ -38,7 +38,7 @@ alias finder="open ." # open pwd in Finder
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # dotfile refresh
-alias refresh="dotbot -c $DOTFILES/install.conf.yaml"
+alias refresh="dotbot -c $DOTFILES/symlinks.yaml"
 
 # gh repo clone refresh
 alias clone="source $DOTFILES/gh/install.zsh"
