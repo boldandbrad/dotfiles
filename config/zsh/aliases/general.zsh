@@ -34,6 +34,13 @@ alias awake="caffeinate" # macos only
 alias dust="dust -r"
 alias finder="open ." # open pwd in Finder
 
+alias dud='du -d 1 -h' # List sizes of directories within directory
+alias duf='du -sh *' # List sizes of files within directory
+
+# lock a file or directory in a password protected archive
+alias lock="zip -erj"
+alias unlock="unzip -d"
+
 # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 

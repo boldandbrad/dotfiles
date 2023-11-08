@@ -1,8 +1,21 @@
-# .zshrc
+################################################################
+# .zshrc - ZSH session setup                                   #
+################################################################
+# -> dotbot symlinks this file to ~/.config/zsh/.zshrc         #
+#                                                              #
+# Executed when a new ZSH session is launched.                 #
+# Import plugins, aliases, functions, and configs.             #
+################################################################
+
+# zsh config directory
+zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
+
+# if not running interactively, do nothing
+[[ $- != *i* ]] && return
 
 # source antidote and initialize zsh plugins
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-zstyle ':antidote:bundle' file $HOME/.config/zsh/.plugins
+zstyle ':antidote:bundle' file $zsh_dir/.zsh_plugins
 antidote load
 
 # allow tab completion menu selection
@@ -18,10 +31,19 @@ compinit
 # meeple-cli completions
 eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
 
-# load dotfiles
-for DOTFILE in ~/.config/zsh/.{aliases,functions,options}; do
-  [ -f "$DOTFILE" ] && source "$DOTFILE"
-done
+# source zsh config files
+if [[ -d $zsh_dir ]]; then
+  # source aliases
+  for ALIAS_FILE in "$zsh_dir"/aliases/*; do
+    source "$ALIAS_FILE"
+  done
+  # source functions
+  for FUNC_FILE in "$zsh_dir"/lib/*; do
+    source "$FUNC_FILE"
+  done
+  # source options
+  source $zsh_dir/.zsh_options
+fi
 
 # initialize autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && source /usr/local/etc/profile.d/autojump.sh

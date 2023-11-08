@@ -33,16 +33,15 @@ customizations to the contained files before install.
 
 ### Coming Soon
 
+- Linux support?
+- Customization guide
+- XDG directory usage
+- More verbose and explicit documentation
+- Docker/Podman/Vagrant files
 - Ensures all user system preferences are setup via `defaults` or
   `apply-user-defaults`
 - Ensure default applications for file types are setup via `duti` or
   alternative?
-- Remote install script?
-- Debian support?
-- Customization guide
-- More verbose and explicit documentation
-- Raycast configs/extensions?
-- Obsidian configs/extensions?
 
 ## Install
 

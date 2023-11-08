@@ -1,12 +1,10 @@
-
 ################################################################
 # Brewfile - macOS software installs                           #
-#                                                              #
-# dotbot symlinks this file to ~/.config/homebrew/Brewfile     #
+################################################################
+# -> dotbot symlinks this file to ~/.config/homebrew/Brewfile  #
 #                                                              #
 # Packages and apps to be installed / updated via Homebrew.    #
 # Be sure to remove / comment out tools you do not need.       #
-#                                                              #
 ################################################################
 
 ################################################################
@@ -110,6 +108,10 @@ cask "temurin"                  # jdk
 
 cask "font-anonymous-pro"
 cask "font-anonymice-nerd-font"
+# cask "font-cascadia-code"
+# cask "font-caskaydia-cove-nerd-font"
+# cask "font-fira-code"
+# cask "font-fira-code-nerd-font"
 
 ################################################################
 # games                                                        #
