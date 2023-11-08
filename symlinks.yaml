@@ -4,7 +4,11 @@
       relink: true
       force: true
 
-- clean: ["~"]
+- clean: ["~", "${XDG_CONFIG_HOME}"]
+
+- shell:
+    - description: set XDG environment variables
+      command: source ./config/zsh/.zshenv
 
 - create:
     - ~/Applications
@@ -14,21 +18,26 @@
     - ~/Setup
     - ~/.config/brew-aliases
 
+# symlink locations
 - link:
-    ~/.bash_profile: bash/bash_profile
-    ~/.bashrc: bash/bashrc
-    ~/.config/bat/config: bat/config.conf
-    ~/.config/starship/starship.toml: starship/starship.toml
-    ~/.config/zsh/.aliases: zsh/aliases
-    ~/.config/zsh/.functions: zsh/functions
-    ~/.config/zsh/.options: zsh/options
-    ~/.config/zsh/.plugins: zsh/plugins
-    ~/.config/git/config: git/gitconfig
-    ~/.config/git/gitignore: git/gitignore
-    ~/.zprofile: zsh/zprofile
-    ~/.zshenv: zsh/zshenv
-    ~/.zshrc: zsh/zshrc
-    # mac only
+    ~/.zshenv: { path: config/zsh/.zshenv, force: true }
+    ${XDG_CONFIG_HOME}/zsh: config/zsh
+
+    ~/.bash_profile: config/bash/.bash_profile
+    ~/.bashrc: config/bash/.bashrc
+    ~/.config/bat/config: config/bat/config.conf
+    ~/.config/starship/starship.toml: config/starship/starship.toml
+    # ~/.config/zsh/.aliases: config/zsh/aliases/general.zsh
+    # ~/.config/zsh/.functions: config/zsh/lib/functions.zsh
+    # ~/.config/zsh/.options: config/zsh/.zsh_options
+    # ~/.config/zsh/.zsh_plugins: config/zsh/.zsh_plugins
+    ~/.config/git/config: config/git/gitconfig
+    ~/.config/git/gitignore: config/git/gitignore
+    # ~/.zprofile: config/zsh/.zprofile
+    # ~/.zshenv: config/zsh/.zshenv
+    # ~/.zshrc: config/zsh/.zshrc
+
+    # macos only
     ~/.config/homebrew/Brewfile:
       if: "[ `uname` = Darwin ]"
       path: brew/Brewfile
@@ -37,11 +46,14 @@
       path: brew/Masfile
     ~/.hyper.js:
       if: "[ `uname` = Darwin ]"
-      path: hyper/hyper.js
+      path: config/hyper/hyper.js
     ~/Library/Application Support/VSCodium/User/settings.json:
       if: "[ `uname` = Darwin ]"
-      path: vscodium/settings.json
+      path: config/vscodium/settings.json
+      force: true
+
     # linux only
     ~/.config/VSCodium/User/settings.json:
       if: "[ `uname` = Linux ]"
       path: vscodium/settings.json
+      force: true
