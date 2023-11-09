@@ -14,6 +14,7 @@ zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 [[ $- != *i* ]] && return
 
 # source antidote and initialize zsh plugins
+# TODO: make this line os agnostic
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 zstyle ':antidote:bundle' file $zsh_dir/.zsh_plugins
 antidote load
@@ -34,15 +35,15 @@ eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
   # source aliases
-  for ALIAS_FILE in "$zsh_dir"/aliases/*; do
-    source "$ALIAS_FILE"
+  for alias_file in "$zsh_dir"/aliases/*; do
+    source ${alias_file}
   done
   # source functions
-  for FUNC_FILE in "$zsh_dir"/lib/*; do
-    source "$FUNC_FILE"
+  for func_file in "$zsh_dir"/lib/*; do
+    source ${func_file}
   done
   # source options
-  source $zsh_dir/.zsh_options
+  source ${zsh_dir}/.zsh_options
 fi
 
 # initialize autojump

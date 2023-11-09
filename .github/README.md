@@ -14,43 +14,36 @@ customizations to the contained files before install.
   > because it allows for a cleaner repo, and I can include it in my
   > [Brewfile](/brew/Brewfile) for install alongside the rest of my
   > dependencies.
-- [GitHub CLI](https://cli.github.com): clone and manage user public repos
-- [Dockutil](https://github.com/kcrawford/dockutil): setup and manage macOS dock
-- [apply-user-defaults](https://github.com/zero-sh/apply-user-defaults): setup
-  and manage macOS system and app preferences
 
 ## Features
 
-- Ensures Apple Developer Command Line Tools are installed
-- Ensures preinstalled software is up to date via `softwareupdate`
-- Ensures Homebrew is installed
-- Ensures all apps and tools are installed via Homebrew Bundle
-- Ensures Homebrew autoupdate is setup and running
-- Ensures user dotfiles are installed
-- Ensures macOS dock is setup
-- Ensures user's github repos are cloned
-- Ensures user's preferred VSCodium extensions are installed
+- Remote installation script
+- macOS system setup
+  - Install Apple Developer Command Line Tools
+  - Update preinstalled software via `softwareupdate`
+  - Install packages and apps via Homebrew Bundle
+  - Symlink user dotfiles via `dotbot`
+  - XDG directory usage
+  - Setup macOS dock
+  - Clone user's public github repos
+  - Install user's preferred VSCodium extensions
 
 ### Coming Soon
 
-- Linux support?
+- Debian Linux support
+- Containerfile
+- Vagrantfile
 - Customization guide
-- XDG directory usage
-- More verbose and explicit documentation
-- Docker/Podman/Vagrant files
-- Ensures all user system preferences are setup via `defaults` or
-  `apply-user-defaults`
-- Ensure default applications for file types are setup via `duti` or
-  alternative?
+- Setup macOS system preferences via `defaults` or `apply-user-defaults`
 
 ## Install
 
 ### Remote Installation
 
-> The [remote install script](./remote-install.sh) explains what it will do and prompts before doing so.
+> The [remote install script](./remote_install.sh) explains what it will do and prompts before doing so.
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote-install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
 ```
 
 ### Manual Installation

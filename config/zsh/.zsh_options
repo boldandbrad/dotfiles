@@ -1,8 +1,9 @@
 
+# configure history file
+HISTFILE="${XDG_CACHE_HOME}/zsh/.zsh_history"
 SAVEHIST=4096 # number of history entries to save to history file
 HISTSIZE=2048 # number of history entries loaded in memory
 HISTFILESIZE=2048
-HISTFILE=~/.zsh_history
 
 # history
 
