@@ -62,6 +62,7 @@ function intro_message {
   echo -e "${PURPLE}This remote install script will do the following:${RESET}\n"\
   " (1) Clone the ${GITHUB_USER}/dotfiles repo to ${DOTFILE_DIR}\n"\
   " (2) Prompt you to install its contents via 'install.sh'."
+  # TODO: don't exit
   exit 0
 }
 
