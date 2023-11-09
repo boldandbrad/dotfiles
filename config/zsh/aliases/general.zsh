@@ -1,22 +1,43 @@
+################################################################
+# general.zsh - general aliases                                #
+################################################################
+# -> dotbot symlinks this file into ~/.config/zsh/aliases/     #
+#                                                              #
+# Sourced from .zshrc                                          #
+# Setup general zsh aliases.                                   #
+################################################################
+
+command_exists () {
+  hash "$1" 2> /dev/null
+}
 
 # tool replacements
-alias cat="bat"
-alias code="codium"
-alias docker="podman"
-alias ls="exa --classify"
-alias la="exa --all --classify"
-alias ll="exa --all --long --classify"
-alias lt="exa --tree --classify --sort=type"
-alias lta="exa --all --tree --classify --sort=type"
-alias ld="exa --only-dirs --classify"
-alias lda="exa --all --only-dirs --classify"
+if command_exists bat ; then; alias cat="bat"; fi
+if command_exists codium ; then; alias code="codium"; fi
+if command_exists podman ; then; alias docker="podman"; fi
+if command_exists eza ; then
+  alias ls="eza --classify"
+  alias la="eza --all --classify" # list all
+  alias ll="eza --all --long --header --classify" # list all files, with full details
+  alias lt="eza --tree --classify --sort=type"
+  alias lta="eza --all --tree --classify --sort=type"
+  alias ld="eza --only-dirs --classify" # list only dirs
+  alias lda="eza --all --only-dirs --classify" # list all only dirs
+  alias lm="eza --all --reverse --long --header --sort=modified" # list all sorted by last modified
+else
+  alias la="ls -A" # list all
+  alias ll='ls -lAFh' # list all files, with full details
+  alias ld='ls -l | grep "^d"' # list only dirs
+  alias lm='ls -tA -1' # list all sorted by last modified
+fi
+
 alias rm="trash" # prefer safer mv to trash function over rm
 
 # navigation shortcuts
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
-alias ap="cd /Applications"
+alias ap="cd ~/Applications"
 alias dt="cd ~/Desktop"
 alias dv="cd ~/Developer"
 alias dc="cd ~/Documents"
@@ -29,7 +50,7 @@ alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias cp="cp -Riv"
 alias cwd="pwd | pbcopy"
-alias reload=". ~/.zshrc"
+alias reload=". ${ZDOTDIR}/.zshrc"
 alias awake="caffeinate" # macos only
 alias dust="dust -r"
 alias finder="open ." # open pwd in Finder
@@ -49,10 +70,6 @@ alias refresh="dotbot -c $DOTFILES/symlinks.yaml"
 
 # gh repo clone refresh
 alias clone="source $DOTFILES/gh/install.zsh"
-
-# codium extension export and install
-alias codexp="codium --list-extensions > $DOTFILES/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'"
-alias codein="source $DOTFILES/vscodium/install.zsh"
 
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
