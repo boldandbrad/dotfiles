@@ -51,6 +51,7 @@
   "explorer.sortOrder": "type",
   "extensions.autoUpdate": true,
   "git.untrackedChanges": "separate",
+  "gitlens.hovers.enabled": false,
   "markdownlint.run": "onSave",
   "python.envFile": "${workspaceFolder}/.venv",
   "scm.defaultViewMode": "tree",
@@ -118,6 +119,5 @@
   },
   "[rust]": {
     "editor.tabSize": 4
-  },
-  "gitlens.hovers.currentLine.over": "line"
+  }
 }
