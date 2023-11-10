@@ -3,8 +3,8 @@
 ################################################################
 # install.sh - All-in-One Install and Setup Script for Unix    #
 ################################################################
-# Prompt the user to Check system compatibility, Install       #
-# packages and apps, Symlink dotfiles, and Configure system.   #
+# Prompt the user to check system compatibility, install       #
+# packages and apps, symlink dotfiles, and configure system.   #
 #                                                              #
 # OPTIONS:                                                     #
 #   --auto-yes: Skip all prompts, and auto-accept all changes  #
@@ -42,8 +42,12 @@ fi
 
 # print help
 if [[ $PARAMS == *"--help"* ]] ; then
-  # TODO: print help message
-  echo "help message coming soon..."
+  echo -e "usage: ./install.sh [--help] [--auto-yes] [--no-clear]\n\n"\
+  "Prompt the user to check system compatibility, install packages and apps, symlink dotfiles, and configure system.\n\n"\
+  "OPTIONS:\n"\
+  "\t--auto-yes\tSkip all prompts, and auto accept all changes\n"\
+  "\t--no-clear\tDon't clear the screen before running\n"\
+  "\t--help\t\tPrint this message and exit"
   exit 0
 fi
 
@@ -78,7 +82,9 @@ function pre_setup () {
   "  - On macOS, install/update packages listed in Brewfile\n"\
   "(3) Setup dotfiles\n"\
   "  - Symlink dotfiles to correct locations\n"\
-  "(4) Configure system"
+  "(4) Configure system\n\n"\
+  "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"\
+  "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}"
 
   # confirm the user would like to proceed
   echo -en "\n${BLUE_B}Would you like to continue? (y/N):${RESET} "
