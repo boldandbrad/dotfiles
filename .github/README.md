@@ -23,18 +23,20 @@ customizations to the contained files before install.
   - Update preinstalled software via `softwareupdate`
   - Install packages and apps via Homebrew Bundle
   - Symlink user dotfiles via `dotbot`
-  - XDG directory usage
-  - Setup macOS dock
-  - Clone user's public github repos
-  - Install user's preferred VSCodium extensions
+  - XDG directory compatibility
 
 ### Coming Soon
 
+- Clone user's public github repos
+- Install user's preferred VSCodium extensions
+- GitHub Actions Builds
 - Debian Linux support
 - Containerfile
 - Vagrantfile
 - Customization guide
-- Setup macOS system preferences via `defaults` or `apply-user-defaults`
+- Setup macOS system preferences via `defaults` or `apply-user-defaults`?
+- Setup macOS dock?
+- Setup macOS LaunchPad?
 
 ## Install
 
@@ -60,7 +62,7 @@ Install apps, tools, and dotfiles:
 cd ~/Setup/dotfiles && ./install.sh
 ```
 
-> Note that installation should be an idempotent operation. Meaning it can be
+> Note that installation is an idempotent operation. Meaning it can be
 > safely run multiple times.
 
 ## Maintenance
