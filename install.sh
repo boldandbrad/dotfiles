@@ -3,7 +3,8 @@
 ################################################################
 # install.sh - All-in-One Install and Setup Script for Unix    #
 ################################################################
-# TODO: write description                                      #
+# Prompt the user to Check system compatibility, Install       #
+# packages and apps, Symlink dotfiles, and Configure system.   #
 #                                                              #
 # OPTIONS:                                                     #
 #   --auto-yes: Skip all prompts, and auto-accept all changes  #
@@ -26,13 +27,13 @@ fi
 
 # color Variables
 export RESET='\033[0m'
+export RED_B='\033[1;31m'
 export GREEN_B='\033[1;32m'
 export BLUE_B='\033[1;34m'
+export PURPLE_B='\033[1;35m'
+export PLAIN_B='\033[1;37m'
 YELLOW_B='\033[1;93m'
-RED_B='\033[1;31m'
-PLAIN_B='\033[1;37m'
 GREEN='\033[0;32m'
-export PURPLE='\033[0;35m'
 
 # clear screen
 if [[ ! $PARAMS == *"--no-clear"* ]] && [[ ! $PARAMS == *"--help"* ]] ; then
@@ -55,21 +56,22 @@ fi
 function make_banner () {
   bannerText=$1
   lineColor="${2:-$BLUE_B}"
-  padding="${3:-0}"
+  textColor="${3:-$PLAIN_B}"
+  padding="${4:-0}"
   titleLen=$(expr ${#bannerText} + 2 + $padding);
   lineChar="─"; line=""
   for (( i = 0; i < "$titleLen"; ++i )); do line="${line}${lineChar}"; done
-  banner="${lineColor}╭${line}╮\n│ ${PLAIN_B}${bannerText}${lineColor} │\n╰${line}╯"
+  banner="${lineColor}╭${line}╮\n│ ${textColor}${bannerText}${lineColor} │\n╰${line}╯"
   echo -e "\n${banner}\n${RESET}"
 }
 
-function pre_setup_tasks () {
+function pre_setup () {
   # welcome banner
-  make_banner "${GITHUB_USER}/dotfiles - Install" "${BLUE_B}"
+  make_banner "${GITHUB_USER}/dotfiles - Install" "${BLUE_B}" "${BLUE_B}"
 
   # explain to the user what changes will be made
   echo -e "${BLUE_B}This install script will do the following:${RESET}\n"\
-  "(1) Pre-setup tasks\n"\
+  "(1) Pre-setup\n"\
   "  - Check system compatibility\n"\
   "(2) Install packages\n"\
   "  - Check that system is up-to-date\n"\
@@ -88,7 +90,7 @@ function pre_setup_tasks () {
 
   # verify compatibility
   if [ "$SYSTEM_TYPE" != "Darwin" ]; then
-    echo -e "\n${SYSTEM_TYPE} not supported. Terminating..."
+    echo -e "\n${RED_B}${SYSTEM_TYPE} not supported. Terminating...${RESET}"
     exit 1
   fi
 }
@@ -142,7 +144,7 @@ function setup_dotfiles () {
 set -e
 
 # start!
-pre_setup_tasks
+pre_setup
 update_system
 install_packages
 setup_dotfiles
@@ -158,4 +160,4 @@ set +e
 
 echo
 echo -e "${GREEN_B}Installation and setup complete!${RESET}"
-echo -e "${PURPLE}Restart for all changes to take effect:${RESET} sudo shutdown -r now"
+echo -e "${PURPLE_B}Restart for all changes to take effect:${RESET} sudo shutdown -r now"

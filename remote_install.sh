@@ -3,8 +3,8 @@
 ################################################################
 # remote_install.sh - Remotely clone repo and initiate install #
 ################################################################
-# Intended for remote use only. Clones dotfiles repo and       #
-# prompts user to start install.                               #
+# Intended for remote use only. Prompt the user to Clones      #
+# dotfiles repo and run install script.                        #
 #                                                              #
 # OPTIONS:                                                     #
 #   --auto-yes: Skip all prompts, and auto-accept all changes  #
@@ -14,9 +14,9 @@
 ################################################################
 
 # example usages:
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
+#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
 # or
-# curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh | bash
+#  curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh | bash
 
 # set variables
 PARAMS=$* # user provided parameters
@@ -28,9 +28,11 @@ DOTFILE_DIR=~/Setup/dotfiles
 
 # color Variables
 export RESET='\033[0m'
+export RED_B='\033[1;31m'
 export GREEN_B='\033[1;32m'
 export BLUE_B='\033[1;34m'
-export PURPLE='\033[0;35m'
+export PURPLE_B='\033[1;35m'
+export PLAIN_B='\033[1;37m'
 
 # clear screen
 if [[ ! $PARAMS == *"--no-clear"* ]] && [[ ! $PARAMS == *"--help"* ]] ; then
@@ -47,42 +49,50 @@ fi
 function make_banner () {
   bannerText=$1
   lineColor="${2:-$BLUE_B}"
-  padding="${3:-0}"
+  textColor="${3:-$PLAIN_B}"
+  padding="${4:-0}"
   titleLen=$(expr ${#bannerText} + 2 + $padding);
   lineChar="─"; line=""
   for (( i = 0; i < "$titleLen"; ++i )); do line="${line}${lineChar}"; done
-  banner="${lineColor}╭${line}╮\n│ ${PLAIN_B}${bannerText}${lineColor} │\n╰${line}╯"
+  banner="${lineColor}╭${line}╮\n│ ${textColor}${bannerText}${lineColor} │\n╰${line}╯"
   echo -e "\n${banner}\n${RESET}"
 }
 
-function intro_message {
+function pre_setup {
   # welcome banner
-  make_banner "${GITHUB_USER}/dotfiles - Remote Install" "${PURPLE}"
+  make_banner "${GITHUB_USER}/dotfiles - Remote Install" "${PURPLE_B}" "${PURPLE_B}"
 
-  echo -e "${PURPLE}This remote install script will do the following:${RESET}\n"\
+  echo -e "${PURPLE_B}This remote install script will do the following:${RESET}\n"\
   " (1) Clone the ${GITHUB_USER}/dotfiles repo to ${DOTFILE_DIR}\n"\
   " (2) Prompt you to install its contents via 'install.sh'."
-  # TODO: don't exit
-  exit 0
+
+  # confirm the user would like to proceed
+  echo -en "\n${PURPLE_B}Would you like to continue? (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_start && echo
+  if [[ ! $ans_start =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+    echo -e "\nInstallation canceled. Terminating..."
+    exit 0
+  fi
 }
 
 function clone_dotfiles {
-  # prompt to clone dotfiles
-  while true; do
-      read -p "Do you wish to clone the dotfiles repo? " yn </dev/tty
-      case $yn in
-          [Yy]* ) echo; break;;
-          [Nn]* ) echo -e "\tInstall manually following steps in the README."; exit;;
-          * ) echo $'\tPlease answer yes or no.';;
-      esac
-  done
+  # confirm the user would like to clone the dotfiles repo
+  echo -en "\n${PURPLE_B}Would you like to clone dotfiles to ${DOTFILE_DIR}? (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_clone && echo
+  if [[ ! $ans_clone =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+    echo -e "\nSkipping clone. Please retry or install manually with the steps in the README."
+    exit 0
+    return
+  fi
 
   # check for git
   echo $'Cloning dotfiles\n'
   if ! type git > /dev/null; then
-    echo "fatal: git not installed."
+    echo -e "\n${RED_B}fatal: cannot clone, git not installed.${RESET}"
     exit 1
   fi
+
+  # TODO: check if dotfiles are already cloned
 
   # clone dotfiles repo
   git clone $DOTFILE_REPO $DOTFILE_DIR
@@ -90,15 +100,14 @@ function clone_dotfiles {
 }
 
 function install_dotfiles {
-  # prompt to install dotfiles
-  while true; do
-      read -p "Do you wish to install the dotfiles now? " yn </dev/tty
-      case $yn in
-          [Yy]* ) echo; break;;
-          [Nn]* ) echo -e "\tInstall dotfiles later via '$DOTFILE_DIR/install.sh'"; exit;;
-          * ) echo -e "\tPlease answer yes or no.";;
-      esac
-  done
+  # confirm user would like to start install
+  echo -en "\n${PURPLE_B}Would you like to start dotfiles install now? (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_install && echo
+  if [[ ! $ans_install =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+    echo -e "\nSkipping install. Install later via '$DOTFILE_DIR/install.sh'"
+    return
+  fi
+
   # install dotfiles
   cd $DOTFILE_DIR
   $DOTFILE_DIR/install.sh
@@ -108,7 +117,7 @@ function install_dotfiles {
 set -e
 
 # start!
-intro_message
+pre_setup
 clone_dotfiles
 install_dotfiles
 
