@@ -1,3 +1,4 @@
-# Scripts
+# boldandbrad/dotfiles - scripts
 
-Add install and setup scripts in this directory.
+A set of bash scripts for automating the setup and management of various
+systems and tools.
