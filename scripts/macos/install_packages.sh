@@ -19,7 +19,9 @@ if ! brew bundle check; then
 fi
 
 # perform upgrades and cleanup
-brew upgrade
+if [[ ! -z "${CI}" ]]; then
+  brew upgrade
+fi
 brew cleanup
 brew info
 
