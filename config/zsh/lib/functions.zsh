@@ -53,16 +53,6 @@ function exifupdate() {
   fi
 }
 
-# cd to root dir of git project
-function groot() {
-  gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
-  if [ -z $gitdir ]; then
-    cd ..
-  else
-    cd $gitdir
-  fi
-}
-
 # trash <files> - move files to trash
 function trash() {
   mv "$@" ~/.Trash
