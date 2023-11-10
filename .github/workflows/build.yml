@@ -1,0 +1,15 @@
+name: Build
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+  strategy:
+    matrix:
+      os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          mkdir -p ~/dotfiles-install-dir
+      - run: |
+          HOME=~/dotfiles-install-dir ./install
