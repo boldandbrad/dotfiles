@@ -110,9 +110,14 @@ function update_system () {
     return
   fi
 
-  # update macOS system software
-  if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    $DOTFILES/scripts/macos/update_system.sh
+  # check if running in CI
+  if [ "${CI}" = false ]; then
+    # update macOS system software
+    if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+      $DOTFILES/scripts/macos/update_system.sh
+    fi
+  else
+    echo -e "\nSkipping system updates. Running in CI."
   fi
 }
 
