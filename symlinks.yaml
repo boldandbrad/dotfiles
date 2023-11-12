@@ -34,14 +34,16 @@
     ${XDG_CONFIG_HOME}/git: config/git
 
     # other tool configs
-    ~/.config/bat/config: config/bat/config.conf
-    ~/.config/starship/starship.toml: config/starship/starship.toml
+    ${XDG_CONFIG_HOME}/bat/config: config/bat/config.conf
+    ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml
+    ${XDG_CONFIG_HOME}/kitty: config/kitty
+    ${XDG_CONFIG_HOME}/starship/starship.toml: config/starship/starship.toml
 
     # macos only
-    ~/.config/homebrew/Brewfile:
+    ${XDG_CONFIG_HOME}/homebrew/Brewfile:
       if: "[ `uname` = Darwin ]"
       path: scripts/macos/brew/Brewfile
-    ~/.config/homebrew/Masfile:
+    ${XDG_CONFIG_HOME}/homebrew/Masfile:
       if: "[ `uname` = Darwin ]"
       path: scripts/macos/brew/Masfile
     ~/.hyper.js:
@@ -53,7 +55,7 @@
       force: true
 
     # linux only
-    ~/.config/VSCodium/User/settings.json:
+    ${XDG_CONFIG_HOME}/VSCodium/User/settings.json:
       if: "[ `uname` = Linux ]"
       path: vscodium/settings.json
       force: true

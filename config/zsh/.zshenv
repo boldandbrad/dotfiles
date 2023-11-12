@@ -28,6 +28,7 @@ export XDG_STATE_HOME=~/.local/state
 export LESSHISTFILE="-" # disable less history
 # export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
 # export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
+# export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
@@ -40,3 +41,6 @@ export DOTFILES=~/Setup/dotfiles
 
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
+
+# disable telemetry for tools that support this flag
+export DO_NOT_TRACK=1
