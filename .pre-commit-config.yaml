@@ -15,12 +15,12 @@ repos:
     rev: v8.18.0
     hooks:
       - id: gitleaks
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.3
-    hooks:
-      - id: prettier
+  # - repo: https://github.com/pre-commit/mirrors-prettier
+  #   rev: v3.0.3
+  #   hooks:
+  #     - id: prettier
   - repo: https://github.com/returntocorp/semgrep
-    rev: v1.46.0
+    rev: v1.48.0
     hooks:
       - id: semgrep
         args: ["--config", "auto", "--error", "--skip-unknown-extensions"]

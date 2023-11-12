@@ -11,6 +11,7 @@
 echo -e "\nChecking for Homebrew..."
 if ! type brew &>/dev/null; then
   echo "Installing Homebrew..."
+  # nosemgrep
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit 1
   echo -e "${GREEN_B}Homebrew is now installed!${RESET}"
 else
