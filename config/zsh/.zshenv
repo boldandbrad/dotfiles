@@ -15,11 +15,11 @@ export PAGER="less"
 
 # set XDG paths
 export XDG_BIN_HOME=~/.local/bin
-export XDG_CACHE_HOME=~/.local/var/cache
-export XDG_CONFIG_HOME=~/.config
-export XDG_DATA_HOME=~/.local/share
+export XDG_CACHE_HOME=~/.local/var/cache # where user-specific non-essential cached data should be written
+export XDG_CONFIG_HOME=~/.config # where user-specific configurations should be written
+export XDG_DATA_HOME=~/.local/share # where user-specific data files should be written
 export XDG_LIB_HOME=~/.local/lib
-export XDG_STATE_HOME=~/.local/state
+export XDG_STATE_HOME=~/.local/state # where user-specific state files should be written
 
 # respect XDG paths
 # export CARGO_HOME="${XDG_DATA_HOME}/cargo"
@@ -28,6 +28,7 @@ export XDG_STATE_HOME=~/.local/state
 export LESSHISTFILE="-" # disable less history
 # export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
 # export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
+export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
