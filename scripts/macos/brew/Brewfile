@@ -63,9 +63,10 @@ cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
 cask "firefox"                  # web browser
 cask "hush"                     # safari content blocker
-cask "hyper"                    # terminal emulator
+# cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
+cask "kitty"                    # terminal emulator
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite

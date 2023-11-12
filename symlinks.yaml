@@ -46,9 +46,9 @@
     ${XDG_CONFIG_HOME}/homebrew/Masfile:
       if: "[ `uname` = Darwin ]"
       path: scripts/macos/brew/Masfile
-    ~/.hyper.js:
-      if: "[ `uname` = Darwin ]"
-      path: config/hyper/hyper.js
+    # ~/.hyper.js:
+    #   if: "[ `uname` = Darwin ]"
+    #   path: config/hyper/hyper.js
     ~/Library/Application Support/VSCodium/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscodium/settings.json
