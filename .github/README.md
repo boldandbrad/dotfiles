@@ -10,10 +10,6 @@ customizations to the contained files before install.
 
 - [Homebrew](https://brew.sh): install and manage apps and tools
 - [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
-  > I prefer a global `dotbot` install with `homebrew` over a submodule
-  > because it allows for a cleaner repo, and I can include it in my
-  > [Brewfile](/brew/Brewfile) for install alongside the rest of my
-  > dependencies.
 
 ## Features
 
