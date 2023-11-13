@@ -44,7 +44,7 @@ brew "eza"                      # ls alternative
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "just"                     # project specific commands
-brew "neovim"                   # tui editor
+# brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
 # brew "rm-improved"              # rm alternative
 brew "starship"                 # cross-shell prompt
