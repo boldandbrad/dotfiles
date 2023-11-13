@@ -50,7 +50,7 @@ customizations to the contained files before install.
 Clone this repo into `~/Setup/dotfiles`:
 
 ```sh
-git clone https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
+git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
 ```
 
 Install apps, tools, and dotfiles:

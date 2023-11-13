@@ -115,7 +115,7 @@ function clone_dotfiles {
   fi
 
   # clone dotfiles repo
-  git clone $DOTFILE_REPO $DOTFILE_DIR
+  git clone --recursive $DOTFILE_REPO $DOTFILE_DIR
   echo -e "${GREEN_B}dotfiles cloned!${RESET}"
 }
 
