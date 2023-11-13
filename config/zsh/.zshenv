@@ -25,25 +25,28 @@ export XDG_STATE_HOME=~/.local/state # where user-specific state files should be
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 # export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 # export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
+export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/homebrew/Brewfile"
 export LESSHISTFILE="-" # disable less history
 # export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
 # export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
 export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
 # export PKGX_DIR=~/.cache/pkgx
 # export PNPM_HOME=~/Library/pnpm
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # other variables
 export DOTFILES=~/Setup/dotfiles
+export DOTBOT_DIR="${DOTFILES}/vendor/dotbot"
 
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$DOTFILES/vendor/dotbot/bin:$PATH"
+
+# add dotbot to path
+export PATH="$DOTBOT_DIR/bin:$PATH"
 
 # disable telemetry for tools that support this flag
 export DO_NOT_TRACK=1
