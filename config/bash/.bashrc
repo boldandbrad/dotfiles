@@ -10,4 +10,3 @@ eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
 export SHELL_SESSION_HISTORY=0
 
 . "$CARGO_HOME/env"
-. "/Users/boldandbrad/.local/share/cargo/env"
