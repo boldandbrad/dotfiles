@@ -26,7 +26,7 @@ GITHUB_USER="boldandbrad"
 DOTFILE_REPO="https://github.com/${GITHUB_USER}/dotfiles.git"
 DOTFILE_DIR=~/Setup/dotfiles
 
-# color Variables
+# color ansi escape codes
 export RESET='\033[0m'
 export RED_B='\033[1;31m'
 export GREEN_B='\033[1;32m'

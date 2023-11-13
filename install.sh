@@ -25,7 +25,7 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
 fi
 
-# color Variables
+# color ansi escape codes
 export RESET='\033[0m'
 export RED_B='\033[1;31m'
 export GREEN_B='\033[1;32m'

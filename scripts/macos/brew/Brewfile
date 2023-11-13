@@ -46,7 +46,9 @@ brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "just"                     # project specific commands
 brew "pastel"                   # color manipulation
+# brew "rm-improved"              # rm alternative
 brew "starship"                 # cross-shell prompt
+brew "tailspin"                 # log file highlighter
 # brew "viddy"                    # watch alternative
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
@@ -83,6 +85,7 @@ cask "vscodium"                 # editor
 # software development                                         #
 ################################################################
 
+brew "deno"                     # js runtime and tooling
 brew "exercism"                 # coding exercise cli
 brew "gh"                       # github cli
 cask "github"                   # github client
@@ -92,8 +95,8 @@ cask "httpie"                   # rest client
 cask "linear-linear"            # issue tracker
 brew "oven-sh/bun/bun"          # js runtime and tooling
 brew "pkgxdev/made/pkgx"        # everything runner
-# brew "podman"                   # container cli
-# cask "podman-desktop"           # container client
+brew "podman"                   # container cli
+cask "podman-desktop"           # container client
 # brew "postgresql"               # postgres DB
 brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
