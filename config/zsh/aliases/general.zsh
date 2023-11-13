@@ -91,6 +91,9 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 fi
 
+# clear screen and ls
+alias cls="clear; ls"
+
 alias dud='du -d 1 -h' # list sizes of directories within directory
 alias duf='du -sh *' # list sizes of files within directory
 
