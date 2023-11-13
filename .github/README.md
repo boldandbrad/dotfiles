@@ -42,7 +42,8 @@ customizations to the contained files before install.
 
 ### Remote Installation
 
-> The [remote install script](./remote_install.sh) explains what it will do and prompts before doing so.
+> The [remote install script](./remote_install.sh) explains what it will do and
+> prompts before doing so.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
