@@ -39,12 +39,12 @@ brew "bash"                     # updated bash
 brew "bat"                      # cat alternative
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "direnv"                   # directory level envs
-brew "dotbot"                   # dotfile manager
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls alternative
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "just"                     # project specific commands
+brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
 # brew "rm-improved"              # rm alternative
 brew "starship"                 # cross-shell prompt

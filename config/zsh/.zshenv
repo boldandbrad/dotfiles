@@ -43,6 +43,7 @@ export DOTFILES=~/Setup/dotfiles
 
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$DOTFILES/vendor/dotbot/bin:$PATH"
 
 # disable telemetry for tools that support this flag
 export DO_NOT_TRACK=1
