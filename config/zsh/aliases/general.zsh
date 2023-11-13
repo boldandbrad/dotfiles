@@ -25,11 +25,12 @@ if command_exists eza ; then
   alias ls="eza --classify"
   alias la="eza --all --classify" # list all
   alias ll="eza --all --long --header --classify" # list all files, with full details
-  alias lt="eza --tree --classify --sort=type"
-  alias lta="eza --all --tree --classify --sort=type"
+  alias lt="eza --tree --classify --sort=type --ignore-glob .git" # list as tree, sort by type, ignore git dir
+  alias lta="eza --all --tree --classify --sort=type --ignore-glob .git" # list all as tree, sort by type, ignore git dir
   alias ld="eza --only-dirs --classify" # list only dirs
   alias lda="eza --all --only-dirs --classify" # list all only dirs
   alias lm="eza --all --reverse --long --header --sort=modified" # list all sorted by last modified
+  alias lg="eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git" # list all as tree with git status
 else
   alias la="ls -A" # list all
   alias ll='ls -lAFh' # list all files, with full details
