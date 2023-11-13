@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO: default shell on alpine is ash, make sure this script works
 
 ################################################################
 # alpine/update_system.sh - update alpine linux software       #

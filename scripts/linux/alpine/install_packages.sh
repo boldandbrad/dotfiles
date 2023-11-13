@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO: default shell on alpine is ash, make sure this script works
 
 ################################################################
 # alpine/install_packages.sh - install apk packages and apps   #
