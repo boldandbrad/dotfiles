@@ -30,5 +30,7 @@ echo
 echo "Running brew doctor..."
 brew doctor
 
+# TODO: install mas apps from Masfile
+
 echo
 echo "Homebrew setup complete!"

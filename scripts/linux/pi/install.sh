@@ -1,3 +1,6 @@
+
+# TODO: update entire script
+
 sudo apt update
 sudo apt upgrade
 
