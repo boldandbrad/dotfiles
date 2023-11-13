@@ -20,6 +20,7 @@ export PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
 
 export DOTFILES=$(pwd)
 export GITHUB_USER="boldandbrad"
+export GITHUB_REPO_DIR=~/Developer/github
 
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
@@ -32,7 +33,7 @@ export GREEN_B='\033[1;32m'
 export BLUE_B='\033[1;34m'
 export PURPLE_B='\033[1;35m'
 export PLAIN_B='\033[1;37m'
-YELLOW_B='\033[1;93m'
+export YELLOW_B='\033[1;93m'
 GREEN='\033[0;32m'
 
 # clear screen
@@ -82,7 +83,8 @@ function pre_setup () {
   "  - On macOS, install/update packages listed in Brewfile\n"\
   "(3) Setup dotfiles\n"\
   "  - Symlink dotfiles to correct locations\n"\
-  "(4) Configure system\n\n"\
+  "(4) Configure system\n"\
+  "(5) Clone user repos\n\n"\
   "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"\
   "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}"
 
@@ -151,6 +153,23 @@ function setup_dotfiles () {
   dotbot -c $DOTFILES/symlinks.yaml
 }
 
+function config_system () {
+  echo -e "\n${YELLOW_B}Skipping Configure System step. Not yet implemented."
+}
+
+function clone_repos () {
+  # confirm the user would like to clone repos
+  echo -en "\n${BLUE_B}Would you like to clone ${GITHUB_USER}'s GitHub repos? (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_clone_repos && echo
+  if [[ ! $ans_clone_repos =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+    echo -e "\nSkipping GitHub repo clones."
+    return
+  fi
+
+  # clone repos
+  $DOTFILES/scripts/tools/clone_repos.sh
+}
+
 # terminate on first failure
 set -e
 
@@ -159,10 +178,11 @@ pre_setup
 update_system
 install_packages
 setup_dotfiles
+config_system
+clone_repos
 
 # TODO: change default shell to homebrew zsh on macOS
 # TODO: system configurations
-# TODO: clone github repos
 # TODO: vscodium extensions
 
 # TODO: debian linux support

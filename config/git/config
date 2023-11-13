@@ -3,7 +3,7 @@
 	email = bradleycwojcik@gmail.com
 [init]
 	defaultBranch = main
-	templateDir = ~/.config/git/.git-template
+	templateDir = ~/.config/git/templates
 [core]
 	eol = lf
 	autocrlf = input

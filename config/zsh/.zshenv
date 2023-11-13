@@ -24,7 +24,6 @@ export XDG_STATE_HOME=~/.local/state # where user-specific state files should be
 # respect XDG paths
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 # export CURL_HOME="${XDG_CONFIG_HOME}/curl"
-# export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
 export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/homebrew/Brewfile"
 export LESSHISTFILE="-" # disable less history
 # export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"

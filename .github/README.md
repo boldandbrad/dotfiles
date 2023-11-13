@@ -20,10 +20,10 @@ customizations to the contained files before install.
   - Install packages and apps via Homebrew Bundle
   - Symlink user dotfiles via `dotbot`
   - XDG directory compatibility
+  - Clone user's github repos
 
 ### Coming Soon
 
-- Clone user's public github repos
 - Install user's preferred VSCodium extensions
 - GitHub Actions Builds
 - Debian Linux support
