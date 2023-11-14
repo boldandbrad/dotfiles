@@ -16,7 +16,7 @@
 # set variables
 PARAMS=$* # user provided parameters
 SYSTEM_TYPE=$(uname -s) # system type - Linux / MacOS (Darwin)
-export PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
+export PROMPT_TIMEOUT=15 # when user is prompted for input, skip after x seconds
 
 export DOTFILES=$(pwd)
 export GITHUB_USER="boldandbrad"
@@ -113,7 +113,7 @@ function update_system () {
   fi
 
   # check if running in CI
-  if [ "${CI}" = false ]; then
+  if [ -z "${CI}" ]; then
     # update macOS system software
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
       $DOTFILES/scripts/macos/update_system.sh
