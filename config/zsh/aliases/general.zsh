@@ -108,7 +108,7 @@ alias reload=". ${ZDOTDIR}/.zshrc"
 # rerun dotfile installation
 alias reinstall="$DOTFILES/install.sh"
 # rerun clone github repos
-alias reclone="source $DOTFILES/scripts/tools/clone_repos.zsh"
+alias reclone="$DOTFILES/scripts/tools/github/clone_repos.sh"
 
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'

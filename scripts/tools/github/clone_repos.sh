@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ################################################################
-# tools/clone_repos.sh - clone user's GitHub repos             #
+# tools/github/clone_repos.sh - clone user's GitHub repos      #
 ################################################################
 # Clone GitHub user's unarchived repos (except dotfiles), as   #
 # well as their organization(s)' repos.                        #

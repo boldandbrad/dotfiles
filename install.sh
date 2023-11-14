@@ -167,7 +167,7 @@ function clone_repos () {
   fi
 
   # clone repos
-  $DOTFILES/scripts/tools/clone_repos.sh
+  $DOTFILES/scripts/tools/github/clone_repos.sh
 }
 
 # terminate on first failure

@@ -8,7 +8,7 @@
 ################################################################
 
 # codium extension export
-alias codexp="codium --list-extensions > $DOTFILES/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'"
+alias codexp="codium --list-extensions > $DOTFILES/config/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'"
 
 # codium extension install
-alias codein="source $DOTFILES/vscodium/install.zsh"
+alias codein="$DOTFILES/scripts/tools/vscodium/install_extensions.sh"
