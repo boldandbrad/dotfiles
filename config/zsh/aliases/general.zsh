@@ -103,10 +103,12 @@ alias unlock="unzip -d"
 
 # dotfile refresh
 alias refresh="dotbot -c $DOTFILES/symlinks.yaml"
+# reload shell session
 alias reload=". ${ZDOTDIR}/.zshrc"
-
-# gh repo clone refresh
-alias clone="source $DOTFILES/scripts/tools/clone_public_repos.zsh"
+# rerun dotfile installation
+alias reinstall="$DOTFILES/install.sh"
+# rerun clone github repos
+alias reclone="source $DOTFILES/scripts/tools/clone_repos.zsh"
 
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
