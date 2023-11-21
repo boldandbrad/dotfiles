@@ -50,6 +50,7 @@ brew "pastel"                   # color manipulation
 # brew "rm-improved"              # rm alternative
 brew "starship"                 # cross-shell prompt
 brew "tailspin"                 # log file highlighter
+brew "tldr"                     # concise man pages
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
 # brew "xxh"                      # ssh shell preservation

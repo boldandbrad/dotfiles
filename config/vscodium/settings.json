@@ -121,6 +121,9 @@
     "editor.tabSize": 4
   },
   "markdownlint.config": {
-    "MD024": false
+    "MD024": false,
+    "MD033": false,
+    "MD041": false,
+    "MD051": false
   }
 }
