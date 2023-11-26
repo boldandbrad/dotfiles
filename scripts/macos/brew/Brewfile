@@ -76,8 +76,9 @@ cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
+cask "proton-drive"             # secure cloud storage
 cask "protonmail-bridge"        # proton.me local IMAP bridge
-cask "protonvpn"                # vpn
+cask "protonvpn"                # secure vpn
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # music and podcasts
