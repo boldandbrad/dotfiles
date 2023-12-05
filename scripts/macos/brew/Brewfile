@@ -45,8 +45,9 @@ brew "fcp"                      # cp alternative
 brew "git"                      # version control system
 brew "glow"                     # terminal markdown viewer
 brew "just"                     # project specific commands
-# brew "neovim"                   # tui editor
+brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
+brew "ripgrep"                  # grep alternative
 # brew "rm-improved"              # rm alternative
 brew "starship"                 # cross-shell prompt
 brew "tailspin"                 # log file highlighter
@@ -68,12 +69,12 @@ cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
 cask "firefox"                  # web browser
 cask "hush"                     # safari content blocker
-# cask "hyper"                    # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "kitty"                    # terminal emulator
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
+# cask "neovide"                  # neovim gui
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
 cask "proton-drive"             # secure cloud storage

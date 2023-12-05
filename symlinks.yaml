@@ -37,6 +37,7 @@
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml
     ${XDG_CONFIG_HOME}/kitty: config/kitty
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
     ${XDG_CONFIG_HOME}/starship: config/starship
 
     # macos only
@@ -46,9 +47,6 @@
     ${XDG_CONFIG_HOME}/homebrew/Masfile:
       if: "[ `uname` = Darwin ]"
       path: scripts/macos/brew/Masfile
-    # ~/.hyper.js:
-    #   if: "[ `uname` = Darwin ]"
-    #   path: config/hyper/hyper.js
     ~/Library/Application Support/VSCodium/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscodium/settings.json
