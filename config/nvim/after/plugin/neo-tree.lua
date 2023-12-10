@@ -5,6 +5,11 @@ require('neo-tree').setup({
         },
     },
     filesystem = {
+        filtered_items = {
+            always_show = {
+                ".github"
+            }
+        },
         follow_current_file = {
             enabled = true,
         }
