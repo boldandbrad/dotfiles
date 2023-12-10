@@ -87,6 +87,10 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   alias ql="qlmanage -p ${@} > /dev/null 2> /dev/null" # quicklook from the terminal
   alias safari="open -a Safari"
 
+  alias dep-check="brew bundle check -v" # check that all brewfile deps are installed
+  alias dep-refresh="brew bundle install" # install all brewfile deps
+  alias dep-prune="brew bundle cleanup" # remove all brew managed deps not specified in brewfile
+
   # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
   # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 fi
@@ -101,14 +105,14 @@ alias duf='du -sh *' # list sizes of files within directory
 alias lock="zip -erj"
 alias unlock="unzip -d"
 
-# dotfile refresh
-alias refresh="dotbot -c $DOTFILES/symlinks.yaml"
+# rerun system setup
+alias sys-refresh="${DOTFILES}/install.sh"
+# dotfile relink
+alias dot-relink="dotbot -c $DOTFILES/symlinks.yaml"
 # reload shell session
-alias reload=". ${ZDOTDIR}/.zshrc"
-# rerun dotfile installation
-alias reinstall="$DOTFILES/install.sh"
+alias zsh-reload=". ${ZDOTDIR}/.zshrc"
 # rerun clone github repos
-alias reclone="$DOTFILES/scripts/tools/github/clone_repos.sh"
+alias git-reclone="$DOTFILES/scripts/tools/github/clone_repos.sh"
 
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'

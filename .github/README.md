@@ -1,19 +1,28 @@
-# dotfiles
-
 ![macOS](https://badgen.net/badge/icon/macOS/blue?icon=apple&label)
 
-This is my personal dotfiles repo. I have made it open source to serve as an
+# dotfiles
+
+> `$HOME`, sweet `$HOME`
+
+Welcome to my personal dotfiles repo! I have made it open source to serve as an
 example for others. If you wish to use it, please fork and make your own
-customizations to the contained files before install.
+[customizations](#customization) to the contained files before install.
 
-## Toolset
+**Jump to:**
+[Intro](#intro) |
+[Features](#features) |
+[Customization](#customization) |
+[Installation](#installation) |
+[Usage](#usage) |
+[Inspiration](#inspiration) |
+[Resources](#resources)
 
-- [Homebrew](https://brew.sh): install and manage apps and tools
-- [Dotbot](https://github.com/anishathalye/dotbot): install and manage dotfiles
+## 📢 Intro <a id="intro"></a>
 
-## Features
+Dotfiles are config
 
-- Remote installation script
+## ✨ Features <a id="features"></a>
+
 - macOS system setup
   - Install Apple Developer Command Line Tools
   - Update preinstalled software via `softwareupdate`
@@ -22,96 +31,71 @@ customizations to the contained files before install.
   - XDG directory compatibility
   - Clone user's github repos
 
-### Coming Soon
+## ⚙️ Customization <a id="customization"></a>
 
-- Install user's preferred VSCodium extensions
-- GitHub Actions Builds
-- Debian Linux support
-- Containerfile
-- Vagrantfile
-- Customization guide
-- Setup macOS system preferences via `defaults` or `apply-user-defaults`?
-- Setup macOS dock?
-- Setup macOS LaunchPad?
+> Coming soon.
 
-## Install
+## 📦 Installation <a id="installation"></a>
 
-### Remote Installation
-
-> The [remote install script](./remote_install.sh) explains what it will do and
-> prompts before doing so.
+> **Warning**: Before continuing, consider reviewing the repo contents to
+> validate it is what you want.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
 ```
 
-### Manual Installation
+This will download and run [`remote_install.sh`](../remote_install.sh), which
+clones this repo to `~/Setup/dotfiles` (if not present), and then prompts you to
+run [`install.sh`](../install.sh).
 
-Clone this repo into `~/Setup/dotfiles`:
+Alternatively you can clone the repo yourself and run the install script
+manually ([`install.sh`](../install.sh)).
 
 ```sh
 git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
-```
-
-Install apps, tools, and dotfiles:
-
-```sh
 cd ~/Setup/dotfiles && ./install.sh
 ```
 
-> Note that installation is an idempotent operation. Meaning it can be
-> safely run multiple times.
+The install script does several things. It explains what it will do, prompts
+before doing so, and is idempotent. This means it can be safely run multiple
+times without compounding changes or breaking.
 
-## Maintenance
+## 🚀 Usage <a id="usage"></a>
 
-Any local dotfile modifications can be easily pushed to github at any time with
-`git`. This ensures that updates are backed-up and can be pulled from other
-devices.
+To make system maintanence simpler post-install, a handful of convenient
+commands are provided. Invoke these from anywhere.
 
-For a more seamless experience, consider scheduling these tasks to run
-periodically.
+| Command       | Description                                                 |
+| -             | -                                                           |
+| `sys-refresh` | Rerun system setup ([`install.sh`](../install.sh))          |
+| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
+| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
+| `dot-relink`  | Relink installed dotfiles                                   |
+| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
+| `dep-check`   | Check if all apps and dependencies are installed            |
+| `dep-refresh` | Install/update all apps and dependencies                    |
+| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
+| `git-reclone` | Reclone user github repos                                   |
 
-### Dotbot
-
-Refresh dotfiles
-
-```zsh
-refresh
-```
-
-### Homebrew
-
-Check if all `~/.config/homebrew/Brewfile` dependencies are installed
-
-```zsh
-brew check
-```
-
-Install everything listed in `~/.config/homebrew/Brewfile`
-
-```zsh
-brew apply
-```
-
-Uninstall everything not listed in `~/.config/homebrew/Brewfile`
-
-```zsh
-brew prune
-```
-
-## Inspiration
+## 💡 Inspiration <a id="inspiration"></a>
 
 There are tons of great dotfile and machine setup repos out there. In
 particular, I took inspiration from these gems:
 
 - [lissy93/brewfile](https://github.com/lissy93/brewfile)
-- [lissy93/dotfiles](https://github.com/lissy93/dotfiles)
+- [lissy93/dotfiles](https://github.com/lissy93/dotfiles) (a lot 😅)
 - [nikitavoloboev/dotfiles](https://github.com/nikitavoloboev/dotfiles)
 - [stefanzweifel/dotfiles](https://github.com/stefanzweifel/dotfiles)
 - [superatomic/dotfiles](https://github.com/superatomic/dotfiles)
 - [webpro/dotfiles](https://github.com/webpro/dotfiles)
 
-## License
+## 📚 Resources <a id="resources"></a>
+
+- [Roadmap](ROADMAP.md) - planned changes and updates to this repo
+- [Docs 🔗](https://boldandbrad.github.io/docs) - my personal dev docs
+- [Dotbot 🔗](https://github.com/anishathalye/dotbot) - dotbot github repo
+
+## ⚖️ License <a id="license"></a>
 
 Copyright (c) 2021-present Bradley Wojcik. Released under the MIT License. See
-[LICENSE](LICENSE) for details.
+[LICENSE](../LICENSE) for details.
