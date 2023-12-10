@@ -4,7 +4,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.codeLensFontFamily": "Anonymous Pro",
   "editor.cursorBlinking": "solid",
