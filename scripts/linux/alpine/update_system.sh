@@ -6,7 +6,7 @@
 ################################################################
 # Install available alpine system updates.                     #
 #                                                              #
-# Note: System updates may force a restart. Simply rerun       #
+# NOTE: System updates may force a restart. Simply rerun       #
 # ./install.sh to continue.                                    #
 ################################################################
 

@@ -64,7 +64,7 @@ brew "zsh"                      # updated z shell
 
 cask "arc"                      # web browser of the future
 # cask "balenaetcher"             # boot drive imager
-# cask "bricklink-studio"         # lego designer
+cask "bricklink-studio"         # lego designer
 cask "discord"                  # digital communities
 cask "duckduckgo"               # web browser
 cask "firefox"                  # web browser
@@ -95,8 +95,10 @@ brew "exercism"                 # coding exercise cli
 brew "gh"                       # github cli
 cask "github"                   # github client
 # brew "gradle"                   # java build tool
+# cask "hoppscotch"               # rest client
 brew "httpie"                   # cli rest client
 cask "httpie"                   # rest client
+brew "hurl"                     # cli rest client and test suite
 cask "linear-linear"            # issue tracker
 brew "oven-sh/bun/bun"          # js runtime and tooling
 brew "pkgxdev/made/pkgx"        # everything runner
@@ -137,5 +139,3 @@ cask "steam"                    # game marketplace and launcher
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
-
-# cask "hoppscotch"

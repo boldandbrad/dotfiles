@@ -1,9 +1,10 @@
 # boldandbrad/dotfiles - scripts
 
-A set of bash scripts for automating the setup and management of various
-systems and tools.
+This directory contains shell scripts for automating system and tool setup.
 
-> NOTE: At this time boldandbrad/dotfiles only supports installation on macos.
-> However, you may find work-in-progress scripts for other systems in this
-> directory. These may be officially supported in the future, though it is not
-> guaranteed.
+The appropriate scripts for the active system are called directly by
+[`install.sh`](../install.sh).
+
+> NOTE: Only macOS installation is supported at this time. Scripts for other
+> systems are considered incomplete or unstable, and their eventual support is
+> not guaranteed.

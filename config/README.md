@@ -1,7 +1,6 @@
 # boldandbrad/dotfiles - configs
 
-All configuration files for packages, apps, and services used across *nix based
-systems.
+This directory contains configuration files for packages, apps, and services.
 
-The locations on disk that these files should be symlinked to is specified in
-`../symlinks.yaml`.
+The locations on disk that these files should be symlinked to are specified in
+[`symlinks.yaml`](../symlinks.yaml).

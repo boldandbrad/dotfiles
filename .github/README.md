@@ -9,7 +9,7 @@ example for others. If you wish to use it, please fork and make your own
 [customizations](#customization) to the contained files before install.
 
 **Jump to:**
-[Intro](#intro) |
+[About](#about) |
 [Features](#features) |
 [Customization](#customization) |
 [Installation](#installation) |
@@ -17,9 +17,44 @@ example for others. If you wish to use it, please fork and make your own
 [Inspiration](#inspiration) |
 [Resources](#resources)
 
-## 📢 Intro <a id="intro"></a>
+## 📢 About <a id="about"></a>
 
-Dotfiles are config
+### Repository Structure
+
+This repo is organized into a few high level directories.
+
+```txt
+dotfiles/
+├── config/             # Configuration files for packages, apps, and services. Symlinked by dotbot.
+│  └── ..
+├── scripts/            # Shell scripts for automating system and tool setup. Called by install.sh.
+│  └── ..
+├── vendor/             # Dependencies which are managed as git submodules.
+│  └── ..
+├── ..
+├── Makefile            # Helpful development commands
+├── install.sh          # Main installation and setup script.
+├── remote_install.sh   # Remote installation script.
+└── symlinks.yaml       # Dotbot symlink configuration.
+```
+
+### XDG Directories
+
+Most packages and apps respect the
+[XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html)
+to determine where to store configurations and data. This creates consistency
+and predictability while keeping `~/` free of clutter.
+
+The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv).
+
+| Env Variable      | Location              |
+| -                 | -                     |
+| `XDG_BIN_HOME`    | `~/.local/bin`        |
+| `XDG_CACHE_HOME`  | `~/.local/var/cache`  |
+| `XDG_CONFIG_HOME` | `~/.config`           |
+| `XDG_DATA_HOME`   | `~/.local/share`      |
+| `XDG_LIB_HOME`    | `~/.local/lib`        |
+| `XDG_STATE_HOME`  | `~/.local/state`      |
 
 ## ✨ Features <a id="features"></a>
 

@@ -6,7 +6,7 @@
 # Apps and extensions to be installed via `mas`.               #
 # Be sure to remove / comment out tools you do not need.       #
 #                                                              #
-# Note: `mas` is only able to install apps that have been      #
+# NOTE: `mas` is only able to install apps that have been      #
 # previously downloaded from the app store by your apple id.   #
 ################################################################
 
