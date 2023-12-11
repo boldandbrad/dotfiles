@@ -21,9 +21,3 @@ fi
 # configure homebrew
 brew developer off
 brew analytics off
-
-# setup homebrew aliases
-echo -e "\nSetting up Homebrew aliases..."
-brew tap homebrew/aliases
-brew alias mas="bundle install --file=~/.config/homebrew/Masfile"
-echo -e "${GREEN_B}Homebrew aliases are setup!${RESET}"

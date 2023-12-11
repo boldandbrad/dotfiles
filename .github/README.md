@@ -32,7 +32,7 @@ dotfiles/
 ├── vendor/             # Dependencies which are managed as git submodules.
 │  └── ..
 ├── ..
-├── Makefile            # Helpful development commands
+├── Makefile            # Helpful development commands.
 ├── install.sh          # Main installation and setup script.
 ├── remote_install.sh   # Remote installation script.
 └── symlinks.yaml       # Dotbot symlink configuration.

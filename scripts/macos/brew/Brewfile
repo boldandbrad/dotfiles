@@ -20,7 +20,6 @@
 # tap "homebrew/core"                   # packages & clis
 # tap "homebrew/cask"                   # desktop apps
 tap "homebrew/cask-fonts"             # fonts
-tap "homebrew/aliases"                # brew alias support
 tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 

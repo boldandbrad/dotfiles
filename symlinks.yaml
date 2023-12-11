@@ -17,7 +17,6 @@
     - ~/Downloads
     - ~/Setup
 
-    - ~/.config/brew-aliases
     - ~/.local/var/cache/zsh
 
 # symlink locations
