@@ -17,3 +17,5 @@ vim.opt.listchars = "tab:>-,trail:·,nbsp:·,space:·"
 vim.opt.wrap = false
 
 vim.opt.scrolloff = 8
+
+vim.opt.clipboard:append {"unnamedplus"}
