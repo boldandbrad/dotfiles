@@ -32,6 +32,11 @@
     # git configs
     ${XDG_CONFIG_HOME}/git: config/git
 
+    # tmux configs
+    ${XDG_CONFIG_HOME}/tmux: config/tmux
+    ${XDG_DATA_HOME}/tmux/tpm: vendor/tpm
+    ${XDG_DATA_HOME}/tmux/plugins/tpm: vendor/tpm
+
     # other tool configs
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml

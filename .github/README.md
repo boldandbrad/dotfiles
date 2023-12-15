@@ -117,6 +117,7 @@ commands are provided. Invoke these from anywhere.
 There are tons of great dotfile and machine setup repos out there. In
 particular, I took inspiration from these gems:
 
+- [dreamsofcode-io/dotfiles](https://github.com/dreamsofcode-io/dotfiles)
 - [lissy93/brewfile](https://github.com/lissy93/brewfile)
 - [lissy93/dotfiles](https://github.com/lissy93/dotfiles) (a lot 😅)
 - [nikitavoloboev/dotfiles](https://github.com/nikitavoloboev/dotfiles)

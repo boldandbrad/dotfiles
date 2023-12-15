@@ -31,6 +31,7 @@ export LESSHISTFILE="-" # disable less history
 export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
+export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
