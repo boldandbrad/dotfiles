@@ -25,43 +25,43 @@ The floor plan at a glance:
 
 <table>
   <tr>
-    <th text-align="left">Supported Systems</th>
+    <th align="left">Supported Systems</th>
     <td>macOS</td>
   </tr>
   <tr>
-    <th text-align="left">Package Manager</th>
+    <th align="left">Package Manager</th>
     <td>homebrew</td>
   </tr>
   <tr>
-    <th text-align="left">Dotfile Manager</th>
+    <th align="left">Dotfile Manager</th>
     <td>dotbot</td>
   </tr>
   <tr>
-    <th text-align="left">Terminal Emulators</th>
+    <th align="left">Terminal Emulators</th>
     <td>Alacritty, kitty</td>
   </tr>
   <tr>
-    <th text-align="left">Terminal Multiplexer</th>
+    <th align="left">Terminal Multiplexer</th>
     <td>tmux</td>
   </tr>
   <tr>
-    <th text-align="left">Shell</th>
+    <th align="left">Shell</th>
     <td>zsh</td>
   </tr>
   <tr>
-    <th text-align="left">Shell Prompt</th>
+    <th align="left">Shell Prompt</th>
     <td>starship</td>
   </tr>
   <tr>
-    <th text-align="left">Editors</th>
+    <th align="left">Editors</th>
     <td>Vscodium, Neovim</td>
   </tr>
   <tr>
-    <th text-align="left">Typefaces</th>
+    <th align="left">Typefaces</th>
     <td>Anonymous Pro, Anonymice Pro Nerd Font</td>
   </tr>
   <tr>
-    <th text-align="left">Themes</th>
+    <th align="left">Themes</th>
     <td>Catppuccino Mocha, GitHub Dark Default</td>
   </tr>
 </table>
