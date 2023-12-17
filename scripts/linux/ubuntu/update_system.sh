@@ -6,7 +6,7 @@
 # Install available ubuntu system updates.                     #
 #                                                              #
 # NOTE: System updates may force a restart. Simply rerun       #
-# ./install.sh to continue.                                    #
+# ./unpack.sh to continue.                                     #
 ################################################################
 
 # check for available updates

@@ -1,51 +1,140 @@
 ![macOS](https://badgen.net/badge/icon/macOS/blue?icon=apple&label)
 
-# dotfiles
+# 🏠 boldandbrad's humble dotfiles
 
-> `$HOME`, sweet `$HOME`
+> Welcome `$HOME`!
 
-Welcome to my personal dotfiles repo! I have made it open source to serve as an
-example for others. If you wish to use it, please fork and make your own
-[customizations](#customization) to the contained files before install.
+This repo makes moving into a new system a breeze by automatically furnishing it
+with your favorite apps, and giving you the tools you need to maintain it. I
+have made my preferences open source to serve as an example for others. If you
+wish to use them as a blueprint for your own, please fork this repo and
+[personalize](#personalize) the contained files before unpacking.
 
 **Jump to:**
-[About](#about) |
-[Features](#features) |
-[Customization](#customization) |
-[Installation](#installation) |
-[Usage](#usage) |
+[TL;DR](#tldr) |
+[Unpack](#unpack) |
+[Maintain](#maintain) |
+[Contents](#contents) |
+[Personalize](#personalize) |
 [Inspiration](#inspiration) |
 [Resources](#resources)
 
-## 📢 About <a id="about"></a>
+## ✨ TL;DR <a id="tldr"></a>
 
-### Repository Structure
+The floor plan at a glance:
 
-This repo is organized into a few high level directories.
+<table>
+  <tr>
+    <th>Supported Systems</th>
+    <td>macOS</td>
+  </tr>
+  <tr>
+    <th>Package Manager</th>
+    <td>homebrew</td>
+  </tr>
+  <tr>
+    <th>Dotfile Manager</th>
+    <td>dotbot</td>
+  </tr>
+  <tr>
+    <th>Terminal Emulators</th>
+    <td>Alacritty, kitty</td>
+  </tr>
+  <tr>
+    <th>Terminal Multiplexer</th>
+    <td>tmux</td>
+  </tr>
+  <tr>
+    <th>Shell</th>
+    <td>zsh</td>
+  </tr>
+  <tr>
+    <th>Shell Prompt</th>
+    <td>starship</td>
+  </tr>
+  <tr>
+    <th>Editors</th>
+    <td>Vscodium, Neovim</td>
+  </tr>
+  <tr>
+    <th>Typefaces</th>
+    <td>Anonymous Pro, Anonymice Pro Nerd Font</td>
+  </tr>
+  <tr>
+    <th>Themes</th>
+    <td>Catppuccino Mocha, GitHub Dark Default</td>
+  </tr>
+</table>
+
+## 📦 Unpack <a id="unpack"></a>
+
+> **Warning**: Before unpacking, consider reviewing the repo [contents](#contents) to
+> make sure they match your style. Any existing configs may be overwritten.
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
+```
+
+This will download and run [`ship.sh`](../ship.sh), which
+clones this repo to `~/Setup/dotfiles` (if not present), and then prompts you to
+run [`unpack.sh`](../unpack.sh).
+
+Alternatively you can clone the repo yourself and run [`unpack.sh`](../unpack.sh)
+manually.
+
+```sh
+git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
+cd ~/Setup/dotfiles && ./unpack.sh
+```
+
+The unpack script explains what it will do, prompts before doing so, and is
+idempotent. This means it can be safely run multiple times without compounding
+changes or breaking.
+
+## 🛠️ Maintain <a id="maintain"></a>
+
+To make system maintanence simpler post-install, a handful of convenient
+commands are provided. Invoke these from anywhere.
+
+| Command       | Description                                                 |
+| -             | -                                                           |
+| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))          |
+| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
+| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
+| `dot-relink`  | Relink installed dotfiles                                   |
+| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
+| `dep-check`   | Check if all apps and dependencies are installed            |
+| `dep-refresh` | Install/update all apps and dependencies                    |
+| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
+| `git-reclone` | Reclone user github repos                                   |
+
+## 🛋️ Contents <a id="contents"></a>
+
+The contents of this repo are organized into a few high level directories.
 
 ```txt
 dotfiles/
-├── config/             # Configuration files for packages, apps, and services. Symlinked by dotbot.
+├── config/         # Config files for packages and apps. Symlinked by dotbot.
 │  └── ..
-├── scripts/            # Shell scripts for automating system and tool setup. Called by install.sh.
+├── scripts/        # Shell scripts for system and tool setup. Called by unpack.sh.
 │  └── ..
-├── vendor/             # Dependencies which are managed as git submodules.
+├── vendor/         # Dependencies which are managed as git submodules.
 │  └── ..
 ├── ..
-├── Makefile            # Helpful development commands.
-├── install.sh          # Main installation and setup script.
-├── remote_install.sh   # Remote installation script.
-└── symlinks.yaml       # Dotbot symlink configuration.
+├── Makefile        # Helpful development commands.
+├── ship.sh         # Remote installation script.
+├── unpack.sh       # Main installation and setup script.
+└── symlinks.yaml   # Dotbot symlink configuration.
 ```
 
-### XDG Directories
+### Configs
 
 Most packages and apps respect the
 [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html)
 to determine where to store configurations and data. This creates consistency
 and predictability while keeping `~/` free of clutter.
 
-The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv).
+The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv), which is sourced before symlinking.
 
 | Env Variable      | Location              |
 | -                 | -                     |
@@ -56,61 +145,13 @@ The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv).
 | `XDG_LIB_HOME`    | `~/.local/lib`        |
 | `XDG_STATE_HOME`  | `~/.local/state`      |
 
-## ✨ Features <a id="features"></a>
+### Scripts
 
-- macOS system setup
-  - Install Apple Developer Command Line Tools
-  - Update preinstalled software via `softwareupdate`
-  - Install packages and apps via Homebrew Bundle
-  - Symlink user dotfiles via `dotbot`
-  - XDG directory compatibility
-  - Clone user's github repos
+> Docs coming soon.
 
-## ⚙️ Customization <a id="customization"></a>
+## 🖌️ Personalize <a id="personalize"></a>
 
-> Coming soon.
-
-## 📦 Installation <a id="installation"></a>
-
-> **Warning**: Before continuing, consider reviewing the repo contents to
-> validate it is what you want.
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
-```
-
-This will download and run [`remote_install.sh`](../remote_install.sh), which
-clones this repo to `~/Setup/dotfiles` (if not present), and then prompts you to
-run [`install.sh`](../install.sh).
-
-Alternatively you can clone the repo yourself and run the install script
-manually ([`install.sh`](../install.sh)).
-
-```sh
-git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
-cd ~/Setup/dotfiles && ./install.sh
-```
-
-The install script does several things. It explains what it will do, prompts
-before doing so, and is idempotent. This means it can be safely run multiple
-times without compounding changes or breaking.
-
-## 🚀 Usage <a id="usage"></a>
-
-To make system maintanence simpler post-install, a handful of convenient
-commands are provided. Invoke these from anywhere.
-
-| Command       | Description                                                 |
-| -             | -                                                           |
-| `sys-refresh` | Rerun system setup ([`install.sh`](../install.sh))          |
-| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
-| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
-| `dot-relink`  | Relink installed dotfiles                                   |
-| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
-| `dep-check`   | Check if all apps and dependencies are installed            |
-| `dep-refresh` | Install/update all apps and dependencies                    |
-| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
-| `git-reclone` | Reclone user github repos                                   |
+> Docs coming soon.
 
 ## 💡 Inspiration <a id="inspiration"></a>
 
@@ -128,8 +169,11 @@ particular, I took inspiration from these gems:
 ## 📚 Resources <a id="resources"></a>
 
 - [Roadmap](ROADMAP.md) - planned changes and updates to this repo
-- [Docs 🔗](https://boldandbrad.github.io/docs) - my personal dev docs
+- [boldandbrad docs 🔗](https://boldandbrad.github.io/docs) - my personal dev
+  docs
 - [Dotbot 🔗](https://github.com/anishathalye/dotbot) - dotbot github repo
+- [Dotfiles Community 🔗](https://dotfiles.github.io/) - a great collection of
+  dotfile resources
 
 ## ⚖️ License <a id="license"></a>
 

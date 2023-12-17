@@ -1,6 +1,6 @@
 
 install:
-	'./install.sh'
+	'./unpack.sh'
 
 lint:
 	pre-commit run --all-files

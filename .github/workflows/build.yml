@@ -14,4 +14,4 @@ jobs:
       - run: |
           mkdir -p ~/dotfiles-install-dir
       - run: |
-          HOME=~/dotfiles-install-dir ./install.sh --auto-yes
+          HOME=~/dotfiles-install-dir ./unpack.sh --auto-yes

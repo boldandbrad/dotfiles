@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ################################################################
-# remote_install.sh - Remotely clone repo and initiate install #
+# ship.sh - Remotely clone repo and initiate install           #
 ################################################################
 # Intended for remote use only. Prompt the user to clone       #
 # dotfiles repo and to run the install script.                 #
@@ -14,9 +14,9 @@
 ################################################################
 
 # example usages:
-#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh)"
+#  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
 # or
-#  curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/remote_install.sh | bash
+#  curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh | bash
 
 # set variables
 PARAMS=$* # user provided parameters
@@ -41,7 +41,7 @@ fi
 
 # print help
 if [[ $PARAMS == *"--help"* ]] ; then
-  echo -e "usage: ./remote_install.sh [--help] [--auto-yes] [--no-clear]\n\n"\
+  echo -e "usage: ./ship.sh [--help] [--auto-yes] [--no-clear]\n\n"\
   "Intended for remote use only. Prompt the user to clone dotfiles repo and to run the install script.\n\n"\
   "OPTIONS:\n"\
   "\t--auto-yes\tSkip all prompts, and auto accept all changes\n"\
@@ -68,7 +68,7 @@ function pre_setup {
 
   echo -e "${PURPLE_B}This remote install script will do the following:${RESET}\n"\
   " (1) Clone the ${BLUE_B}${GITHUB_USER}/dotfiles${RESET} repo to ${BLUE_B}${DOTFILE_DIR}${RESET}\n"\
-  " (2) Prompt you to install its contents via ${BLUE_B}install.sh${RESET}\n\n"\
+  " (2) Prompt you to install its contents via ${BLUE_B}unpack.sh${RESET}\n\n"\
   "${BLUE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"\
   "${BLUE_B}For more info, see GitHub: \033[4;34mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}"
 
@@ -124,13 +124,13 @@ function install_dotfiles {
   echo -en "\n${PURPLE_B}Would you like to start dotfiles install now? (y/N):${RESET} "
   read -t $PROMPT_TIMEOUT -n 1 -r ans_install && echo
   if [[ ! $ans_install =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping install. Install later via ${BLUE_B}$DOTFILE_DIR/install.sh${RESET}"
+    echo -e "\nSkipping install. Install later via ${BLUE_B}$DOTFILE_DIR/unpack.sh${RESET}"
     return
   fi
 
   # install dotfiles
   cd $DOTFILE_DIR
-  $DOTFILE_DIR/install.sh
+  $DOTFILE_DIR/unpack.sh
 }
 
 # terminate on first failure

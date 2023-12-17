@@ -107,7 +107,7 @@ alias lock="zip -erj"
 alias unlock="unzip -d"
 
 # rerun system setup
-alias sys-refresh="${DOTFILES}/install.sh"
+alias sys-refresh="${DOTFILES}/unpack.sh"
 # dotfile relink
 alias dot-relink="dotbot -c $DOTFILES/symlinks.yaml"
 # reload shell session

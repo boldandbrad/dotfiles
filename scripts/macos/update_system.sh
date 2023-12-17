@@ -7,7 +7,7 @@
 # software updates.                                            #
 #                                                              #
 # NOTE: System updates may force a restart. Simply rerun       #
-# ./install.sh to continue.                                    #
+# ./unpack.sh to continue.                                     #
 ################################################################
 
 # install command line developer tools

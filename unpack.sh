@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ################################################################
-# install.sh - All-in-One Install and Setup Script for Unix    #
+# unpack.sh - All-in-One Install and Setup Script for Unix     #
 ################################################################
 # Prompt the user to check system compatibility, install       #
 # packages and apps, symlink dotfiles, and configure system.   #
@@ -43,7 +43,7 @@ fi
 
 # print help
 if [[ $PARAMS == *"--help"* ]] ; then
-  echo -e "usage: ./install.sh [--help] [--auto-yes] [--no-clear]\n\n"\
+  echo -e "usage: ./unpack.sh [--help] [--auto-yes] [--no-clear]\n\n"\
   "Prompt the user to check system compatibility, install packages and apps, symlink dotfiles, and configure system.\n\n"\
   "OPTIONS:\n"\
   "\t--auto-yes\tSkip all prompts, and auto accept all changes\n"\
@@ -184,7 +184,6 @@ clone_repos
 # TODO: change default shell to homebrew zsh on macOS
 # TODO: system configurations
 # TODO: vscodium extensions
-
 # TODO: debian linux support
 
 set +e
