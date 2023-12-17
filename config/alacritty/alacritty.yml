@@ -1,0 +1,39 @@
+# alacritty version 12.x or earlier config
+
+window:
+  dimensions:
+    columns: 96
+    lines: 32
+  # position:
+  # x: 0
+  # y: 0
+  padding:
+    x: 12
+    y: 12
+  dynamic_padding: true
+  dynamic_title: true
+
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  # startup_mode: Windowed
+
+font:
+  normal:
+    family: "AnonymicePro Nerd Font"
+    style: Regular
+  bold:
+    style: Bold
+  italic:
+    style: Italic
+  bold_italic:
+    style: Bold Italic
+  size: 16.0
+
+cursor:
+  style:
+    shape: Block
+    blinking: Never

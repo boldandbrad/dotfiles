@@ -62,6 +62,7 @@ brew "zsh"                      # updated z shell
 # desktop apps                                                 #
 ################################################################
 
+cask "alacritty"                # terminal emulator
 cask "arc"                      # web browser of the future
 # cask "balenaetcher"             # boot drive imager
 cask "bricklink-studio"         # lego designer

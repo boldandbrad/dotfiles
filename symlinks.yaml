@@ -38,6 +38,7 @@
     ${XDG_DATA_HOME}/tmux/plugins/tpm: vendor/tpm
 
     # other tool configs
+    ${XDG_CONFIG_HOME}/alacritty: config/alacritty
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml
     ${XDG_CONFIG_HOME}/kitty: config/kitty
