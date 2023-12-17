@@ -1,4 +1,5 @@
-![macOS](https://badgen.net/badge/icon/macOS/blue?icon=apple&label)
+![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)
+<!-- ![arch-linux](https://img.shields.io/badge/Arch_Linux-_?logo=arch-linux&logoColor=white&color=%231793D1) -->
 
 # 🏠 boldandbrad's humble dotfiles
 
