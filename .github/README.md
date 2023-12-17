@@ -25,43 +25,43 @@ The floor plan at a glance:
 
 <table>
   <tr>
-    <th>Supported Systems</th>
+    <th text-align="left">Supported Systems</th>
     <td>macOS</td>
   </tr>
   <tr>
-    <th>Package Manager</th>
+    <th text-align="left">Package Manager</th>
     <td>homebrew</td>
   </tr>
   <tr>
-    <th>Dotfile Manager</th>
+    <th text-align="left">Dotfile Manager</th>
     <td>dotbot</td>
   </tr>
   <tr>
-    <th>Terminal Emulators</th>
+    <th text-align="left">Terminal Emulators</th>
     <td>Alacritty, kitty</td>
   </tr>
   <tr>
-    <th>Terminal Multiplexer</th>
+    <th text-align="left">Terminal Multiplexer</th>
     <td>tmux</td>
   </tr>
   <tr>
-    <th>Shell</th>
+    <th text-align="left">Shell</th>
     <td>zsh</td>
   </tr>
   <tr>
-    <th>Shell Prompt</th>
+    <th text-align="left">Shell Prompt</th>
     <td>starship</td>
   </tr>
   <tr>
-    <th>Editors</th>
+    <th text-align="left">Editors</th>
     <td>Vscodium, Neovim</td>
   </tr>
   <tr>
-    <th>Typefaces</th>
+    <th text-align="left">Typefaces</th>
     <td>Anonymous Pro, Anonymice Pro Nerd Font</td>
   </tr>
   <tr>
-    <th>Themes</th>
+    <th text-align="left">Themes</th>
     <td>Catppuccino Mocha, GitHub Dark Default</td>
   </tr>
 </table>
