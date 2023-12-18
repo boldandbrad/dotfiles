@@ -4,8 +4,11 @@
 
 This repo makes moving into a new system a breeze by automatically furnishing it
 with your favorite apps, and giving you the tools you need to maintain it. I
-have made my preferences open source to serve as an example for others. If you
-wish to use them as a blueprint for your own, please fork this repo and
+have made my preferences open source to serve as a blueprint and inspiration for
+others.
+
+Whether or not dotfile repos should be forked is a topic of hot debate. If you
+***do*** choose to fork this repo, I strongly recommend you
 [personalize](#personalize) the contained files before unpacking.
 
 **Jump to:**
