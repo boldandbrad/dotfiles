@@ -1,6 +1,3 @@
-![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)
-<!-- ![arch-linux](https://img.shields.io/badge/Arch_Linux-_?logo=arch-linux&logoColor=white&color=%231793D1) -->
-
 # 🏠 boldandbrad's humble dotfiles
 
 > Welcome `$HOME`!
@@ -27,35 +24,54 @@ The floor plan at a glance:
 <table>
   <tr>
     <th align="left">Supported Systems</th>
-    <td>macOS</td>
+    <td>
+      <img alt="macOS" src="https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000">
+      <!-- <img alt="arch-linux" src="https://img.shields.io/badge/Arch%20Linux-_?logo=arch-linux&logoColor=white&color=%231793D1"> -->
+    </td>
   </tr>
   <tr>
     <th align="left">Package Manager</th>
-    <td>homebrew</td>
+    <td>
+      <img alt="homebrew" src="https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040">
+    </td>
   </tr>
   <tr>
     <th align="left">Dotfile Manager</th>
-    <td>dotbot</td>
+    <td>
+      <img alt="dotbot" src="https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey">
+    </td>
   </tr>
   <tr>
     <th align="left">Terminal Emulators</th>
-    <td>Alacritty, kitty</td>
+    <td>
+      <img alt="alacritty" src="https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01">
+      <img alt="kitty" src="https://img.shields.io/badge/kitty-_?logoColor=white&color=%23784421">
+    </td>
   </tr>
   <tr>
     <th align="left">Terminal Multiplexer</th>
-    <td>tmux</td>
+    <td>
+      <img alt="tmux" src="https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F">
+    </td>
   </tr>
   <tr>
     <th align="left">Shell</th>
-    <td>zsh</td>
+    <td>
+      <img alt="zsh" src="https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24">
+    </td>
   </tr>
   <tr>
     <th align="left">Shell Prompt</th>
-    <td>starship</td>
+    <td>
+      <img alt="starship" src="https://img.shields.io/badge/starship-_?logo=starship&logoColor=white&color=%23DD0B78">
+    </td>
   </tr>
   <tr>
     <th align="left">Editors</th>
-    <td>Vscodium, Neovim</td>
+    <td>
+      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED">
+      <img alt="neovim" src="https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143">
+    </td>
   </tr>
   <tr>
     <th align="left">Typefaces</th>
@@ -63,7 +79,7 @@ The floor plan at a glance:
   </tr>
   <tr>
     <th align="left">Themes</th>
-    <td>Catppuccino Mocha, GitHub Dark Default</td>
+    <td>Catppuccin Mocha, GitHub Dark Default</td>
   </tr>
 </table>
 
