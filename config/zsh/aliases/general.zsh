@@ -18,6 +18,7 @@ command_exists () {
 # tool replacements                                            #
 ################################################################
 
+if command_exists nvim ; then; alias vim="nvim"; fi
 if command_exists bat ; then; alias cat="bat"; fi
 if command_exists codium ; then; alias code="codium"; fi
 if command_exists podman ; then; alias docker="podman"; fi
