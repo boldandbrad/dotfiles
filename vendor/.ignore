@@ -1,0 +1,4 @@
+# omit submodule contents from search tool results
+catppuccin-alacritty/
+dotbot/
+tpm/
