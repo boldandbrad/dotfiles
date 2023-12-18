@@ -14,14 +14,19 @@ vim.opt.rtp:prepend(lazypath)
 
 -- lazy plugins
 require("lazy").setup({
-    -- github dark theme
+    -- themes
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        lazy = false, -- load during startup
+        priority = 1000 -- load before other plugins
+    },
     {
         'projekt0n/github-nvim-theme',
-        lazy = false, -- make sure we load this during startup
-        priority = 1000, -- make sure to load this before all the other start plugins
+        lazy = false, -- load before startup
+        priority = 999, -- load before other plugins
         config = function()
             require('github-theme').setup({})
-            vim.cmd('colorscheme github_dark_default')
         end,
     },
     -- telescope
