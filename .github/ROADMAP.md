@@ -2,32 +2,30 @@
 
 Planned changes and updates to this repo.
 
-## Commands
-
-- Implement `sys-clean` command to clean up caches and system data
-- Implement `dot-commit` command to automatically commit and push dotfile repo
-  changes to github
-
-## Scripts
-
-- vscodium: Install extensions
-- macOS: System preferences setup via `defaults` or `apply-user-defaults`?
-- macOS: Dock setup?
-- macOS: LaunchPad setup?
-
-## Docs
-
-- Feature explanations
-- Customization guide
-
-## Other
-
-- neovim: NvChad configuration?
+- alacritty: Catppuccin Mocha theme
+- arch-linux: app/package installation
+- arch-linux: dotfile symlinking
+- cicd: GitHub Actions Builds
+- command: `sys-clean` to clean up caches and system data
+- command: `dot-commit` to automatically commit and push dotfile repo changes to
+  github
+- container: Containerfile
+- debian-linux: app/package installation
+- debian-linux: dotfile symlinking
+- dir: Rename `~/Setup` to `~/Blueprint` or `~/Schematic`
+- docs: Feature explanations
+- docs: Personalization guide
+- kitty: Catppuccin Mocha theme
+- macos: System preferences setup via `defaults` or `apply-user-defaults`?
+- macos: Dock setup?
+- macos: LaunchPad setup?
+- macos: Store other app settings via `mackup`?
+- macos: Hammerspoon config?
+- neovim: Catppuccin Mocha theme
+  - Color function to avoid theme flash during plugin updates
+- neovim: Consider modified NvChad setup instead of complete custom
+- terminal.app: Catppuccin Mocha theme
 - tmux: Build out configuration
-- Update all themes to Catppuccin
-- GitHub Actions Builds
-- Debian Linux support
-- Arch Linux support
-- Containerfile
-- Vagrantfile
-- Rename `~/Setup` to `~/Blueprint` or `~/Schematic`
+- tmux: Catppuccin Mocha theme
+- vm: Vagrantfile
+- vscodium: Install extensions script
