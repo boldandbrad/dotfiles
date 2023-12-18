@@ -3,7 +3,7 @@
 window:
   dimensions:
     columns: 96
-    lines: 32
+    lines: 24
   # position:
   # x: 0
   # y: 0
