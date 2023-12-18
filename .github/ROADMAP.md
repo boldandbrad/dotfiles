@@ -2,7 +2,6 @@
 
 Planned changes and updates to this repo.
 
-- alacritty: Catppuccin Mocha theme
 - arch-linux: app/package installation
 - arch-linux: dotfile symlinking
 - cicd: GitHub Actions Builds

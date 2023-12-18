@@ -1,8 +1,11 @@
 [submodule "vendor/dotbot"]
 	path = vendor/dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "dotbot"]
 	ignore = dirty
 [submodule "vendor/tpm"]
 	path = vendor/tpm
 	url = https://github.com/tmux-plugins/tpm
+	ignore = dirty
+[submodule "vendor/catppuccin-alacritty"]
+	path = vendor/catppuccin-alacritty
+	url = https://github.com/catppuccin/alacritty/

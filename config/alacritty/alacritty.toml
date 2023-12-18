@@ -1,5 +1,7 @@
 # alacritty version 13.0+ config
 
+# TODO: figure out how to import themes
+
 [window]
 dimensions = { columns = 96, lines = 24 }
 position = "None"

@@ -1,5 +1,13 @@
 # alacritty version 12.x or earlier config
 
+# import themes
+import:
+  # uncomment the flavour you want below:
+  - ~/.config/alacritty/themes/catppuccin/catppuccin-mocha.yml
+  # - ~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.yml
+  # - ~/.config/alacritty/themes/catppuccin/catppuccin-frappe.yml
+  # - ~/.config/alacritty/themes/catppuccin/catppuccin-latte.yml
+
 window:
   dimensions:
     columns: 96
