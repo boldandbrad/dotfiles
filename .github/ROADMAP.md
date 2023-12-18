@@ -14,7 +14,6 @@ Planned changes and updates to this repo.
 - dir: Rename `~/Setup` to `~/Blueprint` or `~/Schematic`
 - docs: Feature explanations
 - docs: Personalization guide
-- docs: Guide to install/update Terminal.app themes
 - kitty: Catppuccin Mocha theme
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
 - macos: Dock setup?
