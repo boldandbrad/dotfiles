@@ -21,6 +21,7 @@ wish to use them as a blueprint for your own, please fork this repo and
 
 The floor plan at a glance:
 
+<!-- I wish I could create a table without a header row in pure markdown 🙃 -->
 <table>
   <tr>
     <th align="left">Supported Systems</th>
