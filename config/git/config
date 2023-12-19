@@ -8,6 +8,7 @@
 	eol = lf
 	autocrlf = input
 	editor = codium --wait
+	pager = delta
 	excludesfile = ~/.config/git/gitignore
 [alias]
 	a = add
@@ -28,10 +29,14 @@
 [merge]
 	ff = only
 	tool = codium
+	conflictsytle = diff3
 [mergetool "codium"]
 	cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[interactive]
+	diffFilter = delta --color-only
 [diff]
 	tool = codium
+	colorMoved = default
 [difftool]
 	prompt = false
 [difftool "codium"]
@@ -43,3 +48,8 @@
 	clean = git-lfs clean -- %f
 [push]
 	autoSetupRemote = true
+[delta]
+    navigate = true    # use n and N to move between diff sections
+		line-numbers = true
+		side-by-side = true
+    light = false
