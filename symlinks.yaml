@@ -46,6 +46,7 @@
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml
     ${XDG_CONFIG_HOME}/kitty: config/kitty
+    ${XDG_CONFIG_HOME}/neofetch: config/neofetch
     ${XDG_CONFIG_HOME}/nvim: config/nvim
     ${XDG_CONFIG_HOME}/starship: config/starship
 

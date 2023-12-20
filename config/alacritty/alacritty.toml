@@ -2,6 +2,9 @@
 
 # TODO: figure out how to import themes
 
+[env]
+TERM_PROGRAM = "Alacritty"
+
 [window]
 dimensions = { columns = 96, lines = 24 }
 position = "None"

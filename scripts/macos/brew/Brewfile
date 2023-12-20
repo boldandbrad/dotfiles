@@ -45,6 +45,7 @@ brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # terminal markdown viewer
 brew "just"                     # project specific commands
+brew "neofetch"                 # system info viewer
 brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
 brew "ripgrep"                  # grep alternative

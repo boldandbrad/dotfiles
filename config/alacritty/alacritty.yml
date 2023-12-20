@@ -8,6 +8,9 @@ import:
   # - ~/.config/alacritty/themes/catppuccin/catppuccin-frappe.yml
   # - ~/.config/alacritty/themes/catppuccin/catppuccin-latte.yml
 
+env:
+  TERM_PROGRAM: Alacritty
+
 window:
   dimensions:
     columns: 96
@@ -31,7 +34,7 @@ window:
 
 font:
   normal:
-    family: "AnonymicePro Nerd Font"
+    family: AnonymicePro Nerd Font
     style: Regular
   bold:
     style: Bold
