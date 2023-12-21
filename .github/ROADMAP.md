@@ -21,6 +21,7 @@ Planned changes and updates to this repo.
 - macos: LaunchPad setup?
 - macos: Store other app settings via `mackup`?
 - macos: Hammerspoon config?
+- macos: Handle Homebrew differences between Intel and Apple Silicon macs
 - neovim: Color function to avoid theme flash during plugin updates
 - neovim: Consider modified NvChad setup instead of complete custom
 - tmux: Build out configuration

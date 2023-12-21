@@ -14,11 +14,9 @@
 # cask_args appdir: '~/Applications', require_sha: true
 
 ################################################################
-# taps                                                         #
+# taps (homebrew/core and homebrew/cask are auto tapped)       #
 ################################################################
 
-# tap "homebrew/core"                   # packages & clis
-# tap "homebrew/cask"                   # desktop apps
 tap "homebrew/cask-fonts"             # fonts
 tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
@@ -77,7 +75,6 @@ cask "kekaexternalhelper"       # keka helper
 cask "kitty"                    # terminal emulator
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
-# cask "neovide"                  # neovim gui
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
 cask "proton-drive"             # secure cloud storage
@@ -99,7 +96,6 @@ brew "gh"                       # github cli
 cask "github"                   # github client
 # brew "gradle"                   # java build tool
 # cask "hoppscotch"               # rest client
-brew "httpie"                   # cli rest client
 cask "httpie"                   # rest client
 brew "hurl"                     # cli rest client and test suite
 cask "linear-linear"            # issue tracker
