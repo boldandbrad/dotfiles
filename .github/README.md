@@ -115,11 +115,12 @@ changes or breaking.
 ## 🛠️ Maintain <a id="maintain"></a>
 
 To make system maintanence simpler post-install, a handful of convenient
-commands are provided. Invoke these from anywhere.
+command [aliases](../config/zsh/aliases/dotfiles.zsh) are provided. Invoke these
+from anywhere.
 
 | Command       | Description                                                 |
 | -             | -                                                           |
-| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))          |
+| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))            |
 | `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
 | `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
 | `dot-relink`  | Relink installed dotfiles                                   |
