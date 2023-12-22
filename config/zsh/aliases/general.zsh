@@ -21,15 +21,15 @@ command_exists () {
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
-alias ap="cd ~/Applications"
-alias dt="cd ~/Desktop"
-alias dv="cd ~/Developer"
-alias dc="cd ~/Documents"
-alias dl="cd ~/Downloads"
-alias sp="cd ~/Setup"
-alias dots="cd $DOTFILES"
+alias app="cd ~/Applications"
+alias dtp="cd ~/Desktop"
+alias dvp="cd ~/Developer"
+alias doc="cd ~/Documents"
+alias dnl="cd ~/Downloads"
+alias stp="cd ~/Setup"
+alias dot="cd $DOTFILES"
 # root of current git repo
-alias cg='cd `git rev-parse --show-toplevel`'
+alias grt='cd `git rev-parse --show-toplevel`'
 
 ################################################################
 # tool replacements                                            #
@@ -39,6 +39,7 @@ if command_exists nvim ; then; alias vim="nvim"; fi
 if command_exists bat ; then; alias cat="bat"; fi
 if command_exists codium ; then; alias code="codium"; fi
 if command_exists podman ; then; alias docker="podman"; fi
+if command_exists tldr ; then; alias help="tldr"; fi
 if command_exists eza ; then
   # list normal
   alias ls="eza --classify"
@@ -108,6 +109,13 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   alias arc="open -a Arc"
   # open Safari browser
   alias safari="open -a Safari"
+
+  # change to icloud directory
+  alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+
+  # empty the trash on all mounted volumes and the main HDD
+  # also, clear Apple’s System Logs to improve shell startup speed
+  alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
   # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
   # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'

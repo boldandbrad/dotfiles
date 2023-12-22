@@ -180,9 +180,10 @@ The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv), w
 There are tons of great dotfile and machine setup repos out there. In
 particular, I took inspiration from these gems:
 
-- [dreamsofcode-io/dotfiles](https://github.com/dreamsofcode-io/dotfiles)
-- [lissy93/brewfile](https://github.com/lissy93/brewfile)
-- [lissy93/dotfiles](https://github.com/lissy93/dotfiles) (a lot 😅)
+- [dreamsofcode-io/dotfiles](https://github.com/dreamsofcode-io/dotfiles) - nvim
+  and tmux configs
+- [lissy93/dotfiles](https://github.com/lissy93/dotfiles) - install scripts and
+  repo structure
 - [nikitavoloboev/dotfiles](https://github.com/nikitavoloboev/dotfiles)
 - [stefanzweifel/dotfiles](https://github.com/stefanzweifel/dotfiles)
 - [superatomic/dotfiles](https://github.com/superatomic/dotfiles)

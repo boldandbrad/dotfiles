@@ -12,7 +12,7 @@ Planned changes and updates to this repo.
 - container: Containerfile
 - debian-linux: app/package installation
 - debian-linux: dotfile symlinking
-- dir: Rename `~/Setup` to `~/Blueprint` or `~/Schematic`
+- dir: Install dotfiles directly to `~/Dotfiles` instead of `~/Setup/dotfiles`
 - docs: Feature explanations
 - docs: Personalization guide
 - kitty: Catppuccin Mocha theme
