@@ -38,8 +38,7 @@
     ${XDG_DATA_HOME}/tmux/plugins/tpm: vendor/tpm
 
     # alacritty configs
-    ${XDG_CONFIG_HOME}/alacritty/alacritty.yml: config/alacritty/alacritty.yml
-    ${XDG_CONFIG_HOME}/alacritty/alacritty.toml: config/alacritty/alacritty.toml
+    ${XDG_CONFIG_HOME}/alacritty: config/alacritty
     ${XDG_CONFIG_HOME}/alacritty/themes/catppuccin: vendor/catppuccin-alacritty
 
     # other tool configs

@@ -8,3 +8,6 @@ config/zsh/.zsh_plugins.zsh
 
 # tmux plugins
 config/tmux/plugins
+
+# alacritty themes
+config/alacritty/themes
