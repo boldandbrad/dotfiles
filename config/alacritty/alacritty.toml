@@ -18,7 +18,7 @@ normal = { family = "AnonymicePro Nerd Font", style = "Regular" }
 bold = { family = "AnonymicePro Nerd Font", style = "Bold" }
 italic = { family = "AnonymicePro Nerd Font", style = "Italic" }
 bold_italic = { family = "AnonymicePro Nerd Font", style = "Bold Italic" }
-size = 18.0
+size = 16.0
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }

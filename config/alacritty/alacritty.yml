@@ -43,7 +43,7 @@ font:
     style: Italic
   bold_italic:
     style: Bold Italic
-  size: 18.0
+  size: 16.0
 
 cursor:
   style:
