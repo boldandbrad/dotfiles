@@ -10,3 +10,7 @@
 	path = vendor/catppuccin-alacritty
 	url = https://github.com/catppuccin/alacritty/
 	ignore = dirty
+[submodule "vendor/NvChad"]
+	path = vendor/NvChad
+	url = https://github.com/NvChad/NvChad
+	shallow = true
