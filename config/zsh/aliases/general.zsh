@@ -120,6 +120,7 @@ fi
 # clear screen
 alias clr="clear"
 alias cls="clear; ls"
+alias clg="clear; git st"
 
 # file and dir sizes
 alias dud='du -d 1 -h' # list sizes of directories within directory

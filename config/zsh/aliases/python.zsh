@@ -11,4 +11,4 @@
 alias py="python"
 
 # activate python venv in the current repo
-alias pysrc="source $(git rev-parse --show-toplevel)/.venv/bin/activate"
+# alias pysrc="source $(git rev-parse --show-toplevel)/.venv/bin/activate"
