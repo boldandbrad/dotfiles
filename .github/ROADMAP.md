@@ -24,7 +24,5 @@ Planned changes and updates to this repo.
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
 - neovim: Color function to avoid theme flash during plugin updates
 - neovim: Consider modified NvChad setup instead of complete custom
-- tmux: Build out configuration
-- tmux: Catppuccin Mocha theme
 - vm: Vagrantfile
 - vscodium: Install extensions script
