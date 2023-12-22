@@ -42,6 +42,7 @@ brew "fcp"                      # cp alternative
 brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # terminal markdown viewer
+brew "jq"                       # json processor
 brew "just"                     # project specific commands
 brew "neofetch"                 # system info viewer
 brew "neovim"                   # tui editor
@@ -128,6 +129,7 @@ cask "font-anonymice-nerd-font"
 ################################################################
 
 # cask "clone-hero"               # guitar hero clone
+brew "fabric-installer"         # minecraft mod loader
 brew "ferium"                   # minecraft mod manager
 cask "minecraft"                # minecraft launcher
 cask "modrinth"                 # minecraft launcher & mod manager
