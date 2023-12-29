@@ -1,6 +1,13 @@
 # alacritty version 13.0+ config
 
-# TODO: figure out how to import themes
+# import themes
+import = [
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/themes/catppuccin/catppuccin-mocha.toml"
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-frappe.toml"
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-latte.toml"
+]
 
 [env]
 TERM = "xterm-256color"
