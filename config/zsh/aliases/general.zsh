@@ -129,6 +129,7 @@ fi
 alias clr="clear"
 alias cls="clear; ls"
 alias clg="clear; git st"
+alias cld="clear; cd"
 
 # file and dir sizes
 alias dud='du -d 1 -h' # list sizes of directories within directory
