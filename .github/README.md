@@ -151,12 +151,18 @@ dotfiles/
 
 ### Configs
 
+The [`config/`](../config/README.md) directory contains config files for
+packages and apps. They are symlinked to their respective locations on the
+system by `dotbot` as specified in [`symlinks.yaml`](../symlinks.yaml) at the
+repo root.
+
 Most packages and apps respect the
 [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html)
 to determine where to store configurations and data. This creates consistency
 and predictability while keeping `~/` free of clutter.
 
-The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv), which is sourced before symlinking.
+The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv),
+which is sourced before symlinking.
 
 | Env Variable      | Location              |
 | -                 | -                     |
@@ -168,6 +174,11 @@ The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv), w
 | `XDG_STATE_HOME`  | `~/.local/state`      |
 
 ### Scripts
+
+The `scripts/` directory contains shell scripts that automate system and tool
+setup. This includes OS specific scripts for installing apps and dependencies,
+and system configurations. Most of these scripts are called directly from
+`unpack.sh` at the repo root.
 
 > Docs coming soon.
 
