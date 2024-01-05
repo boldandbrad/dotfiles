@@ -88,7 +88,7 @@ alias cp="cp -Riv"
 # dust, print tree upside down
 if command_exists dust ; then; alias dust="dust -r"; fi
 # glow, output with pager
-if command_exists glow ; then; alias glow="glow -p"; fi
+# if command_exists glow ; then; alias glow="glow -p"; fi
 
 ################################################################
 # platform specific                                            #
