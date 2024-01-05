@@ -94,7 +94,6 @@ cask "vscodium"                 # editor
 brew "deno"                     # js runtime and tooling
 brew "exercism"                 # coding exercise cli
 brew "gh"                       # github cli
-cask "github"                   # github client
 # brew "gradle"                   # java build tool
 # cask "hoppscotch"               # rest client
 cask "httpie"                   # rest client
