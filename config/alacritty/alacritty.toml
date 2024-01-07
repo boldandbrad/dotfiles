@@ -1,4 +1,8 @@
-# alacritty version 13.0+ config
+################################################################
+# alacritty.toml - alacritty v13.0+ config                     #
+################################################################
+# -> symlinked to ~/.config/alacritty/alacritty.toml           #
+################################################################
 
 # import themes
 import = [
