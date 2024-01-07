@@ -1,15 +1,26 @@
+################################################################
+# symlinks.yaml - dotbot symlink config                        #
+################################################################
+# creates needed directories and symlinks dotfiles to their    #
+# respective locations                                         #
+################################################################
+
+# dotbot global configs
 - defaults:
     link:
       create: true
       relink: true
       force: true
 
+# directories to clean
 - clean: ["~", "${XDG_CONFIG_HOME}"]
 
+# shell scripts to run
 - shell:
     - description: set XDG environment variables
       command: source ./config/zsh/.zshenv
 
+# directories to create
 - create:
     - ~/Applications
     - ~/Developer
@@ -19,7 +30,7 @@
 
     - ~/.local/var/cache/zsh
 
-# symlink locations
+# dotfile symlink mappings
 - link:
     # zsh configs
     ~/.zshenv: { path: config/zsh/.zshenv, force: true }
