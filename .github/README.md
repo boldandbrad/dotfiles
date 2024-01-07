@@ -13,6 +13,7 @@ Whether or not dotfile repos should be forked is a topic of hot debate. If you
 
 **Jump to:**
 [TL;DR](#tldr) |
+[Demo](#demo) |
 [Unpack](#unpack) |
 [Maintain](#maintain) |
 [Contents](#contents) |
@@ -46,7 +47,7 @@ The floor plan at a glance:
     </td>
   </tr>
   <tr>
-    <th align="left">Terminal Emulators</th>
+    <th align="left">Terminal Emulator</th>
     <td>
       <img alt="alacritty" src="https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01">
     </td>
@@ -70,9 +71,9 @@ The floor plan at a glance:
     </td>
   </tr>
   <tr>
-    <th align="left">Editors</th>
+    <th align="left">Editor</th>
     <td>
-      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED">
+      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED"> /
       <img alt="neovim" src="https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143">
     </td>
   </tr>
@@ -85,6 +86,10 @@ The floor plan at a glance:
     <td>Catppuccin Mocha, GitHub Dark Default</td>
   </tr>
 </table>
+
+## 🎥 Demo <a id="demo"></a>
+
+> Gif/Video coming soon.
 
 ## 📦 Unpack <a id="unpack"></a>
 

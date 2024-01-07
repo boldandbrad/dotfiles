@@ -1,7 +1,7 @@
 ################################################################
 # Brewfile - macOS software installs                           #
 ################################################################
-# -> dotbot symlinks this file to ~/.config/homebrew/Brewfile  #
+# -> symlinked to ~/.config/homebrew/Brewfile                  #
 #                                                              #
 # Packages and apps to be installed / updated via Homebrew.    #
 # Be sure to remove / comment out tools you do not need.       #
@@ -31,6 +31,7 @@ tap "superatomic/bundle-extensions"   # extra brew commands
 ################################################################
 
 brew "antidote"                 # zsh plugin manager
+brew "asciinema"                # terminal session recorder
 brew "autojump"                 # recent directory hopper
 brew "bash"                     # updated bash
 brew "bat"                      # cat alternative

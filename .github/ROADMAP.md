@@ -15,6 +15,7 @@ Planned changes and updates to this repo.
 - dir: Install dotfiles directly to `~/Dotfiles` instead of `~/Setup/dotfiles`
 - docs: Feature explanations
 - docs: Personalization guide
+- docs: Gif/video demo in readme
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
 - macos: Dock setup?
 - macos: LaunchPad setup?
