@@ -49,7 +49,6 @@ The floor plan at a glance:
     <th align="left">Terminal Emulators</th>
     <td>
       <img alt="alacritty" src="https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01">
-      <img alt="kitty" src="https://img.shields.io/badge/kitty-_?logoColor=white&color=%23784421">
     </td>
   </tr>
   <tr>
