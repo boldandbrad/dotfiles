@@ -26,6 +26,10 @@ bold = { family = "AnonymicePro Nerd Font", style = "Bold" }
 italic = { family = "AnonymicePro Nerd Font", style = "Italic" }
 bold_italic = { family = "AnonymicePro Nerd Font", style = "Bold Italic" }
 size = 16.0
+offset = { x = 0, y = 1 }
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
+
+[mouse]
+hide_when_typing = true
