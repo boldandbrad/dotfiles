@@ -1,7 +1,7 @@
 ################################################################
 # .zshrc - core environment variables                          #
 ################################################################
-# -> dotbot symlinks this file to ~/.zshenv                    #
+# -> symlinked to ~/.zshenv                                    #
 #                                                              #
 # Executed when a new ZSH session is launched.                 #
 # Set XDG paths and other core environment variables.          #
@@ -11,7 +11,6 @@
 export BROWSER="safari"
 export EDITOR="codium"
 export PAGER="less"
-# export TERMINAL="hyper"
 
 # set XDG paths
 export XDG_BIN_HOME=~/.local/bin
@@ -24,7 +23,6 @@ export XDG_STATE_HOME=~/.local/state # where user-specific state files should be
 # respect XDG paths
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 # export CURL_HOME="${XDG_CONFIG_HOME}/curl"
-export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/homebrew/Brewfile"
 export LESSHISTFILE="-" # disable less history
 # export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
 # export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
@@ -38,9 +36,10 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 # export PKGX_DIR=~/.cache/pkgx
 # export PNPM_HOME=~/Library/pnpm
 
-# other variables
+# dotfiles
 export DOTFILES=~/Setup/dotfiles
-export DOTBOT_DIR="${DOTFILES}/vendor/dotbot"
+export DOTBOT_DIR="$DOTFILES/vendor/dotbot"
+export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
 
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"

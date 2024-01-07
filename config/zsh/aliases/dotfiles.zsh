@@ -30,5 +30,5 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   alias dep-check="brew bundle check -v" # check that all brewfile deps are installed
   alias dep-refresh="brew bundle install" # install all brewfile deps
   alias dep-prune="brew bundle cleanup" # remove all brew managed deps not specified in brewfile
-  alias mas-install="brew bundle install --file=~/.config/homebrew/Masfile" # install masfile deps
+  alias mas-install="brew bundle install --file=$DOTFILES/scripts/macos/brew/Masfile" # install masfile deps
 fi

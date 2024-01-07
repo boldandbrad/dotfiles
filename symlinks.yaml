@@ -62,20 +62,12 @@
     ${XDG_CONFIG_HOME}/neofetch: config/neofetch
     ${XDG_CONFIG_HOME}/starship: config/starship
 
-    # macos only
-    ${XDG_CONFIG_HOME}/homebrew/Brewfile:
-      if: "[ `uname` = Darwin ]"
-      path: scripts/macos/brew/Brewfile
-    ${XDG_CONFIG_HOME}/homebrew/Masfile:
-      if: "[ `uname` = Darwin ]"
-      path: scripts/macos/brew/Masfile
+    # vscodium (location is os specific)
     ~/Library/Application Support/VSCodium/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscodium/settings.json
       force: true
-
-    # linux only
     ${XDG_CONFIG_HOME}/VSCodium/User/settings.json:
       if: "[ `uname` = Linux ]"
-      path: vscodium/settings.json
+      path: config/vscodium/settings.json
       force: true

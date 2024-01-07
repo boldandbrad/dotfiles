@@ -1,8 +1,6 @@
 ################################################################
 # Brewfile - macOS software installs                           #
 ################################################################
-# -> symlinked to ~/.config/homebrew/Brewfile                  #
-#                                                              #
 # Packages and apps to be installed / updated via Homebrew.    #
 # Be sure to remove / comment out tools you do not need.       #
 ################################################################
@@ -45,6 +43,7 @@ brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # terminal markdown viewer
 brew "jq"                       # json processor
 brew "just"                     # project specific commands
+brew "mas"                      # mac app store installer
 brew "neofetch"                 # system info viewer
 brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
