@@ -10,4 +10,14 @@ M.ui = {
   }
 }
 
+M.plugins = "custom.plugins"
+
+M.lazy_nvim = {
+  install = {
+    colorscheme = { "nvchad" },
+    -- install missing plugins on startup. This doesn't increase startup time.
+    missing = true,
+  },
+}
+
 return M
