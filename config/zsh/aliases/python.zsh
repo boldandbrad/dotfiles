@@ -10,5 +10,8 @@
 # run python quicker
 alias py="python"
 
+# delete all .pyc files
+alias delpyc="find . -name '*.pyc' -delete"
+
 # activate python venv in the current repo
 # alias pysrc="source $(git rev-parse --show-toplevel)/.venv/bin/activate"

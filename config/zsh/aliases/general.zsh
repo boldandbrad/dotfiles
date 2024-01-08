@@ -1,7 +1,7 @@
 ################################################################
 # general.zsh - general aliases                                #
 ################################################################
-# -> dotbot symlinks this file into ~/.config/zsh/aliases/     #
+# -> symlinked into ~/.config/zsh/aliases/                     #
 #                                                              #
 # Sourced from .zshrc                                          #
 # Setup general zsh aliases.                                   #
@@ -28,8 +28,12 @@ alias doc="cd ~/Documents"
 alias dnl="cd ~/Downloads"
 alias stp="cd ~/Setup"
 alias dot="cd $DOTFILES"
+
 # root of current git repo
 alias grt='cd `git rev-parse --show-toplevel`'
+
+# user config dir
+alias cnf="cd ${XDG_CONFIG_HOME}"
 
 ################################################################
 # tool replacements                                            #
