@@ -12,14 +12,14 @@ Whether or not dotfile repos should be forked is a topic of hot debate. If you
 [personalize](#personalize) the contained files before unpacking.
 
 **Jump to:**
-[TL;DR](#tldr) |
-[Demo](#demo) |
-[Unpack](#unpack) |
-[Maintain](#maintain) |
-[Contents](#contents) |
-[Personalize](#personalize) |
-[Inspiration](#inspiration) |
-[Resources](#resources)
+[✨ TL;DR](#tldr) |
+[🎥 Demo](#demo) |
+[📦 Unpack](#unpack) |
+[🛠️ Maintain](#maintain) |
+[🛋️ Contents](#contents) |
+[🖌️ Personalize](#personalize) |
+[💡 Inspiration](#inspiration) |
+[📚 Resources](#resources)
 
 ## ✨ TL;DR <a id="tldr"></a>
 
