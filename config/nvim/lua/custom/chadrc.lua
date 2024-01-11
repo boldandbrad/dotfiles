@@ -7,7 +7,10 @@ M.ui = {
   -- enable nvchad dashboard on startup
   nvdash = {
     load_on_startup = true
-  }
+  },
+  statusline = {
+    separator_style = "block",
+  },
 }
 
 M.plugins = "custom.plugins"

@@ -56,8 +56,8 @@
     ${XDG_DATA_HOME}/tmux/plugins/tpm: vendor/tpm
 
     # nvim configs
-    ${XDG_CONFIG_HOME}/nvim: vendor/NvChad
-    ${XDG_CONFIG_HOME}/nvim/lua/custom: config/nvim/lua/custom
+    # ${XDG_CONFIG_HOME}/nvim: vendor/NvChad
+    ${XDG_CONFIG_HOME}/nvim: config/nvim-new
 
     # other configs
     ${XDG_CONFIG_HOME}/bat: config/bat

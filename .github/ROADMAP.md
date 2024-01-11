@@ -22,5 +22,18 @@ Planned changes and updates to this repo.
 - macos: Store other app settings via `mackup`?
 - macos: Hammerspoon config?
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
+- neovim: Switch back from nvchad to a hand-rolled config
+  - plugin: lazy.nvim - plugin manager
+  - plugin: catppuccin - theme
+  - plugin: alpha-nvim (dashboard-nvim theme) - dashboard
+  - plugin: lualine.nvim - status line
+  - plugin: neo-tree.nvim - file tree
+  - plugin: telescope.nvim - file finder
+  - plugin: nvim-treesitter - highlighting
+  - plugin: gitsigns.nvim - git gutter
+  - plugin: vim-tmux-navigator
+  - plugin: nvim-notify? - notifications
+  - plugin: noice.nvim? - ui components
+  - lsp plugins: TBD
 - vm: Vagrantfile
 - vscodium: Install extensions script
