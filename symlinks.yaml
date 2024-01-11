@@ -40,6 +40,9 @@
     ~/.bash_profile: config/bash/.bash_profile
     ~/.bashrc: config/bash/.bashrc
 
+    # nushell configs
+    ~/Library/Application Support/nushell: config/nushell
+
     # git configs
     ${XDG_CONFIG_HOME}/git: config/git
 

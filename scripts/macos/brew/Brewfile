@@ -46,6 +46,7 @@ brew "just"                     # project specific commands
 brew "mas"                      # mac app store installer
 brew "neofetch"                 # system info viewer
 brew "neovim"                   # tui editor
+brew "nushell"                  # modern shell
 brew "pastel"                   # color manipulation
 brew "ripgrep"                  # grep alternative
 # brew "rm-improved"              # rm alternative
