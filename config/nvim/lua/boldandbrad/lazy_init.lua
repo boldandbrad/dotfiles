@@ -13,4 +13,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugin specs from plugins/
-require("lazy").setup("plugins")
+require("lazy").setup("boldandbrad.plugins")
