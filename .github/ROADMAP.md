@@ -22,6 +22,9 @@ Planned changes and updates to this repo.
 - macos: Store other app settings via `mackup`?
 - macos: Hammerspoon config?
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
+- macos: Automatically map Caps Lock to Escape
+  - https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x
+- macos: dvorak/programmers dvorak setup
 - neovim: Switch back from nvchad to a hand-rolled config
   - plugin: lazy.nvim - plugin manager ✅
   - plugin: catppuccin - theme ✅
@@ -35,5 +38,6 @@ Planned changes and updates to this repo.
   - plugin: nvim-notify? - notifications
   - plugin: noice.nvim? - ui components
   - lsp plugins: TBD
+- tmux: tmuxinator?
 - vm: Vagrantfile
 - vscodium: Install extensions script
