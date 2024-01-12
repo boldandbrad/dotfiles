@@ -10,10 +10,6 @@ return {
     },
     config = function()
       require("neo-tree").setup({
-        -- may need to remap this?
-        keys = {
-          { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-        },
         buffers = {
           follow_current_file = {
             enabled = true,

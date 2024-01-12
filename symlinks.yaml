@@ -56,7 +56,7 @@
     ${XDG_DATA_HOME}/tmux/plugins/tpm: vendor/tpm
 
     # nvim configs
-    ${XDG_CONFIG_HOME}/nvim: config/neovim
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
 
     # other configs
     ${XDG_CONFIG_HOME}/bat: config/bat
