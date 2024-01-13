@@ -29,6 +29,7 @@ return {
           width = 32,
         },
       })
+      vim.keymap.set('n', "<leader>ft", "<cmd>Neotree toggle<cr>", {})
     end,
   },
 }

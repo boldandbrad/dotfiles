@@ -37,7 +37,7 @@ return {
                 Lua = { diagnostics = { globals = { "vim" } } }
               }
             }
-          end
+          end,
         }
       })
       -- completions
@@ -48,7 +48,7 @@ return {
           -- required
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
-          end
+          end,
         },
         window = {},
         mapping = cmp.mapping.preset.insert({
@@ -83,6 +83,6 @@ return {
           prefix = "",
         }
       })
-    end
+    end,
   },
 }
