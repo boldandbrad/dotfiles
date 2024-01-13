@@ -21,6 +21,7 @@ return {
       require("fidget").setup()
       require("mason").setup()
       require("mason-lspconfig").setup({
+        -- TODO: add others?
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
