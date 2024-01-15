@@ -18,6 +18,9 @@ vim.g.mapleader = " "
 
 keymap("n", "<leader>pv", vim.cmd.Ex, opts)
 
+-- format current buffer
+keymap("n", "<leader>fm", vim.lsp.buf.format, opts)
+
 ----------------------------------------------------------------
 -- insert mode ("i")                                          --
 ----------------------------------------------------------------
