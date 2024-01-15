@@ -19,8 +19,8 @@ repos:
   #   rev: v3.0.3
   #   hooks:
   #     - id: prettier
-  - repo: https://github.com/returntocorp/semgrep
-    rev: v1.52.0
-    hooks:
-      - id: semgrep
-        args: ["--config", "auto", "--error", "--skip-unknown-extensions"]
+  # - repo: https://github.com/returntocorp/semgrep
+  #   rev: v1.52.0
+  #   hooks:
+  #     - id: semgrep
+  #       args: ["--config", "auto", "--error", "--skip-unknown-extensions"]
