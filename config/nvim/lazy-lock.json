@@ -87,6 +87,10 @@
     "branch": "master",
     "commit": "d90956833d7c27e73c621a61f20b29fdb7122709"
   },
+  "trouble.nvim": {
+    "branch": "main",
+    "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea"
+  },
   "vim-fugitive": {
     "branch": "master",
     "commit": "59659093581aad2afacedc81f009ed6a4bfad275"
