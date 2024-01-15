@@ -8,6 +8,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      close_if_last_window = true,
       buffers = {
         follow_current_file = {
           enabled = true,
@@ -28,6 +29,6 @@ return {
         width = 32,
       },
     })
-    vim.keymap.set('n', "<leader>ft", "<cmd>Neotree toggle<cr>", {})
+    vim.keymap.set("n", "<leader>ft", "<cmd>Neotree reveal<cr>", {})
   end,
 }
