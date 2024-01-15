@@ -1,4 +1,4 @@
 -- load lua modules
-require("boldandbrad.set")
-require("boldandbrad.remap")
+require("boldandbrad.options")
+require("boldandbrad.keymaps")
 require("boldandbrad.lazy_init")
