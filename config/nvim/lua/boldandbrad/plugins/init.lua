@@ -5,7 +5,7 @@ return {
     lazy = false, -- load during startup
     priority = 1000, -- load before other plugins
     config = function()
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
   {
@@ -13,5 +13,8 @@ return {
     build = ":TSUpdate",
     -- TODO: add ensure_installed?
   },
-  -- { "christoomey/vim-tmux-navigator", lazy = false },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
+  },
 }

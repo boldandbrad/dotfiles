@@ -16,4 +16,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugin specs from plugins/
-require("lazy").setup("boldandbrad.plugins")
+require("lazy").setup({
+  spec = {
+    { import = "boldandbrad.plugins" },
+  },
+  install = {
+    colorscheme = { "catppuccin" },
+  }
+})
