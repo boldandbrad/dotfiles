@@ -8,9 +8,6 @@ return {
       options = {
         icons_enabled = false,
         section_separators = { left = "", right = "" },
-        disabled_filetypes = {
-          statusline = {"neo-tree"},
-        },
       },
     })
   end,

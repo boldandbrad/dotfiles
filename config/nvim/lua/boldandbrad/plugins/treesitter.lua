@@ -13,7 +13,12 @@ return {
           enable = true,
         },
         ensure_installed = {
+          -- required
           "lua",
+          "query",
+          "vim",
+          "vimdoc",
+          -- custom
           "rust",
         },
         incremental_selection = {
