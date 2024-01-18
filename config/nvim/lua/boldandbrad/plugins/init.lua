@@ -9,11 +9,6 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    -- TODO: add ensure_installed?
-  },
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false
   },
