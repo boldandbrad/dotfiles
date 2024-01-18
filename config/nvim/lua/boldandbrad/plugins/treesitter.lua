@@ -13,6 +13,7 @@ return {
           enable = true,
         },
         ensure_installed = {
+          "lua",
           "rust",
         },
         incremental_selection = {
