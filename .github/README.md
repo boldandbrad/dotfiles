@@ -2,7 +2,7 @@
 
 > Welcome `$HOME`!
 
-This repo makes moving into a new system a breeze by automatically furnishing it
+This repo makes moving into your new mac a breeze by automatically furnishing it
 with your favorite apps, and giving you the tools you need to maintain it. I
 have made my preferences open source to serve as a blueprint and inspiration for
 others.
