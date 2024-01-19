@@ -8,6 +8,7 @@ return {
       options = {
         icons_enabled = false,
         section_separators = { left = "", right = "" },
+        globalstatus = true,
       },
     })
   end,
