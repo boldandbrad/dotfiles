@@ -64,7 +64,6 @@
   "search.showLineNumbers": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "terminal.external.osxExec": "Hyper.app",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.fontFamily": "Anonymice Nerd Font",
   "terminal.integrated.fontSize": 16,
