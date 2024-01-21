@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    -- mason
+    -- language server installation
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     -- completions
@@ -20,16 +20,21 @@ return {
     require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      -- TODO: add others?
+      -- install language servers
       ensure_installed = {
+        -- "astro",
+        -- "denols",
         "lua_ls",
+        "ruff_lsp", -- python
         "rust_analyzer",
+        -- "tsserver",
       },
+      -- setup language servers
       handlers = {
         function(server_name)
           require("lspconfig")[server_name].setup {}
         end,
-        -- handle undefined global vim
+        -- lua: handle undefined global "vim"
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
@@ -38,9 +43,9 @@ return {
             }
           }
         end,
-      }
+      },
     })
-    -- completions
+    -- setup completions
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     cmp.setup({
@@ -69,7 +74,7 @@ return {
         { name = "buffer" },
       }),
     })
-    -- diagnostics
+    -- configure diagnostics
     -- TODO: read up on this
     vim.diagnostic.config({
       virtual_text = true,
