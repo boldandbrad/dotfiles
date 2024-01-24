@@ -6,7 +6,7 @@ return {
     local dashboard = require("alpha.themes.dashboard")
     dashboard.section.buttons.val = {
       dashboard.button("f", "  Find files", ":Telescope find_files <CR>"),
-      dashboard.button("h", "󰉻  Harpoon menu", ":normal \"1 hm\" <CR>"),
+      dashboard.button("h", "󰉻  Harpoon list", ":normal \"1 hl\" <CR>"),
       dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
       dashboard.button("e", "󰙅  File explorer", ":Oil <CR>"),
       dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
