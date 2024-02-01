@@ -12,12 +12,12 @@ return {
       dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("g", "󱖫  Git status", ":G <CR>"),
       dashboard.button("SPC f d", "  Find todos", ":TodoTelescope <CR>"),
-      dashboard.button("SPC a", "󰕮  Toggle dashboard", ":Alpha <CR>"),
+      dashboard.button("SPC d", "󰕮  Toggle dashboard", ":Alpha <CR>"),
       dashboard.button("SPC t m", "  Toggle terminal", ":ToggleTerm <CR>"),
       dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
     }
     alpha.setup(dashboard.config)
 
-    vim.keymap.set("n", "<leader>a", ":Alpha <CR>")
+    vim.keymap.set("n", "<leader>d", ":Alpha <CR>")
   end,
 }
