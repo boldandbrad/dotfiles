@@ -28,7 +28,7 @@ The floor plan at a glance:
 <!-- I wish I could create a table without a header row in pure markdown 🙃 -->
 <table>
   <tr>
-    <th align="left">Supported Systems</th>
+    <th align="left">Operating System</th>
     <td>
       <img alt="macOS" src="https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000">
       <!-- <img alt="arch-linux" src="https://img.shields.io/badge/Arch%20Linux-_?logo=arch-linux&logoColor=white&color=%231793D1"> -->
@@ -78,12 +78,12 @@ The floor plan at a glance:
     </td>
   </tr>
   <tr>
-    <th align="left">Typefaces</th>
-    <td>Anonymous Pro, Anonymice Pro Nerd Font</td>
+    <th align="left">Typeface</th>
+    <td>Anonymous Pro / Anonymice Pro Nerd Font</td>
   </tr>
   <tr>
-    <th align="left">Themes</th>
-    <td>Catppuccin Mocha, GitHub Dark Default</td>
+    <th align="left">Theme</th>
+    <td>Catppuccin Mocha</td>
   </tr>
 </table>
 
