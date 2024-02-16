@@ -97,6 +97,7 @@ brew "code-minimap"             # minimap tool for neovim
 brew "deno"                     # js runtime and tooling
 brew "exercism"                 # coding exercise cli
 brew "gh"                       # github cli
+brew "go"                       # golang
 # brew "gradle"                   # java build tool
 # cask "hoppscotch"               # rest client
 cask "httpie"                   # rest client
