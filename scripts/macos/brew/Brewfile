@@ -30,14 +30,14 @@ tap "superatomic/bundle-extensions"   # extra brew commands
 
 brew "antidote"                 # zsh plugin manager
 brew "asciinema"                # terminal session recorder
-brew "autojump"                 # recent directory hopper
 brew "bash"                     # updated bash
-brew "bat"                      # cat alternative
+brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "direnv"                   # directory level envs
 brew "dust"                     # disk space analyzer
-brew "eza"                      # ls alternative
-brew "fcp"                      # cp alternative
+brew "eza"                      # ls replacement
+brew "fcp"                      # cp replacement
+brew "fzf"                      # terminal fuzzy finder
 brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # terminal markdown viewer
@@ -59,6 +59,7 @@ brew "xdg-ninja"                # home dir cleaner
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
 brew "yazi"                     # terminal file manager
+brew "zoxide"                   # cd replacement
 brew "zsh"                      # updated z shell
 
 ################################################################

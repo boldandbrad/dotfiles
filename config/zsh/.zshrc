@@ -46,8 +46,10 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/.zsh_options
 fi
 
-# initialize autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && source /usr/local/etc/profile.d/autojump.sh
+# initialize zoxide
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # initialize direnv
 if (( $+commands[direnv] )); then
