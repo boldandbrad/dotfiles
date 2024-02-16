@@ -58,6 +58,7 @@ brew "tmux"                     # terminal multiplexer
 brew "xdg-ninja"                # home dir cleaner
 # brew "xxh"                      # ssh shell preservation
 brew "yank"                     # terminal clipboard utility
+brew "yazi"                     # terminal file manager
 brew "zsh"                      # updated z shell
 
 ################################################################

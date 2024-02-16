@@ -63,6 +63,7 @@
     ${XDG_CONFIG_HOME}/.bunfig.toml: config/bun/.bunfig.toml
     ${XDG_CONFIG_HOME}/neofetch: config/neofetch
     ${XDG_CONFIG_HOME}/starship: config/starship
+    ${XDG_CONFIG_HOME}/yazi: config/yazi
 
     # vscodium (location is os specific)
     ~/Library/Application Support/VSCodium/User/settings.json:
