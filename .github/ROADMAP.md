@@ -19,12 +19,14 @@ Planned changes and updates to this repo.
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
 - macos: Dock setup?
 - macos: LaunchPad setup?
+- macos: Add and configure Sketchybar custom menubar
+- macos: Add and configure Yabai tiling window manager
+- macos: Add and configure skhd custom global keybindings
 - macos: Store other app settings via `mackup`?
-- macos: Hammerspoon config?
+- macos: Hammerspoon/Karabiner config?
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
 - macos: [Automatically map Caps Lock to Escape](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x)
-- macos: dvorak/programmers dvorak setup
-- neovim: ui components via noice.nvim?
+- macos: dvorak/programmers dvorak setup?
 - tmux: tmuxinator?
 - vm: Vagrantfile
 - vscodium: Install extensions script

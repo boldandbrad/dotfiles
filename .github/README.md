@@ -163,7 +163,7 @@ repo root.
 Most packages and apps respect the
 [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html)
 to determine where to store configurations and data. This creates consistency
-and predictability while keeping `~/` free of clutter.
+and predictability while keeping your `$HOME` free of clutter.
 
 The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv),
 which is sourced before symlinking.

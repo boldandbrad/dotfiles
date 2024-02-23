@@ -92,7 +92,6 @@ cask "vscodium"                 # editor
 # software development                                         #
 ################################################################
 
-brew "code-minimap"             # minimap tool for neovim
 brew "deno"                     # js runtime and tooling
 brew "exercism"                 # coding exercise cli
 brew "gh"                       # github cli

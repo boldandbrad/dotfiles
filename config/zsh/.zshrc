@@ -56,11 +56,6 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
-# initialize fnm
-if (( $+commands[fnm] )); then
-  eval "$(fnm env --use-on-cd)"
-fi
-
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
