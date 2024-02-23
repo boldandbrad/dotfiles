@@ -93,10 +93,6 @@
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-  "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
   "workbench.settings.editor": "json",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "readme",
@@ -112,7 +108,7 @@
     "editor.tabSize": 4
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
