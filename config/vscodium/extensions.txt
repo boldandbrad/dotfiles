@@ -6,12 +6,12 @@ bungcip.better-toml
 catppuccin.catppuccin-vsc
 catppuccin.catppuccin-vsc-icons
 charliermarsh.ruff
+codeium.codeium
 csstools.postcss
 davidanson.vscode-markdownlint
 dotjoshjohnson.xml
 eamodio.gitlens
 esbenp.prettier-vscode
-github.github-vscode-theme
 gruntfuggly.todo-tree
 hamza-aziane.obsidian-dark
 ibm.output-colorizer
