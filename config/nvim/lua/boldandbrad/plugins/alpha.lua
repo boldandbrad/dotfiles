@@ -12,6 +12,7 @@ return {
       dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("g", "󱖫  Git status", ":G <CR>"),
       dashboard.button("SPC f d", "  Find todos", ":TodoTelescope <CR>"),
+      dashboard.button("p", "󰩦  Plugins", ":Lazy home <CR>"),
       dashboard.button("SPC d", "󰕮  Toggle dashboard", ":Alpha <CR>"),
       dashboard.button("SPC t m", "  Toggle terminal", ":ToggleTerm <CR>"),
       dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
