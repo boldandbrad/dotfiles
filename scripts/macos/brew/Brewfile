@@ -33,6 +33,7 @@ brew "asciinema"                # terminal session recorder
 brew "bash"                     # updated bash
 brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
+brew "btop"                     # system monitor
 brew "direnv"                   # directory level envs
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
