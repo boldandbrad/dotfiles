@@ -15,6 +15,7 @@
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.lineHeight": 1,
   "editor.linkedEditing": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderWhitespace": "boundary",
