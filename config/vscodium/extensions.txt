@@ -7,13 +7,15 @@ catppuccin.catppuccin-vsc
 catppuccin.catppuccin-vsc-icons
 charliermarsh.ruff
 codeium.codeium
-csstools.postcss
 davidanson.vscode-markdownlint
 dotjoshjohnson.xml
 eamodio.gitlens
+elmtooling.elm-ls-vscode
 esbenp.prettier-vscode
+golang.go
 gruntfuggly.todo-tree
-hamza-aziane.obsidian-dark
+hbenl.test-adapter-converter
+hbenl.vscode-test-explorer
 ibm.output-colorizer
 kevinrose.vsc-python-indent
 leonardssh.vscord
@@ -25,8 +27,7 @@ rust-lang.rust-analyzer
 serayuzgur.crates
 shardulm94.trailing-spaces
 skellock.just
-tauri-apps.tauri-vscode
 unifiedjs.vscode-mdx
 usernamehw.errorlens
-vue.volar
+vscodevim.vim
 yzhang.markdown-all-in-one
