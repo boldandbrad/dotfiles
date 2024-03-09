@@ -24,10 +24,14 @@ return {
       ensure_installed = {
         -- "astro",
         -- "denols",
+        "elmls",
+        "gopls",
+        -- "html",
+        -- "htmx",
         "lua_ls",
         "ruff_lsp", -- python
         "rust_analyzer",
-        -- "tsserver",
+        "tsserver",
       },
       -- setup language servers
       handlers = {

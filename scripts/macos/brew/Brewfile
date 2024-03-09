@@ -94,7 +94,9 @@ cask "vscodium"                 # editor
 ################################################################
 
 brew "deno"                     # js runtime and tooling
+brew "elm"                      # elm compiler and tooling
 brew "exercism"                 # coding exercise cli
+brew "fnm"                      # node version manager
 brew "gh"                       # github cli
 brew "go"                       # golang
 # brew "gradle"                   # java build tool

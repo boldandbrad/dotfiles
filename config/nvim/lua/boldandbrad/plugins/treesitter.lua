@@ -19,8 +19,12 @@ return {
           "vim",
           "vimdoc",
           -- custom
+          "elm",
+          "go",
+          -- "html",
           "python",
           "rust",
+          "typescript",
         },
         incremental_selection = {
           enable = true,

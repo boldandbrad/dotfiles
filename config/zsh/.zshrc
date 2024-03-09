@@ -61,6 +61,11 @@ if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
 
+# initialize fnm
+if (( $+commands[fnm] )); then
+  eval "$(fnm env --use-on-cd)"
+fi
+
 # initialize starship
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
