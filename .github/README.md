@@ -8,8 +8,8 @@ have made my preferences open source to serve as a blueprint and inspiration for
 others.
 
 Whether or not dotfile repos should be forked is a topic of hot debate. If you
-***do*** choose to fork this repo, I strongly recommend you
-[personalize](#personalize) the contained files before unpacking.
+do fork this repo, I ***strongly*** recommend you [personalize](#personalize)
+the contained files before unpacking.
 
 **Jump to:**
 [✨ TL;DR](#tldr) |
