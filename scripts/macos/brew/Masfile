@@ -19,7 +19,7 @@ brew "mas"
 ################################################################
 
 mas "numbers", id: 409203825        # spreadsheets
-mas "parcel", id: 639968404         # package tracking
+mas "parcel", id: 639968404         # package tracker
 mas "peek", id: 1554235898          # quicklook enhancer ($)
 mas "xcode", id: 497799835          # apple ide
 

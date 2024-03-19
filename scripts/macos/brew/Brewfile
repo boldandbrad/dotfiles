@@ -29,7 +29,6 @@ tap "superatomic/bundle-extensions"   # extra brew commands
 ################################################################
 
 brew "antidote"                 # zsh plugin manager
-brew "asciinema"                # terminal session recorder
 brew "bash"                     # updated bash
 brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
@@ -54,6 +53,7 @@ brew "starship"                 # cross-shell prompt
 brew "tailspin"                 # log file highlighter
 brew "tlrc"                     # tldr client: concise man pages
 brew "tmux"                     # terminal multiplexer
+brew "vhs"                      # terminal session recorder
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
 # brew "xxh"                      # ssh shell preservation
@@ -81,7 +81,7 @@ cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown knowledge base
 cask "proton-drive"             # secure cloud storage
-cask "protonmail-bridge"        # proton.me local IMAP bridge
+cask "proton-mail"              # proton email client
 cask "protonvpn"                # secure vpn
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
@@ -127,14 +127,11 @@ cask "font-anonymice-nerd-font"
 # cask "font-caskaydia-cove-nerd-font"
 # cask "font-fira-code"
 # cask "font-fira-code-nerd-font"
-cask "font-monocraft"
-cask "font-monocraft-nerd-font"
 
 ################################################################
 # games                                                        #
 ################################################################
 
-# cask "clone-hero"               # guitar hero clone
 brew "fabric-installer"         # minecraft mod loader
 brew "ferium"                   # minecraft mod manager
 cask "minecraft"                # minecraft launcher
