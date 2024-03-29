@@ -7,6 +7,7 @@ local opts = { noremap = true, silent = true }
 
 -- local alias
 local keymap = vim.keymap.set
+-- local unmap = vim.keymap.del
 
 -- remap leader to space
 keymap("", "<Space>", "<Nop>", opts)
@@ -15,8 +16,6 @@ vim.g.mapleader = " "
 ----------------------------------------------------------------
 -- normal mode ("n")                                          --
 ----------------------------------------------------------------
-
-keymap("n", "<leader>pv", vim.cmd.Ex, opts)
 
 -- format current buffer
 keymap("n", "<leader>fm", vim.lsp.buf.format, opts)
@@ -29,9 +28,8 @@ keymap("n", "<leader>fm", vim.lsp.buf.format, opts)
 -- visual mode ("v")                                          --
 ----------------------------------------------------------------
 
--- swap lines
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts) -- swap with line below
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts) -- swap with line above
 
 ----------------------------------------------------------------
 -- visual block mode ("x")                                    --
