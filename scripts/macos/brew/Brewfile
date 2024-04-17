@@ -21,7 +21,6 @@ tap "homebrew/services"               # system services
 
 tap "boldandbrad/tap"                 # stuff made by me :)
 tap "oven-sh/bun"                     # bun tools
-tap "pkgxdev/made"                    # pkgx tools
 tap "superatomic/bundle-extensions"   # extra brew commands
 
 ################################################################
@@ -103,17 +102,17 @@ brew "go"                       # golang
 # cask "hoppscotch"               # rest client
 cask "httpie"                   # rest client
 brew "hurl"                     # cli rest client and test suite
-cask "linear-linear"            # issue tracker
 brew "oven-sh/bun/bun"          # js runtime and tooling
-brew "pkgxdev/made/pkgx"        # everything runner
 brew "podman"                   # container cli
 cask "podman-desktop"           # container client
 # brew "postgresql"               # postgres DB
 brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
 brew "rustup-init"              # rust toolchain installer
+# brew "rye"                      # python toolchain
 brew "scc"                      # lines of code counter
 cask "temurin"                  # jdk
+# brew "uv"                       # python toolchain
 # cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
 
@@ -133,13 +132,15 @@ cask "font-anonymice-nerd-font"
 ################################################################
 
 brew "fabric-installer"         # minecraft mod loader
-brew "ferium"                   # minecraft mod manager
+# brew "ferium"                   # minecraft mod manager
 cask "minecraft"                # minecraft launcher
-cask "modrinth"                 # minecraft launcher & mod manager
-brew "quilt-installer"          # minecraft mod loader
+# cask "modrinth"                 # minecraft launcher & mod manager
+# brew "quilt-installer"          # minecraft mod loader
 # cask "retroarch"                # game emulator launcher
 cask "steam"                    # game marketplace and launcher
 
 ################################################################
 # new additions (via "brew add")                               #
 ################################################################
+
+# brew "bandwhich"
