@@ -4,7 +4,6 @@
 # fi
 
 eval "$(direnv hook bash)"
-eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
 
 export SHELL_SESSION_HISTORY=0
 

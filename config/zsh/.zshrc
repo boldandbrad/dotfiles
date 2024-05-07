@@ -71,7 +71,5 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
-source <(pkgx --shellcode)  # docs.pkgx.sh/shellcode
-
 # remove duplicates from path arrays
 typeset -gU PATH FPATH

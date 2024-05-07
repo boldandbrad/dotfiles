@@ -33,7 +33,6 @@ export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-# export PKGX_DIR=~/.cache/pkgx
 # export PNPM_HOME=~/Library/pnpm
 
 # dotfiles
