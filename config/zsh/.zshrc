@@ -51,11 +51,6 @@ if (( $+commands[zoxide] )); then
   eval "$(zoxide init --cmd cd zsh)"
 fi
 
-# initialize direnv
-if (( $+commands[direnv] )); then
-  eval "$(direnv hook zsh)"
-fi
-
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"

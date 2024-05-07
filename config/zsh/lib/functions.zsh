@@ -17,8 +17,6 @@ function pyvenv() {
 # initialize python project
 function pyinit() {
   pyvenv
-  echo "source .venv/bin/activate" >> .envrc
-  direnv allow
   pip -q install --upgrade pip
   mkdir .vscode-oss
   cat > .vscode-oss/settings.json<< EOF
@@ -27,12 +25,6 @@ function pyinit() {
     "python.terminal.activateEnvironment": "false"
 }
 EOF
-}
-
-# initialize node project
-function nodeinit() {
-  echo 'export PATH="./node_modules/.bin:$PATH"' >> .envrc
-  direnv allow
 }
 
 # update the created and modified date for all images in the current directory to match their exif create date

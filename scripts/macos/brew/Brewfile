@@ -32,7 +32,6 @@ brew "bash"                     # updated bash
 brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "btop"                     # system monitor
-brew "direnv"                   # directory level envs
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
 brew "fastfetch"                # system info fetcher
@@ -42,7 +41,6 @@ brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # terminal markdown viewer
 brew "jq"                       # json processor
-brew "just"                     # project specific commands
 brew "mas"                      # mac app store installer
 brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation

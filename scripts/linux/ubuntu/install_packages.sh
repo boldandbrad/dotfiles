@@ -14,7 +14,6 @@ echo "Ubuntu Linux installation coming soon..."
 # install packages with apt
 apt install autojump
 apt install bat
-apt install direnv
 apt install exa       # TODO: find out how to install eza instead
 apt install git
 apt install tailspin

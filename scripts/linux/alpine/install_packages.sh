@@ -15,12 +15,10 @@ echo "Alpine Linux installation coming soon..."
 # install packages with apk
 apk add bash
 apk add bat
-apk add direnv
 apk add dust
 apk add eza
 apk add git
 apk add glow
-apk add just
 apk add starship
 apk add zsh
 apk add zsh-autosuggestions

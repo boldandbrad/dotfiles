@@ -15,12 +15,10 @@ echo "Arch Linux installation coming soon..."
 pacman -S autojump
 pacman -S bash
 pacman -S bat
-pacman -S direnv
 pacman -S dust
 pacman -S eza
 pacman -S git
 pacman -S glow
-pacman -S just
 pacman -S pastel
 pacman -S starship
 pacman -S yank

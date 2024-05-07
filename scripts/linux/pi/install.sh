@@ -21,7 +21,6 @@ curl -sS https://starship.rs/install.sh | sh
 # install apt packages
 apt install -y autojump
 apt install -y bat
-apt install -y direnv
 apt install -y eza
 # apt install -y git
 # apt install -y httpie
