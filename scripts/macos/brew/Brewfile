@@ -35,6 +35,7 @@ brew "btop"                     # system monitor
 brew "direnv"                   # directory level envs
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
+brew "fastfetch"                # system info fetcher
 brew "fcp"                      # cp replacement
 brew "fzf"                      # terminal fuzzy finder
 brew "git"                      # version control system
@@ -43,7 +44,6 @@ brew "glow"                     # terminal markdown viewer
 brew "jq"                       # json processor
 brew "just"                     # project specific commands
 brew "mas"                      # mac app store installer
-brew "neofetch"                 # system info viewer
 brew "neovim"                   # tui editor
 brew "pastel"                   # color manipulation
 brew "ripgrep"                  # grep alternative
