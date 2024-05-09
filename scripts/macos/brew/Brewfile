@@ -20,7 +20,6 @@ tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 
 tap "boldandbrad/tap"                 # stuff made by me :)
-tap "oven-sh/bun"                     # bun tools
 tap "superatomic/bundle-extensions"   # extra brew commands
 
 ################################################################
@@ -97,7 +96,6 @@ brew "go"                       # golang
 # brew "gradle"                   # java build tool
 brew "httpie", link: true       # cli http client
 cask "httpie"                   # desktop http client
-brew "oven-sh/bun/bun"          # js runtime and tooling
 brew "podman"                   # container cli
 cask "podman-desktop"           # container client
 # brew "postgresql"               # postgres DB

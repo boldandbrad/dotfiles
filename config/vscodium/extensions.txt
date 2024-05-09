@@ -17,12 +17,10 @@ gruntfuggly.todo-tree
 hbenl.test-adapter-converter
 hbenl.vscode-test-explorer
 ibm.output-colorizer
-kevinrose.vsc-python-indent
 leonardssh.vscord
 mechatroner.rainbow-csv
 ms-python.python
 njpwerner.autodocstring
-oven.bun-vscode
 rust-lang.rust-analyzer
 serayuzgur.crates
 shardulm94.trailing-spaces
