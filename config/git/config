@@ -7,7 +7,7 @@
 [core]
 	eol = lf
 	autocrlf = input
-	editor = codium --wait
+	editor = nvim
 	pager = delta
 	excludesfile = ~/.config/git/gitignore
 [alias]
@@ -16,12 +16,21 @@
 	br = checkout -b
 	cm = commit -m
 	co = checkout
+	sw = switch
 	st = status -s
-	df = difftool
-	mg = mergetool
+	ft = fetch
+	pl = pull
+	pr = pull --rebase
+	ps = push
+	df = diff
+	dt = difftool
+	mg = merge
+	mt = mergetool
 	r = reset HEAD
 [fetch]
 	prune = true
+[push]
+	autoSetupRemote = true
 [pull]
 	rebase = true
 [rebase]
@@ -46,10 +55,7 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[push]
-	autoSetupRemote = true
 [delta]
     navigate = true    # use n and N to move between diff sections
 		line-numbers = true
-		side-by-side = true
-    light = false
+		# side-by-side = true
