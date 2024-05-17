@@ -46,22 +46,20 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/.zsh_options
 fi
 
-# initialize zoxide
+# initialize zoxide directory hopper
 if (( $+commands[zoxide] )); then
   eval "$(zoxide init --cmd cd zsh)"
 fi
+
+# setup fzf key bindings and fuzzy completions
+source <(fzf --zsh)
 
 # initialize pyenv
 if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
 
-# initialize fnm
-if (( $+commands[fnm] )); then
-  eval "$(fnm env --use-on-cd)"
-fi
-
-# initialize starship
+# initialize starship shell prompt
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
