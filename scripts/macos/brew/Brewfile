@@ -12,10 +12,9 @@
 # cask_args appdir: '~/Applications', require_sha: true
 
 ################################################################
-# taps (homebrew/core and homebrew/cask are auto tapped)       #
+# taps (homebrew/core and homebrew/cask are auto-tapped)       #
 ################################################################
 
-tap "homebrew/cask-fonts"             # fonts
 tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 
@@ -23,49 +22,47 @@ tap "boldandbrad/tap"                 # stuff made by me :)
 tap "superatomic/bundle-extensions"   # extra brew commands
 
 ################################################################
-# packages & command line tools                                #
+# terminal apps and packages                                   #
 ################################################################
 
 brew "antidote"                 # zsh plugin manager
-brew "bash"                     # updated bash
+brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "btop"                     # system monitor
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
 brew "fastfetch"                # system info fetcher
-brew "fzf"                      # terminal fuzzy finder
+brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
-brew "glow"                     # terminal markdown viewer
+brew "glow"                     # markdown viewer
 brew "jq"                       # json processor
 brew "mas"                      # mac app store installer
-brew "neovim"                   # tui editor
-brew "pastel"                   # color manipulation
+brew "neovim"                   # text editor
+brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
-# brew "rm-improved"              # rm alternative
-brew "starship"                 # cross-shell prompt
+brew "starship"                 # cross-shell prompt builder
 brew "tailspin"                 # log file highlighter
-brew "tlrc"                     # tldr client: concise man pages
+brew "tlrc"                     # concise man page client
 brew "tmux"                     # terminal multiplexer
-brew "vhs"                      # terminal session recorder
+brew "vhs"                      # session recorder
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
-# brew "xxh"                      # ssh shell preservation
-brew "yank"                     # terminal clipboard utility
-brew "yazi"                     # terminal file manager
+brew "yank"                     # clipboard utility
+brew "yazi"                     # file manager
 brew "zoxide"                   # cd replacement
-brew "zsh"                      # updated z shell
+brew "zsh"                      # system zsh replacement
 
 ################################################################
 # desktop apps                                                 #
 ################################################################
 
 cask "alacritty"                # terminal emulator
-cask "arc"                      # web browser of the future
+cask "arc"                      # web browser
 # cask "balenaetcher"             # boot drive imager
-cask "bricklink-studio"         # lego designer
-cask "discord"                  # digital communities
+cask "bricklink-studio"         # lego moc designer
+cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
 cask "firefox"                  # web browser
 cask "keka"                     # archive handler
@@ -73,31 +70,31 @@ cask "kekaexternalhelper"       # keka helper
 cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
-cask "obsidian"                 # markdown knowledge base
-cask "proton-drive"             # secure cloud storage
-cask "proton-mail"              # proton email client
+cask "obsidian"                 # markdown note manager
+cask "proton-drive"             # secure cloud storage client
+cask "proton-mail"              # secure email client
 cask "protonvpn"                # secure vpn
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
-cask "spotify", args: { require_sha: false } # music and podcasts
-cask "stats"                    # menu bar system stats
-cask "vscodium"                 # editor
+cask "spotify", args: { require_sha: false } # audio streamer
+cask "standard-notes"           # secure note manager
+cask "stats"                    # menu bar system monitor
+cask "vscodium"                 # text editor
 
 ################################################################
-# software development                                         #
+# software development tooling and apps                        #
 ################################################################
 
-brew "deno"                     # js runtime and tooling
-brew "elm"                      # elm compiler and tooling
-brew "exercism"                 # coding exercise cli
-brew "fnm"                      # node version manager
-brew "gh"                       # github cli
-brew "go"                       # golang
+brew "deno"                     # js/ts runtime & toolchain
+brew "elm"                      # elm-lang compiler & toolchain
+brew "exercism"                 # cli coding exercise client
+brew "gh"                       # cli github client
+brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
 brew "httpie", link: true       # cli http client
 cask "httpie"                   # desktop http client
-brew "podman"                   # container cli
-cask "podman-desktop"           # container client
+brew "podman"                   # cli container client
+cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
