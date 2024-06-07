@@ -38,7 +38,6 @@ brew "git"                      # version control system
 brew "git-delta"                # git diff pager and highlighter
 brew "glow"                     # markdown viewer
 brew "jq"                       # json processor
-brew "mas"                      # mac app store installer
 brew "neovim"                   # text editor
 brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
@@ -71,14 +70,16 @@ cask "logi-options-plus"        # logitech peripheral manager
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown note manager
-cask "proton-drive"             # secure cloud storage client
-cask "proton-mail"              # secure email client
-cask "protonvpn"                # secure vpn
+cask "proton-drive"             # cloud file storage client
+cask "proton-mail"              # email client
+cask "proton-pass"              # password manager
+cask "protonvpn"                # vpn client
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 cask "standard-notes"           # secure note manager
 cask "stats"                    # menu bar system monitor
+cask "syntax-highlight"         # quicklook syntax highlighter
 cask "vscodium"                 # text editor
 
 ################################################################
