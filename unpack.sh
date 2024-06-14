@@ -154,7 +154,19 @@ function setup_dotfiles () {
 }
 
 function config_system () {
-  echo -e "\n${YELLOW_B}Skipping Configure System step. Not yet implemented."
+
+  # confirm the user would like to perform system configuration
+  echo -en "\n${BLUE_B}Would you like to perform system-specific configuration? (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_sysconfig && echo
+  if [[ ! $ans_sysconfig =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+    echo -e "\nSkipping system-specific configuration."
+    return
+  fi
+
+  # perform macOS configuration
+  if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+    $DOTFILES/scripts/macos/config_system.sh
+  fi
 }
 
 function clone_repos () {

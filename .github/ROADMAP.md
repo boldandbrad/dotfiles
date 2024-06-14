@@ -17,7 +17,6 @@ Planned changes and updates to this repo.
 - docs: Personalization guide
 - docs: Gif/video demo in readme
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
-- macos: Dock setup?
 - macos: LaunchPad setup?
 - macos: Add and configure Sketchybar custom menubar
 - macos: Add and configure Yabai tiling window manager
@@ -27,6 +26,6 @@ Planned changes and updates to this repo.
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
 - macos: [Automatically map Caps Lock to Escape](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x)
 - macos: dvorak/programmers dvorak setup?
-- tmux: tmuxinator?
+- tmux: session manager?
 - vm: Vagrantfile
 - vscodium: Install extensions script
