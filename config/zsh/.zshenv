@@ -9,7 +9,7 @@
 
 # set default apps
 export BROWSER="safari"
-export EDITOR="codium"
+export EDITOR="nvim"
 export PAGER="less"
 
 # set XDG paths
@@ -39,6 +39,9 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export DOTFILES=~/Setup/dotfiles
 export DOTBOT_DIR="$DOTFILES/vendor/dotbot"
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
+
+# go
+export GOPATH=$HOME/go
 
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
