@@ -3,7 +3,7 @@
 # run `bat --help` to get a list of all possible configuration options.
 
 # highlighting theme
---theme="Catppuccin-mocha"
+--theme="Catppuccin Mocha"
 
 # include rendering changes
 --style="changes"

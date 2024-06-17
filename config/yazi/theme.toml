@@ -1,3 +1,6 @@
 [status]
 separator_open = " "
 separator_close = " "
+
+[manager]
+syntect_theme = "$DOTFILES/vendor/catppuccin-bat/themes/Catppuccin Mocha.tmTheme"
