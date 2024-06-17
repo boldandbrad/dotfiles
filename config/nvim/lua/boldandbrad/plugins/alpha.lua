@@ -10,14 +10,13 @@ return {
       dashboard.button("SPC f f", "  Find files", "<cmd>Telescope find_files <cr>"),
       dashboard.button("SPC h l", "󰉻  Harpoon swap list",
         "<cmd>lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) <cr>"),
-      dashboard.button("SPC f r", "  Recent files", "<cmd>Telescope oldfiles <cr>"),
-      dashboard.button("SPC -", "󰙅  File explorer", "<cmd>lua require('yazi').yazi() <cr>"),
+      dashboard.button("SPC f r", "  Find recent files", "<cmd>Telescope oldfiles <cr>"),
+      dashboard.button("SPC -", "󰙅  Yazi file explorer", "<cmd>lua require('yazi').yazi() <cr>"),
       dashboard.button("SPC f t", "󱎸  Find text", "<cmd>Telescope live_grep <cr>"),
-      dashboard.button("SPC g s", "󱖫  Git status", "<cmd>G <cr>"),
+      dashboard.button("SPC l g", "󱖫  LazyGit client", "<cmd>LazyGit <cr>"),
       dashboard.button("SPC f d", "  Find todos", "<cmd>TodoTelescope <cr>"),
       dashboard.button("SPC p", "󰩦  Plugins", "<cmd>Lazy home <cr>"),
       dashboard.button("SPC d", "󰕮  Toggle dashboard", "<cmd>Alpha<cr>"),
-      dashboard.button("SPC t m", "  Toggle terminal", "<cmd>ToggleTerm <cr>"),
       dashboard.button("q", "  Quit Neovim", "<cmd>qa<CR>"),
     }
 
