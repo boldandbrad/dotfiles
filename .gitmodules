@@ -13,3 +13,8 @@
 [submodule "vendor/starship.yazi"]
 	path = vendor/starship.yazi
 	url = https://github.com/Rolv-Apneseth/starship.yazi.git
+	ignore = dirty
+[submodule "vendor/catppuccin-bat"]
+	path = vendor/catppuccin-bat
+	url = https://github.com/catppuccin/bat.git
+	ignore = dirty
