@@ -10,3 +10,6 @@
 	path = vendor/catppuccin-alacritty
 	url = https://github.com/catppuccin/alacritty/
 	ignore = dirty
+[submodule "vendor/starship.yazi"]
+	path = vendor/starship.yazi
+	url = https://github.com/Rolv-Apneseth/starship.yazi.git

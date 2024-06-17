@@ -12,6 +12,9 @@ config/tmux/plugins
 # alacritty themes
 config/alacritty/themes
 
+# yazi plugins
+config/yazi/plugins
+
 # brew lock files
 scripts/macos/brew/*.lock.json
 

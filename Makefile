@@ -13,3 +13,6 @@ update-tpm:
 
 update-themes:
 	git submodule update --remote vendor/catppuccin-alacritty
+
+update-starship-yazi:
+	git submodule update --remote vendor/starship.yazi
