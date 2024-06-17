@@ -18,6 +18,6 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>fe", ":Oil <CR>", {})
+    vim.keymap.set("n", "<leader>fe", "<cmd>Oil<cr>", { desc = "Toggle file explorer" })
   end
 }

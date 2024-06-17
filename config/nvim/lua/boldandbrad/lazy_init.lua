@@ -21,3 +21,5 @@ require("lazy").setup("boldandbrad.plugins", {
     colorscheme = { "catppuccin" },
   }
 })
+
+vim.keymap.set("n", "<leader>p", "<cmd>Lazy home<cr>", { desc = "Plugins" })
