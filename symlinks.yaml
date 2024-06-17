@@ -42,6 +42,7 @@
 
     # git configs
     ${XDG_CONFIG_HOME}/git: config/git
+    ${XDG_CONFIG_HOME}/lazygit: config/lazygit
 
     # alacritty configs
     ${XDG_CONFIG_HOME}/alacritty: config/alacritty
