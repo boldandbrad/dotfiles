@@ -16,6 +16,7 @@ Planned changes and updates to this repo.
 - docs: Feature explanations
 - docs: Personalization guide
 - docs: Gif/video demo in readme
+- lazygit: Catppuccin theme
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
 - macos: LaunchPad setup?
 - macos: Add and configure Sketchybar custom menubar
@@ -29,3 +30,5 @@ Planned changes and updates to this repo.
 - tmux: session manager?
 - vm: Vagrantfile
 - vscodium: Install extensions script
+- yazi: Config
+- yazi: Catppuccin flavor
