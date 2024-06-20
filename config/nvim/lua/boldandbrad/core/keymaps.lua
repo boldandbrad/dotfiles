@@ -28,8 +28,11 @@ keymap("n", "<leader>fm", vim.lsp.buf.format, opts)
 -- visual mode ("v")                                          --
 ----------------------------------------------------------------
 
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts) -- swap with line below
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts) -- swap with line above
+-- move line down
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+
+-- move line up
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 ----------------------------------------------------------------
 -- visual block mode ("x")                                    --
