@@ -1,6 +1,12 @@
 return {
   "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "jonarrien/telescope-cmdline.nvim",
+  },
+  keys = {
+    { ":", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
+  },
   config = function()
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -19,5 +25,7 @@ return {
       local word = vim.fm.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end, { desc = "Find current full word" })
+    -- enable cmdline extension
+    require("telescope").load_extension("cmdline")
   end
 }
