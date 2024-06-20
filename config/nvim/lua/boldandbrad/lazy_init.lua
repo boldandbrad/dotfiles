@@ -22,4 +22,4 @@ require("lazy").setup("boldandbrad.plugins", {
   }
 })
 
-vim.keymap.set("n", "<leader>p", "<cmd>Lazy home<cr>", { desc = "Plugins" })
+vim.keymap.set("n", "<leader>lz", "<cmd>Lazy home<cr>", { desc = "Plugins" })

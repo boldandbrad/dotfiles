@@ -8,8 +8,7 @@ return {
     -- nav buttons
     dashboard.section.buttons.val = {
       dashboard.button("SPC f f", "  Find files", "<cmd>Telescope find_files <cr>"),
-      dashboard.button("SPC h l", "󰉻  Harpoon swap list",
-        "<cmd>lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) <cr>"),
+      dashboard.button("SPC M", "󰉻  Grapple tag list", "<cmd>Grapple toggle_tags<cr>"),
       dashboard.button("SPC f r", "  Find recent files", "<cmd>Telescope oldfiles <cr>"),
       dashboard.button("SPC -", "󰙅  Yazi file explorer", "<cmd>lua require('yazi').yazi() <cr>"),
       dashboard.button("SPC f t", "󱎸  Find text", "<cmd>Telescope live_grep <cr>"),

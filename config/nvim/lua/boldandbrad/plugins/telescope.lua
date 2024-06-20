@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "jonarrien/telescope-cmdline.nvim",
+    "cbochs/grapple.nvim",
   },
   keys = {
     { ":", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
@@ -25,7 +26,8 @@ return {
       local word = vim.fm.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end, { desc = "Find current full word" })
-    -- enable cmdline extension
+    -- enable extensions
     require("telescope").load_extension("cmdline")
+    require("telescope").load_extension("grapple")
   end
 }
