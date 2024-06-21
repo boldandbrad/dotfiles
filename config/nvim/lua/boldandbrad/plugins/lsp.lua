@@ -81,8 +81,12 @@ return {
     -- configure diagnostics
     -- TODO: read up on this
     vim.diagnostic.config({
-      virtual_text = true,
-      update_in_insert = true,
+      signs = false,
+      severity_sort = true,
+      virtual_text = {
+        source = true,
+        spacing = 8,
+      },
       float = {
         focusable = false,
         style = "minimal",
