@@ -73,8 +73,8 @@ The floor plan at a glance:
   <tr>
     <th align="left">Editor</th>
     <td>
-      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED"> /
-      <img alt="neovim" src="https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143">
+      <img alt="neovim" src="https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143"> /
+      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED">
     </td>
   </tr>
   <tr>
@@ -188,7 +188,13 @@ and system configurations. Most of these scripts are called directly from
 
 ## 🖌️ Personalize <a id="personalize"></a>
 
-> Docs coming soon.
+If you have cloned or are reusing snippets from this repo for your own system
+setup, there are a handful of things that *should* change before unpacking.
+
+- Change the value of `GITHUB_USER` username in both `ship.sh` and `unpack.sh`.
+  This is used to automatically clone your public git repos, including this one.
+- Search for and replace all other 'boldandbrad' references with your preferred
+  user name or value.
 
 ## 💡 Inspiration <a id="inspiration"></a>
 
