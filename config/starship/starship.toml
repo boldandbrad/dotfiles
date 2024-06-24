@@ -9,7 +9,7 @@ format = '''$os\($shell\) at $all $fill $cmd_duration $line_break$jobs$battery$t
 palette = "catppuccin_mocha"
 
 [fill]
-symbol = " "
+symbol = "─"
 
 [character]
 success_symbol = "[](bold green)"
