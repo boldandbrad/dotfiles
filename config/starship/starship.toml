@@ -4,9 +4,12 @@
 # -> symlinked to ~/.config/starship/starship.toml             #
 ################################################################
 
-format = '''$os\($shell\) at $all'''
+format = '''$os\($shell\) at $all $fill $cmd_duration $line_break$jobs$battery$time$status$character'''
 
 palette = "catppuccin_mocha"
+
+[fill]
+symbol = " "
 
 [character]
 success_symbol = "[](bold green)"
