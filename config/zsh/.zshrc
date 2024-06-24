@@ -7,27 +7,45 @@
 # Import plugins, aliases, functions, and configs.             #
 ################################################################
 
-# zsh config directory
-zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
-
 # if not running interactively, do nothing
 [[ $- != *i* ]] && return
 
-# source antidote and initialize zsh plugins
-# TODO: make this line os agnostic
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-zstyle ':antidote:bundle' file $zsh_dir/.zsh_plugins
-antidote load
+# zsh config directory
+zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
-# allow tab completion menu selection
-zstyle ':completion:*' menu select
+# initialize zinit zsh plugin manager
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# install/initialize zsh plugins
+zinit light Aloxaf/fzf-tab
+zinit light djui/alias-tips
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
+
+# disable completion menu selection in favor of fzf-tab
+zstyle ':completion:*' menu no
 
 # allow partial tab completions: cd /u/lo/b⇥ -> /usr/local/bin
 zstyle ':completion:*' list-suffixes zstyle ':completion:*'
 
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# color tab completed paths
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 # initialize zsh completions
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+
+# zsh line editor keybindings
+bindkey -v
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # meeple-cli completions
 eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"

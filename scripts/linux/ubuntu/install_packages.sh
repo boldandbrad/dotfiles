@@ -19,7 +19,6 @@ apt install git
 apt install tailspin
 apt install yank
 apt install zsh
-apt install zsh-antidote
 
 apt install gh
 apt install httpie

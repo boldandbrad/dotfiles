@@ -25,7 +25,6 @@ tap "superatomic/bundle-extensions"   # extra brew commands
 # terminal apps and packages                                   #
 ################################################################
 
-brew "antidote"                 # zsh plugin manager
 brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
 brew "boldandbrad/tap/meeple-cli" # board game collection manager
