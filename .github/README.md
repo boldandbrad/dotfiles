@@ -116,13 +116,13 @@ The unpack script explains what it will do, prompts before doing so, and is
 idempotent. This means it can be safely run multiple times without compounding
 changes or breaking.
 
-In brief, the unpacking does the following:
+In brief, unpacking does the following:
 
 - ✅ Verify system compatibility
 - 🔄 Check and prompt for system updates
-- ⬇️ Install/update system packages and apps
-- 🔗 Symlink dotfiles
-- ⚙️ Perform system configuration
+- ⬇️ Install or update user packages and apps
+- 🔗 Symlink user dotfiles and configs
+- ⚙️ Apply user system settings
 - 🌱 Clone user github repos
 
 Continue reading for details on what to expect.
