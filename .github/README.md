@@ -125,7 +125,7 @@ In brief, unpacking does the following:
 - ⚙️ Apply user system settings
 - 🌱 Clone user github repos
 
-Continue reading for details on what to expect.
+Continue reading for more details on what to expect.
 
 ## 🛠️ Maintain <a id="maintain"></a>
 
