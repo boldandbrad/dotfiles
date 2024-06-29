@@ -29,11 +29,11 @@ alias dnl="cd ~/Downloads"
 alias stp="cd ~/Setup"
 alias dot="cd $DOTFILES"
 
-# root of current git repo
-alias grt='cd `git rev-parse --show-toplevel`'
+# change to root of current git repo
+alias cdr='cd `git rev-parse --show-toplevel`'
 
 # user config dir
-alias cnf="cd ${XDG_CONFIG_HOME}"
+alias cfg="cd ${XDG_CONFIG_HOME}"
 
 ################################################################
 # tool replacements                                            #
@@ -62,7 +62,7 @@ if command_exists eza ; then
   # list all, sorted by last modified
   alias lm="eza --all --reverse --long --header --sort=modified"
   # list all as tree, with git status, ignoring .git dir
-  alias lg="eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git"
+  alias lgt="eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git"
 else
   # list all
   alias la="ls -A" # list all
