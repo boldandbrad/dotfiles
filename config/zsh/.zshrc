@@ -77,10 +77,12 @@ if (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 fi
 
-# initialize starship shell prompt
-if (( $+commands[starship] )); then
-  eval "$(starship init zsh)"
-fi
+# initialize shell prompt
+eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
+
+# if (( $+commands[starship] )); then
+  # eval "$(starship init zsh)"
+# fi
 
 # remove duplicates from path arrays
 typeset -gU PATH FPATH

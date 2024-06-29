@@ -67,6 +67,7 @@ The floor plan at a glance:
   <tr>
     <th align="left">Shell Prompt</th>
     <td>
+      Oh My Posh /
       <img alt="starship" src="https://img.shields.io/badge/starship-_?logo=starship&logoColor=white&color=%23DD0B78">
     </td>
   </tr>

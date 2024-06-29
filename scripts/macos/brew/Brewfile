@@ -19,6 +19,7 @@ tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 
 tap "boldandbrad/tap"                 # stuff made by me :)
+tap "jandedobbeleer/oh-my-posh"       # oh my posh shell prompt
 tap "superatomic/bundle-extensions"   # extra brew commands
 
 ################################################################
@@ -40,6 +41,7 @@ brew "glow"                     # markdown viewer
 brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "neovim"                   # text editor
+brew "oh-my-posh"               # cross-shell prompt engine
 brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
 brew "starship"                 # cross-shell prompt builder
