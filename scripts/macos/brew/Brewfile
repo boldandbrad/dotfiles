@@ -81,7 +81,6 @@ cask "protonvpn"                # vpn client
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 cask "standard-notes"           # secure note manager
-cask "stats"                    # menu bar system monitor
 cask "syntax-highlight"         # quicklook syntax highlighter
 cask "vscodium"                 # text editor
 
