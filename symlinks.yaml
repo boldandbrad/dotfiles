@@ -19,6 +19,8 @@
 - shell:
     - description: set XDG environment variables
       command: source ./config/zsh/.zshenv
+    - description: create .hushlogin file
+      command: touch ~/.hushlogin
 
 # directories to create
 - create:
@@ -58,6 +60,7 @@
 
     # other configs
     ${XDG_CONFIG_HOME}/bat/config: config/bat/config
+    ${XDG_CONFIG_HOME}/btop: config/btop
     ${XDG_CONFIG_HOME}/bat/themes: vendor/catppuccin-bat/themes
     ${XDG_CONFIG_HOME}/fastfetch: config/fastfetch
     ${XDG_CONFIG_HOME}/oh-my-posh: config/oh-my-posh
