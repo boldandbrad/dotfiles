@@ -67,7 +67,7 @@ console_title_template = '{{ .Shell }} at {{ .Folder }}'
     type = 'path'
     style = 'plain'
     foreground = 'p:overlay0'
-    template = ' at <b><p:blue>{{ path .Path .Location }}</></b> '
+    template = ' at <b><p:blue>{{ $segment := .Segments.Git }}{{ if $segment.Dir }}{{ $segment.RepoName}}{{if ne $segment.RepoName .Path}}{{ trimPrefix $segment.Dir .PWD }}{{ end }}{{ else }}{{ path .Path .Location }}{{ end }}</></b> '
 
     [blocks.segments.properties]
      style = 'folder'
@@ -166,7 +166,7 @@ console_title_template = '{{ .Shell }} at {{ .Folder }}'
     '{{if gt .Code 0}}p:red{{end}}',
     '{{if eq .Code 0}}p:green{{end}}',
   ]
-  template = '->'
+  template = '-> '
 
 # secondary prompt
 
