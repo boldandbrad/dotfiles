@@ -22,16 +22,17 @@ return {
     require("mason-lspconfig").setup({
       -- install language servers
       ensure_installed = {
-        -- "astro",
-        -- "denols",
-        "elmls",
-        "gopls",
-        -- "html",
-        -- "htmx",
-        "lua_ls",
-        "ruff_lsp", -- python
-        "rust_analyzer",
-        "tsserver",
+        -- "astro",        -- astro
+        "denols", -- deno js/ts
+        "elmls",  -- elm
+        "gopls",  -- golang
+        -- "html",         -- html
+        -- "htmx",         -- htmx
+        "lua_ls",        -- lua
+        "ruff_lsp",      -- python
+        "rust_analyzer", -- rust
+        "taplo",         -- toml
+        "tsserver",      -- js/ts
       },
       -- setup language servers
       handlers = {
