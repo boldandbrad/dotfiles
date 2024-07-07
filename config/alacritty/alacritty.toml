@@ -7,7 +7,7 @@
 # import themes
 import = [
   # uncomment the flavour you want below:
-  "~/.config/alacritty/themes/catppuccin/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/catppuccin/catppuccin-mocha.toml",
   # "~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.toml"
   # "~/.config/alacritty/themes/catppuccin/catppuccin-frappe.toml"
   # "~/.config/alacritty/themes/catppuccin/catppuccin-latte.toml"
