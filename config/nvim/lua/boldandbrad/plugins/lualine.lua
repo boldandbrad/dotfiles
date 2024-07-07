@@ -10,12 +10,13 @@ return {
       sections = {
         lualine_c = {
           require("auto-session.lib").current_session_name,
-          "grapple",
           "filename",
+          "grapple",
         }
       },
       options = {
         icons_enabled = false,
+        component_separators = { left = "|", right = "|" },
         section_separators = { left = "", right = "" },
         globalstatus = true,
       },
