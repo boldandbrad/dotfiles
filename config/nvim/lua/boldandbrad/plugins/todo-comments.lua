@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- todo-comments.nvim - todo comment finder                   --
+----------------------------------------------------------------
+
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
@@ -8,14 +12,14 @@ return {
   },
   keys = {
     {
-      "<leader>tt",
+      "<leader>xt",
       "<cmd>TodoTrouble<cr>",
-      desc = "Todo comments (Trouble)"
+      desc = "Open TODOs (Trouble)"
     },
     {
       "<leader>fd",
       "<cmd>TodoTelescope<cr>",
-      desc = "Find TODO comments"
+      desc = "Find TODOs"
     }
   },
 }

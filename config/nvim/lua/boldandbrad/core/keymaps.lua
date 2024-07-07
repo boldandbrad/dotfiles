@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--- nvim keymaps                                               --
+-- nvim global keymaps                                        --
 ----------------------------------------------------------------
 
 -- default keymap options
@@ -18,7 +18,7 @@ vim.g.mapleader = " "
 ----------------------------------------------------------------
 
 -- format current buffer
-keymap("n", "<leader>fm", vim.lsp.buf.format, opts)
+keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", noremap = true, silent = true })
 
 ----------------------------------------------------------------
 -- insert mode ("i")                                          --

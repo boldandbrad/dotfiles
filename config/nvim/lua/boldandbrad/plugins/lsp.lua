@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- nvim-lspconfig - language server protocol setup            --
+----------------------------------------------------------------
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {

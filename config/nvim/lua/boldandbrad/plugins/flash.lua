@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- flash.nvim - search-based navigation motions               --
+----------------------------------------------------------------
+
 return {
   "folke/flash.nvim",
   event = "VeryLazy",

@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- trouble.nvim - diagnostics and reference jumper            --
+----------------------------------------------------------------
+
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },

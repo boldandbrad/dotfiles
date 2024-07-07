@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- gitsigns.nvim - git signs, blames, and hunk actions        --
+----------------------------------------------------------------
+
 return {
   "lewis6991/gitsigns.nvim",
   config = function()

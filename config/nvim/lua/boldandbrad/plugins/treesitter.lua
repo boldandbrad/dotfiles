@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- nvim-treesitter - tree-sitter integration                  --
+----------------------------------------------------------------
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",

@@ -1,3 +1,7 @@
+----------------------------------------------------------------
+-- alpha-nvim - dashboard/greeter                             --
+----------------------------------------------------------------
+
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
@@ -8,13 +12,13 @@ return {
     -- nav buttons
     dashboard.section.buttons.val = {
       dashboard.button("SPC f f", "  Find files", "<cmd>Telescope find_files <cr>"),
-      dashboard.button("SPC M", "󰉻  Grapple tag list", "<cmd>Grapple toggle_tags<cr>"),
+      dashboard.button("SPC M", "󰉻  Tagged buffer list", "<cmd>Grapple toggle_tags<cr>"),
       dashboard.button("SPC f r", "  Find recent files", "<cmd>Telescope oldfiles <cr>"),
-      dashboard.button("SPC -", "󰙅  Yazi file explorer", "<cmd>lua require('yazi').yazi() <cr>"),
+      dashboard.button("SPC -", "󰙅  File manager", "<cmd>lua require('yazi').yazi() <cr>"),
       dashboard.button("SPC f t", "󱎸  Find text", "<cmd>Telescope live_grep <cr>"),
-      dashboard.button("SPC l g", "󱖫  LazyGit client", "<cmd>LazyGit <cr>"),
+      dashboard.button("SPC G", "󱖫  Git client", "<cmd>LazyGit <cr>"),
       dashboard.button("SPC f d", "  Find todos", "<cmd>TodoTelescope <cr>"),
-      dashboard.button("SPC p", "󰩦  Plugins", "<cmd>Lazy home <cr>"),
+      dashboard.button("SPC P", "󰩦  Plugins", "<cmd>Lazy home <cr>"),
       dashboard.button("SPC d", "󰕮  Toggle dashboard", "<cmd>Alpha<cr>"),
       dashboard.button("q", "  Quit Neovim", "<cmd>qa<CR>"),
     }
@@ -47,8 +51,8 @@ return {
     })
 
     alpha.setup(dashboard.config)
-
-    -- keymaps
-    vim.keymap.set("n", "<leader>d", "<cmd>Alpha<cr>", { desc = "Toggle dashboard" })
   end,
+  keys = {
+    { "<leader>d", "<cmd>Alpha<cr>", desc = "Toggle dashboard (Alpha)" }
+  },
 }
