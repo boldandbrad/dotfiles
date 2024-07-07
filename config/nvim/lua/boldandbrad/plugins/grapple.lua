@@ -5,6 +5,9 @@ return {
   },
   opts = {
     scope = "git",
+    win_opts = {
+      border = "rounded",
+    },
   },
   event = { "BufReadPost", "BufNewFile" },
   cmd = "Grapple",
