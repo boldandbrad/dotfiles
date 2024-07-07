@@ -3,7 +3,7 @@
 ----------------------------------------------------------------
 
 local options = {
-  guicursor = "",
+  guicursor = "",        -- disable per-mode cursor styles
   number = true,         -- show line numbers
   relativenumber = true, -- make line numbers relative to current line
   tabstop = 2,           -- number of spaces to insert for a tab
@@ -20,6 +20,7 @@ local options = {
   signcolumn = "yes",                          -- always show the sign column, otherwise it would shift the text each time
   colorcolumn = "80",                          -- highlight the given column
   cursorline = true,                           -- highlight the current line
+  showmode = false,                            -- do not show '--INSERT--' etc in last line
 }
 
 for key, val in pairs(options) do
