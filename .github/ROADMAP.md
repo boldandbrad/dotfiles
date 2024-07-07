@@ -19,16 +19,16 @@ Planned changes and updates to this repo.
 - lazygit: Catppuccin theme
 - macos: System preferences setup via `defaults` or `apply-user-defaults`?
 - macos: LaunchPad setup?
-- macos: Add and configure Sketchybar custom menubar
-- macos: Add and configure Yabai tiling window manager
+- macos: Add and configure Sketchybar custom menubar?
+- macos: Add and configure Yabai tiling window manager?
 - macos: Add and configure skhd custom global keybindings
 - macos: Store other app settings via `mackup`?
 - macos: Hammerspoon/Karabiner config?
 - macos: Handle Homebrew differences between Intel and Apple Silicon macs
 - macos: [Automatically map Caps Lock to Escape](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x)
-- macos: dvorak/programmers dvorak setup?
+- macos: dvorak/programmers dvorak keyboard layout setup?
 - tmux: session manager?
 - vm: Vagrantfile
 - vscodium: Install extensions script
-- yazi: Config
 - yazi: Catppuccin flavor
+- yazi: Oh My Posh prompt
