@@ -11,16 +11,17 @@ return {
 
     -- register keymap group names
     local wk = require("which-key")
-    wk.register({
-      ["<leader>j"] = { name = "+Jump Tagged Buffers (Grapple)" },
-      ["<leader>f"] = { name = "+Find" },
-      ["<leader>g"] = { name = "+Git" },
-      ["<leader>h"] = { name = "+Help" },
-      ["<leader>l"] = { name = "+LSP" },
-      ["<leader>x"] = { name = "+Diagnostics" },
+    wk.add({
+      { "<leader>f", group = "Find" },
+      { "<leader>g", group = "Git" },
+      { "<leader>h", group = "Help" },
+      { "<leader>j", group = "Jump Tagged Buffers (Grapple)" },
+      { "<leader>l", group = "LSP" },
+      { "<leader>x", group = "Diagnostics" },
     })
   end,
   opts = {
+    preset = 'modern',
     plugins = {
       marks = false,
       registers = false,
@@ -35,11 +36,9 @@ return {
       }
     },
     icons = {
+      rules = false,
       breadcrumb = ">",
       separator = ">",
-    },
-    window = {
-      border = "rounded",
     },
   },
 }
