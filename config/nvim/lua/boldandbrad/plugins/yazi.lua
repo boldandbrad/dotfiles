@@ -7,7 +7,7 @@ return {
   event = "VeryLazy",
   keys = {
     {
-      "<leader>-",
+      "<leader>.",
       function()
         require("yazi").yazi()
       end,
@@ -15,11 +15,11 @@ return {
     },
     {
       -- Open in the current working directory
-      "<leader>cw",
+      "<leader>c",
       function()
         require("yazi").yazi(nil, vim.fn.getcwd())
       end,
-      desc = "Open file manager in nvim's working directory",
+      desc = "Open file manager in nvim's cwd (Yazi)",
     },
   },
   opts = {

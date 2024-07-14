@@ -14,12 +14,12 @@ return {
       dashboard.button("SPC f f", "  Find files", "<cmd>Telescope find_files <cr>"),
       dashboard.button("SPC M", "󰉻  Tagged buffer list", "<cmd>Grapple toggle_tags<cr>"),
       dashboard.button("SPC f r", "  Find recent files", "<cmd>Telescope oldfiles <cr>"),
-      dashboard.button("SPC -", "󰙅  File manager", "<cmd>lua require('yazi').yazi() <cr>"),
+      dashboard.button("SPC .", "󰙅  File manager", "<cmd>lua require('yazi').yazi() <cr>"),
       dashboard.button("SPC f t", "󱎸  Find text", "<cmd>Telescope live_grep <cr>"),
       dashboard.button("SPC G", "󱖫  Git client", "<cmd>LazyGit <cr>"),
       dashboard.button("SPC f d", "  Find todos", "<cmd>TodoTelescope <cr>"),
       dashboard.button("SPC P", "󰩦  Plugins", "<cmd>Lazy home <cr>"),
-      dashboard.button("SPC d", "󰕮  Toggle dashboard", "<cmd>Alpha<cr>"),
+      dashboard.button("SPC D", "󰕮  Toggle dashboard", "<cmd>Alpha<cr>"),
       dashboard.button("q", "  Quit Neovim", "<cmd>qa<CR>"),
     }
 
@@ -53,6 +53,6 @@ return {
     alpha.setup(dashboard.config)
   end,
   keys = {
-    { "<leader>d", "<cmd>Alpha<cr>", desc = "Toggle dashboard (Alpha)" }
+    { "<leader>D", "<cmd>Alpha<cr>", desc = "Toggle dashboard (Alpha)" }
   },
 }

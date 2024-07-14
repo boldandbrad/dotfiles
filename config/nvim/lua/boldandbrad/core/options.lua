@@ -3,24 +3,26 @@
 ----------------------------------------------------------------
 
 local options = {
-  guicursor = "",        -- disable per-mode cursor styles
-  number = true,         -- show line numbers
-  relativenumber = true, -- make line numbers relative to current line
-  tabstop = 2,           -- number of spaces to insert for a tab
-  softtabstop = 2,
-  shiftwidth = 2,
-  expandtab = true,                            -- convert tabs to spaces
   autoindent = true,                           -- auto indentation
-  smartindent = true,                          -- smart indentation
-  list = true,                                 -- show whitespace characters
-  listchars = "tab:>-,trail:·,nbsp:·,space:·", -- whitespace characters to show
-  wrap = false,                                -- disable line wrap
-  scrolloff = 8,                               -- minimal number of screen lines to keep above and below the cursor
-  sidescrolloff = 8,                           -- minimal number of screen columns either side of cursor if wrap is `false`
-  signcolumn = "yes",                          -- always show the sign column, otherwise it would shift the text each time
+  cmdheight = 0,                               -- do not display the cmdline (using telescope cmdline)
   colorcolumn = "80",                          -- highlight the given column
   cursorline = true,                           -- highlight the current line
+  expandtab = true,                            -- convert tabs to spaces
+  guicursor = "",                              -- disable per-mode cursor styles
+  list = true,                                 -- show whitespace characters
+  listchars = "tab:>-,trail:·,nbsp:·,space:·", -- whitespace characters to show
+  number = true,                               -- show line numbers
+  relativenumber = true,                       -- make line numbers relative to current line
+  scrolloff = 8,                               -- minimal number of screen lines to keep above and below the cursor
+  shiftwidth = 2,                              -- size of an indent
   showmode = false,                            -- do not show '--INSERT--' etc in last line
+  sidescrolloff = 8,                           -- minimal number of screen columns either side of cursor if wrap is `false`
+  signcolumn = "yes",                          -- always show the sign column, otherwise it would shift the text each time
+  smartindent = true,                          -- smart indentation
+  softtabstop = 2,                             -- how many spaces tabs "feel" like
+  tabstop = 2,                                 -- number of spaces to insert for a tab
+  termguicolors = true,                        -- true color support
+  wrap = false,                                -- disable line wrap
 }
 
 for key, val in pairs(options) do
