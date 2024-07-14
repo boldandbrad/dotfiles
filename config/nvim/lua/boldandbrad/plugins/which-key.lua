@@ -22,6 +22,7 @@ return {
   end,
   opts = {
     preset = 'modern',
+    show_help = false,
     plugins = {
       marks = false,
       registers = false,
