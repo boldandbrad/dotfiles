@@ -4,22 +4,18 @@
 
 return {
   "folke/todo-comments.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "folke/trouble.nvim",
+    "nvim-telescope/telescope.nvim"
+  },
   opts = {},
   cmd = {
     "TodoTrouble",
     "TodoTelescope",
   },
   keys = {
-    {
-      "<leader>xt",
-      "<cmd>TodoTrouble<cr>",
-      desc = "Open TODOs (Trouble)"
-    },
-    {
-      "<leader>fd",
-      "<cmd>TodoTelescope<cr>",
-      desc = "Find TODOs"
-    }
+    { "<leader>xt", "<cmd>Trouble todo<cr>",  desc = "Open TODOs (Trouble)" },
+    { "<leader>fd", "<cmd>TodoTelescope<cr>", desc = "Find TODOs" },
   },
 }

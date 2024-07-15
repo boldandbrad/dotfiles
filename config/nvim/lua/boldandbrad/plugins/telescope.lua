@@ -9,29 +9,28 @@ return {
     "jonarrien/telescope-cmdline.nvim",
     "cbochs/grapple.nvim",
   },
-  keys = {
-    { ":", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
-  },
-  config = function()
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-    vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Find git files" })
-    vim.keymap.set("n", "<leader>ft", builtin.live_grep, { desc = "Find text" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
-    vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Find recent files" })
-    -- find current word
-    vim.keymap.set("n", "<leader>fws", function()
-      local word = vim.fm.expand("<cword>")
-      builtin.grep_string({ search = word })
-    end, { desc = "Find current word" })
-    -- find current full word
-    vim.keymap.set("n", "<leader>fWs", function()
-      local word = vim.fm.expand("<cWORD>")
-      builtin.grep_string({ search = word })
-    end, { desc = "Find current full word" })
+  init = function()
     -- enable extensions
     require("telescope").load_extension("cmdline")
     require("telescope").load_extension("grapple")
-  end
+  end,
+  keys = {
+    { ":",          "<cmd>Telescope cmdline<cr>",      desc = "Cmdline" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find files" },
+    { "<leader>fg", "<cmd>Telescope git_files<cr>",    desc = "Find git files" },
+    { "<leader>ft", "<cmd>Telescope live_grep<cr>",    desc = "Find text" },
+    { "<leader>fb", "<cmd>Telescope grapple tags<cr>", desc = "Find tagged buffers" },
+    { "<leader>fB", "<cmd>Telescope buffers<cr>",      desc = "Find buffers" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>",    desc = "Find help tags" },
+    { "<leader>fr", "<cmd>Telescope oldfiles<cr>",     desc = "Find recent files" },
+    { "<leader>fw", "<cmd>Telescope grep_string<cr>",  desc = "Find current word" },
+    {
+      "<leader>fW",
+      function()
+        local word = vim.fn.expand("<cWORD>")
+        require("telescope.builtin").grep_string({ search = word })
+      end,
+      desc = "Find current full word",
+    },
+  },
 }
