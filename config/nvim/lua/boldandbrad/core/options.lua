@@ -4,7 +4,7 @@
 
 local options = {
   autoindent = true,                           -- auto indentation
-  cmdheight = 0,                               -- do not display the cmdline (using telescope cmdline)
+  -- cmdheight = 0,                               -- do not display the cmdline (using telescope cmdline)
   colorcolumn = "80",                          -- highlight the given column
   cursorline = true,                           -- highlight the current line
   expandtab = true,                            -- convert tabs to spaces

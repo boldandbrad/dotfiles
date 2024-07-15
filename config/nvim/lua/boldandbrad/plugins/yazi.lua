@@ -19,7 +19,7 @@ return {
       function()
         require("yazi").yazi(nil, vim.fn.getcwd())
       end,
-      desc = "Open file manager in nvim's cwd (Yazi)",
+      desc = "Open file manager at cwd (Yazi)",
     },
   },
   opts = {
