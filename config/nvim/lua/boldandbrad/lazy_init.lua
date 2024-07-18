@@ -17,7 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    import = "boldandbrad.plugins",
+    { import = "boldandbrad.plugins" },
+    { import = "boldandbrad.plugins.lsp" },
   },
   install = {
     colorscheme = { "catppuccin" },

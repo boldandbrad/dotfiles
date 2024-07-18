@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--- fidget.nvim - notificationa and lsp progress ui            --
+-- fidget.nvim - notifications and lsp progress ui            --
 ----------------------------------------------------------------
 
 return {
