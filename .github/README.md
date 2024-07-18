@@ -217,7 +217,6 @@ particular, I took inspiration from these gems:
   and tmux configs
 - [lissy93/dotfiles](https://github.com/lissy93/dotfiles) - install scripts and
   repo structure
-- [nikitavoloboev/dotfiles](https://github.com/nikitavoloboev/dotfiles)
 - [stefanzweifel/dotfiles](https://github.com/stefanzweifel/dotfiles)
 - [superatomic/dotfiles](https://github.com/superatomic/dotfiles)
 - [webpro/dotfiles](https://github.com/webpro/dotfiles)
