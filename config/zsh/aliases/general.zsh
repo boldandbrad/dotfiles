@@ -28,6 +28,7 @@ alias doc="cd ~/Documents"
 alias dnl="cd ~/Downloads"
 alias stp="cd ~/Setup"
 alias dot="cd $DOTFILES"
+alias spc="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/space"
 
 # change to root of current git repo
 alias cdr='cd `git rev-parse --show-toplevel`'

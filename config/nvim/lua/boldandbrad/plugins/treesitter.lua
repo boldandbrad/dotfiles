@@ -26,6 +26,8 @@ return {
           "elm",
           "go",
           -- "html",
+          "markdown",
+          "markdown_inline",
           "python",
           "rust",
           "typescript",

@@ -80,7 +80,6 @@ cask "protonvpn"                # vpn client
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
-cask "standard-notes"           # secure note manager
 cask "syntax-highlight"         # quicklook syntax highlighter
 cask "vscodium"                 # text editor
 
