@@ -154,7 +154,6 @@ function setup_dotfiles () {
 }
 
 function config_system () {
-
   # confirm the user would like to perform system configuration
   echo -en "\n${BLUE_B}Would you like to perform system-specific configuration? (y/N):${RESET} "
   read -t $PROMPT_TIMEOUT -n 1 -r ans_sysconfig && echo
@@ -194,7 +193,6 @@ config_system
 clone_repos
 
 # TODO: change default shell to homebrew zsh on macOS
-# TODO: system configurations
 # TODO: vscodium extensions
 # TODO: debian linux support
 
