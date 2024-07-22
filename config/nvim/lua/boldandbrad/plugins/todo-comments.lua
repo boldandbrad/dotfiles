@@ -9,11 +9,9 @@ return {
     "folke/trouble.nvim",
     "nvim-telescope/telescope.nvim"
   },
+  event = "BufEnter",
+  -- TODO: update sign icons
   opts = {},
-  cmd = {
-    "TodoTrouble",
-    "TodoTelescope",
-  },
   keys = {
     { "<leader>xt", "<cmd>Trouble todo<cr>",  desc = "Open TODOs (Trouble)" },
     { "<leader>fd", "<cmd>TodoTelescope<cr>", desc = "Find TODOs" },
