@@ -27,8 +27,7 @@ alias dvp="cd ~/Developer"
 alias doc="cd ~/Documents"
 alias dnl="cd ~/Downloads"
 alias stp="cd ~/Setup"
-alias dot="cd $DOTFILES"
-alias spc="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/space"
+alias dtf="cd $DOTFILES"
 
 # change to root of current git repo
 alias cdr='cd `git rev-parse --show-toplevel`'
@@ -78,7 +77,7 @@ else
 fi
 
 # prefer safer mv to trash function over rm
-alias rm="trash"
+# alias rm="trash"
 
 ################################################################
 # command defaults                                             #
@@ -114,6 +113,9 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   alias arc="open -a Arc"
   # open Safari browser
   alias safari="open -a Safari"
+
+  # change to obsidian vault
+  alias spc="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/space"
 
   # change to icloud directory
   alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
