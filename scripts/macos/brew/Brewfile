@@ -99,7 +99,7 @@ cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
-brew "rustup-init"              # rust toolchain installer
+brew "rustup"                   # rust toolchain installer
 # brew "rye"                      # python toolchain
 brew "scc"                      # lines of code counter
 cask "temurin"                  # jdk
