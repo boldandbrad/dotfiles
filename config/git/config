@@ -15,7 +15,8 @@
 	aa = add --all
 	br = checkout -b
 	cm = commit -m
-	co = checkout
+	ca = commit -a --amend --no-edit
+  co = checkout
 	sw = switch
 	st = status -s
 	ft = fetch
@@ -26,7 +27,7 @@
 	dt = difftool
 	mg = merge
 	mt = mergetool
-	r = reset HEAD
+	rs = reset HEAD
 [fetch]
 	prune = true
 [push]
