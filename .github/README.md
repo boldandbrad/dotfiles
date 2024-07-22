@@ -67,7 +67,7 @@ The floor plan at a glance:
   <tr>
     <th align="left">Shell Prompt</th>
     <td>
-      <img alt="oh my posh" src="https://img.shields.io/badge/Oh_My_Posh-2c7ae0"> /
+      <img alt="oh my posh" src="https://img.shields.io/badge/Oh_My_Posh-2c7ae0">
     </td>
   </tr>
   <tr>
