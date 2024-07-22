@@ -8,17 +8,12 @@ have made my preferences open source to serve as a blueprint and inspiration for
 others.
 
 Whether or not dotfile repos should be forked is a topic of hot debate. If you
-do fork this repo, I ***strongly*** recommend you [personalize](#personalize)
+do fork this repo, I _**strongly**_ recommend you [personalize](#personalize)
 the contained files before unpacking.
 
-**Jump to:**
-[✨ TL;DR](#tldr) |
-[🎥 Demo](#demo) |
-[📦 Unpack](#unpack) |
-[🛠️ Maintain](#maintain) |
-[🛋️ Contents](#contents) |
-[🖌️ Personalize](#personalize) |
-[💡 Inspiration](#inspiration) |
+**Jump to:** [✨ TL;DR](#tldr) | [🎥 Demo](#demo) | [📦 Unpack](#unpack) |
+[🛠️ Maintain](#maintain) | [🛋️ Contents](#contents) |
+[🖌️ Personalize](#personalize) | [💡 Inspiration](#inspiration) |
 [📚 Resources](#resources)
 
 ## ✨ TL;DR <a id="tldr"></a>
@@ -93,19 +88,19 @@ The floor plan at a glance:
 
 ## 📦 Unpack <a id="unpack"></a>
 
-> **Warning**: Before unpacking, consider reviewing the repo [contents](#contents) to
-> make sure they match your style. Any existing configs may be overwritten.
+> [!WARNING] Before unpacking, review the repo [contents](#contents) to make
+> sure they match your style and backup your existing configs.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
 ```
 
-This will download and run [`ship.sh`](../ship.sh), which
-clones this repo to `~/Setup/dotfiles` (if not present), and then prompts you to
-run [`unpack.sh`](../unpack.sh).
+This will download and run [`ship.sh`](../ship.sh), which clones this repo to
+`~/Setup/dotfiles` (if not present), and then prompts you to run
+[`unpack.sh`](../unpack.sh).
 
-Alternatively you can clone the repo yourself and run [`unpack.sh`](../unpack.sh)
-manually.
+Alternatively you can clone the repo yourself and run
+[`unpack.sh`](../unpack.sh) manually.
 
 ```sh
 git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
@@ -129,12 +124,12 @@ Continue reading for more details on what to expect.
 
 ## 🛠️ Maintain <a id="maintain"></a>
 
-To make system maintanence simpler post-install, a handful of convenient
-command [aliases](../config/zsh/aliases/dotfiles.zsh) are provided. Invoke these
-from anywhere.
+To make system maintanence simpler post-install, a handful of convenient command
+[aliases](../config/zsh/aliases/dotfiles.zsh) are provided. Invoke these from
+anywhere.
 
 | Command       | Description                                                 |
-| -             | -                                                           |
+| ------------- | ----------------------------------------------------------- |
 | `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))            |
 | `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
 | `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
@@ -179,14 +174,14 @@ and predictability while keeping your `$HOME` free of clutter.
 The following XDG variables are defined in [`.zshenv`](../config/zsh/.zshenv),
 which is sourced before symlinking.
 
-| Env Variable      | Location              |
-| -                 | -                     |
-| `XDG_BIN_HOME`    | `~/.local/bin`        |
-| `XDG_CACHE_HOME`  | `~/.local/var/cache`  |
-| `XDG_CONFIG_HOME` | `~/.config`           |
-| `XDG_DATA_HOME`   | `~/.local/share`      |
-| `XDG_LIB_HOME`    | `~/.local/lib`        |
-| `XDG_STATE_HOME`  | `~/.local/state`      |
+| Env Variable      | Location             |
+| ----------------- | -------------------- |
+| `XDG_BIN_HOME`    | `~/.local/bin`       |
+| `XDG_CACHE_HOME`  | `~/.local/var/cache` |
+| `XDG_CONFIG_HOME` | `~/.config`          |
+| `XDG_DATA_HOME`   | `~/.local/share`     |
+| `XDG_LIB_HOME`    | `~/.local/lib`       |
+| `XDG_STATE_HOME`  | `~/.local/state`     |
 
 ### Scripts
 
@@ -200,7 +195,7 @@ and system configurations. Most of these scripts are called directly from
 ## 🖌️ Personalize <a id="personalize"></a>
 
 If you have cloned or are reusing snippets from this repo for your own system
-setup, there are a handful of things that *should* change before unpacking.
+setup, there are a handful of things that _should_ change before unpacking.
 
 - Change the value of `GITHUB_USER` username in both `ship.sh` and `unpack.sh`.
   This is used to automatically clone your public git repos, including this one.
@@ -228,6 +223,8 @@ particular, I took inspiration from these gems:
 - [Dotbot 🔗](https://github.com/anishathalye/dotbot) - dotbot github repo
 - [Dotfiles Community 🔗](https://dotfiles.github.io/) - a great collection of
   dotfile resources
+- [dotfyle 🔗](https://dotfyle.com/) - discover neovim plugins and
+  configurations, including [mine](https://dotfyle.com/boldandbrad/)
 
 ## ⚖️ License <a id="license"></a>
 
