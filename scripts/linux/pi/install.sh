@@ -15,9 +15,6 @@ if ! type dotbot >/dev/null; then
 	pipx install dotbot
 fi
 
-# install starship prompt
-curl -sS https://starship.rs/install.sh | sh
-
 # install apt packages
 apt install -y autojump
 apt install -y bat

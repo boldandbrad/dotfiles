@@ -64,9 +64,7 @@
     ${XDG_CONFIG_HOME}/bat/themes: vendor/catppuccin-bat/themes
     ${XDG_CONFIG_HOME}/fastfetch: config/fastfetch
     ${XDG_CONFIG_HOME}/oh-my-posh: config/oh-my-posh
-    ${XDG_CONFIG_HOME}/starship: config/starship
     ${XDG_CONFIG_HOME}/yazi: config/yazi
-    ${XDG_CONFIG_HOME}/yazi/plugins/starship.yazi: vendor/starship.yazi
 
     # vscodium (location is os specific)
     ~/Library/Application Support/VSCodium/User/settings.json:

@@ -44,7 +44,6 @@ brew "neovim"                   # text editor
 brew "oh-my-posh"               # cross-shell prompt engine
 brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
-brew "starship"                 # cross-shell prompt builder
 brew "tailspin"                 # log file highlighter
 brew "tlrc"                     # concise man page client
 brew "tmux"                     # terminal multiplexer
