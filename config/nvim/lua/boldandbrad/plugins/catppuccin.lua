@@ -15,6 +15,7 @@ return {
       fidget = true,
       flash = true,
       gitsigns = true,
+      grug_far = true,
       lsp_trouble = true,
       mason = true,
       telescope = { enabled = true },

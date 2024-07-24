@@ -11,6 +11,7 @@ local keymap = vim.keymap.set
 -- remap leader to space
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 ----------------------------------------------------------------
 -- normal mode ("n")                                          --

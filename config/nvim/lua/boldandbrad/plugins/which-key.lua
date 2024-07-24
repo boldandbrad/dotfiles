@@ -17,11 +17,12 @@ return {
       { "<leader>h", group = "Help" },
       { "<leader>j", group = "Jump Tagged Buffers (Grapple)" },
       { "<leader>l", group = "LSP" },
+      { "<leader>r", group = "Replace (GrugFar)" },
       { "<leader>x", group = "Diagnostics" },
     })
   end,
   opts = {
-    preset = 'modern',
+    preset = "modern",
     show_help = false,
     plugins = {
       marks = false,
