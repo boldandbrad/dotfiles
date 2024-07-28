@@ -8,7 +8,6 @@
 	eol = lf
 	autocrlf = input
 	editor = nvim
-	pager = delta
 	excludesfile = ~/.config/git/gitignore
 [alias]
 	a = add
@@ -42,8 +41,6 @@
 	conflictsytle = diff3
 [mergetool "codium"]
 	cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
-[interactive]
-	diffFilter = delta --color-only
 [diff]
 	tool = codium
 	colorMoved = default
@@ -56,7 +53,3 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[delta]
-    navigate = true    # use n and N to move between diff sections
-		line-numbers = true
-		# side-by-side = true
