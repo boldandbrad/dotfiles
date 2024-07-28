@@ -126,6 +126,9 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
 
   # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
   # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+  alias pkgs="brew leaves"
+  alias apps="brew list --cask"
+  # alias deps="brew deps --formula --for-each $(brew leaves)"
 fi
 
 ################################################################
@@ -149,6 +152,3 @@ alias unlock="unzip -d"
 # pretty print PATH
 alias path='echo $PATH | tr -s ":" "\n"'
 alias fpath='echo $FPATH | tr -s ":" "\n"'
-
-# open browsers
-alias firefox="open -a Firefox"
