@@ -46,7 +46,7 @@ brew "ripgrep"                  # grep alternative
 brew "tailspin"                 # log file highlighter
 brew "tlrc"                     # concise man page client
 brew "tmux"                     # terminal multiplexer
-brew "vhs"                      # session recorder
+# brew "vhs"                      # session recorder
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
 brew "yank"                     # clipboard utility
@@ -64,7 +64,6 @@ cask "arc"                      # web browser
 cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
-cask "firefox"                  # web browser
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "logi-options-plus"        # logitech peripheral manager
@@ -91,7 +90,6 @@ brew "exercism"                 # cli coding exercise client
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
-brew "httpie", link: true       # cli http client
 cask "httpie"                   # desktop http client
 brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
