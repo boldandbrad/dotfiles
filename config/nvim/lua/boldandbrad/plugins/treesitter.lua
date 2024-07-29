@@ -5,44 +5,44 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    -- only load treesitter in buffers
-    event = { "BufReadPre", "BufNewFile", },
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        highlight = {
-          enable = true,
+    build = ":TSUpdate",
+    -- only load treesitter in buffers
+    event = { "BufReadPre", "BufNewFile", },
+    opts = {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" },
+      },
+      ensure_installed = {
+        -- required
+        "lua",
+        "query",
+        "vim",
+        "vimdoc",
+
+        -- custom
+        "elm",
+        "go",
+        -- "html",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "rust",
+        "typescript",
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<cr>",
+          node_incremental = "<cr>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
         },
-        ensure_installed = {
-          -- required
-          "lua",
-          "query",
-          "vim",
-          "vimdoc",
-          -- custom
-          "elm",
-          "go",
-          -- "html",
-          "markdown",
-          "markdown_inline",
-          "python",
-          "rust",
-          "typescript",
-        },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<cr>",
-            node_incremental = "<cr>",
-            scope_incremental = false,
-            node_decremental = "<bs>",
-          },
-        },
-      })
-    end,
+      },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

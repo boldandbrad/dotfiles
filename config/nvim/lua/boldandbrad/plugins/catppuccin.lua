@@ -7,6 +7,9 @@ return {
   name = "catppuccin",
   lazy = false,    -- load during startup
   priority = 1000, -- load before other plugins
+  init = function()
+    vim.cmd([[colorscheme catppuccin]])
+  end,
   opts = {
     flavour = "mocha",
     integrations = {
@@ -23,7 +26,4 @@ return {
       which_key = true,
     },
   },
-  init = function()
-    vim.cmd([[colorscheme catppuccin]])
-  end,
 }

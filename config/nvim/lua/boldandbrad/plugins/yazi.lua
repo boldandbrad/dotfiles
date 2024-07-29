@@ -5,6 +5,9 @@
 return {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
+  opts = {
+    open_for_directories = true,
+  },
   keys = {
     {
       "<leader>.",
@@ -21,8 +24,5 @@ return {
       end,
       desc = "Open file manager at cwd (Yazi)",
     },
-  },
-  opts = {
-    open_for_directories = true,
   },
 }

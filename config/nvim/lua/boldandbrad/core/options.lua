@@ -29,4 +29,8 @@ for key, val in pairs(options) do
   vim.opt[key] = val
 end
 
+-- restorable session types
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- use system clipboard for yank, delete, change, and put operations
 vim.opt.clipboard:append { "unnamedplus" }

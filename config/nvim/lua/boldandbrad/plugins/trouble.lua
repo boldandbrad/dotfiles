@@ -4,10 +4,10 @@
 
 return {
   "folke/trouble.nvim",
+  cmd = "Trouble",
   opts = {
     focus = true,
   },
-  cmd = "Trouble",
   keys = {
     {
       "<leader>xx",
