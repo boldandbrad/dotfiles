@@ -12,6 +12,7 @@ return {
     local auto_session = require("auto-session")
 
     auto_session.setup({
+      bypass_session_save_file_types = { "alpha" },
       session_lens = {
         load_on_setup = true
       }
