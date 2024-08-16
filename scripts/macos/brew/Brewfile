@@ -79,6 +79,7 @@ cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 cask "syntax-highlight"         # quicklook syntax highlighter
 cask "vscodium"                 # text editor
+cask "wezterm"                  # terminal emulator
 
 ################################################################
 # software development tooling and apps                        #

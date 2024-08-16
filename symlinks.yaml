@@ -50,6 +50,9 @@
     ${XDG_CONFIG_HOME}/alacritty: config/alacritty
     ${XDG_CONFIG_HOME}/alacritty/themes/catppuccin: vendor/catppuccin-alacritty
 
+    # wezterm configs
+    ${XDG_CONFIG_HOME}/wezterm: config/wezterm
+
     # tmux configs
     ${XDG_CONFIG_HOME}/tmux: config/tmux
     ${XDG_DATA_HOME}/tmux/tpm: vendor/tpm
@@ -60,8 +63,8 @@
 
     # other configs
     ${XDG_CONFIG_HOME}/bat/config: config/bat/config
-    ${XDG_CONFIG_HOME}/btop: config/btop
     ${XDG_CONFIG_HOME}/bat/themes: vendor/catppuccin-bat/themes
+    ${XDG_CONFIG_HOME}/btop: config/btop
     ${XDG_CONFIG_HOME}/fastfetch: config/fastfetch
     ${XDG_CONFIG_HOME}/oh-my-posh: config/oh-my-posh
     ${XDG_CONFIG_HOME}/yazi: config/yazi
