@@ -27,7 +27,7 @@ return {
         "ruff_lsp",      -- python
         "rust_analyzer", -- rust
         "taplo",         -- toml
-        "tsserver",      -- js/ts
+        -- "tsserver",      -- js/ts
       },
       -- setup language servers
       handlers = {
