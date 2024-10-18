@@ -98,8 +98,8 @@ brew "pre-commit"               # git hook manager
 brew "pyenv"                    # python version manager
 brew "rustup"                   # rust toolchain installer
 # brew "rye"                      # python toolchain
-brew "scc"                      # lines of code counter
 cask "temurin"                  # jdk
+brew "tokei"                    # code line counter
 # brew "uv"                       # python toolchain
 # cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
