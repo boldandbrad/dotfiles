@@ -30,14 +30,13 @@ export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-# export PNPM_HOME=~/Library/pnpm
 # dotfiles
 export DOTFILES=~/Setup/dotfiles
 export DOTBOT_DIR="$DOTFILES/vendor/dotbot"
 export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
 
 # go
-export GOPATH=$HOME/go
+export GOPATH="$XDG_DATA_HOME"/go
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
 # add user bin to path
