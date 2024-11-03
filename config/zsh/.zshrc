@@ -72,11 +72,6 @@ fi
 # setup fzf key bindings and fuzzy completions
 source <(fzf --zsh)
 
-# initialize pyenv
-if (( $+commands[pyenv] )); then
-  eval "$(pyenv init -)"
-fi
-
 # initialize shell prompt
 eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
 

@@ -24,9 +24,6 @@ export XDG_STATE_HOME=~/.local/state # where user-specific state files should be
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 # export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 export LESSHISTFILE="-" # disable less history
-# export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
-# export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
-export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
@@ -34,7 +31,6 @@ export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # export PNPM_HOME=~/Library/pnpm
-
 # dotfiles
 export DOTFILES=~/Setup/dotfiles
 export DOTBOT_DIR="$DOTFILES/vendor/dotbot"
@@ -42,10 +38,10 @@ export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
 
 # go
 export GOPATH=$HOME/go
-
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
-
+# add user bin to path
+export PATH="$HOME/.local/bin:$PATH"
 # add dotbot to path
 export PATH="$DOTBOT_DIR/bin:$PATH"
 

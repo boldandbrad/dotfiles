@@ -30,6 +30,5 @@ pacman -S github-cli
 pacman -S httpie
 pacman -S podman
 pacman -S pre-commit
-pacman -S pyenv
 pacman -S rustup
 pacman -S vagrant

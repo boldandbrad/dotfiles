@@ -1,32 +1,3 @@
-
-# upgrade pip on all pyenv python versions
-function pipup() {
-  for VERSION in $(pyenv versions --bare) ; do
-    echo "Upgrading pip in python ${VERSION}..."
-    pyenv shell ${VERSION} ;
-    pip install --upgrade pip ;
-  done
-}
-
-# create python venv in the current directory
-function pyvenv() {
-  python -m venv --clear --copies .venv
-  echo "New venv activated."
-}
-
-# initialize python project
-function pyinit() {
-  pyvenv
-  pip -q install --upgrade pip
-  mkdir .vscode-oss
-  cat > .vscode-oss/settings.json<< EOF
-{
-    "python.defaultInterpreterPath": ".venv/bin/python",
-    "python.terminal.activateEnvironment": "false"
-}
-EOF
-}
-
 # update the created and modified date for all images in the current directory to match their exif create date
 function exifupdate() {
   if type exiftool &>/dev/null; then

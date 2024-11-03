@@ -95,12 +95,10 @@ brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "pre-commit"               # git hook manager
-brew "pyenv"                    # python version manager
 brew "rustup"                   # rust toolchain installer
-# brew "rye"                      # python toolchain
 cask "temurin"                  # jdk
 brew "tokei"                    # code line counter
-# brew "uv"                       # python toolchain
+brew "uv"                       # python toolchain
 # cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
 

@@ -124,8 +124,6 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   # also, clear Apple’s System Logs to improve shell startup speed
   alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-  # remove brew doctor warning (https://github.com/pyenv/pyenv#homebrew-in-macos)
-  # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
   alias pkgs="brew leaves"
   alias apps="brew list --cask"
   # alias deps="brew deps --formula --for-each $(brew leaves)"
