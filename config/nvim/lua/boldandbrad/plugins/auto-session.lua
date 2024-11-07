@@ -9,7 +9,6 @@ return {
   },
   lazy = false,
   opts = {
-    bypass_session_save_file_types = { "alpha" },
     session_lens = {
       load_on_setup = true
     },

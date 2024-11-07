@@ -13,7 +13,6 @@ return {
   opts = {
     flavour = "mocha",
     integrations = {
-      alpha = true,
       cmp = true,
       fidget = true,
       flash = true,
