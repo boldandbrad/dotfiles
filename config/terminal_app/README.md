@@ -3,8 +3,7 @@
 This directory contains configuration profiles for macOS's native Terminal app.
 
 > [!NOTE]
-> Files beginning with `Catppuccin` are modified versions of profiles
-> found in
+> Files beginning with `Catppuccin` are modified versions of profiles found in
 > [catppuccin/Terminal.app](https://github.com/catppuccin/Terminal.app). In
 > particular, they have been modified to use `18pt AnonymicePro Nerd Font` and
 > to set a default window size of `96x24`.
