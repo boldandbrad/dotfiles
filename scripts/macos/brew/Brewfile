@@ -90,10 +90,10 @@ brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
 cask "httpie"                   # desktop http client
+brew "lefthook"                 # git hook manager
 brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
-brew "pre-commit"               # git hook manager
 brew "rustup"                   # rust toolchain installer
 cask "temurin"                  # jdk
 brew "tokei"                    # code line counter

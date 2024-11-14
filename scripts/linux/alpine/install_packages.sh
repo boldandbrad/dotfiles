@@ -27,5 +27,4 @@ apk add deno
 apk add github-cli
 apk add httpie
 apk add podman
-apk add pre-commit
 apk add rustup

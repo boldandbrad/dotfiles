@@ -23,7 +23,6 @@ apt install zsh
 apt install gh
 apt install httpie
 apt install podman
-apt install pre-commit
 apt install vagrant
 
 # deb-get?
