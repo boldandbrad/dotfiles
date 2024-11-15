@@ -14,6 +14,14 @@ return {
     require("telescope").load_extension("cmdline")
     require("telescope").load_extension("grapple")
   end,
+  opts = {
+    pickers = {
+      find_files = {
+        -- include hidden files in search but not the .git/ directory
+        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+      },
+    },
+  },
   keys = {
     { ":",          "<cmd>Telescope cmdline<cr>",      desc = "Cmdline" },
     { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find files" },
