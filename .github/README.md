@@ -7,9 +7,10 @@ with your favorite app(liance)s, and giving you the tools you need to maintain
 it. I have made my preferences open source to serve as a blueprint and
 inspiration for others.
 
-Whether or not dotfile repos should be forked is a topic of hot debate. If you
-do fork this repo, I _**strongly**_ recommend you [personalize](#personalize)
-the contained files before unpacking.
+Whether or not dotfile repos should be forked is a
+[topic of hot debate](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
+If you do fork this repo, I _**strongly**_ recommend you
+[personalize](#personalize) the contained files before unpacking.
 
 **Jump to:** [✨ TL;DR](#tldr) | [🎥 Demo](#demo) | [📦 Unpack](#unpack) |
 [🛠️ Maintain](#maintain) | [🛋️ Contents](#contents) |
@@ -20,19 +21,20 @@ the contained files before unpacking.
 
 The floor plan at a glance:
 
-| | |
-| - | - |
-| Operating System      | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000) |
-| Package Manager       | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040) |
-| Dotfile Manager       | ![dotbot](https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey) |
-| Terminal Emulator     | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31) ![alacritty](https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01)|
-| Terminal Multiplexer  | ![tmux](https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F) |
-| Shell                 | ![zsh](https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24) |
-| Shell Prompt          | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0) |
-| Editor                | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED) |
-| Typeface              | Anonymous Pro / Anonymice Pro Nerde Font |
-| Theme / Colorsheme    | Catppuccin Mocha |
+|                       |                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Operating System      | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)                                                                                                                                                                                                                                                                       |
+| Package Manager       | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040)                                                                                                                                                                                                                                                              |
+| Dotfile Manager       | ![dotbot](https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey)                                                                                                                                                                                                                                                                                     |
+| Terminal Emulator     | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31) ![alacritty](https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01)                                                                                                                                                       |
+| Terminal Multiplexer  | ![tmux](https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F)                                                                                                                                                                                                                                                                          |
+| Shell                 | ![zsh](https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24)                                                                                                                                                                                                                                                                             |
+| Shell Prompt          | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0)                                                                                                                                                                                                                                                                                                   |
+| Editor                | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED)                                                                                                                                                                 |
+| Typeface              | Anonymous Pro / Anonymice Pro Nerde Font                                                                                                                                                                                                                                                                                                                        |
+| Theme / Colorsheme    | Catppuccin Mocha                                                                                                                                                                                                                                                                                                                                                |
 | Programming Langauges | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
+|                       |                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## 🎥 Demo <a id="demo"></a>
 

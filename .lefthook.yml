@@ -1,0 +1,4 @@
+pre-commit:
+  commands:
+    fmt:
+      run: deno fmt {staged_files}
