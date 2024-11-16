@@ -15,9 +15,24 @@ return {
     require("telescope").load_extension("grapple")
   end,
   opts = {
+    defaults = {
+      -- include hidden files excluding .git/ in live_grep and grep_string results
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--hidden",
+        "--glob",
+        "!**/.git/*",
+      },
+    },
     pickers = {
       find_files = {
-        -- include hidden files in search but not the .git/ directory
+        -- include hidden files excluding .git/ in find_files results
         find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
       },
     },
