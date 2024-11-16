@@ -3,9 +3,9 @@
 > Welcome `$HOME`!
 
 This repo makes moving into your new mac a breeze by automatically furnishing it
-with your favorite apps, and giving you the tools you need to maintain it. I
-have made my preferences open source to serve as a blueprint and inspiration for
-others.
+with your favorite app(liance)s, and giving you the tools you need to maintain
+it. I have made my preferences open source to serve as a blueprint and
+inspiration for others.
 
 Whether or not dotfile repos should be forked is a topic of hot debate. If you
 do fork this repo, I _**strongly**_ recommend you [personalize](#personalize)
@@ -20,67 +20,19 @@ the contained files before unpacking.
 
 The floor plan at a glance:
 
-<!-- I wish I could create a table without a header row in pure markdown 🙃 -->
-<table>
-  <tr>
-    <th align="left">Operating System</th>
-    <td>
-      <img alt="macOS" src="https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000">
-      <!-- <img alt="arch-linux" src="https://img.shields.io/badge/Arch%20Linux-_?logo=arch-linux&logoColor=white&color=%231793D1"> -->
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Package Manager</th>
-    <td>
-      <img alt="homebrew" src="https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Dotfile Manager</th>
-    <td>
-      <img alt="dotbot" src="https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Terminal Emulator</th>
-    <td>
-      <img alt="alacritty" src="https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Terminal Multiplexer</th>
-    <td>
-      <img alt="tmux" src="https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Shell</th>
-    <td>
-      <img alt="zsh" src="https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Shell Prompt</th>
-    <td>
-      <img alt="oh my posh" src="https://img.shields.io/badge/Oh_My_Posh-2c7ae0">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Editor</th>
-    <td>
-      <img alt="neovim" src="https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143"> /
-      <img alt="vscodium" src="https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED">
-    </td>
-  </tr>
-  <tr>
-    <th align="left">Typeface</th>
-    <td>Anonymous Pro / Anonymice Pro Nerd Font</td>
-  </tr>
-  <tr>
-    <th align="left">Theme</th>
-    <td>Catppuccin Mocha</td>
-  </tr>
-</table>
+| | |
+| - | - |
+| Operating System      | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000) |
+| Package Manager       | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040) |
+| Dotfile Manager       | ![dotbot](https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey) |
+| Terminal Emulator     | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31) ![alacritty](https://img.shields.io/badge/Alacritty-_?logo=alacritty&logoColor=white&color=%23F46D01)|
+| Terminal Multiplexer  | ![tmux](https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F) |
+| Shell                 | ![zsh](https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24) |
+| Shell Prompt          | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0) |
+| Editor                | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED) |
+| Typeface              | Anonymous Pro / Anonymice Pro Nerde Font |
+| Theme / Colorsheme    | Catppuccin Mocha |
+| Programming Langauges | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
 
 ## 🎥 Demo <a id="demo"></a>
 
@@ -88,8 +40,9 @@ The floor plan at a glance:
 
 ## 📦 Unpack <a id="unpack"></a>
 
-> [!WARNING] Before unpacking, review the repo [contents](#contents) to make
-> sure they match your style and backup your existing configs.
+> [!WARNING]
+> Before unpacking, review the repo [contents](#contents) to make sure they
+> match your style and backup your existing configs.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
@@ -124,7 +77,7 @@ Continue reading for more details on what to expect.
 
 ## 🛠️ Maintain <a id="maintain"></a>
 
-To make system maintanence simpler post-install, a handful of convenient command
+To make system maintanence simpler post-unpack, a handful of convenient command
 [aliases](../config/zsh/aliases/dotfiles.zsh) are provided. Invoke these from
 anywhere.
 
