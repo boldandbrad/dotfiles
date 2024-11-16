@@ -1,175 +1,153 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
-final_space = true
 console_title_template = '{{ .Shell }} at {{ .Folder }}'
-
-# catppuccin mocha color palette
+version = 3
+final_space = true
 
 [palette]
-rosewater = '#f5e0dc'
-flamingo = '#f2cdcd'
-pink = '#f5c2e7'
-mauve = '#cba6f7'
-red = '#f38ba8'
-maroon = '#eba0ac'
-peach = '#fab387'
-yellow = '#f9e2af'
-green = '#a6e3a1'
-teal = '#94e2d5'
-sky = '#89dceb'
-sapphire = '#74c7ec'
-blue = '#89b4fa'
-lavender = '#b4befe'
-text = '#cdd6f4'
-subtext1 = '#bac2de'
-subtext0 = '#a6adc8'
-overlay2 = '#9399b2'
-overlay1 = '#7f849c'
-overlay0 = '#6c7086'
-surface2 = '#585b70'
-surface1 = '#45475a'
-surface0 = '#313244'
-base = '#1e1e2e'
-mantle = '#181825'
-crust = '#11111b'
-white = '#ffffff'
-black = '#000000'
-
-# main left prompt
-
-[[blocks]]
-type = 'prompt'
-alignment = 'left'
-newline = true
-
-[[blocks.segments]]
-type = 'os'
-style = 'plain'
-template = '<b><p:maroon>{{ .Icon }}</></b>'
-
-[blocks.segments.properties]
-macos = 'macOS'
-
-[[blocks.segments]]
-type = 'session'
-style = 'plain'
-foreground = 'p:overlay0'
-template = ' as <b><p:mauve>{{ .UserName }}</></b>'
-
-[[blocks.segments]]
-type = 'shell'
-style = 'plain'
-foreground = 'p:overlay0'
-template = ' via <b><p:lavender>{{ .Name }}</></b>'
-
-[[blocks.segments]]
-type = 'path'
-style = 'plain'
-foreground = 'p:overlay0'
-template = ' at <b><p:blue>{{ $segment := .Segments.Git }}{{ if $segment.Dir }}{{ $segment.RepoName}}{{if ne $segment.RepoName .Path}}{{ trimPrefix $segment.Dir .PWD }}{{ end }}{{ else }}{{ path .Path .Location }}{{ end }}</></b> '
-
-[blocks.segments.properties]
-style = 'folder'
-gitdir_format = '%s'
-
-[[blocks.segments]]
-type = 'git'
-style = 'plain'
-foreground = 'p:overlay0'
-template = 'on <b><p:green>{{ .HEAD }}</>{{ if or (.Working.Changed) (.Staging.Changed) }}<p:yellow> *</>{{ end }}</b>'
-
-[blocks.segments.properties]
-branch_icon = ''
-commit_icon = '@'
-branch_max_length = 25
-fetch_status = true
-fetch_upstream_icon = true
-
-# programming language segments
-
-[[blocks.segments]]
-type = 'deno'
-style = 'plain'
-template = ' <p:overlay0>|</> deno <b><p:teal>{{ .Full }}</></b>'
-
-[[blocks.segments]]
-type = 'go'
-style = 'plain'
-template = ' <p:overlay0>|</> go <b><p:blue>{{ .Full }}</></b>'
-
-[blocks.segments.properties]
-fetch_version = true
-
-[[blocks.segments]]
-type = 'lua'
-style = 'plain'
-template = ' <p:overlay0>|</> lua <b><p:yellow>{{ .Full }}</></b>'
-
-[[blocks.segments]]
-type = 'python'
-style = 'plain'
-template = ' <p:overlay0>|</> python <b><p:green>{{ .Full }}</></b>{{ if .Venv }} via {{ .Venv }}{{ end }}'
-
-[blocks.segments.properties]
-display_mode = 'files'
-fetch_version = true
-fetch_virtual_env = true
-
-[[blocks.segments]]
-type = 'rust'
-style = 'plain'
-template = ' <p:overlay0>|</> rust <b><p:red>{{ .Full }}</></b>'
-
-# right prompt
-
-[[blocks]]
-type = 'prompt'
-alignment = 'right'
-overflow = 'hidden'
-
-[[blocks.segments]]
-type = 'executiontime'
-style = 'plain'
-foreground = 'p:overlay0'
-template = ' took <p:yellow>{{ .FormattedMs }}</>'
-
-[blocks.segments.properties]
-threshold = 1000
-
-[[blocks.segments]]
-type = 'time'
-style = 'plain'
-foreground = 'p:overlay0'
-template = ' now <p:blue><b>{{ .CurrentDate | date "3:04:05pm" }}</b></>'
-
-# left newline prompt
-
-[[blocks]]
-type = 'prompt'
-alignment = 'left'
-newline = true
-
-[[blocks.segments]]
-type = 'text'
-style = 'plain'
-foreground_templates = [
-  '{{if gt .Code 0}}p:red{{end}}',
-  '{{if eq .Code 0}}p:green{{end}}',
-]
-template = '->'
-
-# transient prompt
-
-[transient_prompt]
-foreground_templates = [
-  '{{if gt .Code 0}}p:red{{end}}',
-  '{{if eq .Code 0}}p:green{{end}}',
-]
-template = '-> '
-
-# secondary prompt
+  base = '#1e1e2e'
+  black = '#000000'
+  blue = '#89b4fa'
+  crust = '#11111b'
+  flamingo = '#f2cdcd'
+  green = '#a6e3a1'
+  lavender = '#b4befe'
+  mantle = '#181825'
+  maroon = '#eba0ac'
+  mauve = '#cba6f7'
+  overlay0 = '#6c7086'
+  overlay1 = '#7f849c'
+  overlay2 = '#9399b2'
+  peach = '#fab387'
+  pink = '#f5c2e7'
+  red = '#f38ba8'
+  rosewater = '#f5e0dc'
+  sapphire = '#74c7ec'
+  sky = '#89dceb'
+  subtext0 = '#a6adc8'
+  subtext1 = '#bac2de'
+  surface0 = '#313244'
+  surface1 = '#45475a'
+  surface2 = '#585b70'
+  teal = '#94e2d5'
+  text = '#cdd6f4'
+  white = '#ffffff'
+  yellow = '#f9e2af'
 
 [secondary_prompt]
-foreground = 'p:green'
-template = ' >'
+  template = ' >'
+  foreground = 'p:green'
+
+[transient_prompt]
+  template = '-> '
+  foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:green{{end}}']
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = '<b><p:maroon>{{ .Icon }}</></b>'
+    type = 'os'
+
+    [blocks.segments.properties]
+      macos = 'macOS'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' as <b><p:mauve>{{ .UserName }}</></b>'
+    foreground = 'p:overlay0'
+    type = 'session'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' via <b><p:lavender>{{ .Name }}</></b>'
+    foreground = 'p:overlay0'
+    type = 'shell'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' at <b><p:blue>{{ $segment := .Segments.Git }}{{ if $segment.Dir }}{{ $segment.RepoName}}{{if ne $segment.RepoName .Path}}{{ trimPrefix $segment.Dir .PWD }}{{ end }}{{ else }}{{ path .Path .Location }}{{ end }}</></b> '
+    foreground = 'p:overlay0'
+    type = 'path'
+
+    [blocks.segments.properties]
+      gitdir_format = '%s'
+      style = 'folder'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = 'on <b><p:green>{{ .HEAD }}</>{{ if or (.Working.Changed) (.Staging.Changed) }}<p:yellow> *</>{{ end }}</b>'
+    foreground = 'p:overlay0'
+    type = 'git'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      branch_max_length = 25
+      commit_icon = '@'
+      fetch_status = true
+      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' <p:overlay0>|</> deno <b><p:teal>{{ .Full }}</></b>'
+    type = 'deno'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' <p:overlay0>|</> go <b><p:blue>{{ .Full }}</></b>'
+    type = 'go'
+
+    [blocks.segments.properties]
+      fetch_version = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' <p:overlay0>|</> lua <b><p:yellow>{{ .Full }}</></b>'
+    type = 'lua'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' <p:overlay0>|</> python <b><p:green>{{ .Full }}</></b>{{ if .Venv }} via {{ .Venv }}{{ end }}'
+    type = 'python'
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_version = true
+      fetch_virtual_env = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' <p:overlay0>|</> rust <b><p:red>{{ .Full }}</></b>'
+    type = 'rust'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' took <p:yellow>{{ .FormattedMs }}</>'
+    foreground = 'p:overlay0'
+    type = 'executiontime'
+
+    [blocks.segments.properties]
+      threshold = 1000
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = ' now <p:blue><b>{{ .CurrentDate | date "3:04:05pm" }}</b></>'
+    foreground = 'p:overlay0'
+    type = 'time'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    style = 'plain'
+    template = '->'
+    type = 'text'
+    foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:green{{end}}']
