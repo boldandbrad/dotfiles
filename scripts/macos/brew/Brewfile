@@ -57,7 +57,6 @@ brew "zsh"                      # system zsh replacement
 # desktop apps                                                 #
 ################################################################
 
-cask "alacritty"                # terminal emulator
 cask "arc"                      # web browser
 # cask "balenaetcher"             # boot drive imager
 cask "bricklink-studio"         # lego moc designer

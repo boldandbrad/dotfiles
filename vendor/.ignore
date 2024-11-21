@@ -1,6 +1,4 @@
 # omit submodule contents from search tool results
-catppuccin-alacritty/
 catppuccin-bat/
 dotbot/
-starship.yazi/
 tpm/

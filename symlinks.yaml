@@ -46,10 +46,6 @@
     ${XDG_CONFIG_HOME}/git: config/git
     ${XDG_CONFIG_HOME}/lazygit: config/lazygit
 
-    # alacritty configs
-    ${XDG_CONFIG_HOME}/alacritty: config/alacritty
-    ${XDG_CONFIG_HOME}/alacritty/themes/catppuccin: vendor/catppuccin-alacritty
-
     # wezterm configs
     ${XDG_CONFIG_HOME}/wezterm: config/wezterm
 

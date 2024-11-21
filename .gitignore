@@ -8,9 +8,6 @@ config/zsh/.zcompdump
 # tmux plugins
 config/tmux/plugins
 
-# alacritty themes
-config/alacritty/themes
-
 # yazi plugins
 config/yazi/plugins
 
