@@ -18,16 +18,14 @@ return {
       -- install language servers
       ensure_installed = {
         -- "astro",        -- astro
-        "denols", -- deno js/ts
-        "elmls",  -- elm
-        "gopls",  -- golang
-        -- "html",         -- html
+        "denols",        -- deno js/ts
+        "elmls",         -- elm
+        "gopls",         -- golang
         -- "htmx",         -- htmx
         "lua_ls",        -- lua
-        "ruff_lsp",      -- python
+        "ruff",          -- python
         "rust_analyzer", -- rust
         "taplo",         -- toml
-        -- "tsserver",      -- js/ts
       },
       -- setup language servers
       handlers = {
@@ -44,6 +42,13 @@ return {
             settings = {
               Lua = { diagnostics = { globals = { "vim" } } }
             }
+          }
+        end,
+        -- deno: handle markdown, css, html, and json
+        ["denols"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.denols.setup {
+            filetypes = { "javascript", "typescript", "markdown", "html", "css", "json" },
           }
         end,
       },
