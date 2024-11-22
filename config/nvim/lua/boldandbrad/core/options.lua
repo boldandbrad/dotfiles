@@ -34,3 +34,21 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpo
 
 -- use system clipboard for yank, delete, change, and put operations
 vim.opt.clipboard:append { "unnamedplus" }
+
+-- diagnostics config
+vim.diagnostic.config({
+  signs = false,
+  severity_sort = true,
+  virtual_text = {
+    source = true,
+    spacing = 8,
+  },
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  }
+})

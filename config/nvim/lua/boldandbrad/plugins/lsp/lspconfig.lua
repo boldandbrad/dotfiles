@@ -52,24 +52,5 @@ return {
         end,
       },
     })
-
-    -- TODO: move this somewhere else
-    -- configure diagnostics
-    vim.diagnostic.config({
-      signs = false,
-      severity_sort = true,
-      virtual_text = {
-        source = true,
-        spacing = 8,
-      },
-      float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-      }
-    })
   end,
 }
