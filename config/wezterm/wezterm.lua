@@ -24,7 +24,10 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 -- font
-config.font = wezterm.font("AnonymicePro Nerd Font", { weight = "Regular" })
+config.font = wezterm.font_with_fallback {
+  { family = "AnonymicePro Nerd Font", weight = "Regular" },
+  "Apple Color Emoji",
+}
 config.font_size = 16
 
 -- command palette
