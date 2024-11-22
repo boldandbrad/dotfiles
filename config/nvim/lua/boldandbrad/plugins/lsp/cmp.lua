@@ -1,9 +1,10 @@
 ----------------------------------------------------------------
--- nvim-cmp - completion engine                               --
+-- nvim-cmp - autocompletion engine                           --
 ----------------------------------------------------------------
 
 return {
   "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -13,6 +14,11 @@ return {
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     cmp.setup({
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
+      },
       enabled = function()
         -- disable completions in comments
         local context = require "cmp.config.context"
@@ -45,11 +51,6 @@ return {
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-      }),
-      sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "buffer" },
-        { name = "path" },
       }),
     })
   end,
