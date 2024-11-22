@@ -10,8 +10,17 @@ return {
     "nvim-telescope/telescope.nvim"
   },
   event = "BufEnter",
-  -- TODO: update sign icons
-  opts = {},
+  opts = {
+    keywords = {
+      FIX = { icon = "*" },
+      HACK = { icon = "?" },
+      NOTE = { icon = "i" },
+      PERF = { icon = "/" },
+      TEST = { icon = ">" },
+      TODO = { icon = "+" },
+      WARN = { icon = "!" },
+    },
+  },
   keys = {
     { "<leader>xt", "<cmd>Trouble todo<cr>",  desc = "Open TODOs (Trouble)" },
     { "<leader>fd", "<cmd>TodoTelescope<cr>", desc = "Find TODOs" },
