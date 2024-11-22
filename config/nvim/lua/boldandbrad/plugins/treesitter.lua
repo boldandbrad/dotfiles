@@ -24,7 +24,6 @@ return {
         "vimdoc",
 
         -- custom
-        "elm",
         "go",
         -- "html",
         "markdown",

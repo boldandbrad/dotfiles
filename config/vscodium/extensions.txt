@@ -10,7 +10,6 @@ codeium.codeium
 davidanson.vscode-markdownlint
 dotjoshjohnson.xml
 eamodio.gitlens
-elmtooling.elm-ls-vscode
 esbenp.prettier-vscode
 golang.go
 gruntfuggly.todo-tree

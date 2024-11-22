@@ -83,7 +83,6 @@ cask "wezterm"                  # terminal emulator
 ################################################################
 
 brew "deno"                     # js/ts runtime & toolchain
-brew "elm"                      # elm-lang compiler & toolchain
 brew "exercism"                 # cli coding exercise client
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain

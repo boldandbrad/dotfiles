@@ -19,7 +19,6 @@ return {
       ensure_installed = {
         -- "astro",        -- astro
         "denols",        -- deno js/ts
-        "elmls",         -- elm
         "gopls",         -- golang
         -- "htmx",         -- htmx
         "lua_ls",        -- lua
