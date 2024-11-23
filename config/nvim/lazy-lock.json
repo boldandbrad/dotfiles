@@ -9,7 +9,7 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "637d99e638bc6f1efedac582f6ccab08badac0c6"
+    "commit": "a4c64d7605f6eb95674e322bbbedfaa00aab7904"
   },
   "cmp-buffer": {
     "branch": "main",
@@ -37,7 +37,7 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "ac5aba6dce8c06ea22bea2c9016f51a2dbf90dc7"
+    "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412"
   },
   "grapple.nvim": {
     "branch": "main",
@@ -67,13 +67,17 @@
     "branch": "main",
     "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22"
   },
+  "nvim-autopairs": {
+    "branch": "master",
+    "commit": "b464658e9b880f463b9f7e6ccddd93fb0013f559"
+  },
   "nvim-cmp": {
     "branch": "main",
     "commit": "be7bd4c5f860c79da97af3a26d489af50babfd4b"
   },
   "nvim-colorizer.lua": {
     "branch": "master",
-    "commit": "6059927ee649f02fcc819efc213ea78ee9eb2a7d"
+    "commit": "4acf88d31b3a7a1a7f31e9c30bf2b23c6313abdb"
   },
   "nvim-lspconfig": {
     "branch": "master",
@@ -81,7 +85,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "fcd2a5fea91deac818f26a6412a624798af45033"
+    "commit": "efb2e9c607cab1e4f7171493b7c6f63bd39073fc"
   },
   "obsidian.nvim": {
     "branch": "main",
@@ -114,6 +118,10 @@
   "trouble.nvim": {
     "branch": "main",
     "commit": "3dc00c0447c016cd43e03054c3d49436a1f2076d"
+  },
+  "vim-illuminate": {
+    "branch": "master",
+    "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa"
   },
   "which-key.nvim": {
     "branch": "main",
