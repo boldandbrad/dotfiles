@@ -12,7 +12,7 @@ config.window_padding = {
   left = 24,
   right = 24,
   top = 48,
-  bottom = 16,
+  bottom = 4,
 }
 config.initial_cols = 128
 config.initial_rows = 32
@@ -22,6 +22,23 @@ config.initial_rows = 32
 -- tab bar
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
+config.show_new_tab_button_in_tab_bar = false
+config.show_tab_index_in_tab_bar = false
+
+-- lualine inspired tabline
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+  options = {
+    icons_enabled = false,
+    section_separators = "",
+    component_separators = {
+      left = "|",
+      right = "|",
+    },
+    tab_separators = "",
+  }
+})
 
 -- font
 config.font = wezterm.font_with_fallback {
