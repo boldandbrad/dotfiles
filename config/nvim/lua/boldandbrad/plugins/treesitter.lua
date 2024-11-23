@@ -3,22 +3,18 @@
 ----------------------------------------------------------------
 
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    -- only load treesitter in buffers
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      auto_install = true,
-      sync_install = true,
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  -- only load treesitter in buffers
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    local configs = require("nvim-treesitter.configs")
+    configs.setup({
       ensure_installed = {
-        -- required
         "lua",
         "query",
         "vim",
         "vimdoc",
-
-        -- custom
         "go",
         -- "html",
         "markdown",
@@ -27,20 +23,21 @@ return {
         "rust",
         "typescript",
       },
+      sync_install = true,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = { "markdown" },
       },
-      indent = { enable = true, },
-      -- incremental_selection = {
-      --   enable = true,
-      --   keymaps = {
-      --     init_selection = "<cr>",
-      --     node_incremental = "<cr>",
-      --     scope_incremental = false,
-      --     node_decremental = "<bs>",
-      --   },
-      -- },
-    },
-  },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<cr>",
+          scope_incremental = "<cr>",
+          node_incremental = "<tab>",
+          node_decremental = "<s-tab>",
+        },
+      },
+    })
+  end,
 }
