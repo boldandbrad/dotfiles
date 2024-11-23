@@ -7,8 +7,8 @@ return {
   opts = {
     notification = {
       override_vim_notify = true,
-      window = {
-        -- winblend = 0,
+      view = {
+        stack_upwards = false,
       },
     }
   },
