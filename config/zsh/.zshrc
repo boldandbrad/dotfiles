@@ -47,9 +47,6 @@ bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# meeple-cli completions
-eval "$(_MEEPLE_COMPLETE=zsh_source meeple)"
-
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
   # source aliases

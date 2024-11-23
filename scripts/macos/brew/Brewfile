@@ -18,7 +18,7 @@
 tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 
-tap "boldandbrad/tap"                 # stuff made by me :)
+# tap "boldandbrad/tap"                 # stuff made by me :)
 tap "jandedobbeleer/oh-my-posh"       # oh my posh shell prompt
 tap "superatomic/bundle-extensions"   # extra brew commands
 
@@ -28,7 +28,6 @@ tap "superatomic/bundle-extensions"   # extra brew commands
 
 brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
-brew "boldandbrad/tap/meeple-cli" # board game collection manager
 brew "btop"                     # system monitor
 brew "dockutil"                 # dock manager
 brew "dust"                     # disk space analyzer
