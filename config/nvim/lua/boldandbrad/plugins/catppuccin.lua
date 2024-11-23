@@ -18,6 +18,7 @@ return {
       flash = true,
       gitsigns = true,
       grug_far = true,
+      illuminate = true,
       lsp_trouble = true,
       mason = true,
       telescope = { enabled = true },
