@@ -16,7 +16,7 @@ return {
         "vim",
         "vimdoc",
         "go",
-        -- "html",
+        "html",
         "json",
         "markdown",
         "markdown_inline",
