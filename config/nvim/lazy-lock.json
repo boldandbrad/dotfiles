@@ -9,7 +9,7 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "a4c64d7605f6eb95674e322bbbedfaa00aab7904"
+    "commit": "faf15ab0201b564b6368ffa47b56feefc92ce3f4"
   },
   "cmp-buffer": {
     "branch": "main",
@@ -75,17 +75,13 @@
     "branch": "main",
     "commit": "be7bd4c5f860c79da97af3a26d489af50babfd4b"
   },
-  "nvim-colorizer.lua": {
-    "branch": "master",
-    "commit": "4acf88d31b3a7a1a7f31e9c30bf2b23c6313abdb"
-  },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "c646154d6e4db9b2979eeb517d0b817ad00c9c47"
+    "commit": "dafd61d6533bd90ecf6e2a3a972298fdddc74d82"
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "efb2e9c607cab1e4f7171493b7c6f63bd39073fc"
+    "commit": "7930b5f983c37bb07c9af27274334a7adcb3e5af"
   },
   "obsidian.nvim": {
     "branch": "main",
