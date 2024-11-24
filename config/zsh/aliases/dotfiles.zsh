@@ -10,19 +10,6 @@
 SYSTEM_TYPE=$(uname -s) # system type - Linux / MacOS (Darwin)
 
 ################################################################
-# system agnostic                                              #
-################################################################
-
-# rerun system setup
-alias sys-refresh="${DOTFILES}/unpack.sh"
-# dotfile relink
-alias dot-relink="dotbot -c $DOTFILES/symlinks.yaml"
-# reload shell session
-alias zsh-reload=". ${ZDOTDIR}/.zshrc"
-# rerun clone github repos
-alias git-reclone="$DOTFILES/scripts/tools/github/clone_repos.sh"
-
-################################################################
 # macOS specific                                               #
 ################################################################
 

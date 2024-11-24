@@ -1,0 +1,148 @@
+################################################################
+# aliae.yaml - shell aliases and setup                         #
+################################################################
+
+# import aliae
+# waiting on aliae [issue 191](https://github.com/JanDeDobbeleer/aliae/issues/191)
+# aliae: !include_dir "./aliases"
+
+alias:
+  # nav shortcuts
+  - name: ..
+    value: cd ..
+  - name: ...
+    value: cd ../..
+  - name: -- -
+    value: cd -
+  - name: app
+    value: cd ~/Applications
+  - name: dtp
+    value: cd ~/Desktop
+  - name: dvp
+    value: cd ~/Developer
+  - name: doc
+    value: cd ~/Documents
+  - name: dnl
+    value: cd ~/Downloads
+  - name: dtf
+    value: cd $DOTFILES
+  - name: cfg
+    value: cd $XDG_CONFIG_HOME
+
+  # dotfiles
+  - name: sys-refresh
+    value: ${DOTFILES}/unpack.sh
+  - name: dot-relink
+    value: dotbot -c $DOTFILES/symlinks.yaml
+  - name: zsh-reload
+    value: . ${ZDOTDIR}/.zshrc
+    if: eq .Shell "zsh"
+  - name: git-reclone
+    value: $DOTFILES/scripts/tools/github/clone_repos.sh
+
+  # tool replacements
+  - name: vim
+    value: nvim
+  - name: cat
+    value: bat
+  - name: help
+    value: tldr
+  - name: docker
+    value: podman
+  - name: ls
+    value: eza --classify
+  - name: la
+    value: eza --all --classify
+  - name: ll
+    value: eza --all --long --header --classify
+  - name: lt
+    value: eza --tree --classify --sort=type --ignore-glob .git
+  - name: lta
+    value: eza --all --tree --classify --sort=type --ignore-glob .git
+  - name: ld
+    value: eza --only-dirs --classify
+  - name: lda
+    value: eza --all --only-dirs --classify
+  - name: lm
+    value: eza --all --reverse --long --header --sort=modified
+  - name: lgt
+    value: eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git
+
+  # cmd defaults
+  - name: mkdir
+    value: mkdir -pv
+  - name: mv
+    value: mv -iv
+  - name: cp
+    value: cp -Riv
+  - name: dust
+    value: dust -r
+
+  # other niceties
+  - name: clr
+    value: clear
+  - name: cls
+    value: clear; ls
+    type: function
+  - name: clg
+    value: clear; git st
+    type: function
+  - name: cld
+    value: clear; cd
+    type: function
+  - name: dud
+    value: du -d 1 -h
+  - name: duf
+    value: du -sh *
+  - name: lock
+    value: zip -erj
+  - name: unlock
+    value: unzip -d
+
+  # pretty print PATHs
+  - name: path
+    value: echo $PATH | tr -s ":" "\n"
+  - name: fpath
+    value: echo $FPATH | tr -s ":" "\n"
+
+  # language specific
+  - name: cgr
+    value: cargo run
+  - name: cgc
+    value: cargo clippy --all-targets --all-features -- -D warnings
+  - name: cgt
+    value: cargo test --all
+  - name: dna
+    value: deno add
+  - name: dnb
+    value: deno bench
+  - name: dnf
+    value: deno fmt
+  - name: dnc
+    value: deno lint
+  - name: dnt
+    value: deno test
+  - name: dnr
+    value: deno run
+  - name: gor
+    value: go run .
+  - name: gof
+    value: go fmt
+  - name: gog
+    value: go get
+  - name: gob
+    value: go build
+  - name: got
+    value: go test
+  - name: gov
+    value: go vet
+  - name: py
+    value: uv run
+  - name: pyc
+    value: find . -name '*.pyc' -delete
+  - name: pyv
+    value: uv venv
+  - name: pyf
+    value: ruff format
+  - name: pyl
+    value: ruff check

@@ -37,9 +37,11 @@ Planned changes and updates to this repo.
   github
 - dir: Install dotfiles directly to `~/Dotfiles` instead of `~/Setup/dotfiles`?
 - keyboard: dvorak/programmers dvorak keyboard layout setup?
+- shells: cleanup aliases, env, and function setup via aliae
 
 ## Tool Configs
 
+- git: move away from vscodium as a merge and difftool
 - lazygit: Catppuccin theme
 - mackup: Store other app settings via `mackup`?
 - neovim: treesitter textobjects setup

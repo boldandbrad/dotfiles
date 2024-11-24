@@ -18,51 +18,15 @@ command_exists () {
 # navigation                                                   #
 ################################################################
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias -- -="cd -"
-alias app="cd ~/Applications"
-alias dtp="cd ~/Desktop"
-alias dvp="cd ~/Developer"
-alias doc="cd ~/Documents"
-alias dnl="cd ~/Downloads"
-alias stp="cd ~/Setup"
-alias dtf="cd $DOTFILES"
-
 # change to root of current git repo
 alias cdr='cd `git rev-parse --show-toplevel`'
-
-# user config dir
-alias cfg="cd ${XDG_CONFIG_HOME}"
 
 ################################################################
 # tool replacements                                            #
 ################################################################
 
-if command_exists nvim ; then; alias vim="nvim"; fi
-if command_exists bat ; then; alias cat="bat"; fi
 if command_exists codium ; then; alias code="codium"; fi
-if command_exists podman ; then; alias docker="podman"; fi
-if command_exists tldr ; then; alias help="tldr"; fi
 if command_exists eza ; then
-  # list normal
-  alias ls="eza --classify"
-  # list all
-  alias la="eza --all --classify"
-  # list all, with full details
-  alias ll="eza --all --long --header --classify"
-  # list normal as tree, sorted by type, ignoring .git dir
-  alias lt="eza --tree --classify --sort=type --ignore-glob .git"
-  # list all as tree, sorted by type, ignoring .git dir
-  alias lta="eza --all --tree --classify --sort=type --ignore-glob .git"
-  # list normal dirs only
-  alias ld="eza --only-dirs --classify"
-  # list all dirs only
-  alias lda="eza --all --only-dirs --classify"
-  # list all, sorted by last modified
-  alias lm="eza --all --reverse --long --header --sort=modified"
-  # list all as tree, with git status, ignoring .git dir
-  alias lgt="eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git"
 else
   # list all
   alias la="ls -A" # list all
@@ -83,14 +47,6 @@ fi
 # command defaults                                             #
 ################################################################
 
-# mkdir, make intermediary directories and be verbose
-alias mkdir="mkdir -pv"
-# mv, prompt before move and be verbose
-alias mv="mv -iv"
-# cp, copy directory contents, prompt before copy and be verbose
-alias cp="cp -Riv"
-# dust, print tree upside down
-if command_exists dust ; then; alias dust="dust -r"; fi
 # glow, output with pager
 # if command_exists glow ; then; alias glow="glow -p"; fi
 
@@ -128,25 +84,3 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   alias apps="brew list --cask"
   # alias deps="brew deps --formula --for-each $(brew leaves)"
 fi
-
-################################################################
-# other niceties                                               #
-################################################################
-
-# clear screen
-alias clr="clear"
-alias cls="clear; ls"
-alias clg="clear; git st"
-alias cld="clear; cd"
-
-# file and dir sizes
-alias dud='du -d 1 -h' # list sizes of directories within directory
-alias duf='du -sh *' # list sizes of files within directory
-
-# lock a file or directory in a password protected archive
-alias lock="zip -erj"
-alias unlock="unzip -d"
-
-# pretty print PATH
-alias path='echo $PATH | tr -s ":" "\n"'
-alias fpath='echo $FPATH | tr -s ":" "\n"'
