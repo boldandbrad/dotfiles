@@ -10,6 +10,9 @@ return {
       view = {
         stack_upwards = false,
       },
-    }
+      window = {
+        winblend = 0,
+      },
+    },
   },
 }

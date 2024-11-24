@@ -12,6 +12,7 @@ return {
   end,
   opts = {
     flavour = "mocha",
+    transparent_background = true,
     integrations = {
       cmp = true,
       fidget = true,

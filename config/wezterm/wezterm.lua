@@ -21,6 +21,10 @@ wezterm.on("gui-startup", function(cmd)
   window:gui_window():set_position(x, y)
 end)
 
+-- render
+config.max_fps = 120
+config.front_end = "WebGpu"
+
 -- window
 config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 config.window_padding = {
@@ -29,8 +33,10 @@ config.window_padding = {
   top = 48,
   bottom = 4,
 }
--- config.window_background_opacity = 0.95
--- config.macos_window_background_blur = 20
+config.adjust_window_size_when_changing_font_size = false
+config.macos_window_background_blur = 20
+config.window_close_confirmation = "NeverPrompt"
+config.window_background_opacity = 0.95
 
 -- colors
 config.color_scheme = "Catppuccin Mocha"
@@ -50,6 +56,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
 config.show_tab_index_in_tab_bar = false
+config.tab_max_width = 24
 
 -- lualine inspired tabline
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
@@ -64,6 +71,10 @@ tabline.setup({
     tab_separators = "",
   }
 })
+
+-- keys
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
+config.keys = {}
 
 -- command palette
 config.command_palette_font_size = config.font_size
