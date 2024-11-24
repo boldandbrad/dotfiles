@@ -1,10 +1,25 @@
+----------------------------------------------------------------
+-- wezterm.lua - terminal emulator config                     --
+----------------------------------------------------------------
+
 local wezterm = require "wezterm"
 local config = {}
 
--- colors
-config.color_scheme = "Catppuccin Mocha"
-config.command_palette_bg_color = "#181825"
-config.command_palette_fg_color = "#cdd6f4"
+-- window startup
+wezterm.on("gui-startup", function(cmd)
+  local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
+  local screen = wezterm.gui.screens().main
+
+  -- set initial window size
+  local ratio = 0.9
+  local width, height = screen.width * ratio, screen.height * ratio
+  window:gui_window():set_inner_size(width, height)
+
+  -- center window
+  local x = (screen.width - width) * 0.5
+  local y = (screen.height - height) * 0.5
+  window:gui_window():set_position(x, y)
+end)
 
 -- window
 config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
@@ -14,10 +29,20 @@ config.window_padding = {
   top = 48,
   bottom = 4,
 }
-config.initial_cols = 128
-config.initial_rows = 32
 -- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 20
+
+-- colors
+config.color_scheme = "Catppuccin Mocha"
+config.command_palette_bg_color = "#181825"
+config.command_palette_fg_color = "#cdd6f4"
+
+-- font
+config.font = wezterm.font_with_fallback {
+  { family = "AnonymicePro Nerd Font", weight = "Regular" },
+  "Apple Color Emoji",
+}
+config.font_size = 16
 
 -- tab bar
 config.use_fancy_tab_bar = false
@@ -39,13 +64,6 @@ tabline.setup({
     tab_separators = "",
   }
 })
-
--- font
-config.font = wezterm.font_with_fallback {
-  { family = "AnonymicePro Nerd Font", weight = "Regular" },
-  "Apple Color Emoji",
-}
-config.font_size = 16
 
 -- command palette
 config.command_palette_font_size = config.font_size
