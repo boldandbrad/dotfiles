@@ -25,7 +25,6 @@ export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 # export CURL_HOME="${XDG_CONFIG_HOME}/curl"
 export LESSHISTFILE="-" # disable less history
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
-export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 # export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/vscode
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"

@@ -47,6 +47,9 @@ bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# source aliae
+eval "$(aliae init zsh --config ~/Setup/dotfiles/config/aliae/aliae.yaml)"
+
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
   # source aliases
@@ -71,10 +74,6 @@ source <(fzf --zsh)
 
 # initialize shell prompt
 eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
-
-# if (( $+commands[starship] )); then
-  # eval "$(starship init zsh)"
-# fi
 
 # remove duplicates from path arrays
 typeset -gU PATH FPATH
