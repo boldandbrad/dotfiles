@@ -58,7 +58,7 @@ return {
         -- deno: handle markdown, css, html, and json
         denols = function()
           require("lspconfig").denols.setup({
-            filetypes = { "javascript", "typescript", "markdown", "html", "css", "json" },
+            filetypes = { "javascript", "typescript", "markdown", "html", "css", "json", "yaml" },
           })
         end,
       },
