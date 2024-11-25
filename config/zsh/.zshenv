@@ -36,6 +36,7 @@ export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
 
 # go
 export GOPATH="$XDG_DATA_HOME"/go
+export PATH="$GOPATH/bin:$PATH"
 # add local sbin to path
 export PATH="/usr/local/sbin:$PATH"
 # add user bin to path

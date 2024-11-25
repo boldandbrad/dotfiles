@@ -13,6 +13,8 @@
 # zsh config directory
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
+# install plugins -------------------------------------------- #
+
 # initialize zinit zsh plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -25,6 +27,8 @@ zinit light djui/alias-tips
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
+
+# zstyles ---------------------------------------------------- #
 
 # disable completion menu selection in favor of fzf-tab
 zstyle ':completion:*' menu no
@@ -42,13 +46,19 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # initialize zsh completions
 autoload -Uz compinit && compinit
 
+# keybinds --------------------------------------------------- #
+
 # zsh line editor keybindings
 bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# initialize aliae and tools --------------------------------- #
+
 # source aliae
-eval "$(aliae init zsh --config ~/Setup/dotfiles/config/aliae/aliae.yaml)"
+if (( $+commands[aliae-dev] )); then
+  eval "$(aliae-dev init zsh --config ~/Setup/dotfiles/config/aliae/aliae.yaml)"
+fi
 
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
@@ -70,10 +80,16 @@ if (( $+commands[zoxide] )); then
 fi
 
 # setup fzf key bindings and fuzzy completions
-source <(fzf --zsh)
+if (( $+commands[fzf] )); then
+  source <(fzf --zsh)
+fi
 
 # initialize shell prompt
-eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
+if (( $+commands[oh-my-posh] )); then
+  eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
+fi
+
+# cleanup ---------------------------------------------------- #
 
 # remove duplicates from path arrays
 typeset -gU PATH FPATH
