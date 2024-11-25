@@ -75,14 +75,14 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/.zsh_options
 fi
 
-# initialize zoxide directory hopper
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
 # setup fzf key bindings and fuzzy completions
 if (( $+commands[fzf] )); then
   source <(fzf --zsh)
+fi
+
+# initialize zoxide directory hopper
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init --cmd cd zsh)"
 fi
 
 # initialize shell prompt
