@@ -18,7 +18,6 @@ apk add bat
 apk add dust
 apk add eza
 apk add git
-apk add glow
 apk add zsh
 apk add zsh-autosuggestions
 apk add zsh-syntax-highlighting

@@ -37,7 +37,6 @@ brew "eza"                      # ls replacement
 brew "fastfetch"                # system info fetcher
 brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system
-brew "glow"                     # markdown viewer
 brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "neovim"                   # text editor

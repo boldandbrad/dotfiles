@@ -18,7 +18,6 @@ pacman -S bat
 pacman -S dust
 pacman -S eza
 pacman -S git
-pacman -S glow
 pacman -S pastel
 pacman -S yank
 pacman -S zsh
