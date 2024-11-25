@@ -47,6 +47,9 @@ export PATH="$DOTBOT_DIR/bin:$PATH"
 # disable telemetry for tools that support this flag
 export DO_NOT_TRACK=1
 
+# disable zsh-vi-mode from changing cursor styles
+export ZVM_CURSOR_STYLE_ENABLED=false
+
 # fzf catppuccin theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
