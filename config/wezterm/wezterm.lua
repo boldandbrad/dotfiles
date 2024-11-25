@@ -21,6 +21,18 @@ wezterm.on("gui-startup", function(cmd)
   window:gui_window():set_position(x, y)
 end)
 
+-- toggle background opacity
+wezterm.on("toggle-bg-opacity", function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  if not overrides.window_background_opacity then
+    overrides.window_background_opacity = 1
+  else
+    overrides.window_background_opacity = nil
+  end
+
+  window:set_config_overrides(overrides)
+end)
+
 -- render
 config.max_fps = 120
 config.front_end = "WebGpu"
@@ -74,7 +86,13 @@ tabline.setup({
 
 -- keys
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
-config.keys = {}
+config.keys = {
+  {
+    key = "]",
+    mods = "LEADER",
+    action = wezterm.action.EmitEvent("toggle-bg-opacity")
+  }
+}
 
 -- command palette
 config.command_palette_font_size = config.font_size
