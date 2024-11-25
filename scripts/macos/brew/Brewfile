@@ -92,10 +92,11 @@ brew "lefthook"                 # git hook manager
 brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
+brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
 cask "temurin"                  # jdk
 brew "tokei"                    # code line counter
-brew "uv"                       # python toolchain
+brew "uv"                       # python package manager
 # cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
 
