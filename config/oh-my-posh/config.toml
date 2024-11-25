@@ -1,3 +1,7 @@
+################################################################
+# config.toml - oh-my-posh shell prompt setup                  #
+################################################################
+
 console_title_template = '{{ .Shell }} at {{ .Folder }}'
 version = 3
 final_space = true
