@@ -58,10 +58,6 @@ bindkey '^n' history-search-forward
 
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
-  # source aliases
-  for alias_file in "$zsh_dir"/aliases/*; do
-    source ${alias_file}
-  done
   # source functions
   for func_file in "$zsh_dir"/lib/*; do
     source ${func_file}

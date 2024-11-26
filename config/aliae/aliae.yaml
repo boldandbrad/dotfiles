@@ -109,6 +109,8 @@ alias:
     value: cd $DOTFILES
   - name: cfg
     value: cd $XDG_CONFIG_HOME
+  # - name: cdr
+  # value: cd `git rev-parse --show-toplevel`
 
   # dotfiles
   - name: sys-refresh
@@ -227,6 +229,72 @@ alias:
     value: ruff format
   - name: pyl
     value: ruff check
+
+  # macOS specific
+  - name: awake
+    value: caffeinate
+    if: eq .OS "darwin"
+  - name: cwd # copy current working directory path
+    value: pwd | pbcopy
+    if: eq .OS "darwin"
+  - name: finder # open pwd in Finder.app
+    value: open .
+    if: eq .OS "darwin"
+  - name: ql # open file in macOS quicklook
+    value: qlmanage -p ${@} > /dev/null 2> /dev/null
+    type: function
+    if: eq .OS "darwin"
+  - name: arc
+    value: open -a Arc
+    if: eq .OS "darwin"
+  - name: safari
+    value: open -a Safari
+    if: eq .OS "darwin"
+  - name: spc
+    value: cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/space
+    if: eq .OS "darwin"
+  - name: icloud
+    value: cd $HOME/Library/Mobile Documents/com~apple~CloudDocs/
+    if: eq .OS "darwin"
+  - name: emptytrash
+    value: sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*asl
+    type: function
+    if: eq .OS "darwin"
+  - name: pkgs
+    value: brew leaves
+    if: eq .OS "darwin"
+  - name: apps
+    value: brew list --cask
+    if: eq .OS "darwin"
+  # - name: deps
+  # value: brew deps --formula --for-each $(brew leaves)
+  # if: eq .OS "darwin"
+  - name: dep-check # check that all brewfile deps are installed
+    value: brew bundle check -v
+    if: eq .OS "darwin"
+  - name: dep-refresh # install all brewfile deps
+    value: brew bundle install
+    if: eq .OS "darwin"
+  - name: dep-prune # remove all brew managed deps not specified in brewfile
+    value: brew bundle cleanup
+    if: eq .OS "darwin"
+
+  # other
+  - name: codexp # codium extension export
+    value: codium --list-extensions > $DOTFILES/config/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'
+  - name: codein # codium extension install
+    value: $DOTFILES/scripts/tools/vscodium/install_extensions.sh
+
+  # # list all
+  # alias la="ls -A" # list all
+  # # list all, with full details
+  # alias ll="ls -lAFh"
+  # # list normal dirs only
+  # alias ld="ls -l | grep '^d'"
+  # # list all dirs only
+  # alias lda="ls -lA | grep '^d'"
+  # # list all sorted by last modified
+  # alias lm="ls -tA -1"
 
 # link dotfiles
 # waiting on aliae [issue 192](https://github.com/JanDeDobbeleer/aliae/issues/192)
