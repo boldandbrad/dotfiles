@@ -2,6 +2,87 @@
 # aliae.yaml - shell aliases and setup                         #
 ################################################################
 
+env:
+  # default tools
+  - name: BROWSER
+    value: arc
+  - name: EDITOR
+    value: nvim
+  - name: PAGER
+    value: less
+
+  # XDG paths
+  - name: XDG_BIN_HOME
+    value: $HOME/.local/bin
+  - name: XDG_CACHE_HOME # where user-specific non-essential cached data should be written
+    value: $HOME/.local/var/cache
+  - name: XDG_CONFIG_HOME # where user-specific configurations should be written
+    value: $HOME/.config
+  - name: XDG_DATA_HOME # where user-specific data files should be written
+    value: $HOME/.local/share
+  - name: XDG_LIB_HOME
+    value: $HOME/.local/lib
+  - name: XDG_STATE_HOME # where user-specific state files should be written
+    value: $HOME/.local/state
+
+  # tool paths
+  - name: CARGO_HOME
+    value: $XDG_DATA_HOME/cargo
+  # - name: CURL_HOME
+  # value: $XDG_CONFIG_HOME/curl
+  - name: GOPATH
+    value: $XDG_DATA_HOME/go
+  - name: LESSHISTFILE
+    value: "-" # disable less history
+  - name: RUSTUP_HOME
+    value: $XDG_DATA_HOME/rustup
+  - name: TMUX_PLUGIN_MANAGER_PATH
+    value: $XDG_DATA_HOME/tmux/plugins
+  # - name: VSCODE_EXTENSIONS
+  # value: $XDG_DATA_HOME/vscode
+  - name: ZDOTDIR
+    value: $XDG_CONFIG_HOME/zsh
+    if: eq .Shell "zsh"
+
+  # dotfiles
+  - name: DOTFILES
+    value: $HOME/Setup/dotfiles
+  - name: DOTBOT_DIR
+    value: $DOTFILES/vendor/dotbot
+  - name: HOMEBREW_BUNDLE_FILE
+    value: $DOTFILES/scripts/macos/brew/Brewfile
+
+  # tool options
+  - name: DO_NOT_TRACK # disable telemetry for tools that support this flag
+    value: 1
+  - name: FZF_DEFAULT_OPTS # fzf catppuccin theme
+    value: "--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+      --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+      --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+  - name: ZVM_CURSOR_STYLE_ENABLED # disable zsh-vi-mode from changing cursor styles
+    value: false
+
+path:
+  - value: |
+      /opt/homebrew/bin
+      $DOTBOT_DIR/bin
+      $GOPATH/bin
+      $HOME/.local/bin
+      /usr/local/sbin
+      /usr/local/bin
+      /usr/sbin
+      /usr/bin
+      /sbin
+      /bin
+  - value: |
+      /System/Cryptexes/App/usr/bin
+    # are these needed?
+    # /Library/Apple/usr/bin
+    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin
+    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin
+    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+    if: eq .OS "darwin"
+
 # import aliae
 # waiting on aliae [issue 191](https://github.com/JanDeDobbeleer/aliae/issues/191)
 # aliae: !include_dir "./aliases"
@@ -31,11 +112,11 @@ alias:
 
   # dotfiles
   - name: sys-refresh
-    value: ${DOTFILES}/unpack.sh
+    value: $DOTFILES/unpack.sh
   - name: dot-relink
     value: dotbot -c $DOTFILES/symlinks.yaml
   - name: zsh-reload
-    value: . ${ZDOTDIR}/.zshrc
+    value: exec zsh
     if: eq .Shell "zsh"
   - name: git-reclone
     value: $DOTFILES/scripts/tools/github/clone_repos.sh
@@ -146,3 +227,11 @@ alias:
     value: ruff format
   - name: pyl
     value: ruff check
+
+# link dotfiles
+# waiting on aliae [issue 192](https://github.com/JanDeDobbeleer/aliae/issues/192)
+# link:
+#   - name: ~/Developer/scratch/dtf-lnk
+#     target: ~/Setup/dotfiles/symlinks.yaml
+#   - name: ~/Developer/scratch/zshrc-lnk
+#     target: $DOTFILES/config/zsh/.zshrc

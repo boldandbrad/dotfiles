@@ -1,7 +1,7 @@
 ################################################################
 # .zshrc - ZSH session setup                                   #
 ################################################################
-# -> dotbot symlinks this file to ~/.config/zsh/.zshrc         #
+# -> symlinked to ~/.config/zsh/.zshrc                         #
 #                                                              #
 # Executed when a new ZSH session is launched.                 #
 # Import plugins, aliases, functions, and configs.             #
@@ -54,12 +54,7 @@ bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# initialize aliae and tools --------------------------------- #
-
-# source aliae
-if (( $+commands[aliae-dev] )); then
-  eval "$(aliae-dev init zsh --config ~/Setup/dotfiles/config/aliae/aliae.yaml)"
-fi
+# initialize additional aliae and tools ---------------------- #
 
 # source zsh config files
 if [[ -d $zsh_dir ]]; then
