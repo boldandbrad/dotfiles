@@ -66,7 +66,7 @@ windows = 'win'
 
 [[blocks.segments]]
 style = 'plain'
-template = ' as <b><p:mauve>{{ .UserName }}</></b>'
+template = ' as <b><p:mauve>{{ .UserName }}{{ if .SSHSession }}@{{ .HostName }}{{ end }}</></b>'
 foreground = 'p:overlay0'
 type = 'session'
 
