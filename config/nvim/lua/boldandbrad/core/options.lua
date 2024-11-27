@@ -4,6 +4,7 @@
 
 local options = {
   autoindent = true,                           -- auto indentation
+  clipboard = "unnamedplus",                   -- use system clipboard for yank, delete, change, and put operations
   -- cmdheight = 0,                               -- do not display the cmdline (using telescope cmdline)
   colorcolumn = "80",                          -- highlight the given column
   cursorline = true,                           -- highlight the current line
@@ -31,9 +32,6 @@ end
 
 -- restorable session types
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
--- use system clipboard for yank, delete, change, and put operations
-vim.opt.clipboard:append { "unnamedplus" }
 
 -- diagnostics config
 vim.diagnostic.config({

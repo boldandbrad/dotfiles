@@ -73,15 +73,15 @@
   },
   "nvim-cmp": {
     "branch": "main",
-    "commit": "be7bd4c5f860c79da97af3a26d489af50babfd4b"
+    "commit": "ed31156aa2cc14e3bc066c59357cc91536a2bc01"
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "dafd61d6533bd90ecf6e2a3a972298fdddc74d82"
+    "commit": "d651732cecfc77be1b3727512bec0438c22410d1"
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "7930b5f983c37bb07c9af27274334a7adcb3e5af"
+    "commit": "8d4fdc5e47e2a4e00179e43f56221250ce365973"
   },
   "obsidian.nvim": {
     "branch": "main",
@@ -97,7 +97,7 @@
   },
   "precognition.nvim": {
     "branch": "main",
-    "commit": "0189e8d6f96275a079b2805d68d49414871885cd"
+    "commit": "531971e6d883e99b1572bf47294e22988d8fbec0"
   },
   "telescope-cmdline.nvim": {
     "branch": "main",
@@ -113,7 +113,7 @@
   },
   "trouble.nvim": {
     "branch": "main",
-    "commit": "3dc00c0447c016cd43e03054c3d49436a1f2076d"
+    "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6"
   },
   "vim-illuminate": {
     "branch": "master",
@@ -121,7 +121,7 @@
   },
   "which-key.nvim": {
     "branch": "main",
-    "commit": "68e37e12913a66b60073906f5d3f14dee0de19f2"
+    "commit": "b9684c6ec54d8a8452bdcf0d613c7ad0223fc3fe"
   },
   "yazi.nvim": {
     "branch": "master",
