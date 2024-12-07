@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   desc = "Auto format buffer via lsp on write",
   callback = function()
     vim.lsp.buf.format()
+    vim.diagnostic.enable()
   end,
 })
 
