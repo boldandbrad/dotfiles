@@ -89,11 +89,14 @@ brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
 cask "httpie"                   # desktop http client
 brew "lefthook"                 # git hook manager
+brew "lua"                      # lua language
+brew "lua-language-server"      # lua_ls protocol
 brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
+brew "taplo"                    # toml toolchain
 cask "temurin"                  # jdk
 brew "tokei"                    # code line counter
 brew "uv"                       # python package manager

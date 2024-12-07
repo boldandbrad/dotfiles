@@ -66,6 +66,7 @@ path:
   - value: |
       /opt/homebrew/bin
       $DOTBOT_DIR/bin
+      $CARGO_HOME/bin
       $GOPATH/bin
       $HOME/.local/bin
       /usr/local/sbin
