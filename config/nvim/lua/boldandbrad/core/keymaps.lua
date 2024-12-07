@@ -30,6 +30,9 @@ keymap("n", "<leader>|", "<cmd>vsplit<cr>", { desc = "Split window right", norem
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
 
+
+keymap("n", "<leader>[", "<cmd>b#<cr>", { desc = "Jump to last buffer", noremap = true, silent = true })
+
 ----------------------------------------------------------------
 -- insert mode ("i")                                          --
 ----------------------------------------------------------------
