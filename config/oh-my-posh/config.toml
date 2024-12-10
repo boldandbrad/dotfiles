@@ -146,12 +146,12 @@ type = 'executiontime'
 [blocks.segments.properties]
 threshold = 1000
 
-[[blocks.segments]]
-style = 'plain'
-template = ' now <p:blue><b>{{ .CurrentDate | date "3:04:05pm" }}</b></>'
-foreground = 'p:overlay0'
-type = 'time'
-
+# [[blocks.segments]]
+# style = 'plain'
+# template = ' is <p:blue><b>{{ .CurrentDate | date "3:04:05pm" }}</b></>'
+# foreground = 'p:overlay0'
+# type = 'time'
+#
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
