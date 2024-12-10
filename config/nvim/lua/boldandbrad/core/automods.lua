@@ -3,9 +3,28 @@
 ----------------------------------------------------------------
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  desc = "Define LSP Action mappings",
-  callback = function(event)
-    local opts = { buffer = event.buf }
+  desc = "Define LSP Actions",
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    -- do nothing if there is no lsp client
+    if not client then return end
+
+    -- format buffer on write if the client supports it
+    if client.supports_method('textDocument/formatting') then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        desc = "Auto format buffer via lsp on write",
+        buffer = args.buf,
+        callback = function()
+          -- format buffer using lsp
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+          -- ensure diagnostics don't get wiped
+          vim.diagnostic.enable()
+        end,
+      })
+    end
+
+    -- register lsp keymaps
+    local opts = { buffer = args.buf }
 
     vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
     vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
@@ -27,14 +46,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     local save_cursor = vim.fn.getpos(".")
     pcall(function() vim.cmd [[%s/\s\+$//e]] end)
     vim.fn.setpos(".", save_cursor)
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  desc = "Auto format buffer via lsp on write",
-  callback = function()
-    vim.lsp.buf.format()
-    vim.diagnostic.enable()
   end,
 })
 
