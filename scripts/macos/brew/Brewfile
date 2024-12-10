@@ -35,6 +35,7 @@ brew "dockutil"                 # dock manager
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
 brew "fastfetch"                # system info fetcher
+brew "fd"                       # find alternative
 brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system
 brew "jq"                       # json processor
