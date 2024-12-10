@@ -2,5 +2,12 @@
 separator_open = " "
 separator_close = " "
 
+[icon]
+globs = []
+dirs = []
+files = []
+exts = []
+conds = []
+
 [manager]
 syntect_theme = "$DOTFILES/vendor/catppuccin-bat/themes/Catppuccin Mocha.tmTheme"
