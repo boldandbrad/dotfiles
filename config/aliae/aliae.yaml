@@ -26,6 +26,8 @@ env:
     value: $HOME/.local/state
 
   # tool paths
+  - name: DENO_INSTALL_ROOT
+    value: $XDG_DATA_HOME/deno
   - name: CARGO_HOME
     value: $XDG_DATA_HOME/cargo
   # - name: CURL_HOME
@@ -66,6 +68,7 @@ path:
   - value: |
       /opt/homebrew/bin
       $DOTBOT_DIR/bin
+      $DENO_INSTALL_ROOT/bin
       $CARGO_HOME/bin
       $GOPATH/bin
       $HOME/.local/bin
@@ -208,6 +211,10 @@ alias:
     value: deno test
   - name: dnr
     value: deno run
+  - name: dtb
+    value: deno task build
+  - name: dts
+    value: deno task serve
   - name: gor
     value: go run .
   - name: gof
