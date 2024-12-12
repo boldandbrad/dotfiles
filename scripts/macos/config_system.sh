@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# set desktop wallpaper
+# NOTE: this may cause macOS to prompt the user to provide their terminal emulator with home folder access
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Setup/dotfiles/assets/catppuccin-waves-bg.png\" as POSIX file"
+
 # setup macOS dock
 if type dockutil &>/dev/null; then
   echo
@@ -12,12 +16,12 @@ if type dockutil &>/dev/null; then
   echo "Dock has been setup!"
 fi
 
-# map caps lock key to escape
+# map capslock key to escape
 # courtesy of https://stackoverflow.com/a/46460200/19295049
 if type hidutil &>/dev/null; then
   hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
-  # TODO: remove once symlink can be handled by aliae
   # symlink launch agent to ensure change isn't lost on reboot
+  # TODO: remove once symlink can be handled by aliae
   ln -sf $DOTFILES/scripts/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist ~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
   launchctl load com.boldandbrad.CapslockEscape.plist
 fi
