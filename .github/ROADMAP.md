@@ -25,7 +25,6 @@ Planned changes and updates to this repo.
 - github-codespaces support
 - macos
   - system settings setup via `defaults` or `apply-user-defaults`
-  - [Automatically map Caps Lock to Escape](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x)
 - virtual machine automation
   - add Vagrantfile
 

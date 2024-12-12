@@ -307,7 +307,5 @@ alias:
 # link dotfiles
 # waiting on aliae [issue 192](https://github.com/JanDeDobbeleer/aliae/issues/192)
 # link:
-#   - name: ~/Developer/scratch/dtf-lnk
-#     target: ~/Setup/dotfiles/symlinks.yaml
-#   - name: ~/Developer/scratch/zshrc-lnk
-#     target: $DOTFILES/config/zsh/.zshrc
+#   - name: ~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
+#     target: $DOTFILES/scripts/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist
