@@ -6,13 +6,16 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "jonarrien/telescope-cmdline.nvim",
     "cbochs/grapple.nvim",
   },
   init = function()
     -- enable extensions
     require("telescope").load_extension("cmdline")
+    require("telescope").load_extension("fzf")
     require("telescope").load_extension("grapple")
+    require("boldandbrad.custom.telescope.multigrep").setup()
   end,
   opts = {
     defaults = {
@@ -36,6 +39,9 @@ return {
         find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
       },
     },
+    extensions = {
+      fzf = {},
+    },
   },
   keys = {
     { ":",          "<cmd>Telescope cmdline<cr>",      desc = "Cmdline" },
@@ -55,5 +61,14 @@ return {
       end,
       desc = "Find current full word",
     },
+    {
+      "<leader>fv",
+      function()
+        require("telescope.builtin").find_files {
+          cwd = vim.fn.stdpath("config")
+        }
+      end,
+      desc = "Find neovim config files",
+    }
   },
 }
