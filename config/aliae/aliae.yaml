@@ -68,6 +68,7 @@ path:
   - value: |
       /opt/homebrew/bin
       $DOTBOT_DIR/bin
+      $DOTFILES/bin
       $DENO_INSTALL_ROOT/bin
       $CARGO_HOME/bin
       $GOPATH/bin

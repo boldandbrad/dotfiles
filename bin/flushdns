@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# flush dns records on macOS
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sudo dscacheutil -flushcache
+  sudo killall -HUPmDNSResponder
+elif
+  echo "This script only supports macOS"
+fi
