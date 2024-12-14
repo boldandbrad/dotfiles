@@ -12,7 +12,7 @@ config/tmux/plugins
 config/yazi/plugins
 
 # brew lock files
-scripts/macos/brew/*.lock.json
+util/macos/brew/*.lock.json
 
 # allow .github directory contents in nvim telescope find files results
 !.github/

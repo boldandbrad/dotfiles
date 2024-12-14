@@ -23,7 +23,7 @@ export GITHUB_USER="boldandbrad"
 export GITHUB_REPO_DIR=~/Developer/github
 
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-  export HOMEBREW_BUNDLE_FILE="$DOTFILES/scripts/macos/brew/Brewfile"
+  export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/macos/brew/Brewfile"
 fi
 
 # color ansi escape codes
@@ -116,7 +116,7 @@ function update_system () {
   if [ -z "${CI}" ]; then
     # update macOS system software
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-      $DOTFILES/scripts/macos/update_system.sh
+      $DOTFILES/util/macos/update_system.sh
     fi
   else
     echo -e "\nSkipping system updates. Running in CI."
@@ -135,7 +135,7 @@ function install_packages () {
   # install macOS packages
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     # install macOS packages and apps with homebrew
-    $DOTFILES/scripts/macos/install_packages.sh
+    $DOTFILES/util/macos/install_packages.sh
   fi
 }
 
@@ -164,7 +164,7 @@ function config_system () {
 
   # perform macOS configuration
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    $DOTFILES/scripts/macos/config_system.sh
+    $DOTFILES/util/macos/config_system.sh
   fi
 }
 
@@ -178,7 +178,7 @@ function clone_repos () {
   fi
 
   # clone repos
-  $DOTFILES/scripts/tools/github/clone_repos.sh
+  $DOTFILES/util/tools/github/clone_repos.sh
 }
 
 # terminate on first failure

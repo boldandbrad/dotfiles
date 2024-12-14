@@ -105,9 +105,11 @@ The contents of this repo are organized into a few high level directories.
 
 ```txt
 dotfiles/
+├── bin/            # Custom executables and scripts. Appended to PATH by aliae.
+│  └── ..
 ├── config/         # Config files for packages and apps. Symlinked by dotbot.
 │  └── ..
-├── scripts/        # Shell scripts for system and tool setup. Called by unpack.sh.
+├── util/           # Shell scripts and utilities for system and tool setup. Sourced by unpack.sh.
 │  └── ..
 ├── vendor/         # Dependencies which are managed as git submodules.
 │  └── ..
@@ -142,12 +144,12 @@ The following XDG variables are defined in
 | `XDG_LIB_HOME`    | `~/.local/lib`       |
 | `XDG_STATE_HOME`  | `~/.local/state`     |
 
-### Scripts
+### Util
 
-The `scripts/` directory contains shell scripts that automate system and tool
-setup. This includes OS specific scripts for installing apps and dependencies,
-and system configurations. Most of these scripts are called directly from
-`unpack.sh` at the repo root.
+The `util/` directory contains shell scripts and utilities that automate system
+and tool setup. This includes OS specific scripts for installing apps and
+dependencies, and system configurations. Most of these scripts are sourced
+directly from `unpack.sh` at the repo root.
 
 > Docs coming soon.
 

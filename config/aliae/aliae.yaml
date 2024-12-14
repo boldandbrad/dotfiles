@@ -52,7 +52,7 @@ env:
   - name: DOTBOT_DIR
     value: $DOTFILES/vendor/dotbot
   - name: HOMEBREW_BUNDLE_FILE
-    value: $DOTFILES/scripts/macos/brew/Brewfile
+    value: $DOTFILES/util/macos/brew/Brewfile
 
   # tool options
   - name: DO_NOT_TRACK # disable telemetry for tools that support this flag
@@ -126,7 +126,7 @@ alias:
     value: exec zsh
     if: eq .Shell "zsh"
   - name: git-reclone
-    value: $DOTFILES/scripts/tools/github/clone_repos.sh
+    value: $DOTFILES/util/tools/github/clone_repos.sh
 
   # tool replacements
   - name: vim
@@ -292,7 +292,7 @@ alias:
   - name: codexp # codium extension export
     value: codium --list-extensions > $DOTFILES/config/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'
   - name: codein # codium extension install
-    value: $DOTFILES/scripts/tools/vscodium/install_extensions.sh
+    value: $DOTFILES/util/tools/vscodium/install_extensions.sh
 
   # # list all
   # alias la="ls -A" # list all
@@ -309,4 +309,4 @@ alias:
 # waiting on aliae [issue 192](https://github.com/JanDeDobbeleer/aliae/issues/192)
 # link:
 #   - name: ~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
-#     target: $DOTFILES/scripts/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist
+#     target: $DOTFILES/util/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist
