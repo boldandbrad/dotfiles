@@ -9,10 +9,15 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path", -- filesystem path completions
+    "windwp/nvim-autopairs",
   },
   init = function()
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+    -- integrate nvim-autopairs
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
     local has_words_before = function()
       unpack = unpack or table.unpack
@@ -51,7 +56,7 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ['<C-e>'] = cmp.mapping.abort(),
         -- ['<TAB>'] = cmp.mapping.select_next_item(cmp_select),
         ['<TAB>'] = cmp.mapping(function(fallback)
@@ -72,6 +77,9 @@ return {
         end, { "i", "s" }),
         ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_select),
       }),
+      experimental = {
+        ghost_text = true,
+      }
     })
   end,
 }
