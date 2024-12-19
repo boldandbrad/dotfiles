@@ -2,7 +2,7 @@
 
 # set desktop wallpaper
 # NOTE: this may cause macOS to prompt the user to provide their terminal emulator with home folder access
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Setup/dotfiles/assets/catppuccin-waves-bg.png\" as POSIX file"
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Setup/dotfiles/assets/wallpapers/catppuccin-waves-4k.png\" as POSIX file"
 
 # setup macOS dock
 if type dockutil &>/dev/null; then
