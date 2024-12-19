@@ -49,22 +49,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
--- auto-session handles this
--- -- return to last edit position when opening buffer
--- vim.api.nvim_create_autocmd({ "BufReadPost" }, {
---   -- group = "bufcheck",
---   pattern = "*",
---   callback = function()
---     if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
---       vim.fn.setpos('.', vim.fn.getpos("'\""))
---       vim.api.nvim_feedkeys('zz', 'n', true)
---     end
---   end,
--- })
+vim.api.nvim_create_autocmd("BufReadPost", {
+  desc = "Return to last edit position when opening buffer",
+  -- group = "bufcheck",
+  pattern = "*",
+  callback = function()
+    if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+      vim.fn.setpos('.', vim.fn.getpos("'\""))
+      vim.api.nvim_feedkeys('zz', 'n', true)
+    end
+  end,
+})
 
 vim.api.nvim_create_autocmd("TermOpen", {
-  desc = "Start terminal in insert mode",
-  -- group   = "bufcheck",
+  desc    = "Start terminal in insert mode",
+  group   = vim.api.nvim_create_augroup("custom-term", { clear = true }),
   pattern = "*",
   command = "startinsert | set winfixheight"
 })
