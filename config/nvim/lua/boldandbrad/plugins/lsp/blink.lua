@@ -9,12 +9,10 @@ return {
     enabled = true,
     opts = {
       sources = {
-        completion = {
-          enabled_providers = { "lsp", "path", "snippets", "lazydev" },
-        },
+        default = { "lsp", "path", "snippets", "lazydev" },
         providers = {
           buffer = { enabled = false },
-          lsp = { fallback_for = { "lazydev" } },
+          lsp = { fallbacks = { "lazydev" } },
           lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" }
         },
         -- TODO: does this work?
