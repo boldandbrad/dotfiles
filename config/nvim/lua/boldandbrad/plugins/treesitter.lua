@@ -11,9 +11,6 @@ return {
   -- only load treesitter in buffers
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    if true then
-      local something = "something"
-    end
     ---@diagnostic disable-next-line: missing-fields
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
