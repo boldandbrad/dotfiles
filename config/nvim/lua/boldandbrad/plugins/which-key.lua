@@ -15,7 +15,7 @@ return {
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
       { "<leader>h", group = "Help" },
-      { "<leader>j", group = "Jump Tagged Buffers (Grapple)" },
+      { "<leader>j", group = "Jump (Grapple)" },
       { "<leader>l", group = "LSP" },
       { "<leader>r", group = "Replace (GrugFar)" },
       { "<leader>x", group = "Diagnostics" },
