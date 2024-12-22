@@ -23,9 +23,10 @@ return {
       },
       gopls = {},
       lua_ls = {},
-      ruff = {},  -- python
+      marksman = {}, -- markdown
+      ruff = {},     -- python
       rust_analyzer = {},
-      taplo = {}, -- toml
+      taplo = {},    -- toml
     },
   },
   config = function(_, opts)

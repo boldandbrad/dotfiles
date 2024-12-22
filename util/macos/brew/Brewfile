@@ -92,6 +92,7 @@ cask "httpie"                   # desktop http client
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
+brew "marksman"                 # markdown lsp
 brew "podman"                   # cli container client
 cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
