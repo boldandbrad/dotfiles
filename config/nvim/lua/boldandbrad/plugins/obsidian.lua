@@ -5,6 +5,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- latest release
+  enabled = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
