@@ -7,7 +7,7 @@ local config = {}
 
 -- window startup
 wezterm.on("gui-startup", function(cmd)
-  local _tab, _pane, window = wezterm.mux.spawn_window(cmd or {})
+  local _, _, window = wezterm.mux.spawn_window(cmd or {})
   local screen = wezterm.gui.screens().main
 
   -- set initial window size
@@ -46,9 +46,9 @@ config.window_padding = {
   bottom = 4,
 }
 config.adjust_window_size_when_changing_font_size = false
-config.macos_window_background_blur = 20
+config.macos_window_background_blur = 12
 config.window_close_confirmation = "NeverPrompt"
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.96
 
 -- colors
 config.color_scheme = "Catppuccin Mocha"
