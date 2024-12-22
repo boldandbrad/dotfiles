@@ -9,7 +9,7 @@
   },
   "blink.cmp": {
     "branch": "main",
-    "commit": "ca05bb33eb071d916d33af08cae8034c3d8002b5"
+    "commit": "a9a0f96c6a1029884e37dfd74a88a075b40366dd"
   },
   "catppuccin": {
     "branch": "main",
@@ -69,11 +69,11 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "040001d85e9190a904d0e35ef5774633e14d8475"
+    "commit": "9204642002ba91f9e0b7d0e5989f373657fe754a"
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "2405274937718d520a40e03df92030dca6b4f0fd"
+    "commit": "caba7ef3556079dec03407bcbb290ddc688ea06e"
   },
   "nvim-treesitter-textobjects": {
     "branch": "master",
