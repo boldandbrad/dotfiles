@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# return today's date in YYYY-MM-DD format
+
+date +"%Y-%M-%d"
