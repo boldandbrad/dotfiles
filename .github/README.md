@@ -130,7 +130,7 @@ to determine where to store configurations and data. This creates consistency
 and predictability while keeping your `$HOME` free of clutter.
 
 The following XDG variables are defined in
-[`.aliae.yaml`](../config/aliae/aliae.yaml), and are sourced before symlinking.
+[`aliae.yaml`](../config/aliae/aliae.yaml), and are sourced before symlinking.
 
 | Env Variable      | Location             |
 | ----------------- | -------------------- |
