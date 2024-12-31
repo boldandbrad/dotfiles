@@ -20,24 +20,23 @@ If you do fork this repo, I _**strongly**_ recommend you
 
 The floor plan at a glance:
 
-|                             |                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operating System            | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)                                                                                                                                                                                                                                                                       |
-| Launcher and Window Tiler   | ![raycast](https://img.shields.io/badge/Raycast-_?logo=raycast&logoColor=%23FF6363&color=black)*                                                                                                                                                                                                                                                                |
-| Browser                     | ![arc](https://img.shields.io/badge/Arc-_?logo=arc&logoColor=%23FCBFBD&color=%233c4afe) ![duckduckgo](https://img.shields.io/badge/DuckDuckGo-_?logo=duckduckgo&logoColor=white&color=%23DE5833)                                                                                                                                                                |
-| Package Manager             | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040)                                                                                                                                                                                                                                                              |
-| Dotfile Manager             | ![dotbot](https://img.shields.io/badge/dotbot-_?logoColor=white&color=grey)                                                                                                                                                                                                                                                                                     |
-| Env, Alias and PATH Manager | ![aliae](https://img.shields.io/badge/🌱_aliae-_?logoColor=%23a0c59e&color=grey)                                                                                                                                                                                                                                                                                |
-| Terminal Emulator           | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31)                                                                                                                                                                                                                                                             |
-| Terminal Multiplexer        | ![tmux](https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F)                                                                                                                                                                                                                                                                          |
-| Shell                       | ![zsh](https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24)                                                                                                                                                                                                                                                                             |
-| Shell Prompt                | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0)                                                                                                                                                                                                                                                                                                   |
-| Editor                      | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED)                                                                                                                                                                 |
-| Version Control             | ![git](https://img.shields.io/badge/git-_?logo=git&color=%23f1f0e9) ![lazygit](https://img.shields.io/badge/Lazygit-_?color=%23303030)                                                                                                                                                                                                                          |
-| Typeface                    | <img src="https://www.marksimonson.com/_astro/anonymouspro_index.BJoNlAYJ_ZMGmvS.webp" alt="anonymous-pro" width="128"/>                                                                                                                                                                                                                                        |
-| Theme / Colorsheme          | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                   |
-| Programming Langauges       | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
-|                             |                                                                                                                                                                                                                                                                                                                                                                 |
+|                                    |                                                                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Operating System                   | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)                                                                                                                                                                                                                                                                       |
+| Launcher and Window Tiler          | ![raycast](https://img.shields.io/badge/Raycast-_?logo=raycast&logoColor=%23FF6363&color=black)*                                                                                                                                                                                                                                                                |
+| Browser                            | ![arc](https://img.shields.io/badge/Arc-_?logo=arc&logoColor=%23FCBFBD&color=%233c4afe) ![duckduckgo](https://img.shields.io/badge/DuckDuckGo-_?logo=duckduckgo&logoColor=white&color=%23DE5833)                                                                                                                                                                |
+| Package Manager                    | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040)                                                                                                                                                                                                                                                              |
+| Env, Alias, PATH & Dotfile Manager | ![aliae](https://img.shields.io/badge/🌱_aliae-_?logoColor=%23a0c59e&color=grey)                                                                                                                                                                                                                                                                                |
+| Terminal Emulator                  | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31)                                                                                                                                                                                                                                                             |
+| Terminal Multiplexer               | ![tmux](https://img.shields.io/badge/tmux-_?logo=tmux&logoColor=white&color=%231BB91F)                                                                                                                                                                                                                                                                          |
+| Shell                              | ![zsh](https://img.shields.io/badge/Zsh-_?logo=zsh&logoColor=white&color=%23F15A24)                                                                                                                                                                                                                                                                             |
+| Shell Prompt                       | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0)                                                                                                                                                                                                                                                                                                   |
+| Editor                             | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED)                                                                                                                                                                 |
+| Version Control                    | ![git](https://img.shields.io/badge/git-_?logo=git&color=%23f1f0e9) ![lazygit](https://img.shields.io/badge/Lazygit-_?color=%23303030)                                                                                                                                                                                                                          |
+| Typeface                           | <img src="https://www.marksimonson.com/_astro/anonymouspro_index.BJoNlAYJ_ZMGmvS.webp" alt="anonymous-pro" width="128"/>                                                                                                                                                                                                                                        |
+| Theme / Colorsheme                 | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                   |
+| Programming Langauges              | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
+|                                    |                                                                                                                                                                                                                                                                                                                                                                 |
 
 \* manual configuration
 
@@ -107,7 +106,7 @@ The contents of this repo are organized into a few high level directories.
 dotfiles/
 ├── bin/            # Custom executables and scripts. Appended to PATH by aliae.
 │  └── ..
-├── config/         # Config files for packages and apps. Symlinked by dotbot.
+├── config/         # Config files for packages and apps. Symlinked by aliae.
 │  └── ..
 ├── util/           # Shell scripts and utilities for system and tool setup. Sourced by unpack.sh.
 │  └── ..
@@ -116,16 +115,14 @@ dotfiles/
 ├── ..
 ├── Makefile        # Helpful development commands.
 ├── ship.sh         # Remote installation script.
-├── unpack.sh       # Main installation and setup script.
-└── symlinks.yaml   # Dotbot symlink configuration.
+└── unpack.sh       # Main installation and setup script.
 ```
 
 ### Configs
 
 The [`config/`](../config/README.md) directory contains config files for
 packages and apps. They are symlinked to their respective locations on the
-system by `dotbot` as specified in [`symlinks.yaml`](../symlinks.yaml) at the
-repo root.
+system by `aliae` as specified in [`aliae.yaml`](../config/aliae/aliae.yaml).
 
 Most packages and apps respect the
 [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/latest/index.html)
@@ -133,7 +130,7 @@ to determine where to store configurations and data. This creates consistency
 and predictability while keeping your `$HOME` free of clutter.
 
 The following XDG variables are defined in
-[`.aliae.yaml`](../config/aliae/aliae.yaml), which is sourced before symlinking.
+[`.aliae.yaml`](../config/aliae/aliae.yaml), and are sourced before symlinking.
 
 | Env Variable      | Location             |
 | ----------------- | -------------------- |
@@ -181,7 +178,6 @@ particular, I took inspiration from these gems:
 - [Roadmap](ROADMAP.md) - planned changes and updates to this repo
 - [boldandbrad docs 🔗](https://boldandbrad.github.io/docs) - my personal dev
   docs
-- [Dotbot 🔗](https://github.com/anishathalye/dotbot) - dotbot github repo
 - [Dotfiles Community 🔗](https://dotfiles.github.io/) - a great collection of
   dotfile resources
 - [dotfyle 🔗](https://dotfyle.com/) - discover neovim plugins and

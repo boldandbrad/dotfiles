@@ -30,7 +30,6 @@ Planned changes and updates to this repo.
 
 ## Features
 
-- dotfiles: replace `dotbot` with something else?
 - command: `sys-clean` to clean up caches and system data
 - command: `dot-commit` to automatically commit and push dotfile repo changes to
   github

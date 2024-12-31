@@ -10,11 +10,6 @@ if ! type pipx >/dev/null; then
 	export PATH="~/.local/bin:$PATH"
 fi
 
-# install dotbot
-if ! type dotbot >/dev/null; then
-	pipx install dotbot
-fi
-
 # install apt packages
 apt install -y autojump
 apt install -y bat

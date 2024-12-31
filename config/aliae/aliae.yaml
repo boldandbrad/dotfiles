@@ -13,61 +13,58 @@ env:
 
   # XDG paths
   - name: XDG_BIN_HOME
-    value: $HOME/.local/bin
+    value: "{{ .Home }}/.local/bin"
   - name: XDG_CACHE_HOME # where user-specific non-essential cached data should be written
-    value: $HOME/.local/var/cache
+    value: "{{ .Home }}/.local/var/cache"
   - name: XDG_CONFIG_HOME # where user-specific configurations should be written
-    value: $HOME/.config
+    value: "{{ .Home }}/.config"
   - name: XDG_DATA_HOME # where user-specific data files should be written
-    value: $HOME/.local/share
+    value: "{{ .Home }}/.local/share"
   - name: XDG_LIB_HOME
-    value: $HOME/.local/lib
+    value: "{{ .Home }}/.local/lib"
   - name: XDG_STATE_HOME # where user-specific state files should be written
-    value: $HOME/.local/state
+    value: "{{ .Home }}/.local/state"
 
   # tool paths
   - name: DENO_INSTALL_ROOT
-    value: $XDG_DATA_HOME/deno
+    value: '{{ env "XDG_DATA_HOME" }}/deno'
   - name: CARGO_HOME
-    value: $XDG_DATA_HOME/cargo
+    value: '{{ env "XDG_DATA_HOME" }}/cargo'
   # - name: CURL_HOME
   # value: $XDG_CONFIG_HOME/curl
   - name: GOPATH
-    value: $XDG_DATA_HOME/go
+    value: '{{ env "XDG_DATA_HOME" }}/go'
   - name: LESSHISTFILE
     value: "-" # disable less history
   - name: RUSTUP_HOME
-    value: $XDG_DATA_HOME/rustup
+    value: '{{ env "XDG_DATA_HOME" }}/rustup'
   - name: TMUX_PLUGIN_MANAGER_PATH
-    value: $XDG_DATA_HOME/tmux/plugins
-  # - name: VSCODE_EXTENSIONS
-  # value: $XDG_DATA_HOME/vscode
+    value: '{{ env "XDG_DATA_HOME" }}/tmux/plugins'
+  - name: VSCODE_EXTENSIONS
+    value: '{{ env "XDG_DATA_HOME" }}/vscode'
   - name: ZDOTDIR
-    value: $XDG_CONFIG_HOME/zsh
+    value: '{{ env "XDG_CONFIG_HOME" }}/zsh'
     if: eq .Shell "zsh"
 
   # dotfiles
   - name: DOTFILES
-    value: $HOME/Setup/dotfiles
-  - name: DOTBOT_DIR
-    value: $DOTFILES/vendor/dotbot
+    value: "{{ .Home }}/Setup/dotfiles"
   - name: HOMEBREW_BUNDLE_FILE
-    value: $DOTFILES/util/macos/brew/Brewfile
+    value: '{{ env "DOTFILES" }}/util/macos/brew/Brewfile'
 
   # tool options
   - name: DO_NOT_TRACK # disable telemetry for tools that support this flag
-    value: 1
+    value: "1"
   - name: FZF_DEFAULT_OPTS # fzf catppuccin theme
     value: "--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
       --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
       --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
   - name: ZVM_CURSOR_STYLE_ENABLED # disable zsh-vi-mode from changing cursor styles
-    value: false
+    value: "false"
 
 path:
   - value: |
       /opt/homebrew/bin
-      $DOTBOT_DIR/bin
       $DOTFILES/bin
       $DENO_INSTALL_ROOT/bin
       $CARGO_HOME/bin
@@ -121,7 +118,7 @@ alias:
   - name: sys-refresh
     value: $DOTFILES/unpack.sh
   - name: dot-relink
-    value: dotbot -c $DOTFILES/symlinks.yaml
+    value: eval $(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)
   - name: zsh-reload
     value: exec zsh
     if: eq .Shell "zsh"
@@ -289,24 +286,81 @@ alias:
     if: eq .OS "darwin"
 
   # other
-  - name: codexp # codium extension export
-    value: codium --list-extensions > $DOTFILES/config/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'
-  - name: codein # codium extension install
-    value: $DOTFILES/util/tools/vscodium/install_extensions.sh
+  # - name: codexp # codium extension export
+# value: codium --list-extensions > $DOTFILES/config/vscodium/extensions.txt && echo '\tExported VSCodium extensions list to DOTFILES.'
+# - name: codein # codium extension install
+# value: $DOTFILES/util/tools/vscodium/install_extensions.sh
 
-  # # list all
-  # alias la="ls -A" # list all
-  # # list all, with full details
-  # alias ll="ls -lAFh"
-  # # list normal dirs only
-  # alias ld="ls -l | grep '^d'"
-  # # list all dirs only
-  # alias lda="ls -lA | grep '^d'"
-  # # list all sorted by last modified
-  # alias lm="ls -tA -1"
+# # list all
+# alias la="ls -A" # list all
+# # list all, with full details
+# alias ll="ls -lAFh"
+# # list normal dirs only
+# alias ld="ls -l | grep '^d'"
+# # list all dirs only
+# alias lda="ls -lA | grep '^d'"
+# # list all sorted by last modified
+# alias lm="ls -tA -1"
 
 # link dotfiles
-# waiting on aliae [issue 192](https://github.com/JanDeDobbeleer/aliae/issues/192)
-# link:
-#   - name: ~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
-#     target: $DOTFILES/util/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist
+link:
+  # shell configs
+  - name: "{{ .Home }}/.zshenv"
+    target: '{{ env "DOTFILES" }}/config/zsh/.zshenv'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/zsh'
+    target: '{{ env "DOTFILES" }}/config/zsh'
+    mkdir: true
+  - name: "{{ .Home }}/.bash_profile"
+    target: '{{ env "DOTFILES" }}/config/bash/.bash_profile'
+  - name: "{{ .Home }}/.bashrc"
+    target: '{{ env "DOTFILES" }}/config/bash/.bashrc'
+
+  # git configs
+  - name: '{{ env "XDG_CONFIG_HOME" }}/git'
+    target: '{{ env "DOTFILES" }}/config/git'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/lazygit'
+    target: '{{ env "DOTFILES" }}/config/lazygit'
+
+  # terminal configs
+  - name: '{{ env "XDG_CONFIG_HOME" }}/wezterm'
+    target: '{{ env "DOTFILES" }}/config/wezterm'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/tmux'
+    target: '{{ env "DOTFILES" }}/config/tmux'
+  - name: '{{ env "XDG_DATA_HOME" }}/tmux/tpm'
+    target: '{{ env "DOTFILES" }}/vendor/tpm'
+    mkdir: true
+  - name: '{{ env "XDG_DATA_HOME" }}/tmux/plugins/tpm'
+    target: '{{ env "DOTFILES" }}/vendor/tpm'
+    mkdir: true
+
+  # editor configs
+  - name: '{{ env "XDG_CONFIG_HOME" }}/nvim'
+    target: '{{ env "DOTFILES" }}/config/nvim'
+  - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
+    target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
+    mkdir: true
+    if: eq .OS "darwin"
+  - name: '{{ env "XDG_CONFIG_HOME" }}/VSCodium/User/settings.json'
+    target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
+    mkdir: true
+    if: eq .OS "linux"
+
+  # other configs
+  - name: '{{ env "XDG_CONFIG_HOME" }}/bat/config'
+    target: '{{ env "DOTFILES" }}/config/bat/config'
+    mkdir: true
+  - name: '{{ env "XDG_CONFIG_HOME" }}/bat/themes'
+    target: '{{ env "DOTFILES" }}/vendor/catppuccin-bat/themes'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
+    target: '{{ env "DOTFILES" }}/config/btop'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/fastfetch'
+    target: '{{ env "DOTFILES" }}/config/btop'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/oh-my-posh'
+    target: '{{ env "DOTFILES" }}/config/oh-my-posh'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/yazi'
+    target: '{{ env "DOTFILES" }}/config/yazi'
+
+  # macOS launch daemons
+  - name: "{{ .Home }}/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist"
+    target: '{{ env "DOTFILES" }}/util/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist'
+    if: eq .OS "darwin"

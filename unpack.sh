@@ -150,7 +150,7 @@ function setup_dotfiles () {
 
   # symlink dotfiles
   echo -e "\nInstalling dotfiles..."
-  dotbot -c $DOTFILES/symlinks.yaml
+  eval "$(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)"
 }
 
 function config_system () {
