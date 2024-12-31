@@ -5,8 +5,8 @@
 ################################################################
 # Install linux desktop apps via flatpak.                      #
 #                                                              #
-# NOTE: Supports installing apps on Alpine, Arch, and Debian   #
-# based linux distros.                                         #
+# NOTE: Supports installing apps on Alpine and Debian based    #
+# linux distros.                                               #
 ################################################################
 
 echo "Linux app installation coming soon..."

@@ -13,9 +13,6 @@ Planned changes and updates to this repo.
 - alpine-linux
   - dotfile symlinking
   - app/pkg install
-- arch-linux
-  - dotfile symlinking
-  - app/pkg install
 - cicd: github actions builds
 - container support
   - add Containerfile
