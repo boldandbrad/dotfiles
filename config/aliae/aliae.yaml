@@ -85,10 +85,6 @@ path:
     # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
     if: eq .OS "darwin"
 
-# import aliae
-# waiting on aliae [issue 191](https://github.com/JanDeDobbeleer/aliae/issues/191)
-# aliae: !include_dir "./aliases"
-
 alias:
   # nav shortcuts
   - name: ..
@@ -153,7 +149,7 @@ alias:
   - name: lgt
     value: eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git
 
-  # cmd defaults
+  # default options
   - name: mkdir
     value: mkdir -pv
   - name: mv
@@ -190,100 +186,11 @@ alias:
   - name: fpath
     value: echo $FPATH | tr -s ":" "\n"
 
-  # language specific
-  - name: cgr
-    value: cargo run
-  - name: cgc
-    value: cargo clippy --all-targets --all-features -- -D warnings
-  - name: cgt
-    value: cargo test --all
-  - name: dna
-    value: deno add
-  - name: dnb
-    value: deno bench
-  - name: dnf
-    value: deno fmt
-  - name: dnc
-    value: deno lint
-  - name: dnt
-    value: deno test
-  - name: dnr
-    value: deno run
-  - name: dtb
-    value: deno task build
-  - name: dts
-    value: deno task serve
-  - name: gor
-    value: go run .
-  - name: gof
-    value: go fmt
-  - name: gog
-    value: go get
-  - name: gob
-    value: go build
-  - name: got
-    value: go test
-  - name: gov
-    value: go vet
-  - name: py
-    value: uv run
-  - name: pyc
-    value: find . -name '*.pyc' -delete
-  - name: pyv
-    value: uv venv
-  - name: pyf
-    value: ruff format
-  - name: pyl
-    value: ruff check
+  # import programming language aliases
+  - !include "alias/lang.yaml"
 
-  # macOS specific
-  - name: awake
-    value: caffeinate
-    if: eq .OS "darwin"
-  - name: cwd # copy current working directory path
-    value: pwd | pbcopy
-    if: eq .OS "darwin"
-  - name: finder # open pwd in Finder.app
-    value: open .
-    if: eq .OS "darwin"
-  - name: ql # open file in macOS quicklook
-    value: qlmanage -p ${@} > /dev/null 2> /dev/null
-    type: function
-    if: eq .OS "darwin"
-  - name: arc
-    value: open -a Arc
-    if: eq .OS "darwin"
-  - name: safari
-    value: open -a Safari
-    if: eq .OS "darwin"
-  - name: spc
-    value: cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/space
-    if: eq .OS "darwin"
-  - name: icloud
-    value: cd $HOME/Library/Mobile Documents/com~apple~CloudDocs/
-    if: eq .OS "darwin"
-  - name: emptytrash
-    value: sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*asl
-    type: function
-    if: eq .OS "darwin"
-  - name: pkgs
-    value: brew leaves
-    if: eq .OS "darwin"
-  - name: apps
-    value: brew list --cask
-    if: eq .OS "darwin"
-  # - name: deps
-  # value: brew deps --formula --for-each $(brew leaves)
-  # if: eq .OS "darwin"
-  - name: dep-check # check that all brewfile deps are installed
-    value: brew bundle check -v
-    if: eq .OS "darwin"
-  - name: dep-refresh # install all brewfile deps
-    value: brew bundle install
-    if: eq .OS "darwin"
-  - name: dep-prune # remove all brew managed deps not specified in brewfile
-    value: brew bundle cleanup
-    if: eq .OS "darwin"
+  # import macOS aliases
+  - !include "alias/mac.yaml"
 
   # other
   # - name: codexp # codium extension export
