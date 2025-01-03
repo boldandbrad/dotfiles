@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# move items to trash
+
+mv "$@" ~/.Trash
