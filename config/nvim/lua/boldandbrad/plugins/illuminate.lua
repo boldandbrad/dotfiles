@@ -8,7 +8,7 @@ return {
     require("illuminate").configure({
       delay = 100,
       filetypes_denylist = {
-        "TelescopePrompt",
+        "snacks_picker_input",
       }
     })
   end

@@ -54,7 +54,7 @@ end
 
 
 M.setup = function()
-  vim.keymap.set("n", "<leader>fx", live_multigrep, { desc = "Find text via multigrep" })
+  -- vim.keymap.set("n", "<leader>fx", live_multigrep, { desc = "Find text via multigrep" })
 end
 
 return M

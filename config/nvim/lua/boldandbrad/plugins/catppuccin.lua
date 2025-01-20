@@ -23,7 +23,7 @@ return {
       illuminate = true,
       lsp_trouble = true,
       native_lsp = { enabled = true },
-      telescope = { enabled = true },
+      snacks = true,
       treesitter = true,
       which_key = true,
     },

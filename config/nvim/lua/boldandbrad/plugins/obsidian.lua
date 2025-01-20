@@ -8,7 +8,6 @@ return {
   enabled = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
   lazy = true,
@@ -22,9 +21,6 @@ return {
         name = "space",
         path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/space",
       },
-    },
-    picker = {
-      name = "telescope.nvim",
     },
   },
 }

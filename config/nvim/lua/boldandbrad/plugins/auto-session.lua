@@ -4,9 +4,6 @@
 
 return {
   "rmagatti/auto-session",
-  dependencies = {
-    "nvim-telescope/telescope.nvim",
-  },
   lazy = false,
   opts = {
     session_lens = {
@@ -14,12 +11,6 @@ return {
     },
   },
   keys = {
-    {
-      "<leader>fs",
-      function()
-        require("auto-session.session-lens").search_session()
-      end,
-      desc = "Search sessions",
-    },
+    { "<leader>fs", "<cmd>SessionSearch<cr>", desc = "Search sessions" },
   },
 }
