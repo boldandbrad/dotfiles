@@ -9,7 +9,6 @@ return {
   dependencies = {
     -- autocompletions
     "saghen/blink.cmp",
-    -- "hrsh7th/cmp-nvim-lsp",
     -- lsp notifications
     "j-hui/fidget.nvim",
     -- proper luals config for nvim
@@ -30,14 +29,6 @@ return {
     },
   },
   config = function(_, opts)
-    -- add cmp_nvim_lsp capabilities settings to lspconfig
-    -- local lsp_defaults = require("lspconfig").util.default_config
-    -- lsp_defaults.capabilities = vim.tbl_deep_extend(
-    --   "force",
-    --   lsp_defaults.capabilities,
-    --   require("cmp_nvim_lsp").default_capabilities()
-    -- )
-
     -- setup language servers with blink.cmp capabilities
     local lspconfig = require("lspconfig")
     for server, config in pairs(opts.servers) do

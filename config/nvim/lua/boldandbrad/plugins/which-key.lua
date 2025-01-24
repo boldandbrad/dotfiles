@@ -15,9 +15,10 @@ return {
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
       { "<leader>h", group = "Help" },
-      { "<leader>j", group = "Jump (Grapple)" },
+      { "<leader>j", group = "Jump" },
       { "<leader>l", group = "LSP" },
-      { "<leader>r", group = "Replace (GrugFar)" },
+      { "<leader>r", group = "Replace" },
+      { "<leader>s", group = "Search" },
       { "<leader>x", group = "Diagnostics" },
     })
   end,

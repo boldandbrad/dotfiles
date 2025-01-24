@@ -19,7 +19,7 @@ return {
           require("peek").open()
         end
       end,
-      desc = "Toggle markdown preview (Peek)"
+      desc = "Toggle markdown preview"
     },
   },
 }

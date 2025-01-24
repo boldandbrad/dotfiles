@@ -14,7 +14,7 @@ return {
       function()
         require("yazi").yazi()
       end,
-      desc = "Open file manager (Yazi)",
+      desc = "Open file manager",
     },
     {
       -- Open in the current working directory
@@ -22,7 +22,7 @@ return {
       function()
         require("yazi").yazi(nil, vim.fn.getcwd())
       end,
-      desc = "Open file manager at cwd (Yazi)",
+      desc = "Open file manager at cwd",
     },
   },
 }

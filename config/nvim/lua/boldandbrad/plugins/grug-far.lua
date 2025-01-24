@@ -12,20 +12,20 @@ return {
     },
   },
   keys = {
-    { "<leader>R", "<cmd>GrugFar<cr>", desc = "Find and replace (GrugFar)" },
+    { "<leader>R", "<cmd>GrugFar<cr>", desc = "Find and replace" },
     {
       "<leader>rw",
       function()
-        require("grug-far").grug_far({ prefills = { search = vim.fn.expand("<cword>") } })
+        require("grug-far").open({ prefills = { search = vim.fn.expand("<cword>") } })
       end,
-      desc = "Find and replace current word (GrugFar)",
+      desc = "Find and replace current word",
     },
     {
       "<leader>rb",
       function()
-        require('grug-far').grug_far({ prefills = { flags = vim.fn.expand("%") } })
+        require('grug-far').open({ prefills = { flags = vim.fn.expand("%") } })
       end,
-      desc = "Find and replace in current file (GrugFar)",
+      desc = "Find and replace in current file",
     },
   },
 }
