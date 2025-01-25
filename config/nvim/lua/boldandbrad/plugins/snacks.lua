@@ -1,9 +1,13 @@
+----------------------------------------------------------------
+-- snacks.nvim - quality of life enhancements                 --
+----------------------------------------------------------------
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  ---@type snacks.Config
   opts = {
+    bufdelete = { enabled = true },
     dashboard = { enabled = true },
     gitbrowse = { enabled = true },
     indent = { enabled = true },
@@ -29,6 +33,11 @@ return {
     },
   },
   keys = {
+    -- bufdelete
+    { "<leader>bd", function() Snacks.bufdelete() end,                                      desc = "Delete buffer" },
+    { "<leader>bD", function() Snacks.bufdelete.all() end,                                  desc = "Delete all buffers" },
+    { "<leader>bo", function() Snacks.bufdelete.other() end,                                desc = "Delete all buffers except current" },
+
     -- gitbrowse
     { "<leader>go", function() Snacks.gitbrowse() end,                                      desc = "Open current buffer on GitHub" },
 
@@ -50,6 +59,6 @@ return {
 
     { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Search diagnostics" },
     { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Search help pages" },
-    { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word", mode = { "n", "x" } },
+    { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word",    mode = { "n", "x" } },
   }
 }

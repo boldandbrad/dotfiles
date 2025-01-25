@@ -12,6 +12,7 @@ return {
     -- register keymap group names
     local wk = require("which-key")
     wk.add({
+      { "<leader>b", group = "Buffer" },
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
       { "<leader>h", group = "Help" },
