@@ -103,10 +103,6 @@
     "branch": "main",
     "commit": "50481f414bd3c1a40122c1d759d7e424d5fafe84"
   },
-  "vim-illuminate": {
-    "branch": "master",
-    "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa"
-  },
   "which-key.nvim": {
     "branch": "main",
     "commit": "6cebd86917df559a88de0f806b2989799c6e6423"

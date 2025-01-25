@@ -19,6 +19,9 @@ return {
         files = { enabled = false },
       },
     },
+    words = {
+      debounce = 100
+    },
     styles = {
       lazygit = {
         border = "rounded"
