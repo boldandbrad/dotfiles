@@ -26,7 +26,9 @@
 	dt = difftool
 	mg = merge
 	mt = mergetool
-	rs = reset HEAD
+  rs = reset HEAD
+  lg = log --graph --oneline --decorate
+  cf = cat-file -p
 [fetch]
 	prune = true
 [push]
