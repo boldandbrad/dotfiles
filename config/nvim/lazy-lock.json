@@ -63,6 +63,10 @@
     "branch": "master",
     "commit": "b4d65bce97795438ab6e1974b3672c17a4865e3c"
   },
+  "nvim-surround": {
+    "branch": "main",
+    "commit": "ae298105122c87bbe0a36b1ad20b06d417c0433e"
+  },
   "nvim-treesitter": {
     "branch": "master",
     "commit": "51562d44fc6280f92bb9a3d87e7b3cb327377ca5"
@@ -102,10 +106,6 @@
   "vim-illuminate": {
     "branch": "master",
     "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa"
-  },
-  "vim-surround": {
-    "branch": "master",
-    "commit": "3d188ed2113431cf8dac77be61b842acb64433d9"
   },
   "which-key.nvim": {
     "branch": "main",
