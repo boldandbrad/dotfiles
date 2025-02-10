@@ -12,16 +12,38 @@ return {
     explorer = { replace_netrw = true },
     gitbrowse = { enabled = true },
     indent = { enabled = true },
-    input = { enabled = true },
-    lazygit = {
-      config = {
-        gui = { nerdFontsVersion = "" },
-      },
-    },
+    input = { icon = "> " },
+    lazygit = { config = { gui = { nerdFontsVersion = "" } } },
     picker = {
       prompt = "> ",
-      icons = {
-        files = { enabled = false },
+      icons = { files = { enabled = false } },
+      win = {
+        input = {
+          keys = {
+            ["<a-s>"] = { "flash", mode = { "n", "i" } },
+            ["s"] = { "flash" },
+          },
+        },
+      },
+      actions = {
+        flash = function(picker)
+          require("flash").jump({
+            pattern = "^",
+            label = { after = { 0, 0 } },
+            search = {
+              mode = "search",
+              exclude = {
+                function(win)
+                  return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "snacks_picker_list"
+                end,
+              },
+            },
+            action = function(match)
+              local idx = picker.list:row2idx(match.pos[1])
+              picker.list:_move(idx, true, true)
+            end,
+          })
+        end,
       },
     },
     words = {
@@ -35,20 +57,20 @@ return {
   },
   keys = {
     -- bufdelete
-    { "<leader>bd", function() Snacks.bufdelete() end,                                      desc = "Delete buffer" },
-    { "<leader>bD", function() Snacks.bufdelete.all() end,                                  desc = "Delete all buffers" },
-    { "<leader>bo", function() Snacks.bufdelete.other() end,                                desc = "Delete all buffers except current" },
+    { "<leader>bd", function() Snacks.bufdelete() end,              desc = "Delete buffer" },
+    { "<leader>bD", function() Snacks.bufdelete.all() end,          desc = "Delete all buffers" },
+    { "<leader>bo", function() Snacks.bufdelete.other() end,        desc = "Delete all buffers except current" },
 
     -- gitbrowse
-    { "<leader>go", function() Snacks.gitbrowse() end,                                      desc = "Open current buffer on GitHub" },
+    { "<leader>go", function() Snacks.gitbrowse() end,              desc = "Open current buffer on GitHub" },
 
     -- lazygit
-    { "<leader>G",  function() Snacks.lazygit() end,                                        desc = "Open LazyGit" },
+    { "<leader>G",  function() Snacks.lazygit() end,                desc = "Open LazyGit" },
 
     -- picker
-    { "<leader>/",  function() Snacks.picker.grep() end,                                    desc = "Grep text" },
-    { "<leader>:",  function() Snacks.picker.command_history() end,                         desc = "Search command history" },
-    { "<leader>;",  function() Snacks.picker.resume() end,                                  desc = "Resume last picker" },
+    { "<leader>/",  function() Snacks.picker.grep() end,            desc = "Grep text" },
+    { "<leader>:",  function() Snacks.picker.command_history() end, desc = "Search command history" },
+    { "<leader>;",  function() Snacks.picker.resume() end,          desc = "Resume last picker" },
 
     {
       "<leader>fe",
@@ -67,6 +89,6 @@ return {
 
     { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Search diagnostics" },
     { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Search help pages" },
-    { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word",    mode = { "n", "x" } },
+    { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word", mode = { "n", "x" } },
   }
 }
