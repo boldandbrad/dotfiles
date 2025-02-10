@@ -18,6 +18,7 @@ return {
         "query",
         "vim",
         "vimdoc",
+        "csv",
         "go",
         "html",
         "javascript",
