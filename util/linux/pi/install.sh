@@ -17,7 +17,6 @@ apt install -y eza
 # apt install -y git
 # apt install -y httpie
 # apt install -y podman
-apt install -y yank
 apt install -y zsh
 apt install -y zsh-autosuggestions
 apt install -y zsh-syntax-highlighting

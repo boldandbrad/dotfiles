@@ -49,7 +49,6 @@ brew "tmux"                     # terminal multiplexer
 # brew "vhs"                      # session recorder
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
-brew "yank"                     # clipboard utility
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 

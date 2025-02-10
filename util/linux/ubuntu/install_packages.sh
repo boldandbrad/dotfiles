@@ -17,7 +17,6 @@ apt install bat
 apt install exa       # TODO: find out how to install eza instead
 apt install git
 apt install tailspin
-apt install yank
 apt install zsh
 
 apt install gh
