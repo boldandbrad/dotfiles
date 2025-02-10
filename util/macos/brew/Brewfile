@@ -50,7 +50,6 @@ brew "tmux"                     # terminal multiplexer
 # brew "viddy"                    # watch alternative
 brew "xdg-ninja"                # home dir cleaner
 brew "yank"                     # clipboard utility
-brew "yazi"                     # file manager
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 

@@ -264,8 +264,6 @@ link:
     target: '{{ env "DOTFILES" }}/config/btop'
   - name: '{{ env "XDG_CONFIG_HOME" }}/oh-my-posh'
     target: '{{ env "DOTFILES" }}/config/oh-my-posh'
-  - name: '{{ env "XDG_CONFIG_HOME" }}/yazi'
-    target: '{{ env "DOTFILES" }}/config/yazi'
 
   # macOS launch daemons
   - name: "{{ .Home }}/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist"

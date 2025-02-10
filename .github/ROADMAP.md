@@ -45,5 +45,3 @@ Planned changes and updates to this repo.
 - skhd: Add and configure skhd custom global keybindings for macOS?
 - wezterm: tab and multiplexer configuration
 - yabai: Add and configure Yabai tiling window manager for macOS?
-- yazi: Catppuccin flavor
-- yazi: Oh My Posh prompt

@@ -9,6 +9,7 @@ return {
   opts = {
     bufdelete = { enabled = true },
     dashboard = { enabled = true },
+    explorer = { replace_netrw = true },
     gitbrowse = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
@@ -49,6 +50,13 @@ return {
     { "<leader>:",  function() Snacks.picker.command_history() end,                         desc = "Search command history" },
     { "<leader>;",  function() Snacks.picker.resume() end,                                  desc = "Resume last picker" },
 
+    {
+      "<leader>fe",
+      function()
+        Snacks.picker.explorer({ layout = { layout = { position = "right" } } })
+      end,
+      desc = "File explorer"
+    },
     { "<leader>ff", function() Snacks.picker.files() end,                                   desc = "Find files" },
     { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find git files" },
     { "<leader>fr", function() Snacks.picker.recent() end,                                  desc = "Find recent files" },
