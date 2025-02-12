@@ -2,19 +2,21 @@
 
 > Welcome `$HOME`!
 
-This repo makes moving into your new mac a breeze by automatically furnishing it
-with your favorite app(liance)s, and giving you powerful tools to maintain it.
+![screenshot](../assets/desktop_2025-02-12.png)
 
-I have made my dotfiles open source to serve as a blueprint and inspiration for
-others. Whether or not dotfile repos should be forked is a
+These dotfiles simplify moving into a new mac by automatically furnishing it
+with your favorite app(liance)s, and setting up power(ful) tools so you can
+maintain it.
+
+I have made my mac floor plan open source to serve as a blueprint and
+inspiration for others. Whether or not dotfile repos should be forked is a
 [topic of hot debate](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
 If you do fork this repo, I _**strongly**_ recommend you
 [personalize](#personalize) the contained files before unpacking.
 
-**Jump to:** [✨ TL;DR](#tldr) | [🎥 Demo](#demo) | [📦 Unpack](#unpack) |
-[🛠️ Maintain](#maintain) | [🛋️ Contents](#contents) |
-[🖌️ Personalize](#personalize) | [💡 Inspiration](#inspiration) |
-[📚 Resources](#resources)
+**Jump to:** [✨ TL;DR](#tldr) | [📦 Unpack](#unpack) | [🛠️ Maintain](#maintain)
+| [🛋️ Contents](#contents) | [🖌️ Personalize](#personalize) |
+[💡 Inspiration](#inspiration) | [📚 Resources](#resources)
 
 ## ✨ TL;DR <a id="tldr"></a>
 
@@ -33,42 +35,23 @@ The floor plan at a glance:
 | Shell Prompt                       | ![oh-my-posh](https://img.shields.io/badge/Oh_My_Posh-2C7AE0)                                                                                                                                                                                                                                                                                                   |
 | Editor                             | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![vscodium](https://img.shields.io/badge/VSCodium-_?logo=vscodium&logoColor=white&color=%232F80ED)                                                                                                                                                                 |
 | Version Control                    | ![git](https://img.shields.io/badge/git-_?logo=git&color=%23f1f0e9) ![lazygit](https://img.shields.io/badge/Lazygit-_?color=%23303030)                                                                                                                                                                                                                          |
-| Typeface                           | <img src="https://www.marksimonson.com/_astro/anonymouspro_index.BJoNlAYJ_ZMGmvS.webp" alt="anonymous-pro" width="128"/>                                                                                                                                                                                                                                        |
+| Typeface                           | <img src="../assets/anonymous-pro.png" alt="anonymous-pro" width="120"/>                                                                                                                                                                                                                                                                                        |
 | Theme / Colorsheme                 | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                   |
 | Programming Langauges              | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
 |                                    |                                                                                                                                                                                                                                                                                                                                                                 |
 
 \* manual configuration
 
-## 🎥 Demo <a id="demo"></a>
-
-> Gif/Video coming soon.
-
 ## 📦 Unpack <a id="unpack"></a>
 
 > [!WARNING]
-> Before unpacking, review the repo [contents](#contents) to make sure they
-> match your style and backup your existing configs.
+> Before unpacking, review the repo [contents](#contents) and backup any
+> existing configs.
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
-```
-
-This will download and run [`ship.sh`](../ship.sh), which clones this repo to
-`~/Setup/dotfiles` (if not present), and then prompts you to run
-[`unpack.sh`](../unpack.sh).
-
-Alternatively you can clone the repo yourself and run
-[`unpack.sh`](../unpack.sh) manually.
-
-```sh
-git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
-cd ~/Setup/dotfiles && ./unpack.sh
-```
-
-The unpack script explains what it will do, prompts before doing so, and is
-idempotent. This means it can be safely run multiple times without compounding
-changes or breaking.
+Setup and installation is handled by [`unpack.sh`](../unpack.sh). The unpack
+script explains what it will do, prompts before doing so, and is idempotent.
+This means it can be safely run multiple times to keep the system in sync
+without compounding changes or breaking.
 
 In brief, unpacking does the following:
 
@@ -78,6 +61,26 @@ In brief, unpacking does the following:
 - 🔗 Symlink user dotfiles and configs
 - ⚙️ Apply user system settings
 - 🌱 Clone user github repos
+
+### Get it Delivered
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
+```
+
+This will download and run [`ship.sh`](../ship.sh), which clones this repo to
+`~/Setup/dotfiles` (if not present) and then prompts you to run
+[`unpack.sh`](../unpack.sh).
+
+### Haul it Yourself
+
+Alternatively you can clone the repo and run [`unpack.sh`](../unpack.sh)
+manually.
+
+```sh
+git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
+cd ~/Setup/dotfiles && ./unpack.sh
+```
 
 Continue reading for more details on what to expect.
 
