@@ -1,22 +1,22 @@
 # 🏠 boldandbrad's humble dotfiles
 
-> Welcome `$HOME`!
-
 ![screenshot](../assets/desktop_2025-02-12.png)
+
+## 🗝️ Welcome `$HOME`
 
 These dotfiles simplify moving into a new mac by automatically furnishing it
 with your favorite app(liance)s, and setting up power(ful) tools so you can
 maintain it.
 
-I have made my mac floor plan open source to serve as a blueprint and
-inspiration for others. Whether or not dotfile repos should be forked is a
-[topic of hot debate](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
-If you do fork this repo, I _**strongly**_ recommend you
-[personalize](#personalize) the contained files before unpacking.
+> [!WARNING]
+> I have made my mac floor plan open source to serve as a blueprint and
+> inspiration for others only. These dotfiles are both highly customized and
+> volatile. Feel free to use what you want, but I
+> [do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
 
 **Jump to:** [✨ TL;DR](#tldr) | [📦 Unpack](#unpack) | [🛠️ Maintain](#maintain)
-| [🛋️ Contents](#contents) | [🖌️ Personalize](#personalize) |
-[💡 Inspiration](#inspiration) | [📚 Resources](#resources)
+| [🛋️ Contents](#contents) | [💡 Inspiration](#inspiration) |
+[📚 Resources](#resources)
 
 ## ✨ TL;DR <a id="tldr"></a>
 
@@ -152,16 +152,6 @@ dependencies, and system configurations. Most of these scripts are sourced
 directly from `unpack.sh` at the repo root.
 
 > Docs coming soon.
-
-## 🖌️ Personalize <a id="personalize"></a>
-
-If you have cloned or are reusing snippets from this repo for your own system
-setup, there are a handful of things that _should_ change before unpacking.
-
-- Change the value of `GITHUB_USER` username in both `ship.sh` and `unpack.sh`.
-  This is used to automatically clone your public git repos, including this one.
-- Search for and replace all other 'boldandbrad' references with your preferred
-  user name or value.
 
 ## 💡 Inspiration <a id="inspiration"></a>
 
