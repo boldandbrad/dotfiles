@@ -9,13 +9,14 @@ with your favorite app(liance)s, and setting up power(ful) tools so you can
 maintain it.
 
 > [!WARNING]
-> I have made my mac floor plan open source to serve as a blueprint and
-> inspiration for others only. These dotfiles are both highly customized and
-> volatile. Feel free to use what you want, but I
-> [do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
+> I have made my macOS floor plan open source to serve as a blueprint and
+> inspiration for others. However, these dotfiles are both highly customized and
+> [volatile](https://github.com/boldandbrad/dotfiles/commits/main/). Feel free
+> to explore the [contents](#contents) and use what you like, but
+> [I do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
 
-**Jump to:** [✨ TL;DR](#tldr) | [📦 Unpack](#unpack) | [🛠️ Maintain](#maintain)
-| [🛋️ Contents](#contents) | [💡 Inspiration](#inspiration) |
+**Jump to:** [✨ TL;DR](#tldr) | [📦 Unpack](#unpack) | [🛋️ Contents](#contents)
+| [🛠️ Maintain](#maintain) | [💡 Inspiration](#inspiration) |
 [📚 Resources](#resources)
 
 ## ✨ TL;DR <a id="tldr"></a>
@@ -44,10 +45,6 @@ The floor plan at a glance:
 
 ## 📦 Unpack <a id="unpack"></a>
 
-> [!WARNING]
-> Before unpacking, review the repo [contents](#contents) and backup any
-> existing configs.
-
 Setup and installation is handled by [`unpack.sh`](../unpack.sh). The unpack
 script explains what it will do, prompts before doing so, and is idempotent.
 This means it can be safely run multiple times to keep the system in sync
@@ -61,6 +58,10 @@ In brief, unpacking does the following:
 - 🔗 Symlink user dotfiles and configs
 - ⚙️ Apply user system settings
 - 🌱 Clone user github repos
+
+> [!WARNING]
+> Before unpacking, review the repo [contents](#contents) and backup any
+> pre-existing configs.
 
 ### Get it Delivered
 
@@ -83,23 +84,6 @@ cd ~/Setup/dotfiles && ./unpack.sh
 ```
 
 Continue reading for more details on what to expect.
-
-## 🛠️ Maintain <a id="maintain"></a>
-
-To make system maintanence simpler post-unpack, a handful of convenient
-[aliases](../config/aliae/aliae.yaml) are provided. Invoke these from anywhere.
-
-| Command       | Description                                                 |
-| ------------- | ----------------------------------------------------------- |
-| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))            |
-| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
-| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
-| `dot-relink`  | Relink installed dotfiles                                   |
-| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
-| `dep-check`   | Check if all apps and dependencies are installed            |
-| `dep-refresh` | Install/update all apps and dependencies                    |
-| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
-| `git-reclone` | Reclone user github repos                                   |
 
 ## 🛋️ Contents <a id="contents"></a>
 
@@ -152,6 +136,23 @@ dependencies, and system configurations. Most of these scripts are sourced
 directly from `unpack.sh` at the repo root.
 
 > Docs coming soon.
+
+## 🛠️ Maintain <a id="maintain"></a>
+
+To make system maintanence simpler after unpacking, a handful of convenient
+[aliases](../config/aliae/aliae.yaml) are provided. Invoke these from anywhere.
+
+| Command       | Description                                                 |
+| ------------- | ----------------------------------------------------------- |
+| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))            |
+| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
+| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
+| `dot-relink`  | Relink installed dotfiles                                   |
+| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
+| `dep-check`   | Check if all apps and dependencies are installed            |
+| `dep-refresh` | Install/update all apps and dependencies                    |
+| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
+| `git-reclone` | Reclone user github repos                                   |
 
 ## 💡 Inspiration <a id="inspiration"></a>
 
