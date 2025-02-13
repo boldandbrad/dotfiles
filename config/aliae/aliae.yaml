@@ -247,8 +247,8 @@ link:
     if: eq .OS "linux"
 
   # other configs
-  - name: '{{ env "XDG_CONFIG_HOME" }}/bat/config'
-    target: '{{ env "DOTFILES" }}/config/bat/config'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/bat'
+    target: '{{ env "DOTFILES" }}/config/bat'
     mkdir: true
   - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
     target: '{{ env "DOTFILES" }}/config/btop'
