@@ -1,4 +1,0 @@
-[submodule "vendor/catppuccin-bat"]
-	path = vendor/catppuccin-bat
-	url = https://github.com/catppuccin/bat.git
-	ignore = dirty

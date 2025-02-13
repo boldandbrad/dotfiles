@@ -79,7 +79,7 @@ Alternatively you can clone the repo and run [`unpack.sh`](../unpack.sh)
 manually.
 
 ```sh
-git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
+git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
 cd ~/Dotfiles && ./unpack.sh
 ```
 
@@ -96,8 +96,6 @@ dotfiles/
 ├── config/         # Config files for packages and apps. Symlinked by aliae.
 │  └── ..
 ├── util/           # Shell scripts and utilities for system and tool setup. Sourced by unpack.sh.
-│  └── ..
-├── vendor/         # Dependencies which are managed as git submodules.
 │  └── ..
 ├── ..
 ├── Makefile        # Helpful development commands.

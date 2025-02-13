@@ -32,7 +32,7 @@ RUN \
 ENV DOTFILES_DIR="/home/${user}/Dotfiles"
 
 # RUN \
-#   git clone --recursive https://github.com/${user}/dotfiles ${DOTFILES_DIR} && \
+#   git clone https://github.com/${user}/dotfiles ${DOTFILES_DIR} && \
 #   chown -R ${user}:${group} /home/${user}/Dotfiles
 
 COPY ./ /home/${user}/Dotfiles

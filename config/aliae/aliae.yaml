@@ -250,8 +250,6 @@ link:
   - name: '{{ env "XDG_CONFIG_HOME" }}/bat/config'
     target: '{{ env "DOTFILES" }}/config/bat/config'
     mkdir: true
-  - name: '{{ env "XDG_CONFIG_HOME" }}/bat/themes'
-    target: '{{ env "DOTFILES" }}/vendor/catppuccin-bat/themes'
   - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
     target: '{{ env "DOTFILES" }}/config/btop'
   - name: '{{ env "XDG_CONFIG_HOME" }}/fastfetch'

@@ -8,5 +8,3 @@ run:
 install:
 	'./unpack.sh'
 
-update-themes:
-	git submodule update --remote vendor/catppuccin-bat
