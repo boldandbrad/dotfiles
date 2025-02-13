@@ -20,6 +20,7 @@ return {
       { "<leader>l", group = "LSP" },
       { "<leader>r", group = "Replace" },
       { "<leader>s", group = "Search" },
+      { "<leader>t", group = "Terminal" },
       { "<leader>x", group = "Diagnostics" },
     })
   end,

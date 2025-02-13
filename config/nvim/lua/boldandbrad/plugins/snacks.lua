@@ -51,9 +51,7 @@ return {
       debounce = 100
     },
     styles = {
-      lazygit = {
-        border = "rounded"
-      }
+      lazygit = { border = "rounded" }
     },
   },
   keys = {
@@ -91,5 +89,8 @@ return {
     { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Search diagnostics" },
     { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Search help pages" },
     { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word", mode = { "n", "x" } },
+
+    -- terminal
+    { "<leader>tt", function() Snacks.terminal.toggle() end,                                desc = "Toggle terminal" },
   }
 }
