@@ -1,7 +1,3 @@
-[submodule "vendor/tpm"]
-	path = vendor/tpm
-	url = https://github.com/tmux-plugins/tpm
-	ignore = dirty
 [submodule "vendor/catppuccin-bat"]
 	path = vendor/catppuccin-bat
 	url = https://github.com/catppuccin/bat.git

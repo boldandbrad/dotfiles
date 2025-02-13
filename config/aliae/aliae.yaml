@@ -233,12 +233,6 @@ link:
     target: '{{ env "DOTFILES" }}/config/wezterm'
   - name: '{{ env "XDG_CONFIG_HOME" }}/tmux'
     target: '{{ env "DOTFILES" }}/config/tmux'
-  - name: '{{ env "XDG_DATA_HOME" }}/tmux/tpm'
-    target: '{{ env "DOTFILES" }}/vendor/tpm'
-    mkdir: true
-  - name: '{{ env "XDG_DATA_HOME" }}/tmux/plugins/tpm'
-    target: '{{ env "DOTFILES" }}/vendor/tpm'
-    mkdir: true
 
   # editor configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/nvim'
