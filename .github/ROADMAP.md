@@ -39,7 +39,6 @@ Planned changes and updates to this repo.
 - git: move away from vscodium as a merge and difftool
 - lazygit: Catppuccin theme
 - mackup: Store other app settings via `mackup`?
-- neovim: treesitter textobjects setup
 - obsidian: backup vault settings?
 - sketchybar: Add and configure Sketchybar custom menubar for macOS?
 - skhd: Add and configure skhd custom global keybindings for macOS?

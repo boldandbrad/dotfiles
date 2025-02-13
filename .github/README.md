@@ -4,13 +4,13 @@
 
 ## 🗝️ Welcome `$HOME`
 
-These dotfiles simplify moving into a new mac by automatically furnishing it
-with your favorite app(liance)s, and setting up power(ful) tools so you can
-maintain it.
+These dotfiles simplify moving into a new workstation by automatically
+furnishing it with your favorite app(liance)s, and setting up power(ful) tools
+so you can maintain it.
 
 > [!WARNING]
-> I have made my macOS floor plan open source to serve as a blueprint and
-> inspiration for others. However, these dotfiles are both highly customized and
+> I have made my floor plan open source to serve as a blueprint and inspiration
+> for others. However, these dotfiles are both highly customized and
 > [volatile](https://github.com/boldandbrad/dotfiles/commits/main/). Feel free
 > to explore the [contents](#contents) and use what you like, but
 > [I do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right).
