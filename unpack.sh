@@ -85,15 +85,17 @@ function pre_setup () {
   "  - Symlink dotfiles to correct locations\n"\
   "(4) Configure system\n"\
   "(5) Clone user repos\n\n"\
-  "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"\
-  "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}"
+  "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}\n"
 
   # confirm the user would like to proceed
-  echo -en "\n${BLUE_B}Would you like to continue? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_start && echo
-  if [[ ! $ans_start =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nInstallation canceled. Terminating..."
-    exit 0
+  if [[ $AUTO_YES != true ]] ; then
+    echo -e "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"
+    echo -en "\n${BLUE_B}Would you like to continue? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_start && echo
+    if [[ ! $ans_start =~ ^[Yy]$ ]] ; then
+      echo -e "\nInstallation canceled. Terminating..."
+      exit 0
+    fi
   fi
 
   # verify compatibility
@@ -105,11 +107,13 @@ function pre_setup () {
 
 function update_system () {
   # confirm the user would like to update the system
-  echo -en "\n${BLUE_B}Would you like to update the system? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_sysupdate && echo
-  if [[ ! $ans_sysupdate =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping system updates."
-    return
+  if [[ $AUTO_YES != true ]] ; then
+    echo -en "\n${BLUE_B}Would you like to update the system? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_sysupdate && echo
+    if [[ ! $ans_sysupdate =~ ^[Yy]$ ]] ; then
+      echo -e "\nSkipping system updates."
+      return
+    fi
   fi
 
   # check if running in CI
@@ -125,11 +129,13 @@ function update_system () {
 
 function install_packages () {
   # confirm the user would like to install packages
-  echo -en "\n${BLUE_B}Would you like to install/update packages and apps? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_syspackages && echo
-  if [[ ! $ans_syspackages =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping package installs."
-    return
+  if [[ $AUTO_YES != true ]] ; then
+    echo -en "\n${BLUE_B}Would you like to install/update packages and apps? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_syspackages && echo
+    if [[ ! $ans_syspackages =~ ^[Yy]$ ]] ; then
+      echo -e "\nSkipping package installs."
+      return
+    fi
   fi
 
   # install macOS packages
@@ -141,11 +147,13 @@ function install_packages () {
 
 function setup_dotfiles () {
   # confirm the user would like to symlink dotfiles
-  echo -en "\n${BLUE_B}Would you like to install dotfiles? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_symlinks && echo
-  if [[ ! $ans_symlinks =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping dotfile symlinks."
-    return
+  if [[ $AUTO_YES != true ]] ; then
+    echo -en "\n${BLUE_B}Would you like to install dotfiles? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_symlinks && echo
+    if [[ ! $ans_symlinks =~ ^[Yy]$ ]] ; then
+      echo -e "\nSkipping dotfile symlinks."
+      return
+    fi
   fi
 
   # symlink dotfiles
@@ -155,11 +163,13 @@ function setup_dotfiles () {
 
 function config_system () {
   # confirm the user would like to perform system configuration
-  echo -en "\n${BLUE_B}Would you like to perform system-specific configuration? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_sysconfig && echo
-  if [[ ! $ans_sysconfig =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping system-specific configuration."
-    return
+  if [[ $AUTO_YES != true ]] ; then
+    echo -en "\n${BLUE_B}Would you like to perform system-specific configuration? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_sysconfig && echo
+    if [[ ! $ans_sysconfig =~ ^[Yy]$ ]] ; then
+      echo -e "\nSkipping system-specific configuration."
+      return
+    fi
   fi
 
   # perform macOS configuration
@@ -170,11 +180,13 @@ function config_system () {
 
 function clone_repos () {
   # confirm the user would like to clone repos
-  echo -en "\n${BLUE_B}Would you like to clone ${GITHUB_USER}'s GitHub repos? (y/N):${RESET} "
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_clone_repos && echo
-  if [[ ! $ans_clone_repos =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-    echo -e "\nSkipping GitHub repo clones."
-    return
+  if [[ $AUTO_YES != true ]] ; then
+    echo -en "\n${BLUE_B}Would you like to clone ${GITHUB_USER}'s GitHub repos? (y/N):${RESET} "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_clone_repos && echo
+    if [[ ! $ans_clone_repos =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
+      echo -e "\nSkipping GitHub repo clones."
+      return
+    fi
   fi
 
   # clone repos
