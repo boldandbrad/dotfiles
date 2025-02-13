@@ -18,7 +18,7 @@ PARAMS=$* # user provided parameters
 SYSTEM_TYPE=$(uname -s) # system type - Linux / MacOS (Darwin)
 export PROMPT_TIMEOUT=15 # when user is prompted for input, skip after x seconds
 
-export DOTFILES=~/Setup/dotfiles
+export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
 export GITHUB_REPO_DIR=~/Developer/github
 

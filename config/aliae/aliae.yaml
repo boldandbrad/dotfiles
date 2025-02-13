@@ -48,7 +48,7 @@ env:
 
   # dotfiles
   - name: DOTFILES
-    value: "{{ .Home }}/Setup/dotfiles"
+    value: "{{ .Home }}/Dotfiles"
   - name: HOMEBREW_BUNDLE_FILE
     value: '{{ env "DOTFILES" }}/util/macos/brew/Brewfile'
 
@@ -243,8 +243,8 @@ link:
   # editor configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/nvim'
     target: '{{ env "DOTFILES" }}/config/nvim'
-  - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
-    target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
+    # - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
+    #   target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
     mkdir: true
     if: eq .OS "darwin"
   - name: '{{ env "XDG_CONFIG_HOME" }}/VSCodium/User/settings.json'

@@ -29,13 +29,13 @@ RUN \
   # addgroup ${user} docker
 
 # clone dotfiles
-ENV DOTFILES_DIR="/home/${user}/Setup/dotfiles"
+ENV DOTFILES_DIR="/home/${user}/Dotfiles"
 
 # RUN \
 #   git clone --recursive https://github.com/${user}/dotfiles ${DOTFILES_DIR} && \
-#   chown -R ${user}:${group} /home/${user}/Setup/dotfiles
+#   chown -R ${user}:${group} /home/${user}/Dotfiles
 
-COPY ./ /home/${user}/Setup/dotfiles
+COPY ./ /home/${user}/Dotfiles
 
 RUN chmod u+x "${DOTFILES_DIR}/unpack.sh"
 

@@ -70,7 +70,7 @@ In brief, unpacking does the following:
 ```
 
 This will download and run [`ship.sh`](../ship.sh), which clones this repo to
-`~/Setup/dotfiles` (if not present) and then prompts you to run
+`~/Dotfiles` (if not present) and then prompts you to run
 [`unpack.sh`](../unpack.sh).
 
 ### Haul it Yourself
@@ -79,8 +79,8 @@ Alternatively you can clone the repo and run [`unpack.sh`](../unpack.sh)
 manually.
 
 ```sh
-git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Setup/dotfiles
-cd ~/Setup/dotfiles && ./unpack.sh
+git clone --recursive https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
+cd ~/Dotfiles && ./unpack.sh
 ```
 
 Continue reading for more details on what to expect.

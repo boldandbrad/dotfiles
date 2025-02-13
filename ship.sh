@@ -24,7 +24,7 @@ PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
 
 GITHUB_USER="boldandbrad"
 DOTFILE_REPO="https://github.com/${GITHUB_USER}/dotfiles.git"
-DOTFILE_DIR=~/Setup/dotfiles
+DOTFILE_DIR=~/Dotfiles
 
 # color ansi escape codes
 export RESET='\033[0m'

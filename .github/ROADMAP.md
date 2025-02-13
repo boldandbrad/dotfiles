@@ -30,7 +30,6 @@ Planned changes and updates to this repo.
 - command: `sys-clean` to clean up caches and system data
 - command: `dot-commit` to automatically commit and push dotfile repo changes to
   github
-- dir: Install dotfiles directly to `~/Dotfiles` instead of `~/Setup/dotfiles`?
 - keyboard: dvorak/programmers dvorak keyboard layout setup?
 - shells: cleanup aliases, env, and function setup via aliae
 
