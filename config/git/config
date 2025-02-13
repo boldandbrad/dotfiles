@@ -39,17 +39,11 @@
 	autosquash = true
 [merge]
 	ff = only
-	tool = codium
 	conflictsytle = diff3
-[mergetool "codium"]
-	cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [diff]
-	tool = codium
 	colorMoved = default
 [difftool]
 	prompt = false
-[difftool "codium"]
-	cmd = codium --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process

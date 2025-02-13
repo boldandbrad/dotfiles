@@ -35,7 +35,6 @@ Planned changes and updates to this repo.
 
 ## Tool Configs
 
-- git: move away from vscodium as a merge and difftool
 - lazygit: Catppuccin theme
 - mackup: Store other app settings via `mackup`?
 - obsidian: backup vault settings?
