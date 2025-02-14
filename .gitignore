@@ -5,12 +5,6 @@
 config/zsh/.zcompcache
 config/zsh/.zcompdump
 
-# tmux plugins
-config/tmux/plugins
-
-# yazi plugins
-config/yazi/plugins
-
 # brew lock files
 util/macos/brew/*.lock.json
 
