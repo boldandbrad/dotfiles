@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# clean podman caches without confirmation, and print podman disk usage
+
+podman system prune -af --volumes \
+  && podman system df
+
