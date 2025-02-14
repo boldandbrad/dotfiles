@@ -26,6 +26,13 @@ keymap("n", "<leader>-", "<cmd>split<cr>", { desc = "Split window below", norema
 -- split window right
 keymap("n", "<leader>|", "<cmd>vsplit<cr>", { desc = "Split window right", noremap = true, silent = true })
 
+-- navigate splits
+keymap("n", "<leader><tab>", "<C-w>w", { desc = "Move to next split", noremap = true, silent = true })
+keymap("n", "<leader>H", "<C-w>h", { desc = "Move to split left", noremap = true, silent = true })
+keymap("n", "<leader>J", "<C-w>j", { desc = "Move to split down", noremap = true, silent = true })
+keymap("n", "<leader>K", "<C-w>k", { desc = "Move to split up", noremap = true, silent = true })
+keymap("n", "<leader>L", "<C-w>l", { desc = "Move to split right", noremap = true, silent = true })
+
 -- move lines up or down
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
