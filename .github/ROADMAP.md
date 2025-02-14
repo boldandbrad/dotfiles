@@ -13,7 +13,9 @@ Planned changes and updates to this repo.
   - app/pkg install
   - dotfile symlinking
 - cicd: github actions builds
-- container: make stable
+- container
+  - make stable
+  - github actions builds and registry publishing
 - debian-linux
   - app/pkg install
   - dotfile symlinking
@@ -32,7 +34,7 @@ Planned changes and updates to this repo.
 - keyboard: dvorak/programmers dvorak keyboard layout setup?
 - shells: cleanup aliases, env, and function setup via aliae
 
-## Tool Configs
+## Configs
 
 - lazygit: Catppuccin theme
 - mackup: Store other app settings via `mackup`?

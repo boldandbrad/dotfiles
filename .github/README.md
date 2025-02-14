@@ -65,29 +65,41 @@ In brief, unpacking does the following:
 
 ### Get it Delivered
 
+Automatically download and run [`ship.sh`](../ship.sh), which clones this repo
+to `~/Dotfiles` (if not present) and then prompts you to run
+[`unpack.sh`](../unpack.sh).
+
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
 ```
 
-This will download and run [`ship.sh`](../ship.sh), which clones this repo to
-`~/Dotfiles` (if not present) and then prompts you to run
-[`unpack.sh`](../unpack.sh).
-
 ### Haul it Yourself
 
-Alternatively you can clone the repo and run [`unpack.sh`](../unpack.sh)
-manually.
+Manually clone this repo and run [`unpack.sh`](../unpack.sh).
 
 ```sh
 git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
 cd ~/Dotfiles && ./unpack.sh
 ```
 
-Continue reading for more details on what to expect.
+### Mobile Home
+
+> [!NOTE]
+> Container support is a work in progress and considered experimental.
+
+A taste of home when you're on the road goes a long way. Spin up a simplified
+version of this setup in a cozy alpine linux container (requires podman).
+
+```sh
+git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
+cd ~/Dotfiles
+make build
+make run
+```
 
 ## 🛋️ Contents <a id="contents"></a>
 
-The contents of this repo are organized into a few high level directories.
+The main contents of this repo are organized into a few high level directories.
 
 ```txt
 dotfiles/
@@ -95,7 +107,7 @@ dotfiles/
 │  └── ..
 ├── config/         # Config files for packages and apps. Symlinked by aliae.
 │  └── ..
-├── util/           # Shell scripts and utilities for system and tool setup. Sourced by unpack.sh.
+├── util/           # Scripts and utilities for specific system and tool setup. Sourced by unpack.sh.
 │  └── ..
 ├── ..
 ├── Makefile        # Helpful development commands.
