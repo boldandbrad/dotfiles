@@ -5,20 +5,18 @@ Planned changes and updates to this repo.
 ## Documentation
 
 - feature explanations
-- personalization guide
 - gif/video demo in readme
 
 ## Environment Support
 
 - alpine-linux
-  - dotfile symlinking
   - app/pkg install
+  - dotfile symlinking
 - cicd: github actions builds
-- container support
-  - add Containerfile
+- container: make stable
 - debian-linux
-  - dotfile symlinking
   - app/pkg install
+  - dotfile symlinking
 - github-codespaces support
 - macos
   - system settings setup via `defaults` or `apply-user-defaults`
@@ -30,6 +28,7 @@ Planned changes and updates to this repo.
 - command: `sys-clean` to clean up caches and system data
 - command: `dot-commit` to automatically commit and push dotfile repo changes to
   github
+- bin: script to auto update manually managed theme files
 - keyboard: dvorak/programmers dvorak keyboard layout setup?
 - shells: cleanup aliases, env, and function setup via aliae
 
