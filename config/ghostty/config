@@ -1,0 +1,15 @@
+theme = catppuccin-mocha
+
+font-family = "Anonymous Pro"
+font-size = 16
+
+cursor-style = block
+cursor-style-blink = false
+
+title = " "
+macos-titlebar-proxy-icon = hidden
+
+window-padding-x = 24
+window-padding-y = 0,0
+window-padding-balance = true
+

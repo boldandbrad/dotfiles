@@ -61,6 +61,7 @@ cask "arc"                      # web browser
 cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
+cask "ghostty"                  # terminal emulator
 cask "keka"                     # archive handler
 cask "kekaexternalhelper"       # keka helper
 cask "mactracker"               # apple product info
