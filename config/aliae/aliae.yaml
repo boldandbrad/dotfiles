@@ -30,8 +30,6 @@ env:
     value: '{{ env "XDG_DATA_HOME" }}/deno'
   - name: CARGO_HOME
     value: '{{ env "XDG_DATA_HOME" }}/cargo'
-  # - name: CURL_HOME
-  # value: $XDG_CONFIG_HOME/curl
   - name: GOPATH
     value: '{{ env "XDG_DATA_HOME" }}/go'
   - name: LESSHISTFILE
@@ -180,7 +178,7 @@ alias:
   - name: dud
     value: du -d 1 -h
   - name: duf
-    value: du -sh *
+    value: du -sh * | sort -hr
   - name: lock
     value: zip -erj
   - name: unlock
@@ -247,8 +245,8 @@ link:
     target: '{{ env "DOTFILES" }}/config/nvim'
     # - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
     #   target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
-    mkdir: true
-    if: eq .OS "darwin"
+    #   mkdir: true
+    #   if: eq .OS "darwin"
   - name: '{{ env "XDG_CONFIG_HOME" }}/VSCodium/User/settings.json'
     target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
     mkdir: true
@@ -257,7 +255,6 @@ link:
   # other configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/bat'
     target: '{{ env "DOTFILES" }}/config/bat'
-    mkdir: true
   - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
     target: '{{ env "DOTFILES" }}/config/btop'
   - name: '{{ env "XDG_CONFIG_HOME" }}/fastfetch'
