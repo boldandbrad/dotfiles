@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# trash unwanted directories and remove unwanted files
+
+declare -a dirs=(
+  "${HOME}/.cups"
+)
+
+declare -a files=(
+  "${HOME}/.zsh_history"
+)
+
+# move unwanted directories into the trash bin
+for i in "${dirs[@]}"
+do
+  if [ -d "${i}" ]; then
+    echo "trashing $i"
+    trash ${i}
+  fi
+done
+
+# remove unwanted files
+for i in "${files[@]}"
+do
+  if [ -e "${i}" ]; then
+    echo "removing $i"
+    rm ${i}
+  fi
+done
+
+echo "🧼 All clean!"
