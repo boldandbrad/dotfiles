@@ -4,11 +4,19 @@
 [init]
 	defaultBranch = main
 	templateDir = ~/.config/git/templates
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[column]
+  ui = auto
 [core]
 	eol = lf
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.config/git/gitignore
+[help]
+  autocorrect = prompt
 [alias]
 	a = add
 	aa = add --all
@@ -31,19 +39,28 @@
   cf = cat-file -p
 [fetch]
 	prune = true
+  pruneTags = true
+  all = true
 [push]
+  default = simple
 	autoSetupRemote = true
 [pull]
 	rebase = true
 [rebase]
-	autosquash = true
+	autoSquash = true
+  autoStash = true
+  updateRefs = true
 [rerere]
   enabled = true
+  autoupdate = true
 [merge]
 	ff = only
-	conflictsytle = diff3
+	conflictstyle = zdiff3
 [diff]
+  algorithm = histogram
 	colorMoved = default
+  mnemonicPrefix = true
+  renames = true
 [difftool]
 	prompt = false
 [filter "lfs"]
