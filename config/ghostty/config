@@ -22,3 +22,4 @@ window-save-state = always
 
 quit-after-last-window-closed = true
 
+mouse-hide-while-typing = true
