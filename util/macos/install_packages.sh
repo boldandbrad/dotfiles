@@ -27,7 +27,7 @@ echo
 echo "Installing macOS apps and packages from Brewfile..."
 brew tap homebrew/bundle
 if ! brew bundle check; then
-  brew bundle install --no-lock --cleanup
+  brew bundle install --cleanup
 fi
 
 # perform upgrades and cleanup
