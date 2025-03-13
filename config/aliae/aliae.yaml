@@ -67,6 +67,7 @@ env:
 path:
   - value: |
       /opt/homebrew/bin
+      /opt/homebrew/sbin
       $DOTFILES/bin
       $DENO_INSTALL_ROOT/bin
       $CARGO_HOME/bin

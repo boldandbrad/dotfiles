@@ -18,6 +18,8 @@ else
   echo -e "${GREEN_B}Homebrew is already installed!${RESET}"
 fi
 
+export PATH=/opt/homebrew/bin:$PATH
+
 # configure homebrew
 brew developer off
 brew analytics off
