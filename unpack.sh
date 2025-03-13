@@ -24,6 +24,7 @@ export GITHUB_REPO_DIR=~/Developer/github
 
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/macos/brew/Brewfile"
+  export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 # color ansi escape codes
