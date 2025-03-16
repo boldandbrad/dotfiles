@@ -19,7 +19,6 @@ tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
 
 # tap "boldandbrad/tap"                 # stuff made by me :)
-tap "superatomic/bundle-extensions"   # extra brew commands
 
 ################################################################
 # terminal apps and packages                                   #
@@ -60,8 +59,8 @@ cask "arc"                      # web browser
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
 cask "ghostty"                  # terminal emulator
-cask "keka"                     # archive handler
-cask "kekaexternalhelper"       # keka helper
+# cask "keka"                     # archive handler
+# cask "kekaexternalhelper"       # keka helper
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown note manager
@@ -72,7 +71,6 @@ cask "protonvpn"                # vpn client
 # cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
-cask "syntax-highlight"         # quicklook syntax highlighter
 cask "vscodium"                 # text editor
 cask "wezterm"                  # terminal emulator
 
@@ -85,13 +83,13 @@ brew "exercism"                 # cli coding exercise client
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
-cask "httpie"                   # desktop http client
+# cask "httpie"                   # desktop http client
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
 brew "marksman"                 # markdown lsp
 brew "podman"                   # cli container client
-cask "podman-desktop"           # desktop container client
+# cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
