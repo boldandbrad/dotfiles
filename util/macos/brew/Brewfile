@@ -61,6 +61,7 @@ cask "duckduckgo"               # web browser
 cask "ghostty"                  # terminal emulator
 # cask "keka"                     # archive handler
 # cask "kekaexternalhelper"       # keka helper
+cask "leader-key"               # leader key based launcher
 cask "mactracker"               # apple product info
 # cask "obs"                      # streaming suite
 cask "obsidian"                 # markdown note manager

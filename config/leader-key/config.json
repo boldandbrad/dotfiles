@@ -1,0 +1,129 @@
+{
+  "actions": [
+    {
+      "key": "t",
+      "label": "",
+      "type": "application",
+      "value": "/Applications/Wezterm.app"
+    },
+    {
+      "actions": [
+        {
+          "key": "e",
+          "label": "",
+          "type": "application",
+          "value": "/System/Applications/Mail.app"
+        },
+        {
+          "key": "s",
+          "label": "",
+          "type": "application",
+          "value": "/Applications/Spotify.app"
+        },
+        {
+          "key": "m",
+          "label": "",
+          "type": "application",
+          "value": "/System/Applications/Messages.app"
+        },
+        {
+          "key": "d",
+          "label": "",
+          "type": "application",
+          "value": "/Applications/Discord.app"
+        },
+        {
+          "key": "b",
+          "label": "",
+          "type": "application",
+          "value": "/Applications/Safari.app"
+        },
+        {
+          "key": "g",
+          "label": "",
+          "type": "application",
+          "value": "/Applications/Steam.app"
+        }
+      ],
+      "key": "o",
+      "label": "Apps",
+      "type": "group"
+    },
+    {
+      "actions": [
+        {
+          "key": "e",
+          "label": "Emoji",
+          "type": "url",
+          "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+        },
+        {
+          "key": "c",
+          "label": "Color",
+          "type": "url",
+          "value": "raycast://extensions/thomas/color-picker/pick-color"
+        },
+        {
+          "key": "g",
+          "label": "Gif",
+          "type": "url",
+          "value": "raycast://extensions/josephschmitt/gif-search/search"
+        },
+        {
+          "key": "f",
+          "label": "File",
+          "type": "url",
+          "value": "raycast://extensions/raycast/file-search/search-files"
+        }
+      ],
+      "key": "p",
+      "label": "Pickers",
+      "type": "group"
+    },
+    {
+      "actions": [
+        {
+          "key": "h",
+          "label": "Home",
+          "type": "folder",
+          "value": "/Users/boldandbrad"
+        },
+        {
+          "key": "d",
+          "label": "",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Documents"
+        },
+        {
+          "key": "c",
+          "label": "",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Dotfiles"
+        },
+        {
+          "key": "w",
+          "label": "",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Downloads"
+        },
+        {
+          "key": "i",
+          "label": "iCloud",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
+        },
+        {
+          "key": "a",
+          "label": "",
+          "type": "folder",
+          "value": "/Applications"
+        }
+      ],
+      "key": "f",
+      "label": "Folders",
+      "type": "group"
+    }
+  ],
+  "type": "group"
+}
+
