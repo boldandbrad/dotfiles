@@ -1,12 +1,6 @@
 {
   "actions" : [
     {
-      "key" : "t",
-      "label" : "",
-      "type" : "application",
-      "value" : "/Applications/Wezterm.app"
-    },
-    {
       "actions" : [
         {
           "key" : "e",
@@ -46,33 +40,51 @@
         },
         {
           "key" : "p",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Passwords.app"
         },
         {
           "key" : "i",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Photos.app"
         },
         {
           "key" : "c",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Calendar.app"
         },
         {
           "key" : "n",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Notes.app"
         },
         {
           "key" : "r",
-          "label" : null,
+          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Reminders.app"
+        },
+        {
+          "key" : "t",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/WezTerm.app"
+        },
+        {
+          "key" : "w",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Weather.app"
+        },
+        {
+          "key" : "S",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/System Settings.app"
         }
       ],
       "key" : "o",
@@ -151,6 +163,19 @@
       ],
       "key" : "f",
       "label" : "Folders",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "g",
+          "label" : "GitHub",
+          "type" : "url",
+          "value" : "https://github.com"
+        }
+      ],
+      "key" : "w",
+      "label" : "Websites",
       "type" : "group"
     }
   ],
