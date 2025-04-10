@@ -28,7 +28,6 @@ brew "aliae"                    # cross platform shell manager
 brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
 brew "btop"                     # system monitor
-brew "dockutil"                 # dock manager
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
 brew "fastfetch"                # system info fetcher
