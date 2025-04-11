@@ -17,7 +17,6 @@
 
 tap "homebrew/bundle"                 # brewfile commands
 tap "homebrew/services"               # system services
-
 # tap "boldandbrad/tap"                 # stuff made by me :)
 
 ################################################################
@@ -38,7 +37,7 @@ brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "neovim"                   # text editor
 brew "oh-my-posh"               # cross-shell prompt engine
-brew "pastel"                   # color manipulator
+# brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
 brew "tlrc"                     # concise man page client
 brew "tmux"                     # terminal multiplexer
@@ -52,26 +51,19 @@ brew "zsh"                      # system zsh replacement
 # desktop apps                                                 #
 ################################################################
 
-cask "arc"                      # web browser
-# cask "balenaetcher"             # boot drive imager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
 cask "ghostty"                  # terminal emulator
-# cask "keka"                     # archive handler
-# cask "kekaexternalhelper"       # keka helper
 cask "leader-key"               # leader key based launcher
-cask "mactracker"               # apple product info
-# cask "obs"                      # streaming suite
-cask "obsidian"                 # markdown note manager
+# cask "obsidian"                 # markdown note manager
 cask "proton-drive"             # cloud file storage client
 cask "proton-mail"              # email client
 cask "proton-pass"              # password manager
 cask "protonvpn"                # vpn client
-# cask "raspberry-pi-imager"      # pi boot drive imager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
-cask "vscodium"                 # text editor
+# cask "vscodium"                 # text editor
 cask "wezterm"                  # terminal emulator
 
 ################################################################
@@ -83,7 +75,6 @@ brew "exercism"                 # cli coding exercise client
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
-# cask "httpie"                   # desktop http client
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
@@ -99,6 +90,7 @@ brew "tokei"                    # code line counter
 brew "uv"                       # python package manager
 # cask "vagrant"                  # virtual env manager
 # brew "vercel-cli"               # deployments and hosting
+cask "yaak"                     # desktop http client
 
 ################################################################
 # fonts                                                        #
@@ -110,7 +102,7 @@ cask "font-anonymice-nerd-font"
 # cask "font-caskaydia-cove-nerd-font"
 # cask "font-fira-code"
 # cask "font-fira-code-nerd-font"
-cask "font-inter"
+# cask "font-inter"
 
 ################################################################
 # games                                                        #
@@ -124,5 +116,5 @@ cask "minecraft"                # minecraft launcher
 cask "steam"                    # game marketplace and launcher
 
 ################################################################
-# new additions (via "brew add")                               #
+# new additions (via "brew bundle add")                        #
 ################################################################
