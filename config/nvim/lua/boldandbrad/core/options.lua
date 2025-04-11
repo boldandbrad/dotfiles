@@ -29,6 +29,7 @@ local options = {
   tabstop = 2,                                 -- number of spaces to insert for a tab
   termguicolors = true,                        -- true color support
   undofile = true,                             -- enable persistent undo history
+  winborder = "rounded",                       -- rounded borders for floating windows
   wrap = false,                                -- disable line wrap
 }
 
@@ -55,9 +56,4 @@ vim.diagnostic.config({
     header = "",
     prefix = "",
   }
-})
-
--- change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
 })
