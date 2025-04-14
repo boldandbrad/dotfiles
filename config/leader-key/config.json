@@ -71,6 +71,11 @@
           "key" : "S",
           "type" : "application",
           "value" : "/System/Applications/System Settings.app"
+        },
+        {
+          "key" : "R",
+          "type" : "application",
+          "value" : "/Applications/Raycast.app"
         }
       ],
       "iconPath" : "app",
@@ -81,34 +86,81 @@
     {
       "actions" : [
         {
+          "iconPath" : "face.smiling.inverse",
           "key" : "e",
           "label" : "Emoji",
           "type" : "url",
           "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
+          "iconPath" : "paintpalette",
           "key" : "c",
           "label" : "Color",
           "type" : "url",
           "value" : "raycast://extensions/thomas/color-picker/pick-color"
         },
         {
+          "iconPath" : "video",
           "key" : "g",
           "label" : "Gif",
           "type" : "url",
           "value" : "raycast://extensions/josephschmitt/gif-search/search"
         },
         {
+          "iconPath" : "document",
           "key" : "f",
           "label" : "File",
           "type" : "url",
           "value" : "raycast://extensions/raycast/file-search/search-files"
         },
         {
+          "iconPath" : "rectangle.3.group",
           "key" : "w",
           "label" : "Window",
           "type" : "url",
           "value" : "raycast://extensions/raycast/navigation/switch-windows"
+        },
+        {
+          "iconPath" : "list.bullet.clipboard",
+          "key" : "b",
+          "label" : "Clipboard History",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+        },
+        {
+          "iconPath" : "menubar.rectangle",
+          "key" : "i",
+          "label" : "Menu Items",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/navigation/search-menu-items"
+        },
+        {
+          "iconPath" : "safari",
+          "key" : "t",
+          "label" : "Safari Tabs",
+          "type" : "url",
+          "value" : "raycast://extensions/loris/safari/cloud-tabs"
+        },
+        {
+          "iconPath" : "camera.metering.center.weighted.average",
+          "key" : "s",
+          "label" : "Screenshots",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/screenshots/search-screenshots"
+        },
+        {
+          "iconPath" : "music.quarternote.3",
+          "key" : "M",
+          "label" : "Music",
+          "type" : "url",
+          "value" : "raycast://extensions/mattisssa/spotify-player/search"
+        },
+        {
+          "iconPath" : "music.note",
+          "key" : "m",
+          "label" : "Music Library",
+          "type" : "url",
+          "value" : "raycast://extensions/mattisssa/spotify-player/yourLibrary"
         }
       ],
       "iconPath" : "list.bullet.rectangle",
@@ -164,6 +216,30 @@
           "label" : "GitHub",
           "type" : "url",
           "value" : "https://github.com"
+        },
+        {
+          "key" : "y",
+          "label" : "YouTube",
+          "type" : "url",
+          "value" : "https://youtube.com"
+        },
+        {
+          "key" : "b",
+          "label" : "BoardGameGeek",
+          "type" : "url",
+          "value" : "https://boardgamegeek.com"
+        },
+        {
+          "key" : "l",
+          "label" : "Lego",
+          "type" : "url",
+          "value" : "https://lego.com"
+        },
+        {
+          "key" : "L",
+          "label" : "Bricklink",
+          "type" : "url",
+          "value" : "https://bricklink.com"
         }
       ],
       "iconPath" : "bookmark",
@@ -228,6 +304,27 @@
           "label" : "Fullscreen",
           "type" : "url",
           "value" : "raycast://extensions/raycast/window-management/toggle-fullscreen"
+        },
+        {
+          "iconPath" : "squares.leading.rectangle",
+          "key" : "s",
+          "label" : "Stage Manager",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/system/toggle-stage-manager"
+        },
+        {
+          "iconPath" : "desktopcomputer",
+          "key" : "d",
+          "label" : "Show Desktop",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/system/show-desktop"
+        },
+        {
+          "iconPath" : "arrow.trianglehead.counterclockwise.rotate.90",
+          "key" : "r",
+          "label" : "Restore",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/restore"
         }
       ],
       "iconPath" : "uiwindow.split.2x1",
