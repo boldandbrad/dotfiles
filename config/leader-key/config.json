@@ -4,90 +4,77 @@
       "actions" : [
         {
           "key" : "e",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Mail.app"
         },
         {
           "key" : "s",
-          "label" : "",
           "type" : "application",
           "value" : "/Applications/Spotify.app"
         },
         {
           "key" : "m",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Messages.app"
         },
         {
           "key" : "d",
-          "label" : "",
           "type" : "application",
           "value" : "/Applications/Discord.app"
         },
         {
           "key" : "b",
-          "label" : "",
           "type" : "application",
           "value" : "/Applications/Safari.app"
         },
         {
           "key" : "g",
-          "label" : "",
           "type" : "application",
           "value" : "/Applications/Steam.app"
         },
         {
           "key" : "p",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Passwords.app"
         },
         {
           "key" : "i",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Photos.app"
         },
         {
           "key" : "c",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Calendar.app"
         },
         {
           "key" : "n",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Notes.app"
         },
         {
           "key" : "r",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Reminders.app"
         },
         {
           "key" : "t",
-          "label" : "",
           "type" : "application",
           "value" : "/Applications/WezTerm.app"
         },
         {
           "key" : "w",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Weather.app"
         },
         {
           "key" : "S",
-          "label" : "",
           "type" : "application",
           "value" : "/System/Applications/System Settings.app"
         }
       ],
-      "key" : "o",
+      "iconPath" : "app",
+      "key" : "a",
       "label" : "Apps",
       "type" : "group"
     },
@@ -116,8 +103,15 @@
           "label" : "File",
           "type" : "url",
           "value" : "raycast://extensions/raycast/file-search/search-files"
+        },
+        {
+          "key" : "w",
+          "label" : "Window",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/navigation/switch-windows"
         }
       ],
+      "iconPath" : "list.bullet.rectangle",
       "key" : "p",
       "label" : "Pickers",
       "type" : "group"
@@ -125,6 +119,7 @@
     {
       "actions" : [
         {
+          "iconPath" : "house",
           "key" : "h",
           "label" : "Home",
           "type" : "folder",
@@ -132,23 +127,21 @@
         },
         {
           "key" : "d",
-          "label" : "",
           "type" : "folder",
           "value" : "/Users/boldandbrad/Documents"
         },
         {
           "key" : "c",
-          "label" : "",
           "type" : "folder",
           "value" : "/Users/boldandbrad/Dotfiles"
         },
         {
           "key" : "w",
-          "label" : "",
           "type" : "folder",
           "value" : "/Users/boldandbrad/Downloads"
         },
         {
+          "iconPath" : "cloud",
           "key" : "i",
           "label" : "iCloud",
           "type" : "folder",
@@ -156,7 +149,6 @@
         },
         {
           "key" : "a",
-          "label" : "",
           "type" : "folder",
           "value" : "/Applications"
         }
@@ -174,8 +166,73 @@
           "value" : "https://github.com"
         }
       ],
+      "iconPath" : "bookmark",
+      "key" : "b",
+      "label" : "Bookmarks",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "inset.filled.lefthalf.rectangle",
+          "key" : "h",
+          "label" : "Left Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/left-half"
+        },
+        {
+          "iconPath" : "inset.filled.righthalf.rectangle",
+          "key" : "l",
+          "label" : "Right Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/right-half"
+        },
+        {
+          "iconPath" : "inset.filled.rectangle",
+          "key" : "m",
+          "label" : "Maximize",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/maximize"
+        },
+        {
+          "iconPath" : "inset.filled.center.rectangle",
+          "key" : "v",
+          "label" : "Almost Maximize",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/almost-maximize"
+        },
+        {
+          "iconPath" : "inset.filled.bottomright.rectangle",
+          "key" : "n",
+          "label" : "Reasonable Size",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/reasonable-size"
+        },
+        {
+          "iconPath" : "inset.filled.bottomthird.rectangle",
+          "key" : "j",
+          "label" : "Bottom Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/bottom-half"
+        },
+        {
+          "iconPath" : "inset.filled.topthird.rectangle",
+          "key" : "k",
+          "label" : "Top Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/top-half"
+        },
+        {
+          "iconPath" : "arrow.down.left.and.arrow.up.right.rectangle",
+          "key" : "f",
+          "label" : "Fullscreen",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/toggle-fullscreen"
+        }
+      ],
+      "iconPath" : "uiwindow.split.2x1",
       "key" : "w",
-      "label" : "Websites",
+      "label" : "Windows",
       "type" : "group"
     }
   ],
