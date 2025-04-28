@@ -7,8 +7,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   SHOW_ALL="`defaults read com.apple.Finder AppleShowAllFiles`"
 
   # toggle value
-  if [ $SHOW_ALL == "true" ];
-  then
+  if [[ $SHOW_ALL == "true" ]]; then
     defaults write com.apple.Finder AppleShowAllFiles false
     echo "No longer showing hidden files in Finder."
   else
@@ -18,6 +17,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # restart Finder app
   killall Finder
-elif
-  echo "This script only supports macOS"
+else
+  echo "This script only supports macOS."
 fi
