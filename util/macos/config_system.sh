@@ -28,13 +28,15 @@ echo "Mapped Caps Lock to Esc!"
 # macOS system settings                                        #
 ################################################################
 
+###########
 # general #
+###########
 
 # TODO: nightshift sunset to sunrise
 
 # TODO: date format to YYYY-MM-DD
 
-# TODO: double click title bar to minimize
+# TODO: double click title bar to do nothing
 
 # TODO: enable stage manager
 
@@ -42,20 +44,24 @@ echo "Mapped Caps Lock to Esc!"
 
 # TODO: ask to keep changes when closing documents
 
-# TODO: don't automatically rearrange spaces based on recent use
+# don't automatically rearrange spaces based on recent use
+defaults write com.apple.dock mru-spaces -bool false
 
 # TODO: don't start screensaver when inactive
 
-# TODO: require password immediately
-
+# require password immediately after sleep or screensaver
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 # TODO: enable dictation
 
+########
 # dock #
+########
 
 # dock icon size
 defaults write com.apple.dock "tilesize" -int "36"
 # autohide dock
-defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "autohide" -bool true
 # autohide dock instantly
 defaults write com.apple.dock "autohide-time-modifier" -float "0"
 # do not show recent items in dock
@@ -66,22 +72,30 @@ defaults write com.apple.dock "mineffect" -string "scale"
 defaults delete com.apple.dock persistent-apps
 killall Dock
 
+##########
 # finder #
+##########
 
-# TODO: show hidden files
-
-# show file extensions in finder
-defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+# show hidden files
+defaults write com.apple.finder AppleShowAllFiles -bool true
+# show all file extensions in finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 # show finder pathbar
-defaults write com.apple.finder "ShowPathbar" -bool "true"
+defaults write com.apple.finder ShowPathbar -bool true
 # sort folders on top
-defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # open folders in new windows
-defaults write com.apple.finder "FinderSpawnTab" -bool "false"
+defaults write com.apple.finder FinderSpawnTab -bool false
 # do not display warning when changing file extensions
-defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
-# TODO: show Connected Servers on desktop
-
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# show connected drives, servers, and media on desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # TODO: new finder windows show Documents
 
 # TODO: set sidebar items -> Home, Dotfiles, Docuemnts, Developer, Applications, Desktop, Pictures, Music, Movies, AirDrop, Downloads
@@ -90,7 +104,9 @@ defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
 
 killall Finder
 
+############################
 # menubar & control center #
+############################
 
 # TODO: don't show display, sound, siri, spotlight, or now playing in menubar
 
@@ -104,7 +120,9 @@ killall Finder
 defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
 killall SystemUIServer
 
+####################
 # mouse & trackpad #
+####################
 
 # TODO: pointer size
 
@@ -116,7 +134,9 @@ defaults write NSGlobalDomain com.apple.mouse.scaling -float "3"
 defaults write com.apple.AppleMultitouchTrackpad "Clicking" -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "Clicking" -bool "true"
 
+############
 # keyboard #
+############
 
 # enable moving ui focus via tab and shift tab
 defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
