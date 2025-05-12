@@ -56,13 +56,6 @@ bindkey '^n' history-search-forward
 # zsh config directory
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
-if [[ -d $zsh_dir ]]; then
-  # source functions
-  for func_file in "$zsh_dir"/lib/*; do
-    source ${func_file}
-  done
-fi
-
 # set options ------------------------------------------------ #
 
 # configure history file
