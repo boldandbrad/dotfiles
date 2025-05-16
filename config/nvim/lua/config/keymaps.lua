@@ -18,20 +18,20 @@ vim.g.maplocalleader = ","
 ----------------------------------------------------------------
 
 -- format current buffer
-keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", noremap = true, silent = true })
+keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
 
 -- split window below
-keymap("n", "<leader>-", "<cmd>split<cr>", { desc = "Split window below", noremap = true, silent = true })
+keymap("n", "<leader>-", "<cmd>split<cr>", { desc = "Split window below", unpack(opts) })
 
 -- split window right
-keymap("n", "<leader>|", "<cmd>vsplit<cr>", { desc = "Split window right", noremap = true, silent = true })
+keymap("n", "<leader>|", "<cmd>vsplit<cr>", { desc = "Split window right", unpack(opts) })
 
 -- navigate splits
-keymap("n", "<leader><tab>", "<C-w>w", { desc = "Move to next split", noremap = true, silent = true })
-keymap("n", "<leader>H", "<C-w>h", { desc = "Move to split left", noremap = true, silent = true })
-keymap("n", "<leader>J", "<C-w>j", { desc = "Move to split down", noremap = true, silent = true })
-keymap("n", "<leader>K", "<C-w>k", { desc = "Move to split up", noremap = true, silent = true })
-keymap("n", "<leader>L", "<C-w>l", { desc = "Move to split right", noremap = true, silent = true })
+keymap("n", "<leader><tab>", "<C-w>w", { desc = "Move to next split", unpack(opts) })
+keymap("n", "<leader>H", "<C-w>h", { desc = "Move to split left", unpack(opts) })
+keymap("n", "<leader>J", "<C-w>j", { desc = "Move to split down", unpack(opts) })
+keymap("n", "<leader>K", "<C-w>k", { desc = "Move to split up", unpack(opts) })
+keymap("n", "<leader>L", "<C-w>l", { desc = "Move to split right", unpack(opts) })
 
 -- move lines up or down
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
@@ -41,7 +41,9 @@ keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
 keymap("n", "[q", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
 keymap("n", "]q", "<cmd>cnext<cr>", { desc = "Next quickfix" })
 
-keymap("n", "<leader>[", "<cmd>b#<cr>", { desc = "Jump to last buffer", noremap = true, silent = true })
+keymap("n", "<leader>[", "<cmd>b#<cr>", { desc = "Jump to last buffer", unpack(opts) })
+
+keymap("n", "<leader>c", "<cmd>noh<cr>", { desc = "Clear highlights", unpack(opts) })
 
 ----------------------------------------------------------------
 -- insert mode ("i")                                          --

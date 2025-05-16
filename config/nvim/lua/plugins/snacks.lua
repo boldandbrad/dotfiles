@@ -81,7 +81,7 @@ return {
     { "<leader>ff", function() Snacks.picker.files() end,                                   desc = "Find files" },
     { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find git files" },
     { "<leader>fr", function() Snacks.picker.recent() end,                                  desc = "Find recent files" },
-    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find config rile" },
+    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find config file" },
     { "<leader>fb", function() Snacks.picker.buffers() end,                                 desc = "Find buffers" },
     { "<leader>fl", function() Snacks.picker.lines() end,                                   desc = "Find lines" },
     { "<leader>fp", function() Snacks.picker.lazy() end,                                    desc = "Find plugin spec" },
