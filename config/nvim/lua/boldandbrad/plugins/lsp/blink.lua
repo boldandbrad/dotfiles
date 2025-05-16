@@ -5,8 +5,7 @@ return {
       "folke/lazydev.nvim",
       "rafamadriz/friendly-snippets",
     },
-    version = 'v0.*',
-    enabled = true,
+    version = 'v1.*',
     opts = {
       sources = {
         default = { "lsp", "path", "snippets", "lazydev" },
@@ -28,7 +27,6 @@ return {
           auto_brackets = { enabled = true },
         },
         menu = {
-          border = "rounded",
           draw = {
             columns = {
               { "label", "label_description", gap = 1 }, { "kind" }
@@ -37,10 +35,10 @@ return {
         },
         documentation = {
           auto_show = true,
-          window = { border = "rounded" },
         },
         ghost_text = { enabled = true },
       },
+      signature = { enabled = true },
       keymap = {
         preset = "default",
       },
