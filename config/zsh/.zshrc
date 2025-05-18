@@ -51,11 +51,6 @@ bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# source functions ------------------------------------------- #
-
-# zsh config directory
-zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
-
 # set options ------------------------------------------------ #
 
 # configure history file

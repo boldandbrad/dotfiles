@@ -1,12 +1,11 @@
 # os files
 .DS_Store
 
+# allow .github directory contents and .files in nvim find files results
+!.github/
+!.gitignore
+!config/zsh/.*
+
 # zsh files
 config/zsh/.zcompcache
 config/zsh/.zcompdump
-
-# brew lock files
-util/macos/brew/*.lock.json
-
-# allow .github directory contents in nvim telescope find files results
-!.github/
