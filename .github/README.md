@@ -1,6 +1,6 @@
 # 🏠 boldandbrad's humble dotfiles
 
-![screenshot](../assets/desktop_2025-02-12.png)
+![screenshot](./assets/desktop_2025-02-12.png)
 
 ---
 
