@@ -4,7 +4,7 @@
 # -> symlinked to ~/.config/zsh/.zshrc                         #
 #                                                              #
 # Executed when a new ZSH session is launched.                 #
-# Setup plugins, zstyles, keybinds, functions, and options.    #
+# Setup plugins, zstyles, keybinds, and options.               #
 ################################################################
 
 # if not running interactively, do nothing

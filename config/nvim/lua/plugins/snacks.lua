@@ -48,10 +48,10 @@ return {
       },
     },
     words = {
-      debounce = 100
+      debounce = 100,
     },
     styles = {
-      lazygit = { border = "rounded" }
+      lazygit = { border = "rounded" },
     },
   },
   keys = {
@@ -74,11 +74,11 @@ return {
     {
       "<leader>fe",
       function()
-        Snacks.picker.explorer({ layout = { layout = { position = "right" } } })
+        Snacks.picker.explorer({ hidden = true, layout = { layout = { position = "right" } } })
       end,
       desc = "File explorer"
     },
-    { "<leader>ff", function() Snacks.picker.files() end,                                   desc = "Find files" },
+    { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end,                  desc = "Find files" },
     { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find git files" },
     { "<leader>fr", function() Snacks.picker.recent() end,                                  desc = "Find recent files" },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find config file" },
