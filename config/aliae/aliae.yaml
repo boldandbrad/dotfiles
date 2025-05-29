@@ -163,6 +163,8 @@ alias:
     value: cp -Riv
   - name: dust
     value: dust -r
+  - name: tokei
+    value: tokei --sort lines
 
   # other niceties
   - name: clr
