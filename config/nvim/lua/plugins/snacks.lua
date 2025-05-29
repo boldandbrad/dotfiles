@@ -56,20 +56,21 @@ return {
   },
   keys = {
     -- bufdelete
-    { "<leader>bd", function() Snacks.bufdelete() end,              desc = "Delete buffer" },
-    { "<leader>bD", function() Snacks.bufdelete.all() end,          desc = "Delete all buffers" },
-    { "<leader>bo", function() Snacks.bufdelete.other() end,        desc = "Delete all buffers except current" },
+    { "<leader>bd",      function() Snacks.bufdelete() end,              desc = "Delete buffer" },
+    { "<leader>bD",      function() Snacks.bufdelete.all() end,          desc = "Delete all buffers" },
+    { "<leader>bo",      function() Snacks.bufdelete.other() end,        desc = "Delete all buffers except current" },
 
     -- gitbrowse
-    { "<leader>go", function() Snacks.gitbrowse() end,              desc = "Open current buffer on GitHub" },
+    { "<leader>go",      function() Snacks.gitbrowse() end,              desc = "Open current buffer on GitHub" },
 
     -- lazygit
-    { "<leader>G",  function() Snacks.lazygit() end,                desc = "Open LazyGit" },
+    { "<leader>G",       function() Snacks.lazygit() end,                desc = "Open LazyGit" },
 
     -- picker
-    { "<leader>/",  function() Snacks.picker.grep() end,            desc = "Grep text" },
-    { "<leader>:",  function() Snacks.picker.command_history() end, desc = "Search command history" },
-    { "<leader>;",  function() Snacks.picker.resume() end,          desc = "Resume last picker" },
+    { "<leader><space>", function() Snacks.picker.smart() end,           desc = "Smart Find Files" },
+    { "<leader>/",       function() Snacks.picker.grep() end,            desc = "Grep text" },
+    { "<leader>:",       function() Snacks.picker.command_history() end, desc = "Search command history" },
+    { "<leader>;",       function() Snacks.picker.resume() end,          desc = "Resume last picker" },
 
     {
       "<leader>fe",
