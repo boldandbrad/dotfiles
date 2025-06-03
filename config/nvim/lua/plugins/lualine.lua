@@ -6,14 +6,12 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "rmagatti/auto-session",
-    "cbochs/grapple.nvim",
   },
   opts = {
     sections = {
       lualine_c = {
         require("auto-session.lib").current_session_name,
         "filename",
-        "grapple",
       }
     },
     options = {
