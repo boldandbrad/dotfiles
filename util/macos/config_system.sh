@@ -14,7 +14,7 @@ touch ~/.hushlogin
 
 # set desktop wallpaper
 # NOTE: this may cause macOS to prompt the user to provide their terminal emulator with home folder access
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Dotfiles/assets/wallpapers/apple-black-4k.png\" as POSIX file"
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Dotfiles/util/macos/wallpapers/apple-black-4k.png\" as POSIX file"
 echo "Set desktop wallpaper!"
 
 # map caps lock key to escape - courtesy of https://stackoverflow.com/a/46460200/19295049
