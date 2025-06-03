@@ -103,6 +103,8 @@ cask "font-anonymice-nerd-font"
 # cask "font-fira-code"
 # cask "font-fira-code-nerd-font"
 # cask "font-inter"
+cask "font-maple-mono"
+cask "font-maple-mono-nf"
 
 ################################################################
 # games                                                        #

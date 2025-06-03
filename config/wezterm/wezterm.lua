@@ -57,10 +57,11 @@ config.command_palette_fg_color = "#cdd6f4"
 
 -- font
 config.font = wezterm.font_with_fallback {
+  { family = "Maple Mono NF",          weight = "Regular" },
   { family = "AnonymicePro Nerd Font", weight = "Regular" },
   "Apple Color Emoji",
 }
-config.font_size = 16
+config.font_size = 15
 
 -- tab bar
 config.use_fancy_tab_bar = false
