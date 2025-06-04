@@ -216,10 +216,6 @@ setup_dotfiles
 config_system
 clone_repos
 
-# TODO: change default shell to homebrew zsh on macOS
-# TODO: vscodium extensions
-# TODO: debian linux support
-
 set +e
 
 echo
