@@ -42,8 +42,6 @@ brew "ripgrep"                  # grep alternative
 brew "tlrc"                     # concise man page client
 brew "tmux"                     # terminal multiplexer
 # brew "vhs"                      # session recorder
-# brew "viddy"                    # watch alternative
-brew "xdg-ninja"                # home dir cleaner
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 
@@ -60,7 +58,7 @@ cask "leader-key"               # leader key based launcher
 cask "proton-drive"             # cloud file storage client
 cask "proton-mail"              # email client
 cask "proton-pass"              # password manager
-cask "protonvpn"                # vpn client
+# cask "protonvpn"                # vpn client
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 # cask "vscodium"                 # text editor
@@ -71,7 +69,6 @@ cask "wezterm"                  # terminal emulator
 ################################################################
 
 brew "deno"                     # js/ts runtime & toolchain
-brew "exercism"                 # cli coding exercise client
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
 # brew "gradle"                   # java build tool
@@ -85,7 +82,7 @@ brew "podman"                   # cli container client
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
 brew "taplo"                    # toml toolchain
-cask "temurin"                  # jdk
+cask "temurin"                  # java development kit
 brew "tokei"                    # code line counter
 brew "uv"                       # python package manager
 # cask "vagrant"                  # virtual env manager
