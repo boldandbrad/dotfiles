@@ -7,7 +7,6 @@
 # dotfiles repo and to run the install script.                 #
 #                                                              #
 # OPTIONS:                                                     #
-#   --auto-yes: Skip all prompts, and auto-accept all changes  #
 #   --no-clear: Don't clear the screen before running          #
 #                                                              #
 # IMPORTANT: Read and understand contents before running.      #
@@ -41,10 +40,9 @@ fi
 
 # print help
 if [[ $PARAMS == *"--help"* ]] ; then
-  echo -e "usage: ./ship.sh [--help] [--auto-yes] [--no-clear]\n\n"\
+  echo -e "usage: ./ship.sh [--help] [--no-clear]\n\n"\
   "Intended for remote use only. Prompt the user to clone dotfiles repo and to run the install script.\n\n"\
   "OPTIONS:\n"\
-  "\t--auto-yes\tSkip all prompts, and auto accept all changes\n"\
   "\t--no-clear\tDon't clear the screen before running\n"\
   "\t--help\t\tPrint this message and exit"
   exit 0
