@@ -69,7 +69,7 @@ docs for each.
 
 ## 📦 Unpack
 
-This repo's contents can be automatically installed with
+The [contents](#contents) of this repo can be automatically installed with
 [`unpack.sh`](../unpack.sh). The unpack script explains what it will do, prompts
 the user before each step, and is idempotent. This means it can be safely run
 multiple times to keep the system in sync without compounding changes or
@@ -133,7 +133,6 @@ To make system maintanence simpler after unpacking, a handful of convenient
 
 | Command       | Description                                                 |
 | ------------- | ----------------------------------------------------------- |
-| `sys-refresh` | Rerun system setup ([`unpack.sh`](../unpack.sh))            |
 | `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
 | `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
 | `dot-relink`  | Relink installed dotfiles                                   |

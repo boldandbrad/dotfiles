@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# manage user dotfiles
+
+help() {
+	echo "dots - dotfile management"
+	echo ""
+	echo "Usage: dots [options]"
+	echo ""
+	echo "Options:"
+	echo "  -e, --edit    Open dotfiles directory for editing"
+	echo "  -h, --help    Show this help message and exit"
+	echo "  -i, --install Run dotfile unpack"
+	exit
+}
+
+edit() {
+  exec "$EDITOR" "$DOTFILES"
+  exit
+}
+
+install() {
+  exec "$DOTFILES/unpack.sh"
+  exit
+}
+
+while test $# -gt 0; do
+	case "$1" in
+		"-h"|"--help")
+			help
+			;;
+		"-e"|"--edit")
+			edit
+      ;;
+		"-i"|"--install")
+		  install
+      ;;
+		*)
+			echo "Invalid option: $1"
+			help
+			;;
+	esac
+	shift
+done
+
+help

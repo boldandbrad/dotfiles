@@ -114,8 +114,6 @@ alias:
   # value: cd `git rev-parse --show-toplevel`
 
   # dotfiles
-  - name: sys-refresh
-    value: $DOTFILES/unpack.sh
   - name: dot-relink
     value: eval $(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)
   - name: zsh-reload
