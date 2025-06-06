@@ -60,7 +60,9 @@ env:
   - name: FZF_DEFAULT_OPTS # fzf catppuccin theme
     value: "--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
       --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
-      --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+      --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+      --color=selected-bg:#45475a
+      --color=border:#313244,label:#cdd6f4"
   - name: ZVM_CURSOR_STYLE_ENABLED # disable zsh-vi-mode from changing cursor styles
     value: "false"
 

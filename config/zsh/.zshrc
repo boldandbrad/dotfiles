@@ -20,7 +20,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # install/initialize zsh plugins
 zinit light Aloxaf/fzf-tab
-zinit light djui/alias-tips
 zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
@@ -37,6 +36,8 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*'
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
+
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # color tab completed paths
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
