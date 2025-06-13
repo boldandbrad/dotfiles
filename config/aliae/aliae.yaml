@@ -5,7 +5,7 @@
 env:
   # default tools
   - name: BROWSER
-    value: arc
+    value: safari
   - name: EDITOR
     value: nvim
   - name: PAGER
@@ -83,7 +83,7 @@ path:
       /bin
   - value: |
       /System/Cryptexes/App/usr/bin
-    # are these needed?
+    # TODO: are these needed?
     # /Library/Apple/usr/bin
     # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin
     # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin
@@ -112,8 +112,9 @@ alias:
     value: cd $DOTFILES
   - name: cfg
     value: cd $XDG_CONFIG_HOME
-  # - name: cdr
-  # value: cd `git rev-parse --show-toplevel`
+  - name: cdr # git repo root
+    value: cd $(git rev-parse --show-toplevel)
+    type: function
 
   # dotfiles
   - name: dot-relink
