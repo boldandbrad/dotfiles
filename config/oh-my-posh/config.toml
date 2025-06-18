@@ -88,7 +88,7 @@ style = 'folder'
 
 [[blocks.segments]]
 style = 'plain'
-template = 'on <b><p:green>{{ .HEAD }}</>{{ if or (.Working.Changed) (.Staging.Changed) }}<p:yellow> *</>{{ end }}</b>'
+template = 'on <b><p:green>{{ .HEAD }}</>{{ if or (.Working.Changed) (.Staging.Changed) }} with<p:yellow> changes</>{{ end }}</b>'
 foreground = 'p:overlay0'
 type = 'git'
 
