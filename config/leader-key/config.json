@@ -161,6 +161,13 @@
           "label" : "Music Library",
           "type" : "url",
           "value" : "raycast://extensions/mattisssa/spotify-player/yourLibrary"
+        },
+        {
+          "iconPath" : "bookmark",
+          "key" : "B",
+          "label" : "Safari Bookmarks",
+          "type" : "url",
+          "value" : "raycast://extensions/loris/safari/search-bookmarks"
         }
       ],
       "iconPath" : "list.bullet.rectangle",
