@@ -122,8 +122,6 @@ alias:
   - name: zsh-reload
     value: exec zsh
     if: eq .Shell "zsh"
-  - name: git-reclone
-    value: $DOTFILES/util/tools/github/clone_repos.sh
 
   # tool replacements
   - name: vim

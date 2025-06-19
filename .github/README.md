@@ -82,7 +82,6 @@ In brief, unpacking does the following:
 - ⬇️ Installs or updates user packages and apps
 - 🔗 Symlinks user package and app configs
 - ⚙️ Applies user system settings
-- 🌱 Clones user github repos
 
 > [!WARNING]
 > Before unpacking, review the repo [contents](#contents) and backup any
@@ -140,7 +139,6 @@ To make system maintanence simpler after unpacking, a handful of convenient
 | `dep-check`   | Check if all apps and dependencies are installed            |
 | `dep-refresh` | Install/update all apps and dependencies                    |
 | `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
-| `git-reclone` | Reclone user github repos                                   |
 
 ---
 

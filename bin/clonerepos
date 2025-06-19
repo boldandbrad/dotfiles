@@ -1,25 +1,27 @@
 #!/usr/bin/env bash
 
 ################################################################
-# tools/github/clone_repos.sh - clone user's GitHub repos      #
+# bin/clonerepos - clone user's GitHub repos                   #
 ################################################################
-# Clone GitHub user's unarchived repos (except dotfiles), as   #
-# well as their organization(s)' repos.                        #
+# Clone GitHub user's unarchived repos (except dotfiles).      #
 #                                                              #
 # DESTINATIONS:                                                #
-#   Source repos    -> ~/Developer/github/USER|ORG/repos       #
-#   Forks           -> ~/Developer/github/USER|ORG/forks       #
+#   Source repos    -> ~/Developer/repos                       #
+#   Forks           -> ~/Developer/forks                       #
+#   Archived repos  -> ~/Developer/arhives                     #
 #   Private repos   -> Not yet supported                       #
 ################################################################
 
-# clone unarchived src repos
-function clone_src_repos () {
-  user_org=$1
-  echo -e "\nCloning $user_org's source repos..."
+export GITHUB_USER="boldandbrad"
+export DEV_DIR=~/Developer
+
+# clone unarchived repos
+function clone_repos () {
+  echo -e "\nCloning ${GITHUB_USER}'s repos..."
   gh repo list $1 --source --no-archived --limit 100 | while read line; do
     repo_full_name=$(echo "${line}" | cut -f1 | xargs)
     repo_short_name=$(echo "${repo_full_name}" | cut -d "/" -f2)
-    clone_path="${GITHUB_REPO_DIR}/$user_org/repos/$repo_short_name/"
+    clone_path="${DEV_DIR}/repos/$repo_short_name/"
 
     # skip dotfiles repo
     if [[ ! $repo_short_name = "dotfiles" ]]; then
@@ -28,7 +30,7 @@ function clone_src_repos () {
         echo "- Cloning $repo_full_name"
         gh repo clone $repo_full_name $clone_path -- -q
       else
-        echo " Skipping $repo_full_name. Already cloned!"
+        echo " Skipping $repo_full_name, already cloned."
       fi
     fi
   done
@@ -36,12 +38,11 @@ function clone_src_repos () {
 
 # clone unarchived forks
 function clone_forks () {
-  user_org=$1
-  echo -e "\nCloning $user_org's forks..."
+  echo -e "\nCloning ${GITHUB_USER}'s forks..."
   gh repo list $1 --fork --no-archived --limit 100 | while read line; do
     repo_full_name=$(echo "${line}" | cut -f1 | xargs)
     repo_short_name=$(echo "${repo_full_name}" | cut -d "/" -f2)
-    clone_path="${GITHUB_REPO_DIR}/$user_org/forks/$repo_short_name/"
+    clone_path="${DEV_DIR}/forks/$repo_short_name/"
 
     # skip dotfiles repo
     if [[ ! $repo_short_name = "dotfiles" ]]; then
@@ -50,7 +51,7 @@ function clone_forks () {
         echo "- Cloning $repo_full_name"
         gh repo clone $repo_full_name $clone_path -- -q
       else
-        echo " Skipping $repo_full_name. Already cloned!"
+        echo " Skipping $repo_full_name, already cloned."
       fi
     fi
   done
@@ -58,12 +59,11 @@ function clone_forks () {
 
 # clone archived repos
 function clone_archived_repos () {
-  user_org=$1
-  echo -e "\nCloning $user_org's forks..."
+  echo -e "\nCloning ${GITHUB_USER}'s archived repos..."
   gh repo list $1 --archived --limit 100 | while read line; do
     repo_full_name=$(echo "${line}" | cut -f1 | xargs)
     repo_short_name=$(echo "${repo_full_name}" | cut -d "/" -f2)
-    clone_path="${GITHUB_REPO_DIR}/$user_org/archived/$repo_short_name/"
+    clone_path="${DEV_DIR}/archives/$repo_short_name/"
 
     # skip dotfiles repo
     if [[ ! $repo_short_name = "dotfiles" ]]; then
@@ -72,7 +72,7 @@ function clone_archived_repos () {
         echo "- Cloning $repo_full_name"
         gh repo clone $repo_full_name $clone_path -- -q
       else
-        echo " Skipping $repo_full_name. Already cloned!"
+        echo " Skipping $repo_full_name, already cloned."
       fi
     fi
   done
@@ -87,22 +87,14 @@ if hash gh 2> /dev/null; then
   fi
 
   if gh auth status >/dev/null; then
-    # clone user's repos
-    clone_src_repos $GITHUB_USER
-    clone_forks $GITHUB_USER
-    # clone_archived_repos $GITHUB_USER
+    clone_repos
+    clone_forks
+    # clone_archived_repos
 
-    # clone user's org's repos
-    gh org list | while read org; do
-      clone_src_repos $org
-      clone_forks $org
-      # clone_archived_repos $org
-    done
-
-    echo -e "\n${GREEN_B}Repos cloned into ${GITHUB_REPO_DIR}!${RESET}"
+    echo -e "\n${GREEN_B}Repos cloned into ${DEV_DIR}!${RESET}"
   else
-    echo -e "\n${YELLOW_B}Skipping repo clones. Could not detect gh login. Try logging in via 'gh auth login' and rerun script.${RESET}"
+    echo -e "\n${YELLOW_B}Cannot clone repos, could not detect gh login. Try logging in via 'gh auth login' and then try again.${RESET}"
   fi
 else
-  echo -e "\n${YELLOW_B}Skipping repo clones. GitHub CLI is not installed.${RESET}"
+  echo -e "\n${YELLOW_B}Cannot clone repos, GitHub CLI is not installed.${RESET}"
 fi

@@ -20,7 +20,6 @@ export PROMPT_TIMEOUT=15 # when user is prompted for input, skip after x seconds
 
 export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
-export GITHUB_REPO_DIR=~/Developer/github
 
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/macos/brew/Brewfile"
@@ -85,7 +84,6 @@ function pre_setup () {
   "(3) Setup dotfiles\n"\
   "  - Symlink dotfiles to correct locations\n"\
   "(4) Configure system\n"\
-  "(5) Clone user repos\n\n"\
   "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}\n"
 
   # confirm the user would like to proceed
@@ -190,21 +188,6 @@ function config_system () {
   fi
 }
 
-function clone_repos () {
-  # confirm the user would like to clone repos
-  if [[ $AUTO_YES != true ]] ; then
-    echo -en "\n${BLUE_B}Would you like to clone ${GITHUB_USER}'s GitHub repos? (y/N):${RESET} "
-    read -t $PROMPT_TIMEOUT -n 1 -r ans_clone_repos && echo
-    if [[ ! $ans_clone_repos =~ ^[Yy]$ ]] && [[ $AUTO_YES != true ]] ; then
-      echo -e "\nSkipping GitHub repo clones."
-      return
-    fi
-  fi
-
-  # clone repos
-  $DOTFILES/util/tools/github/clone_repos.sh
-}
-
 # terminate on first failure
 set -e
 
@@ -214,7 +197,6 @@ update_system
 install_packages
 setup_dotfiles
 config_system
-clone_repos
 
 set +e
 
