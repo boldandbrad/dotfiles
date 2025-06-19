@@ -14,8 +14,6 @@
 # taps (homebrew/core and homebrew/cask are auto-tapped)       #
 ################################################################
 
-tap "homebrew/bundle"                 # brewfile commands
-tap "homebrew/services"               # system services
 # tap "boldandbrad/tap"                 # stuff made by me :)
 
 ################################################################

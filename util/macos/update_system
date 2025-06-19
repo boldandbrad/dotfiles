@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 ################################################################
-# macos/update_system.sh - update macOS software               #
+# macos/update_system - check for and install macOS updates    #
 ################################################################
 # Install Command Line Developer Tools and available macOS     #
 # software updates.                                            #
@@ -29,8 +29,16 @@ fi
 echo
 echo "Checking for available macOS software updates..."
 if softwareupdate -l 2>&1 | grep -q $Q "No new software available."; then
-  echo "${GREEN_B}macOS is up-to-date!${RESET}"
+  echo "${GREEN_B}No new software available.${RESET}"
 else
-  echo "Software updates available."
-	sudo softwareupdate --install --all --restart
+  echo "Software updates available:"
+  softwareupdate -l | tail -n +4
+
+  echo -en "\n${BLUE_B}Would you like to install the available updates? This will cause a restart. (y/N):${RESET} "
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_update && echo
+  if [[ ! $ans_update =~ ^[Yy]$ ]] ; then
+    echo -e "\nSkipping system updates."
+  else
+    sudo softwareupdate --install --all --restart
+  fi
 fi

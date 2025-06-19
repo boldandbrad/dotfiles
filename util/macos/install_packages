@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 ################################################################
-# macos/install_packages.sh - install macOS packages and apps  #
+# macos/install_packages - install macOS packages and apps     #
 ################################################################
 # Install macOS packages and apps from Brewfile.               #
 # See brew/Brewfile for a list of packages to be installed.    #
@@ -13,9 +13,9 @@ if ! type brew &>/dev/null; then
   echo "Installing Homebrew..."
   # nosemgrep
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit 1
-  echo -e "${GREEN_B}Homebrew is now installed!${RESET}"
+  echo -e "${GREEN_B}Homebrew is now installed.${RESET}"
 else
-  echo -e "${GREEN_B}Homebrew is already installed!${RESET}"
+  echo -e "${GREEN_B}Homebrew is already installed.${RESET}"
 fi
 
 export PATH=/opt/homebrew/bin:$PATH
@@ -27,9 +27,8 @@ brew analytics off
 # install apps and packages from brewfile via homebrew bundle
 echo
 echo "Installing macOS apps and packages from Brewfile..."
-brew tap homebrew/bundle
 if ! brew bundle check; then
-  brew bundle install --cleanup
+  brew bundle --cleanup
 fi
 
 # perform upgrades and cleanup

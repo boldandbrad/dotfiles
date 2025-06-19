@@ -70,36 +70,35 @@ function make_banner () {
   echo -e "\n${banner}\n${RESET}"
 }
 
-function pre_setup () {
+function intro () {
   # welcome banner
   make_banner "${GITHUB_USER}/dotfiles - Install" "${BLUE_B}" "${BLUE_B}"
 
   # explain to the user what changes will be made
   echo -e "${BLUE_B}This install script will do the following:${RESET}\n"\
-  "(1) Pre-setup\n"\
-  "  - Check system compatibility\n"\
-  "(2) Install packages\n"\
-  "  - Check that system is up-to-date\n"\
-  "  - On macOS, install/update packages listed in Brewfile\n"\
-  "(3) Setup dotfiles\n"\
-  "  - Symlink dotfiles to correct locations\n"\
-  "(4) Configure system\n"\
+  "(1) Verify system compatibility and check for updates\n"\
+  "(2) Install packages and apps\n"\
+  "(3) Symlink dotfiles into place\n"\
+  "(4) Apply system configurations\n"\
   "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}\n"
 
   # confirm the user would like to proceed
   if [[ $AUTO_YES != true ]] ; then
     echo -e "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"
-    echo -en "\n${BLUE_B}Would you like to continue? (y/N):${RESET} "
+    echo -en "${BLUE_B}Would you like to continue? (y/N):${RESET} "
     read -t $PROMPT_TIMEOUT -n 1 -r ans_start && echo
     if [[ ! $ans_start =~ ^[Yy]$ ]] ; then
       echo -e "\nInstallation canceled. Terminating..."
       exit 0
     fi
   fi
+}
 
+function check_system () {
   # verify system compatibility
+  echo -e "\nChecking for system compatibility..."
   if [ "$SYSTEM_TYPE" == "Darwin" ]; then
-    return
+    echo -e "${GREEN_B}System is compatible. Continuing...${RESET}"
   elif [ "$SYSTEM_TYPE" == "Linux" ]; then
     DISTRO=$(grep ^ID= /etc/os-release | cut -d'=' -f2)
     if [ "$DISTRO" != "alpine" ]; then
@@ -111,12 +110,10 @@ function pre_setup () {
     echo -e "\n${RED_B}${SYSTEM_TYPE} not supported. Terminating...${RESET}"
     exit 1
   fi
-}
 
-function update_system () {
-  # confirm the user would like to update the system
+  # confirm the user would like to check for system updates
   if [[ $AUTO_YES != true ]] ; then
-    echo -en "\n${BLUE_B}Would you like to update the system? (y/N):${RESET} "
+    echo -en "\n${BLUE_B}Would you like to check for updates? (y/N):${RESET} "
     read -t $PROMPT_TIMEOUT -n 1 -r ans_sysupdate && echo
     if [[ ! $ans_sysupdate =~ ^[Yy]$ ]] ; then
       echo -e "\nSkipping system updates."
@@ -128,7 +125,7 @@ function update_system () {
   if [ -z "${CI}" ]; then
     # update macOS system software
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-      $DOTFILES/util/macos/update_system.sh
+      $DOTFILES/util/macos/update_system
     elif [ "$DISTRO" == "alpine" ]; then
       $DOTFILES/util/linux/alpine/update_system.sh
     fi
@@ -151,11 +148,11 @@ function install_packages () {
   # install macOS packages
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     # install macOS packages and apps with homebrew
-    $DOTFILES/util/macos/install_packages.sh
+    $DOTFILES/util/macos/install_packages
   fi
 }
 
-function setup_dotfiles () {
+function link_dotfiles () {
   # confirm the user would like to symlink dotfiles
   if [[ $AUTO_YES != true ]] ; then
     echo -en "\n${BLUE_B}Would you like to install dotfiles? (y/N):${RESET} "
@@ -184,7 +181,7 @@ function config_system () {
 
   # perform macOS configuration
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    $DOTFILES/util/macos/config_system.sh
+    $DOTFILES/util/macos/config_system
   fi
 }
 
@@ -192,10 +189,10 @@ function config_system () {
 set -e
 
 # start!
-pre_setup
-update_system
+intro
+check_system
 install_packages
-setup_dotfiles
+link_dotfiles
 config_system
 
 set +e
