@@ -3,16 +3,16 @@
 # get mac system info
 
 help() {
-	echo "mac - mac system info"
-	echo ""
-	echo "Usage: mac [options]"
-	echo ""
-	echo "Options:"
-	echo "  -h, --help      Show this help message and exit"
-	echo "      --hardware  Show mac hardware info"
+  echo "mac - mac system info"
+  echo ""
+  echo "Usage: mac [options]"
+  echo ""
+  echo "Options:"
+  echo "  -h, --help      Show this help message and exit"
+  echo "      --hardware  Show mac hardware info"
   echo "      --software  Show mac software info"
   echo "      --serial    Show mac serial number"
-	exit
+  exit
 }
 
 hardware() {
@@ -32,25 +32,25 @@ serial() {
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   while test $# -gt 0; do
-	  case "$1" in
-		  "-h"|"--help")
-			  help
-			  ;;
-		  "--hardware")
-			  hardware
+    case "$1" in
+      "-h"|"--help")
+        help
         ;;
-		  "--software")
-		    software
+      "--hardware")
+        hardware
+        ;;
+      "--software")
+        software
         ;;
       "--serial")
         serial
         ;;
-		  *)
-			  echo "Invalid option: $1"
-			  help
-			  ;;
-	  esac
-	  shift
+      *)
+        echo "Invalid option: $1"
+        help
+        ;;
+    esac
+    shift
   done
   help
 else

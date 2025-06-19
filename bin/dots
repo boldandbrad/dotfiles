@@ -3,16 +3,16 @@
 # manage user dotfiles
 
 help() {
-	echo "dots - dotfile management"
-	echo ""
-	echo "Usage: dots [options]"
-	echo ""
-	echo "Options:"
-	echo "  -e, --edit    Open dotfiles directory for editing"
-	echo "  -h, --help    Show this help message and exit"
-	echo "  -i, --install Run dotfile unpack"
+  echo "dots - dotfile management"
+  echo ""
+  echo "Usage: dots [options]"
+  echo ""
+  echo "Options:"
+  echo "  -e, --edit    Open dotfiles directory for editing"
+  echo "  -h, --help    Show this help message and exit"
+  echo "  -i, --install Run dotfile unpack"
   echo "  -s, --status  List changed dotfiles"
-	exit
+  exit
 }
 
 edit() {
@@ -32,25 +32,25 @@ status() {
 }
 
 while test $# -gt 0; do
-	case "$1" in
-		"-h"|"--help")
-			help
-			;;
-		"-e"|"--edit")
-			edit
+  case "$1" in
+    "-h"|"--help")
+      help
       ;;
-		"-i"|"--install")
-		  install
+    "-e"|"--edit")
+      edit
+      ;;
+    "-i"|"--install")
+      install
       ;;
     "-s"|"--status")
       status
       ;;
-		*)
-			echo "Invalid option: $1"
-			help
-			;;
-	esac
-	shift
+    *)
+      echo "Invalid option: $1"
+      help
+      ;;
+  esac
+  shift
 done
 
 help
