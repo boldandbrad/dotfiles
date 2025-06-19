@@ -34,8 +34,8 @@ keymap("n", "<leader>K", "<C-w>k", { desc = "Move to split up", unpack(opts) })
 keymap("n", "<leader>L", "<C-w>l", { desc = "Move to split right", unpack(opts) })
 
 -- move lines up or down
-keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
+keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
 
 -- navigate quickfix list
 keymap("n", "[q", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
