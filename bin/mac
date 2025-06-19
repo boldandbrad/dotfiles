@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #
-# get mac system info
+# mac system utility
+
+PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
 
 help() {
   echo "mac - mac system info"
@@ -12,6 +14,7 @@ help() {
   echo "      --hardware  Show mac hardware info"
   echo "      --software  Show mac software info"
   echo "      --serial    Show mac serial number"
+  echo "      --update    Check for system updates"
   exit
 }
 
@@ -30,6 +33,25 @@ serial() {
   exit
 }
 
+updates() {
+  echo "Checking for available macOS software updates..."
+  if softwareupdate -l 2>&1 | grep -q $Q "No new software available."; then
+    echo "No new software available."
+  else
+    echo "Software updates available:"
+    softwareupdate -l | tail -n +4
+
+    echo -en "\nWould you like to install the available updates? (y/N): "
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_update && echo
+    if [[ ! $ans_update =~ ^[Yy]$ ]] ; then
+      echo -e "\nSkipping system updates."
+      exit
+    fi
+    sudo softwareupdate --install --all --restart
+  fi
+  exit
+}
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   while test $# -gt 0; do
     case "$1" in
@@ -44,6 +66,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         ;;
       "--serial")
         serial
+        ;;
+      "--update")
+        updates
         ;;
       *)
         echo "Invalid option: $1"
