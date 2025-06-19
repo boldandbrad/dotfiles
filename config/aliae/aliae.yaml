@@ -162,8 +162,6 @@ alias:
     value: mv -iv
   - name: cp
     value: cp -Riv
-  - name: dust
-    value: dust -r
   - name: tokei
     value: tokei --sort lines
 
@@ -180,7 +178,7 @@ alias:
     value: clear; cd
     type: function
   - name: dud
-    value: du -d 1 -h
+    value: du -d 1 -h | sort -hr
   - name: duf
     value: du -sh * | sort -hr
   - name: lock

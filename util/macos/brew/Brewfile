@@ -27,7 +27,6 @@ brew "aliae"                    # cross platform shell manager
 brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
 brew "btop"                     # system monitor
-brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
 brew "fd"                       # find alternative
 brew "fzf"                      # fuzzy finder

@@ -15,7 +15,6 @@ echo "Alpine Linux installation coming soon..."
 # install packages with apk
 apk add bash
 apk add bat
-apk add dust
 apk add eza
 apk add git
 apk add zsh
