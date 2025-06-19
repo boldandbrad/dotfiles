@@ -261,8 +261,6 @@ link:
     target: '{{ env "DOTFILES" }}/config/bat'
   - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
     target: '{{ env "DOTFILES" }}/config/btop'
-  - name: '{{ env "XDG_CONFIG_HOME" }}/fastfetch'
-    target: '{{ env "DOTFILES" }}/config/fastfetch'
   - name: '{{ env "XDG_CONFIG_HOME" }}/oh-my-posh'
     target: '{{ env "DOTFILES" }}/config/oh-my-posh'
 

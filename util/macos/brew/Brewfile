@@ -29,7 +29,6 @@ brew "bat"                      # cat replacement
 brew "btop"                     # system monitor
 brew "dust"                     # disk space analyzer
 brew "eza"                      # ls replacement
-brew "fastfetch"                # system info fetcher
 brew "fd"                       # find alternative
 brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system

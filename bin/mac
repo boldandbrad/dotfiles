@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+# get mac system info
+
+help() {
+	echo "mac - mac system info"
+	echo ""
+	echo "Usage: mac [options]"
+	echo ""
+	echo "Options:"
+	echo "  -h, --help      Show this help message and exit"
+	echo "      --hardware  Show mac hardware info"
+  echo "      --software  Show mac software info"
+  echo "      --serial    Show mac serial number"
+	exit
+}
+
+hardware() {
+  system_profiler SPHardwareDataType | tail -n +4
+  exit
+}
+
+software() {
+  system_profiler SPSoftwareDataType | tail -n +4
+  exit
+}
+
+serial() {
+  system_profiler SPHardwareDataType | grep "Serial Number (system)" | awk '{ print $4 }'
+  exit
+}
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  while test $# -gt 0; do
+	  case "$1" in
+		  "-h"|"--help")
+			  help
+			  ;;
+		  "--hardware")
+			  hardware
+        ;;
+		  "--software")
+		    software
+        ;;
+      "--serial")
+        serial
+        ;;
+		  *)
+			  echo "Invalid option: $1"
+			  help
+			  ;;
+	  esac
+	  shift
+  done
+  help
+else
+  echo "Unsupported system: $OSTYPE"
+fi
