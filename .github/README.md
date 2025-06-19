@@ -116,9 +116,8 @@ version of this setup in a cozy alpine linux container (requires podman).
 
 ```sh
 git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
-cd ~/Dotfiles
-make build
-make run
+cd ~/Dotfiles/bin
+./dots --run
 ```
 
 ---

@@ -11,6 +11,7 @@ help() {
   echo "  -e, --edit    Open dotfiles directory for editing"
   echo "  -h, --help    Show this help message and exit"
   echo "  -i, --install Run dotfile unpack"
+  echo "      --run     Build and run dotfiles container"
   echo "  -s, --status  List changed dotfiles"
   exit
 }
@@ -31,6 +32,12 @@ status() {
   exit
 }
 
+run() {
+  podman build --dns=8.8.8.8 . -t boldandbrad/alpine:latest
+  podman run --dns=8.8.8.8 -it localhost/boldandbrad/alpine
+  exit
+}
+
 while test $# -gt 0; do
   case "$1" in
     "-h"|"--help")
@@ -44,6 +51,9 @@ while test $# -gt 0; do
       ;;
     "-s"|"--status")
       status
+      ;;
+    "--run")
+      run
       ;;
     *)
       echo "Invalid option: $1"
