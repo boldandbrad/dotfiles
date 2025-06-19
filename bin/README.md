@@ -11,6 +11,7 @@ Invoke these from anywhere.
 | Executable                            | Description                                                                                                  |
 | :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
 | [`cleanpods`](../bin/cleanpods)       | Clean podman caches without confirmation, and print podman disk usage                                        |
+| [`codext`](../bin/codext)             | Manage VSCodium extensions                                                                                   |
 | [`dots`](../bin/dots)                 | Manage dotfiles                                                                                              |
 | [`fixpics`](../bin/fixpics)           | Update the created and modified date for all images in the current directory to match their exif create date |
 | [`flushdns`](../bin/flushdns)         | Flush macOS dns records                                                                                      |
