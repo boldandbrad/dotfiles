@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # update the created and modified date for all images in the current directory to match their exif create date
 # requires exiftool

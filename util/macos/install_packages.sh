@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 ################################################################
 # macos/install_packages.sh - install macOS packages and apps  #

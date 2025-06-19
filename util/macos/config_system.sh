@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 ################################################################
 # macos/config_system.sh - set macOS system settings           #

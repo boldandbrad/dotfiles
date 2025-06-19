@@ -188,9 +188,11 @@ alias:
 
   # pretty print PATHs
   - name: path
-    value: echo $PATH | tr -s ":" "\n"
+    value: echo $PATH | tr ":" "\n"
+    type: function
   - name: fpath
-    value: echo $FPATH | tr -s ":" "\n"
+    value: echo $FPATH | tr ":" "\n"
+    type: function
 
   # import programming language aliases
   - !include "alias/lang.yaml"

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 ################################################################
 # macos/update_system.sh - update macOS software               #
