@@ -26,8 +26,9 @@ return {
   opts = {
     servers = {
       denols = {
-        -- handle markdown, html, css, and json
+        -- handle markdown, html, css, and json in addition to js/ts
         filetypes = { "javascript", "typescript", "markdown", "html", "css", "json", "yaml" },
+        root_dir = function() return vim.uv.cwd() end, -- run lsp for js/ts in any directory
       },
       gopls = {},
       lua_ls = {},
