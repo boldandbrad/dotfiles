@@ -257,8 +257,6 @@ link:
   # other configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/bat'
     target: '{{ env "DOTFILES" }}/config/bat'
-  - name: '{{ env "XDG_CONFIG_HOME" }}/btop'
-    target: '{{ env "DOTFILES" }}/config/btop'
   - name: '{{ env "XDG_CONFIG_HOME" }}/oh-my-posh'
     target: '{{ env "DOTFILES" }}/config/oh-my-posh'
 
