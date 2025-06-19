@@ -11,6 +11,7 @@ help() {
 	echo "  -e, --edit    Open dotfiles directory for editing"
 	echo "  -h, --help    Show this help message and exit"
 	echo "  -i, --install Run dotfile unpack"
+  echo "  -s, --status  List changed dotfiles"
 	exit
 }
 
@@ -24,6 +25,12 @@ install() {
   exit
 }
 
+status() {
+  cd $DOTFILES
+  git st
+  exit
+}
+
 while test $# -gt 0; do
 	case "$1" in
 		"-h"|"--help")
@@ -34,6 +41,9 @@ while test $# -gt 0; do
       ;;
 		"-i"|"--install")
 		  install
+      ;;
+    "-s"|"--status")
+      status
       ;;
 		*)
 			echo "Invalid option: $1"
