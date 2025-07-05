@@ -1,344 +1,349 @@
 {
-  "actions" : [
+  "actions": [
     {
-      "actions" : [
+      "actions": [
         {
-          "key" : "e",
-          "type" : "application",
-          "value" : "/System/Applications/Mail.app"
+          "key": "e",
+          "type": "application",
+          "value": "/System/Applications/Mail.app"
         },
         {
-          "key" : "s",
-          "type" : "application",
-          "value" : "/Applications/Spotify.app"
+          "key": "s",
+          "type": "application",
+          "value": "/Applications/Spotify.app"
         },
         {
-          "key" : "m",
-          "type" : "application",
-          "value" : "/System/Applications/Messages.app"
+          "key": "m",
+          "type": "application",
+          "value": "/System/Applications/Messages.app"
         },
         {
-          "key" : "d",
-          "type" : "application",
-          "value" : "/Applications/Discord.app"
+          "key": "d",
+          "type": "application",
+          "value": "/Applications/Discord.app"
         },
         {
-          "key" : "b",
-          "type" : "application",
-          "value" : "/Applications/Safari.app"
+          "key": "b",
+          "type": "application",
+          "value": "/Applications/Safari.app"
         },
         {
-          "key" : "g",
-          "type" : "application",
-          "value" : "/Applications/Steam.app"
+          "key": "g",
+          "type": "application",
+          "value": "/Applications/Steam.app"
         },
         {
-          "key" : "p",
-          "type" : "application",
-          "value" : "/System/Applications/Passwords.app"
+          "key": "p",
+          "type": "application",
+          "value": "/System/Applications/Passwords.app"
         },
         {
-          "key" : "i",
-          "type" : "application",
-          "value" : "/System/Applications/Photos.app"
+          "key": "i",
+          "type": "application",
+          "value": "/System/Applications/Photos.app"
         },
         {
-          "key" : "c",
-          "type" : "application",
-          "value" : "/System/Applications/Calendar.app"
+          "key": "c",
+          "type": "application",
+          "value": "/System/Applications/Calendar.app"
         },
         {
-          "key" : "n",
-          "type" : "application",
-          "value" : "/System/Applications/Notes.app"
+          "key": "n",
+          "type": "application",
+          "value": "/System/Applications/Notes.app"
         },
         {
-          "key" : "r",
-          "type" : "application",
-          "value" : "/System/Applications/Reminders.app"
+          "key": "r",
+          "type": "application",
+          "value": "/System/Applications/Reminders.app"
         },
         {
-          "key" : "t",
-          "type" : "application",
-          "value" : "/Applications/WezTerm.app"
+          "key": "t",
+          "type": "application",
+          "value": "/Applications/WezTerm.app"
         },
         {
-          "key" : "w",
-          "type" : "application",
-          "value" : "/System/Applications/Weather.app"
+          "key": "w",
+          "type": "application",
+          "value": "/System/Applications/Weather.app"
         },
         {
-          "key" : "S",
-          "type" : "application",
-          "value" : "/System/Applications/System Settings.app"
+          "key": "S",
+          "type": "application",
+          "value": "/System/Applications/System Settings.app"
         },
         {
-          "key" : "R",
-          "type" : "application",
-          "value" : "/Applications/Raycast.app"
+          "key": "R",
+          "type": "application",
+          "value": "/Applications/Raycast.app"
+        },
+        {
+          "key": "B",
+          "type": "application",
+          "value": "/System/Applications/Books.app"
         }
       ],
-      "iconPath" : "app",
-      "key" : "a",
-      "label" : "Apps",
-      "type" : "group"
+      "iconPath": "app",
+      "key": "a",
+      "label": "Apps",
+      "type": "group"
     },
     {
-      "actions" : [
+      "actions": [
         {
-          "iconPath" : "face.smiling.inverse",
-          "key" : "e",
-          "label" : "Emoji",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+          "iconPath": "face.smiling.inverse",
+          "key": "e",
+          "label": "Emoji",
+          "type": "url",
+          "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
-          "iconPath" : "paintpalette",
-          "key" : "c",
-          "label" : "Color",
-          "type" : "url",
-          "value" : "raycast://extensions/thomas/color-picker/pick-color"
+          "iconPath": "paintpalette",
+          "key": "c",
+          "label": "Color",
+          "type": "url",
+          "value": "raycast://extensions/thomas/color-picker/pick-color"
         },
         {
-          "iconPath" : "video",
-          "key" : "g",
-          "label" : "Gif",
-          "type" : "url",
-          "value" : "raycast://extensions/josephschmitt/gif-search/search"
+          "iconPath": "video",
+          "key": "g",
+          "label": "Gif",
+          "type": "url",
+          "value": "raycast://extensions/josephschmitt/gif-search/search"
         },
         {
-          "iconPath" : "document",
-          "key" : "f",
-          "label" : "File",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/file-search/search-files"
+          "iconPath": "document",
+          "key": "f",
+          "label": "File",
+          "type": "url",
+          "value": "raycast://extensions/raycast/file-search/search-files"
         },
         {
-          "iconPath" : "rectangle.3.group",
-          "key" : "w",
-          "label" : "Window",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/navigation/switch-windows"
+          "iconPath": "rectangle.3.group",
+          "key": "w",
+          "label": "Window",
+          "type": "url",
+          "value": "raycast://extensions/raycast/navigation/switch-windows"
         },
         {
-          "iconPath" : "list.bullet.clipboard",
-          "key" : "b",
-          "label" : "Clipboard History",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+          "iconPath": "list.bullet.clipboard",
+          "key": "b",
+          "label": "Clipboard History",
+          "type": "url",
+          "value": "raycast://extensions/raycast/clipboard-history/clipboard-history"
         },
         {
-          "iconPath" : "menubar.rectangle",
-          "key" : "i",
-          "label" : "Menu Items",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/navigation/search-menu-items"
+          "iconPath": "menubar.rectangle",
+          "key": "i",
+          "label": "Menu Items",
+          "type": "url",
+          "value": "raycast://extensions/raycast/navigation/search-menu-items"
         },
         {
-          "iconPath" : "safari",
-          "key" : "t",
-          "label" : "Safari Tabs",
-          "type" : "url",
-          "value" : "raycast://extensions/loris/safari/cloud-tabs"
+          "iconPath": "safari",
+          "key": "t",
+          "label": "Safari Tabs",
+          "type": "url",
+          "value": "raycast://extensions/loris/safari/cloud-tabs"
         },
         {
-          "iconPath" : "camera.metering.center.weighted.average",
-          "key" : "s",
-          "label" : "Screenshots",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/screenshots/search-screenshots"
+          "iconPath": "camera.metering.center.weighted.average",
+          "key": "s",
+          "label": "Screenshots",
+          "type": "url",
+          "value": "raycast://extensions/raycast/screenshots/search-screenshots"
         },
         {
-          "iconPath" : "music.quarternote.3",
-          "key" : "M",
-          "label" : "Music",
-          "type" : "url",
-          "value" : "raycast://extensions/mattisssa/spotify-player/search"
+          "iconPath": "music.quarternote.3",
+          "key": "M",
+          "label": "Music",
+          "type": "url",
+          "value": "raycast://extensions/mattisssa/spotify-player/search"
         },
         {
-          "iconPath" : "music.note",
-          "key" : "m",
-          "label" : "Music Library",
-          "type" : "url",
-          "value" : "raycast://extensions/mattisssa/spotify-player/yourLibrary"
+          "iconPath": "music.note",
+          "key": "m",
+          "label": "Music Library",
+          "type": "url",
+          "value": "raycast://extensions/mattisssa/spotify-player/yourLibrary"
         },
         {
-          "iconPath" : "bookmark",
-          "key" : "B",
-          "label" : "Safari Bookmarks",
-          "type" : "url",
-          "value" : "raycast://extensions/loris/safari/search-bookmarks"
+          "iconPath": "bookmark",
+          "key": "B",
+          "label": "Safari Bookmarks",
+          "type": "url",
+          "value": "raycast://extensions/loris/safari/search-bookmarks"
         }
       ],
-      "iconPath" : "list.bullet.rectangle",
-      "key" : "p",
-      "label" : "Pickers",
-      "type" : "group"
+      "iconPath": "list.bullet.rectangle",
+      "key": "p",
+      "label": "Pickers",
+      "type": "group"
     },
     {
-      "actions" : [
+      "actions": [
         {
-          "iconPath" : "house",
-          "key" : "h",
-          "label" : "Home",
-          "type" : "folder",
-          "value" : "/Users/boldandbrad"
+          "iconPath": "house",
+          "key": "h",
+          "label": "Home",
+          "type": "folder",
+          "value": "/Users/boldandbrad"
         },
         {
-          "key" : "d",
-          "type" : "folder",
-          "value" : "/Users/boldandbrad/Documents"
+          "key": "d",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Documents"
         },
         {
-          "key" : "c",
-          "type" : "folder",
-          "value" : "/Users/boldandbrad/Dotfiles"
+          "key": "c",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Dotfiles"
         },
         {
-          "key" : "w",
-          "type" : "folder",
-          "value" : "/Users/boldandbrad/Downloads"
+          "key": "w",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Downloads"
         },
         {
-          "iconPath" : "cloud",
-          "key" : "i",
-          "label" : "iCloud",
-          "type" : "folder",
-          "value" : "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
+          "iconPath": "cloud",
+          "key": "i",
+          "label": "iCloud",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
         },
         {
-          "key" : "a",
-          "type" : "folder",
-          "value" : "/Applications"
+          "key": "a",
+          "type": "folder",
+          "value": "/Applications"
         }
       ],
-      "key" : "f",
-      "label" : "Folders",
-      "type" : "group"
+      "key": "f",
+      "label": "Folders",
+      "type": "group"
     },
     {
-      "actions" : [
+      "actions": [
         {
-          "key" : "g",
-          "label" : "GitHub",
-          "type" : "url",
-          "value" : "https://github.com"
+          "key": "g",
+          "label": "GitHub",
+          "type": "url",
+          "value": "https://github.com"
         },
         {
-          "key" : "y",
-          "label" : "YouTube",
-          "type" : "url",
-          "value" : "https://youtube.com"
+          "key": "y",
+          "label": "YouTube",
+          "type": "url",
+          "value": "https://youtube.com"
         },
         {
-          "key" : "b",
-          "label" : "BoardGameGeek",
-          "type" : "url",
-          "value" : "https://boardgamegeek.com"
+          "key": "b",
+          "label": "BoardGameGeek",
+          "type": "url",
+          "value": "https://boardgamegeek.com"
         },
         {
-          "key" : "l",
-          "label" : "Lego",
-          "type" : "url",
-          "value" : "https://lego.com"
+          "key": "l",
+          "label": "Lego",
+          "type": "url",
+          "value": "https://lego.com"
         },
         {
-          "key" : "L",
-          "label" : "Bricklink",
-          "type" : "url",
-          "value" : "https://bricklink.com"
+          "key": "L",
+          "label": "Bricklink",
+          "type": "url",
+          "value": "https://bricklink.com"
         }
       ],
-      "iconPath" : "bookmark",
-      "key" : "b",
-      "label" : "Bookmarks",
-      "type" : "group"
+      "iconPath": "bookmark",
+      "key": "b",
+      "label": "Bookmarks",
+      "type": "group"
     },
     {
-      "actions" : [
+      "actions": [
         {
-          "iconPath" : "inset.filled.lefthalf.rectangle",
-          "key" : "h",
-          "label" : "Left Half",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/left-half"
+          "iconPath": "inset.filled.lefthalf.rectangle",
+          "key": "h",
+          "label": "Left Half",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/left-half"
         },
         {
-          "iconPath" : "inset.filled.righthalf.rectangle",
-          "key" : "l",
-          "label" : "Right Half",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/right-half"
+          "iconPath": "inset.filled.righthalf.rectangle",
+          "key": "l",
+          "label": "Right Half",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/right-half"
         },
         {
-          "iconPath" : "inset.filled.rectangle",
-          "key" : "m",
-          "label" : "Maximize",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/maximize"
+          "iconPath": "inset.filled.rectangle",
+          "key": "m",
+          "label": "Maximize",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/maximize"
         },
         {
-          "iconPath" : "inset.filled.center.rectangle",
-          "key" : "v",
-          "label" : "Almost Maximize",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/almost-maximize"
+          "iconPath": "inset.filled.center.rectangle",
+          "key": "v",
+          "label": "Almost Maximize",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/almost-maximize"
         },
         {
-          "iconPath" : "inset.filled.bottomright.rectangle",
-          "key" : "n",
-          "label" : "Reasonable Size",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/reasonable-size"
+          "iconPath": "inset.filled.bottomright.rectangle",
+          "key": "n",
+          "label": "Reasonable Size",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/reasonable-size"
         },
         {
-          "iconPath" : "inset.filled.bottomthird.rectangle",
-          "key" : "j",
-          "label" : "Bottom Half",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/bottom-half"
+          "iconPath": "inset.filled.bottomthird.rectangle",
+          "key": "j",
+          "label": "Bottom Half",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/bottom-half"
         },
         {
-          "iconPath" : "inset.filled.topthird.rectangle",
-          "key" : "k",
-          "label" : "Top Half",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/top-half"
+          "iconPath": "inset.filled.topthird.rectangle",
+          "key": "k",
+          "label": "Top Half",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/top-half"
         },
         {
-          "iconPath" : "arrow.down.left.and.arrow.up.right.rectangle",
-          "key" : "f",
-          "label" : "Fullscreen",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/toggle-fullscreen"
+          "iconPath": "arrow.down.left.and.arrow.up.right.rectangle",
+          "key": "f",
+          "label": "Fullscreen",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/toggle-fullscreen"
         },
         {
-          "iconPath" : "squares.leading.rectangle",
-          "key" : "s",
-          "label" : "Stage Manager",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/system/toggle-stage-manager"
+          "iconPath": "squares.leading.rectangle",
+          "key": "s",
+          "label": "Stage Manager",
+          "type": "url",
+          "value": "raycast://extensions/raycast/system/toggle-stage-manager"
         },
         {
-          "iconPath" : "desktopcomputer",
-          "key" : "d",
-          "label" : "Show Desktop",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/system/show-desktop"
+          "iconPath": "desktopcomputer",
+          "key": "d",
+          "label": "Show Desktop",
+          "type": "url",
+          "value": "raycast://extensions/raycast/system/show-desktop"
         },
         {
-          "iconPath" : "arrow.trianglehead.counterclockwise.rotate.90",
-          "key" : "r",
-          "label" : "Restore",
-          "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/restore"
+          "iconPath": "arrow.trianglehead.counterclockwise.rotate.90",
+          "key": "r",
+          "label": "Restore",
+          "type": "url",
+          "value": "raycast://extensions/raycast/window-management/restore"
         }
       ],
-      "iconPath" : "uiwindow.split.2x1",
-      "key" : "w",
-      "label" : "Windows",
-      "type" : "group"
+      "iconPath": "uiwindow.split.2x1",
+      "key": "w",
+      "label": "Windows",
+      "type": "group"
     }
   ],
-  "type" : "group"
+  "type": "group"
 }
