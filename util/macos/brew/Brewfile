@@ -46,11 +46,11 @@ brew "zsh"                      # system zsh replacement
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
-cask "ghostty"                  # terminal emulator
+# cask "ghostty"                  # terminal emulator
 cask "leader-key"               # leader key based launcher
 # cask "obsidian"                 # markdown note manager
 cask "proton-drive"             # cloud file storage client
-cask "proton-mail"              # email client
+# cask "proton-mail"              # email client
 cask "proton-pass"              # password manager
 # cask "protonvpn"                # vpn client
 cask "raycast", args: { require_sha: false } # spotlight replacement
@@ -94,8 +94,10 @@ cask "yaak"                     # desktop http client
 # cask "font-caskaydia-cove-nerd-font"
 # cask "font-fira-code"
 # cask "font-fira-code-nerd-font"
-cask "font-maple-mono"
+# cask "font-maple-mono"
 cask "font-maple-mono-nf"
+# cask "font-space-mono"
+cask "font-space-mono-nerd-font"
 
 ################################################################
 # games                                                        #
