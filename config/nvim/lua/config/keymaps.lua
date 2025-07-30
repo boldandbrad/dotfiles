@@ -17,6 +17,11 @@ vim.g.maplocalleader = ","
 -- normal mode ("n")                                          --
 ----------------------------------------------------------------
 
+-- the basics
+keymap("n", "<leader>w", "<cmd>write<cr>", { desc = "Write" })
+keymap("n", "<leader>W", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })
+keymap("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
+
 -- format current buffer
 keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
 
