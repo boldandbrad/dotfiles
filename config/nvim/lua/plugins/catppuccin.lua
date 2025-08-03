@@ -13,6 +13,9 @@ return {
   opts = {
     flavour = "mocha",
     transparent_background = true,
+    float = {
+      transparent = true,
+    },
     integrations = {
       blink_cmp = true,
       fidget = true,
