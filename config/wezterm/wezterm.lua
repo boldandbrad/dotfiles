@@ -3,7 +3,7 @@
 ----------------------------------------------------------------
 
 local wezterm = require "wezterm"
-local config = {}
+local config = wezterm.config_builder()
 
 -- window startup
 wezterm.on("gui-startup", function(cmd)
@@ -57,6 +57,7 @@ config.command_palette_fg_color = "#cdd6f4"
 
 -- font
 config.font = wezterm.font_with_fallback {
+  { family = "SpaceMono Nerd Font",    weight = "Regular" },
   { family = "Maple Mono NF",          weight = "Regular" },
   { family = "AnonymicePro Nerd Font", weight = "Regular" },
   "Apple Color Emoji",
@@ -76,6 +77,7 @@ local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabl
 tabline.setup({
   options = {
     icons_enabled = false,
+    theme = "Catppuccin Mocha",
     section_separators = "",
     component_separators = {
       left = "|",
