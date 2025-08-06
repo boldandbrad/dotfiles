@@ -24,7 +24,6 @@ return {
         enabled = true,
         transparent = true,
       },
-      lsp_trouble = true,
       native_lsp = { enabled = true },
       nvim_surround = true,
       snacks = {
