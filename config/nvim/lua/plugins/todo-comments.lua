@@ -6,15 +6,7 @@ return {
   "folke/todo-comments.nvim",
   event = "BufEnter",
   opts = {
-    keywords = {
-      FIX = { icon = "*" },
-      HACK = { icon = "?" },
-      NOTE = { icon = "i" },
-      PERF = { icon = "/" },
-      TEST = { icon = ">" },
-      TODO = { icon = "+" },
-      WARN = { icon = "!" },
-    },
+    signs = false,
   },
   keys = {
     { "<leader>st", function() Snacks.picker.todo_comments() end,                                          desc = "Todo" },

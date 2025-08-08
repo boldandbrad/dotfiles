@@ -14,21 +14,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- the basics
-keymap("n", "<leader>w", "<cmd>write<cr>", { desc = "Write" })
-keymap("n", "<leader>W", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })
-keymap("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
+keymap("n", "<leader>wq", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })
 
 -- format current buffer
 keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
 
 -- window splits
-keymap("n", "<leader>-", "<cmd>split<cr>", { desc = "Split window below", unpack(opts) })
-keymap("n", "<leader>|", "<cmd>vsplit<cr>", { desc = "Split window right", unpack(opts) })
-keymap("n", "<leader><tab>", "<C-w>w", { desc = "Move to next split", unpack(opts) })
-keymap("n", "<leader>H", "<C-w>h", { desc = "Move to split left", unpack(opts) })
-keymap("n", "<leader>J", "<C-w>j", { desc = "Move to split down", unpack(opts) })
-keymap("n", "<leader>K", "<C-w>k", { desc = "Move to split up", unpack(opts) })
-keymap("n", "<leader>L", "<C-w>l", { desc = "Move to split right", unpack(opts) })
+keymap("n", "<leader>ws", "<cmd>vsplit<cr>", { desc = "Split window right", unpack(opts) })
+keymap("n", "<leader>wS", "<cmd>split<cr>", { desc = "Split window below", unpack(opts) })
+keymap("n", "<leader>w<tab>", "<C-w>w", { desc = "Move to next split", unpack(opts) })
+keymap("n", "<leader>wh", "<C-w>h", { desc = "Move to split left", unpack(opts) })
+keymap("n", "<leader>wj", "<C-w>j", { desc = "Move to split down", unpack(opts) })
+keymap("n", "<leader>wk", "<C-w>k", { desc = "Move to split up", unpack(opts) })
+keymap("n", "<leader>wl", "<C-w>l", { desc = "Move to split right", unpack(opts) })
 
 -- navigate quickfix list
 keymap("n", "[q", "<cmd>cprev<cr>", { desc = "Previous quickfix" })

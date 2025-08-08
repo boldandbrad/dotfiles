@@ -21,24 +21,15 @@ return {
       { "<leader>r", group = "Replace" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Terminal" },
-      { "<leader>x", group = "Diagnostics" },
+      { "<leader>w", group = "Window" },
     })
   end,
   opts = {
-    preset = "modern",
+    preset = "helix",
     show_help = false,
     plugins = {
       marks = false,
       registers = false,
-      presets = {
-        operators = true,
-        motions = true,
-        text_objects = true,
-        windows = true,
-        nav = true,
-        z = true,
-        g = true
-      }
     },
     icons = {
       rules = false,

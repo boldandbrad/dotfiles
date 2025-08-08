@@ -63,10 +63,6 @@
     "branch": "master",
     "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b"
   },
-  "precognition.nvim": {
-    "branch": "main",
-    "commit": "a0ed9c97b24002394201c39755e10495d47b2d3f"
-  },
   "snacks.nvim": {
     "branch": "main",
     "commit": "bc0630e43be5699bb94dadc302c0d21615421d93"
