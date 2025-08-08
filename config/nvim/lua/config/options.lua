@@ -5,7 +5,6 @@
 local options = {
   autoindent = true,                           -- auto indentation
   clipboard = "unnamedplus",                   -- use system clipboard for yank, delete, change, and put operations
-  -- cmdheight = 0,                               -- do not display the cmdline
   colorcolumn = "80",                          -- highlight the given column
   completeopt = "menuone,preview",             -- show completions popup even when only one option exists
   cursorline = true,                           -- highlight the current line

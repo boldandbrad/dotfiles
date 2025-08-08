@@ -14,18 +14,9 @@ return {
           lsp = { fallbacks = { "lazydev" } },
           lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" }
         },
-        -- TODO: does this work?
-        transform_items = function(ctx, items)
-          -- Remove the "Text" source from lsp autocomplete
-          return vim.tbl_filter(function(item)
-            return item.kind ~= vim.lsp.protocol.CompletionItemKind.Text
-          end, items)
-        end
       },
       completion = {
-        accept = {
-          auto_brackets = { enabled = true },
-        },
+        accept = { auto_brackets = { enabled = true } },
         menu = {
           draw = {
             columns = {
@@ -33,15 +24,11 @@ return {
             },
           },
         },
-        documentation = {
-          auto_show = true,
-        },
+        documentation = { auto_show = true },
         ghost_text = { enabled = true },
       },
       signature = { enabled = true },
-      keymap = {
-        preset = "default",
-      },
+      keymap = { preset = "default" },
     },
   }
 }

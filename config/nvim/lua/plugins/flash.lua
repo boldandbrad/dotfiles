@@ -6,13 +6,9 @@ return {
   "folke/flash.nvim",
   event = "VeryLazy",
   opts = {
-    prompt = {
-      enabled = false,
-    },
+    prompt = { enabled = false },
     modes = {
-      char = {
-        jump_labels = true,
-      },
+      char = { jump_labels = true },
     },
   },
   keys = {

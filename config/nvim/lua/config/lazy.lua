@@ -18,21 +18,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- configure lazy
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
-  install = {
-    colorscheme = { "catppuccin" },
-  },
+  spec = { { import = "plugins" } },
+  install = { colorscheme = { "catppuccin" } },
   ui = {
     size = { width = 0.9, height = 0.9 },
     border = 'rounded',
     backdrop = 100,
     title = ' Plugins (lazy.nvim) ',
   },
-  checker = {
-    enabled = true,
-  },
+  checker = { enabled = true },
 })
 
 vim.keymap.set("n", "<leader>P", "<cmd>Lazy home<cr>", { desc = "Open plugin manager" })

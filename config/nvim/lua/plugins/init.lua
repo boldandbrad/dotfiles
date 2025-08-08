@@ -10,13 +10,6 @@ return {
     opts = {},
   },
 
-  -- automatically insert bracket pairs
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {}
-  },
-
   -- text surrounding motions
   {
     "kylechui/nvim-surround",

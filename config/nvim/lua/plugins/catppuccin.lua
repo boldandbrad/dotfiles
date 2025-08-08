@@ -5,17 +5,15 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  lazy = false,    -- load during startup
-  priority = 1000, -- load before other plugins
+  lazy = false,
+  priority = 1000,
   init = function()
     vim.cmd([[colorscheme catppuccin]])
   end,
   opts = {
     flavour = "mocha",
     transparent_background = true,
-    float = {
-      transparent = true,
-    },
+    float = { transparent = true },
     integrations = {
       blink_cmp = true,
       fidget = true,

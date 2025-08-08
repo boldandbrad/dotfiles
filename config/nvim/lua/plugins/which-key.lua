@@ -9,9 +9,7 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
 
-    -- register keymap group names
-    local wk = require("which-key")
-    wk.add({
+    require("which-key").add({
       { "<leader>b", group = "Buffer" },
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },

@@ -4,9 +4,7 @@
 
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "rmagatti/auto-session",
-  },
+  dependencies = { "rmagatti/auto-session" },
   opts = {
     sections = {
       lualine_c = {
