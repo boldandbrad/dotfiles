@@ -1,24 +1,14 @@
-################################################################
+# ------------------------------------------------------------ #
 # Brewfile - macOS software installs                           #
-################################################################
+# ------------------------------------------------------------ #
 # Packages and apps to be installed / updated via Homebrew.    #
-################################################################
+# ------------------------------------------------------------ #
 
-################################################################
-# options                                                      #
-################################################################
-
-# cask_args appdir: '~/Applications', require_sha: true
-
-################################################################
-# taps (homebrew/core and homebrew/cask are auto-tapped)       #
-################################################################
+# taps ------------------------------------------------------- #
 
 # tap "boldandbrad/tap"                 # stuff made by me :)
 
-################################################################
-# terminal apps and packages                                   #
-################################################################
+# terminal apps and packages --------------------------------- #
 
 brew "aliae"                    # cross platform shell manager
 brew "bash"                     # system bash replacement
@@ -31,48 +21,35 @@ brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "neovim"                   # text editor
 brew "oh-my-posh"               # cross-shell prompt engine
-# brew "pastel"                   # color manipulator
 brew "ripgrep"                  # grep alternative
-brew "tlrc"                     # concise man page client
-brew "tmux"                     # terminal multiplexer
-# brew "vhs"                      # session recorder
+# brew "tmux"                     # terminal multiplexer
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 
-################################################################
-# desktop apps                                                 #
-################################################################
+# desktop apps ----------------------------------------------- #
 
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "duckduckgo"               # web browser
-# cask "ghostty"                  # terminal emulator
 cask "leader-key"               # leader key based launcher
 # cask "obsidian"                 # markdown note manager
-cask "proton-drive"             # cloud file storage client
-# cask "proton-mail"              # email client
 cask "proton-pass"              # password manager
-# cask "protonvpn"                # vpn client
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 # cask "vscodium"                 # text editor
 cask "wezterm"                  # terminal emulator
 
-################################################################
-# software development tooling and apps                        #
-################################################################
+# software development tooling and apps ---------------------- #
 
 # cask "container"                # apple container client
 brew "deno"                     # js/ts runtime & toolchain
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
-# brew "gradle"                   # java build tool
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
 brew "marksman"                 # markdown lsp
 brew "podman"                   # cli container client
-# cask "podman-desktop"           # desktop container client
 # brew "postgresql"               # postgres DB
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
@@ -80,13 +57,9 @@ brew "taplo"                    # toml toolchain
 cask "temurin"                  # java development kit
 brew "tokei"                    # code line counter
 brew "uv"                       # python package manager
-# cask "vagrant"                  # virtual env manager
-# brew "vercel-cli"               # deployments and hosting
 cask "yaak"                     # desktop http client
 
-################################################################
-# fonts                                                        #
-################################################################
+# fonts ----------------------------------------------------- #
 
 # cask "font-anonymous-pro"
 # cask "font-anonymice-nerd-font"
@@ -95,21 +68,16 @@ cask "yaak"                     # desktop http client
 # cask "font-fira-code"
 # cask "font-fira-code-nerd-font"
 # cask "font-maple-mono"
-cask "font-maple-mono-nf"
+# cask "font-maple-mono-nf"
 # cask "font-space-mono"
 cask "font-space-mono-nerd-font"
 
-################################################################
-# games                                                        #
-################################################################
+# games ----------------------------------------------------- #
 
-brew "fabric-installer"         # minecraft mod loader
+# brew "fabric-installer"         # minecraft mod loader
 # brew "ferium"                   # minecraft mod manager
 cask "minecraft"                # minecraft launcher
-# cask "modrinth"                 # minecraft launcher & mod manager
 # cask "retroarch"                # game emulator launcher
 cask "steam"                    # game marketplace and launcher
 
-################################################################
-# new additions (via "brew bundle add")                        #
-################################################################
+# new additions (via "brew bundle add") --------------------- #
