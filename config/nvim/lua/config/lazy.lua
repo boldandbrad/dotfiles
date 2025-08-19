@@ -10,7 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -22,9 +22,9 @@ require("lazy").setup({
   install = { colorscheme = { "catppuccin" } },
   ui = {
     size = { width = 0.9, height = 0.9 },
-    border = 'rounded',
+    border = "rounded",
     backdrop = 100,
-    title = ' Plugins (lazy.nvim) ',
+    title = " Plugins (lazy.nvim) ",
   },
   checker = { enabled = true },
 })

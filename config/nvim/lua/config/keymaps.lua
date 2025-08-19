@@ -2,16 +2,13 @@
 -- nvim global keymaps                                        --
 ----------------------------------------------------------------
 
--- local alias
 local keymap = vim.keymap.set
 
--- default keymap options
 local opts = { noremap = true, silent = true }
 
 -- remap leader to space
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 
 -- the basics
 keymap("n", "<leader>wq", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })

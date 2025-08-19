@@ -2,7 +2,6 @@
 -- nvim language server protocal setup                        --
 ----------------------------------------------------------------
 
--- enable lsps
 vim.lsp.enable({
   "denols",
   "gopls",

@@ -2,44 +2,37 @@
 -- nvim options                                               --
 ----------------------------------------------------------------
 
-local options = {
-  autoindent = true,                           -- auto indentation
-  clipboard = "unnamedplus",                   -- use system clipboard for yank, delete, change, and put operations
-  colorcolumn = "80",                          -- highlight the given column
-  completeopt = "menuone,preview",             -- show completions popup even when only one option exists
-  cursorline = true,                           -- highlight the current line
-  expandtab = true,                            -- convert tabs to spaces
-  hlsearch = false,                            -- do not highlight search results
-  guicursor = "",                              -- disable per-mode cursor styles
-  ignorecase = true,                           -- case insensitive search
-  list = true,                                 -- show whitespace characters
-  listchars = "tab:>-,trail:·,nbsp:·,space:·", -- whitespace characters to show
-  number = true,                               -- show line numbers
-  relativenumber = true,                       -- make line numbers relative to current line
-  scrolloff = 8,                               -- minimal number of screen lines to keep above and below the cursor
-  shiftwidth = 2,                              -- size of an indent
-  showmode = false,                            -- do not show '--INSERT--' etc in last line
-  sidescrolloff = 8,                           -- minimal number of screen columns either side of cursor if wrap is `false`
-  signcolumn = "yes",                          -- always show the sign column, otherwise it would shift the text each time
-  smartcase = true,                            -- override ignore case when search contains capital letters
-  smartindent = true,                          -- smart indentation
-  softtabstop = 2,                             -- how many spaces tabs "feel" like
-  splitbelow = true,                           -- split below when splitting vertically
-  splitright = true,                           -- split right when splitting horizontally
-  swapfile = false,                            -- disable swapfiles
-  tabstop = 2,                                 -- number of spaces to insert for a tab
-  termguicolors = true,                        -- true color support
-  undofile = true,                             -- enable persistent undo history
-  winborder = "rounded",                       -- rounded borders for floating windows
-  wrap = false,                                -- disable line wrap
-}
+local opt = vim.opt
 
-for key, val in pairs(options) do
-  vim.opt[key] = val
-end
-
--- restorable session types
-vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+opt.autoindent = true                                -- auto indentation
+opt.clipboard = "unnamedplus"                        -- use system clipboard for yank, delete, change, and put operations
+opt.colorcolumn = "80"                               -- highlight the given column
+opt.completeopt = { "menuone", "noselect", "popup" } -- show completions popup even when only one option exists
+opt.cursorline = true                                -- highlight the current line
+opt.expandtab = true                                 -- convert tabs to spaces
+opt.hlsearch = false                                 -- do not highlight search results
+opt.guicursor = ""                                   -- disable per-mode cursor styles
+opt.ignorecase = true                                -- case insensitive search
+opt.list = true                                      -- show whitespace characters
+opt.listchars = "tab:>-,trail:·,nbsp:·,space:·"      -- whitespace characters to show
+opt.number = true                                    -- show line numbers
+opt.relativenumber = true                            -- make line numbers relative to current line
+opt.scrolloff = 8                                    -- minimal number of screen lines to keep above and below the cursor
+opt.shiftwidth = 2                                   -- size of an indent
+opt.showmode = false                                 -- do not show '--INSERT--' etc in last line
+opt.sidescrolloff = 8                                -- minimal number of screen columns either side of cursor if wrap is `false`
+opt.signcolumn = "yes"                               -- always show the sign column to avoid shifting
+opt.smartcase = true                                 -- override ignore case when search contains capital letters
+opt.smartindent = true                               -- smart indentation
+opt.softtabstop = 2                                  -- how many spaces tabs "feel" like
+opt.splitbelow = true                                -- split below when splitting vertically
+opt.splitright = true                                -- split right when splitting horizontally
+opt.swapfile = false                                 -- disable swapfiles
+opt.tabstop = 2                                      -- number of spaces to insert for a tab
+opt.termguicolors = true                             -- true color support
+opt.undofile = true                                  -- enable persistent undo history
+opt.winborder = "rounded"                            -- rounded borders for floating windows
+opt.wrap = false                                     -- disable line wrap
 
 -- diagnostics config
 vim.diagnostic.config({

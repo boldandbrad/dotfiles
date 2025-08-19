@@ -2,13 +2,16 @@
 -- nvim autocmds                                              --
 ----------------------------------------------------------------
 
-vim.api.nvim_create_autocmd("LspAttach", {
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+autocmd("LspAttach", {
   desc = "Define LSP Actions",
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
     if client:supports_method("textDocument/formatting") then
-      vim.api.nvim_create_autocmd("BufWritePre", {
+      autocmd("BufWritePre", {
         desc = "Auto-format buffer on write",
         buffer = args.buf,
         callback = function()
@@ -24,9 +27,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+local trim_group = augroup("TrimWhitespace", { clear = true })
+autocmd("BufWritePre", {
   desc = "Auto-trim trailing whitespace on write",
-  pattern = "*",
+  group = trim_group,
   callback = function()
     local save_cursor = vim.fn.getpos(".")
     pcall(function() vim.cmd [[%s/\s\+$//e]] end)
@@ -34,28 +38,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
-  desc = "Return to last edit position when opening buffer",
-  pattern = "*",
+local highlight_group = augroup("YankHighlight", { clear = true })
+autocmd("TextYankPost", {
+  desc = "Highlight yanked text",
+  group = highlight_group,
   callback = function()
-    if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
-      vim.fn.setpos('.', vim.fn.getpos("'\""))
-      vim.api.nvim_feedkeys('zz', 'n', true)
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("TermOpen", {
-  desc    = "Start terminal in insert mode",
-  group   = vim.api.nvim_create_augroup("custom-term", { clear = true }),
-  pattern = "*",
-  command = "startinsert | set winfixheight"
-})
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank({ timeout = 170 })
   end
 })
