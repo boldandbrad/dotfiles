@@ -15,7 +15,6 @@ return {
       { "<leader>g", group = "Git" },
       { "<leader>h", group = "Help" },
       { "<leader>j", group = "Jump" },
-      { "<leader>l", group = "LSP" },
       { "<leader>r", group = "Replace" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Terminal" },

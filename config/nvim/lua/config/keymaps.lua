@@ -14,7 +14,7 @@ vim.g.mapleader = " "
 keymap("n", "<leader>wq", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })
 
 -- format current buffer
-keymap("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
+keymap("n", "<leader>bf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
 
 -- window splits
 keymap("n", "<leader>ws", "<cmd>vsplit<cr>", { desc = "Split window right", unpack(opts) })
