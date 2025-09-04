@@ -20,8 +20,8 @@ maintain it.
 
 ---
 
-[✨ TL;DR](#tldr) | [🛋️ Contents](#contents) | [📦 Unpack](#unpack) |
-[🛠️ Maintain](#maintain) | [💡 Inspiration](#inspiration)
+[✨ TL;DR](#tl-dr) | [🛋️ Contents](#🛋️-contents) | [📦 Unpack](#📦-unpack) |
+[🛠️ Maintain](#🛠️-maintain) | [💡 Inspiration](#💡-inspiration)
 
 ---
 
@@ -53,15 +53,13 @@ The floor plan at a glance:
 
 ## 🛋️ Contents
 
-The main contents of this repo are organized into a handful of high level
-directories: `bin/`, `config/`, and `util/`. Follow the links below to read the
-docs for each.
+The main contents of this repo are organized into a few high-level directories:
 
 - 🗄️ [bin](../bin/README.md) - Custom executables to append to the user's `PATH`
 - 🎨 [config](../config/README.md) - Package and app configs to be symlinked
   into place
-- 🛠️ [util](../util/README.md) - System specific scripts and configs used while
-  unpacking
+- 🛠️ [util](../util/README.md) - System specific setup scripts and configs to be
+  [unpacked](#📦-unpack)
 
 ---
 
@@ -69,13 +67,13 @@ docs for each.
 
 ## 📦 Unpack
 
-The [contents](#contents) of this repo can be automatically installed with
+The [contents](#🛋️-contents) of this repo can be automatically installed with
 [`unpack.sh`](../unpack.sh). The unpack script explains what it will do, prompts
 the user before each step, and is idempotent. This means it can be safely run
 multiple times to keep the system in sync without compounding changes or
 breaking.
 
-In brief, unpacking does the following:
+In brief, unpacking...
 
 - ✅ Verifies system compatibility
 - 🔄 Checks and prompts for system updates
@@ -84,7 +82,7 @@ In brief, unpacking does the following:
 - ⚙️ Applies user system settings
 
 > [!WARNING]
-> Before unpacking, review the repo [contents](#contents) and backup any
+> Before unpacking, review the repo [contents](#🛋️-contents) and backup any
 > pre-existing configs.
 
 ### Get it Delivered
