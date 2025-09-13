@@ -3,13 +3,6 @@
 ----------------------------------------------------------------
 
 return {
-  -- comment/uncomment motions
-  {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-
   -- text surrounding motions
   {
     "kylechui/nvim-surround",

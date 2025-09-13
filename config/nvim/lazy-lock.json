@@ -1,11 +1,7 @@
 {
-  "Comment.nvim": {
-    "branch": "master",
-    "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb"
-  },
   "auto-session": {
     "branch": "main",
-    "commit": "d27a29f5754e3a8b8d89a4069814e53ac583e951"
+    "commit": "4be42f3cc862f129c2f872145aa12a1f7ccaaed9"
   },
   "blink.cmp": {
     "branch": "main",
@@ -13,11 +9,11 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "9a9a875e979fe9d2b42423d056f944dd286d0280"
+    "commit": "30fa4d122d9b22ad8b2e0ab1b533c8c26c4dde86"
   },
   "fidget.nvim": {
     "branch": "main",
-    "commit": "2cb5edb2dd6700a958a446b20bb2be04d318da9d"
+    "commit": "4d5858bd4c471c895060e1b9f3575f1551184dc5"
   },
   "flash.nvim": {
     "branch": "main",
@@ -29,7 +25,7 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "6e3c66548035e50db7bd8e360a29aec6620c3641"
+    "commit": "f780609807eca1f783a36a8a31c30a48fbe150c5"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -45,11 +41,11 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "34c9ecfdcc19d579f51c072300a71445fbec9da8"
+    "commit": "d89f4891f0720cd2598e4bdd60010d8784b2ac8a"
   },
   "nvim-surround": {
     "branch": "main",
-    "commit": "d56752df477ebd808cb82cea2fc68cf7455abb21"
+    "commit": "a868c256c861044beb9794b4dd126480dcdfbdad"
   },
   "nvim-treesitter": {
     "branch": "master",
