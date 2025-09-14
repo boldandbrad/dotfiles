@@ -5,9 +5,7 @@
 return {
   "rmagatti/auto-session",
   lazy = false,
-  opts = {
-    session_lens = { load_on_setup = true },
-  },
+  opts = {},
   keys = {
     { "<leader>fs", "<cmd>SessionSearch<cr>", desc = "Search sessions" },
   },

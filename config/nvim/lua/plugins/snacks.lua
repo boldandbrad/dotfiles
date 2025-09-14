@@ -47,7 +47,6 @@ return {
       },
     },
     words = { debounce = 100 },
-    styles = { lazygit = { border = "rounded" } },
   },
   keys = {
     -- bufdelete
@@ -74,11 +73,24 @@ return {
     { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end,                  desc = "Find files" },
     { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find git files" },
     { "<leader>fr", function() Snacks.picker.recent() end,                                  desc = "Find recent files" },
-    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find config file" },
+    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find neovim config files" },
     { "<leader>fb", function() Snacks.picker.buffers() end,                                 desc = "Find buffers" },
     { "<leader>fl", function() Snacks.picker.lines() end,                                   desc = "Find lines" },
     { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Search diagnostics" },
     { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Search help pages" },
     { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word", mode = { "n", "x" } },
+    {
+      "<leader>ft",
+      function()
+        Snacks.picker.grep({
+          live = false,
+          search = function()
+            local pattern = [[\b(TODO|FIX):]]
+            return ({ pattern })[1]
+          end,
+        })
+      end,
+      desc = "Find TODOs"
+    },
   }
 }

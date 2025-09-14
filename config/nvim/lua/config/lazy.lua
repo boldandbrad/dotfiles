@@ -21,10 +21,8 @@ require("lazy").setup({
   spec = { { import = "plugins" } },
   install = { colorscheme = { "catppuccin" } },
   ui = {
-    size = { width = 0.9, height = 0.9 },
     border = "rounded",
-    backdrop = 100,
-    title = " Plugins (lazy.nvim) ",
+    title = " Plugins ",
   },
   checker = { enabled = true },
 })
