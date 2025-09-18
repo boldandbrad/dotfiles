@@ -1,0 +1,10 @@
+[
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space .": "project_panel::ToggleFocus",
+      "space /": "workspace::NewSearch"
+    }
+  }
+]

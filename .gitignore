@@ -4,3 +4,8 @@
 # zsh files
 config/zsh/.zcompcache
 config/zsh/.zcompdump
+
+# zed dbs
+*/zed/conversations
+*/zed/prompts
+

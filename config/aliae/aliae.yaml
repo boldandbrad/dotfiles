@@ -239,6 +239,8 @@ link:
   # editor configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/nvim'
     target: '{{ env "DOTFILES" }}/config/nvim'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/zed'
+    target: '{{ env "DOTFILES" }}/config/zed'
     # - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
     #   target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
     #   mkdir: true
