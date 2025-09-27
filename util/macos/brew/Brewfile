@@ -36,7 +36,6 @@ cask "leader-key"               # leader key based launcher
 cask "proton-pass"              # password manager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
-# cask "vscodium"                 # text editor
 cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor
 

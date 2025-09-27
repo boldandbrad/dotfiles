@@ -81,6 +81,12 @@
           "key": "w",
           "type": "application",
           "value": "/System/Applications/Weather.app"
+        },
+        {
+          "iconPath": "/Applications/Zed.app",
+          "key": "z",
+          "type": "application",
+          "value": "/Applications/Zed.app"
         }
       ],
       "iconPath": "app",
