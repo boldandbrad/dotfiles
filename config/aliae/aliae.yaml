@@ -130,8 +130,6 @@ alias:
     value: bat
   - name: cad
     value: bat --diff --style=changes
-  - name: help
-    value: tldr
   - name: docker
     value: podman
   - name: ls
@@ -148,8 +146,6 @@ alias:
     value: eza --only-dirs --classify
   - name: lda
     value: eza --all --only-dirs --classify
-  - name: lm
-    value: eza --all --reverse --long --header --sort=modified
   - name: lgt
     value: eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git
 
@@ -166,12 +162,6 @@ alias:
   # other niceties
   - name: clr
     value: clear
-  - name: cls
-    value: clear; ls
-    type: function
-  - name: clg
-    value: clear; git st
-    type: function
   - name: cld
     value: clear; cd
     type: function
@@ -197,17 +187,6 @@ alias:
 
   # import macOS aliases
   - !include "alias/mac.yaml"
-
-# # list all
-# alias la="ls -A" # list all
-# # list all, with full details
-# alias ll="ls -lAFh"
-# # list normal dirs only
-# alias ld="ls -l | grep '^d'"
-# # list all dirs only
-# alias lda="ls -lA | grep '^d'"
-# # list all sorted by last modified
-# alias lm="ls -tA -1"
 
 # link dotfiles
 link:
