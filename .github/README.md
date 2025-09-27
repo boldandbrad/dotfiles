@@ -20,8 +20,8 @@ maintain it.
 
 ---
 
-[✨ TL;DR](#tl-dr) | [🛋️ Contents](#🛋️-contents) | [📦 Unpack](#📦-unpack) |
-[🛠️ Maintain](#🛠️-maintain) | [💡 Inspiration](#💡-inspiration)
+[✨ TL;DR](#tldr) | [🛋️ Contents](#contents) | [📦 Unpack](#unpack) |
+[🛠️ Maintain](#maintain) | [💡 Inspiration](#inspiration)
 
 ---
 
@@ -67,7 +67,7 @@ The main contents of this repo are organized into a few high-level directories:
 
 ## 📦 Unpack
 
-The [contents](#🛋️-contents) of this repo can be automatically installed with
+The [contents](#contents) of this repo can be automatically installed with
 [`unpack.sh`](../unpack.sh). The unpack script explains what it will do, prompts
 the user before each step, and is idempotent. This means it can be safely run
 multiple times to keep the system in sync without compounding changes or
@@ -82,7 +82,7 @@ In brief, unpacking...
 - ⚙️ Applies user system settings
 
 > [!WARNING]
-> Before unpacking, review the repo [contents](#🛋️-contents) and backup any
+> Before unpacking, review the repo [contents](#contents) and backup any
 > pre-existing configs.
 
 ### Get it Delivered
