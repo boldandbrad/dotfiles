@@ -4,7 +4,8 @@
     "bindings": {
       "space f f": "file_finder::Toggle",
       "space .": "project_panel::ToggleFocus",
-      "space /": "workspace::NewSearch"
+      "space /": "workspace::NewSearch",
+      "space G": ["task::Spawn", { "task_name": "start lazygit" }]
     }
   }
 ]

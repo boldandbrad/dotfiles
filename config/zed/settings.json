@@ -37,6 +37,7 @@
   "cursor_shape": "block",
   "ui_font_family": "Space Mono",
   "vim_mode": true,
+  "relative_line_numbers": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -47,5 +48,15 @@
     "mode": "system",
     "light": "Catppuccin Frappé",
     "dark": "Catppuccin Mocha"
+  },
+  "terminal": {
+    "line_height": { "custom": 1 }
+  },
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
   }
 }
