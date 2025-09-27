@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
-################################################################
+# ------------------------------------------------------------ #
 # macos/config_system - set macOS system settings              #
-################################################################
+# ------------------------------------------------------------ #
 # Setup macOS system specific settings and configurations.     #
-################################################################
+# ------------------------------------------------------------ #
 
 # quit any active System Settings windows to avoid overriding settings
 osascript -e 'tell application "System Settings" to quit'
@@ -24,13 +24,11 @@ if type hidutil &>/dev/null; then
 fi
 echo "Mapped Caps Lock to Esc!"
 
-################################################################
+# ------------------------------------------------------------ #
 # macOS system settings                                        #
-################################################################
+# ------------------------------------------------------------ #
 
-###########
-# general #
-###########
+# general ---------------------------------------------------- #
 
 # TODO: nightshift sunset to sunrise
 
@@ -54,9 +52,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 # TODO: enable dictation
 
-########
-# dock #
-########
+# dock ------------------------------------------------------- #
 
 # dock icon size
 defaults write com.apple.dock "tilesize" -int "36"
@@ -72,9 +68,7 @@ defaults write com.apple.dock "mineffect" -string "scale"
 defaults delete com.apple.dock persistent-apps
 killall Dock
 
-##########
-# finder #
-##########
+# finder ----------------------------------------------------- #
 
 # show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -104,9 +98,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 killall Finder
 
-############################
-# menubar & control center #
-############################
+# menubar & control center ----------------------------------- #
 
 # TODO: don't show display, sound, siri, spotlight, or now playing in menubar
 
@@ -120,9 +112,7 @@ killall Finder
 defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
 killall SystemUIServer
 
-####################
-# mouse & trackpad #
-####################
+# mouse & trackpad ------------------------------------------- #
 
 # TODO: pointer size
 
@@ -134,9 +124,7 @@ defaults write NSGlobalDomain com.apple.mouse.scaling -float "3"
 defaults write com.apple.AppleMultitouchTrackpad "Clicking" -bool "true"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad "Clicking" -bool "true"
 
-############
-# keyboard #
-############
+# keyboard --------------------------------------------------- #
 
 # enable moving ui focus via tab and shift tab
 defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
