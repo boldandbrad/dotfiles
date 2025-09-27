@@ -3,44 +3,14 @@
     {
       "actions": [
         {
-          "key": "e",
-          "type": "application",
-          "value": "/System/Applications/Mail.app"
-        },
-        {
-          "key": "s",
-          "type": "application",
-          "value": "/Applications/Spotify.app"
-        },
-        {
-          "key": "m",
-          "type": "application",
-          "value": "/System/Applications/Messages.app"
-        },
-        {
-          "key": "d",
-          "type": "application",
-          "value": "/Applications/Discord.app"
-        },
-        {
           "key": "b",
           "type": "application",
           "value": "/Applications/Safari.app"
         },
         {
-          "key": "g",
+          "key": "B",
           "type": "application",
-          "value": "/Applications/Steam.app"
-        },
-        {
-          "key": "p",
-          "type": "application",
-          "value": "/System/Applications/Passwords.app"
-        },
-        {
-          "key": "i",
-          "type": "application",
-          "value": "/System/Applications/Photos.app"
+          "value": "/System/Applications/Books.app"
         },
         {
           "key": "c",
@@ -48,14 +18,59 @@
           "value": "/System/Applications/Calendar.app"
         },
         {
+          "key": "d",
+          "type": "application",
+          "value": "/Applications/Discord.app"
+        },
+        {
+          "key": "e",
+          "type": "application",
+          "value": "/System/Applications/Mail.app"
+        },
+        {
+          "key": "g",
+          "type": "application",
+          "value": "/Applications/Steam.app"
+        },
+        {
+          "key": "i",
+          "type": "application",
+          "value": "/System/Applications/Photos.app"
+        },
+        {
+          "key": "m",
+          "type": "application",
+          "value": "/System/Applications/Messages.app"
+        },
+        {
           "key": "n",
           "type": "application",
           "value": "/System/Applications/Notes.app"
         },
         {
+          "key": "p",
+          "type": "application",
+          "value": "/System/Applications/Passwords.app"
+        },
+        {
           "key": "r",
           "type": "application",
           "value": "/System/Applications/Reminders.app"
+        },
+        {
+          "key": "R",
+          "type": "application",
+          "value": "/Applications/Raycast.app"
+        },
+        {
+          "key": "s",
+          "type": "application",
+          "value": "/Applications/Spotify.app"
+        },
+        {
+          "key": "S",
+          "type": "application",
+          "value": "/System/Applications/System Settings.app"
         },
         {
           "key": "t",
@@ -66,21 +81,6 @@
           "key": "w",
           "type": "application",
           "value": "/System/Applications/Weather.app"
-        },
-        {
-          "key": "S",
-          "type": "application",
-          "value": "/System/Applications/System Settings.app"
-        },
-        {
-          "key": "R",
-          "type": "application",
-          "value": "/Applications/Raycast.app"
-        },
-        {
-          "key": "B",
-          "type": "application",
-          "value": "/System/Applications/Books.app"
         }
       ],
       "iconPath": "app",
@@ -91,11 +91,18 @@
     {
       "actions": [
         {
-          "iconPath": "face.smiling.inverse",
-          "key": "e",
-          "label": "Emoji",
+          "iconPath": "list.bullet.clipboard",
+          "key": "b",
+          "label": "Clipboard History",
           "type": "url",
-          "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+          "value": "raycast://extensions/raycast/clipboard-history/clipboard-history"
+        },
+        {
+          "iconPath": "bookmark",
+          "key": "B",
+          "label": "Safari Bookmarks",
+          "type": "url",
+          "value": "raycast://extensions/loris/safari/search-bookmarks"
         },
         {
           "iconPath": "paintpalette",
@@ -105,11 +112,11 @@
           "value": "raycast://extensions/thomas/color-picker/pick-color"
         },
         {
-          "iconPath": "video",
-          "key": "g",
-          "label": "Gif",
+          "iconPath": "face.smiling.inverse",
+          "key": "e",
+          "label": "Emoji",
           "type": "url",
-          "value": "raycast://extensions/josephschmitt/gif-search/search"
+          "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
           "iconPath": "document",
@@ -119,18 +126,11 @@
           "value": "raycast://extensions/raycast/file-search/search-files"
         },
         {
-          "iconPath": "rectangle.3.group",
-          "key": "w",
-          "label": "Window",
+          "iconPath": "video",
+          "key": "g",
+          "label": "Gif",
           "type": "url",
-          "value": "raycast://extensions/raycast/navigation/switch-windows"
-        },
-        {
-          "iconPath": "list.bullet.clipboard",
-          "key": "b",
-          "label": "Clipboard History",
-          "type": "url",
-          "value": "raycast://extensions/raycast/clipboard-history/clipboard-history"
+          "value": "raycast://extensions/josephschmitt/gif-search/search"
         },
         {
           "iconPath": "menubar.rectangle",
@@ -140,18 +140,11 @@
           "value": "raycast://extensions/raycast/navigation/search-menu-items"
         },
         {
-          "iconPath": "safari",
-          "key": "t",
-          "label": "Safari Tabs",
+          "iconPath": "music.note",
+          "key": "m",
+          "label": "Music Library",
           "type": "url",
-          "value": "raycast://extensions/loris/safari/cloud-tabs"
-        },
-        {
-          "iconPath": "camera.metering.center.weighted.average",
-          "key": "s",
-          "label": "Screenshots",
-          "type": "url",
-          "value": "raycast://extensions/raycast/screenshots/search-screenshots"
+          "value": "raycast://extensions/mattisssa/spotify-player/yourLibrary"
         },
         {
           "iconPath": "music.quarternote.3",
@@ -161,18 +154,25 @@
           "value": "raycast://extensions/mattisssa/spotify-player/search"
         },
         {
-          "iconPath": "music.note",
-          "key": "m",
-          "label": "Music Library",
+          "iconPath": "camera.metering.center.weighted.average",
+          "key": "s",
+          "label": "Screenshots",
           "type": "url",
-          "value": "raycast://extensions/mattisssa/spotify-player/yourLibrary"
+          "value": "raycast://extensions/raycast/screenshots/search-screenshots"
         },
         {
-          "iconPath": "bookmark",
-          "key": "B",
-          "label": "Safari Bookmarks",
+          "iconPath": "safari",
+          "key": "t",
+          "label": "Safari Tabs",
           "type": "url",
-          "value": "raycast://extensions/loris/safari/search-bookmarks"
+          "value": "raycast://extensions/loris/safari/cloud-tabs"
+        },
+        {
+          "iconPath": "rectangle.3.group",
+          "key": "w",
+          "label": "Window",
+          "type": "url",
+          "value": "raycast://extensions/raycast/navigation/switch-windows"
         }
       ],
       "iconPath": "list.bullet.rectangle",
@@ -183,16 +183,9 @@
     {
       "actions": [
         {
-          "iconPath": "house",
-          "key": "h",
-          "label": "Home",
+          "key": "a",
           "type": "folder",
-          "value": "/Users/boldandbrad"
-        },
-        {
-          "key": "d",
-          "type": "folder",
-          "value": "/Users/boldandbrad/Documents"
+          "value": "/Applications"
         },
         {
           "key": "c",
@@ -200,9 +193,16 @@
           "value": "/Users/boldandbrad/Dotfiles"
         },
         {
-          "key": "w",
+          "key": "d",
           "type": "folder",
-          "value": "/Users/boldandbrad/Downloads"
+          "value": "/Users/boldandbrad/Documents"
+        },
+        {
+          "iconPath": "house",
+          "key": "h",
+          "label": "Home",
+          "type": "folder",
+          "value": "/Users/boldandbrad"
         },
         {
           "iconPath": "cloud",
@@ -212,9 +212,9 @@
           "value": "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
         },
         {
-          "key": "a",
+          "key": "w",
           "type": "folder",
-          "value": "/Applications"
+          "value": "/Users/boldandbrad/Downloads"
         }
       ],
       "key": "f",
@@ -224,22 +224,16 @@
     {
       "actions": [
         {
-          "key": "g",
-          "label": "GitHub",
-          "type": "url",
-          "value": "https://github.com"
-        },
-        {
-          "key": "y",
-          "label": "YouTube",
-          "type": "url",
-          "value": "https://youtube.com"
-        },
-        {
           "key": "b",
           "label": "BoardGameGeek",
           "type": "url",
           "value": "https://boardgamegeek.com"
+        },
+        {
+          "key": "g",
+          "label": "GitHub",
+          "type": "url",
+          "value": "https://github.com"
         },
         {
           "key": "l",
@@ -252,6 +246,12 @@
           "label": "Bricklink",
           "type": "url",
           "value": "https://bricklink.com"
+        },
+        {
+          "key": "y",
+          "label": "YouTube",
+          "type": "url",
+          "value": "https://youtube.com"
         }
       ],
       "iconPath": "bookmark",
