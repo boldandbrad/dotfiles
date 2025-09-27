@@ -7,6 +7,6 @@ return {
   lazy = false,
   opts = {},
   keys = {
-    { "<leader>fs", "<cmd>SessionSearch<cr>", desc = "Search sessions" },
+    { "<leader>fs", "<cmd>SessionSearch<cr>", desc = "Find sessions" },
   },
 }

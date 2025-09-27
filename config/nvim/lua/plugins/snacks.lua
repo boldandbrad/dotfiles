@@ -50,7 +50,7 @@ return {
   },
   keys = {
     -- bufdelete
-    { "<leader>bd",      function() Snacks.bufdelete() end,                    desc = "Delete buffer" },
+    { "<leader>bd",      function() Snacks.bufdelete() end,                    desc = "Delete current buffer" },
     { "<leader>bD",      function() Snacks.bufdelete.all() end,                desc = "Delete all buffers" },
     { "<leader>bo",      function() Snacks.bufdelete.other() end,              desc = "Delete all buffers except current" },
 
@@ -59,16 +59,16 @@ return {
     { "<leader>G",       function() Snacks.lazygit() end,                      desc = "Open LazyGit" },
 
     -- picker
-    { "<leader><space>", function() Snacks.picker.smart() end,                 desc = "Smart Find Files" },
-    { "<leader>/",       function() Snacks.picker.grep({ hidden = true }) end, desc = "Grep text" },
+    { "<leader><space>", function() Snacks.picker.smart() end,                 desc = "Find files smartly" },
+    { "<leader>/",       function() Snacks.picker.grep({ hidden = true }) end, desc = "Find text" },
     { "<leader>:",       function() Snacks.picker.command_history() end,       desc = "Search command history" },
     { "<leader>;",       function() Snacks.picker.resume() end,                desc = "Resume last picker" },
     {
-      "<leader>fe",
+      "<leader>.",
       function()
         Snacks.picker.explorer({ hidden = true, layout = { layout = { position = "right" } } })
       end,
-      desc = "File explorer"
+      desc = "Toggle file explorer"
     },
     { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end,                  desc = "Find files" },
     { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find git files" },
@@ -76,9 +76,9 @@ return {
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find neovim config files" },
     { "<leader>fb", function() Snacks.picker.buffers() end,                                 desc = "Find buffers" },
     { "<leader>fl", function() Snacks.picker.lines() end,                                   desc = "Find lines" },
-    { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Search diagnostics" },
-    { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Search help pages" },
-    { "<leader>sw", function() Snacks.picker.grep_word() end,                               desc = "Grep visual selection or word", mode = { "n", "x" } },
+    { "<leader>fd", function() Snacks.picker.diagnostics() end,                             desc = "Find diagnostics" },
+    { "<leader>fh", function() Snacks.picker.help() end,                                    desc = "Find help pages" },
+    { "<leader>fw", function() Snacks.picker.grep_word() end,                               desc = "Find selection or word",  mode = { "n", "x" } },
     {
       "<leader>ft",
       function()
@@ -90,7 +90,7 @@ return {
           end,
         })
       end,
-      desc = "Find TODOs"
+      desc = "Find todos"
     },
   }
 }
