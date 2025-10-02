@@ -37,6 +37,7 @@
   "cursor_shape": "block",
   "ui_font_family": "Space Mono",
   "vim_mode": true,
+  "tab_size": 2,
   "soft_wrap": "none",
   "relative_line_numbers": true,
   "telemetry": {
