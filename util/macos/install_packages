@@ -1,11 +1,8 @@
 #!/usr/bin/env zsh
 
-################################################################
+# ------------------------------------------------------------ #
 # macos/install_packages - install macOS packages and apps     #
-################################################################
-# Install macOS packages and apps from Brewfile.               #
-# See brew/Brewfile for a list of packages to be installed.    #
-################################################################
+# ------------------------------------------------------------ #
 
 # install homebrew if not already installed
 echo -e "\nChecking for Homebrew..."
@@ -24,7 +21,7 @@ export PATH=/opt/homebrew/bin:$PATH
 brew developer off
 brew analytics off
 
-# install apps and packages from brewfile via homebrew bundle
+# install apps and packages from ./brew/Brewfile via homebrew bundle
 echo
 echo "Installing macOS apps and packages from Brewfile..."
 if ! brew bundle check; then

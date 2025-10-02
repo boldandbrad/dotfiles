@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
 # ------------------------------------------------------------ #
-# macos/config_system - set macOS system settings              #
-# ------------------------------------------------------------ #
-# Setup macOS system specific settings and configurations.     #
+# macos/config_system - set macOS system settings               #
 # ------------------------------------------------------------ #
 
 # quit any active System Settings windows to avoid overriding settings

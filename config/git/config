@@ -3,7 +3,6 @@
 	email = bradleycwojcik@gmail.com
 [init]
 	defaultBranch = main
-	templateDir = ~/.config/git/templates
 [branch]
   sort = -committerdate
 [tag]

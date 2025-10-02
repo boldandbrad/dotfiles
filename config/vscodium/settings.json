@@ -6,9 +6,6 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderSideBySide": false,
   "editor.accessibilitySupport": "off",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
   "editor.codeLensFontFamily": "Anonymous Pro",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "solid",
@@ -57,10 +54,6 @@
   },
   "editor.wordWrapColumn": 120,
   "editor.wrappingIndent": "indent",
-  "errorLens.fontFamily": "Anonymous Pro",
-  "errorLens.fontStyleItalic": true,
-  "errorLens.gutterIconsEnabled": true,
-  "errorLens.onSave": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.incrementalNaming": "smart",
@@ -72,11 +65,6 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.untrackedChanges": "separate",
-  "gitlens.codeLens.enabled": false,
-  "gitlens.diagnostics.enabled": false,
-  "gitlens.hovers.enabled": false,
-  "gitlens.menus": false,
-  "gitlens.statusBar.enabled": false,
   "markdownlint.run": "onSave",
   "python.envFile": "${workspaceFolder}/.venv",
   "scm.defaultViewMode": "tree",
@@ -110,9 +98,6 @@
   "todo-tree.tree.hideIconsWhenGroupedByTag": true,
   "todo-tree.tree.showCountsInTree": true,
   "trailing-spaces.trimOnSave": true,
-  "vscord.behaviour.suppressNotifications": true,
-  "vscord.ignore.workspaces": ["~/Developer/local/"],
-  "vscord.status.resetElapsedTimePerFile": true,
   "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
   "workbench.activityBar.location": "top",
@@ -124,33 +109,13 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "readme",
   "workbench.tree.indent": 12,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[markdown]": {
-    "editor.rulers": [80],
-    "editor.tabSize": 4
-  },
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4
-  },
-  "[rust]": {
-    "editor.tabSize": 4
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "markdownlint.config": {
     "MD024": false,
     "MD033": false,
     "MD041": false,
     "MD051": false
-  },
-  "codeium.enableConfig": {
-    "*": true,
-    "markdown": true,
-    "plaintext": true
   }
 }

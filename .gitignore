@@ -1,11 +1,11 @@
 # os files
 .DS_Store
 
-# zsh files
+# zsh completion files
 config/zsh/.zcompcache
 config/zsh/.zcompdump
 
 # zed dbs
 */zed/conversations
 */zed/prompts
-
+*/zed/themes

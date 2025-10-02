@@ -1,14 +1,11 @@
 #!/usr/bin/env zsh
 
-################################################################
-# macos/update_system - check for and install macOS updates    #
-################################################################
-# Install Command Line Developer Tools and available macOS     #
-# software updates.                                            #
-#                                                              #
-# NOTE: System updates may force a restart. Simply rerun       #
-# ./unpack.sh to continue.                                     #
-################################################################
+# ------------------------------------------------------------ #
+# macos/update_system - check for dev tools and macOS updates  #
+# ------------------------------------------------------------ #
+# NOTE: System updates may force a restart. Rerun unpack.sh to #
+# continue.                                                    #
+# ------------------------------------------------------------ #
 
 # install command line developer tools
 echo -e "\nChecking for Command Line Developer Tools..."
@@ -24,7 +21,7 @@ else
   echo "${GREEN_B}Command Line Developer Tools are already installed!${RESET}"
 fi
 
-# install available software updates
+# check for available software updates
 # TODO: handle download only case or install only non system updates
 echo
 echo "Checking for available macOS software updates..."
