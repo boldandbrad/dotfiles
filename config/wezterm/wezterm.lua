@@ -5,32 +5,19 @@
 local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 
--- window startup
+-- window startup position
 wezterm.on("gui-startup", function(cmd)
   local _, _, window = wezterm.mux.spawn_window(cmd or {})
   local screen = wezterm.gui.screens().main
 
   -- set initial window size
-  local ratio = 0.9
+  local ratio = 0.64
   local width, height = screen.width * ratio, screen.height * ratio
   window:gui_window():set_inner_size(width, height)
 
   -- center window
-  local x = (screen.width - width) * 0.5
-  local y = (screen.height - height) * 0.5
+  local x, y = (screen.width - width) * 0.5, (screen.height - height) * 0.5
   window:gui_window():set_position(x, y)
-end)
-
--- toggle background opacity
-wezterm.on("toggle-bg-opacity", function(window, pane)
-  local overrides = window:get_config_overrides() or {}
-  if not overrides.window_background_opacity then
-    overrides.window_background_opacity = 1
-  else
-    overrides.window_background_opacity = nil
-  end
-
-  window:set_config_overrides(overrides)
 end)
 
 -- render
@@ -66,7 +53,6 @@ config.font_size = 15
 
 -- tab bar
 config.use_fancy_tab_bar = false
--- config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
 config.show_tab_index_in_tab_bar = false
@@ -86,16 +72,6 @@ tabline.setup({
     tab_separators = "",
   }
 })
-
--- keys
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
-config.keys = {
-  {
-    key = "]",
-    mods = "LEADER",
-    action = wezterm.action.EmitEvent("toggle-bg-opacity")
-  }
-}
 
 -- command palette
 config.command_palette_font_size = config.font_size
