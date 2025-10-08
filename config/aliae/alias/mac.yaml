@@ -19,9 +19,6 @@
 - name: safari # open safari
   value: open -a Safari
   if: eq .OS "darwin"
-- name: spc # change to obsidian vault directory in icloud
-  value: cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/space
-  if: eq .OS "darwin"
 - name: icloud # change to icloud directory
   value: cd $HOME/Library/Mobile Documents/com~apple~CloudDocs/
   if: eq .OS "darwin"

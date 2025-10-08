@@ -1,6 +1,6 @@
-################################################################
+# ------------------------------------------------------------ #
 # aliae.yaml - shell aliases and setup                         #
-################################################################
+# ------------------------------------------------------------ #
 
 env:
   # default tools
@@ -36,8 +36,6 @@ env:
     value: "-" # disable less history
   - name: RUSTUP_HOME
     value: '{{ env "XDG_DATA_HOME" }}/rustup'
-  - name: TMUX_PLUGIN_MANAGER_PATH
-    value: '{{ env "XDG_DATA_HOME" }}/tmux/plugins'
   - name: VSCODE_EXTENSIONS
     value: '{{ env "XDG_DATA_HOME" }}/vscode'
   - name: ZDOTDIR
@@ -83,11 +81,6 @@ path:
       /bin
   - value: |
       /System/Cryptexes/App/usr/bin
-    # TODO: are these needed?
-    # /Library/Apple/usr/bin
-    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin
-    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin
-    # /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
     if: eq .OS "darwin"
 
 alias:
@@ -98,20 +91,6 @@ alias:
     value: cd ../..
   - name: -- -
     value: cd -
-  - name: app
-    value: cd ~/Applications
-  - name: dtp
-    value: cd ~/Desktop
-  - name: dvp
-    value: cd ~/Developer
-  - name: doc
-    value: cd ~/Documents
-  - name: dnl
-    value: cd ~/Downloads
-  - name: dtf
-    value: cd $DOTFILES
-  - name: cfg
-    value: cd $XDG_CONFIG_HOME
   - name: cdr # git repo root
     value: cd $(git rev-parse --show-toplevel)
     type: function
@@ -130,8 +109,6 @@ alias:
     value: bat
   - name: cad
     value: bat --diff --style=changes
-  - name: docker
-    value: podman
   - name: ls
     value: eza --classify
   - name: la
@@ -141,7 +118,7 @@ alias:
   - name: lt
     value: eza --tree --classify --sort=type --ignore-glob .git
   - name: lta
-    value: eza --all --tree --classify --sort=type --ignore-glob .git
+    value: eza --all --tree --classify --sort=type --ignore-glob ".git|.DS_Store"
   - name: ld
     value: eza --only-dirs --classify
   - name: lda
@@ -156,6 +133,8 @@ alias:
     value: mv -iv
   - name: cp
     value: cp -Riv
+  - name: grep
+    value: grep --color=auto
   - name: tokei
     value: tokei --sort lines
 
