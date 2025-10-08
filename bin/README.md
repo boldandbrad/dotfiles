@@ -10,7 +10,6 @@ Invoke these from anywhere.
 
 | Executable                            | Description                                                                                                  |
 | :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
-| [`cleanpods`](../bin/cleanpods)       | Clean podman caches without confirmation, and print podman disk usage                                        |
 | [`clonerepos`](../bin/clonerepos)     | Clone user GitHub repos                                                                                      |
 | [`codext`](../bin/codext)             | Manage VSCodium extensions                                                                                   |
 | [`dots`](../bin/dots)                 | Manage dotfiles                                                                                              |
