@@ -34,7 +34,7 @@ The floor plan at a glance:
 | Operating System                   | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)                                                                                                                                                                                                                                                                       |
 | ---------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Launcher & Window Tiler            | ![leaderkey](https://img.shields.io/badge/LeaderKey-_?color=%23ceddef) ![raycast](https://img.shields.io/badge/Raycast-_?logo=raycast&logoColor=%23FF6363&color=black)                                                                                                                                                                                          |
-| Web Browser                        | ![safari](https://img.shields.io/badge/Safari-_?logo=safari&color=%23006CFF) ![duckduckgo](https://img.shields.io/badge/DuckDuckGo-_?logo=duckduckgo&logoColor=white&color=%23DE5833)                                                                                                                                                                           |
+| Web Browser                        | ![safari](https://img.shields.io/badge/Safari-_?logo=safari&color=%23006CFF) ![glide](https://img.shields.io/badge/Glide-ff682e)                                                                                                                                                                                                                                |
 | Package Manager                    | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040)                                                                                                                                                                                                                                                              |
 | Env, Alias, PATH & Dotfile Manager | ![aliae](https://img.shields.io/badge/🌱_aliae-_?logoColor=%23a0c59e&color=grey)                                                                                                                                                                                                                                                                                |
 | Terminal Emulator & Mux            | ![wezterm](https://img.shields.io/badge/Wezterm-_?logo=wezterm&logoColor=%234E49EE&color=%23212C31)                                                                                                                                                                                                                                                             |
@@ -42,7 +42,7 @@ The floor plan at a glance:
 | Editor                             | ![neovim](https://img.shields.io/badge/Neovim-_?logo=neovim&logoColor=white&color=%2357A143) ![zed](https://img.shields.io/badge/Zed-_?logo=zed-industries&logoColor=white&color=%23084CCF)                                                                                                                                                                     |
 | Version Control System             | ![git](https://img.shields.io/badge/git-_?logo=git&color=%23f1f0e9) ![lazygit](https://img.shields.io/badge/Lazygit-_?color=%23303030)                                                                                                                                                                                                                          |
 | Typeface                           | <img src="./assets/maple-mono.png" alt="maple-mono" width="96"/>                                                                                                                                                                                                                                                                                                |
-| Theme / Colorsheme                 | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                   |
+| Theme / Colorscheme                | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                   |
 | Programming Langauges              | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) |
 
 ---
@@ -65,11 +65,10 @@ The main contents of this repo are organized into a few high-level directories:
 
 ## 📦 Unpack
 
-The [contents](#contents) of this repo can be automatically installed with
-[`unpack.sh`](../unpack.sh). The unpack script explains what it will do, prompts
-the user before each step, and is idempotent. This means it can be safely run
-multiple times to keep the system in sync without compounding changes or
-breaking.
+[`unpack.sh`](../unpack.sh) is the main installation script. The unpack script
+explains what it will do, prompts the user before each step, and is idempotent.
+This means it can be safely run multiple times to keep the system in sync
+without compounding changes or breaking.
 
 In brief, unpacking...
 
@@ -114,7 +113,6 @@ To make system maintanence simpler after unpacking, a handful of convenient
 | Command       | Description                                                 |
 | ------------- | ----------------------------------------------------------- |
 | `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
-| `dot-commit`  | Persist current dotfiles to github (❌ Coming soon)         |
 | `dot-relink`  | Relink installed dotfiles                                   |
 | `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
 | `dep-check`   | Check if all apps and dependencies are installed            |
@@ -127,20 +125,15 @@ To make system maintanence simpler after unpacking, a handful of convenient
 
 ## 💡 Inspiration
 
-There are tons of great dotfile and machine setup repos and resources out there.
+There are plenty of great dotfile repos and machine setup resources out there.
 In particular, I took inspiration from these gems:
 
 - [Dotfiles Community 🔗](https://dotfiles.github.io/) - a great collection of
   dotfile resources
 - [dotfyle 🔗](https://dotfyle.com/) - discover neovim plugins and
   configurations, including [mine](https://dotfyle.com/boldandbrad/)
-- [dreamsofcode-io/dotfiles](https://github.com/dreamsofcode-io/dotfiles) - nvim
-  and tmux configs
-- [lissy93/dotfiles](https://github.com/lissy93/dotfiles) - install scripts and
-  repo structure
-- [stefanzweifel/dotfiles](https://github.com/stefanzweifel/dotfiles)
-- [superatomic/dotfiles](https://github.com/superatomic/dotfiles)
-- [webpro/dotfiles](https://github.com/webpro/dotfiles)
+- [dotfile repos 🔗](https://github.com/stars/boldandbrad/lists/dotfiles) - my
+  favorite github dotfile repositories
 
 ### Wallpaper Credits
 
