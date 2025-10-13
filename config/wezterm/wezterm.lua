@@ -41,6 +41,24 @@ config.window_background_opacity = 0.96
 config.color_scheme = "Catppuccin Mocha"
 config.command_palette_bg_color = "#181825"
 config.command_palette_fg_color = "#cdd6f4"
+config.colors = {
+  tab_bar = {
+    background = "#1e1e2e",
+    active_tab = {
+      bg_color = "#cba6f7",
+      fg_color = "#181825",
+      intensity = "Bold"
+    },
+    inactive_tab = {
+      bg_color = "#1e1e2e",
+      fg_color = "#cdd6f4"
+    },
+    inactive_tab_hover = {
+      bg_color = "#181825",
+      fg_color = "#cdd6f4"
+    }
+  }
+}
 
 -- font
 config.font = wezterm.font_with_fallback {
@@ -55,23 +73,7 @@ config.font_size = 15
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
-config.show_tab_index_in_tab_bar = false
 config.tab_max_width = 24
-
--- lualine inspired tabline
-local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
-tabline.setup({
-  options = {
-    icons_enabled = false,
-    theme = "Catppuccin Mocha",
-    section_separators = "",
-    component_separators = {
-      left = "|",
-      right = "|",
-    },
-    tab_separators = "",
-  }
-})
 
 -- command palette
 config.command_palette_font_size = config.font_size
