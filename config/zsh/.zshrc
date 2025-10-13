@@ -1,9 +1,7 @@
 # ------------------------------------------------------------ #
-# .zshrc - zsh session setup                                   #
+# .zshrc - zsh plugins, zstyles, keybinds, and options         #
 # ------------------------------------------------------------ #
 # -> symlinked to ~/.config/zsh/.zshrc                         #
-#                                                              #
-# Setup plugins, zstyles, keybinds, and options.               #
 # ------------------------------------------------------------ #
 
 # if not running interactively, do nothing
@@ -57,29 +55,16 @@ bindkey '^n' history-search-forward
 HISTFILE="${XDG_CACHE_HOME}/zsh/.zsh_history"
 SAVEHIST=4096 # number of history entries to save to history file
 HISTSIZE=4096 # number of history entries loaded in memory
-HISTFILESIZE=2048
 
 # history
 setopt APPEND_HISTORY # append to history file without overwriting
 setopt HIST_IGNORE_DUPS # ignore contiguous history duplicates
-setopt HIST_IGNORE_SPACE # do not append commands that start with a space
 setopt SHARE_HISTORY # share history across terminals
 
-# setopt hist_save_no_dups # remove older history entries that are dups of newer ones
-# setopt inc_append_history # immediately append to history file, not just on term exit
-
 # other
-setopt auto_cd # auto change to dir without cd
 setopt no_case_glob # enable case-insensitive tab completion and globbing
-# setopt correct
-# setopt correct_all
 
 # initialize tools ------------------------------------------- #
-
-# setup fzf key bindings and fuzzy completions
-if (( $+commands[fzf] )); then
-  source <(fzf --zsh)
-fi
 
 # initialize zoxide directory hopper
 if (( $+commands[zoxide] )); then
