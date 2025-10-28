@@ -22,7 +22,6 @@ brew "lazygit"                  # git client
 brew "neovim"                   # text editor
 brew "oh-my-posh"               # cross-shell prompt engine
 brew "ripgrep"                  # grep alternative
-# brew "tmux"                     # terminal multiplexer
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 
@@ -30,9 +29,7 @@ brew "zsh"                      # system zsh replacement
 
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
-cask "duckduckgo"               # web browser
 cask "leader-key"               # leader key based launcher
-# cask "obsidian"                 # markdown note manager
 cask "proton-pass"              # password manager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 cask "spotify", args: { require_sha: false } # audio streamer
@@ -41,7 +38,6 @@ cask "zed"                      # text editor
 
 # software development tooling and apps ---------------------- #
 
-# cask "container"                # apple container client
 brew "deno"                     # js/ts runtime & toolchain
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
@@ -49,7 +45,6 @@ brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
 brew "marksman"                 # markdown lsp
-# brew "postgresql"               # postgres DB
 brew "rbenv"                    # ruby version manager
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
@@ -59,7 +54,7 @@ brew "tokei"                    # code line counter
 brew "uv"                       # python package manager
 cask "yaak"                     # desktop http client
 
-# fonts ----------------------------------------------------- #
+# fonts ------------------------------------------------------ #
 
 # cask "font-anonymous-pro"
 # cask "font-anonymice-nerd-font"
@@ -72,12 +67,10 @@ cask "yaak"                     # desktop http client
 # cask "font-space-mono"
 cask "font-space-mono-nerd-font"
 
-# games ----------------------------------------------------- #
+# games ------------------------------------------------------ #
 
-# brew "fabric-installer"         # minecraft mod loader
-# brew "ferium"                   # minecraft mod manager
 cask "minecraft"                # minecraft launcher
 # cask "retroarch"                # game emulator launcher
 cask "steam"                    # game marketplace and launcher
 
-# new additions (via "brew bundle add") --------------------- #
+# new additions (via "brew bundle add") ---------------------- #
