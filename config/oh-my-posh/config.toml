@@ -128,6 +128,11 @@ fetch_version = true
 fetch_virtual_env = true
 
 [[blocks.segments]]
+style = "plain"
+template = ' <p:overlay0>|</> ruby <b><p:red>{{ .Full }}</></b>'
+type = "ruby"
+
+[[blocks.segments]]
 style = 'plain'
 template = ' <p:overlay0>|</> rust <b><p:red>{{ .Full }}</></b>'
 type = 'rust'

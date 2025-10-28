@@ -7,6 +7,7 @@ vim.lsp.enable({
   "gopls",
   "lua_ls",
   "marksman",
+  "ruby_lsp",
   "ruff",  -- python
   "rust_analyzer",
   "taplo", -- toml

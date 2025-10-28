@@ -50,6 +50,7 @@ brew "lua"                      # lua language
 brew "lua-language-server"      # lua_ls protocol
 brew "marksman"                 # markdown lsp
 # brew "postgresql"               # postgres DB
+brew "rbenv"                    # ruby version manager
 brew "ruff"                     # python linter and formatter
 brew "rustup"                   # rust toolchain installer
 brew "taplo"                    # toml toolchain
