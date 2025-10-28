@@ -5,7 +5,7 @@
         {
           "key": "b",
           "type": "application",
-          "value": "/Applications/Safari.app"
+          "value": "/Applications/Glide.app"
         },
         {
           "key": "B",
@@ -56,11 +56,6 @@
           "key": "r",
           "type": "application",
           "value": "/System/Applications/Reminders.app"
-        },
-        {
-          "key": "R",
-          "type": "application",
-          "value": "/Applications/Raycast.app"
         },
         {
           "key": "s",
@@ -349,6 +344,11 @@
       "key": "w",
       "label": "Windows",
       "type": "group"
+    },
+    {
+      "key": "space",
+      "type": "application",
+      "value": "/Applications/Raycast.app"
     }
   ],
   "type": "group"
