@@ -84,3 +84,37 @@ autocmd("TextYankPost", {
     vim.highlight.on_yank({ timeout = 170 })
   end
 })
+
+autocmd("FileType", {
+  desc = "Open help in vertical split",
+  pattern = "help",
+  command = "wincmd L",
+})
+
+autocmd("VimResized", {
+  desc = "Auto resize splits on terminal window resize",
+  command = "wincmd =",
+})
+
+autocmd("FileType", {
+  desc = "Do not auto comment on new line",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end
+})
+
+local active_cursorline_group = augroup("active_cursorline", { clear = true })
+autocmd({ "WinEnter", "BufEnter" }, {
+  desc = "Enable cursorline in active windows",
+  group = active_cursorline_group,
+  callback = function()
+    vim.opt_local.cursorline = true
+  end
+})
+autocmd({ "WinLeave", "BufLeave" }, {
+  desc = "Disable cursorline in inactive windows",
+  group = active_cursorline_group,
+  callback = function()
+    vim.opt_local.cursorline = false
+  end
+})
