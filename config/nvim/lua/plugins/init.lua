@@ -3,15 +3,7 @@
 ----------------------------------------------------------------
 
 return {
-  -- text surrounding motions
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    opts = {},
-  },
-
-  -- lsp helpers
+  -- lsp config helpers
   { "neovim/nvim-lspconfig" },
   {
     "folke/lazydev.nvim",
