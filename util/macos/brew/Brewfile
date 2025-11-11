@@ -6,7 +6,8 @@
 
 # taps ------------------------------------------------------- #
 
-# tap "boldandbrad/tap"                 # stuff made by me :)
+# tap "boldandbrad/tap"           # stuff made by me :)
+tap "FelixKratz/formulae"       # sketchybar
 
 # terminal apps and packages --------------------------------- #
 
@@ -32,6 +33,7 @@ cask "discord"                  # digital community client
 cask "leader-key"               # leader key based launcher
 cask "proton-pass"              # password manager
 cask "raycast", args: { require_sha: false } # spotlight replacement
+brew "sketchybar"               # menubar replacement
 cask "spotify", args: { require_sha: false } # audio streamer
 cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor

@@ -208,6 +208,11 @@ link:
     mkdir: true
     if: eq .OS "linux"
 
+  # sketchybar
+  - name: '{{ env "XDG_CONFIG_HOME" }}/sketchybar'
+    target: '{{ env "DOTFILES" }}/config/sketchybar'
+    if: eq .OS "darwin"
+
   # other configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/bat'
     target: '{{ env "DOTFILES" }}/config/bat'
