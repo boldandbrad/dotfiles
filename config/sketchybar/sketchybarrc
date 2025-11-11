@@ -1,78 +1,50 @@
 # ------------------------------------------------------------ #
 # sketchybarrc - sketchybar config                             #
-# https://felixkratz.github.io/SketchyBar/config/bar
+# https://felixkratz.github.io/SketchyBar/config/bar           #
 # ------------------------------------------------------------ #
 
+ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 # bar appearance
-
 bar=(
   position=top
   height=34
   color=0x00000000
   padding_left=12
   padding_right=12
+  notch_width=400
 )
 sketchybar --bar "${bar[@]}"
 
 # item defaults
-
 default=(
   padding_left=4
   padding_right=4
   icon.font="SpaceMono Nerd Font:Regular:14.0"
   label.font="Space Mono:Regular:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=0xffcdd6f4
+  label.color=0xffcdd6f4
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
+  background.corner_radius=6
+  background.height=20
 )
 sketchybar --default "${default[@]}"
 
-# mission control space indicators
-
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid="$(($i+1))"
-  space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
-    icon.padding_left=8
-    icon.padding_right=8
-    background.color=0x40ffffff
-    background.corner_radius=6
-    background.height=20
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
-    click_script="yabai -m space --focus $sid"
-  )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
-done
-
 # left items
-
-sketchybar --add item divider left \
-           --set divider icon.drawing=off label.padding_left=0 label="|" \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
+source "$ITEM_DIR/space.sh"
+source "$ITEM_DIR/divider.sh"
+source "$ITEM_DIR/front_app.sh"
 
 # right items
-
-sketchybar --add item clock right \
-           --set clock update_freq=10 icon.drawing=off script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
-           --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change \
-           --add item weather right \
-           --set weather update_freq=120 icon.drawing=off script="$PLUGIN_DIR/weather.sh"
+source "$ITEM_DIR/clock.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/weather.sh"
+source "$ITEM_DIR/spotify.sh"
 
 # force all scripts to run the first time (never do this in a script)
 sketchybar --update
