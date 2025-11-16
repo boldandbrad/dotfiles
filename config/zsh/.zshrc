@@ -68,7 +68,7 @@ setopt no_case_glob # enable case-insensitive tab completion and globbing
 
 # initialize ruby version manager
 if (( $+commands[rbenv] )); then
-eval "$(rbenv init - --no-rehash zsh)"
+  eval "$(rbenv init - --no-rehash zsh)"
 fi
 
 # initialize zoxide directory hopper
