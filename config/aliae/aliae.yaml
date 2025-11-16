@@ -139,11 +139,6 @@ alias:
     value: tokei --sort lines
 
   # other niceties
-  - name: clr
-    value: clear
-  - name: cld
-    value: clear; cd
-    type: function
   - name: dud
     value: du -d 1 -h | sort -hr
   - name: duf
