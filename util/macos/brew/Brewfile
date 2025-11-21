@@ -31,7 +31,6 @@ cask "bitwarden"                # password manager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "leader-key"               # leader key based launcher
-cask "proton-pass"              # password manager
 cask "raycast", args: { require_sha: false } # spotlight replacement
 brew "sketchybar"               # menubar replacement
 cask "spotify", args: { require_sha: false } # audio streamer
