@@ -1,7 +1,5 @@
 # ------------------------------------------------------------ #
-# Brewfile - macOS software installs                           #
-# ------------------------------------------------------------ #
-# Packages and apps to be installed / updated via Homebrew.    #
+# Brewfile - macOS package installation via homebrew           #
 # ------------------------------------------------------------ #
 
 # taps ------------------------------------------------------- #
@@ -14,6 +12,7 @@ tap "FelixKratz/formulae"       # sketchybar
 brew "aliae"                    # cross platform shell manager
 brew "bash"                     # system bash replacement
 brew "bat"                      # cat replacement
+brew "bitwarden-cli"            # password manager
 brew "eza"                      # ls replacement
 brew "fd"                       # find alternative
 brew "fzf"                      # fuzzy finder
@@ -28,6 +27,7 @@ brew "zsh"                      # system zsh replacement
 
 # desktop apps ----------------------------------------------- #
 
+cask "bitwarden"                # password manager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "leader-key"               # leader key based launcher

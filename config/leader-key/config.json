@@ -50,7 +50,7 @@
         {
           "key": "p",
           "type": "application",
-          "value": "/System/Applications/Passwords.app"
+          "value": "/Applications/Bitwarden.app"
         },
         {
           "key": "r",
