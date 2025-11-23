@@ -5,7 +5,7 @@
         {
           "key": "b",
           "type": "application",
-          "value": "/Applications/Glide.app"
+          "value": "/Applications/DuckDuckGo.app"
         },
         {
           "key": "B",
@@ -99,13 +99,6 @@
           "value": "raycast://extensions/raycast/clipboard-history/clipboard-history"
         },
         {
-          "iconPath": "bookmark",
-          "key": "B",
-          "label": "Safari Bookmarks",
-          "type": "url",
-          "value": "raycast://extensions/loris/safari/search-bookmarks"
-        },
-        {
           "iconPath": "paintpalette",
           "key": "c",
           "label": "Color",
@@ -160,13 +153,6 @@
           "label": "Screenshots",
           "type": "url",
           "value": "raycast://extensions/raycast/screenshots/search-screenshots"
-        },
-        {
-          "iconPath": "safari",
-          "key": "t",
-          "label": "Safari Tabs",
-          "type": "url",
-          "value": "raycast://extensions/loris/safari/cloud-tabs"
         },
         {
           "iconPath": "rectangle.3.group",
