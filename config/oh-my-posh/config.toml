@@ -41,7 +41,7 @@ template = ' >'
 foreground = 'p:green'
 
 [transient_prompt]
-template = '-> '
+template = '> '
 foreground_templates = [
   '{{if gt .Code 0}}p:red{{end}}',
   '{{if eq .Code 0}}p:green{{end}}',
@@ -156,7 +156,7 @@ threshold = 1000
 # template = ' is <p:blue><b>{{ .CurrentDate | date "3:04:05pm" }}</b></>'
 # foreground = 'p:overlay0'
 # type = 'time'
-#
+
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
@@ -164,7 +164,7 @@ newline = true
 
 [[blocks.segments]]
 style = 'plain'
-template = '->'
+template = '>'
 type = 'text'
 foreground_templates = [
   '{{if gt .Code 0}}p:red{{end}}',
