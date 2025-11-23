@@ -20,8 +20,8 @@ sketchybar --bar "${bar[@]}"
 default=(
   padding_left=4
   padding_right=4
-  icon.font="SpaceMono Nerd Font:Regular:14.0"
-  label.font="Space Mono:Regular:14.0"
+  icon.font="SpaceMono Nerd Font:Regular:15.0"
+  label.font="Space Mono:Regular:15.0"
   icon.color=0xffcdd6f4
   label.color=0xffcdd6f4
   icon.padding_left=4
