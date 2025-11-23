@@ -30,6 +30,7 @@ brew "zsh"                      # system zsh replacement
 cask "bitwarden"                # password manager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
+cask "ghostty"                  # terminal emulator
 cask "leader-key"               # leader key based launcher
 cask "raycast", args: { require_sha: false } # spotlight replacement
 brew "sketchybar"               # menubar replacement
@@ -65,7 +66,7 @@ cask "yaak"                     # desktop http client
 # cask "font-fira-code-nerd-font"
 # cask "font-maple-mono"
 # cask "font-maple-mono-nf"
-# cask "font-space-mono"
+cask "font-space-mono"
 cask "font-space-mono-nerd-font"
 
 # games ------------------------------------------------------ #

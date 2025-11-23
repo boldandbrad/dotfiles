@@ -1,7 +1,11 @@
-theme = catppuccin-mocha
+#--------------------------------------------------------------#
+# ghostty config                                               #
+#--------------------------------------------------------------#
 
-font-family = "Anonymous Pro"
-font-size = 16
+theme = Catppuccin Mocha
+
+font-family = "Space Mono"
+font-size = 15
 
 shell-integration-features = no-cursor
 cursor-style = block
