@@ -32,9 +32,9 @@ cask "bitwarden"                # password manager
 cask "discord"                  # digital community client
 cask "ghostty"                  # terminal emulator
 cask "leader-key"               # leader key based launcher
-cask "raycast", args: { require_sha: false } # spotlight replacement
+cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
-cask "spotify", args: { require_sha: false } # audio streamer
+cask "spotify"                  # audio streamer
 cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor
 
