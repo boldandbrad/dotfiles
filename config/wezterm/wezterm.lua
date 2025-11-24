@@ -62,9 +62,9 @@ config.colors = {
 
 -- font
 config.font = wezterm.font_with_fallback {
-  { family = "SpaceMono Nerd Font",    weight = "Regular" },
-  { family = "Maple Mono NF",          weight = "Regular" },
-  { family = "AnonymicePro Nerd Font", weight = "Regular" },
+  { family = "Space Mono",    weight = "Regular" },
+  { family = "Maple Mono",    weight = "Regular" },
+  { family = "Anonymous Pro", weight = "Regular" },
   "Apple Color Emoji",
 }
 config.font_size = 15
