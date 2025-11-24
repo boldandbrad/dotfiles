@@ -1,22 +1,19 @@
 #!/usr/bin/env bash
 
-################################################################
-# unpack.sh - All-in-One Install and Setup Script for Unix     #
-################################################################
-# Prompt the user to check system compatibility, install       #
-# packages and apps, symlink dotfiles, and configure system.   #
+# ------------------------------------------------------------ #
+# unpack.sh - all-in-one mac setup script                      #
+# ------------------------------------------------------------ #
+# Check compatibility, then prompt to install packages,        #
+# symlink dotfiles, and configure system.                      #
 #                                                              #
 # OPTIONS:                                                     #
 #   --auto-yes: Skip all prompts, and auto-accept all changes  #
 #   --no-clear: Don't clear the screen before running          #
-#                                                              #
-# IMPORTANT: Read and understand contents before running.      #
-################################################################
+# ------------------------------------------------------------ #
 
-# set variables
-PARAMS=$* # user provided parameters
-SYSTEM_TYPE=$(uname -s) # system type - Linux / MacOS (Darwin)
-export PROMPT_TIMEOUT=15 # when user is prompted for input, skip after x seconds
+PARAMS=$*
+SYSTEM_TYPE=$(uname -s)
+export PROMPT_TIMEOUT=15
 
 export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
@@ -26,7 +23,6 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
-# color ansi escape codes
 export RESET='\033[0m'
 export RED_B='\033[1;31m'
 export GREEN_B='\033[1;32m'
@@ -36,12 +32,10 @@ export PLAIN_B='\033[1;37m'
 export YELLOW_B='\033[1;93m'
 GREEN='\033[0;32m'
 
-# clear screen
 if [[ ! $PARAMS == *"--no-clear"* ]] && [[ ! $PARAMS == *"--help"* ]] ; then
   clear
 fi
 
-# print help
 if [[ $PARAMS == *"--help"* ]] ; then
   echo -e "usage: ./unpack.sh [--help] [--auto-yes] [--no-clear]\n\n"\
   "Prompt the user to check system compatibility, install packages and apps, symlink dotfiles, and configure system.\n\n"\
@@ -52,7 +46,6 @@ if [[ $PARAMS == *"--help"* ]] ; then
   exit 0
 fi
 
-# if auto-yes set, then don't wait for user reply
 if [[ $PARAMS == *"--auto-yes"* ]]; then
   export PROMPT_TIMEOUT=1
   export AUTO_YES=true
@@ -71,10 +64,7 @@ function make_banner () {
 }
 
 function intro () {
-  # welcome banner
   make_banner "${GITHUB_USER}/dotfiles - Install" "${BLUE_B}" "${BLUE_B}"
-
-  # explain to the user what changes will be made
   echo -e "${BLUE_B}This install script will do the following:${RESET}\n"\
   "(1) Verify system compatibility and check for updates\n"\
   "(2) Install packages and apps\n"\
@@ -82,7 +72,6 @@ function intro () {
   "(4) Apply system configurations\n"\
   "${PURPLE_B}For more info, see GitHub: \033[4;35mhttps://github.com/${GITHUB_USER}/dotfiles${RESET}\n"
 
-  # confirm the user would like to proceed
   if [[ $AUTO_YES != true ]] ; then
     echo -e "${PURPLE_B}You will be prompted at each stage, before any changes are made.${RESET}\n"
     echo -en "${BLUE_B}Would you like to continue? (y/N):${RESET} "
@@ -95,7 +84,6 @@ function intro () {
 }
 
 function check_system () {
-  # verify system compatibility
   echo -e "\nChecking for system compatibility..."
   if [ "$SYSTEM_TYPE" == "Darwin" ]; then
     echo -e "${GREEN_B}System is compatible. Continuing...${RESET}"
@@ -111,23 +99,18 @@ function check_system () {
     exit 1
   fi
 
-  # confirm the user would like to check for system updates
-  if [[ $AUTO_YES != true ]] ; then
-    echo -en "\n${BLUE_B}Would you like to check for updates? (y/N):${RESET} "
-    read -t $PROMPT_TIMEOUT -n 1 -r ans_sysupdate && echo
-    if [[ ! $ans_sysupdate =~ ^[Yy]$ ]] ; then
-      echo -e "\nSkipping system updates."
-      return
-    fi
-  fi
-
-  # check if running in CI
   if [ -z "${CI}" ]; then
-    # update macOS system software
+    if [[ $AUTO_YES != true ]] ; then
+      echo -en "\n${BLUE_B}Would you like to check for updates? (y/N):${RESET} "
+      read -t $PROMPT_TIMEOUT -n 1 -r ans_sysupdate && echo
+      if [[ ! $ans_sysupdate =~ ^[Yy]$ ]] ; then
+        echo -e "\nSkipping system updates."
+        return
+      fi
+    fi
+
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
       $DOTFILES/util/macos/update_system
-    elif [ "$DISTRO" == "alpine" ]; then
-      $DOTFILES/util/linux/alpine/update_system.sh
     fi
   else
     echo -e "\nSkipping system updates. Running in CI."
@@ -135,7 +118,6 @@ function check_system () {
 }
 
 function install_packages () {
-  # confirm the user would like to install packages
   if [[ $AUTO_YES != true ]] ; then
     echo -en "\n${BLUE_B}Would you like to install/update packages and apps? (y/N):${RESET} "
     read -t $PROMPT_TIMEOUT -n 1 -r ans_syspackages && echo
@@ -145,15 +127,12 @@ function install_packages () {
     fi
   fi
 
-  # install macOS packages
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    # install macOS packages and apps with homebrew
     $DOTFILES/util/macos/install_packages
   fi
 }
 
 function link_dotfiles () {
-  # confirm the user would like to symlink dotfiles
   if [[ $AUTO_YES != true ]] ; then
     echo -en "\n${BLUE_B}Would you like to install dotfiles? (y/N):${RESET} "
     read -t $PROMPT_TIMEOUT -n 1 -r ans_symlinks && echo
@@ -163,13 +142,11 @@ function link_dotfiles () {
     fi
   fi
 
-  # symlink dotfiles
   echo -e "\nInstalling dotfiles..."
   eval "$(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)"
 }
 
 function config_system () {
-  # confirm the user would like to perform system configuration
   if [[ $AUTO_YES != true ]] ; then
     echo -en "\n${BLUE_B}Would you like to perform system-specific configuration? (y/N):${RESET} "
     read -t $PROMPT_TIMEOUT -n 1 -r ans_sysconfig && echo
@@ -179,7 +156,6 @@ function config_system () {
     fi
   fi
 
-  # perform macOS configuration
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     $DOTFILES/util/macos/config_system
   fi
@@ -188,7 +164,6 @@ function config_system () {
 # terminate on first failure
 set -e
 
-# start!
 intro
 check_system
 install_packages
