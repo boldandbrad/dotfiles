@@ -83,7 +83,6 @@
           "value": "/Applications/Zed.app"
         }
       ],
-      "iconPath": "app",
       "key": "a",
       "label": "Apps",
       "type": "group"
@@ -91,77 +90,72 @@
     {
       "actions": [
         {
-          "iconPath": "list.bullet.clipboard",
           "key": "b",
           "label": "Clipboard History",
           "type": "url",
           "value": "raycast://extensions/raycast/clipboard-history/clipboard-history"
         },
         {
-          "iconPath": "paintpalette",
           "key": "c",
           "label": "Color",
           "type": "url",
           "value": "raycast://extensions/thomas/color-picker/pick-color"
         },
         {
-          "iconPath": "face.smiling.inverse",
           "key": "e",
           "label": "Emoji",
           "type": "url",
           "value": "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
-          "iconPath": "document",
           "key": "f",
           "label": "File",
           "type": "url",
           "value": "raycast://extensions/raycast/file-search/search-files"
         },
         {
-          "iconPath": "video",
           "key": "g",
           "label": "Gif",
           "type": "url",
           "value": "raycast://extensions/josephschmitt/gif-search/search"
         },
         {
-          "iconPath": "menubar.rectangle",
           "key": "i",
-          "label": "Menu Items",
+          "label": "Menu Item",
           "type": "url",
           "value": "raycast://extensions/raycast/navigation/search-menu-items"
         },
         {
-          "iconPath": "music.note",
           "key": "m",
           "label": "Music Library",
           "type": "url",
           "value": "raycast://extensions/mattisssa/spotify-player/yourLibrary"
         },
         {
-          "iconPath": "music.quarternote.3",
           "key": "M",
           "label": "Music",
           "type": "url",
           "value": "raycast://extensions/mattisssa/spotify-player/search"
         },
         {
-          "iconPath": "camera.metering.center.weighted.average",
+          "key": "p",
+          "label": "Password",
+          "type": "url",
+          "value": "raycast://extensions/jomifepe/bitwarden/search"
+        },
+        {
           "key": "s",
-          "label": "Screenshots",
+          "label": "Screenshot",
           "type": "url",
           "value": "raycast://extensions/raycast/screenshots/search-screenshots"
         },
         {
-          "iconPath": "rectangle.3.group",
           "key": "w",
           "label": "Window",
           "type": "url",
           "value": "raycast://extensions/raycast/navigation/switch-windows"
         }
       ],
-      "iconPath": "list.bullet.rectangle",
       "key": "p",
       "label": "Pickers",
       "type": "group"
@@ -184,14 +178,12 @@
           "value": "/Users/boldandbrad/Documents"
         },
         {
-          "iconPath": "house",
           "key": "h",
           "label": "Home",
           "type": "folder",
           "value": "/Users/boldandbrad"
         },
         {
-          "iconPath": "cloud",
           "key": "i",
           "label": "iCloud",
           "type": "folder",
@@ -240,7 +232,6 @@
           "value": "https://youtube.com"
         }
       ],
-      "iconPath": "bookmark",
       "key": "b",
       "label": "Bookmarks",
       "type": "group"
@@ -248,84 +239,72 @@
     {
       "actions": [
         {
-          "iconPath": "inset.filled.lefthalf.rectangle",
           "key": "h",
           "label": "Left Half",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/left-half"
         },
         {
-          "iconPath": "inset.filled.righthalf.rectangle",
           "key": "l",
           "label": "Right Half",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/right-half"
         },
         {
-          "iconPath": "inset.filled.rectangle",
           "key": "m",
           "label": "Maximize",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/maximize"
         },
         {
-          "iconPath": "inset.filled.center.rectangle",
           "key": "v",
           "label": "Almost Maximize",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/almost-maximize"
         },
         {
-          "iconPath": "inset.filled.bottomright.rectangle",
           "key": "n",
           "label": "Reasonable Size",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/reasonable-size"
         },
         {
-          "iconPath": "inset.filled.bottomthird.rectangle",
           "key": "j",
           "label": "Bottom Half",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/bottom-half"
         },
         {
-          "iconPath": "inset.filled.topthird.rectangle",
           "key": "k",
           "label": "Top Half",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/top-half"
         },
         {
-          "iconPath": "arrow.down.left.and.arrow.up.right.rectangle",
           "key": "f",
           "label": "Fullscreen",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/toggle-fullscreen"
         },
         {
-          "iconPath": "squares.leading.rectangle",
           "key": "s",
           "label": "Stage Manager",
           "type": "url",
           "value": "raycast://extensions/raycast/system/toggle-stage-manager"
         },
         {
-          "iconPath": "desktopcomputer",
           "key": "d",
           "label": "Show Desktop",
           "type": "url",
           "value": "raycast://extensions/raycast/system/show-desktop"
         },
         {
-          "iconPath": "arrow.trianglehead.counterclockwise.rotate.90",
           "key": "r",
           "label": "Restore",
           "type": "url",
           "value": "raycast://extensions/raycast/window-management/restore"
         }
       ],
-      "iconPath": "uiwindow.split.2x1",
       "key": "w",
       "label": "Windows",
       "type": "group"

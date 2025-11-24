@@ -20,7 +20,6 @@ Planned changes and updates to this repo.
 
 - all: add link to configuration documentation in config file headers
 - bash: update config
-- raycast: new backup
 - zsh: simplify config
 - zsh: launch zellij on startup?
 
