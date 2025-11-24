@@ -4,28 +4,28 @@ Planned changes and updates to this repo.
 
 ## Documentation
 
+- add values/design patterns
 - feature explanations
-- gif/video demo in readme
-
-## Environment Support
-
-- alpine-linux
-  - app/pkg install
-  - dotfile symlinking
-- debian-linux
-  - app/pkg install
-  - dotfile symlinking
 
 ## Features
 
 - command: `sys-clean` to clean up caches and system data
+- bin: simple custom script to manage linking and unlinking dotfiles (replace
+  aliae)
 - bin: script to auto update manually managed theme files
-- keyboard: dvorak/programmers dvorak keyboard layout setup?
 - shells: cleanup aliases, env, and function setup via aliae
 - unpack: detail necessary manual setup steps
 
 ## Configs
 
-- lazygit: Catppuccin theme
-- mackup: Store other app settings via `mackup`?
-- wezterm: tab and multiplexer configuration
+- all: add link to configuration documentation in config file headers
+- bash: update config
+- raycast: new backup
+- zsh: simplify config
+- zsh: launch zellij on startup?
+
+## Environment Support (not guaranteed)
+
+- alpine-linux
+- debian-linux
+- arch-linux (omarchy maybe)
