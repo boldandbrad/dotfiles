@@ -2,6 +2,18 @@
 // zellij config                                              //
 // ---------------------------------------------------------- //
 
+// capture native tab events
+keybinds {
+    normal {
+        bind "Super c" { Copy; }
+        bind "Super Alt Left" { GoToPreviousTab; }
+        bind "Super Alt Right" { GoToNextTab; }
+        bind "Super w" { CloseTab; }
+        bind "Super t" { NewTab; }
+        bind "Super n" { NewPane; }
+    }
+}
+
 load_plugins {}
 
 ui {
