@@ -1,0 +1,22 @@
+// ---------------------------------------------------------- //
+// zellij config                                              //
+// ---------------------------------------------------------- //
+
+load_plugins {}
+
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name true
+    }
+    tab_bar {
+        position "bottom"
+    }
+}
+
+default_layout "compact"
+simplified_ui true
+theme "catppuccin-mocha"
+show_startup_tips false
+on_force_close "quit"
+

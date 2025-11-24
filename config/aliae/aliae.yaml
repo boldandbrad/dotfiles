@@ -186,8 +186,8 @@ link:
     target: '{{ env "DOTFILES" }}/config/wezterm'
   - name: '{{ env "XDG_CONFIG_HOME" }}/ghostty'
     target: '{{ env "DOTFILES" }}/config/ghostty'
-  - name: '{{ env "XDG_CONFIG_HOME" }}/tmux'
-    target: '{{ env "DOTFILES" }}/config/tmux'
+  - name: '{{ env "XDG_CONFIG_HOME" }}/zellij'
+    target: '{{ env "DOTFILES" }}/config/zellij'
 
   # editor configs
   - name: '{{ env "XDG_CONFIG_HOME" }}/nvim'

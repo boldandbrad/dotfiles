@@ -22,6 +22,7 @@ brew "lazygit"                  # git client
 brew "neovim"                   # text editor
 brew "oh-my-posh"               # cross-shell prompt engine
 brew "ripgrep"                  # grep alternative
+brew "zellij"                   # terminal multiplexer
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement
 
@@ -35,7 +36,7 @@ cask "leader-key"               # leader key based launcher
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
 cask "spotify"                  # audio streamer
-cask "wezterm"                  # terminal emulator
+# cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor
 
 # software development tooling and apps ---------------------- #
