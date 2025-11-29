@@ -3,12 +3,7 @@ export SHELL_SESSION_HISTORY=0
 
 # source aliae
 if [ -x "$(command -v aliae)" ]; then
-  eval "$(aliae init bash --config ~/Setup/dotfiles/config/aliae/aliae.yaml)"
-fi
-
-# setup fzf key bindings and fuzzy completions
-if [ -x "$(command -v fzf)" ]; then
-  eval "$(fzf --bash)"
+  eval "$(aliae init bash --config ~/Dotfiles/config/aliae/aliae.yaml)"
 fi
 
 # initialize zoxide directory hopper
