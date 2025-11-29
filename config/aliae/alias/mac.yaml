@@ -6,18 +6,12 @@
 - name: cwd # copy current working directory path
   value: pwd | pbcopy
   if: eq .OS "darwin"
-- name: finder # open pwd in Finder.app
-  value: open .
-  if: eq .OS "darwin"
 - name: ql # open file in macOS quicklook
   value: qlmanage -p ${@} > /dev/null 2> /dev/null
   type: function
   if: eq .OS "darwin"
 - name: netspeed # check network speeds
   value: NetworkQuality
-  if: eq .OS "darwin"
-- name: safari # open safari
-  value: open -a Safari
   if: eq .OS "darwin"
 - name: icloud # change to icloud directory
   value: cd $HOME/Library/Mobile Documents/com~apple~CloudDocs/

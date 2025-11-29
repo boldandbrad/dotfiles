@@ -4,8 +4,6 @@
 
 env:
   # default tools
-  - name: BROWSER
-    value: safari
   - name: EDITOR
     value: nvim
   - name: PAGER
@@ -83,46 +81,15 @@ path:
 
 alias:
   # nav shortcuts
-  - name: ..
-    value: cd ..
-  - name: ...
-    value: cd ../..
-  - name: -- -
-    value: cd -
   - name: cdr # git repo root
     value: cd $(git rev-parse --show-toplevel)
     type: function
 
-  # dotfiles
-  - name: dot-relink
-    value: eval $(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)
-  - name: zsh-reload
-    value: exec zsh
-    if: eq .Shell "zsh"
-
   # tool replacements
-  - name: vim
-    value: nvim
   - name: cat
     value: bat
-  - name: cad
-    value: bat --diff --style=changes
   - name: ls
     value: eza --classify
-  - name: la
-    value: eza --all --classify
-  - name: ll
-    value: eza --all --long --header --classify
-  - name: lt
-    value: eza --tree --classify --sort=type --ignore-glob .git
-  - name: lta
-    value: eza --all --tree --classify --sort=type --ignore-glob ".git|.DS_Store"
-  - name: ld
-    value: eza --only-dirs --classify
-  - name: lda
-    value: eza --all --only-dirs --classify
-  - name: lgt
-    value: eza --all --git --long --tree --sort=type --no-permissions --no-filesize --no-user --no-time --git-ignore --ignore-glob .git
 
   # default options
   - name: mkdir
@@ -141,10 +108,6 @@ alias:
     value: du -d 1 -h | sort -hr
   - name: duf
     value: du -sh * | sort -hr
-  - name: lock
-    value: zip -erj
-  - name: unlock
-    value: unzip -d
 
   # pretty print PATHs
   - name: path
