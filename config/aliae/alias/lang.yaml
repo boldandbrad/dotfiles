@@ -1,44 +1,10 @@
 # programming language specific aliases
 
 # rust
-- name: cgr
-  value: cargo run
 - name: cgc
   value: cargo clippy --all-targets --all-features -- -D warnings
 - name: cgt
   value: cargo test --all
-
-# js/ts
-- name: dna
-  value: deno add
-- name: dnb
-  value: deno bench
-- name: dnf
-  value: deno fmt
-- name: dnc
-  value: deno lint
-- name: dnt
-  value: deno test
-- name: dnr
-  value: deno run
-- name: dtb
-  value: deno task build
-- name: dts
-  value: deno task serve
-
-# golang
-- name: gor
-  value: go run .
-- name: gof
-  value: go fmt
-- name: gog
-  value: go get
-- name: gob
-  value: go build
-- name: got
-  value: go test
-- name: gov
-  value: go vet
 
 # python
 - name: py
