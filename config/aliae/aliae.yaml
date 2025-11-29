@@ -36,8 +36,6 @@ env:
     value: "-" # disable less history
   - name: RUSTUP_HOME
     value: '{{ env "XDG_DATA_HOME" }}/rustup'
-  - name: VSCODE_EXTENSIONS
-    value: '{{ env "XDG_DATA_HOME" }}/vscode'
   - name: ZDOTDIR
     value: '{{ env "XDG_CONFIG_HOME" }}/zsh'
     if: eq .Shell "zsh"
@@ -194,14 +192,6 @@ link:
     target: '{{ env "DOTFILES" }}/config/nvim'
   - name: '{{ env "XDG_CONFIG_HOME" }}/zed'
     target: '{{ env "DOTFILES" }}/config/zed'
-    # - name: "{{ .Home }}/Library/Application\ Support/VSCodium/User/settings.json"
-    #   target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
-    #   mkdir: true
-    #   if: eq .OS "darwin"
-  - name: '{{ env "XDG_CONFIG_HOME" }}/VSCodium/User/settings.json'
-    target: '{{ env "DOTFILES" }}/config/vscodium/settings.json'
-    mkdir: true
-    if: eq .OS "linux"
 
   # sketchybar
   - name: '{{ env "XDG_CONFIG_HOME" }}/sketchybar'

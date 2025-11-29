@@ -1,12 +1,6 @@
 # Virtual Environments
 .venv
 
-# Editor and IDE Files
-.vscode
-.vscode-oss
-.vscodium
-.idea
-
 # OS Files
 .DS_Store
 .Trashes
