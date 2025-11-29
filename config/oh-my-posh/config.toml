@@ -62,7 +62,6 @@ alpine = 'alpine'
 linux = 'linux'
 macos = 'macOS'
 ubuntu = 'ubuntu'
-windows = 'win'
 
 [[blocks.segments]]
 style = 'plain'
