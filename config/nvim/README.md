@@ -11,6 +11,7 @@ optimized for coding in languages like Go and Rust, and note-taking in Markdown.
   - gopls
   - lua-language-server
   - marksman
+  - ruby_lsp
   - ruff
   - rust-analyzer
   - taplo

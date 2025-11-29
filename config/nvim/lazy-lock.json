@@ -9,7 +9,7 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "da33755d00e09bff2473978910168ff9ea5dc453"
+    "commit": "ce4a8e0d5267e67056f9f4dcf6cb1d0933c8ca00"
   },
   "fidget.nvim": {
     "branch": "main",
@@ -25,7 +25,7 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "cdafc320f03f2572c40ab93a4eecb733d4016d07"
+    "commit": "5813e4878748805f1518cee7abb50fd7205a3a48"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -41,7 +41,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "a2a277114dbb93e98f04b5087a9b832918b7da15"
+    "commit": "07f4e93de92e8d4ea7ab99602e3a8c9ac0fb778a"
   },
   "nvim-treesitter": {
     "branch": "master",
