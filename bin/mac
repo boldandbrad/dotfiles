@@ -5,44 +5,30 @@
 PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
 
 help() {
-  echo "mac - mac system info"
+  echo "mac - mac system utility"
   echo ""
   echo "Usage: mac [command]"
   echo ""
   echo "Commands:"
-  echo "  install-deps  Install dependencies via Homebrew"
-  echo "  update        Check for and begin system updates"
+  echo "  set        Apply system settings"
+  echo "  deps       Manage packages and applications"
+  echo "  info       Show system information"
+  echo "  link-dots  Symlink dotfiles"
+  echo "  update     Check for and install system updates"
   exit
 }
 
-info_help() {
-  echo "mac - mac system info"
+deps_help() {
+  echo "mac-deps - Manage packages and applications"
   echo ""
-  echo "Usage: mac info [command]"
+  echo "Usage: mac deps [command]"
   echo ""
   echo "Commands:"
-  echo "  hardware      Show mac hardware info"
-  echo "  software      Show mac software info"
-  echo "  serial        Show mac serial number"
+  echo "  install  Install packages and applications"
   exit
 }
 
-info_hardware() {
-  system_profiler SPHardwareDataType | tail -n +4
-  exit
-}
-
-info_software() {
-  system_profiler SPSoftwareDataType | tail -n +4
-  exit
-}
-
-info_serial() {
-  system_profiler SPHardwareDataType | grep "Serial Number (system)" | awk '{ print $4 }'
-  exit
-}
-
-install_deps() {
+deps_install() {
   # install homebrew if not already installed
   echo -e "Checking for Homebrew..."
   if ! type brew &>/dev/null; then
@@ -69,8 +55,60 @@ install_deps() {
   exit
 }
 
+info_help() {
+  echo "mac-info - Show system information"
+  echo ""
+  echo "Usage: mac info [command]"
+  echo ""
+  echo "Commands:"
+  echo "  hardware      Show mac hardware info"
+  echo "  software      Show mac software info"
+  echo "  serial        Show mac serial number"
+  exit
+}
 
-updates() {
+info_hardware() {
+  system_profiler SPHardwareDataType | tail -n +4
+  exit
+}
+
+info_software() {
+  system_profiler SPSoftwareDataType | tail -n +4
+  exit
+}
+
+info_serial() {
+  system_profiler SPHardwareDataType | grep "Serial Number (system)" | awk '{ print $4 }'
+  exit
+}
+
+settings() {
+  # quit any active System Settings windows to avoid overriding settings
+  osascript -e 'tell application "System Settings" to quit'
+
+  # hush terminal login messages
+  touch ~/.hushlogin
+
+  # set desktop wallpaper - NOTE: this may cause macOS to prompt the user to provide their terminal emulator with home folder access
+  osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Dotfiles/util/wallpapers/catppuccin-gradient.png\" as POSIX file"
+  echo "Desktop wallpaper set."
+
+  # map caps lock key to escape - courtesy of https://stackoverflow.com/a/46460200/19295049
+  if type hidutil &>/dev/null; then
+    hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
+    plist_location=~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
+    if [ ! -f $plist_location ]; then
+      ln -s $DOTFILES/util/com.boldandbrad.CapsLockEscape.plist $plist_location
+    fi
+    if launchctl list | grep -q com.boldandbrad.CapsLockEscape; then
+      launchctl load $plist_location
+    fi
+    echo "Caps Lock key remapped to Escape."
+  fi
+  exit
+}
+
+update() {
   echo "Checking for available macOS software updates..."
   if softwareupdate -l 2>&1 | grep -q $Q "No new software available."; then
     echo "No new software available."
@@ -92,6 +130,17 @@ updates() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   while test $# -gt 0; do
     case "$1" in
+      "deps")
+        case "$2" in
+          "install")
+            deps_install
+            ;;
+          *)
+            deps_help
+            ;;
+        esac
+        shift
+        ;;
       "info")
         case "$2" in
           "hardware")
@@ -109,11 +158,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         esac
         shift
         ;;
-      "install-deps")
-        install_deps
+      "set")
+        settings
         ;;
       "update")
-        updates
+        update
         ;;
       *)
         help

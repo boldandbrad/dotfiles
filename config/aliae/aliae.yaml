@@ -166,8 +166,3 @@ link:
     target: '{{ env "DOTFILES" }}/config/bat'
   - name: '{{ env "XDG_CONFIG_HOME" }}/oh-my-posh'
     target: '{{ env "DOTFILES" }}/config/oh-my-posh'
-
-  # macOS launch daemons
-  - name: "{{ .Home }}/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist"
-    target: '{{ env "DOTFILES" }}/util/com.boldandbrad.CapsLockEscape.plist'
-    if: eq .OS "darwin"

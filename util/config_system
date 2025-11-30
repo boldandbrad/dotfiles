@@ -7,21 +7,6 @@
 # quit any active System Settings windows to avoid overriding settings
 osascript -e 'tell application "System Settings" to quit'
 
-# hush terminal login messages
-touch ~/.hushlogin
-
-# set desktop wallpaper
-# NOTE: this may cause macOS to prompt the user to provide their terminal emulator with home folder access
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"~/Dotfiles/util/wallpapers/catppuccin-gradient.png\" as POSIX file"
-echo "Set desktop wallpaper!"
-
-# map caps lock key to escape - courtesy of https://stackoverflow.com/a/46460200/19295049
-if type hidutil &>/dev/null; then
-  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
-  launchctl load com.boldandbrad.CapslockEscape.plist
-fi
-echo "Mapped Caps Lock to Esc!"
-
 # ------------------------------------------------------------ #
 # macOS system settings                                        #
 # ------------------------------------------------------------ #
