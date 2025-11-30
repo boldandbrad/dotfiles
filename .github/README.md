@@ -111,14 +111,13 @@ cd ~/Dotfiles && ./unpack.sh
 To make system maintanence simpler after unpacking, a handful of convenient
 [aliases](../config/aliae/aliae.yaml) are provided. Invoke these from anywhere.
 
-| Command       | Description                                                 |
-| ------------- | ----------------------------------------------------------- |
-| `sys-clean`   | Clean system caches and app data (❌ Coming soon)           |
-| `dot-relink`  | Relink installed dotfiles                                   |
-| `zsh-reload`  | Reload shell environment ([`.zshrc`](../config/zsh/.zshrc)) |
-| `dep-check`   | Check if all apps and dependencies are installed            |
-| `dep-refresh` | Install/update all apps and dependencies                    |
-| `dep-prune`   | Uninstall apps and dependencies that aren't needed          |
+| Command       | Description                                        |
+| ------------- | -------------------------------------------------- |
+| `sys-clean`   | Clean system caches and app data (❌ Coming soon)  |
+| `dot-relink`  | Relink installed dotfiles                          |
+| `dep-check`   | Check if all apps and dependencies are installed   |
+| `dep-refresh` | Install/update all apps and dependencies           |
+| `dep-prune`   | Uninstall apps and dependencies that aren't needed |
 
 ---
 

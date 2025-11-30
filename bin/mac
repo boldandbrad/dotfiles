@@ -7,31 +7,68 @@ PROMPT_TIMEOUT=15 # When user is prompted for input, skip after x seconds
 help() {
   echo "mac - mac system info"
   echo ""
-  echo "Usage: mac [options]"
+  echo "Usage: mac [command]"
   echo ""
-  echo "Options:"
-  echo "  -h, --help      Show this help message and exit"
-  echo "      --hardware  Show mac hardware info"
-  echo "      --software  Show mac software info"
-  echo "      --serial    Show mac serial number"
-  echo "      --update    Check for system updates"
+  echo "Commands:"
+  echo "  install-deps  Install dependencies via Homebrew"
+  echo "  update        Check for and begin system updates"
   exit
 }
 
-hardware() {
+info_help() {
+  echo "mac - mac system info"
+  echo ""
+  echo "Usage: mac info [command]"
+  echo ""
+  echo "Commands:"
+  echo "  hardware      Show mac hardware info"
+  echo "  software      Show mac software info"
+  echo "  serial        Show mac serial number"
+  exit
+}
+
+info_hardware() {
   system_profiler SPHardwareDataType | tail -n +4
   exit
 }
 
-software() {
+info_software() {
   system_profiler SPSoftwareDataType | tail -n +4
   exit
 }
 
-serial() {
+info_serial() {
   system_profiler SPHardwareDataType | grep "Serial Number (system)" | awk '{ print $4 }'
   exit
 }
+
+install_deps() {
+  # install homebrew if not already installed
+  echo -e "Checking for Homebrew..."
+  if ! type brew &>/dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit 1
+
+    export PATH=/opt/homebrew/bin:$PATH
+
+    # configure homebrew
+    brew developer off
+    brew analytics off
+
+    echo -e "${GREEN_B}Homebrew is now installed.${RESET}"
+  else
+    echo -e "${GREEN_B}Homebrew is installed.${RESET}"
+  fi
+
+  # install apps and packages from Brewfile
+  echo
+  if ! brew bundle check; then
+    echo "Installing macOS apps and packages from Brewfile..."
+    brew bundle
+  fi
+  exit
+}
+
 
 updates() {
   echo "Checking for available macOS software updates..."
@@ -55,23 +92,30 @@ updates() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   while test $# -gt 0; do
     case "$1" in
-      "-h"|"--help")
-        help
+      "info")
+        case "$2" in
+          "hardware")
+            info_hardware
+            ;;
+          "software")
+            info_software
+            ;;
+          "serial")
+            info_serial
+            ;;
+          *)
+            info_help
+            ;;
+        esac
+        shift
         ;;
-      "--hardware")
-        hardware
+      "install-deps")
+        install_deps
         ;;
-      "--software")
-        software
-        ;;
-      "--serial")
-        serial
-        ;;
-      "--update")
+      "update")
         updates
         ;;
       *)
-        echo "Invalid option: $1"
         help
         ;;
     esac

@@ -9,10 +9,3 @@ unpack script will note it.
 > While utilities exist for several systems, only macOS is fully supported at
 > this time. Utilities for other systems are considered incomplete or unstable,
 > and their eventual support is not guaranteed.
-
-Each system type has a subdirectory containing scripts that do the following,
-among other things:
-
-- Check for and install system updates
-- Install or update packages and apps
-- Set system level settings and customization

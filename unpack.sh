@@ -87,13 +87,6 @@ function check_system () {
   echo -e "\nChecking for system compatibility..."
   if [ "$SYSTEM_TYPE" == "Darwin" ]; then
     echo -e "${GREEN_B}System is compatible. Continuing...${RESET}"
-  elif [ "$SYSTEM_TYPE" == "Linux" ]; then
-    DISTRO=$(grep ^ID= /etc/os-release | cut -d'=' -f2)
-    if [ "$DISTRO" != "alpine" ]; then
-      echo -e "\n${RED_B}${DISTRO} not supported. Terminating...${RESET}"
-      exit 1
-    fi
-    return
   else
     echo -e "\n${RED_B}${SYSTEM_TYPE} not supported. Terminating...${RESET}"
     exit 1
@@ -110,7 +103,7 @@ function check_system () {
     fi
 
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-      $DOTFILES/util/macos/update_system
+      $DOTFILES/bin/mac update
     fi
   else
     echo -e "\nSkipping system updates. Running in CI."
@@ -128,7 +121,7 @@ function install_packages () {
   fi
 
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    $DOTFILES/util/macos/install_packages
+    $DOTFILES/bin/mac install-deps
   fi
 }
 
