@@ -26,7 +26,7 @@ and are sourced on shell startup before symlinking configs.
 
 As a result, most configs in this directory get symlinked under
 `XDG_CONFIG_HOME`. The exact locations on disk that each config should be
-symlinked to are specified in [`aliae.yaml`](./aliae/aliae.yaml).
+symlinked to are specified in [`bin/dots`](../bin/dots).
 
 ## Configs
 

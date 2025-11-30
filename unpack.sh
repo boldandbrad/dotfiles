@@ -12,13 +12,12 @@
 # ------------------------------------------------------------ #
 
 PARAMS=$*
-SYSTEM_TYPE=$(uname -s)
 export PROMPT_TIMEOUT=15
 
 export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
 
-if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
   export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/Brewfile"
   export PATH="/opt/homebrew/bin:$PATH"
 fi
@@ -85,10 +84,10 @@ function intro () {
 
 function check_system () {
   echo -e "\nChecking for system compatibility..."
-  if [ "$SYSTEM_TYPE" == "Darwin" ]; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
     echo -e "${GREEN_B}System is compatible. Continuing...${RESET}"
   else
-    echo -e "\n${RED_B}${SYSTEM_TYPE} not supported. Terminating...${RESET}"
+    echo -e "\n${RED_B}${OSTYPE} not supported. Terminating...${RESET}"
     exit 1
   fi
 
@@ -102,7 +101,7 @@ function check_system () {
       fi
     fi
 
-    if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
       $DOTFILES/bin/mac update
     fi
   else
@@ -120,7 +119,7 @@ function install_packages () {
     fi
   fi
 
-  if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
     $DOTFILES/bin/mac install-deps
   fi
 }
@@ -137,6 +136,7 @@ function link_dotfiles () {
 
   echo -e "\nInstalling dotfiles..."
   eval "$(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)"
+  $DOTFILES/bin/dots link
 }
 
 function config_system () {
@@ -149,7 +149,7 @@ function config_system () {
     fi
   fi
 
-  if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
     $DOTFILES/util/config_system
   fi
 }

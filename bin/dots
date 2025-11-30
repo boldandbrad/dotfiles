@@ -5,53 +5,71 @@
 help() {
   echo "dots - dotfile management"
   echo ""
-  echo "Usage: dots [options]"
+  echo "Usage: dots [command]"
+  echo ""
+  echo "Commands:"
+  echo "  link    Symlink dotfiles"
+  echo "  list    List active dotfile symlinks"
+  echo "  unlink  Move symlinks targeting this repository to the trash"
   echo ""
   echo "Options:"
-  echo "  -e, --edit    Open dotfiles directory for editing"
   echo "  -h, --help    Show this help message and exit"
-  echo "  -i, --install Run dotfile unpack"
-  echo "      --run     Build and run dotfiles container"
-  echo "  -s, --status  List changed dotfiles"
   exit
 }
 
-edit() {
-  exec "$EDITOR" "$DOTFILES"
+link() {
+  if [ ! -d "$XDG_CONFIG_HOME" ]; then
+    mkdir $XDG_CONFIG_HOME
+  fi
+
+  ln -sn $DOTFILES/config/zsh/.zshenv $HOME/.zshenv
+  ln -sn $DOTFILES/config/zsh $XDG_CONFIG_HOME/zsh
+  ln -sn $DOTFILES/config/bash/.bashrc $HOME/.bashrc
+  ln -sn $DOTFILES/config/bash/.bash_profile $HOME/.bash_profile
+  ln -sn $DOTFILES/config/git $XDG_CONFIG_HOME/git
+  ln -sn $DOTFILES/config/lazygit $XDG_CONFIG_HOME/lazygit
+  ln -sn $DOTFILES/config/ghostty $XDG_CONFIG_HOME/ghostty
+  ln -sn $DOTFILES/config/wezterm $XDG_CONFIG_HOME/wezterm
+  ln -sn $DOTFILES/config/zellij $XDG_CONFIG_HOME/zellij
+  ln -sn $DOTFILES/config/nvim $XDG_CONFIG_HOME/nvim
+  ln -sn $DOTFILES/config/zed $XDG_CONFIG_HOME/zed
+  ln -sn $DOTFILES/config/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
+  ln -sn $DOTFILES/config/bat $XDG_CONFIG_HOME/bat
+
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    ln -sn $DOTFILES/config/sketchybar $XDG_CONFIG_HOME/sketchybar
+    ln -sn $DOTFILES/util/com.boldandbrad.CapsLockEscape.plist $HOME/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
+  fi
+  echo "Symlinked dotfiles."
   exit
 }
 
-install() {
-  exec "$DOTFILES/unpack.sh"
+list() {
+  find ~/ -maxdepth 3 -type l -lname "$(pwd)*" 2>/dev/null
   exit
 }
 
-status() {
-  cd $DOTFILES
-  git st
+unlink() {
+  find ~/ -maxdepth 3 -type l -lname "$(pwd)*" 2>/dev/null | xargs trash
+  echo "Dotfile symlinks moved to trash."
   exit
 }
 
 while test $# -gt 0; do
   case "$1" in
-    "-h"|"--help")
-      help
+    "link")
+      link
       ;;
-    "-e"|"--edit")
-      edit
+    "list")
+      list
       ;;
-    "-i"|"--install")
-      install
-      ;;
-    "-s"|"--status")
-      status
+    "unlink")
+      unlink
       ;;
     *)
-      echo "Invalid option: $1"
       help
       ;;
   esac
   shift
 done
 
-help

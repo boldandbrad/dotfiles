@@ -13,7 +13,6 @@ help() {
   echo "  set        Apply system settings"
   echo "  deps       Manage packages and applications"
   echo "  info       Show system information"
-  echo "  link-dots  Symlink dotfiles"
   echo "  update     Check for and install system updates"
   exit
 }

@@ -10,8 +10,6 @@ Planned changes and updates to this repo.
 ## Features
 
 - command: `sys-clean` to clean up caches and system data
-- bin: simple custom script to manage linking and unlinking dotfiles (replace
-  aliae)
 - bin: script to auto update manually managed theme files
 - shells: cleanup aliases, env, and function setup via aliae
 - unpack: detail necessary manual setup steps

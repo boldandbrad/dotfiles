@@ -114,7 +114,6 @@ To make system maintanence simpler after unpacking, a handful of convenient
 | Command       | Description                                        |
 | ------------- | -------------------------------------------------- |
 | `sys-clean`   | Clean system caches and app data (❌ Coming soon)  |
-| `dot-relink`  | Relink installed dotfiles                          |
 | `dep-check`   | Check if all apps and dependencies are installed   |
 | `dep-refresh` | Install/update all apps and dependencies           |
 | `dep-prune`   | Uninstall apps and dependencies that aren't needed |
