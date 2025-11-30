@@ -1,11 +1,5 @@
 # boldandbrad/dotfiles - util
 
-This directory contains system specific configurations, setup scripts, and
-assets. The relevant utilities for the given host system are automatically
-sourced while [unpacking](../unpack.sh). If any manual steps are necessary, the
-unpack script will note it.
-
-> [!NOTE]
-> While utilities exist for several systems, only macOS is fully supported at
-> this time. Utilities for other systems are considered incomplete or unstable,
-> and their eventual support is not guaranteed.
+This directory contains system specific assets. The relevant utilities are
+automatically sourced while [unpacking](../unpack.sh). If any manual steps are
+necessary, the unpack script will note it.

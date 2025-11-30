@@ -42,7 +42,7 @@ env:
   - name: DOTFILES
     value: "{{ .Home }}/Dotfiles"
   - name: HOMEBREW_BUNDLE_FILE
-    value: '{{ env "DOTFILES" }}/util/macos/brew/Brewfile'
+    value: '{{ env "DOTFILES" }}/util/Brewfile'
 
   # tool options
   - name: DO_NOT_TRACK # disable telemetry for tools that support this flag
@@ -169,5 +169,5 @@ link:
 
   # macOS launch daemons
   - name: "{{ .Home }}/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist"
-    target: '{{ env "DOTFILES" }}/util/macos/launch_agents/com.boldandbrad.CapsLockEscape.plist'
+    target: '{{ env "DOTFILES" }}/util/com.boldandbrad.CapsLockEscape.plist'
     if: eq .OS "darwin"

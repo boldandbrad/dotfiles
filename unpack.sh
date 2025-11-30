@@ -19,7 +19,7 @@ export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
 
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-  export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/macos/brew/Brewfile"
+  export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/Brewfile"
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
@@ -150,7 +150,7 @@ function config_system () {
   fi
 
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-    $DOTFILES/util/macos/config_system
+    $DOTFILES/util/config_system
   fi
 }
 

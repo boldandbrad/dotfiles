@@ -32,6 +32,7 @@ cask "bitwarden"                # password manager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
 cask "ghostty"                  # terminal emulator
+# cask "hey-desktop"              # email client
 cask "leader-key"               # leader key based launcher
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
@@ -41,6 +42,7 @@ cask "zed"                      # text editor
 
 # software development tooling and apps ---------------------- #
 
+# cask "claude-code"              # ai pair programmer
 brew "deno"                     # js/ts runtime & toolchain
 brew "gh"                       # cli github client
 brew "go"                       # golang compiler & toolchain
