@@ -83,18 +83,6 @@ In brief, unpacking...
 > Before unpacking, review the repo [contents](#contents) and backup any
 > pre-existing configs.
 
-### Get it Delivered
-
-Automatically download and run [`ship.sh`](../ship.sh), which clones this repo
-to `~/Dotfiles` (if not present) and then prompts you to run
-[`unpack.sh`](../unpack.sh).
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/boldandbrad/dotfiles/main/ship.sh)"
-```
-
-### Haul it Yourself
-
 Manually clone this repo and run [`unpack.sh`](../unpack.sh).
 
 ```sh
@@ -108,12 +96,16 @@ cd ~/Dotfiles && ./unpack.sh
 
 ## 🛠️ Maintain
 
-To make system maintanence simpler after unpacking, a handful of convenient
-[aliases](../config/aliae/aliae.yaml) are provided. Invoke these from anywhere.
+To make system maintanence simpler after unpacking, a handful of convenient cli
+tools are provided. See [bin](../bin/README.md) and
+[aliae](../config/aliae/aliae.yaml) for more details. They should be
+automatically available after unpacking.
 
 | Command       | Description                                        |
 | ------------- | -------------------------------------------------- |
-| `sys-clean`   | Clean system caches and app data (❌ Coming soon)  |
+| `mac`         | Install dependencies and view system info          |
+| `dots`        | Manage dotfile symlinks                            |
+| `tidyup`      | Clean system caches and app data                   |
 | `dep-check`   | Check if all apps and dependencies are installed   |
 | `dep-refresh` | Install/update all apps and dependencies           |
 | `dep-prune`   | Uninstall apps and dependencies that aren't needed |
