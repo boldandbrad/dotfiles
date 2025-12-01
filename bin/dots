@@ -8,12 +8,51 @@ help() {
   echo "Usage: dots [command]"
   echo ""
   echo "Commands:"
+  echo "  add     Add an existing file or directory to dotfiles and symlink it"
   echo "  link    Symlink dotfiles"
   echo "  list    List active dotfile symlinks"
   echo "  unlink  Move symlinks targeting this repository to the trash"
   echo ""
   echo "Options:"
   echo "  -h, --help    Show this help message and exit"
+  exit
+}
+
+add_help() {
+  echo "dots-add - Add an existing file or directory to dotfiles and symlink it"
+  echo ""
+  echo "Usage: dots add [source_path] [dotfile_repo_rel_path]"
+  echo ""
+  echo "Example: dots add ~/.zshrc config/zsh/.zshrc"
+  echo ""
+  echo "Options:"
+  echo "  -h, --help    Show this help message and exit"
+  exit
+}
+
+add() {
+  source_path="$(cd -- "$(dirname -- "$1")"; pwd)/$(basename -- "$1")"
+  if [ ! -e $source_path ]; then
+    echo "Cannot add $source_path: does not exist"
+    exit
+  fi
+
+  dest_path="$DOTFILES/$2"
+  if [ -e $dest_path ]; then
+    echo "Cannot add $source_path to dotfiles: $dest_path already exists"
+    exit
+  fi
+
+  dest_dir="$(dirname -- "$dest_path")"
+  if [ ! -e $dest_path ]; then
+    mkdir -p $dest_dir
+  fi
+
+  mv $source_path $dest_path
+  ln -sn $dest_path $source_path
+
+  echo "Added dotfile via symlink ${source_path} -> ${dest_path}"
+  echo "TIP: Modify $DOTFILES/bin/dots to automatically link this dotfile in the future with 'dots link'"
   exit
 }
 
@@ -57,6 +96,14 @@ unlink() {
 
 while test $# -gt 0; do
   case "$1" in
+    "add")
+      shift
+      if [ $# = 2 ]; then
+        add $1 $2
+      else
+        add_help
+      fi
+      ;;
     "link")
       link
       ;;
