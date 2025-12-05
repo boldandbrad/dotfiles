@@ -34,7 +34,8 @@ default=(
 sketchybar --default "${default[@]}"
 
 # left items
-source "$ITEM_DIR/space.sh"
+source "$ITEM_DIR/aerospace.sh"
+# source "$ITEM_DIR/space.sh"
 source "$ITEM_DIR/divider.sh"
 source "$ITEM_DIR/front_app.sh"
 

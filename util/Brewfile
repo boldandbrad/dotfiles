@@ -6,6 +6,7 @@
 
 # tap "boldandbrad/tap"           # stuff made by me :)
 tap "FelixKratz/formulae"       # sketchybar
+tap "nikitabobko/tap"           # aerospace
 
 # terminal apps and packages --------------------------------- #
 
@@ -28,6 +29,7 @@ brew "zsh"                      # system zsh replacement
 
 # desktop apps ----------------------------------------------- #
 
+cask "aerospace"                # tiling window manager
 cask "bitwarden"                # password manager
 # cask "bricklink-studio"         # lego moc designer
 cask "discord"                  # digital community client
