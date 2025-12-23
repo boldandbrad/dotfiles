@@ -38,7 +38,7 @@ cask "ghostty"                  # terminal emulator
 cask "leader-key"               # leader key based launcher
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
-cask "spotify"                  # audio streamer
+cask "tidal"                    # music streamer
 # cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor
 

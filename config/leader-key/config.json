@@ -43,6 +43,11 @@
           "value": "/System/Applications/Messages.app"
         },
         {
+          "key": "M",
+          "type": "application",
+          "value": "/Applications/Tidal.app"
+        },
+        {
           "key": "n",
           "type": "application",
           "value": "/System/Applications/Notes.app"
@@ -56,11 +61,6 @@
           "key": "r",
           "type": "application",
           "value": "/System/Applications/Reminders.app"
-        },
-        {
-          "key": "s",
-          "type": "application",
-          "value": "/Applications/Spotify.app"
         },
         {
           "key": "S",
@@ -124,18 +124,6 @@
           "label": "Menu Item",
           "type": "url",
           "value": "raycast://extensions/raycast/navigation/search-menu-items"
-        },
-        {
-          "key": "m",
-          "label": "Music Library",
-          "type": "url",
-          "value": "raycast://extensions/mattisssa/spotify-player/yourLibrary"
-        },
-        {
-          "key": "M",
-          "label": "Music",
-          "type": "url",
-          "value": "raycast://extensions/mattisssa/spotify-player/search"
         },
         {
           "key": "p",
