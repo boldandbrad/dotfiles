@@ -190,6 +190,12 @@
     {
       "actions": [
         {
+          "key": "a",
+          "label": "AlternativeTo",
+          "type": "url",
+          "value": "https://alternativeto.net"
+        },
+        {
           "key": "b",
           "label": "BoardGameGeek",
           "type": "url",
