@@ -196,6 +196,12 @@
           "value": "https://boardgamegeek.com"
         },
         {
+          "key": "e",
+          "label": "Excalidraw",
+          "type": "url",
+          "value": "https://excalidraw.com"
+        },
+        {
           "key": "g",
           "label": "GitHub",
           "type": "url",
