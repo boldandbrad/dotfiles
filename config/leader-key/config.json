@@ -28,22 +28,17 @@
           "value": "/System/Applications/Mail.app"
         },
         {
-          "key": "g",
-          "type": "application",
-          "value": "/Applications/Steam.app"
-        },
-        {
           "key": "i",
           "type": "application",
           "value": "/System/Applications/Photos.app"
         },
         {
-          "key": "m",
+          "key": "M",
           "type": "application",
           "value": "/System/Applications/Messages.app"
         },
         {
-          "key": "M",
+          "key": "m",
           "type": "application",
           "value": "/Applications/Tidal.app"
         },
@@ -63,11 +58,6 @@
           "value": "/System/Applications/Reminders.app"
         },
         {
-          "key": "S",
-          "type": "application",
-          "value": "/System/Applications/System Settings.app"
-        },
-        {
           "key": "t",
           "type": "application",
           "value": "/Applications/Ghostty.app"
@@ -85,6 +75,123 @@
       ],
       "key": "a",
       "label": "Apps",
+      "type": "group"
+    },
+    {
+      "actions": [
+        {
+          "key": "a",
+          "label": "AlternativeTo",
+          "type": "url",
+          "value": "https://alternativeto.net"
+        },
+        {
+          "key": "b",
+          "label": "BoardGameGeek",
+          "type": "url",
+          "value": "https://boardgamegeek.com"
+        },
+        {
+          "key": "d",
+          "label": "Discogs",
+          "type": "url",
+          "value": "https://discogs.com"
+        },
+        {
+          "key": "e",
+          "label": "Excalidraw",
+          "type": "url",
+          "value": "https://excalidraw.com"
+        },
+        {
+          "key": "g",
+          "label": "GitHub",
+          "type": "url",
+          "value": "https://github.com"
+        },
+        {
+          "key": "l",
+          "label": "Lego",
+          "type": "url",
+          "value": "https://lego.com"
+        },
+        {
+          "key": "L",
+          "label": "Bricklink",
+          "type": "url",
+          "value": "https://bricklink.com"
+        },
+        {
+          "key": "w",
+          "label": "Wikipedia",
+          "type": "url",
+          "value": "https://en.wikipedia.org"
+        },
+        {
+          "key": "y",
+          "label": "YouTube",
+          "type": "url",
+          "value": "https://youtube.com"
+        }
+      ],
+      "key": "b",
+      "label": "Bookmarks",
+      "type": "group"
+    },
+    {
+      "actions": [
+        {
+          "key": "a",
+          "type": "folder",
+          "value": "/Applications"
+        },
+        {
+          "key": "c",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Dotfiles"
+        },
+        {
+          "key": "d",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Documents"
+        },
+        {
+          "key": "h",
+          "label": "Home",
+          "type": "folder",
+          "value": "/Users/boldandbrad"
+        },
+        {
+          "key": "i",
+          "label": "iCloud",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
+        },
+        {
+          "key": "w",
+          "type": "folder",
+          "value": "/Users/boldandbrad/Downloads"
+        }
+      ],
+      "key": "f",
+      "label": "Folders",
+      "type": "group"
+    },
+    {
+      "actions": [
+        {
+          "key": "s",
+          "type": "application",
+          "value": "/Applications/Steam.app"
+        },
+        {
+          "key": "m",
+          "type": "application",
+          "value": "/Applications/Minecraft.app"
+        }
+      ],
+      "key": "g",
+      "label": "Games",
       "type": "group"
     },
     {
@@ -146,94 +253,6 @@
       ],
       "key": "p",
       "label": "Pickers",
-      "type": "group"
-    },
-    {
-      "actions": [
-        {
-          "key": "a",
-          "type": "folder",
-          "value": "/Applications"
-        },
-        {
-          "key": "c",
-          "type": "folder",
-          "value": "/Users/boldandbrad/Dotfiles"
-        },
-        {
-          "key": "d",
-          "type": "folder",
-          "value": "/Users/boldandbrad/Documents"
-        },
-        {
-          "key": "h",
-          "label": "Home",
-          "type": "folder",
-          "value": "/Users/boldandbrad"
-        },
-        {
-          "key": "i",
-          "label": "iCloud",
-          "type": "folder",
-          "value": "/Users/boldandbrad/Library/Mobile Documents/com~apple~CloudDocs"
-        },
-        {
-          "key": "w",
-          "type": "folder",
-          "value": "/Users/boldandbrad/Downloads"
-        }
-      ],
-      "key": "f",
-      "label": "Folders",
-      "type": "group"
-    },
-    {
-      "actions": [
-        {
-          "key": "a",
-          "label": "AlternativeTo",
-          "type": "url",
-          "value": "https://alternativeto.net"
-        },
-        {
-          "key": "b",
-          "label": "BoardGameGeek",
-          "type": "url",
-          "value": "https://boardgamegeek.com"
-        },
-        {
-          "key": "e",
-          "label": "Excalidraw",
-          "type": "url",
-          "value": "https://excalidraw.com"
-        },
-        {
-          "key": "g",
-          "label": "GitHub",
-          "type": "url",
-          "value": "https://github.com"
-        },
-        {
-          "key": "l",
-          "label": "Lego",
-          "type": "url",
-          "value": "https://lego.com"
-        },
-        {
-          "key": "L",
-          "label": "Bricklink",
-          "type": "url",
-          "value": "https://bricklink.com"
-        },
-        {
-          "key": "y",
-          "label": "YouTube",
-          "type": "url",
-          "value": "https://youtube.com"
-        }
-      ],
-      "key": "b",
-      "label": "Bookmarks",
       "type": "group"
     },
     {
@@ -310,7 +329,13 @@
       "type": "group"
     },
     {
+      "key": "S",
+      "type": "application",
+      "value": "/System/Applications/System Settings.app"
+    },
+    {
       "key": "space",
+      "label": "Search",
       "type": "application",
       "value": "/Applications/Raycast.app"
     }
