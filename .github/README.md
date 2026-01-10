@@ -1,6 +1,6 @@
 # 🏠 boldandbrad's humble dotfiles
 
-![screenshot](./assets/desktop_2025-11-10.png)
+![screenshot](./assets/desktop_2026-01-10.png)
 
 ---
 
@@ -53,13 +53,12 @@ The floor plan at a glance:
 
 ## 🛋️ Contents
 
-The main contents of this repo are organized into a few high-level directories:
+The main contents of this repo are organized into the following directories:
 
-- 🗄️ [bin](../bin/README.md) - Custom executables to append to the user's `PATH`
+- 🗄️ [bin](../bin/README.md) - Custom executables to be appended to `PATH`
 - 🎨 [config](../config/README.md) - Package and app configs to be symlinked
   into place
-- 🛠️ [util](../util/README.md) - System specific setup scripts and configs to be
-  [unpacked](#unpack)
+- 🛠️ [util](../util/README.md) - System specific assets and configs to be setup
 
 ---
 
