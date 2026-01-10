@@ -47,10 +47,6 @@ env:
   # tool options
   - name: DO_NOT_TRACK # disable telemetry for tools that support this flag
     value: "1"
-  - name: BAT_THEME
-    value: "Catppuccin Mocha"
-  - name: BAT_STYLE
-    value: "plain"
   - name: FZF_DEFAULT_OPTS # fzf catppuccin theme
     value: "--height=50% --layout=reverse --border --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
       --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
@@ -86,8 +82,6 @@ alias:
     type: function
 
   # tool replacements
-  - name: cat
-    value: bat
   - name: ls
     value: eza --classify
 

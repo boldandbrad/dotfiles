@@ -12,7 +12,6 @@ tap "nikitabobko/tap"           # aerospace
 
 brew "aliae"                    # cross platform shell manager
 brew "bash"                     # system bash replacement
-brew "bat"                      # cat replacement
 brew "bitwarden-cli"            # password manager
 brew "eza"                      # ls replacement
 brew "fd"                       # find alternative
