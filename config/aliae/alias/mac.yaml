@@ -6,10 +6,6 @@
 - name: cwd # copy current working directory path
   value: pwd | pbcopy
   if: eq .OS "darwin"
-- name: ql # open file in macOS quicklook
-  value: qlmanage -p ${@} > /dev/null 2> /dev/null
-  type: function
-  if: eq .OS "darwin"
 - name: netspeed # check network speeds
   value: NetworkQuality
   if: eq .OS "darwin"
@@ -29,13 +25,4 @@
 - name: deps # list installed dependencies of packages
   value: brew deps --formula --for-each $(brew leaves)
   type: function
-  if: eq .OS "darwin"
-- name: dep-check # check that all brewfile deps are installed
-  value: brew bundle check -v
-  if: eq .OS "darwin"
-- name: dep-refresh # install all brewfile deps
-  value: brew bundle install
-  if: eq .OS "darwin"
-- name: dep-prune # remove all brew managed deps not specified in brewfile
-  value: brew bundle cleanup
   if: eq .OS "darwin"

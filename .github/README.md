@@ -96,18 +96,13 @@ cd ~/Dotfiles && ./unpack.sh
 ## 🛠️ Maintain
 
 To make system maintanence simpler after unpacking, a handful of convenient cli
-tools are provided. See [bin](../bin/README.md) and
-[aliae](../config/aliae/aliae.yaml) for more details. They should be
-automatically available after unpacking.
+tools are provided. See [bin](../bin/README.md) for more details.
 
-| Command       | Description                                        |
-| :------------ | :------------------------------------------------- |
-| `mac`         | Install dependencies and view system info          |
-| `dots`        | Manage dotfile symlinks                            |
-| `tidyup`      | Clean system caches and app data                   |
-| `dep-check`   | Check if all apps and dependencies are installed   |
-| `dep-refresh` | Install/update all apps and dependencies           |
-| `dep-prune`   | Uninstall apps and dependencies that aren't needed |
+| Command  | Description                               |
+| :------- | :---------------------------------------- |
+| `mac`    | Install dependencies and view system info |
+| `dots`   | Manage dotfile symlinks                   |
+| `tidyup` | Clean system caches and app data          |
 
 ---
 

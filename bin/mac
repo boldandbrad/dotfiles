@@ -24,6 +24,7 @@ deps_help() {
   echo ""
   echo "Commands:"
   echo "  install  Install packages and applications"
+  echo "  prune    Uninstall packages and applications not listed in the Brewfile"
   exit
 }
 
@@ -51,6 +52,12 @@ deps_install() {
     echo "Installing macOS apps and packages from Brewfile..."
     brew bundle
   fi
+  exit
+}
+
+deps_prune() {
+  echo "Removing deps not listed in Brewfile..."
+  brew bundle cleanup
   exit
 }
 

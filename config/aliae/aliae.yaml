@@ -111,8 +111,6 @@ alias:
     value: echo $FPATH | tr ":" "\n"
     type: function
 
-  # import programming language aliases
+  # import aliases
   - !include "alias/lang.yaml"
-
-  # import macOS aliases
   - !include "alias/mac.yaml"
