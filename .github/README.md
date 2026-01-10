@@ -59,7 +59,7 @@ The main contents of this repo are organized into a few high-level directories:
 - 🎨 [config](../config/README.md) - Package and app configs to be symlinked
   into place
 - 🛠️ [util](../util/README.md) - System specific setup scripts and configs to be
-  [unpacked](#📦-unpack)
+  [unpacked](#unpack)
 
 ---
 
@@ -67,24 +67,22 @@ The main contents of this repo are organized into a few high-level directories:
 
 ## 📦 Unpack
 
-[`unpack.sh`](../unpack.sh) is the main installation script. The unpack script
-explains what it will do, prompts the user before each step, and is idempotent.
-This means it can be safely run multiple times to keep the system in sync
-without compounding changes or breaking.
+The main installation script is [`unpack.sh`](../unpack.sh). It explains what it
+will do, prompts the user before each step, and is idempotent.
 
 In brief, unpacking...
 
 - ✅ Verifies system compatibility
-- 🔄 Checks and prompts for system updates
-- ⬇️ Installs or updates user packages and apps
-- 🔗 Symlinks user package and app configs
-- ⚙️ Applies user system settings
+- 🔄 Checks for system updates
+- ⬇️ Installs (or updates) packages and apps
+- 🔗 Symlinks configs
+- ⚙️ Applies system settings
 
 > [!WARNING]
 > Before unpacking, review the repo [contents](#contents) and backup any
 > pre-existing configs.
 
-Manually clone this repo and run [`unpack.sh`](../unpack.sh).
+Clone this repo and run [`unpack.sh`](../unpack.sh).
 
 ```sh
 git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
@@ -103,7 +101,7 @@ tools are provided. See [bin](../bin/README.md) and
 automatically available after unpacking.
 
 | Command       | Description                                        |
-| ------------- | -------------------------------------------------- |
+| :------------ | :------------------------------------------------- |
 | `mac`         | Install dependencies and view system info          |
 | `dots`        | Manage dotfile symlinks                            |
 | `tidyup`      | Clean system caches and app data                   |

@@ -101,9 +101,7 @@ function check_system () {
       fi
     fi
 
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-      $DOTFILES/bin/mac update
-    fi
+    $DOTFILES/bin/mac update
   else
     echo -e "\nSkipping system updates. Running in CI."
   fi
@@ -119,9 +117,7 @@ function install_packages () {
     fi
   fi
 
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    $DOTFILES/bin/mac install-deps
-  fi
+  $DOTFILES/bin/mac install-deps
 }
 
 function link_dotfiles () {
@@ -149,9 +145,7 @@ function config_system () {
     fi
   fi
 
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    $DOTFILES/util/config_system
-  fi
+  $DOTFILES/util/config_system
 }
 
 # terminate on first failure
