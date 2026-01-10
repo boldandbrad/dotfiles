@@ -83,7 +83,7 @@ link() {
 }
 
 list() {
-  find ~/ -maxdepth 3 -type l -lname "$(pwd)*" 2>/dev/null
+  find ~/ -maxdepth 3 -type l -lname "$DOTFILES*" 2>/dev/null
   exit
 }
 
