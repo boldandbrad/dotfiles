@@ -39,7 +39,6 @@ cask "leader-key"               # leader key based launcher
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
 cask "tidal"                    # music streamer
-# cask "wezterm"                  # terminal emulator
 cask "zed"                      # text editor
 
 # software development tooling and apps ---------------------- #

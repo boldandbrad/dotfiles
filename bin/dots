@@ -68,7 +68,6 @@ link() {
   ln -sn $DOTFILES/config/git $XDG_CONFIG_HOME/git
   ln -sn $DOTFILES/config/lazygit $XDG_CONFIG_HOME/lazygit
   ln -sn $DOTFILES/config/ghostty $XDG_CONFIG_HOME/ghostty
-  ln -sn $DOTFILES/config/wezterm $XDG_CONFIG_HOME/wezterm
   ln -sn $DOTFILES/config/zellij $XDG_CONFIG_HOME/zellij
   ln -sn $DOTFILES/config/nvim $XDG_CONFIG_HOME/nvim
   ln -sn $DOTFILES/config/zed $XDG_CONFIG_HOME/zed
