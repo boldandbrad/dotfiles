@@ -73,6 +73,7 @@ link() {
   ln -sn $DOTFILES/config/nvim $XDG_CONFIG_HOME/nvim
   ln -sn $DOTFILES/config/zed $XDG_CONFIG_HOME/zed
   ln -sn $DOTFILES/config/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
+  ln -sn $DOTFILES/config/starship/starship.toml $XDG_CONFIG_HOME/starship.toml
 
   if [[ "$OSTYPE" == "darwin"* ]]; then
     ln -sn $DOTFILES/config/sketchybar $XDG_CONFIG_HOME/sketchybar

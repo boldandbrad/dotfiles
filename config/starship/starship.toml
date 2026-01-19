@@ -1,0 +1,119 @@
+# ------------------------------------------------------------ #
+# starship.toml - shell prompt configuration                   #
+# docs: https://starship.rs/config                             #
+# ------------------------------------------------------------ #
+
+# config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$hostname$os$username$shell$directory$git_branch$git_status\
+$deno$golang$lua$python$ruby$rust
+$character
+"""
+
+# insert a blank line between shell prompts
+add_newline = true
+
+# color palette
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[hostname]
+format = "[$hostname]($style) [running](overlay0) "
+style = "bold pink"
+
+[os]
+disabled = false
+style = "bold maroon"
+
+[os.symbols]
+Macos = "macOS"
+
+[username]
+disabled = false
+show_always = true
+format = " [as](overlay0) [$user]($style)"
+style_user = "bold mauve"
+
+[shell]
+disabled = false
+format = " [via](overlay0) [$indicator]($style)"
+style = "bold lavender"
+
+[directory]
+format = " [at](overlay0) ($read_only_style)[$path]($style)"
+style = "bold blue"
+read_only = "!"
+
+[git_branch]
+format = " [on](overlay0) [$branch(:$remote_branch)]($style)"
+style = "bold green"
+
+[git_status]
+format = " [with](overlay0) [$modified]($style)"
+style = "bold yellow"
+modified = "changes"
+
+# languages
+
+[deno]
+format = " [|](overlay0) deno [$version]($style)"
+style = "bold teal"
+
+[golang]
+format = " [|](overlay0) go [$version]($style)"
+style = "bold blue"
+
+[lua]
+format = " [|](overlay0) lua [$version]($style)"
+style = "bold yellow"
+
+[python]
+format = " [|](overlay0) python [$version]($style)"
+style = "bold green"
+
+[ruby]
+format = " [|](overlay0) ruby [$version]($style)"
+style = "bold red"
+
+[rust]
+format = " [|](overlay0) ruby [$version]($style)"
+style = "bold red"
+
+# prompt character
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[n](bold green)"
+vimcmd_visual_symbol = "[v](bold yellow)"
+vimcmd_replace_symbol = "[r](bold purple)"
+vimcmd_replace_one_symbol = "[o](bold purple)"
