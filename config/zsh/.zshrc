@@ -1,8 +1,6 @@
 # ------------------------------------------------------------ #
 # .zshrc - zsh plugins, zstyles, keybinds, and options         #
 # ------------------------------------------------------------ #
-# -> symlinked to ~/.config/zsh/.zshrc                         #
-# ------------------------------------------------------------ #
 
 # if not running interactively, do nothing
 [[ $- != *i* ]] && return
@@ -17,7 +15,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # install/initialize zsh plugins
 zinit light Aloxaf/fzf-tab
-zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
