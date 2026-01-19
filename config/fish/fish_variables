@@ -1,0 +1,4 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/Users/boldandbrad/\x2elocal/bin\x1e/Users/boldandbrad/\x2elocal/share/go/bin\x1e/Users/boldandbrad/Dotfiles/bin

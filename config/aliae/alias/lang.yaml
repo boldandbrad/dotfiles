@@ -11,6 +11,7 @@
   value: uv run
 - name: pyc
   value: find . -name '*.pyc' -delete
+  type: function
 - name: pyv
   value: uv venv
 - name: pyf

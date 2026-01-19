@@ -65,6 +65,7 @@ link() {
   ln -sn $DOTFILES/config/zsh $XDG_CONFIG_HOME/zsh
   ln -sn $DOTFILES/config/bash/.bashrc $HOME/.bashrc
   ln -sn $DOTFILES/config/bash/.bash_profile $HOME/.bash_profile
+  ln -sn $DOTFILES/config/fish $XDG_CONFIG_HOME/fish
   ln -sn $DOTFILES/config/git $XDG_CONFIG_HOME/git
   ln -sn $DOTFILES/config/lazygit $XDG_CONFIG_HOME/lazygit
   ln -sn $DOTFILES/config/ghostty $XDG_CONFIG_HOME/ghostty

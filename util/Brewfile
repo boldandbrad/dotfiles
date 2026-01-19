@@ -15,6 +15,7 @@ brew "bash"                     # system bash replacement
 brew "bitwarden-cli"            # password manager
 brew "eza"                      # ls replacement
 brew "fd"                       # find alternative
+brew "fish"                     # a fun shell
 brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system
 brew "jq"                       # json processor
