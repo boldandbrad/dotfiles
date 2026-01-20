@@ -3,7 +3,6 @@
 # docs: https://starship.rs/config                             #
 # ------------------------------------------------------------ #
 
-# config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -12,10 +11,10 @@ $deno$golang$lua$python$ruby$rust
 $character
 """
 
-# insert a blank line between shell prompts
 add_newline = true
 
-# color palette
+# color palette ---------------------------------------------- #
+
 palette = "catppuccin_mocha"
 
 [palettes.catppuccin_mocha]
@@ -45,6 +44,8 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+# prompt segments -------------------------------------------- #
 
 [hostname]
 format = "[$hostname]($style) [running](overlay0) "
@@ -82,7 +83,7 @@ format = " [with](overlay0) [$modified]($style)"
 style = "bold yellow"
 modified = "changes"
 
-# languages
+# languages -------------------------------------------------- #
 
 [deno]
 format = " [|](overlay0) deno [$version]($style)"
@@ -108,7 +109,7 @@ style = "bold red"
 format = " [|](overlay0) ruby [$version]($style)"
 style = "bold red"
 
-# prompt character
+# prompt character ------------------------------------------- #
 
 [character]
 success_symbol = "[>](bold green)"

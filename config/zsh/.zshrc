@@ -63,24 +63,9 @@ setopt no_case_glob # enable case-insensitive tab completion and globbing
 
 # initialize tools ------------------------------------------- #
 
-# initialize ruby version manager
-if (( $+commands[rbenv] )); then
-  eval "$(rbenv init - --no-rehash zsh)"
-fi
-
-# initialize zoxide directory hopper
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
-# initialize shell prompt
-if (( $+commands[oh-my-posh] )); then
-  eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.toml)"
-fi
-
-if (( $+commands[starship] )); then
-  # eval "$(starship init zsh)"
-fi
+eval "$(rbenv init - --no-rehash zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
 
 # cleanup ---------------------------------------------------- #
 

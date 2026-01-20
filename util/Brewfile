@@ -21,7 +21,6 @@ brew "git"                      # version control system
 brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "neovim"                   # text editor
-brew "oh-my-posh"               # cross-shell prompt engine
 brew "ripgrep"                  # grep alternative
 brew "starship"                 # shell prompt engine
 brew "zellij"                   # terminal multiplexer
