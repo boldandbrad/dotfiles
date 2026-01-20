@@ -4,22 +4,25 @@ Planned changes and updates to this repo.
 
 ## Documentation
 
-- add values/design patterns
 - feature explanations
 
 ## Features
 
-- command: `sys-clean` to clean up caches and system data
-- bin: script to auto update manually managed theme files
-- shells: cleanup aliases, env, and function setup via aliae
-- unpack: detail necessary manual setup steps
+- bin/tidyup: add ability to clean up caches and system data
+- bin/mac: move config_system script into `mac config`
+- backup: move util/wallpapers into backup or .github/assets
+- backup/raycast: add manual setup steps to backup readme
+- config/aliae: cleanup and simplify shell aliases, envs, and functions
+- unpack: detail necessary manual setup steps (raycast backup import, etc)
 
 ## Configs
 
-- all: add link to configuration documentation in config file headers
-- bash: update config
-- zsh: simplify config
-- zsh: launch zellij on startup?
+- config/all: add link to configuration documentation in config file headers
+- config/bash: cleanup config
+- config/zsh: simplify config
+- config/zsh: launch zellij on startup?
+- config/starship: only show git status when there are changes
+- config/starship: add command execution time to right prompt
 
 ## Environment Support (not guaranteed)
 
