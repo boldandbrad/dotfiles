@@ -39,9 +39,6 @@ source "$ITEM_DIR/aerospace.sh"
 source "$ITEM_DIR/divider.sh"
 source "$ITEM_DIR/front_app.sh"
 
-# right of notch items
-source "$ITEM_DIR/spotify.sh"
-
 # right items
 source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/battery.sh"
