@@ -55,6 +55,8 @@ The floor plan at a glance:
 
 The main contents of this repo are organized into the following directories:
 
+- 💾 [backup](../backup/README.md) - Backups of configs that require manual
+  setup
 - 🗄️ [bin](../bin/README.md) - Custom executables to be appended to `PATH`
 - 🎨 [config](../config/README.md) - Package and app configs to be symlinked
   into place
