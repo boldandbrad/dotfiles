@@ -23,6 +23,9 @@ Planned changes and updates to this repo.
 - config/zsh: launch zellij on startup?
 - config/starship: only show git status when there are changes
 - config/starship: add command execution time to right prompt
+- config/leader-key: remove window management keymaps in favor of aerospace
+- config/neovim: find an alternative to alt-j/k for moving lines since it
+  conflicts with aerospace
 
 ## Environment Support (not guaranteed)
 
