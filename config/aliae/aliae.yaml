@@ -1,5 +1,6 @@
 # ------------------------------------------------------------ #
-# aliae.yaml - shell aliases and setup                         #
+# aliae config                                                 #
+# docs: https://aliae.dev/docs/setup/configuration             #
 # ------------------------------------------------------------ #
 
 env:

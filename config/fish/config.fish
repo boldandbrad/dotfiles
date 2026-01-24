@@ -1,3 +1,8 @@
+# ------------------------------------------------------------ #
+# fish config                                                  #
+# docs: https://fishshell.com/docs/current/index.html          #
+# ------------------------------------------------------------ #
+
 aliae init fish --config $DOTFILES/config/aliae/aliae.yaml | source
 
 if status is-interactive

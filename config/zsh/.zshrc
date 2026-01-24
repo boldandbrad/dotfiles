@@ -1,5 +1,6 @@
 # ------------------------------------------------------------ #
-# .zshrc - zsh plugins, zstyles, keybinds, and options         #
+# zsh config - zsh plugins, zstyles, keybinds, and options     #
+# docs: https://zsh.sourceforge.io/Doc/Release/zsh_toc.html    #
 # ------------------------------------------------------------ #
 
 # if not running interactively, do nothing

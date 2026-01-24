@@ -1,6 +1,6 @@
 # ------------------------------------------------------------ #
-# aerospace.toml - aerospace config                            #
-# https://nikitabobko.github.io/AeroSpace/guide                #
+# aerospace config                                             #
+# docs: https://nikitabobko.github.io/AeroSpace/guide          #
 # ------------------------------------------------------------ #
 
 config-version = 2

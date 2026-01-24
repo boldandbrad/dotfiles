@@ -1,6 +1,6 @@
 # ------------------------------------------------------------ #
-# sketchybarrc - sketchybar config                             #
-# https://felixkratz.github.io/SketchyBar/config/bar           #
+# sketchybar config                                            #
+# docs: https://felixkratz.github.io/SketchyBar/config/bar     #
 # ------------------------------------------------------------ #
 
 ITEM_DIR="$CONFIG_DIR/items"

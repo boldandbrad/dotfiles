@@ -1,5 +1,5 @@
 # ------------------------------------------------------------ #
-# .zshenv - env, aliae, and path setup                         #
+# zsh env, alias, and path setup                               #
 # ------------------------------------------------------------ #
 
 export DOTFILES=$HOME/Dotfiles

@@ -17,7 +17,6 @@ Planned changes and updates to this repo.
 
 ## Configs
 
-- config/all: add link to configuration documentation in config file headers
 - config/bash: cleanup config
 - config/zsh: simplify config
 - config/zsh: launch zellij on startup?
