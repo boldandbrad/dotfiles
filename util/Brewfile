@@ -20,8 +20,10 @@ brew "fzf"                      # fuzzy finder
 brew "git"                      # version control system
 brew "jq"                       # json processor
 brew "lazygit"                  # git client
+brew "mpd"                      # music player daemon
 brew "neovim"                   # text editor
 brew "ripgrep"                  # grep alternative
+brew "rmpc"                     # music player
 brew "starship"                 # shell prompt engine
 brew "zellij"                   # terminal multiplexer
 brew "zoxide"                   # cd replacement
