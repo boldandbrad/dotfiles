@@ -28,6 +28,11 @@
           "value": "/System/Applications/Mail.app"
         },
         {
+          "key": "f",
+          "type": "application",
+          "value": "/System/Library/CoreServices/Finder.app"
+        },
+        {
           "key": "i",
           "type": "application",
           "value": "/System/Applications/Photos.app"
