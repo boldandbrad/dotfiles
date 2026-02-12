@@ -185,14 +185,19 @@
     {
       "actions": [
         {
-          "key": "s",
+          "key": "h",
           "type": "application",
-          "value": "/Applications/Steam.app"
+          "value": "/Applications/Hytale Launcher.app"
         },
         {
           "key": "m",
           "type": "application",
           "value": "/Applications/Minecraft.app"
+        },
+        {
+          "key": "s",
+          "type": "application",
+          "value": "/Applications/Steam.app"
         }
       ],
       "key": "g",
