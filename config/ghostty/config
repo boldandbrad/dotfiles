@@ -32,7 +32,7 @@ mouse-hide-while-typing = true
 # unbind cmd+ keys so they will be forwarded to zellij
 keybind = cmd+t=unbind
 keybind = cmd+n=unbind
-keybind = cmd+c=unbind
+# keybind = cmd+c=unbind
 keybind = cmd+w=unbind
 keybind = cmd+opt+left=unbind
 keybind = cmd+opt+right=unbind
