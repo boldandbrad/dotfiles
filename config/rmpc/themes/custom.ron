@@ -3,8 +3,6 @@
 #![enable(unwrap_variant_newtypes)]
 (
     default_album_art_path: None,
-    show_song_table_header: true,
-    draw_borders: false,
     format_tag_separator: " | ",
     browser_column_widths: [20, 38, 42],
     background_color: None,
@@ -14,10 +12,6 @@
     modal_backdrop: false,
     preview_label_style: (fg: "yellow"),
     preview_metadata_group_style: (fg: "yellow", modifiers: "Bold"),
-    tab_bar: (
-        active_style: (fg: "black", bg: "blue", modifiers: "Bold"),
-        inactive_style: (),
-    ),
     highlighted_item_style: (fg: "blue", modifiers: "Bold"),
     current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
     borders_style: (fg: "blue"),
@@ -26,7 +20,7 @@
         song: "-",
         dir: ">",
         playlist: "[",
-        marker: "M",
+        marker: "~",
         ellipsis: "...",
         song_style: None,
         dir_style: None,
@@ -44,7 +38,7 @@
         track_style: (fg: "blue"),
         elapsed_style: (fg: "blue"),
         thumb_style: (fg: "blue", bg: "#1e2030"),
-        use_track_when_empty: false,
+        use_track_when_empty: true,
     ),
     scrollbar: (
         symbols: ["│", "█", "", ""],
@@ -52,6 +46,29 @@
         ends_style: (),
         thumb_style: (fg: "blue"),
     ),
+    tab_bar: (
+        active_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+        inactive_style: (),
+    ),
+    lyrics: (
+        timestamp: false
+    ),
+    browser_song_format: [
+        (
+            kind: Group([
+                (kind: Property(Track)),
+                (kind: Text(" ")),
+            ])
+        ),
+        (
+            kind: Group([
+                (kind: Property(Artist)),
+                (kind: Text(" - ")),
+                (kind: Property(Title)),
+            ]),
+            default: (kind: Property(Filename))
+        ),
+    ],
     song_table_format: [
         (
             prop: (kind: Property(Title),
@@ -72,37 +89,34 @@
             width: "30%",
         ),
         (
-            prop: (kind: Property(Duration),
+            prop: (kind: Property(FileExtension),
                 default: (kind: Text("-"))
             ),
-            width: "15%",
-            alignment: Right,
+            label_prop: (kind: Text("Ext")),
+            width: "8",
         ),
         (
-            prop: (kind: Property(FileExtension),
+            prop: (kind: Property(Duration),
                 default: (kind: Text("-"))
             ),
             width: "8",
             alignment: Right,
         ),
     ],
-    components: {},
     layout: Split(
         direction: Vertical,
         panes: [
             (
-                size: "3",
-                borders: "ALL",
                 pane: Pane(Tabs),
-            ),
-            (
-                size: "100%",
-                borders: "ALL",
-                pane: Pane(TabContent),
-            ),
-            (
                 size: "3",
-                borders: "TOP | LEFT | RIGHT",
+                borders: "ALL",
+                border_symbols: Rounded,
+            ),
+            (
+                pane: Pane(TabContent),
+                size: "100%",
+            ),
+            (
                 pane: Split(
                     direction: Horizontal,
                     panes: [
@@ -143,25 +157,28 @@
                         ),
                     ],
                 ),
+                size: "3",
+                borders: "TOP | LEFT | RIGHT",
+                border_symbols: Rounded,
+                border_title: [
+                    (kind: Property(Status(StateV2(
+                        playing_label: " Playing ",
+                        playing_style: (fg: "green", modifiers: "Bold"),
+                        paused_label: " Paused ",
+                        paused_style: (fg: "yellow", modifiers: "Bold"),
+                        stopped_label: " Stopped ",
+                        stopped_style: (fg: "red", modifiers: "Bold")
+                    )))),
+                ],
+                border_title_alignment: Center
             ),
             (
-                size: "2",
-                borders: "LEFT | RIGHT | BOTTOM",
                 pane: Split(
                     direction: Horizontal,
                     panes: [
                         (
                             size: "12",
-                            pane: Pane(Property(
-                                content: [
-                                    (kind: Property(Status(StateV2(
-                                        playing_style: (fg: "green", modifiers: "Bold"),
-                                        paused_style: (fg: "yellow", modifiers: "Bold"),
-                                        stopped_style: (fg: "red", modifiers: "Bold")
-                                    )))),
-                                ],
-                                align: Left
-                            )),
+                            pane: Component("input_mode"),
                         ),
                         (
                             size: "12",
@@ -201,35 +218,20 @@
                         ),
                     ]
                 ),
+                size: "2",
+                borders: "LEFT | RIGHT | BOTTOM",
+                border_symbols: Rounded,
             ),
         ],
     ),
-    header: (
-        rows: [
-            (
-                left: [],
-                center: [],
-                right: []
-            ),
-        ],
-    ),
-    browser_song_format: [
-        (
-            kind: Group([
-                (kind: Property(Track)),
-                (kind: Text(" ")),
-            ])
-        ),
-        (
-            kind: Group([
-                (kind: Property(Artist)),
-                (kind: Text(" - ")),
-                (kind: Property(Title)),
-            ]),
-            default: (kind: Property(Filename))
-        ),
-    ],
-    lyrics: (
-        timestamp: false
-    )
+    components: {
+        "input_mode": Pane(Property(
+            content: [
+                (kind: Transform(Replace(content: (kind: Property(Status(InputMode()))), replacements: [
+                    (match: "Normal", replace: (kind: Text(" NORMAL "), style: (fg: "black", bg: "blue"))),
+                    (match: "Insert", replace: (kind: Text(" INSERT "), style: (fg: "black", bg: "green"))),
+                ])))
+            ], align: Left
+        )),
+    },
 )

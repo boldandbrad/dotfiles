@@ -9,7 +9,7 @@
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
-    scrolloff: 0,
+    scrolloff: 8,
     wrap_navigation: false,
     enable_mouse: true,
     enable_config_hot_reload: true,
@@ -25,7 +25,7 @@
         method: Auto,
         max_size_px: (width: 1200, height: 1200),
         disabled_protocols: ["http://", "https://"],
-        vertical_align: Center,
+        vertical_align: Top,
         horizontal_align: Center,
     ),
     keybinds: (
@@ -37,12 +37,11 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "2":       SwitchToTab("Artists"),
+            "3":       SwitchToTab("Albums"),
+            "4":       SwitchToTab("Playlists"),
+            "5":       SwitchToTab("Directories"),
+            "6":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -115,8 +114,8 @@
             (value: "any",         label: "Any Tag"),
             (value: "artist",      label: "Artist"),
             (value: "album",       label: "Album"),
-            (value: "albumartist", label: "Album Artist"),
             (value: "title",       label: "Title"),
+            (value: "albumartist", label: "Album Artist"),
             (value: "filename",    label: "Filename"),
             (value: "genre",       label: "Genre"),
         ],
@@ -138,46 +137,99 @@
                             direction: Vertical,
                             panes: [
                                 (
-                                    size: "3",
-                                    pane: Pane(Lyrics)
+                                    size: "100%",
+                                    pane: Pane(AlbumArt),
+                                    borders: "TOP | LEFT | RIGHT",
+                                    border_symbols: Rounded
                                 ),
                                 (
-                                    size: "100%",
-                                    pane: Pane(AlbumArt)
+                                    size: "7",
+                                    pane: Pane(Lyrics),
+                                    borders: "ALL",
+                                    border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤"),
+                                    border_title: [(kind: Text(" Lyrics "), style: (fg: "blue"))],
                                 ),
                             ],
                         ),
                     ),
                     (
+                        size: "1",
+                        pane: Pane(Empty())
+                    ),
+                    (
                         size: "60%",
-                        pane: Pane(Queue)
+                        pane: Split(
+                            direction: Vertical,
+                            panes: [
+                                (
+                                    size: "3",
+                                    pane: Pane(QueueHeader()),
+                                    borders: "ALL",
+                                    border_symbols: Inherited(parent: Rounded, bottom_left: "├", bottom_right: "┤"),
+                                ),
+                                (
+                                    size: "100%",
+                                    pane: Pane(Queue),
+                                    borders: "LEFT | RIGHT | BOTTOM",
+                                    border_symbols: Rounded,
+                                    border_title: [
+                                        (kind: Text(" Count: "), style: (fg: "blue")),
+                                        (kind: Property(Status(QueueLength()))),
+                                        (kind: Text(" "))
+                                    ],
+                                    border_title_position: Bottom,
+                                    border_title_alignment: Right
+                                ),
+                            ],
+                        ),
                     ),
                 ],
             ),
         ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
-        ),
-        (
             name: "Artists",
-            pane: Pane(Artists),
-        ),
-        (
-            name: "Album Artists",
-            pane: Pane(AlbumArtists),
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "100%", pane: Pane(Artists), borders: "ALL", border_symbols: Rounded),
+                ],
+            ),
         ),
         (
             name: "Albums",
-            pane: Pane(Albums),
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "100%", pane: Pane(Albums), borders: "ALL", border_symbols: Rounded),
+                ],
+            ),
         ),
         (
             name: "Playlists",
-            pane: Pane(Playlists),
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "100%", pane: Pane(Playlists), borders: "ALL", border_symbols: Rounded),
+                ],
+            ),
+        ),
+        (
+            name: "Directories",
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "100%", pane: Pane(Directories), borders: "ALL", border_symbols: Rounded),
+                ],
+            ),
         ),
         (
             name: "Search",
-            pane: Pane(Search),
+            pane: Split(
+                direction: Vertical,
+                panes: [
+                    (size: "100%", pane: Pane(Search), borders: "ALL", border_symbols: Rounded),
+                ],
+            ),
         ),
     ],
 )
