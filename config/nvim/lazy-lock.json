@@ -1,11 +1,11 @@
 {
   "auto-session": {
     "branch": "main",
-    "commit": "292492ab7af4bd8b9e37e28508bc8ce995722fd5"
+    "commit": "dcbc339a1a0e6505f755d980ad11f892b6a8d492"
   },
   "blink.cmp": {
     "branch": "main",
-    "commit": "b19413d214068f316c78978b08264ed1c41830ec"
+    "commit": "4b18c32adef2898f95cdef6192cbd5796c1a332d"
   },
   "catppuccin": {
     "branch": "main",
@@ -21,11 +21,11 @@
   },
   "friendly-snippets": {
     "branch": "main",
-    "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175"
+    "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9"
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "42d6aed4e94e0f0bbced16bbdcc42f57673bd75e"
+    "commit": "31217271a7314c343606acb4072a94a039a19fb5"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -41,7 +41,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "92ee7d42320edfbb81f3cad851314ab197fa324a"
+    "commit": "f4e9d367d4e067d7a5fabc9fd3f1349b291eb718"
   },
   "nvim-treesitter": {
     "branch": "master",
