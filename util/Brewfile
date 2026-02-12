@@ -4,6 +4,7 @@
 
 # taps ------------------------------------------------------- #
 
+tap "anomalyco/tap"             # opencode
 # tap "boldandbrad/tap"           # stuff made by me :)
 tap "FelixKratz/formulae"       # sketchybar
 tap "nikitabobko/tap"           # aerospace
@@ -22,6 +23,7 @@ brew "jq"                       # json processor
 brew "lazygit"                  # git client
 brew "mpd"                      # music player daemon
 brew "neovim"                   # text editor
+brew "opencode"                 # ai coding agent
 brew "ripgrep"                  # grep alternative
 brew "rmpc"                     # music player
 brew "starship"                 # shell prompt engine
@@ -38,6 +40,7 @@ cask "discord"                  # digital community client
 cask "ghostty"                  # terminal emulator
 # cask "hey-desktop"              # email client
 cask "leader-key"               # leader key based launcher
+cask "opencode-desktop"         # ai coding agent
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
 cask "tidal"                    # music streamer
