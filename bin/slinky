@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+
+# slinky: manage dotfile symlinks via slinky.map
+
+DOTFILES="${DOTFILES:-$(git rev-parse --show-toplevel 2>/dev/null || (cd -- "$(dirname -- "$0")/.."; pwd))}"
+MAPPINGS_FILE="$DOTFILES/slinky.map"
+
+help() {
+  echo "slinky - dotfile symlink management"
+  echo
+  echo "Usage: slinky <command> [args]"
+  echo "Commands:"
+  echo "  add <src> <repo_rel_path>    Add a file or directory to dotfiles, symlink it, and track in slinky.map"
+  echo "  create                       Create all dotfile symlinks from slinky.map"
+  echo "  drop <repo_rel_path>         Drop a file or directory from dotfiles and slinky.map, returning it to its original location"
+  echo "  find                         Find active symlinks pointing to this repository"
+  echo "  init                         Create slinky.map file if it does not exist"
+  echo "  list                         List symlinks tracked in slinky.map"
+  echo "  destroy                      Move all dotfile symlinks to the trash"
+}
+
+init() {
+  [ -f "$MAPPINGS_FILE" ] || {
+    printf "# slinky.map - symlinks managed by slinky\n" > "$MAPPINGS_FILE";
+    echo "Created $MAPPINGS_FILE"
+  }
+  return 0
+}
+
+add_link() {
+  local input_path="$1"; local repo_rel_path="$2"
+
+  local source_path="$(cd -- "$(dirname -- "$input_path")"; pwd)/$(basename -- "$input_path")"
+  if [ ! -e "$source_path" ]; then
+    echo "Cannot add $source_path: does not exist" >&2
+    exit 1
+  fi
+
+  local dest_path="$DOTFILES/$repo_rel_path"
+  if [ -e "$dest_path" ]; then
+    echo "Cannot add $source_path to dotfiles: $dest_path already exists" >&2
+    exit 1
+  fi
+
+  local dest_dir="$(dirname -- "$dest_path")"
+  if [ ! -e "$dest_path" ]; then
+    mkdir -p "$dest_dir"
+  fi
+
+  mv "$source_path" "$dest_path"
+  ln -sn "$dest_path" "$source_path"
+
+  local base=$(basename -- "$source_path")
+  printf "%s|%s\n" "$repo_rel_path" "~/$base" >> "$MAPPINGS_FILE"
+
+  echo "Added dotfile via symlink ${source_path} -> ${dest_path}"
+  return 0
+}
+
+create_links() {
+  # TODO: handle missing directory creation more dynamically
+  if [ ! -d "$XDG_CONFIG_HOME" ]; then
+    mkdir $XDG_CONFIG_HOME
+  fi
+
+  if [ -f "$MAPPINGS_FILE" ]; then
+    echo "Creating dotfile symlinks from $MAPPINGS_FILE"
+    while IFS= read -r line; do
+      case "$line" in
+        ''|'#'* ) continue ;;
+      esac
+      IFS='|' read -r src tgt <<< "$line"
+      abs_src="$DOTFILES/$src"
+      abs_tgt="${tgt/#~/$HOME}"
+      if [ ! -e "$abs_src" ]; then
+        echo "  Source not found: $abs_src" >&2
+        continue
+      fi
+      if [ -e "$abs_tgt" ] || [ -L "$abs_tgt" ]; then
+        echo "  Target exists: $abs_tgt" >&2
+        continue
+      fi
+      mkdir -p "$(dirname "$abs_tgt")"
+      ln -s "$abs_src" "$abs_tgt" || echo "  Failed linking $abs_src -> $abs_tgt" >&2
+    done < "$MAPPINGS_FILE"
+    return 0
+  else
+    echo "No slinky.map found."
+    return 1
+  fi
+}
+
+destroy_links() {
+  # TODO: only remove symlinks that exist in slinky.map
+  find ~/ -maxdepth 3 -type l -lname "$(pwd)*" 2>/dev/null | xargs trash
+  echo "Dotfile symlinks moved to trash."
+  return 0
+}
+
+drop_link() {
+  # TODO: implement removing symlink, moving file/directory back to original location and dropping record from slinky.map
+  local source="$1"; [ -f "$MAPPINGS_FILE" ] || return 0
+  tmp=$(mktemp)
+  awk -v s="$source" -F'|' '$1 != s { print }' "$MAPPINGS_FILE" > "$tmp" && mv "$tmp" "$MAPPINGS_FILE"
+  return 0
+}
+
+find_links() {
+  find ~/ -maxdepth 3 -type l -lname "$DOTFILES*" 2>/dev/null
+  return 0
+}
+
+list_links() {
+  [ -f "$MAPPINGS_FILE" ] || { echo "No slinky.map found."; return 0; }
+  while IFS= read -r line; do
+    case "$line" in
+      ''|'#'* ) continue ;;
+    esac
+    IFS='|' read -r src tgt <<< "$line"
+    printf "%s -> %s\n" "$src" "$tgt"
+  done < "$MAPPINGS_FILE"
+  return 0
+}
+
+while test $# -gt 0; do
+  case "$1" in
+    add)
+      shift
+      if [ $# -ge 2 ]; then
+        add_link "$1" "$2"
+      else
+        help
+      fi
+      ;;
+    create)
+      create_links
+      ;;
+    destroy)
+      destroy_links
+      ;;
+    drop)
+      shift
+      if [ $# -ge 1 ]; then
+        drop_link "$1"
+      else
+        help
+      fi
+      ;;
+    find)
+      find_links
+      ;;
+    init)
+      init
+      ;;
+    list)
+      list_links
+      ;;
+    help|"-h"|"--help")
+      help
+      ;;
+    *)
+      help
+      ;;
+  esac
+  shift
+done

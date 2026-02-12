@@ -1,0 +1,16 @@
+# slinky.map - symlinks managed by slinky
+config/zsh/.zshenv|~/.zshenv
+config/zsh|~/.config/zsh
+config/bash/.bashrc|~/.bashrc
+config/bash/.bash_profile|~/.bash_profile
+config/fish|~/.config/fish
+config/git|~/.config/git
+config/lazygit|~/.config/lazygit
+config/ghostty|~/.config/ghostty
+config/zellij|~/.config/zellij
+config/nvim|~/.config/nvim
+config/zed|~/.config/zed
+config/opencode/opencode.json|~/.config/opencode/opencode.json
+config/starship/starship.toml|~/.config/starship.toml
+config/sketchybar|~/.config/sketchybar
+util/com.boldandbrad.CapsLockEscape.plist|~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist

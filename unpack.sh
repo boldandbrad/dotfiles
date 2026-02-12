@@ -132,7 +132,7 @@ function link_dotfiles () {
 
   echo -e "\nInstalling dotfiles..."
   eval "$(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)"
-  $DOTFILES/bin/dots link
+  $DOTFILES/bin/slinky create
 }
 
 function config_system () {

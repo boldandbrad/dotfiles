@@ -103,7 +103,7 @@ tools are provided. See [bin](../bin/README.md) for more details.
 | Command  | Description                               |
 | :------- | :---------------------------------------- |
 | `mac`    | Install dependencies and view system info |
-| `dots`   | Manage dotfile symlinks                   |
+| `slinky` | Manage dotfile symlinks                   |
 | `tidyup` | Clean system caches and app data          |
 
 ---
