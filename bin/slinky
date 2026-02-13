@@ -10,7 +10,7 @@ help() {
   echo
   echo "Usage: slinky <command> [args]"
   echo "Commands:"
-  echo "  add <src> <repo_rel_path>    Add a file or directory to dotfiles, symlink it, and track it in slinky.map"
+  echo "  add <src> [repo_rel_path]    Add a file or directory to dotfiles, symlink it, and track it in slinky.map (repo_rel_path optional)"
   echo "  install                      Install dotfile symlinks tracked in slinky.map"
   echo "  drop <repo_rel_path>         Drop a file or directory from dotfiles and slinky.map, returning it to its original location"
   echo "  find                         Find active symlinks pointing to this repository"
@@ -34,12 +34,40 @@ add_link() {
     echo "Cannot add '$source_path' to dotfiles: does not exist" >&2; return
   fi
 
-  local dest_path="$DOTFILES/$repo_rel_path"
+  local base
+  base=$(basename -- "$source_path")
+
+  local dest_path
+  local mapping_entry
+  local home_tgt
+  if [[ "$source_path" == "$HOME"* ]]; then
+    local rel_path="${source_path#${HOME}}"
+    home_tgt="~${rel_path}"
+  else
+    home_tgt="$source_path"
+  fi
+
+  if [ -n "$repo_rel_path" ]; then
+    local norm_repo_rel
+    norm_repo_rel="${repo_rel_path%/}"
+    if [ -n "$norm_repo_rel" ]; then
+      dest_path="$DOTFILES/$norm_repo_rel/$base"
+      mapping_entry="$norm_repo_rel/$base|$home_tgt"
+    else
+      dest_path="$DOTFILES/$base"
+      mapping_entry="$base|$home_tgt"
+    fi
+  else
+    dest_path="$DOTFILES/$base"
+    mapping_entry="$base|$home_tgt"
+  fi
+
   if [ -e "$dest_path" ]; then
     echo "Cannot add '$source_path' to dotfiles: '$dest_path' already exists" >&2; return
   fi
 
-  local dest_dir="$(dirname -- "$dest_path")"
+  local dest_dir
+  dest_dir="$(dirname -- "$dest_path")"
   if [ ! -e "$dest_path" ]; then
     mkdir -p "$dest_dir"
   fi
@@ -47,8 +75,7 @@ add_link() {
   mv "$source_path" "$dest_path"
   ln -sn "$dest_path" "$source_path"
 
-  local base=$(basename -- "$source_path")
-  printf "%s|%s\n" "$repo_rel_path" "~/$base" >> "$MAPPINGS_FILE"
+  printf "%s\n" "$mapping_entry" >> "$MAPPINGS_FILE"
 
   echo "Added dotfile '$dest_path' via symlink at '$source_path'"
 }
@@ -149,6 +176,8 @@ case "$1" in
     shift
     if [ $# -ge 2 ]; then
       add_link "$1" "$2"
+    elif [ $# -ge 1 ]; then
+      add_link "$1" ""
     else
       help
     fi
