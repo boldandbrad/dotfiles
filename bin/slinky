@@ -1,22 +1,42 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # slinky: simple dotfile symlink management
 
-DOTFILES="${DOTFILES:-$(git rev-parse --show-toplevel 2>/dev/null || (cd -- "$(dirname -- "$0")/.."; pwd))}"
+DOTFILES="${DOTFILES:?Slinky requires the DOTFILES environment variable is set to the path of your dotfiles repository}"
+if [ ! -d "$DOTFILES" ]; then
+  echo "Error: DOTFILES ('$DOTFILES') is not a directory or cannot be accessed." >&2
+  exit 1
+fi
 MAPPINGS_FILE="$DOTFILES/slinky.map"
 
+tilde_expand() {
+  v="$1"
+  if [ "$v" = "~" ]; then
+    echo "$HOME"
+  else
+    rest=$(printf '%s' "$v" | sed 's#^~\/##')
+    if [ "$rest" != "$v" ]; then
+      echo "$HOME/$rest"
+    else
+      echo "$v"
+    fi
+  fi
+}
+
 help() {
-  echo "slinky - dotfile symlink management"
-  echo
-  echo "Usage: slinky <command> [args]"
-  echo "Commands:"
-  echo "  add <src> [repo_rel_path]    Add a file or directory to dotfiles, symlink it, and track it in slinky.map (repo_rel_path optional)"
-  echo "  install                      Install dotfile symlinks tracked in slinky.map"
-  echo "  drop <repo_rel_path>         Drop a file or directory from dotfiles and slinky.map, returning it to its original location"
-  echo "  find                         Find active symlinks pointing to this repository"
-  echo "  init                         Create bare slinky.map file if it does not exist"
-  echo "  list                         List symlinks tracked in slinky.map"
-  echo "  uninstall                    Uninstall dotfile symlinks tracked in slinky.map by deleting them"
+  cat <<'EOF'
+slinky - dotfile symlink management
+Usage: slinky <command> [args]
+Commands:
+  add <src> [repo_rel_path]    Add a file or directory to dotfiles, symlink it, and track it in slinky.map (repo_rel_path optional)
+  install                      Install dotfile symlinks tracked in slinky.map
+  drop <repo_rel_path>         Drop a file or directory from dotfiles and slinky.map, returning it to its original location
+  find                         Find active symlinks pointing to this repository
+  init                         Create bare slinky.map file if it does not exist
+  list                         List symlinks tracked in slinky.map
+  uninstall                    Uninstall dotfile symlinks tracked in slinky.map by deleting them
+  help|-h|--help               Show this help
+EOF
 }
 
 init() {
@@ -27,28 +47,30 @@ init() {
 }
 
 add_link() {
-  local input_path="$1"; local repo_rel_path="$2"
+  input_path="$1"
+  repo_rel_path="$2"
 
-  local source_path="$(cd -- "$(dirname -- "$input_path")"; pwd)/$(basename -- "$input_path")"
+  source_path="$(cd "$(dirname "$input_path")" && pwd)/$(basename "$input_path")"
   if [ ! -e "$source_path" ]; then
     echo "Cannot add '$source_path' to dotfiles: does not exist" >&2; return
   fi
 
-  local base
-  base=$(basename -- "$source_path")
+  base=$(basename "$source_path")
 
-  local dest_path
-  local mapping_entry
-  local home_tgt
-  if [[ "$source_path" == "$HOME"* ]]; then
-    local rel_path="${source_path#${HOME}}"
-    home_tgt="~${rel_path}"
-  else
-    home_tgt="$source_path"
-  fi
+  dest_path=""
+  mapping_entry=""
+  home_tgt=""
+  case "$source_path" in
+    "$HOME"*)
+      rel_path="${source_path#"$HOME"}"
+      home_tgt="~${rel_path}"
+      ;;
+    *)
+      home_tgt="$source_path"
+      ;;
+  esac
 
   if [ -n "$repo_rel_path" ]; then
-    local norm_repo_rel
     norm_repo_rel="${repo_rel_path%/}"
     if [ -n "$norm_repo_rel" ]; then
       dest_path="$DOTFILES/$norm_repo_rel/$base"
@@ -66,8 +88,7 @@ add_link() {
     echo "Cannot add '$source_path' to dotfiles: '$dest_path' already exists" >&2; return
   fi
 
-  local dest_dir
-  dest_dir="$(dirname -- "$dest_path")"
+  dest_dir="$(dirname "$dest_path")"
   if [ ! -e "$dest_path" ]; then
     mkdir -p "$dest_dir"
   fi
@@ -88,9 +109,10 @@ install_links() {
       ''|'#'* ) continue ;;
     esac
 
-    IFS='|' read -r src tgt <<< "$line"
+    src=$(printf '%s' "$line" | cut -d'|' -f1)
+    tgt=$(printf '%s' "$line" | cut -d'|' -f2-)
     abs_src="$DOTFILES/$src"
-    abs_tgt="${tgt/#~/$HOME}"
+    abs_tgt="$(tilde_expand "$tgt")"
     if [ ! -e "$abs_src" ]; then
       echo "  Source not found: '$abs_src'" >&2
       continue
@@ -107,41 +129,40 @@ install_links() {
 }
 
 uninstall_links() {
-  local to_delete=()
+  # Remove targets; then prune mappings file
   while IFS= read -r line; do
     case "$line" in ''|'#'* ) continue ;;
     esac
-    IFS='|' read -r src tgt <<< "$line"
-    local abs_tgt="${tgt/#~/$HOME}"
+    src=$(printf '%s' "$line" | cut -d'|' -f1)
+    tgt=$(printf '%s' "$line" | cut -d'|' -f2-)
+    abs_tgt="$(tilde_expand "$tgt")"
     if [ -L "$abs_tgt" ] || [ -e "$abs_tgt" ]; then
-      to_delete+=("$abs_tgt")
+      rm -f "$abs_tgt" 2>/dev/null
     fi
   done < "$MAPPINGS_FILE"
 
-  for fp in "${to_delete[@]}"; do
-    rm -f "$fp" 2>/dev/null || true
-  done
+  # Prune the mappings file in-place by filtering out removed entries is optional here
   echo "Uninstalled dotfile symlinks tracked in slinky.map by deleting them"
 }
 
 drop_link() {
-  local repo_rel_path="$1"
+  repo_rel_path="$1"
 
-  local line
   line=$(awk -v s="$repo_rel_path" -F'|' '$1 == s { print; exit }' "$MAPPINGS_FILE")
   if [ -z "$line" ]; then
     echo "Cannot drop dotfile '$repo_rel_path': no mapping found in '$MAPPINGS_FILE'." >&2; return
   fi
-  IFS='|' read -r src tgt <<< "$line"
+  src=$(printf '%s' "$line" | cut -d'|' -f1)
+  tgt=$(printf '%s' "$line" | cut -d'|' -f2-)
 
-  local abs_src="$DOTFILES/$src"
-  local abs_tgt="${tgt/#~/$HOME}"
+  abs_src="$DOTFILES/$src"
+    abs_tgt="$(tilde_expand "$tgt")"
 
   if [ -L "$abs_tgt" ] || [ -e "$abs_tgt" ]; then
     rm -f "$abs_tgt" 2>/dev/null
   fi
 
-  mkdir -p "$(dirname -- "$abs_tgt")"
+  mkdir -p "$(dirname "$abs_tgt")"
   if [ -e "$abs_src" ]; then
     mv "$abs_src" "$abs_tgt"
     echo "Dropped dotfile '$repo_rel_path' and moved it back to '$abs_tgt'"
@@ -160,15 +181,16 @@ find_links() {
 list_links() {
   while IFS= read -r line; do
     case "$line" in
-      ''|'#'* ) continue ;;
+      ''|'#'*) continue ;;
     esac
-    IFS='|' read -r src tgt <<< "$line"
+    src=$(printf '%s' "$line" | cut -d'|' -f1)
+    tgt=$(printf '%s' "$line" | cut -d'|' -f2-)
     printf "%s -> %s\n" "$src" "$tgt"
   done < "$MAPPINGS_FILE"
 }
 
 if [ ! -f "$MAPPINGS_FILE" ]; then
-  echo "'$MAPPINGS_FILE' not found. Create it with 'slinky init'" >&2; return
+  echo "'$MAPPINGS_FILE' not found. Create it with 'slinky init'" >&2; exit 1
 fi
 
 case "$1" in
