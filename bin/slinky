@@ -16,7 +16,7 @@ help() {
   echo "  find                         Find active symlinks pointing to this repository"
   echo "  init                         Create bare slinky.map file if it does not exist"
   echo "  list                         List symlinks tracked in slinky.map"
-  echo "  uninstall                    Uninstall dotfile symlinks tracked in slinky.map by moving them to the trash"
+  echo "  uninstall                    Uninstall dotfile symlinks tracked in slinky.map by deleting them"
 }
 
 init() {
@@ -107,21 +107,21 @@ install_links() {
 }
 
 uninstall_links() {
-  local to_trash=()
+  local to_delete=()
   while IFS= read -r line; do
     case "$line" in ''|'#'* ) continue ;;
     esac
     IFS='|' read -r src tgt <<< "$line"
     local abs_tgt="${tgt/#~/$HOME}"
     if [ -L "$abs_tgt" ] || [ -e "$abs_tgt" ]; then
-      to_trash+=("$abs_tgt")
+      to_delete+=("$abs_tgt")
     fi
   done < "$MAPPINGS_FILE"
 
-  for tp in "${to_trash[@]}"; do
-    trash "$tp" 2>/dev/null || true
+  for fp in "${to_delete[@]}"; do
+    rm -f "$fp" 2>/dev/null || true
   done
-  echo "Uninstalled dotfile symlinks tracked in slinky.map my moving them to the trash"
+  echo "Uninstalled dotfile symlinks tracked in slinky.map by deleting them"
 }
 
 drop_link() {
