@@ -4,7 +4,9 @@
 
 ---
 
-> 🗝️ Welcome `$HOME`
+## 🗝️ Welcome `$HOME`
+
+Navigation:
 
 [🏗️ Foundation](#foundation) | [📐 Layout](#layout) | [🛋️ Furniture](#furniture)
 | [📦 Unpack](#unpack) | [🛠️ Maintain](#maintain) |
