@@ -4,30 +4,55 @@
 
 ---
 
-## 🗝️ Welcome `$HOME`
+> 🗝️ Welcome `$HOME`
 
-Simplify the process of moving into a new workstation by automatically
-furnishing it with your favorite app(liance)s and setting up power(ful) tools to
-maintain it.
-
-> [!WARNING]
-> My dotfiles are open source to serve as a blueprint and inspiration for
-> others. Please feel free to explore the [contents](#contents) and copy what
-> you like, but
-> [I do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right)
-> because my setup is both custom and highly
-> [volatile](https://github.com/boldandbrad/dotfiles/commits/main/).
+[🏗️ Foundation](#foundation) | [📐 Layout](#layout) | [🛋️ Furniture](#furniture)
+| [📦 Unpack](#unpack) | [🛠️ Maintain](#maintain) |
+[💡 Inspiration](#inspiration)
 
 ---
 
-[✨ TL;DR](#tldr) | [🛋️ Contents](#contents) | [📦 Unpack](#unpack) |
-[🛠️ Maintain](#maintain) | [💡 Inspiration](#inspiration)
+<a id="foundation"></a>
+
+## 🏗️ Foundation
+
+I wanted a workstation that made me feel at home. It had to be:
+
+- **Functional**: Simple to use and bloat-free
+- **Fast**: Automated and keyboard-first
+- **Fun**: Make work painless
+
+This repository contains the blueprint for that home. These dotfiles allow me to
+seamlessly move into a new workstation by automatically furnishing it with the
+appliances and tools I use every day.
+
+A lot of what is here was [inspired](#inspiration) by others. Like many of them,
+I have made this repo public to serve as an open house for those on a similar
+journey. Feel free to take a look around and copy what you like. However,
+[I do not recommend forking](https://github.com/lissy93/dotfiles?tab=readme-ov-file#so-copy-paste-right)
+because my setup is both custom and highly
+[volatile](https://github.com/boldandbrad/dotfiles/commits/main/).
 
 ---
 
-<a id="tldr"></a>
+<a id="layout"></a>
 
-## ✨ TL;DR
+## 📐 Layout
+
+To keep things tidy, this repo is organized into a few main directories:
+
+- 💾 [backup](../backup/README.md) - Backups of configs that require manual
+  setup
+- 🗄️ [bin](../bin/README.md) - Small, custom executables to be appended to
+  `PATH`
+- 🎨 [config](../config/README.md) - Configs to be symlinked into place
+- 🛠️ [util](../util/README.md) - System specific assets and configs to be setup
+
+---
+
+<a id="furniture"></a>
+
+## 🛋️ Furniture
 
 The floor plan at a glance:
 
@@ -48,20 +73,8 @@ The floor plan at a glance:
 | Colorscheme             | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                                                                                                          |
 | Programming Langauges   | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) ![ruby](https://img.shields.io/badge/Ruby-_?logo=ruby&logoColor=white&color=%23CC342D) |
 
----
-
-<a id="contents"></a>
-
-## 🛋️ Contents
-
-The main contents of this repo are organized into the following directories:
-
-- 💾 [backup](../backup/README.md) - Backups of configs that require manual
-  setup
-- 🗄️ [bin](../bin/README.md) - Custom executables to be appended to `PATH`
-- 🎨 [config](../config/README.md) - Package and app configs to be symlinked
-  into place
-- 🛠️ [util](../util/README.md) - System specific assets and configs to be setup
+For a complete list of packages and apps that get installed, see the
+[Brewfile](../util/Brewfile).
 
 ---
 
@@ -70,7 +83,7 @@ The main contents of this repo are organized into the following directories:
 ## 📦 Unpack
 
 The main installation script is [`unpack.sh`](../unpack.sh). It explains what it
-will do, prompts the user before each step, and is idempotent.
+will do, prompts for confirmation before each step, and is idempotent.
 
 In brief, unpacking...
 
@@ -81,10 +94,10 @@ In brief, unpacking...
 - ⚙️ Applies system settings
 
 > [!WARNING]
-> Before unpacking, review the repo [contents](#contents) and backup any
+> Before unpacking, review the repo [layout](#layout) and backup any
 > pre-existing configs.
 
-Clone this repo and run [`unpack.sh`](../unpack.sh).
+Clone this repo and run [`unpack.sh`](../unpack.sh):
 
 ```sh
 git clone https://github.com/boldandbrad/dotfiles.git ~/Dotfiles
@@ -124,8 +137,8 @@ In particular, I took inspiration from these gems:
 
 ### Wallpaper Credits
 
-The wallpaper assets found in this repo have been copied from the following
-sources:
+Many of the wallpaper assets found in this repo have been copied from the
+following sources:
 
 - [catppuccin-waves-4k.png](./wallpapers/catppuccin-waves-4k.png) - Credit
   [zhichaoh/catppuccin-wallpapers](https://github.com/zhichaoh/catppuccin-wallpapers/blob/main/waves/cat-waves.png)
