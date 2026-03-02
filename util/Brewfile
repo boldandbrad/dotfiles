@@ -39,6 +39,7 @@ cask "discord"                  # digital community client
 cask "ghostty"                  # terminal emulator
 # cask "hey-desktop"              # email client
 cask "leader-key"               # leader key based launcher
+cask "obsidian"                 # note manager
 cask "opencode-desktop"         # ai coding agent
 cask "raycast"                  # spotlight replacement
 brew "sketchybar"               # menubar replacement
