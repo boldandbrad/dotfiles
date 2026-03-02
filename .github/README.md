@@ -18,9 +18,9 @@
 
 I wanted a workstation that made me feel at home. It had to be:
 
-- **Functional**: Simple to use and bloat-free
-- **Fast**: Automated and keyboard-first
-- **Fun**: Make work painless
+- 🔧 **Functional** - Simple to use and bloat-free
+- ⚡ **Fast** - Automated and keyboard-first
+- ✨ **Fun** - Make work painless
 
 This repository contains the blueprint for that home. These dotfiles allow me to
 seamlessly move into a new workstation by automatically furnishing it with the
