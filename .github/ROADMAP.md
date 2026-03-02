@@ -19,7 +19,6 @@ Planned changes and updates to this repo.
 
 - config/bash: cleanup config
 - config/zsh: simplify config
-- config/zsh: launch zellij on startup?
 - config/starship: only show git status when there are changes
 - config/starship: add command execution time to right prompt
 - config/leader-key: remove window management keymaps in favor of aerospace

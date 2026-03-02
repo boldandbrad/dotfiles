@@ -7,7 +7,6 @@ config/fish|~/.config/fish
 config/git|~/.config/git
 config/lazygit|~/.config/lazygit
 config/ghostty|~/.config/ghostty
-config/zellij|~/.config/zellij
 config/nvim|~/.config/nvim
 config/zed|~/.config/zed
 config/opencode/opencode.json|~/.config/opencode/opencode.json
