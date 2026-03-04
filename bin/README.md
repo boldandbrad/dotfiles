@@ -15,7 +15,6 @@ Invoke these from anywhere.
 | [`flushdns`](../bin/flushdns)         | Flush macOS dns records                                                                                      |
 | [`license`](../bin/license)           | Create an MIT license file in the current working directory                                                  |
 | [`mac`](../bin/mac)                   | Mac system utility                                                                                           |
-| [`slinky`](../bin/slinky)             | Manage dotfile symlinks                                                                                      |
 | [`tidyup`](../bin/tidyup)             | Trash unwanted directories and files                                                                         |
 | [`today`](../bin/license)             | Return today's date in YYYY-MM-DD format                                                                     |
 | [`togglehidden`](../bin/togglehidden) | Toggle showing hidden files in macOS Finder                                                                  |

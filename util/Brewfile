@@ -5,7 +5,7 @@
 # taps ------------------------------------------------------- #
 
 tap "anomalyco/tap"             # opencode
-# tap "boldandbrad/tap"           # stuff made by me :)
+tap "boldandbrad/tap"           # stuff made by me :)
 tap "FelixKratz/formulae"       # sketchybar
 tap "nikitabobko/tap"           # aerospace
 
@@ -26,6 +26,7 @@ brew "neovim"                   # text editor
 brew "opencode"                 # ai coding agent
 brew "ripgrep"                  # grep alternative
 brew "rmpc"                     # music player
+brew "slinky"                   # dotfile manager
 brew "starship"                 # shell prompt engine
 brew "zoxide"                   # cd replacement
 brew "zsh"                      # system zsh replacement

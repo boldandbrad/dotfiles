@@ -25,8 +25,9 @@ and are sourced on shell startup before symlinking configs.
 | `XDG_STATE_HOME`  | `~/.local/state`     |
 
 As a result, most configs in this directory get symlinked under
-`XDG_CONFIG_HOME`. Symlinks are managed by [`bin/slinky`](../bin/slinky) and the
-exact locations on disk that each config should be symlinked to are specified in
+`XDG_CONFIG_HOME`. Symlinks are managed by
+[`slinky`](https://github.com/boldandbrad/slinky) and the exact locations on
+disk that each config should be symlinked to are specified in
 [`slinky.map`](../slinky.map).
 
 ## Configs
