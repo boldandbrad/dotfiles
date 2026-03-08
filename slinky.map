@@ -13,3 +13,4 @@ config/opencode/opencode.json|~/.config/opencode/opencode.json
 config/starship/starship.toml|~/.config/starship.toml
 config/sketchybar|~/.config/sketchybar
 util/com.boldandbrad.CapsLockEscape.plist|~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
+config/tuna/config.toml|~/Library/Application Support/Tuna/config.toml

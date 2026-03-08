@@ -6,6 +6,4 @@ below.
 
 ## Manual Setup
 
-### Raycast
-
 > Coming soon.

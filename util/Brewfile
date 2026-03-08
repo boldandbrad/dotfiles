@@ -2,50 +2,44 @@
 # Brewfile - macOS package installation via homebrew           #
 # ------------------------------------------------------------ #
 
-# taps ------------------------------------------------------- #
-
-tap "anomalyco/tap"             # opencode
-tap "boldandbrad/tap"           # stuff made by me :)
-tap "FelixKratz/formulae"       # sketchybar
-tap "nikitabobko/tap"           # aerospace
-
 # terminal apps and packages --------------------------------- #
 
-brew "aliae"                    # cross platform shell manager
-brew "bash"                     # system bash replacement
-brew "bitwarden-cli"            # password manager
-brew "eza"                      # ls replacement
-brew "fd"                       # find alternative
-brew "fish"                     # a fun shell
-brew "fzf"                      # fuzzy finder
-brew "git"                      # version control system
-brew "jq"                       # json processor
-brew "lazygit"                  # git client
-brew "mpd"                      # music player daemon
-brew "neovim"                   # text editor
-brew "opencode"                 # ai coding agent
-brew "ripgrep"                  # grep alternative
-brew "rmpc"                     # music player
-brew "slinky"                   # dotfile manager
-brew "starship"                 # shell prompt engine
-brew "zoxide"                   # cd replacement
-brew "zsh"                      # system zsh replacement
+brew "aliae"                          # shell manager
+brew "bash"                           # updated bash
+brew "bitwarden-cli"                  # password manager
+brew "eza"                            # ls replacement
+brew "fd"                             # find alternative
+brew "fish"                           # a fun shell
+brew "fzf"                            # fuzzy finder
+brew "git"                            # version controller
+brew "jq"                             # json processor
+brew "lazygit"                        # git client
+brew "mpd"                            # music player daemon
+brew "neovim"                         # text editor
+brew "anomalyco/tap/opencode"         # ai coding agent
+brew "presenterm"                     # markdown presenter
+brew "ripgrep"                        # grep alternative
+brew "rmpc"                           # music player
+brew "boldandbrad/tap/slinky"         # dotfile manager
+brew "starship"                       # shell prompt engine
+brew "tmux"                           # terminal multiplexer
+brew "zoxide"                         # cd replacement
+brew "zsh"                            # updated zsh
 
 # desktop apps ----------------------------------------------- #
 
-cask "aerospace"                # tiling window manager
-cask "bitwarden"                # password manager
-# cask "bricklink-studio"         # lego moc designer
-cask "discord"                  # digital community client
-cask "ghostty"                  # terminal emulator
-# cask "hey-desktop"              # email client
-cask "leader-key"               # leader key based launcher
-cask "obsidian"                 # note manager
-cask "opencode-desktop"         # ai coding agent
-cask "raycast"                  # spotlight replacement
-brew "sketchybar"               # menubar replacement
-cask "tidal"                    # music streamer
-cask "zed"                      # text editor
+cask "nikitabobko/tap/aerospace"      # tiling window manager
+# cask "audacity"                       # audio toolkit
+cask "bitwarden"                      # password manager
+# cask "bricklink-studio"               # lego moc designer
+cask "discord"                        # digital community client
+cask "ghostty"                        # terminal emulator
+# cask "hey-desktop"                    # email client
+cask "obsidian"                       # note manager
+brew "FelixKratz/formulae/sketchybar" # menubar replacement
+cask "tidal"                          # music streamer
+cask "mikker/tap/tuna"                # modal launcher
+cask "zed"                            # text editor
 
 # software development tooling and apps ---------------------- #
 
