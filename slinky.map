@@ -11,6 +11,7 @@ config/nvim|~/.config/nvim
 config/zed|~/.config/zed
 config/opencode/opencode.json|~/.config/opencode/opencode.json
 config/starship/starship.toml|~/.config/starship.toml
+config/aerospace|~/.config/aerospace
 config/sketchybar|~/.config/sketchybar
 util/com.boldandbrad.CapsLockEscape.plist|~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
 config/tuna/config.toml|~/Library/Application Support/Tuna/config.toml
