@@ -6,17 +6,14 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      "folke/lazydev.nvim",
       "rafamadriz/friendly-snippets",
     },
     version = 'v1.*',
     opts = {
       sources = {
-        default = { "lsp", "path", "snippets", "lazydev" },
+        default = { "lsp", "path", "snippets" },
         providers = {
           buffer = { enabled = false },
-          lsp = { fallbacks = { "lazydev" } },
-          lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" }
         },
       },
       completion = {

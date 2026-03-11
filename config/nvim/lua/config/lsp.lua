@@ -14,6 +14,16 @@ vim.lsp.enable({
 })
 
 -- apply custom lsp configs
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
+
 vim.lsp.config("denols", {
   -- handle markdown, html, css, and json in addition to js/ts
   filetypes = { "javascript", "typescript", "markdown", "html", "css", "json", "yaml" },
