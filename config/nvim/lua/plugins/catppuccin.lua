@@ -23,7 +23,6 @@ return {
         transparent = true,
       },
       native_lsp = { enabled = true },
-      nvim_surround = true,
       snacks = {
         enabled = true,
         indent_scope_color = "peach",

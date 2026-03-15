@@ -5,11 +5,11 @@
   },
   "blink.cmp": {
     "branch": "main",
-    "commit": "4b18c32adef2898f95cdef6192cbd5796c1a332d"
+    "commit": "451168851e8e2466bc97ee3e026c3dcb9141ce07"
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "12c004cde3f36cb1d57242f1e6aac46b09a0e5b4"
+    "commit": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf"
   },
   "fidget.nvim": {
     "branch": "main",
@@ -33,7 +33,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "d8bf4c47385340ab2029402201d4d7c9f99f437a"
+    "commit": "4d0724be90b633ddce51b328a631060e6acd7d66"
   },
   "nvim-treesitter": {
     "branch": "master",
@@ -41,7 +41,7 @@
   },
   "snacks.nvim": {
     "branch": "main",
-    "commit": "9912042fc8bca2209105526ac7534e9a0c2071b2"
+    "commit": "a049339328e2599ad6e85a69fa034ac501e921b2"
   },
   "which-key.nvim": {
     "branch": "main",

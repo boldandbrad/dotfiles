@@ -5,11 +5,8 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-
-    require("which-key").add({
+  opts = {
+    spec = {
       { "<leader>b", group = "Buffer" },
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
@@ -19,9 +16,7 @@ return {
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Terminal" },
       { "<leader>w", group = "Window" },
-    })
-  end,
-  opts = {
+    },
     preset = "helix",
     show_help = false,
     plugins = {
