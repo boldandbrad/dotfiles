@@ -46,7 +46,6 @@ To keep things tidy, this repo is organized into a few main directories:
 - 🗄️ [bin](../bin/README.md) - Small, custom executables to be appended to
   `PATH`
 - 🎨 [config](../config/README.md) - Configs to be symlinked into place
-- 🛠️ [util](../util/README.md) - System specific assets and configs to be setup
 
 ---
 

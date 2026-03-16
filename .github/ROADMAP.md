@@ -9,8 +9,6 @@ Planned changes and updates to this repo.
 ## Features
 
 - bin/tidyup: add ability to clean up caches and system data
-- bin/mac: move config_system script into `mac config`
-- backup: move util/wallpapers into backup or .github/assets
 - config/aliae: cleanup and simplify shell aliases, envs, and functions
 - unpack: detail necessary manual setup steps
 

@@ -145,7 +145,8 @@ function config_system () {
     fi
   fi
 
-  $DOTFILES/util/config_system
+  $DOTFILES/bin/mac set
+  $DOTFILES/backup/mac/config_system
 }
 
 # terminate on first failure
