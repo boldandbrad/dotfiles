@@ -104,7 +104,7 @@ settings() {
     hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
     plist_location=~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
     if [ ! -f $plist_location ]; then
-      ln -s $DOTFILES/util/com.boldandbrad.CapsLockEscape.plist $plist_location
+      ln -s $DOTFILES/config/mac/com.boldandbrad.CapsLockEscape.plist $plist_location
     fi
     if launchctl list | grep -q com.boldandbrad.CapsLockEscape; then
       launchctl load $plist_location
