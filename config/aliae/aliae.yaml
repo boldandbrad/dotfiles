@@ -43,7 +43,7 @@ env:
   - name: DOTFILES
     value: "{{ .Home }}/Dotfiles"
   - name: HOMEBREW_BUNDLE_FILE
-    value: '{{ env "DOTFILES" }}/util/Brewfile'
+    value: '{{ env "DOTFILES" }}/backup/mac/Brewfile'
 
   # tool options
   - name: DO_NOT_TRACK # disable telemetry for tools that support this flag

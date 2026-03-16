@@ -75,8 +75,8 @@ The floor plan at a glance:
 | Colorscheme             | ![catppuccin-mocha](https://img.shields.io/badge/Catppuccin-Mocha-_?logoColor=%23cba6f7&labelColor=%23b4befe&color=%231e1e2e)                                                                                                                                                                                                                                                                                                                          |
 | Programming Langauges   | ![golang](https://img.shields.io/badge/Go-_?logo=go&logoColor=white&color=%2300ADD8) ![rust](https://img.shields.io/badge/Rust-_?logo=rust&logoColor=white&color=%23000000) ![deno](https://img.shields.io/badge/Deno-_?logo=deno&logoColor=black&color=%2370FFAF) ![python](https://img.shields.io/badge/Python-_?logo=python&logoColor=white&color=%233776AB) ![ruby](https://img.shields.io/badge/Ruby-_?logo=ruby&logoColor=white&color=%23CC342D) |
 
-For a complete list of packages and apps that get installed, see the
-[Brewfile](../util/Brewfile).
+For the complete list of packages and apps that get installed, see the
+[Brewfile](../backup/mac/Brewfile).
 
 ---
 

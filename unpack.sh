@@ -18,7 +18,7 @@ export DOTFILES=~/Dotfiles
 export GITHUB_USER="boldandbrad"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export HOMEBREW_BUNDLE_FILE="$DOTFILES/util/Brewfile"
+  export HOMEBREW_BUNDLE_FILE="$DOTFILES/backup/mac/Brewfile"
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 

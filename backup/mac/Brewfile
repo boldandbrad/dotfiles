@@ -43,22 +43,19 @@ cask "zed"                            # text editor
 
 # software development tooling and apps ---------------------- #
 
-# cask "claude-code"              # ai pair programmer
-brew "deno"                     # js/ts runtime & toolchain
+brew "deno"                     # js runtime & toolchain
 brew "gh"                       # cli github client
-brew "go"                       # golang compiler & toolchain
+brew "go"                       # go compiler & toolchain
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
-brew "lua-language-server"      # lua_ls protocol
+brew "lua-language-server"      # lua language server
 brew "marksman"                 # markdown lsp
 brew "rbenv"                    # ruby version manager
-brew "ruff"                     # python linter and formatter
+brew "resterm"                  # http client
 brew "rustup"                   # rust toolchain installer
 brew "taplo"                    # toml toolchain
 cask "temurin"                  # java development kit
 brew "tokei"                    # code line counter
-brew "uv"                       # python package manager
-cask "yaak"                     # desktop http client
 
 # fonts ------------------------------------------------------ #
 
@@ -70,7 +67,8 @@ cask "font-space-mono"
 
 # games ------------------------------------------------------ #
 
-cask "minecraft"                # minecraft launcher
+cask "hytale"                   # official hytale launcher
+cask "minecraft"                # official minecraft launcher
 # cask "retroarch"                # game emulator launcher
 cask "steam"                    # game marketplace and launcher
 
