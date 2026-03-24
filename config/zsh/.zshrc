@@ -15,27 +15,17 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # install/initialize zsh plugins
-zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # zstyles ---------------------------------------------------- #
 
-# disable completion menu selection in favor of fzf-tab
+# disable completion menu selection in favor of fzf
 zstyle ':completion:*' menu no
 
-# allow partial tab completions: cd /u/lo/b⇥ -> /usr/local/bin
-zstyle ':completion:*' list-suffixes zstyle ':completion:*'
-
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
-
-zstyle ':fzf-tab:*' use-fzf-default-opts yes
-
-# color tab completed paths
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# enable fzf tab completions without explicit trigger
+export FZF_COMPLETION_TRIGGER=''
 
 # initialize zsh completions
 autoload -Uz compinit && compinit
@@ -64,6 +54,7 @@ setopt no_case_glob # enable case-insensitive tab completion and globbing
 
 # initialize tools ------------------------------------------- #
 
+source <(fzf --zsh)
 eval "$(rbenv init - --no-rehash zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
