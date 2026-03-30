@@ -53,7 +53,7 @@ local function hi(group, opts)
 end
 
 -- mode based highlight groups
-hi("StatusBasic", { guibg = NONE, guifg = palette.text })
+hi("StatusBasic", { guibg = palette.base, guifg = palette.text })
 hi("StatusPrimaryNrm", { guibg = palette.blue, guifg = palette.surface0, gui = "bold" })
 hi("StatusPrimaryIns", { guibg = palette.green, guifg = palette.surface0, gui = "bold" })
 hi("StatusPrimaryVis", { guibg = palette.mauve, guifg = palette.surface0, gui = "bold" })
