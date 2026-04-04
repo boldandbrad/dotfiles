@@ -9,11 +9,11 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf"
+    "commit": "16408d203973da7e43fab87c6f9d3bf7fa98fa8b"
   },
   "fidget.nvim": {
     "branch": "main",
-    "commit": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970"
+    "commit": "889e2e96edef4e144965571d46f7a77bcc4d0ddf"
   },
   "flash.nvim": {
     "branch": "main",
@@ -25,7 +25,7 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3"
+    "commit": "944ef13cc8d8fe8b846c91f36041c8dfb85ca000"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -33,15 +33,15 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "4d0724be90b633ddce51b328a631060e6acd7d66"
+    "commit": "9ccd58a7949091c0cc2777d4e92a45a209c808c1"
   },
   "nvim-treesitter": {
-    "branch": "master",
-    "commit": "42fc28ba918343ebfd5565147a42a26580579482"
+    "branch": "main",
+    "commit": "4916d6592ede8c07973490d9322f187e07dfefac"
   },
   "snacks.nvim": {
     "branch": "main",
-    "commit": "a049339328e2599ad6e85a69fa034ac501e921b2"
+    "commit": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e"
   },
   "which-key.nvim": {
     "branch": "main",

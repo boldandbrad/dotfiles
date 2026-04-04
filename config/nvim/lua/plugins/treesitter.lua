@@ -4,14 +4,11 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = "master",
+  branch = "main",
+  enabled = true,
   lazy = false,
   build = ":TSUpdate",
-  opts = {
-    ensure_installed = { "go", "html", "javascript", "typescript", "python", "rust" },
-    highlight = { enable = true },
-  },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+  init = function()
+    require("nvim-treesitter").install({ "go", "html", "javascript", "markdown", "markdown_inline", "ruby", "typescript" })
   end
 }
