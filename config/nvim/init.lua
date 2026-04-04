@@ -6,7 +6,7 @@
 -- load lua modules
 require("config.options")
 require("config.keymaps")
-require("config.lazy")
+require("config.plugins")
 require("config.lsp")
 require("config.autocmds")
 require("config.statusline")
