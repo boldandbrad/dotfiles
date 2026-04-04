@@ -3,6 +3,8 @@
 # docs: https://zsh.sourceforge.io/Doc/Release/zsh_toc.html    #
 # ------------------------------------------------------------ #
 
+# TODO: simplify zsh config
+
 # if not running interactively, do nothing
 [[ $- != *i* ]] && return
 

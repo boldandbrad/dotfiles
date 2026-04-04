@@ -158,6 +158,8 @@ install_packages
 link_dotfiles
 config_system
 
+# TODO: detail necessary manual setup steps
+
 set +e
 
 echo

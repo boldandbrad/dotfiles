@@ -78,6 +78,7 @@ read_only = "!"
 format = " [on](overlay0) [$branch(:$remote_branch)]($style)"
 style = "bold green"
 
+# FIX: only show git status when there are changes
 [git_status]
 format = " [with](overlay0) [$modified]($style)"
 style = "bold yellow"
@@ -118,3 +119,5 @@ vimcmd_symbol = "[n](bold green)"
 vimcmd_visual_symbol = "[v](bold yellow)"
 vimcmd_replace_symbol = "[r](bold purple)"
 vimcmd_replace_one_symbol = "[o](bold purple)"
+
+# TODO: add command execution time to right prompt

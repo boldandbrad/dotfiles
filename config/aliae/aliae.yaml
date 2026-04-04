@@ -3,6 +3,8 @@
 # docs: https://aliae.dev/docs/setup/configuration             #
 # ------------------------------------------------------------ #
 
+# TODO: cleanup and simplify shell aliases, envs, and functions
+
 env:
   # default tools
   - name: EDITOR

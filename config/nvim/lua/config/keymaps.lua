@@ -21,6 +21,7 @@ keymap("n", "<leader>wl", "<C-w>l", { desc = "Move to split right" })
 keymap("n", "[q", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
 keymap("n", "]q", "<cmd>cnext<cr>", { desc = "Next quickfix" })
 
+-- FIX: fix these so they don't conflict with aerospace
 -- move lines
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
