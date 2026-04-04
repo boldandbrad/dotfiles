@@ -17,7 +17,6 @@ return {
     integrations = {
       blink_cmp = true,
       fidget = true,
-      flash = true,
       gitsigns = {
         enabled = true,
         transparent = true,
