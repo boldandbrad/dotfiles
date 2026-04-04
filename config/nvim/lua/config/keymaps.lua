@@ -31,6 +31,9 @@ keymap("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up" })
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move selection down" })
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
 
+-- pack
+keymap("n", "<leader>P", function() vim.pack.update() end, { desc = "Update plugins" })
+
 -- other
 keymap("n", "<leader>wq", "<cmd>write<cr> <cmd>quit<cr>", { desc = "Write and quit" })
 keymap("n", "<leader>bf", vim.lsp.buf.format, { desc = "Format buffer", unpack(opts) })
