@@ -4,7 +4,6 @@
 
 local M = {}
 
-local NONE = "NONE"
 local palette = {
   rosewater = "#f5e0dc",
   flamingo = "#f2cdcd",
@@ -71,10 +70,10 @@ hi("StatusDiffChange", { guibg = palette.surface0, guifg = palette.yellow })
 hi("StatusDiffDelete", { guibg = palette.surface0, guifg = palette.red })
 
 -- diagnostic highlight groups
-hi("StatusErrorIcon", { guibg = NONE, guifg = palette.red })
-hi("StatusWarnIcon", { guibg = NONE, guifg = palette.yellow })
-hi("StatusInfoIcon", { guibg = NONE, guifg = palette.blue })
-hi("StatusHintIcon", { guibg = NONE, guifg = palette.green })
+hi("StatusErrorIcon", { guibg = palette.base, guifg = palette.red })
+hi("StatusWarnIcon", { guibg = palette.base, guifg = palette.yellow })
+hi("StatusInfoIcon", { guibg = palette.base, guifg = palette.blue })
+hi("StatusHintIcon", { guibg = palette.base, guifg = palette.green })
 
 local fn = vim.fn
 
