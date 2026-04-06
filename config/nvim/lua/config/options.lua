@@ -18,6 +18,8 @@ opt.list = true                                 -- show whitespace characters
 opt.listchars = "tab:>-,trail:·,nbsp:·,space:·" -- whitespace characters to show
 opt.termguicolors = true                        -- true color support
 opt.guicursor = ""                              -- disable per-mode cursor styles
+opt.showmatch = true                            -- jump to matching bracket on insert
+opt.fillchars = { eob = " " }                   -- do not show ~ after the end of the buffer
 
 -- indent
 opt.tabstop = 2        -- number of spaces to insert for a tab

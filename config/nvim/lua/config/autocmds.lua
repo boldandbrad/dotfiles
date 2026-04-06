@@ -3,12 +3,11 @@
 ----------------------------------------------------------------
 
 local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup
+local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
 
-local prj_root_group = augroup("ProjectRoot", { clear = true })
 autocmd({ "VimEnter", "BufReadPost", "BufEnter" }, {
   desc = "Auto change to project root",
-  group = prj_root_group,
+  group = augroup,
   pattern = "*",
   callback = function()
     local root_patterns = { ".git", "go.mod", "deno.json", "Cargo.toml", "pyproject.toml" }
@@ -65,10 +64,9 @@ autocmd("LspAttach", {
   end,
 })
 
-local trim_group = augroup("TrimWhitespace", { clear = true })
 autocmd("BufWritePre", {
   desc = "Auto-trim trailing whitespace on write",
-  group = trim_group,
+  group = augroup,
   callback = function()
     local save_cursor = vim.fn.getpos(".")
     pcall(function() vim.cmd [[%s/\s\+$//e]] end)
@@ -76,10 +74,9 @@ autocmd("BufWritePre", {
   end,
 })
 
-local highlight_group = augroup("YankHighlight", { clear = true })
 autocmd("TextYankPost", {
   desc = "Highlight yanked text",
-  group = highlight_group,
+  group = augroup,
   callback = function()
     vim.highlight.on_yank({ timeout = 170 })
   end
@@ -103,17 +100,16 @@ autocmd("FileType", {
   end
 })
 
-local active_cursorline_group = augroup("active_cursorline", { clear = true })
 autocmd({ "WinEnter", "BufEnter" }, {
   desc = "Enable cursorline in active windows",
-  group = active_cursorline_group,
+  group = augroup,
   callback = function()
     vim.opt_local.cursorline = true
   end
 })
 autocmd({ "WinLeave", "BufLeave" }, {
   desc = "Disable cursorline in inactive windows",
-  group = active_cursorline_group,
+  group = augroup,
   callback = function()
     vim.opt_local.cursorline = false
   end

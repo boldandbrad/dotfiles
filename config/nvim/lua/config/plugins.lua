@@ -5,7 +5,7 @@
 vim.pack.add({
   { src = "https://github.com/catppuccin/nvim",                 name = "catppuccin" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main",   build = ":TSUpdate" },
   { src = "https://github.com/folke/which-key.nvim" },
   { src = "https://github.com/rmagatti/auto-session" },
   { src = "https://github.com/folke/snacks.nvim" },
@@ -14,7 +14,6 @@ vim.pack.add({
 })
 
 -- catppuccin setup
-vim.cmd([[colorscheme catppuccin]])
 require("catppuccin").setup({
   flavour = "mocha",
   transparent_background = true,
@@ -28,18 +27,29 @@ require("catppuccin").setup({
     native_lsp = { enabled = true },
     snacks = {
       enabled = true,
-      indent_scope_color = "peach",
+      indent_scope_color = "flamingo",
     },
     treesitter = true,
     which_key = true,
   },
 })
+vim.cmd([[colorscheme catppuccin]])
 
 -- treesitter setup
 local autocmd = vim.api.nvim_create_autocmd
 local treesitter = require("nvim-treesitter")
 treesitter.install({ "go", "html", "javascript", "markdown", "markdown_inline", "ruby", "typescript" })
 autocmd("PackChanged", { callback = function() treesitter.update() end })
+autocmd("FileType", { -- enable treesitter highlighting and indents
+  callback = function(args)
+    local filetype = args.match
+    local lang = vim.treesitter.language.get_lang(filetype)
+    if vim.treesitter.language.add(lang) then
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      vim.treesitter.start()
+    end
+  end
+})
 
 -- which-key setup
 require("which-key").setup({
@@ -47,11 +57,8 @@ require("which-key").setup({
     { "<leader>b", group = "Buffer" },
     { "<leader>f", group = "Find" },
     { "<leader>g", group = "Git" },
-    { "<leader>h", group = "Help" },
-    { "<leader>j", group = "Jump" },
-    { "<leader>r", group = "Replace" },
+    { "<leader>p", group = "Pack" },
     { "<leader>s", group = "Search" },
-    { "<leader>t", group = "Terminal" },
     { "<leader>w", group = "Window" },
   },
   preset = "helix",
