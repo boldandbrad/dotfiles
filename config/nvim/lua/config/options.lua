@@ -51,10 +51,10 @@ opt.swapfile = false -- disable swapfiles
 opt.undofile = true  -- enable persistent undo history
 
 -- other
-opt.confirm = true                                   -- confirm to save changes when exiting modified buffer
-opt.clipboard = "unnamedplus"                        -- use system clipboard
-opt.completeopt = { "menuone", "noselect", "popup" } -- show completions popup even when only one option exists
-opt.timeoutlen = 300                                 -- shorten timeout for keymaps to complete
+opt.confirm = true                                            -- confirm to save changes when exiting modified buffer
+opt.clipboard = "unnamedplus"                                 -- use system clipboard
+opt.completeopt = { "menuone", "noselect", "popup", "fuzzy" } -- show completions popup even when only one option exists
+opt.timeoutlen = 300                                          -- shorten timeout for keymaps to complete
 
 -- diagnostics config
 vim.diagnostic.config({

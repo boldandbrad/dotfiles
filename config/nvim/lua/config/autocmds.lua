@@ -42,28 +42,6 @@ autocmd({ "VimEnter", "BufReadPost", "BufEnter" }, {
   end
 })
 
-autocmd("LspAttach", {
-  desc = "Define LSP Actions",
-  callback = function(args)
-    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-
-    if client:supports_method("textDocument/formatting") then
-      autocmd("BufWritePre", {
-        desc = "Auto-format buffer on write",
-        buffer = args.buf,
-        callback = function()
-          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-          vim.diagnostic.enable() -- ensure diagnostics don't get wiped
-        end,
-      })
-    end
-
-    -- register custom lsp keymaps
-    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-    vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-  end,
-})
-
 autocmd("BufWritePre", {
   desc = "Auto-trim trailing whitespace on write",
   group = augroup,
