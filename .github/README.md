@@ -131,8 +131,6 @@ In particular, I took inspiration from these gems:
 
 - [Dotfiles Community 🔗](https://dotfiles.github.io/) - a great collection of
   dotfile resources
-- [dotfyle 🔗](https://dotfyle.com/) - discover neovim plugins and
-  configurations, including [mine](https://dotfyle.com/boldandbrad/)
 - [dotfile repos 🔗](https://github.com/stars/boldandbrad/lists/dotfiles) - my
   favorite github dotfile repositories
 
