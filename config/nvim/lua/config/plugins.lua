@@ -80,7 +80,6 @@ require("auto-session").setup({})
 -- snacks setup
 require("snacks").setup({
   bufdelete = { enabled = true },
-  dashboard = { enabled = true },
   explorer = { replace_netrw = true },
   gitbrowse = { enabled = true },
   indent = { enabled = true },
