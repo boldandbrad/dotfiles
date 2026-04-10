@@ -3,7 +3,7 @@
 # docs: https://aliae.dev/docs/setup/configuration             #
 # ------------------------------------------------------------ #
 
-# TODO: cleanup and simplify shell aliases, envs, and functions
+# TODO: consider removing aliae and just setting up these values in each shell
 
 env:
   # default tools
@@ -100,12 +100,6 @@ alias:
   - name: tokei
     value: tokei --sort lines
 
-  # other niceties
-  - name: dud
-    value: du -d 1 -h | sort -hr
-  - name: duf
-    value: du -sh * | sort -hr
-
   # pretty print PATHs
   - name: path
     value: echo $PATH | tr ":" "\n"
@@ -114,6 +108,10 @@ alias:
     value: echo $FPATH | tr ":" "\n"
     type: function
 
-  # import aliases
-  - !include "alias/lang.yaml"
-  - !include "alias/mac.yaml"
+  # macOS aliases
+  - name: netspeed # check network speeds
+    value: NetworkQuality
+    if: eq .OS "darwin"
+  - name: icloud # change to icloud directory
+    value: cd $HOME/Library/Mobile Documents/com~apple~CloudDocs/
+    if: eq .OS "darwin"

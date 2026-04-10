@@ -11,24 +11,42 @@ help() {
   echo ""
   echo "Commands:"
   echo "  set        Apply system settings"
-  echo "  deps       Manage packages and applications"
+  echo "  brew       Install and manage packages and applications"
   echo "  info       Show system information"
   echo "  update     Check for and install system updates"
   exit
 }
 
-deps_help() {
-  echo "mac-deps - Manage packages and applications"
+brew_help() {
+  echo "mac-brew - Install and manage packages and applications"
   echo ""
-  echo "Usage: mac deps [command]"
+  echo "Usage: mac brew [command]"
   echo ""
   echo "Commands:"
+  echo "  apps     List installed apps"
+  echo "  deps     List installed package dependencies"
   echo "  install  Install packages and applications"
+  echo "  pkgs     List installed packages"
   echo "  prune    Uninstall packages and applications not listed in the Brewfile"
   exit
 }
 
-deps_install() {
+brew_list_apps() {
+  brew list --cask
+  exit
+}
+
+brew_list_deps() {
+  brew deps --formula --for-each $(brew leaves)
+  exit
+}
+
+brew_list_pkgs() {
+  brew leaves | column
+  exit
+}
+
+brew_install() {
   # install homebrew if not already installed
   echo -e "Checking for Homebrew..."
   if ! type brew &>/dev/null; then
@@ -55,7 +73,7 @@ deps_install() {
   exit
 }
 
-deps_prune() {
+brew_prune() {
   echo "Removing deps not listed in Brewfile..."
   brew bundle cleanup
   exit
@@ -88,7 +106,7 @@ info_serial() {
   exit
 }
 
-settings() {
+sys_settings() {
   # quit any active System Settings windows to avoid overriding settings
   osascript -e 'tell application "System Settings" to quit'
 
@@ -114,7 +132,7 @@ settings() {
   exit
 }
 
-update() {
+sys_update() {
   echo "Checking for available macOS software updates..."
   if softwareupdate -l 2>&1 | grep -q $Q "No new software available."; then
     echo "No new software available."
@@ -136,13 +154,25 @@ update() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   while test $# -gt 0; do
     case "$1" in
-      "deps")
+      "brew")
         case "$2" in
+          "apps")
+            brew_list_apps
+            ;;
+          "deps")
+            brew_list_deps
+            ;;
           "install")
-            deps_install
+            brew_install
+            ;;
+          "pkgs")
+            brew_list_pkgs
+            ;;
+          "prune")
+            brew_prune
             ;;
           *)
-            deps_help
+            brew_help
             ;;
         esac
         shift
@@ -165,10 +195,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         shift
         ;;
       "set")
-        settings
+        sys_settings
         ;;
       "update")
-        update
+        sys_update
         ;;
       *)
         help

@@ -117,7 +117,7 @@ function install_packages () {
     fi
   fi
 
-  $DOTFILES/bin/mac install-deps
+  $DOTFILES/bin/mac brew install
 }
 
 function link_dotfiles () {
