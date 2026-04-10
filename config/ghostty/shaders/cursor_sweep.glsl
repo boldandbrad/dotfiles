@@ -2,9 +2,10 @@
 // source: https://github.com/sahaj-b/ghostty-cursor-shaders
 
 // -- CONFIGURATION ---
-vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+// vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+vec4 TRAIL_COLOR = vec4(0.537, 0.706, 0.980, 1.0);
 const float DURATION = 0.2; // in seconds
-const float TRAIL_LENGTH = 0.5;
+const float TRAIL_LENGTH = 1.0;
 const float BLUR = 2.0; // blur size in pixels (for antialiasing)
 
 // --- CONSTANTS for easing functions ---
@@ -30,9 +31,9 @@ const float SPRING_DAMPING = 0.9;
 // }
 
 // EaseOutCubic
-// float ease(float x) {
-//     return 1.0 - pow(1.0 - x, 3.0);
-// }
+float ease(float x) {
+    return 1.0 - pow(1.0 - x, 3.0);
+}
 
 // // EaseOutQuart
 // float ease(float x) {
@@ -55,9 +56,9 @@ const float SPRING_DAMPING = 0.9;
 // }
 
 // // EaseOutCirc
-float ease(float x) {
-    return sqrt(1.0 - pow(x - 1.0, 2.0));
-}
+// float ease(float x) {
+//     return sqrt(1.0 - pow(x - 1.0, 2.0));
+// }
 
 // // EaseOutBack
 // float ease(float x) {
