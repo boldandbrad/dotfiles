@@ -171,6 +171,50 @@ key = 's'
 url = 'tuna://run/path.%252FApplications%252FSteam.app/Open'
 
 [[leaderMode.bindings]]
+key = 'w'
+label = 'Windows'
+
+[[leaderMode.bindings.children]]
+key = 'h'
+label = 'Focus left'
+url = 'tuna://run/text.aerospace%2520focus%2520left/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'j'
+label = 'Focus down'
+url = 'tuna://run/text.aerospace%2520focus%2520down/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'k'
+label = 'Focus up'
+url = 'tuna://run/text.aerospace%2520focus%2520up/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'l'
+label = 'Focus right'
+url = 'tuna://run/text.aerospace%2520focus%2520right/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'H'
+label = 'Move left'
+url = 'tuna://run/text.aerospace%2520move%2520left/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'J'
+label = 'Move down'
+url = 'tuna://run/text.aerospace%2520move%2520down/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'K'
+label = 'Move up'
+url = 'tuna://run/text.aerospace%2520move%2520up/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings.children]]
+key = 'L'
+label = 'Move right'
+url = 'tuna://run/text.aerospace%2520move%2520right/Run%20Text%20as%20Shell%20Command'
+
+[[leaderMode.bindings]]
 key = 'S'
 url = 'tuna://run/path.%252FSystem%252FApplications%252FSystem%2520Settings.app/Open'
 
@@ -186,3 +230,4 @@ catalogIdentifier = 'com.brnbw.tuna.themes.default'
 
 [catalogSettings.values]
 ThemeTint = 'custom:B4BEFE'
+
