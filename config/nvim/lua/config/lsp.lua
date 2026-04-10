@@ -52,7 +52,7 @@ autocmd("LspAttach", {
     end
 
     -- enable autocompletion
-    if client:supports_method("inline_completion") then
+    if client:supports_method("textDocument/completion") then
       vim.lsp.completion.enable(true, client.id, args.buf, {
         autotrigger = true,
         convert = function(item)
