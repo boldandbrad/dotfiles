@@ -78,9 +78,8 @@ read_only = "!"
 format = " [on](overlay0) [$branch(:$remote_branch)]($style)"
 style = "bold green"
 
-# FIX: only show git status when there are changes
 [git_status]
-format = " [with](overlay0) [$modified]($style)"
+format = " ([with](overlay0) [$modified]($style))"
 style = "bold yellow"
 modified = "changes"
 
