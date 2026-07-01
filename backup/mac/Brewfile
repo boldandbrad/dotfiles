@@ -7,6 +7,7 @@
 brew "aliae"                          # shell manager
 brew "bash"                           # updated bash
 brew "bitwarden-cli"                  # password manager
+brew "cookcli"                        # recipe manager
 brew "eza"                            # ls replacement
 brew "fd"                             # find alternative
 brew "fish"                           # a fun shell
@@ -17,11 +18,12 @@ brew "lazygit"                        # git client
 brew "mole"                           # system cleaner
 brew "mpd"                            # music player daemon
 brew "neovim"                         # text editor
-brew "anomalyco/tap/opencode"         # ai coding agent
+brew "opencode"                       # ai coding agent
 brew "presenterm"                     # markdown presenter
 brew "ripgrep"                        # grep alternative
 brew "rmpc"                           # music player
 brew "boldandbrad/tap/slinky"         # dotfile manager
+brew "boldandbrad/tap/spin"           # last.fm scrobbler
 brew "starship"                       # shell prompt engine
 brew "tmux"                           # terminal multiplexer
 brew "zoxide"                         # cd replacement
@@ -33,21 +35,23 @@ cask "nikitabobko/tap/aerospace"      # tiling window manager
 # cask "audacity"                       # audio toolkit
 cask "bitwarden"                      # password manager
 # cask "bricklink-studio"               # lego moc designer
-cask "claude"                         # general ai
 cask "discord"                        # digital community client
 cask "ghostty"                        # terminal emulator
-# cask "hey-desktop"                    # email client
 cask "obsidian"                       # note manager
 brew "FelixKratz/formulae/sketchybar" # menubar replacement
+cask "tailscale-app"                  #
 cask "tidal"                          # music streamer
-cask "mikker/tap/tuna"                # modal launcher
+# cask "tolaria"                        # note manager
+cask "tuna"                           # modal launcher
 cask "zed"                            # text editor
 
 # software development tooling and apps ---------------------- #
 
+brew "bun"                      # js runtime & toolchain
 brew "deno"                     # js runtime & toolchain
 brew "gh"                       # cli github client
 brew "go"                       # go compiler & toolchain
+# cask "godot"                    # game engine
 brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua language server
@@ -64,13 +68,17 @@ brew "tree-sitter-cli"          # treesitter parser cli
 
 # cask "font-anonymous-pro"
 # cask "font-cascadia-code"
+# cask "font-commit-mono"
+# cask "font-fantasque-sans-mono"
 # cask "font-fira-code"
 # cask "font-maple-mono"
+# cask "font-roboto-mono"
 cask "font-space-mono"
+# cask "font-victor-mono"
 
 # games ------------------------------------------------------ #
 
-cask "hytale"                   # official hytale launcher
+# cask "hytale"                   # official hytale launcher
 cask "minecraft"                # official minecraft launcher
 # cask "retroarch"                # game emulator launcher
 cask "steam"                    # game marketplace and launcher
