@@ -1,5 +1,230 @@
 schemaVersion = 1
 
+[catalogs]
+sortOrders = []
+
+[[catalogs.globalScopes]]
+catalogIdentifier = 'Tuna.EffectsCatalog'
+mode = 'none'
+selectedItemKeys = []
+
+[[catalogs.globalScopes]]
+catalogIdentifier = 'TunaEmoji.EmojiCatalog'
+mode = 'none'
+selectedItemKeys = []
+
+[[catalogs.globalScopes]]
+catalogIdentifier = 'TunaSystem.AllWindowsCatalog'
+mode = 'none'
+selectedItemKeys = []
+
+[[comboMode.bindings]]
+key = 'a'
+label = 'Apps'
+
+[[comboMode.bindings.children]]
+key = 'b'
+url = 'tuna://run/path.%252FApplications%252FDuckDuckGo.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'B'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FBooks.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'c'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FCalendar.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'd'
+url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'e'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FMail.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'f'
+url = 'tuna://run/path.%252FSystem%252FLibrary%252FCoreServices%252FFinder.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'i'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FPhotos.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'M'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FMessages.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'm'
+url = 'tuna://run/path.%252FApplications%252FTidal.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'n'
+url = 'tuna://run/path.%252FApplications%252FObsidian.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'p'
+url = 'tuna://run/path.%252FApplications%252FBitwarden.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'r'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FReminders.app/Open'
+
+[[comboMode.bindings.children]]
+key = 't'
+url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'w'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FWeather.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'z'
+url = 'tuna://run/path.%252FApplications%252FZed.app/Open'
+
+[[comboMode.bindings]]
+key = 'b'
+label = 'Bookmarks'
+
+[[comboMode.bindings.children]]
+key = 'a'
+label = 'AlternativeTo'
+url = 'tuna://run/url.https:%252F%252Falternativeto.net/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'b'
+label = 'BoardGameGeek'
+url = 'tuna://run/url.https:%252F%252Fboardgamegeek.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'd'
+label = 'Discogs'
+url = 'tuna://run/url.https:%252F%252Fdiscogs.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'e'
+label = 'Excalidraw'
+url = 'tuna://run/url.https:%252F%252Fexcalidraw.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'g'
+label = 'GitHub'
+url = 'tuna://run/url.https:%252F%252Fgithub.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'l'
+label = 'Lego'
+url = 'tuna://run/url.https:%252F%252Flego.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'L'
+label = 'Bricklink'
+url = 'tuna://run/url.https:%252F%252Fbricklink.com/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'w'
+label = 'Wikipedia'
+url = 'tuna://run/url.https:%252F%252Fen.wikipedia.org/Open%20URL'
+
+[[comboMode.bindings.children]]
+key = 'y'
+label = 'YouTube'
+url = 'tuna://run/url.https:%252F%252Fyoutube.com/Open%20URL'
+
+[[comboMode.bindings]]
+key = 'f'
+label = 'Folders'
+
+[[comboMode.bindings.children]]
+key = 'a'
+url = 'tuna://run/path.%252FApplications/Open'
+
+[[comboMode.bindings.children]]
+key = 'c'
+url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDotfiles/Open'
+
+[[comboMode.bindings.children]]
+key = 'd'
+url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDocuments/Open'
+
+[[comboMode.bindings.children]]
+key = 'h'
+label = 'Home'
+url = 'tuna://run/path.%252FUsers%252Fboldandbrad/Open'
+
+[[comboMode.bindings.children]]
+key = 'i'
+label = 'iCloud'
+url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FLibrary%252FMobile%2520Documents%252Fcom~apple~CloudDocs/Open'
+
+[[comboMode.bindings.children]]
+key = 'w'
+url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDownloads/Open'
+
+[[comboMode.bindings]]
+key = 'g'
+label = 'Games'
+
+[[comboMode.bindings.children]]
+key = 'h'
+url = 'tuna://run/path.%252FApplications%252FHytale%2520Launcher.app/Open'
+
+[[comboMode.bindings.children]]
+key = 'm'
+url = 'tuna://run/path.%252FApplications%252FMinecraft.app/Open'
+
+[[comboMode.bindings.children]]
+key = 's'
+url = 'tuna://run/path.%252FApplications%252FSteam.app/Open'
+
+[[comboMode.bindings]]
+key = 'w'
+label = 'Windows'
+
+[[comboMode.bindings.children]]
+key = 'h'
+label = 'Focus left'
+url = 'tuna://run/text.aerospace%2520focus%2520left/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'j'
+label = 'Focus down'
+url = 'tuna://run/text.aerospace%2520focus%2520down/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'k'
+label = 'Focus up'
+url = 'tuna://run/text.aerospace%2520focus%2520up/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'l'
+label = 'Focus right'
+url = 'tuna://run/text.aerospace%2520focus%2520right/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'H'
+label = 'Move left'
+url = 'tuna://run/text.aerospace%2520move%2520left/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'J'
+label = 'Move down'
+url = 'tuna://run/text.aerospace%2520move%2520down/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'K'
+label = 'Move up'
+url = 'tuna://run/text.aerospace%2520move%2520up/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings.children]]
+key = 'L'
+label = 'Move right'
+url = 'tuna://run/text.aerospace%2520move%2520right/Run%20Text%20as%20Shell%20Command'
+
+[[comboMode.bindings]]
+key = 'S'
+url = 'tuna://run/path.%252FSystem%252FApplications%252FSystem%2520Settings.app/Open'
+
 [hotkeys]
 custom = []
 
@@ -7,222 +232,15 @@ custom = []
 carbonKeyCode = 49
 carbonModifiers = 2304
 
-[hotkeys.app.leaderMode]
+[hotkeys.app.comboMode]
 carbonKeyCode = 49
 carbonModifiers = 256
 
-[[leaderMode.bindings]]
-key = 'a'
-label = 'Apps'
-
-[[leaderMode.bindings.children]]
-key = 'b'
-url = 'tuna://run/path.%252FApplications%252FDuckDuckGo.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'B'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FBooks.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'c'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FCalendar.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'd'
-url = 'tuna://run/path.%252FApplications%252FDiscord.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'e'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FMail.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'f'
-url = 'tuna://run/path.%252FSystem%252FLibrary%252FCoreServices%252FFinder.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'i'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FPhotos.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'M'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FMessages.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'm'
-url = 'tuna://run/path.%252FApplications%252FTidal.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'n'
-url = 'tuna://run/path.%252FApplications%252FObsidian.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'p'
-url = 'tuna://run/path.%252FApplications%252FBitwarden.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'r'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FReminders.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 't'
-url = 'tuna://run/path.%252FApplications%252FGhostty.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'w'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FWeather.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'z'
-url = 'tuna://run/path.%252FApplications%252FZed.app/Open'
-
-[[leaderMode.bindings]]
-key = 'b'
-label = 'Bookmarks'
-
-[[leaderMode.bindings.children]]
-key = 'a'
-label = 'AlternativeTo'
-url = 'tuna://run/url.https:%252F%252Falternativeto.net/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'b'
-label = 'BoardGameGeek'
-url = 'tuna://run/url.https:%252F%252Fboardgamegeek.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'd'
-label = 'Discogs'
-url = 'tuna://run/url.https:%252F%252Fdiscogs.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'e'
-label = 'Excalidraw'
-url = 'tuna://run/url.https:%252F%252Fexcalidraw.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'g'
-label = 'GitHub'
-url = 'tuna://run/url.https:%252F%252Fgithub.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'l'
-label = 'Lego'
-url = 'tuna://run/url.https:%252F%252Flego.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'L'
-label = 'Bricklink'
-url = 'tuna://run/url.https:%252F%252Fbricklink.com/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'w'
-label = 'Wikipedia'
-url = 'tuna://run/url.https:%252F%252Fen.wikipedia.org/Open%20URL'
-
-[[leaderMode.bindings.children]]
-key = 'y'
-label = 'YouTube'
-url = 'tuna://run/url.https:%252F%252Fyoutube.com/Open%20URL'
-
-[[leaderMode.bindings]]
-key = 'f'
-label = 'Folders'
-
-[[leaderMode.bindings.children]]
-key = 'a'
-url = 'tuna://run/path.%252FApplications/Open'
-
-[[leaderMode.bindings.children]]
-key = 'c'
-url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDotfiles/Open'
-
-[[leaderMode.bindings.children]]
-key = 'd'
-url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDocuments/Open'
-
-[[leaderMode.bindings.children]]
-key = 'h'
-label = 'Home'
-url = 'tuna://run/path.%252FUsers%252Fboldandbrad/Open'
-
-[[leaderMode.bindings.children]]
-key = 'i'
-label = 'iCloud'
-url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FLibrary%252FMobile%2520Documents%252Fcom~apple~CloudDocs/Open'
-
-[[leaderMode.bindings.children]]
-key = 'w'
-url = 'tuna://run/path.%252FUsers%252Fboldandbrad%252FDownloads/Open'
-
-[[leaderMode.bindings]]
-key = 'g'
-label = 'Games'
-
-[[leaderMode.bindings.children]]
-key = 'h'
-url = 'tuna://run/path.%252FApplications%252FHytale%2520Launcher.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 'm'
-url = 'tuna://run/path.%252FApplications%252FMinecraft.app/Open'
-
-[[leaderMode.bindings.children]]
-key = 's'
-url = 'tuna://run/path.%252FApplications%252FSteam.app/Open'
-
-[[leaderMode.bindings]]
-key = 'w'
-label = 'Windows'
-
-[[leaderMode.bindings.children]]
-key = 'h'
-label = 'Focus left'
-url = 'tuna://run/text.aerospace%2520focus%2520left/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'j'
-label = 'Focus down'
-url = 'tuna://run/text.aerospace%2520focus%2520down/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'k'
-label = 'Focus up'
-url = 'tuna://run/text.aerospace%2520focus%2520up/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'l'
-label = 'Focus right'
-url = 'tuna://run/text.aerospace%2520focus%2520right/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'H'
-label = 'Move left'
-url = 'tuna://run/text.aerospace%2520move%2520left/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'J'
-label = 'Move down'
-url = 'tuna://run/text.aerospace%2520move%2520down/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'K'
-label = 'Move up'
-url = 'tuna://run/text.aerospace%2520move%2520up/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings.children]]
-key = 'L'
-label = 'Move right'
-url = 'tuna://run/text.aerospace%2520move%2520right/Run%20Text%20as%20Shell%20Command'
-
-[[leaderMode.bindings]]
-key = 'S'
-url = 'tuna://run/path.%252FSystem%252FApplications%252FSystem%2520Settings.app/Open'
-
 [settings]
-leaderModeCheatsheetBehavior = 'always'
-leaderModeCheatsheetShowDetails = false
-leaderModeCheatsheetShowIcons = false
-leaderModeThemeStyle = 'breadcrumb'
+comboModeCheatsheetBehavior = 'always'
+comboModeCheatsheetShowDetails = false
+comboModeCheatsheetShowIcons = false
+comboModeThemeStyle = 'breadcrumb'
 themeIdentifier = 'com.brnbw.tuna.themes.default'
 
 [[catalogSettings]]
@@ -230,4 +248,3 @@ catalogIdentifier = 'com.brnbw.tuna.themes.default'
 
 [catalogSettings.values]
 ThemeTint = 'custom:B4BEFE'
-
