@@ -42,7 +42,6 @@ brew "FelixKratz/formulae/sketchybar" # menubar replacement
 cask "tailscale-app"                  #
 cask "tidal"                          # music streamer
 # cask "tolaria"                        # note manager
-cask "tuna"                           # modal launcher
 cask "zed"                            # text editor
 
 # software development tooling and apps ---------------------- #

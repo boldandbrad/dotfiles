@@ -14,5 +14,4 @@ config/opencode|~/.config/opencode
 config/starship/starship.toml|~/.config/starship.toml
 config/aerospace|~/.config/aerospace
 config/sketchybar|~/.config/sketchybar
-config/tuna/config.toml|~/Library/Application Support/Tuna/config.toml
 config/mac/com.boldandbrad.CapsLockEscape.plist|~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
