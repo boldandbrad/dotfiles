@@ -86,7 +86,7 @@ alias:
 
   # tool replacements
   - name: ls
-    value: eza --classify
+    value: eza --classify=always
 
   # default options
   - name: mkdir
