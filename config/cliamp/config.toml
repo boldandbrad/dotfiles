@@ -2,6 +2,8 @@ theme = "catppuccin"
 
 initial_directory = "~/Documents/music-library"
 
+provider = "local"
+
 eq_preset = "Custom"
 eq = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
