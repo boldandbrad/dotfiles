@@ -1,0 +1,8 @@
+theme = "catppuccin"
+
+initial_directory = "~/Documents/music-library"
+
+eq_preset = "Custom"
+eq = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+visualizer = "ClassicPeak"

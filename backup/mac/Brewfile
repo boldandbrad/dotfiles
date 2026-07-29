@@ -7,6 +7,7 @@
 brew "aliae"                          # shell manager
 brew "bash"                           # updated bash
 brew "bitwarden-cli"                  # password manager
+brew "bjarneo/cliamp/cliamp"          # music player/streamer
 brew "cookcli"                        # recipe manager
 brew "eza"                            # ls replacement
 brew "fd"                             # find alternative
@@ -16,12 +17,10 @@ brew "git"                            # version controller
 brew "jq"                             # json processor
 brew "lazygit"                        # git client
 brew "mole"                           # system cleaner
-brew "mpd"                            # music player daemon
 brew "neovim"                         # text editor
 brew "opencode"                       # ai coding agent
 brew "presenterm"                     # markdown presenter
 brew "ripgrep"                        # grep alternative
-brew "rmpc"                           # music player
 brew "boldandbrad/tap/slinky"         # dotfile manager
 brew "boldandbrad/tap/spin"           # last.fm scrobbler
 brew "starship"                       # shell prompt engine
