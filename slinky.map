@@ -15,3 +15,4 @@ config/starship/starship.toml|~/.config/starship.toml
 config/aerospace|~/.config/aerospace
 config/sketchybar|~/.config/sketchybar
 config/mac/com.boldandbrad.CapsLockEscape.plist|~/Library/LaunchAgents/com.boldandbrad.CapsLockEscape.plist
+config/cliamp|~/.config/cliamp
