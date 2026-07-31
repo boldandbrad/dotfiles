@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 #
-# fine-tune your music library
+# fine-tune and manage your music library
 
-# WARNING: this script will modify music files directly. the recommended pattern
-# is for this to be periodically run on an entire library. backup any original
-# files before adding them to the library foldera
+# WARNING: this script will modify music files directly. backup original source
+# files before running this script on them.
 
 # dependencies: ffmpeg, ffprobe, jq
 
@@ -15,10 +14,9 @@ library=~/Documents/test-library
 
 ls -R $library | grep : | while read -r dir; do
   dir=${dir%:}
+  echo ${dir/$library/}
   cd "$dir"
   ls -1 *.flac *.mp3 *.m4a 2>/dev/null | while read -r file; do
-    localdir=${dir/$library/}
-    echo $localdir
     ext="${file##*.}"
 
     props=$(ffprobe -v quiet -print_format json -show_format "$file" 2>&1)
@@ -78,3 +76,19 @@ done
 # cleanup and standardize tags
 # check that file extensions match file format
 # remove account/purchase metadata from m4a
+# flag/log tracks that lack tags or cannot be processed
+
+# USAGE
+
+# import all files in the import folder
+# libtune import
+
+# import specific files/folders
+# libtune import file1 file2 folder1 folder2
+
+# import only a specific format
+# libtune import --fmt=flac
+
+# import only lyric files
+# libtune import --lyrics
+
