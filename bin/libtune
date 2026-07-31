@@ -12,11 +12,13 @@
 # TODO: take library in as an argument or env variable
 library=~/Documents/test-library
 
-ls -R $library | grep : | while read -r dir; do
+count_processed=0
+
+while read -r dir; do
   dir=${dir%:}
   echo ${dir/$library/}
   cd "$dir"
-  ls -1 *.flac *.mp3 *.m4a 2>/dev/null | while read -r file; do
+  while read -r file; do
     ext="${file##*.}"
 
     props=$(ffprobe -v quiet -print_format json -show_format "$file" 2>&1)
@@ -24,7 +26,7 @@ ls -R $library | grep : | while read -r dir; do
     # grab and clean track title
     title=$(echo $props | jq -r .format.tags.TITLE)
     [[ $title == "null" ]] && title=$(echo $props | jq -r .format.tags.title)
-    # TODO: handle more illegal characters/patterns ()
+    # TODO: handle more illegal characters/patterns
     title=${title////_} # replace forward slashes with underscores
 
     # grab and clean disc and track numbers
@@ -62,11 +64,12 @@ ls -R $library | grep : | while read -r dir; do
     else
       echo "  - Skipped: $file"
     fi
-
-  done
+    count_processed=$((count_processed+1))
+  done < <(ls -1 *.flac *.mp3 *.m4a 2>/dev/null)
   # cd $library
-done
+done < <(ls -R $library | grep :)
 
+echo "Processed $count_processed files."
 
 # TODO
 # consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
@@ -74,9 +77,11 @@ done
 # embed cover image if available
 # embed lyric file if available
 # cleanup and standardize tags
+# tag sanitization: remove any tags that you don't explicitely want
 # check that file extensions match file format
 # remove account/purchase metadata from m4a
 # flag/log tracks that lack tags or cannot be processed
+# handle duplicates gracefully
 
 # USAGE
 
