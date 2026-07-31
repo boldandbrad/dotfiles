@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+#
+# fine-tune your music library
+
+# WARNING: this script will modify music files directly. the recommended pattern
+# is for this to be periodically run on an entire library. backup any original
+# files before adding them to the library foldera
+
+# dependencies: ffmpeg, ffprobe, jq
+
+# library folder structure: library/artist/year - album/[d]track - title.ext
+
+# TODO: take library in as an argument or env variable
+library=~/Documents/test-library
+
+ls -R $library | grep : | while read -r dir; do
+  dir=${dir%:}
+  cd "$dir"
+  ls -1 *.flac *.mp3 *.m4a 2>/dev/null | while read -r file; do
+    localdir=${dir/$library/}
+    echo $localdir
+    ext="${file##*.}"
+
+    props=$(ffprobe -v quiet -print_format json -show_format "$file" 2>&1)
+
+    # grab and clean track title
+    title=$(echo $props | jq -r .format.tags.TITLE)
+    [[ $title == "null" ]] && title=$(echo $props | jq -r .format.tags.title)
+    # TODO: handle more illegal characters/patterns ()
+    title=${title////_} # replace forward slashes with underscores
+
+    # grab and clean disc and track numbers
+    disc=$(echo $props | jq -r .format.tags.DISC)
+    [[ $disc == "null" ]] && disc=$(echo $props | jq -r .format.tags.disc)
+    if [[ $disc == *"/"* ]]; then
+      disctotal=${disc##*/}
+      disc=${disc%/*}
+    else
+      disctotal=$(echo $props | jq -r .format.tags.DISCTOTAL)
+      [[ $disctotal == "null" ]] && disctotal=$(echo $props | jq -r .format.tags.disctotal)
+    fi
+
+    track=$(echo $props | jq -r .format.tags.TRACK)
+    [[ $track == "null" ]] && track=$(echo $props | jq -r .format.tags.track)
+    [[ $track == *"/"* ]] && track=${track%/*}
+    if [[ $track != 0* ]] && [[ $track != "0" ]] && [[ ${#track} < 2 ]]; then
+      track="0$track" # append leading 0 to track number
+    fi
+
+    # prepend disc number to track number if there is more than 1 disc
+    if [[ $disctotal != "null" ]] && [[ $disctotal != "1" ]] && [[ $disc != "null" ]]; then
+      $track="$disc$track"
+    fi
+
+    # rename track file into the format: [disc]track - title.ext
+    if [[ $track == "null" ]]; then
+      newfile="$title.$ext"
+    else
+      newfile="$track - $title.$ext"
+    fi
+    if [[ $file != $newfile ]]; then
+      mv "$file" "$newfile"
+      echo "  - Renamed: $newfile"
+    else
+      echo "  - Skipped: $file"
+    fi
+
+  done
+  # cd $library
+done
+
+
+# TODO
+# consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
+# Rename album folders to include year
+# embed cover image if available
+# embed lyric file if available
+# cleanup and standardize tags
+# check that file extensions match file format
+# remove account/purchase metadata from m4a
