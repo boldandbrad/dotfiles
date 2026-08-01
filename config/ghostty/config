@@ -21,8 +21,8 @@ macos-window-shadow = false
 background-opacity = 0.96
 background-blur = 12
 
-window-padding-x = 12
-window-padding-y = 0,0
+window-padding-x = 8
+window-padding-y = 0
 window-padding-balance = true
 
 window-save-state = always
