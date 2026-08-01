@@ -99,6 +99,8 @@ alias:
     value: grep --color=auto
   - name: tokei
     value: tokei --sort lines
+  - name: ffp
+    value: ffprobe -v quiet -output_format json -show_format
 
   # pretty print PATHs
   - name: path
