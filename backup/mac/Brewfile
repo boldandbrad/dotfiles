@@ -54,9 +54,7 @@ brew "lefthook"                 # git hook manager
 brew "lua"                      # lua language
 brew "lua-language-server"      # lua language server
 brew "marksman"                 # markdown lsp
-brew "rbenv"                    # ruby version manager
 brew "resterm"                  # http client
-brew "rustup"                   # rust toolchain installer
 brew "taplo"                    # toml toolchain
 cask "temurin"                  # java development kit
 brew "tokei"                    # code line counter

@@ -12,4 +12,3 @@ eval "$(zoxide init --cmd cd bash)"
 # initialize shell prompt
 eval "$(starship init bash)"
 
-. "$CARGO_HOME/env"

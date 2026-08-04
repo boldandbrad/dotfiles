@@ -40,7 +40,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local treesitter = require("nvim-treesitter")
 local treesitter_runtime = vim.fn.stdpath("data") .. "/site/pack/core/opt/nvim-treesitter/runtime"
 vim.opt.runtimepath:prepend(treesitter_runtime)
-treesitter.install({ "go", "html", "javascript", "markdown", "markdown_inline", "ruby", "typescript" })
+treesitter.install({ "go", "html", "javascript", "markdown", "markdown_inline", "typescript" })
 autocmd("PackChanged", { callback = function() treesitter.update() end })
 autocmd("FileType", { -- enable treesitter highlighting and indents
   callback = function(args)

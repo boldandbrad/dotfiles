@@ -29,14 +29,10 @@ env:
   # tool paths
   - name: DENO_INSTALL_ROOT
     value: '{{ env "XDG_DATA_HOME" }}/deno'
-  - name: CARGO_HOME
-    value: '{{ env "XDG_DATA_HOME" }}/cargo'
   - name: GOPATH
     value: '{{ env "XDG_DATA_HOME" }}/go'
   - name: LESSHISTFILE
     value: "-" # disable less history
-  - name: RUSTUP_HOME
-    value: '{{ env "XDG_DATA_HOME" }}/rustup'
   - name: ZDOTDIR
     value: '{{ env "XDG_CONFIG_HOME" }}/zsh'
     if: eq .Shell "zsh"
@@ -65,7 +61,6 @@ path:
       /opt/homebrew/sbin
       $DOTFILES/bin
       $DENO_INSTALL_ROOT/bin
-      $CARGO_HOME/bin
       $GOPATH/bin
       $HOME/.local/bin
       /usr/local/sbin
