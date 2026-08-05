@@ -41,6 +41,37 @@ keymap("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Jump to previous buffe
 keymap("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Jump to next buffer" })
 keymap("n", "<leader>bl", "<cmd>b#<cr>", { desc = "Jump to last buffer" })
 keymap("n", "<leader>bf", vim.lsp.buf.format, { desc = "Format buffer" })
+keymap("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete current buffer" })
+
+-- lazygit (courtesy of https://github.com/zachbuchli/lazygit.nvim)
+keymap("n", "<leader>G", function()
+  local buf = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_set_option_value("bufhidden", "wipe", { buf = buf })
+  vim.api.nvim_set_option_value("modifiable", false, { buf = buf })
+
+  local height = math.ceil(vim.o.lines * 0.9)
+  local width = math.ceil(vim.o.columns * 0.9)
+  local win = vim.api.nvim_open_win(buf, true, {
+    style = "minimal",
+    relative = "editor",
+    width = width,
+    height = height,
+    row = math.ceil((vim.o.lines - height) / 2),
+    col = math.ceil((vim.o.columns - width) / 2),
+    border = "none",
+  })
+  vim.api.nvim_set_current_win(win)
+
+  vim.fn.termopen({ "lazygit" }, {
+    on_exit = function(_, _, _)
+      if vim.api.nvim_win_is_valid(win) then
+        vim.api.nvim_win_close(win, true)
+      end
+    end,
+  })
+
+  vim.cmd.startinsert()
+end, { desc = "Open lazygit" })
 
 -- other
 keymap("n", "<leader>c", "<cmd>noh<cr>", { desc = "Clear highlights" })
