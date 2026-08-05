@@ -3,8 +3,6 @@
 # docs: https://zsh.sourceforge.io/Doc/Release/zsh_toc.html    #
 # ------------------------------------------------------------ #
 
-# TODO: simplify zsh config
-
 # if not running interactively, do nothing
 [[ $- != *i* ]] && return
 
@@ -32,22 +30,13 @@ export FZF_COMPLETION_TRIGGER=''
 # initialize zsh completions
 autoload -Uz compinit && compinit
 
-# keybinds --------------------------------------------------- #
-
-# zsh line editor keybindings
-bindkey -v
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
 # set options ------------------------------------------------ #
 
-# configure history file
-HISTFILE="${XDG_CACHE_HOME}/zsh/.zsh_history"
+# history
+HISTFILE="${XDG_CACHE_HOME}/.zsh_history"
 SAVEHIST=4096 # number of history entries to save to history file
 HISTSIZE=4096 # number of history entries loaded in memory
 
-# history
-setopt APPEND_HISTORY # append to history file without overwriting
 setopt HIST_IGNORE_DUPS # ignore contiguous history duplicates
 setopt SHARE_HISTORY # share history across terminals
 
@@ -57,7 +46,6 @@ setopt no_case_glob # enable case-insensitive tab completion and globbing
 # initialize tools ------------------------------------------- #
 
 source <(fzf --zsh)
-eval "$(rbenv init - --no-rehash zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
