@@ -1,6 +1,11 @@
+#--------------------------------------------------------------#
+# cliamp config                                                #
+# docs: https://github.com/bjarneo/cliamp/tree/main/docs       #
+#--------------------------------------------------------------#
+
 theme = "catppuccin"
 
-initial_directory = "~/Documents/music-library"
+initial_directory = "~/Documents/music/library"
 
 provider = "local"
 
