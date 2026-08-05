@@ -1,0 +1,4 @@
+# zsh completion files
+.zcompcache
+.zcompdump
+
