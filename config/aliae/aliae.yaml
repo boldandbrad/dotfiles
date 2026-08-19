@@ -59,10 +59,10 @@ path:
   - value: |
       /opt/homebrew/bin
       /opt/homebrew/sbin
-      $DOTFILES/bin
-      $DENO_INSTALL_ROOT/bin
-      $GOPATH/bin
-      $HOME/.local/bin
+      {{ env "DOTFILES" }}/bin
+      {{ env "DENO_INSTALL_ROOT" }}/bin
+      {{ env "GOPATH" }}/bin
+      {{ .Home }}/.local/bin
       /usr/local/sbin
       /usr/local/bin
       /usr/sbin
