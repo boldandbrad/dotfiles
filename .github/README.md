@@ -16,15 +16,12 @@
 
 ## 🏗️ Foundation
 
-I wanted a workstation that made me feel at home. It had to be:
+This repository contains the blueprint for my digital home. These dotfiles allow
+me to easily move into and maintain new workstations by automatically furnishing
+them with the appliances and tools I use every day.
 
-- 🔧 **Functional** - Simple to use and bloat-free
-- ⚡ **Fast** - Automated and keyboard-first
-- ✨ **Fun** - Make work painless
-
-This repository contains the blueprint for that home. These dotfiles allow me to
-seamlessly move into a new workstation by automatically furnishing it with the
-appliances and tools I use every day.
+Rather than integrate and customize every new shiny tool that comes out, I
+prefer to keep my setup lean, practical, and rooted in principle.
 
 A lot of what is here was [inspired](#inspiration) by others. Like many of them,
 I have made this repo public to serve as an open house for those on a similar
@@ -39,7 +36,7 @@ because my setup is both custom and highly
 
 ## 📐 Layout
 
-To keep things tidy, this repo is organized into a few main directories:
+To keep things tidy, the floor plan is made up of three rooms:
 
 - 💾 [backup](../backup/README.md) - Static assets and configs that require
   manual setup
@@ -53,13 +50,13 @@ To keep things tidy, this repo is organized into a few main directories:
 
 ## 🛋️ Furniture
 
-The floor plan at a glance:
+My preferred fixtures at a glance:
 
 | Operating System        | ![macOS](https://img.shields.io/badge/macOS-_?logo=apple&logoColor=white&color=%23000000)                                                                                                                                                                                                                                                                                                                                                              |
 | :---------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Package Manager         | ![homebrew](https://img.shields.io/badge/Homebrew-_?logo=homebrew&logoColor=black&color=%23FBB040)                                                                                                                                                                                                                                                                                                                                                     |
 | Dotfile Manager         | ![slinky](https://img.shields.io/badge/🌀_slinky-_?color=grey)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Tiling Window Manager   | ![aerospace](https://img.shields.io/badge/AeroSpace-_?color=%23ebebeb)                                                                                                                                                                                                                                                                                                                                                                                 |
+| Window Manager          | ![aerospace](https://img.shields.io/badge/AeroSpace-_?color=%23ebebeb)                                                                                                                                                                                                                                                                                                                                                                                 |
 | Status Bar              | ![sketchybar](https://img.shields.io/badge/SketchyBar-_?color=%239dd374)                                                                                                                                                                                                                                                                                                                                                                               |
 | Web Browser             | ![duckduckgo](https://img.shields.io/badge/DuckDuckGo-_?logoColor=white&logo=duckduckgo&color=%23DE5833)                                                                                                                                                                                                                                                                                                                                               |
 | Password Manager        | ![bitwarden](https://img.shields.io/badge/Bitwarden-_?logo=bitwarden&color=%23175DDC)                                                                                                                                                                                                                                                                                                                                                                  |
@@ -82,8 +79,10 @@ For the complete list of packages and apps that get installed, see the
 
 ## 📦 Unpack
 
-The main installation script is [`unpack.sh`](../unpack.sh). It explains what it
-will do, prompts for confirmation before each step, and is idempotent.
+Unpacking is the hardest part of any move. Luckily, these dotfiles come with a
+builtin moving crew! The [`unpack.sh`](../unpack.sh) script explains what it
+will do, prompts for confirmation before each step, and can be safely re-run to
+tidy the house before having company.
 
 In brief, unpacking...
 
@@ -117,7 +116,7 @@ tools are provided. See [bin](../bin/README.md) for more details.
 | :------- | :---------------------------------------- |
 | `mac`    | Install dependencies and view system info |
 | `slinky` | Manage dotfile symlinks                   |
-| `tidyup` | Clean system caches and app data          |
+| `tidyup` | Remove unwanted files and directories     |
 
 ---
 
