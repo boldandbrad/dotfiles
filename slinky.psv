@@ -1,4 +1,3 @@
-# slinky.map - symlinks managed by slinky
 config/zsh/.zshenv|~/.zshenv
 config/zsh|~/.config/zsh
 config/bash/.bashrc|~/.bashrc
