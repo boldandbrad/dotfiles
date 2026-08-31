@@ -151,12 +151,15 @@ while read -r dir; do
         body=$(cat /tmp/lrclib_body.$$)
         rm -f /tmp/lrclib_body.$$
 
-        if $have_duration; then
-          lyrics=$(jq -r '.syncedLyrics // .plainLyrics // empty' <<<"$body")
-          out_file="$synced_lyric_file"
+        synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$body")
+        plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
+
+        if $have_duration && [[ -n "$synced_lyrics" ]]; then
+          lyrics="$synced_lyrics"
+          out_file="$lrc_file"
         else
-          lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
-          out_file="$plain_lyric_file"
+          lyrics="$plain_lyrics"
+          out_file="$txt_file"
         fi
 
         if [[ -n "$lyrics" ]]; then
