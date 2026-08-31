@@ -5,14 +5,23 @@
 # WARNING: this script will modify music files directly. backup original source
 # files before running this script on them.
 
-# dependencies: ffmpeg, ffprobe, jq
+# dependencies: ffmpeg, ffprobe, curl, jq
 
 # library folder structure: library/artist/year - album/[d]track - title.ext
 
 # TODO: take library in as an argument or env variable
-library=~/Documents/test-library
+library=~/Music/test-lyrics
+
+round() {
+  echo $(printf %.$2f $(echo "scale=$2;(((10^$2)*$1)+0.5)/(10^$2)" | bc))
+}
 
 count_processed=0
+count_renamed=0
+count_tagged=0
+count_lyriced=0
+
+echo "Processing $library"
 
 while read -r dir; do
   dir=${dir%:}
@@ -47,6 +56,18 @@ while read -r dir; do
       track="0$track" # append leading 0 to track number
     fi
 
+    # grab album
+    album=$(echo $props | jq -r .format.tags.ALBUM)
+    [[ $album == "null" ]] && album=$(echo $props | jq -r .format.tags.album)
+
+    # grab artist
+    artist=$(echo $props | jq -r .format.tags.ARTIST)
+    [[ $artist == "null" ]] && artist=$(echo $props | jq -r .format.tags.artist)
+
+    # grab duration
+    duration=$(echo $props | jq -r .format.duration)
+
+
     # prepend disc number to track number if there is more than 1 disc
     if [[ $disctotal != "null" ]] && [[ $disctotal != "1" ]] && [[ $disc != "null" ]]; then
       $track="$disc$track"
@@ -54,28 +75,83 @@ while read -r dir; do
 
     # rename track file into the format: [disc]track - title.ext
     if [[ $track == "null" ]]; then
-      newfile="$title.$ext"
+      filebase="$title"
+      newfile="$filebase.$ext"
     else
-      newfile="$track - $title.$ext"
+      filebase="$track - $title"
+      newfile="$filebase.$ext"
     fi
     if [[ $file != $newfile ]]; then
       mv "$file" "$newfile"
-      echo "  - Renamed: $newfile"
-    else
-      echo "  - Skipped: $file"
+      echo "  - File renamed: $newfile"
+      count_renamed=$((count_renamed+1))
     fi
+
+    # fetch lyrics file if it doesn't exist
+    txt_file="$filebase.txt"
+    lrc_file="$filebase.lrc"
+    if [ ! -e "$lrc_file" ] && [ ! -e "$txt_file" ]; then
+      # sleep to avoid rate limits
+      sleep 0.5s
+
+      # TODO: request builder
+      # TODO: validate response codes
+
+      if [[ $duration != "null" ]]; then
+        duration_rounded=$(round $duration 0)
+
+        lrclib_resp=$(curl -s --get \
+          --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)" \
+          --data-urlencode "track_name=$title" \
+          --data-urlencode "album_name=$album" \
+          --data-urlencode "artist_name=$artist" \
+          --data-urlencode "duration=$duration_rounded" \
+          "https://lrclib.net/api/get")
+
+        synced_lyrics=$(echo "$lrclib_resp" | jq -r .syncedLyrics)
+        printf %b "$synced_lyrics" > "$lrc_file"
+        echo "  - Lyrics fetched: $lrc_file"
+      else
+        lrclib_resp=$(curl -s --get \
+          --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)" \
+          --data-urlencode "track_name=$title" \
+          --data-urlencode "album_name=$album" \
+          --data-urlencode "artist_name=$artist" \
+          "https://lrclib.net/api/get")
+
+        plain_lyrics=$(echo "$lrclib_resp" | jq -r .plainLyrics)
+        printf %b "$plain_lyrics" > "$txt_file"
+        echo "  - Lyrics fetched: $txt_file"
+      fi
+
+      # TODO: embed lyrics in audio file if possible?
+
+      count_lyriced=$((count_lyriced+1))
+    fi
+
+    # tag cleanup
+    # build one ffmpeg command per file, put output in a tmp directory, validate output and then move it to the output dir
+
+    # apple tag cleanup
+    # if [[ $ext == *"m4a"* ]]; then
+    #   ffmpeg -y -i "$file" -metadata -iTunSMPB="" -metadata -iTunNORM="" -metadata -iTunMOVI="" -metadata -account_id="" -metadata -purchase_date="" -c copy "$file"
+    #   echo "  - Removed apple metadata for $file"
+    # fi
+
     count_processed=$((count_processed+1))
   done < <(ls -1 *.flac *.mp3 *.m4a 2>/dev/null)
   # cd $library
 done < <(ls -R $library | grep :)
 
 echo "Processed $count_processed files."
+echo "    Files renamed:  $count_renamed"
+echo "    Tracks tagged:  $count_tagged"
+echo "    Lyrics fetched: $count_lyriced"
 
 # TODO
 # consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
 # Rename album folders to include year
 # embed cover image if available
-# embed lyric file if available
 # cleanup and standardize tags
 # tag sanitization: remove any tags that you don't explicitely want
 # check that file extensions match file format
