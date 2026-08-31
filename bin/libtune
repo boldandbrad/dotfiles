@@ -109,33 +109,63 @@ while read -r dir; do
         curl_args+=(--data-urlencode "duration=$duration_rounded")
       fi
 
-      lrclib_resp=$(
-        curl "${curl_args[@]}" \
-          -w $'\n%{http_code}' \
-          "https://lrclib.net/api/get"
-      )
+      max_retries=5
+      attempt=0
+      while :; do
+        attempt=$((attempt + 1))
 
-      http_code="${lrclib_resp##*$'\n'}"
-      body="${lrclib_resp%$'\n'*}"
+        response=$(
+          curl "${curl_args[@]}" \
+            -D - \
+            -o /tmp/lrclib_body.$$ \
+            -w $'\n%{http_code}' \
+            "https://lrclib.net/api/get"
+        )
 
-      if [[ "$http_code" != "200" ]]; then
-        echo "  - Lyrics fetch failed (HTTP $http_code)"
-        continue
-      fi
+        http_code="${response##*$'\n'}"
 
-      if $have_duration; then
-        lyrics=$(jq -r '.syncedLyrics // .plainLyrics // empty' <<<"$body")
-        out_file="$synced_lyric_file"
-      else
-        lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
-        out_file="$plain_lyric_file"
-      fi
+        if [[ "$http_code" == "429" ]]; then
+          retry_after=$(awk 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r",""); print $2}' /tmp/lrclib_body.$$ | tail -n1)
+          rm -f /tmp/lrclib_body.$$
 
-      if [[ -n "$lyrics" ]]; then
-        printf '%b' "$lyrics" > "$out_file"
-        echo "  - Lyrics fetched: $out_file"
-        count_lyriced=$((count_lyriced+1))
-      fi
+          if [[ -z "$retry_after" ]]; then
+            retry_after=1
+          fi
+
+          echo "  - Rate limited, retrying in ${retry_after}s"
+          sleep "$retry_after"
+
+          if (( attempt >= max_retries )); then
+            echo "  - Gave up after $max_retries retries"
+            break
+          fi
+          continue
+        fi
+
+        if [[ "$http_code" != "200" ]]; then
+          rm -f /tmp/lrclib_body.$$
+          echo "  - Lyrics fetch failed (HTTP $http_code)"
+          break
+        fi
+
+        body=$(cat /tmp/lrclib_body.$$)
+        rm -f /tmp/lrclib_body.$$
+
+        if $have_duration; then
+          lyrics=$(jq -r '.syncedLyrics // .plainLyrics // empty' <<<"$body")
+          out_file="$synced_lyric_file"
+        else
+          lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
+          out_file="$plain_lyric_file"
+        fi
+
+        if [[ -n "$lyrics" ]]; then
+          printf '%b' "$lyrics" > "$out_file"
+          echo "  - Lyrics fetched: $out_file"
+          count_lyriced=$((count_lyriced+1))
+        fi
+        break
+      done
     fi
 
     # tag cleanup
