@@ -67,7 +67,6 @@ while read -r dir; do
     # grab duration
     duration=$(echo $props | jq -r .format.duration)
 
-
     # prepend disc number to track number if there is more than 1 disc
     if [[ $disctotal != "null" ]] && [[ $disctotal != "1" ]] && [[ $disc != "null" ]]; then
       $track="$disc$track"
@@ -88,45 +87,55 @@ while read -r dir; do
     fi
 
     # fetch lyrics file if it doesn't exist
-    txt_file="$filebase.txt"
-    lrc_file="$filebase.lrc"
-    if [ ! -e "$lrc_file" ] && [ ! -e "$txt_file" ]; then
+    plain_lyric_file="$filebase.txt"
+    synced_lyric_file="$filebase.lrc"
+    if [ ! -e "$plain_lyric_file" ] && [ ! -e "$synced_lyric_file" ]; then
       # sleep to avoid rate limits
       sleep 0.5s
 
-      # TODO: request builder
-      # TODO: validate response codes
+      curl_args=(
+        -sS
+        --get
+        --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)"
+        --data-urlencode "track_name=$title"
+        --data-urlencode "album_name=$album"
+        --data-urlencode "artist_name=$artist"
+      )
 
-      if [[ $duration != "null" ]]; then
-        duration_rounded=$(round $duration 0)
-
-        lrclib_resp=$(curl -s --get \
-          --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)" \
-          --data-urlencode "track_name=$title" \
-          --data-urlencode "album_name=$album" \
-          --data-urlencode "artist_name=$artist" \
-          --data-urlencode "duration=$duration_rounded" \
-          "https://lrclib.net/api/get")
-
-        synced_lyrics=$(echo "$lrclib_resp" | jq -r .syncedLyrics)
-        printf %b "$synced_lyrics" > "$lrc_file"
-        echo "  - Lyrics fetched: $lrc_file"
-      else
-        lrclib_resp=$(curl -s --get \
-          --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)" \
-          --data-urlencode "track_name=$title" \
-          --data-urlencode "album_name=$album" \
-          --data-urlencode "artist_name=$artist" \
-          "https://lrclib.net/api/get")
-
-        plain_lyrics=$(echo "$lrclib_resp" | jq -r .plainLyrics)
-        printf %b "$plain_lyrics" > "$txt_file"
-        echo "  - Lyrics fetched: $txt_file"
+      have_duration=false
+      if [[ -n "${duration:-}" && $duration != "null" ]]; then
+        have_duration=true
+        duration_rounded=$(round "$duration" 0)
+        curl_args+=(--data-urlencode "duration=$duration_rounded")
       fi
 
-      # TODO: embed lyrics in audio file if possible?
+      lrclib_resp=$(
+        curl "${curl_args[@]}" \
+          -w $'\n%{http_code}' \
+          "https://lrclib.net/api/get"
+      )
 
-      count_lyriced=$((count_lyriced+1))
+      http_code="${lrclib_resp##*$'\n'}"
+      body="${lrclib_resp%$'\n'*}"
+
+      if [[ "$http_code" != "200" ]]; then
+        echo "  - Lyrics fetch failed (HTTP $http_code)"
+        continue
+      fi
+
+      if $have_duration; then
+        lyrics=$(jq -r '.syncedLyrics // .plainLyrics // empty' <<<"$body")
+        out_file="$synced_lyric_file"
+      else
+        lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
+        out_file="$plain_lyric_file"
+      fi
+
+      if [[ -n "$lyrics" ]]; then
+        printf '%b' "$lyrics" > "$out_file"
+        echo "  - Lyrics fetched: $out_file"
+        count_lyriced=$((count_lyriced+1))
+      fi
     fi
 
     # tag cleanup
