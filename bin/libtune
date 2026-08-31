@@ -12,77 +12,60 @@
 # TODO: take library in as an argument or env variable
 library=~/Music/test-lyrics
 
-round() {
-  echo $(printf %.$2f $(echo "scale=$2;(((10^$2)*$1)+0.5)/(10^$2)" | bc))
-}
-
 count_processed=0
 count_renamed=0
 count_tagged=0
 count_lyriced=0
+count_covered=0
 
 echo "Processing $library"
 
-while read -r dir; do
-  dir=${dir%:}
-  echo ${dir/$library/}
-  cd "$dir"
-  while read -r file; do
+while IFS= read -r -d '' dir; do
+  cd "$dir" || exit
+  echo "${dir/$library/}"
+
+  while IFS= read -r -d '' file; do
     ext="${file##*.}"
+    ext=$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')
 
-    props=$(ffprobe -v quiet -print_format json -show_format "$file" 2>&1)
+    # grab track metadata
+    tags_json=$(
+      ffprobe -v quiet -print_format json -show_format "$file" 2>/dev/null
+    )
+    title=$(jq -r '.format.tags.TITLE // .format.tags.title // ""' <<<"$tags_json")
+    disc=$(jq -r '.format.tags.DISC // .format.tags.disc // ""' <<<"$tags_json")
+    disctotal=$(jq -r '.format.tags.DISCTOTAL // .format.tags.disctotal // ""' <<<"$tags_json")
+    track=$(jq -r '.format.tags.TRACK // .format.tags.track // ""' <<<"$tags_json")
+    album=$(jq -r '.format.tags.ALBUM // .format.tags.album // ""' <<<"$tags_json")
+    artist=$(jq -r '.format.tags.ARTIST // .format.tags.artist // ""' <<<"$tags_json")
+    duration=$(jq -r '.format.duration // ""' <<<"$tags_json")
 
-    # grab and clean track title
-    title=$(echo $props | jq -r .format.tags.TITLE)
-    [[ $title == "null" ]] && title=$(echo $props | jq -r .format.tags.title)
-    # TODO: handle more illegal characters/patterns
+    # TODO: handle more illegal characters/patterns (? \n)
+    # TODO: handle when title is empty (should be rare)
     title=${title////_} # replace forward slashes with underscores
+    track=${track%/*}
+    disc=${disc%/*}
+    disctotal=${disctotal%/*}
 
-    # grab and clean disc and track numbers
-    disc=$(echo $props | jq -r .format.tags.DISC)
-    [[ $disc == "null" ]] && disc=$(echo $props | jq -r .format.tags.disc)
-    if [[ $disc == *"/"* ]]; then
-      disctotal=${disc##*/}
-      disc=${disc%/*}
+    # rename file with standard format
+    if [[ $track =~ ^[0-9]+$ ]]; then
+      printf -v track '%02d' "$track"
     else
-      disctotal=$(echo $props | jq -r .format.tags.DISCTOTAL)
-      [[ $disctotal == "null" ]] && disctotal=$(echo $props | jq -r .format.tags.disctotal)
+      track=""
     fi
 
-    track=$(echo $props | jq -r .format.tags.TRACK)
-    [[ $track == "null" ]] && track=$(echo $props | jq -r .format.tags.track)
-    [[ $track == *"/"* ]] && track=${track%/*}
-    if [[ $track != 0* ]] && [[ $track != "0" ]] && [[ ${#track} < 2 ]]; then
-      track="0$track" # append leading 0 to track number
-    fi
-
-    # grab album
-    album=$(echo $props | jq -r .format.tags.ALBUM)
-    [[ $album == "null" ]] && album=$(echo $props | jq -r .format.tags.album)
-
-    # grab artist
-    artist=$(echo $props | jq -r .format.tags.ARTIST)
-    [[ $artist == "null" ]] && artist=$(echo $props | jq -r .format.tags.artist)
-
-    # grab duration
-    duration=$(echo $props | jq -r .format.duration)
-
-    # prepend disc number to track number if there is more than 1 disc
-    if [[ $disctotal != "null" ]] && [[ $disctotal != "1" ]] && [[ $disc != "null" ]]; then
-      $track="$disc$track"
-    fi
-
-    # rename track file into the format: [disc]track - title.ext
-    if [[ $track == "null" ]]; then
-      filebase="$title"
-      newfile="$filebase.$ext"
+    if [[ $disc =~ ^[0-9]+$ && $disctotal =~ ^[0-9]+$ && $disctotal -gt 1 ]]; then
+      filebase="$disc$track - $title"
     else
       filebase="$track - $title"
-      newfile="$filebase.$ext"
     fi
-    if [[ $file != $newfile ]]; then
-      mv "$file" "$newfile"
-      echo "  - File renamed: $newfile"
+
+    newfile="$filebase.$ext"
+    # TODO: handle duplicates more gracefully - keep the higher quality one?
+    if [[ ! -e $newfile && $file != "$newfile" ]]; then
+      mv -- "$file" "$newfile"
+      file="$newfile"
+      echo "  - File renamed: $file"
       count_renamed=$((count_renamed+1))
     fi
 
@@ -90,8 +73,8 @@ while read -r dir; do
     plain_lyric_file="$filebase.txt"
     synced_lyric_file="$filebase.lrc"
     if [ ! -e "$plain_lyric_file" ] && [ ! -e "$synced_lyric_file" ]; then
-      # sleep to avoid rate limits
-      sleep 0.5s
+      # sleep 200-500ms to avoid rate limits
+      sleep "$(awk 'BEGIN{srand(); printf "%.3f\n", 0.2 + rand()*0.3}')"
 
       curl_args=(
         -sS
@@ -105,7 +88,7 @@ while read -r dir; do
       have_duration=false
       if [[ -n "${duration:-}" && $duration != "null" ]]; then
         have_duration=true
-        duration_rounded=$(round "$duration" 0)
+        duration_rounded=$(awk -v d="$duration" 'BEGIN { printf "%d\n", d + 0.5 }')
         curl_args+=(--data-urlencode "duration=$duration_rounded")
       fi
 
@@ -113,58 +96,48 @@ while read -r dir; do
       attempt=0
       while :; do
         attempt=$((attempt + 1))
+        headers_file=$(mktemp)
+        body_file=$(mktemp)
+        trap 'rm -f "$headers_file" "$body_file"' RETURN
 
-        response=$(
+        response_code=$(
           curl "${curl_args[@]}" \
-            -D - \
-            -o /tmp/lrclib_body.$$ \
-            -w $'\n%{http_code}' \
+            -D "$headers_file" \
+            -o "$body_file" \
+            -w '%{http_code}' \
             "https://lrclib.net/api/get"
         )
 
-        http_code="${response##*$'\n'}"
-
-        if [[ "$http_code" == "429" ]]; then
-          retry_after=$(awk 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r",""); print $2}' /tmp/lrclib_body.$$ | tail -n1)
-          rm -f /tmp/lrclib_body.$$
-
-          if [[ -z "$retry_after" ]]; then
-            retry_after=1
-          fi
+        if [[ "$response_code" == "429" ]]; then
+          retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$headers_file" | tail -n1)
+          [[ -z "$retry_after" ]] && retry_after=1
 
           echo "  - Rate limited, retrying in ${retry_after}s"
           sleep "$retry_after"
-
-          if (( attempt >= max_retries )); then
-            echo "  - Gave up after $max_retries retries"
-            break
-          fi
+          (( attempt >= max_retries )) && break
           continue
         fi
 
-        if [[ "$http_code" != "200" ]]; then
-          rm -f /tmp/lrclib_body.$$
-          echo "  - Lyrics fetch failed (HTTP $http_code)"
+        if [[ "$response_code" != "200" ]]; then
+          echo "  - Lyrics fetch failed (HTTP $response_code)"
           break
         fi
 
-        body=$(cat /tmp/lrclib_body.$$)
-        rm -f /tmp/lrclib_body.$$
-
+        body=$(<"$body_file")
         synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$body")
         plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
 
         if $have_duration && [[ -n "$synced_lyrics" ]]; then
           lyrics="$synced_lyrics"
-          out_file="$lrc_file"
+          lyric_file="$synced_lyric_file"
         else
           lyrics="$plain_lyrics"
-          out_file="$txt_file"
+          lyric_file="$plain_lyric_file"
         fi
 
         if [[ -n "$lyrics" ]]; then
-          printf '%b' "$lyrics" > "$out_file"
-          echo "  - Lyrics fetched: $out_file"
+          printf '%b' "$lyrics" > "$lyric_file"
+          echo "  - Lyrics fetched: $lyric_file"
           count_lyriced=$((count_lyriced+1))
         fi
         break
@@ -181,14 +154,15 @@ while read -r dir; do
     # fi
 
     count_processed=$((count_processed+1))
-  done < <(ls -1 *.flac *.mp3 *.m4a 2>/dev/null)
-  # cd $library
-done < <(ls -R $library | grep :)
+  done < <(find . -maxdepth 1 -type f \( -iname '*.flac' -o -iname '*.mp3' -o -iname '*.m4a' \) -print0)
+done < <(find "$library" -type d -print0)
 
+echo
 echo "Processed $count_processed files."
-echo "    Files renamed:  $count_renamed"
-echo "    Tracks tagged:  $count_tagged"
-echo "    Lyrics fetched: $count_lyriced"
+echo "    Files renamed:    $count_renamed"
+echo "    Tracks tagged:    $count_tagged (coming soon)"
+echo "    Lyrics fetched:   $count_lyriced"
+echo "    Artwork fetched:  $count_covered (coming soon)"
 
 # TODO
 # consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
@@ -196,6 +170,7 @@ echo "    Lyrics fetched: $count_lyriced"
 # embed cover image if available
 # cleanup and standardize tags
 # tag sanitization: remove any tags that you don't explicitely want
+# add date/year tag if missing
 # check that file extensions match file format
 # remove account/purchase metadata from m4a
 # flag/log tracks that lack tags or cannot be processed
@@ -214,4 +189,7 @@ echo "    Lyrics fetched: $count_lyriced"
 
 # import only lyric files
 # libtune import --lyrics
+
+# check library for data hygiene issues (missing cover images, missing lyrics, etc)
+# libtune check
 
