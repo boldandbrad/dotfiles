@@ -10,7 +10,9 @@
 # library folder structure: library/artist/year - album/[d]track - title.ext
 
 # TODO: take library in as an argument or env variable
-library=~/Music/test-lyrics
+library=~/Music/Library
+
+start_time=$(date +%s)
 
 count_processed=0
 count_renamed=0
@@ -40,14 +42,17 @@ while IFS= read -r -d '' dir; do
     artist=$(jq -r '.format.tags.ARTIST // .format.tags.artist // ""' <<<"$tags_json")
     duration=$(jq -r '.format.duration // ""' <<<"$tags_json")
 
-    # TODO: handle more illegal characters/patterns (? \n)
     # TODO: handle when title is empty (should be rare)
-    title=${title////_} # replace forward slashes with underscores
+    # TODO: handle when artist is empty (should be rare)
+    title=${title% Explicit}
+    title=${title%Explicit}
     track=${track%/*}
     disc=${disc%/*}
     disctotal=${disctotal%/*}
 
     # rename file with standard format
+    # TODO: handle more filepath illegal characters/patterns (? \n)
+    title_cleaned=${title////_} # replace forward slashes with underscores
     if [[ $track =~ ^[0-9]+$ ]]; then
       printf -v track '%02d' "$track"
     else
@@ -55,9 +60,9 @@ while IFS= read -r -d '' dir; do
     fi
 
     if [[ $disc =~ ^[0-9]+$ && $disctotal =~ ^[0-9]+$ && $disctotal -gt 1 ]]; then
-      filebase="$disc$track - $title"
+      filebase="$disc$track - $title_cleaned"
     else
-      filebase="$track - $title"
+      filebase="$track - $title_cleaned"
     fi
 
     newfile="$filebase.$ext"
@@ -119,7 +124,7 @@ while IFS= read -r -d '' dir; do
         fi
 
         if [[ "$response_code" != "200" ]]; then
-          echo "  - Lyrics fetch failed (HTTP $response_code)"
+          echo "  - Lyrics fetch failed (HTTP $response_code): $title"
           break
         fi
 
@@ -154,11 +159,19 @@ while IFS= read -r -d '' dir; do
     # fi
 
     count_processed=$((count_processed+1))
-  done < <(find . -maxdepth 1 -type f \( -iname '*.flac' -o -iname '*.mp3' -o -iname '*.m4a' \) -print0)
-done < <(find "$library" -type d -print0)
+  done < <(find . -maxdepth 1 -type f \( -iname '*.flac' -o -iname '*.mp3' -o -iname '*.m4a' \) -print0 | sort -z)
+done < <(find "$library" -type d -print0 | sort -z)
 
+end_time=$(date +%s)
+elapsed=$((end_time - start_time))
+
+hours=$((elapsed / 3600))
+minutes=$(((elapsed % 3600) / 60))
+seconds=$((elapsed % 60))
+
+# TODO: better output for failed changes (files without necessary tags, number of files still without lyrics, etc)
 echo
-echo "Processed $count_processed files."
+printf "Processed %s files in %02d:%02d:%02d\n" "$count_processed" "$hours" "$minutes" "$seconds"
 echo "    Files renamed:    $count_renamed"
 echo "    Tracks tagged:    $count_tagged (coming soon)"
 echo "    Lyrics fetched:   $count_lyriced"
