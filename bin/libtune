@@ -34,21 +34,36 @@ while IFS= read -r -d '' dir; do
     tags_json=$(
       ffprobe -v quiet -print_format json -show_format "$file" 2>/dev/null
     )
-    title=$(jq -r '.format.tags.TITLE // .format.tags.title // ""' <<<"$tags_json")
-    disc=$(jq -r '.format.tags.DISC // .format.tags.disc // ""' <<<"$tags_json")
-    disctotal=$(jq -r '.format.tags.DISCTOTAL // .format.tags.disctotal // ""' <<<"$tags_json")
-    track=$(jq -r '.format.tags.TRACK // .format.tags.track // ""' <<<"$tags_json")
-    album=$(jq -r '.format.tags.ALBUM // .format.tags.album // ""' <<<"$tags_json")
     artist=$(jq -r '.format.tags.ARTIST // .format.tags.artist // ""' <<<"$tags_json")
+    album=$(jq -r '.format.tags.ALBUM // .format.tags.album // ""' <<<"$tags_json")
+    album_artist=$(jq -r '.format.tags.ALBUM_ARTIST // .format.tags.album_artist // ""' <<<"$tags_json")
+    year=$(jq -r '.format.tags.DATE // .format.tags.date // ""' <<<"$tags_json")
+    disc=$(jq -r '.format.tags.DISC // .format.tags.disc // ""' <<<"$tags_json")
+    disc_total=$(jq -r '.format.tags.DISCTOTAL // .format.tags.disctotal // ""' <<<"$tags_json")
+    track=$(jq -r '.format.tags.TRACK // .format.tags.track // ""' <<<"$tags_json")
+    track_total=$(jq -r '.format.tags.TRACKTOTAL // .format.tags.tracktotal // ""' <<<"$tags_json")
+    title=$(jq -r '.format.tags.TITLE // .format.tags.title // ""' <<<"$tags_json")
+    genre=$(jq -r '.format.tags.genre // ""' <<<"$tags_json")
     duration=$(jq -r '.format.duration // ""' <<<"$tags_json")
+    format=$(jq -r '.format.format_name // ""' <<<"$tags_json")
 
-    # TODO: handle when title is empty (should be rare)
-    # TODO: handle when artist is empty (should be rare)
+    # validate and clean metadata
+    if [[ -z "$title" ]] || [[ -z "$artist" ]] || [[ -z "$album" ]]; then
+      # TODO: attempt to fetch metadata, fallback to marking for manual tagging
+      echo "  - Skipped, missing required metadata: $file"
+      continue
+    fi
+
+    # set album_artist to first artist if not present
+    if [[ -z "$album_artist" ]]; then
+      album_artist="${artist%%,*}"
+    fi
+
     title=${title% Explicit}
     title=${title%Explicit}
     track=${track%/*}
     disc=${disc%/*}
-    disctotal=${disctotal%/*}
+    disc_total=${disc_total%/*}
 
     # rename file with standard format
     # TODO: handle more filepath illegal characters/patterns (? \n)
@@ -59,7 +74,7 @@ while IFS= read -r -d '' dir; do
       track=""
     fi
 
-    if [[ $disc =~ ^[0-9]+$ && $disctotal =~ ^[0-9]+$ && $disctotal -gt 1 ]]; then
+    if [[ $disc =~ ^[0-9]+$ && $disc_total =~ ^[0-9]+$ && $disc_total -gt 1 ]]; then
       filebase="$disc$track - $title_cleaned"
     else
       filebase="$track - $title_cleaned"
@@ -87,7 +102,7 @@ while IFS= read -r -d '' dir; do
         --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)"
         --data-urlencode "track_name=$title"
         --data-urlencode "album_name=$album"
-        --data-urlencode "artist_name=$artist"
+        --data-urlencode "artist_name=$album_artist"
       )
 
       have_duration=false
@@ -101,20 +116,20 @@ while IFS= read -r -d '' dir; do
       attempt=0
       while :; do
         attempt=$((attempt + 1))
-        headers_file=$(mktemp)
-        body_file=$(mktemp)
-        trap 'rm -f "$headers_file" "$body_file"' RETURN
+        lrclib_header_file=$(mktemp)
+        lrclib_body_file=$(mktemp)
+        trap 'rm -f "$lrclib_header_file" "$lrclib_body_file"' RETURN
 
-        response_code=$(
+        lrclib_resp_code=$(
           curl "${curl_args[@]}" \
-            -D "$headers_file" \
-            -o "$body_file" \
+            -D "$lrclib_header_file" \
+            -o "$lrclib_body_file" \
             -w '%{http_code}' \
             "https://lrclib.net/api/get"
         )
 
-        if [[ "$response_code" == "429" ]]; then
-          retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$headers_file" | tail -n1)
+        if [[ "$lrclib_resp_code" == "429" ]]; then
+          retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$lrclib_header_file" | tail -n1)
           [[ -z "$retry_after" ]] && retry_after=1
 
           echo "  - Rate limited, retrying in ${retry_after}s"
@@ -123,14 +138,14 @@ while IFS= read -r -d '' dir; do
           continue
         fi
 
-        if [[ "$response_code" != "200" ]]; then
-          echo "  - Lyrics fetch failed (HTTP $response_code): $title"
+        if [[ "$lrclib_resp_code" != "200" ]]; then
+          echo "  - Lyrics fetch failed (HTTP $lrclib_resp_code): $title"
           break
         fi
 
-        body=$(<"$body_file")
-        synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$body")
-        plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$body")
+        lrclib_body=$(<"$lrclib_body_file")
+        synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
+        plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
 
         if $have_duration && [[ -n "$synced_lyrics" ]]; then
           lyrics="$synced_lyrics"
@@ -180,7 +195,8 @@ echo "    Artwork fetched:  $count_covered (coming soon)"
 # TODO
 # consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
 # Rename album folders to include year
-# embed cover image if available
+# fetch cover art from theaudiodb?
+# embed cover image if available?
 # cleanup and standardize tags
 # tag sanitization: remove any tags that you don't explicitely want
 # add date/year tag if missing
@@ -206,3 +222,34 @@ echo "    Artwork fetched:  $count_covered (coming soon)"
 # check library for data hygiene issues (missing cover images, missing lyrics, etc)
 # libtune check
 
+
+# IMPORT ORDER OF OPERATIONS
+# 1. Recursively search the import dir for music files
+# 2. Parse the music file's metadata
+# 2.1. Check that the file extension matches the format
+# 2.2. Attempt to fetch correct metadata if critical pieces are missing, fallback to moving it to a manual tagging folder
+# 3. Identify formatted filename
+# 4. Identify formatted album folder name
+# 5. Check if library directory exists
+# 6. Check if library directory already contains the file, handle duplicate
+# 7. Check if library directory contains a cover image
+# 7.1. Check import directory for a matching cover image
+# 8. Check if library directory contains matching lyric file
+# 8.1. Check import directory for a matching lyric file
+# 9. Identify genre(s) using online service
+# 10. Fetch missing metadata using online service
+# 11. Create library album directory if it didn't exist
+# 11.1. Use ffmpeg to update and clean tags and write the file to the library directory
+# 12. Fetch or move the relevant lyric file and place in library directory
+# 13. Fetch or move relevant cover image and place in library directory
+# 14. Validate changes
+# 15. Remove imported file from import directory
+# 16. Repeat
+
+# CHECK ORDER OF OPERATIONS
+# 1. Recursively search the library for:
+#   - Missing cover images
+#   - Missing lyric files
+#   - Incomplete albums
+#   - Incorrect tags / filename formats
+# 2. Report issues and offer to resolve automatically
