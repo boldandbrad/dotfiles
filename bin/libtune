@@ -12,6 +12,11 @@
 # TODO: take library in as an argument or env variable
 library=~/Music/Library
 
+supported_formats=(
+  "flac"
+  "mp3"
+)
+
 start_time=$(date +%s)
 
 count_processed=0
@@ -47,6 +52,12 @@ while IFS= read -r -d '' dir; do
     duration=$(jq -r '.format.duration // ""' <<<"$tags_json")
     format=$(jq -r '.format.format_name // ""' <<<"$tags_json")
 
+    # validate file format is supported
+    if [[ -z "$format" ]] || [[ ! "${supported_formats[*]}" =~ "$format" ]]; then
+      echo "  - Skipped, unsupported format ($format): $file"
+      continue
+    fi
+
     # validate and clean metadata
     if [[ -z "$title" ]] || [[ -z "$artist" ]] || [[ -z "$album" ]]; then
       # TODO: attempt to fetch metadata, fallback to marking for manual tagging
@@ -78,6 +89,11 @@ while IFS= read -r -d '' dir; do
       filebase="$disc$track - $title_cleaned"
     else
       filebase="$track - $title_cleaned"
+    fi
+
+    # use correct file extension for the file format
+    if [[ "$format" != *"$ext"* ]]; then
+      ext="$format"
     fi
 
     newfile="$filebase.$ext"
