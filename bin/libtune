@@ -93,6 +93,11 @@ while IFS= read -r -d '' dir; do
     plain_lyric_file="$filebase.txt"
     synced_lyric_file="$filebase.lrc"
     if [ ! -e "$plain_lyric_file" ] && [ ! -e "$synced_lyric_file" ]; then
+      # do not attempt to fetch lyrics for live recordings
+      if [[ "$title" == *"(Live)" ]] || [[ "$title" == *"(live)" ]]; then
+        continue
+      fi
+
       # sleep 200-500ms to avoid rate limits
       sleep "$(awk 'BEGIN{srand(); printf "%.3f\n", 0.2 + rand()*0.3}')"
 
@@ -144,21 +149,26 @@ while IFS= read -r -d '' dir; do
         fi
 
         lrclib_body=$(<"$lrclib_body_file")
-        synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
-        plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
 
-        if $have_duration && [[ -n "$synced_lyrics" ]]; then
-          lyrics="$synced_lyrics"
-          lyric_file="$synced_lyric_file"
-        else
-          lyrics="$plain_lyrics"
-          lyric_file="$plain_lyric_file"
-        fi
+        # only attempt to store lyrics if the track is not instrumental
+        instrumental=$(jq -r '.instrumental // "false"' <<<"$lrclib_body")
+        if [[ "$instrumental" == false ]]; then
+          synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
+          plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
 
-        if [[ -n "$lyrics" ]]; then
-          printf '%b' "$lyrics" > "$lyric_file"
-          echo "  - Lyrics fetched: $lyric_file"
-          count_lyriced=$((count_lyriced+1))
+          if $have_duration && [[ -n "$synced_lyrics" ]]; then
+            lyrics="$synced_lyrics"
+            lyric_file="$synced_lyric_file"
+          else
+            lyrics="$plain_lyrics"
+            lyric_file="$plain_lyric_file"
+          fi
+
+          if [[ -n "$lyrics" ]]; then
+            printf '%b' "$lyrics" > "$lyric_file"
+            echo "  - Lyrics fetched: $lyric_file"
+            count_lyriced=$((count_lyriced+1))
+          fi
         fi
         break
       done
