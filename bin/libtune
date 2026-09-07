@@ -1,44 +1,120 @@
 #!/usr/bin/env bash
 #
-# fine-tune and manage your music library
+# fine-tune and manage your digital music library
 
 # WARNING: this script will modify music files directly. backup original source
 # files before running this script on them.
 
-# dependencies: ffmpeg, ffprobe, curl, jq
+# dependencies: ffmpeg, ffprobe, curl, jq, flac, id3v2
 
 # library folder structure: library/artist/year - album/[d]track - title.ext
 
-# TODO: take library in as an argument or env variable
-library=~/Music/Library
+version="v0.1.0"
 
-supported_formats=(
-  "flac"
-  "mp3"
-)
+# TODO: take library in as an argument or env variable
+import_dir=~/Music/Import
+library_dir=~/Music/TestLibrary
+# archive_dir=~/Music/Archive
+
+directories=("$import_dir" "$library_dir")
+for directory in ${directories[@]}
+do
+  if [[ ! -d "$directory" ]]; then
+    mkdir -p "$directory"
+  fi
+done
+
+supported_formats=("flac" "mp3")
 
 start_time=$(date +%s)
 
-count_processed=0
-count_renamed=0
-count_tagged=0
-count_lyriced=0
-count_covered=0
+help_msg() {
+  echo "help"
+}
 
-echo "Processing $library"
+_get_tags() {
+  ffprobe -v quiet -print_format json -show_format "$1" 2>/dev/null
+}
 
-while IFS= read -r -d '' dir; do
-  cd "$dir" || exit
-  echo "${dir/$library/}"
+_clean_path() {
+  local path="$1"
+  # TODO: handle more filepath illegal characters (? \n)
+  local path_cleaned=${path////_} # replace forward slashes with underscores
+  echo "$path"
+}
 
-  while IFS= read -r -d '' file; do
-    ext="${file##*.}"
+_remove_explicit() {
+  local string="$1"
+  string=${string% Explicit}
+  string=${string%Explicit}
+  string=${string% (Explicit)}
+  string=${string%(Explicit)}
+  echo "$string"
+}
+
+_format_artistdir() {
+  local album_artist="$1"
+
+  local album_artist_cleaned=$(_clean_path "$album_artist")
+  # Move 'The' to the end for sorting purposes
+  if [[ "$album_artist_cleaned" == "The "* ]]; then
+    album_artist_cleaned="${album_artist_cleaned#The }, The"
+  fi
+
+  echo "$album_artist_cleaned"
+}
+
+_format_albumdir() {
+  local album="$1"
+  local release_date="$2"
+
+  album=$(_remove_explicit "$album")
+  local album_cleaned=$(_clean_path "$album")
+
+  echo "$release_date - $album_cleaned"
+}
+
+_format_filename() {
+  local disc="$1"
+  local track="$2"
+  local title="$3"
+
+  local title_cleaned=$(_clean_path "$title")
+  if [[ $track =~ ^[0-9]+$ ]]; then
+    printf -v track '%02d' "$track"
+  else
+    track=""
+  fi
+
+  if [[ $disc =~ ^[0-9]+$ && $disc_total =~ ^[0-9]+$ && $disc_total -gt 1 ]]; then
+    filebase="$disc$track - $title_cleaned"
+  else
+    filebase="$track - $title_cleaned"
+  fi
+
+  echo "$filebase"
+}
+
+_fetch_lyrics() {
+  echo "todo"
+}
+
+import() {
+  echo "Importing from $import_dir"
+
+  count_imported=0
+  count_skipped=0
+  count_lyriced=0
+  count_retagged=0
+
+  while IFS= read -r -d '' source_file; do
+    ext="${source_file##*.}"
     ext=$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')
+    source_file_base="${source_file##*/}"
+    source_file_base="${source_file_base%.*}"
+    echo "$source_file_base"
 
-    # grab track metadata
-    tags_json=$(
-      ffprobe -v quiet -print_format json -show_format "$file" 2>/dev/null
-    )
+    tags_json=$(_get_tags "$source_file")
     artist=$(jq -r '.format.tags.ARTIST // .format.tags.artist // ""' <<<"$tags_json")
     album=$(jq -r '.format.tags.ALBUM // .format.tags.album // ""' <<<"$tags_json")
     album_artist=$(jq -r '.format.tags.ALBUM_ARTIST // .format.tags.album_artist // ""' <<<"$tags_json")
@@ -68,44 +144,113 @@ while IFS= read -r -d '' dir; do
     # set album_artist to first artist if not present
     if [[ -z "$album_artist" ]]; then
       album_artist="${artist%%,*}"
+    else
+      album_artist="${album_artist%%,*}"
     fi
 
-    title=${title% Explicit}
-    title=${title%Explicit}
+    title=$(_remove_explicit "$title")
     track=${track%/*}
     disc=${disc%/*}
     disc_total=${disc_total%/*}
-
-    # rename file with standard format
-    # TODO: handle more filepath illegal characters/patterns (? \n)
-    title_cleaned=${title////_} # replace forward slashes with underscores
-    if [[ $track =~ ^[0-9]+$ ]]; then
-      printf -v track '%02d' "$track"
-    else
-      track=""
-    fi
-
-    if [[ $disc =~ ^[0-9]+$ && $disc_total =~ ^[0-9]+$ && $disc_total -gt 1 ]]; then
-      filebase="$disc$track - $title_cleaned"
-    else
-      filebase="$track - $title_cleaned"
-    fi
+    # TODO: validate year in the event is is formatted as a full date
 
     # use correct file extension for the file format
     if [[ "$format" != *"$ext"* ]]; then
       ext="$format"
     fi
 
-    newfile="$filebase.$ext"
-    # TODO: handle duplicates more gracefully - keep the higher quality one?
-    if [[ ! -e $newfile && $file != "$newfile" ]]; then
-      mv -- "$file" "$newfile"
-      file="$newfile"
-      echo "  - File renamed: $file"
-      count_renamed=$((count_renamed+1))
+    # create library file path
+    artist_dir=$(_format_artistdir "$album_artist")
+    album_dir=$(_format_albumdir "$album" "$year")
+    filename=$(_format_filename "$disc" "$track" "$title")
+    library_file_dir="$library_dir/$artist_dir/$album_dir"
+    library_file="$library_file_dir/$filename.$ext"
+
+    # copy file to library location
+    if [[ ! -d "$library_file_dir" ]]; then
+      mkdir -p "$library_file_dir"
+    fi
+    if [[ ! -e "$library_file" ]]; then
+      cp "$source_file" "$library_file"
+      count_imported=$((count_imported + 1))
+    else
+      # TODO: Handle duplicates more gracefully
+      echo "  Skipped - $library_file: already exists."
+      count_skipped=$((count_skipped + 1))
+      continue
     fi
 
-    # fetch lyrics file if it doesn't exist
+    if [[ ! -e "$library_file" ]]; then
+      echo "  Skipped - $source_file: import failed."
+    else
+      #TODO: delete source file
+      sleep 0.1
+    fi
+
+    # LYRICS
+
+
+
+
+
+
+  done < <(find "$import_dir" -maxdepth 4 -type f \( -iname '*.flac' -o -iname '*.mp3' \) -print0 | sort -z)
+
+  count_processed=$((count_imported + count_skipped))
+  end_time=$(date +%s)
+  elapsed=$((end_time - start_time))
+
+  hours=$((elapsed / 3600))
+  minutes=$(((elapsed % 3600) / 60))
+  seconds=$((elapsed % 60))
+  printf "Processed %s files in %02dh %02dm %02ds\n" "$count_processed" "$hours" "$minutes" "$seconds"
+  echo "    Imported: $count_imported"
+  echo "    Skipped:  $count_skipped"
+}
+
+check() {
+  echo "Checking library at $library_dir"
+}
+
+while test $# -gt 0; do
+  case "$1" in
+    "import")
+      shift
+      import
+      break
+      ;;
+    "check")
+      shift
+      check
+      break
+      ;;
+    *)
+      help_msg
+      break
+      ;;
+  esac
+done
+
+exit
+
+
+
+
+
+
+
+count_processed=0
+count_renamed=0
+count_tagged=0
+count_lyriced=0
+count_covered=0
+
+echo "Importing from $import_dir"
+
+while IFS= read -r -d '' dir; do
+  while IFS= read -r -d '' file; do
+
+    # FETCH MISSING LYRICS -----------------------------------------------------
     plain_lyric_file="$filebase.txt"
     synced_lyric_file="$filebase.lrc"
     if [ ! -e "$plain_lyric_file" ] && [ ! -e "$synced_lyric_file" ]; then
@@ -190,33 +335,15 @@ while IFS= read -r -d '' dir; do
       done
     fi
 
-    # tag cleanup
-    # build one ffmpeg command per file, put output in a tmp directory, validate output and then move it to the output dir
-
-    # apple tag cleanup
-    # if [[ $ext == *"m4a"* ]]; then
-    #   ffmpeg -y -i "$file" -metadata -iTunSMPB="" -metadata -iTunNORM="" -metadata -iTunMOVI="" -metadata -account_id="" -metadata -purchase_date="" -c copy "$file"
-    #   echo "  - Removed apple metadata for $file"
-    # fi
+    # TAG CLEANUP --------------------------------------------------------------
+    # get tagging info from discogs, musicbrainz, or last.fm?
+    # use flac (metaflac) for flac files and id3v2 for mp3 files, skip tagging other file formats for now
 
     count_processed=$((count_processed+1))
   done < <(find . -maxdepth 1 -type f \( -iname '*.flac' -o -iname '*.mp3' -o -iname '*.m4a' \) -print0 | sort -z)
-done < <(find "$library" -type d -print0 | sort -z)
-
-end_time=$(date +%s)
-elapsed=$((end_time - start_time))
-
-hours=$((elapsed / 3600))
-minutes=$(((elapsed % 3600) / 60))
-seconds=$((elapsed % 60))
+done < <(find "$library_dir" -type d -print0 | sort -z)
 
 # TODO: better output for failed changes (files without necessary tags, number of files still without lyrics, etc)
-echo
-printf "Processed %s files in %02d:%02d:%02d\n" "$count_processed" "$hours" "$minutes" "$seconds"
-echo "    Files renamed:    $count_renamed"
-echo "    Tracks tagged:    $count_tagged (coming soon)"
-echo "    Lyrics fetched:   $count_lyriced"
-echo "    Artwork fetched:  $count_covered (coming soon)"
 
 # TODO
 # consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
@@ -228,6 +355,10 @@ echo "    Artwork fetched:  $count_covered (coming soon)"
 # add date/year tag if missing
 # check that file extensions match file format
 # remove account/purchase metadata from m4a
+# if [[ $ext == *"m4a"* ]]; then
+#   ffmpeg -y -i "$file" -metadata -iTunSMPB="" -metadata -iTunNORM="" -metadata -iTunMOVI="" -metadata -account_id="" -metadata -purchase_date="" -c copy "$file"
+#   echo "  - Removed apple metadata for $file"
+# fi
 # flag/log tracks that lack tags or cannot be processed
 # handle duplicates gracefully
 
@@ -250,21 +381,21 @@ echo "    Artwork fetched:  $count_covered (coming soon)"
 
 
 # IMPORT ORDER OF OPERATIONS
-# 1. Recursively search the import dir for music files
-# 2. Parse the music file's metadata
-# 2.1. Check that the file extension matches the format
+# 1. Recursively search the import dir for music files X
+# 2. Parse the music file's metadata X
+# 2.1. Check that the file extension matches the format X
 # 2.2. Attempt to fetch correct metadata if critical pieces are missing, fallback to moving it to a manual tagging folder
-# 3. Identify formatted filename
-# 4. Identify formatted album folder name
-# 5. Check if library directory exists
-# 6. Check if library directory already contains the file, handle duplicate
+# 3. Identify formatted filename X
+# 4. Identify formatted album folder name X
+# 5. Check if library directory exists X
+# 6. Check if library directory already contains the file, handle duplicate x
 # 7. Check if library directory contains a cover image
 # 7.1. Check import directory for a matching cover image
 # 8. Check if library directory contains matching lyric file
 # 8.1. Check import directory for a matching lyric file
 # 9. Identify genre(s) using online service
 # 10. Fetch missing metadata using online service
-# 11. Create library album directory if it didn't exist
+# 11. Create library album directory if it didn't exist X
 # 11.1. Use ffmpeg to update and clean tags and write the file to the library directory
 # 12. Fetch or move the relevant lyric file and place in library directory
 # 13. Fetch or move relevant cover image and place in library directory
