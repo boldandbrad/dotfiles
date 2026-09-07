@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# fine-tune and manage your digital music library
+# curator: manager of your digital music library
 
 # WARNING: this script will modify music files directly. backup original source
 # files before running this script on them.
@@ -265,7 +265,7 @@ while IFS= read -r -d '' dir; do
       curl_args=(
         -sS
         --get
-        --header "User-Agent: libtune v0.1.0 (https://github.com/boldandbrad/dotfiles/blob/main/bin/libtune)"
+        --header "User-Agent: curator $version (https://github.com/boldandbrad/dotfiles/blob/main/bin/curator)"
         --data-urlencode "track_name=$title"
         --data-urlencode "album_name=$album"
         --data-urlencode "artist_name=$album_artist"
@@ -365,19 +365,19 @@ done < <(find "$library_dir" -type d -print0 | sort -z)
 # USAGE
 
 # import all files in the import folder
-# libtune import
+# curator import
 
 # import specific files/folders
-# libtune import file1 file2 folder1 folder2
+# curator import file1 file2 folder1 folder2
 
 # import only a specific format
-# libtune import --fmt=flac
+# curator import --fmt=flac
 
 # import only lyric files
-# libtune import --lyrics
+# curator import --lyrics
 
 # check library for data hygiene issues (missing cover images, missing lyrics, etc)
-# libtune check
+# curator check
 
 
 # IMPORT ORDER OF OPERATIONS
