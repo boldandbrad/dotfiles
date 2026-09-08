@@ -24,7 +24,7 @@ do
   fi
 done
 
-supported_formats=("flac" "mp3")
+supported_audio_formats=("flac" "mp3")
 
 start_time=$(date +%s)
 
@@ -96,7 +96,66 @@ _format_filename() {
 }
 
 _fetch_lyrics() {
-  echo "todo"
+  local title="$1"
+  local album="$2"
+  local album_artist="$3"
+  local duration="$4"
+
+  # sleep 200-500ms to avoid rate limits
+  sleep "$(awk 'BEGIN{srand(); printf "%.3f\n", 0.2 + rand()*0.3}')"
+
+  curl_args=(
+    -sS
+    --get
+    --header "User-Agent: curator $version (https://github.com/boldandbrad/dotfiles/blob/main/bin/curator)"
+    --data-urlencode "track_name=$title"
+    --data-urlencode "album_name=$album"
+    --data-urlencode "artist_name=$album_artist"
+  )
+
+  have_duration=false
+  if [[ -n "${duration:-}" && $duration != "null" ]]; then
+    have_duration=true
+    duration_rounded=$(awk -v d="$duration" 'BEGIN { printf "%d\n", d + 0.5 }')
+    curl_args+=(--data-urlencode "duration=$duration_rounded")
+  fi
+
+  max_retries=5
+  attempt=0
+  lrclib_body=""
+  while :; do
+    attempt=$((attempt + 1))
+    lrclib_header_file=$(mktemp)
+    lrclib_body_file=$(mktemp)
+    trap 'rm -f "$lrclib_header_file" "$lrclib_body_file"' RETURN
+
+    lrclib_resp_code=$(
+      curl "${curl_args[@]}" \
+        -D "$lrclib_header_file" \
+        -o "$lrclib_body_file" \
+        -w '%{http_code}' \
+        "https://lrclib.net/api/get"
+    )
+
+    if [[ "$lrclib_resp_code" == "429" ]]; then
+      retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$lrclib_header_file" | tail -n1)
+      [[ -z "$retry_after" ]] && retry_after=1
+
+      echo "  - Rate limited, retrying in ${retry_after}s"
+      sleep "$retry_after"
+      (( attempt >= max_retries )) && break
+      continue
+    fi
+
+    if [[ "$lrclib_resp_code" != "200" ]]; then
+      echo "  - Lyrics fetch failed (HTTP $lrclib_resp_code): $title"
+      break
+    fi
+
+    lrclib_body=$(<"$lrclib_body_file")
+    break
+  done
+  echo "$lrclib_body"
 }
 
 import() {
@@ -104,16 +163,15 @@ import() {
 
   count_imported=0
   count_skipped=0
-  count_lyriced=0
+  count_lyric_imported=0
+  count_lyric_fetched=0
   count_retagged=0
 
   while IFS= read -r -d '' source_file; do
     ext="${source_file##*.}"
     ext=$(printf '%s' "$ext" | tr '[:upper:]' '[:lower:]')
-    source_file_base="${source_file##*/}"
-    source_file_base="${source_file_base%.*}"
-    echo "$source_file_base"
 
+    # PARSE & VALIDATE METADATA ------------------------------------------------
     tags_json=$(_get_tags "$source_file")
     artist=$(jq -r '.format.tags.ARTIST // .format.tags.artist // ""' <<<"$tags_json")
     album=$(jq -r '.format.tags.ALBUM // .format.tags.album // ""' <<<"$tags_json")
@@ -129,7 +187,7 @@ import() {
     format=$(jq -r '.format.format_name // ""' <<<"$tags_json")
 
     # validate file format is supported
-    if [[ -z "$format" ]] || [[ ! "${supported_formats[*]}" =~ "$format" ]]; then
+    if [[ -z "$format" ]] || [[ ! "${supported_audio_formats[*]}" =~ "$format" ]]; then
       echo "  - Skipped, unsupported format ($format): $file"
       continue
     fi
@@ -159,6 +217,7 @@ import() {
       ext="$format"
     fi
 
+    # TRACK IMPORT -------------------------------------------------------------
     # create library file path
     artist_dir=$(_format_artistdir "$album_artist")
     album_dir=$(_format_albumdir "$album" "$year")
@@ -172,27 +231,78 @@ import() {
     fi
     if [[ ! -e "$library_file" ]]; then
       cp "$source_file" "$library_file"
-      count_imported=$((count_imported + 1))
+      if [[ ! -e "$library_file" ]]; then
+        echo "  Error: track import failed: $source_file"
+      else
+        #TODO: delete source file or move it to a archive directory
+        echo "  Imported track: $library_file"
+        count_imported=$((count_imported + 1))
+      fi
     else
       # TODO: Handle duplicates more gracefully
-      echo "  Skipped - $library_file: already exists."
+      echo "  Skipped track import: $library_file: already exists in library."
       count_skipped=$((count_skipped + 1))
-      continue
     fi
 
-    if [[ ! -e "$library_file" ]]; then
-      echo "  Skipped - $source_file: import failed."
+    # LYRIC IMPORT/FETCH -------------------------------------------------------
+    source_file_handle="${source_file%.*}"
+    source_synced_lyric_file="$source_file_handle.lrc"
+    source_plain_lyric_file="$source_file_handle.txt"
+    library_synced_lyric_file="$library_file_dir/$filename.lrc"
+    library_plain_lyric_file="$library_file_dir/$filename.txt"
+
+    # attempt to import lyrics if file exists, fallback to fetching lyrics
+    if [[ -e "$source_synced_lyric_file" ]]; then
+      if [[ ! -e "$library_synced_lyric_file" ]]; then
+        cp "$source_synced_lyric_file" "$library_synced_lyric_file"
+        count_lyric_imported=$((count_lyric_imported + 1))
+      else
+        echo "  Skipped lyric import: $library_synced_lyric_file: already exists in library."
+      fi
+    elif [[ -e "$source_plain_lyric_file" ]]; then
+      if [[ ! -e "$library_plain_lyric_file" ]]; then
+        cp "$source_plain_lyric_file" "$library_plain_lyric_file"
+        count_lyric_imported=$((count_lyric_imported + 1))
+      else
+        echo "  Skipped lyric import: $library_plain_lyric_file: already exists in library."
+      fi
     else
-      #TODO: delete source file
-      sleep 0.1
+      if [ ! -e "$library_plain_lyric_file" ] && [ ! -e "$library_synced_lyric_file" ]; then
+        # do not attempt to fetch lyrics for live recordings
+        if [[ ! "$title" == *"(Live)" ]] && [[ ! "$title" == *"(live)" ]]; then
+          lrclib_body=$(_fetch_lyrics "$title" "$album" "$album_artist" "$duration")
+
+          # only attempt to store lyrics if the track is not instrumental
+          instrumental=$(jq -r '.instrumental // "false"' <<<"$lrclib_body")
+          if [[ "$instrumental" == false ]]; then
+            synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
+            plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
+
+            if $have_duration && [[ -n "$synced_lyrics" ]]; then
+              lyrics="$synced_lyrics"
+              lyric_file="$library_synced_lyric_file"
+            else
+              lyrics="$plain_lyrics"
+              lyric_file="$library_plain_lyric_file"
+            fi
+
+            if [[ -n "$lyrics" ]]; then
+              printf '%b' "$lyrics" > "$lyric_file"
+              echo "  Lyrics fetched: $lyric_file"
+              count_lyric_fetched=$((count_lyric_fetched + 1))
+            fi
+          fi
+        fi
+      else
+        echo "  Skipped lyric fetch: $library_file: lyrics already exist in library."
+      fi
     fi
 
-    # LYRICS
+    # TAG CLEANUP --------------------------------------------------------------
+    # get tagging info from discogs, musicbrainz, or last.fm?
+    # use flac (metaflac) for flac files and id3v2 for mp3 files, skip tagging other file formats for now
 
-
-
-
-
+    # ALBUM ARTWORK IMPORT/FETCH -----------------------------------------------
 
   done < <(find "$import_dir" -maxdepth 4 -type f \( -iname '*.flac' -o -iname '*.mp3' \) -print0 | sort -z)
 
@@ -203,13 +313,19 @@ import() {
   hours=$((elapsed / 3600))
   minutes=$(((elapsed % 3600) / 60))
   seconds=$((elapsed % 60))
-  printf "Processed %s files in %02dh %02dm %02ds\n" "$count_processed" "$hours" "$minutes" "$seconds"
-  echo "    Imported: $count_imported"
-  echo "    Skipped:  $count_skipped"
+  # TODO: processed files should include imported lyrics and covers
+  printf "\nProcessed %s files in %02dh %02dm %02ds\n" "$count_processed" "$hours" "$minutes" "$seconds"
+  echo "    Tracks:"
+  echo "      $count_imported/$count_processed imported"
+  echo "      $count_skipped/$count_processed skipped"
+  echo "    Lyrics: "
+  echo "      $count_lyric_imported imported"
+  echo "      $count_lyric_fetched fetched"
 }
 
 check() {
   echo "Checking library at $library_dir"
+  echo "Coming soon..."
 }
 
 while test $# -gt 0; do
@@ -217,131 +333,18 @@ while test $# -gt 0; do
     "import")
       shift
       import
-      break
       ;;
     "check")
       shift
       check
-      break
       ;;
     *)
       help_msg
-      break
       ;;
   esac
+  exit
 done
-
-exit
-
-
-
-
-
-
-
-count_processed=0
-count_renamed=0
-count_tagged=0
-count_lyriced=0
-count_covered=0
-
-echo "Importing from $import_dir"
-
-while IFS= read -r -d '' dir; do
-  while IFS= read -r -d '' file; do
-
-    # FETCH MISSING LYRICS -----------------------------------------------------
-    plain_lyric_file="$filebase.txt"
-    synced_lyric_file="$filebase.lrc"
-    if [ ! -e "$plain_lyric_file" ] && [ ! -e "$synced_lyric_file" ]; then
-      # do not attempt to fetch lyrics for live recordings
-      if [[ "$title" == *"(Live)" ]] || [[ "$title" == *"(live)" ]]; then
-        continue
-      fi
-
-      # sleep 200-500ms to avoid rate limits
-      sleep "$(awk 'BEGIN{srand(); printf "%.3f\n", 0.2 + rand()*0.3}')"
-
-      curl_args=(
-        -sS
-        --get
-        --header "User-Agent: curator $version (https://github.com/boldandbrad/dotfiles/blob/main/bin/curator)"
-        --data-urlencode "track_name=$title"
-        --data-urlencode "album_name=$album"
-        --data-urlencode "artist_name=$album_artist"
-      )
-
-      have_duration=false
-      if [[ -n "${duration:-}" && $duration != "null" ]]; then
-        have_duration=true
-        duration_rounded=$(awk -v d="$duration" 'BEGIN { printf "%d\n", d + 0.5 }')
-        curl_args+=(--data-urlencode "duration=$duration_rounded")
-      fi
-
-      max_retries=5
-      attempt=0
-      while :; do
-        attempt=$((attempt + 1))
-        lrclib_header_file=$(mktemp)
-        lrclib_body_file=$(mktemp)
-        trap 'rm -f "$lrclib_header_file" "$lrclib_body_file"' RETURN
-
-        lrclib_resp_code=$(
-          curl "${curl_args[@]}" \
-            -D "$lrclib_header_file" \
-            -o "$lrclib_body_file" \
-            -w '%{http_code}' \
-            "https://lrclib.net/api/get"
-        )
-
-        if [[ "$lrclib_resp_code" == "429" ]]; then
-          retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$lrclib_header_file" | tail -n1)
-          [[ -z "$retry_after" ]] && retry_after=1
-
-          echo "  - Rate limited, retrying in ${retry_after}s"
-          sleep "$retry_after"
-          (( attempt >= max_retries )) && break
-          continue
-        fi
-
-        if [[ "$lrclib_resp_code" != "200" ]]; then
-          echo "  - Lyrics fetch failed (HTTP $lrclib_resp_code): $title"
-          break
-        fi
-
-        lrclib_body=$(<"$lrclib_body_file")
-
-        # only attempt to store lyrics if the track is not instrumental
-        instrumental=$(jq -r '.instrumental // "false"' <<<"$lrclib_body")
-        if [[ "$instrumental" == false ]]; then
-          synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
-          plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
-
-          if $have_duration && [[ -n "$synced_lyrics" ]]; then
-            lyrics="$synced_lyrics"
-            lyric_file="$synced_lyric_file"
-          else
-            lyrics="$plain_lyrics"
-            lyric_file="$plain_lyric_file"
-          fi
-
-          if [[ -n "$lyrics" ]]; then
-            printf '%b' "$lyrics" > "$lyric_file"
-            echo "  - Lyrics fetched: $lyric_file"
-            count_lyriced=$((count_lyriced+1))
-          fi
-        fi
-        break
-      done
-    fi
-
-    # TAG CLEANUP --------------------------------------------------------------
-    # get tagging info from discogs, musicbrainz, or last.fm?
-    # use flac (metaflac) for flac files and id3v2 for mp3 files, skip tagging other file formats for now
-
-    count_processed=$((count_processed+1))
-  done < <(find . -maxdepth 1 -type f \( -iname '*.flac' -o -iname '*.mp3' -o -iname '*.m4a' \) -print0 | sort -z)
-done < <(find "$library_dir" -type d -print0 | sort -z)
+help_msg
 
 # TODO: better output for failed changes (files without necessary tags, number of files still without lyrics, etc)
 
