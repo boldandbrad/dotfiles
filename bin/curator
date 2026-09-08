@@ -29,7 +29,16 @@ supported_audio_formats=("flac" "mp3")
 start_time=$(date +%s)
 
 help_msg() {
-  echo "help"
+  cat <<'EOF'
+usage: curator <command> [args]
+
+commands:
+  import                  Import music tracks from the import directory to the
+                          library, including reformatting and lyric fetching.
+  check                   COMING SOON.
+  help|-h|--help          Show this help
+  version|-v|--version    Show version
+EOF
 }
 
 _get_tags() {
@@ -337,6 +346,12 @@ while test $# -gt 0; do
     "check")
       shift
       check
+      ;;
+    help|"-h"|"--help")
+      help
+      ;;
+    version|"-v"|"--version")
+      echo "curator version $version"
       ;;
     *)
       help_msg
