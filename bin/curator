@@ -11,10 +11,15 @@
 
 version="v0.1.0"
 
-# TODO: take library in as an argument or env variable
-import_dir=~/Music/Import
-library_dir=~/Music/TestLibrary
-# archive_dir=~/Music/Archive
+dependencies=("curl" "ffmpeg" "ffprobe" "jq" "flac" "metaflac" "id3v2")
+for dependency in ${dependencies[@]}
+do
+  if ! command -v "$dependency" >/dev/null 2>&1; then
+    echo "Error: Missing dependency '$dependency': command not found."
+    echo "  - Make sure all dependencies are installed: ${dependencies[*]}"
+    exit
+  fi
+done
 
 directories=("$import_dir" "$library_dir")
 for directory in ${directories[@]}
