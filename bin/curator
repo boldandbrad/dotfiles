@@ -54,7 +54,7 @@ _clean_path() {
   local path="$1"
   # TODO: handle more filepath illegal characters (? \n)
   local path_cleaned=${path////_} # replace forward slashes with underscores
-  echo "$path"
+  echo "$path_cleaned"
 }
 
 _remove_explicit() {
@@ -90,10 +90,12 @@ _format_albumdir() {
 
 _format_filename() {
   local disc="$1"
-  local track="$2"
-  local title="$3"
+  local disc_total="$2"
+  local track="$3"
+  local title="$4"
 
   local title_cleaned=$(_clean_path "$title")
+
   if [[ $track =~ ^[0-9]+$ ]]; then
     printf -v track '%02d' "$track"
   else
@@ -232,10 +234,9 @@ import() {
     fi
 
     # TRACK IMPORT -------------------------------------------------------------
-    # create library file path
     artist_dir=$(_format_artistdir "$album_artist")
     album_dir=$(_format_albumdir "$album" "$year")
-    filename=$(_format_filename "$disc" "$track" "$title")
+    filename=$(_format_filename "$disc" "$disc_total" "$track" "$title")
     library_file_dir="$library_dir/$artist_dir/$album_dir"
     library_file="$library_file_dir/$filename.$ext"
 
