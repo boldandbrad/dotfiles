@@ -9,10 +9,11 @@
 
 # library folder structure: library/artist/year - album/[d]track - title.ext
 
-version="v0.1.0"
+version="v0.1.0-dev"
+user_agent="curator $version (https://github.com/boldandbrad/dotfiles/blob/main/bin/curator)"
 
 dependencies=("curl" "ffmpeg" "ffprobe" "jq" "flac" "metaflac" "id3v2")
-for dependency in ${dependencies[@]}
+for dependency in "${dependencies[@]}"
 do
   if ! command -v "$dependency" >/dev/null 2>&1; then
     echo "Error: Missing dependency '$dependency': command not found."
@@ -21,15 +22,25 @@ do
   fi
 done
 
-directories=("$import_dir" "$library_dir")
-for directory in ${directories[@]}
+# TODO: take directories in as an option or env variable
+import_dir=~/Music/Import
+triage_dir=~/Music/Triage
+library_dir=~/Music/TestLibrary
+archive_dir=~/Music/Archive
+
+directories=("$import_dir" "$library_dir" "$triage_dir" "$archive_dir")
+for directory in "${directories[@]}"
 do
   if [[ ! -d "$directory" ]]; then
     mkdir -p "$directory"
   fi
 done
 
+artwork_filename="cover.jpg"
+artwork_no_match_filename=".no-artwork"
+
 supported_audio_formats=("flac" "mp3")
+supported_image_formats=("jpg" "jpeg" "png")
 
 start_time=$(date +%s)
 
@@ -52,8 +63,11 @@ _get_tags() {
 
 _clean_path() {
   local path="$1"
-  # TODO: handle more filepath illegal characters (? \n)
-  local path_cleaned=${path////_} # replace forward slashes with underscores
+  # TODO: handle cleaning with an allow list rather than denying specific characters
+  local path_cleaned=${path////_} # replace / with _
+  path_cleaned=${path_cleaned//./_} # replace . with _
+  path_cleaned=${path_cleaned//\?/_} # replace ? with _
+  path_cleaned="${path_cleaned//$'\n'/}" # remove \n
   echo "$path_cleaned"
 }
 
@@ -123,7 +137,7 @@ _fetch_lyrics() {
   curl_args=(
     -sS
     --get
-    --header "User-Agent: curator $version (https://github.com/boldandbrad/dotfiles/blob/main/bin/curator)"
+    --header "User-Agent: $user_agent"
     --data-urlencode "track_name=$title"
     --data-urlencode "album_name=$album"
     --data-urlencode "artist_name=$album_artist"
@@ -136,9 +150,9 @@ _fetch_lyrics() {
     curl_args+=(--data-urlencode "duration=$duration_rounded")
   fi
 
-  max_retries=5
-  attempt=0
-  lrclib_body=""
+  local max_retries=5
+  local attempt=0
+  local response=""
   while :; do
     attempt=$((attempt + 1))
     lrclib_header_file=$(mktemp)
@@ -156,26 +170,92 @@ _fetch_lyrics() {
     if [[ "$lrclib_resp_code" == "429" ]]; then
       retry_after=$(awk -F': *' 'BEGIN{IGNORECASE=1} /^Retry-After:/ {gsub("\r","",$2); print $2}' "$lrclib_header_file" | tail -n1)
       [[ -z "$retry_after" ]] && retry_after=1
-
-      echo "  - Rate limited, retrying in ${retry_after}s"
       sleep "$retry_after"
       (( attempt >= max_retries )) && break
       continue
     fi
 
     if [[ "$lrclib_resp_code" != "200" ]]; then
-      echo "  - Lyrics fetch failed (HTTP $lrclib_resp_code): $title"
+      response="{ \"error\": \"$lrclib_resp_code\" }"
+      break
+    else
+      response=$(<"$lrclib_body_file")
       break
     fi
-
-    lrclib_body=$(<"$lrclib_body_file")
-    break
   done
-  echo "$lrclib_body"
+  echo "$response"
+}
+
+_find_existing_artwork() {
+  local album_dir="$1"
+  local image_format
+
+  for image_format in "${supported_image_formats[@]}"; do
+    if [[ -f "$album_dir/cover.$image_format" ]]; then
+      printf '%s\n' "$album_dir/cover.$image_format"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+_fetch_artwork() {
+  local album_artist="$1"
+  local album_name="$2"
+  local album_dir="$3"
+
+  local artwork_file="$album_dir/$artwork_filename"
+  local no_artwork_file="$album_dir/$artwork_no_match_filename"
+
+  [[ -d "$album_dir" ]] || return 1
+
+  if _find_existing_artwork "$album_dir" >/dev/null; then
+    return 1
+  fi
+
+  if [[ -f "$no_artwork_file" ]]; then
+    return 1
+  fi
+
+  audiodb_json=$(
+    curl --fail --silent --show-error --location \
+      --get 'https://www.theaudiodb.com/api/v1/json/2/searchalbum.php' \
+      --data-urlencode "s=$album_artist" \
+      --data-urlencode "a=$album_name"
+  )
+
+  cover_url=$(
+    jq -r '
+      [.album[]? |
+        select(.strAlbumThumbHQ != null or .strAlbumThumb != null)] |
+      .[0] |
+      (.strAlbumThumbHQ // .strAlbumThumb // empty)
+    ' <<< "$audiodb_json"
+  )
+
+  if [[ -z "$cover_url" ]]; then
+    printf '  - Skipped album artwork (not found): %s - %s\n' "$album_artist" "$album_name" >&2
+    : > "$no_artwork_file"
+    return 1
+  fi
+
+  curl --fail --silent --show-error --location \
+    --output "$artwork_file" \
+    "$cover_url"
+
+  if [[ ! -f "$artwork_file" ]]; then
+    printf '  - Error: artwork download failed: %s - %s\n' "$album_artist" "$album_name" >&2
+    return 1
+  fi
+
+  return 0
 }
 
 import() {
-  echo "Importing from $import_dir"
+  echo "Importing music from $import_dir"
+
+  local albums_imported_json="[]"
 
   count_imported=0
   count_skipped=0
@@ -204,18 +284,20 @@ import() {
 
     # validate file format is supported
     if [[ -z "$format" ]] || [[ ! "${supported_audio_formats[*]}" =~ "$format" ]]; then
-      echo "  - Skipped, unsupported format ($format): $file"
+      # TODO: fallback to marking for manual import
+      echo "  - Skipped file import (unsupported format '$format'): $source_file"
       continue
     fi
 
     # validate and clean metadata
     if [[ -z "$title" ]] || [[ -z "$artist" ]] || [[ -z "$album" ]]; then
       # TODO: attempt to fetch metadata, fallback to marking for manual tagging
-      echo "  - Skipped, missing required metadata: $file"
+      echo "  - Skipped file import (missing required metadata): $source_file"
       continue
     fi
 
     # set album_artist to first artist if not present
+    # TODO: Make this more reliable, some artists have a comma, &, or "and" in their name
     if [[ -z "$album_artist" ]]; then
       album_artist="${artist%%,*}"
     else
@@ -247,16 +329,26 @@ import() {
     if [[ ! -e "$library_file" ]]; then
       cp "$source_file" "$library_file"
       if [[ ! -e "$library_file" ]]; then
-        echo "  Error: track import failed: $source_file"
+        echo "  - Error: file import failed: $album_artist - $title"
       else
         #TODO: delete source file or move it to a archive directory
-        echo "  Imported track: $library_file"
+        echo "  - Imported file: $album_artist - $title"
         count_imported=$((count_imported + 1))
       fi
     else
-      # TODO: Handle duplicates more gracefully
-      echo "  Skipped track import: $library_file: already exists in library."
+      # TODO: handle duplicates more gracefully
+      echo "  - Skipped file import (already exists): $album_artist - $title"
       count_skipped=$((count_skipped + 1))
+    fi
+
+    # CACHE ALBUM --------------------------------------------------------------
+    already_imported_album=$(jq "contains([{\"artist\":\"$album_artist\",\"album\":\"$album\"}])" <<< "$albums_imported_json")
+    if [[ "$already_imported_album" == "false" ]]; then
+      albums_imported_json=$(jq --argjson albums "$albums_imported_json" \
+        --arg artist "$album_artist" \
+        --arg album "$album" \
+        --arg dir "$library_file_dir" \
+        '$albums + [{"artist": $artist, "album": $album, "dir": $dir}]' <<<"$albums_imported_json")
     fi
 
     # LYRIC IMPORT/FETCH -------------------------------------------------------
@@ -271,45 +363,52 @@ import() {
       if [[ ! -e "$library_synced_lyric_file" ]]; then
         cp "$source_synced_lyric_file" "$library_synced_lyric_file"
         count_lyric_imported=$((count_lyric_imported + 1))
+        echo "  - Imported lyrics: $album_artist - $title"
       else
-        echo "  Skipped lyric import: $library_synced_lyric_file: already exists in library."
+        echo "  - Skipped lyric import (already exists): $album_artist - $title"
       fi
     elif [[ -e "$source_plain_lyric_file" ]]; then
       if [[ ! -e "$library_plain_lyric_file" ]]; then
         cp "$source_plain_lyric_file" "$library_plain_lyric_file"
         count_lyric_imported=$((count_lyric_imported + 1))
+        echo "  - Imported lyrics: $album_artist - $title"
       else
-        echo "  Skipped lyric import: $library_plain_lyric_file: already exists in library."
+        echo "  - Skipped lyric import (already exists): $album_artist - $title"
       fi
     else
       if [ ! -e "$library_plain_lyric_file" ] && [ ! -e "$library_synced_lyric_file" ]; then
         # do not attempt to fetch lyrics for live recordings
         if [[ ! "$title" == *"(Live)" ]] && [[ ! "$title" == *"(live)" ]]; then
-          lrclib_body=$(_fetch_lyrics "$title" "$album" "$album_artist" "$duration")
+          lrclib_resp=$(_fetch_lyrics "$title" "$album" "$album_artist" "$duration")
+          error_found=$(echo "$lrclib_resp" | jq 'has("error")')
+          if [[ "$error_found" == "true" ]]; then
+            error_code=$(echo "$lrclib_resp" | jq '.error')
+            echo "  - Error: lyric fetch failed: lrclib response code ($error_code): $album_artist - $title"
+          else
+            # only attempt to store lyrics if the track is not instrumental
+            instrumental=$(jq -r '.instrumental // "false"' <<<"$lrclib_resp")
+            if [[ "$instrumental" == false ]]; then
+              synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_resp")
+              plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_resp")
 
-          # only attempt to store lyrics if the track is not instrumental
-          instrumental=$(jq -r '.instrumental // "false"' <<<"$lrclib_body")
-          if [[ "$instrumental" == false ]]; then
-            synced_lyrics=$(jq -r '.syncedLyrics // empty' <<<"$lrclib_body")
-            plain_lyrics=$(jq -r '.plainLyrics // empty' <<<"$lrclib_body")
+              if $have_duration && [[ -n "$synced_lyrics" ]]; then
+                lyrics="$synced_lyrics"
+                lyric_file="$library_synced_lyric_file"
+              else
+                lyrics="$plain_lyrics"
+                lyric_file="$library_plain_lyric_file"
+              fi
 
-            if $have_duration && [[ -n "$synced_lyrics" ]]; then
-              lyrics="$synced_lyrics"
-              lyric_file="$library_synced_lyric_file"
-            else
-              lyrics="$plain_lyrics"
-              lyric_file="$library_plain_lyric_file"
-            fi
-
-            if [[ -n "$lyrics" ]]; then
-              printf '%b' "$lyrics" > "$lyric_file"
-              echo "  Lyrics fetched: $lyric_file"
-              count_lyric_fetched=$((count_lyric_fetched + 1))
+              if [[ -n "$lyrics" ]]; then
+                printf '%b' "$lyrics" > "$lyric_file"
+                echo "  - Fetched lyrics: $album_artist - $title"
+                count_lyric_fetched=$((count_lyric_fetched + 1))
+              fi
             fi
           fi
         fi
       else
-        echo "  Skipped lyric fetch: $library_file: lyrics already exist in library."
+        echo "  - Skipped lyric fetch (already exists): $album_artist - $title"
       fi
     fi
 
@@ -317,10 +416,35 @@ import() {
     # get tagging info from discogs, musicbrainz, or last.fm?
     # use flac (metaflac) for flac files and id3v2 for mp3 files, skip tagging other file formats for now
 
-    # ALBUM ARTWORK IMPORT/FETCH -----------------------------------------------
+    # if [[ "$ext" == "flac" ]]; then
+    #   echo "flac"
+    #   metaflac --show-all-tags "$library_file"
+    #   echo "NEWALBUMARTIST=$album_artist"
+    #   echo "NEWARTIST=$artist"
+    # elif [[ "$ext" == "mp3" ]]; then
+    #   echo "mp3"
+    #   continue
+    # fi
 
   done < <(find "$import_dir" -maxdepth 4 -type f \( -iname '*.flac' -o -iname '*.mp3' \) -print0 | sort -z)
 
+  # ALBUM ARTWORK FETCH --------------------------------------------------------
+  count_albums_processed=$(echo "$albums_imported_json" | jq ". | length")
+  count_artwork_fetched=0
+  echo "Fetching album artwork"
+  for (( i=0; i<$count_albums_processed; i++ )); do
+    processed_album=$(echo "$albums_imported_json" | jq ".[$i]")
+    album_artist=$(echo "$processed_album" | jq -r ".artist")
+    album_name=$(echo "$processed_album" | jq -r ".album")
+    album_mbid=$(echo "$processed_album" | jq -r ".mbid")
+    album_dir=$(echo "$processed_album" | jq -r ".dir")
+    if _fetch_artwork "$album_artist" "$album_name" "$album_dir"; then
+      echo "  - Fetched album artwork: $album_artist - $album_name"
+      count_artwork_fetched=$((count_artwork_fetched + 1))
+    fi
+  done
+
+  # SUMMARY --------------------------------------------------------------------
   count_processed=$((count_imported + count_skipped))
   end_time=$(date +%s)
   elapsed=$((end_time - start_time))
@@ -328,14 +452,16 @@ import() {
   hours=$((elapsed / 3600))
   minutes=$(((elapsed % 3600) / 60))
   seconds=$((elapsed % 60))
-  # TODO: processed files should include imported lyrics and covers
+  # TODO: processed files should include imported lyrics and covers?
   printf "\nProcessed %s files in %02dh %02dm %02ds\n" "$count_processed" "$hours" "$minutes" "$seconds"
   echo "    Tracks:"
   echo "      $count_imported/$count_processed imported"
   echo "      $count_skipped/$count_processed skipped"
-  echo "    Lyrics: "
+  echo "    Lyrics:"
   echo "      $count_lyric_imported imported"
   echo "      $count_lyric_fetched fetched"
+  echo "    Artwork:"
+  echo "      $count_artwork_fetched/$count_albums_processed fetched"
 }
 
 check() {
@@ -354,7 +480,7 @@ while test $# -gt 0; do
       check
       ;;
     help|"-h"|"--help")
-      help
+      help_msg
       ;;
     version|"-v"|"--version")
       echo "curator version $version"
@@ -367,70 +493,3 @@ while test $# -gt 0; do
 done
 help_msg
 
-# TODO: better output for failed changes (files without necessary tags, number of files still without lyrics, etc)
-
-# TODO
-# consider converting to more of an import model. cron job to periodically run the script on an import folder. script cleans the new files and moves them into the user's library folder
-# Rename album folders to include year
-# fetch cover art from theaudiodb?
-# embed cover image if available?
-# cleanup and standardize tags
-# tag sanitization: remove any tags that you don't explicitely want
-# add date/year tag if missing
-# check that file extensions match file format
-# remove account/purchase metadata from m4a
-# if [[ $ext == *"m4a"* ]]; then
-#   ffmpeg -y -i "$file" -metadata -iTunSMPB="" -metadata -iTunNORM="" -metadata -iTunMOVI="" -metadata -account_id="" -metadata -purchase_date="" -c copy "$file"
-#   echo "  - Removed apple metadata for $file"
-# fi
-# flag/log tracks that lack tags or cannot be processed
-# handle duplicates gracefully
-
-# USAGE
-
-# import all files in the import folder
-# curator import
-
-# import specific files/folders
-# curator import file1 file2 folder1 folder2
-
-# import only a specific format
-# curator import --fmt=flac
-
-# import only lyric files
-# curator import --lyrics
-
-# check library for data hygiene issues (missing cover images, missing lyrics, etc)
-# curator check
-
-
-# IMPORT ORDER OF OPERATIONS
-# 1. Recursively search the import dir for music files X
-# 2. Parse the music file's metadata X
-# 2.1. Check that the file extension matches the format X
-# 2.2. Attempt to fetch correct metadata if critical pieces are missing, fallback to moving it to a manual tagging folder
-# 3. Identify formatted filename X
-# 4. Identify formatted album folder name X
-# 5. Check if library directory exists X
-# 6. Check if library directory already contains the file, handle duplicate x
-# 7. Check if library directory contains a cover image
-# 7.1. Check import directory for a matching cover image
-# 8. Check if library directory contains matching lyric file
-# 8.1. Check import directory for a matching lyric file
-# 9. Identify genre(s) using online service
-# 10. Fetch missing metadata using online service
-# 11. Create library album directory if it didn't exist X
-# 11.1. Use ffmpeg to update and clean tags and write the file to the library directory
-# 12. Fetch or move the relevant lyric file and place in library directory
-# 13. Fetch or move relevant cover image and place in library directory
-# 14. Validate changes
-# 15. Remove imported file from import directory
-# 16. Repeat
-
-# CHECK ORDER OF OPERATIONS
-# 1. Recursively search the library for:
-#   - Missing cover images
-#   - Missing lyric files
-#   - Incomplete albums
-#   - Incorrect tags / filename formats
-# 2. Report issues and offer to resolve automatically
