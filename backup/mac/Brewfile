@@ -5,9 +5,9 @@
 # terminal apps and packages --------------------------------- #
 
 brew "aliae"                          # shell manager
-brew "bitwarden-cli"                  # password manager
-brew "bjarneo/cliamp/cliamp"          # music player/streamer
-# brew "cookcli"                        # recipe manager
+# brew "bitwarden-cli"                  # password manager
+# brew "bjarneo/cliamp/cliamp"          # music player/streamer
+brew "cookcli"                        # recipe manager
 brew "eza"                            # ls replacement
 brew "fd"                             # find alternative
 brew "fish"                           # a fun shell
@@ -17,9 +17,8 @@ brew "jq"                             # json processor
 brew "lazygit"                        # git client
 brew "mole"                           # system cleaner
 brew "neovim"                         # text editor
-# brew "ollama"                         # ai model server
 brew "opencode"                       # ai coding agent
-brew "presenterm"                     # markdown presenter
+# brew "presenterm"                     # markdown presenter
 brew "ripgrep"                        # grep alternative
 brew "boldandbrad/tap/slinky"         # dotfile manager
 brew "boldandbrad/tap/spin"           # last.fm scrobbler
@@ -30,22 +29,24 @@ brew "zoxide"                         # cd replacement
 # desktop apps ----------------------------------------------- #
 
 cask "nikitabobko/tap/aerospace"      # tiling window manager
-# cask "audacity"                       # audio toolkit
 cask "bitwarden"                      # password manager
 # cask "bricklink-studio"               # lego moc designer
-cask "discord"                        # digital community client
+cask "cloudflare-warp"                # dns resolver
+# cask "discord"                        # digital community client
 cask "ghostty"                        # terminal emulator
 cask "obsidian"                       # note manager
+cask "petrichor"                      # local music player
+# cask "qobuz"                          # music streamer and shop
+# cask "qobuz-downloader"               # qobuz download manager
 brew "FelixKratz/formulae/sketchybar" # menubar replacement
 cask "tailscale-app"                  # homelab network manager
 cask "tidal"                          # music streamer
-# cask "tolaria"                        # note manager
-cask "zed"                            # text editor
+cask "visigrid/tap/visigrid"          # local spreadsheet engine
+# cask "zed"                            # text editor
 
-# software development tools and apps ------------------------ #
+# software development tools --------------------------------- #
 
 brew "bun"                      # js runtime & toolchain
-brew "deno"                     # js runtime & toolchain
 brew "gh"                       # cli github client
 brew "go"                       # go compiler & toolchain
 # cask "godot"                    # game engine
@@ -53,10 +54,16 @@ brew "lua"                      # lua language
 brew "lua-language-server"      # lua language server
 brew "marksman"                 # markdown lsp
 brew "resterm"                  # http client
-brew "taplo"                    # toml toolchain
+brew "shellcheck"               # shell script linter
 cask "temurin"                  # java development kit
-brew "tokei"                    # code line counter
 brew "tree-sitter-cli"          # treesitter parser cli
+
+# audio tools ------------------------------------------------ #
+
+brew "ffmpeg"                   # audio transcoder
+brew "flac"                     # flac tag editor
+brew "id3v2"                    # mp3 tag editor
+# cask "audacity"                 # audio editor
 
 # fonts ------------------------------------------------------ #
 
