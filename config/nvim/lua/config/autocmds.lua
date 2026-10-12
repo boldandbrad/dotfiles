@@ -10,7 +10,7 @@ autocmd({ "VimEnter", "BufReadPost", "BufEnter" }, {
   group = augroup,
   pattern = "*",
   callback = function()
-    local root_patterns = { ".git", "go.mod", "deno.json", "Cargo.toml", "pyproject.toml" }
+    local root_patterns = { ".git", "go.mod" }
     local current_dir = vim.fn.expand("%:p:h")
 
     local root_found = false

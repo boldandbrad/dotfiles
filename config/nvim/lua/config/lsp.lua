@@ -4,30 +4,29 @@
 
 -- enable lsps -------------------------------------------------
 vim.lsp.enable({
-  "denols",
   "gopls",
   "lua_ls",
   "marksman",
-  "taplo", -- toml
 })
 
 -- apply custom lsp configs ------------------------------------
 vim.lsp.config("lua_ls", {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-    },
-  },
+  settings = { Lua = { diagnostics = { globals = { "vim" } } } },
 })
 
-vim.lsp.config("denols", {
-  -- handle markdown, html, css, and json in addition to js/ts
-  filetypes = { "javascript", "typescript", "markdown", "html", "css", "json", "yaml" },
-  -- run lsp for js/ts in any directory
-  root_dir = function() return vim.uv.cwd() end,
+vim.filetype.add({
+  extension = {
+    cook = "cooklang",
+  }
 })
+vim.lsp.config("cooklang", {
+  cmd = { 'cook', 'lsp' },
+  filetypes = { 'cooklang' },
+  root_markers = { '.git' },
+  -- root_dir = function() return vim.uv.cwd() end,
+  settings = {},
+})
+vim.lsp.enable("cooklang")
 
 -- enable lsp features -----------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
