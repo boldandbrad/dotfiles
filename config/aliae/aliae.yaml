@@ -27,8 +27,6 @@ env:
     value: "{{ .Home }}/.local/state"
 
   # tool paths
-  - name: DENO_INSTALL_ROOT
-    value: '{{ env "XDG_DATA_HOME" }}/deno'
   - name: GOPATH
     value: '{{ env "XDG_DATA_HOME" }}/go'
   - name: LESSHISTFILE
@@ -60,7 +58,6 @@ path:
       /opt/homebrew/bin
       /opt/homebrew/sbin
       {{ env "DOTFILES" }}/bin
-      {{ env "DENO_INSTALL_ROOT" }}/bin
       {{ env "GOPATH" }}/bin
       {{ .Home }}/.local/bin
       /usr/local/sbin

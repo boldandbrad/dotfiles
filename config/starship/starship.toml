@@ -7,7 +7,7 @@
 
 format = """
 $hostname$os$username$shell$directory$git_branch$git_status\
-$deno$golang$lua$python$ruby$rust
+$bun$golang$lua$python$ruby$rust
 $character
 """
 
@@ -85,9 +85,9 @@ modified = "changes"
 
 # languages -------------------------------------------------- #
 
-[deno]
-format = " [|](overlay0) deno [$version]($style)"
-style = "bold teal"
+[bun]
+format = " [|](overlay0) bun [$version]($style)"
+style = "bold pink"
 
 [golang]
 format = " [|](overlay0) go [$version]($style)"
