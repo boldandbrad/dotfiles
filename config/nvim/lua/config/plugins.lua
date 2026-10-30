@@ -18,6 +18,7 @@ vim.pack.add({
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/j-hui/fidget.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  { src = "https://github.com/stevearc/oil.nvim" },
 })
 
 -- catppuccin setup
@@ -121,3 +122,6 @@ require("fidget").setup({
 
 -- gitsigns setup
 require("gitsigns").setup({})
+
+-- oil setup
+require("oil").setup()

@@ -94,6 +94,10 @@ alias:
   - name: ffp
     value: ffprobe -v quiet -output_format json -show_format
 
+  # neovim
+  - name: oil
+    value: nvim --cmd "let g:auto_session_enabled = v:false" -c ":Oil"
+
   # pretty print PATHs
   - name: path
     value: echo $PATH | tr ":" "\n"
