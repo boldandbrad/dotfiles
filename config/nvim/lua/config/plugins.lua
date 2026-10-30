@@ -125,3 +125,4 @@ require("gitsigns").setup({})
 
 -- oil setup
 require("oil").setup()
+vim.keymap.set("n", "<leader>F", "<cmd>Oil --float<cr>", { desc = "Open oil" })
