@@ -6,9 +6,7 @@ config/fish|~/.config/fish
 config/git|~/.config/git
 config/lazygit|~/.config/lazygit
 config/ghostty|~/.config/ghostty
-config/tmux|~/.config/tmux
 config/nvim|~/.config/nvim
-config/zed|~/.config/zed
 config/starship/starship.toml|~/.config/starship.toml
 config/aerospace|~/.config/aerospace
 config/sketchybar|~/.config/sketchybar

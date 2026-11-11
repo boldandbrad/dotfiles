@@ -23,7 +23,6 @@ brew "ripgrep"                        # grep alternative
 brew "boldandbrad/tap/slinky"         # dotfile manager
 brew "boldandbrad/tap/spin"           # last.fm scrobbler
 brew "starship"                       # shell prompt engine
-brew "tmux"                           # terminal multiplexer
 brew "zoxide"                         # cd replacement
 
 # desktop apps ----------------------------------------------- #
@@ -42,7 +41,6 @@ brew "FelixKratz/formulae/sketchybar" # menubar replacement
 cask "tailscale-app"                  # homelab network manager
 cask "tidal"                          # music streamer
 cask "visigrid/tap/visigrid"          # local spreadsheet engine
-# cask "zed"                            # text editor
 
 # software development tools --------------------------------- #
 
