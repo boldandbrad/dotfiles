@@ -124,5 +124,9 @@ require("fidget").setup({
 require("gitsigns").setup({})
 
 -- oil setup
-require("oil").setup()
+require("oil").setup({
+  view_options = {
+    show_hidden = true,
+  }
+})
 vim.keymap.set("n", "<leader>F", "<cmd>Oil --float<cr>", { desc = "Open oil" })
