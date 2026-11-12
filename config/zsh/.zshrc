@@ -26,6 +26,7 @@ zstyle ':completion:*' menu no
 
 # enable fzf tab completions without explicit trigger
 export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_OPTS_FILE=$DOTFILES/config/fzf/.fzfrc
 
 # initialize zsh completions
 autoload -Uz compinit && compinit

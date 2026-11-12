@@ -27,6 +27,8 @@ if status is-interactive
   zoxide init --cmd cd fish | source
   starship init fish | source
 
+  set -gx FZF_DEFAULT_OPTS_FILE $DOTFILES/config/fzf/.fzfrc
+
   alias ls="eza --classify=always"
   alias grep="grep --color=auto"
   alias oil="nvim --cmd 'let g:auto_session_enabled = v:false' -c ':Oil'"
