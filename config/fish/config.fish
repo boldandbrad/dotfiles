@@ -31,6 +31,7 @@ if status is-interactive
 
   alias ls="eza --classify=always"
   alias grep="grep --color=auto"
+  alias ppath 'printf "%s\n" $PATH'
   alias oil="nvim --cmd 'let g:auto_session_enabled = v:false' -c ':Oil'"
 
   abbr -a mkdir "mkdir -pv"
