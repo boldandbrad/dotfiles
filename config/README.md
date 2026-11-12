@@ -13,7 +13,6 @@ to be symlinked onto the system. Symlinks are created and managed by
 when storing settings, cache and state. This pattern creates consistency while
 keeping `$HOME` free of clutter.
 
-XDG environment variables are defined in [`aliae.yaml`](./aliae/aliae.yaml),
-and are sourced on shell startup before symlinking configs. As a result, most
-configs in this directory get symlinked under `XDG_CONFIG_HOME`.
-
+XDG environment variables are defined during shell startup before symlinking
+configs. As a result, most configs in this directory get symlinked under
+`XDG_CONFIG_HOME`.

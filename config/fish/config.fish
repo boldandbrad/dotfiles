@@ -15,11 +15,16 @@ set -gx XDG_DATA_HOME ~/.local/share
 set -gx XDG_LIB_HOME ~/.local/lib
 set -gx XDG_STATE_HOME ~/.local/state
 
+set -gx GOPATH $XDG_DATA_HOME/go
+
 set -gx DOTFILES ~/Dotfiles
 
 if test (uname) = Darwin
   set -gx HOMEBREW_BUNDLE_FILE $DOTFILES/backup/mac/Brewfile
 end
+
+fish_add_path $DOTFILES/bin
+fish_add_path $GOPATH/bin
 
 if status is-interactive
   brew shellenv fish | source
@@ -37,9 +42,11 @@ if status is-interactive
   abbr -a mkdir "mkdir -pv"
   abbr -a mv "mv -iv"
   abbr -a cp "cp -Riv"
+  abbr -a untrack "git rm --cached"
   abbr -a ffp "ffprobe -v quiet -output_format json -show_format"
 
   if test (uname) = Darwin
+    abbr -a netspeed "NetworkQuality"
     abbr -a ql "qlmanage -p"
     abbr -c cd -c ls icloud ~"/Library/Mobile\ Documents/com~apple~CloudDocs"
   end

@@ -1,8 +1,7 @@
 # boldandbrad/dotfiles - bin
 
 This directory contains custom binaries and executable scripts, and is
-automatically appended to the user's `PATH` during shell startup by
-[`aliae`](../config/aliae/aliae.yaml).
+appended to the user's `PATH` during shell startup.
 
 ## Executables
 

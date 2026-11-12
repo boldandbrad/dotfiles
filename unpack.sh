@@ -131,7 +131,6 @@ function link_dotfiles () {
   fi
 
   echo -e "\nInstalling dotfiles..."
-  eval "$(aliae init zsh --config $DOTFILES/config/aliae/aliae.yaml)"
   slinky install
 }
 

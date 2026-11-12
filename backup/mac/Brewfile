@@ -4,7 +4,6 @@
 
 # terminal apps and packages --------------------------------- #
 
-brew "aliae"                          # shell manager
 # brew "bitwarden-cli"                  # password manager
 # brew "bjarneo/cliamp/cliamp"          # music player/streamer
 brew "cookcli"                        # recipe manager
