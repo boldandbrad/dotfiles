@@ -144,7 +144,7 @@ function config_system () {
     fi
   fi
 
-  $DOTFILES/bin/mac set
+  $DOTFILES/bin/mac setup
   $DOTFILES/backup/mac/config_system
 }
 

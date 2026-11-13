@@ -194,7 +194,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         esac
         shift
         ;;
-      "set")
+      "setup")
         sys_settings
         ;;
       "update")
