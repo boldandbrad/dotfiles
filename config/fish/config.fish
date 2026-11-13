@@ -55,6 +55,6 @@ if status is-interactive
   if test (uname) = Darwin
     abbr -a netspeed "NetworkQuality"
     abbr -a ql "qlmanage -p"
-    abbr -c cd -c ls icloud ~"/Library/Mobile\ Documents/com~apple~CloudDocs"
+    abbr -c cd -c ls -c cp -c mv icloud ~"/Library/Mobile\ Documents/com~apple~CloudDocs"
   end
 end
