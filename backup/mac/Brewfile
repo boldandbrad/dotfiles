@@ -29,7 +29,6 @@ brew "zoxide"                         # cd replacement
 cask "nikitabobko/tap/aerospace"      # tiling window manager
 cask "bitwarden"                      # password manager
 # cask "bricklink-studio"               # lego moc designer
-cask "cloudflare-warp"                # dns resolver
 # cask "discord"                        # digital community client
 cask "ghostty"                        # terminal emulator
 cask "obsidian"                       # note manager
@@ -39,12 +38,11 @@ cask "petrichor"                      # local music player
 brew "FelixKratz/formulae/sketchybar" # menubar replacement
 cask "tailscale-app"                  # homelab network manager
 cask "tidal"                          # music streamer
-cask "visigrid/tap/visigrid"          # local spreadsheet engine
+# cask "visigrid/tap/visigrid"          # local spreadsheet engine
 
 # software development tools --------------------------------- #
 
 brew "bun"                      # js runtime & toolchain
-brew "gh"                       # cli github client
 brew "go"                       # go compiler & toolchain
 # cask "godot"                    # game engine
 brew "lua"                      # lua language
@@ -54,6 +52,7 @@ brew "resterm"                  # http client
 brew "shellcheck"               # shell script linter
 cask "temurin"                  # java development kit
 brew "tree-sitter-cli"          # treesitter parser cli
+brew "typescript"               # typescript language
 
 # audio tools ------------------------------------------------ #
 
@@ -77,7 +76,7 @@ cask "font-space-mono"
 # games ------------------------------------------------------ #
 
 cask "minecraft"                # official minecraft launcher
-# cask "retroarch"                # game emulator launcher
+cask "retroarch-metal"          # game emulator frontend
 cask "steam"                    # game marketplace and launcher
 
 # new additions (via "brew bundle add") ---------------------- #
