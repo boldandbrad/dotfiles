@@ -18,24 +18,30 @@ set -gx XDG_STATE_HOME ~/.local/state
 set -gx GOPATH $XDG_DATA_HOME/go
 
 set -gx DOTFILES ~/Dotfiles
-
-if test (uname) = Darwin
-  set -gx HOMEBREW_BUNDLE_FILE $DOTFILES/backup/mac/Brewfile
-end
+set -gx HOMEBREW_BUNDLE_FILE $DOTFILES/backup/mac/Brewfile
+set -gx FZF_DEFAULT_OPTS_FILE $DOTFILES/config/fzf/.fzfrc
 
 fish_add_path $DOTFILES/bin
 fish_add_path $GOPATH/bin
 fish_add_path /opt/homebrew/bin
 
 if status is-interactive
-  brew shellenv fish | source
-  fzf --fish | source
-  zoxide init --cmd cd fish | source
-  starship init fish | source
+  if type -q brew
+    brew shellenv fish | source
+  end
+  if type -q fzf
+    fzf --fish | source
+  end
+  if type -q zoxide
+    zoxide init --cmd cd fish | source
+  end
+  if type -q starship
+    starship init fish | source
+  end
 
-  set -gx FZF_DEFAULT_OPTS_FILE $DOTFILES/config/fzf/.fzfrc
-
-  alias ls="eza --classify=always"
+  if type -q eza
+    alias ls="eza --classify=always"
+  end
   alias grep="grep --color=auto"
   alias ppath 'printf "%s\n" $PATH'
   alias oil="nvim --cmd 'let g:auto_session_enabled = v:false' -c ':Oil'"
