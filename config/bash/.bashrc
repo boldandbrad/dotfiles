@@ -11,5 +11,8 @@ export HOMEBREW_BUNDLE_FILE="${DOTFILES}"/backup/mac/Brewfile
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export SHELL_SESSION_HISTORY=0
 
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$DOTFILES/bin:$PATH"
+
 # initialize shell prompt
 eval "$(starship init bash)"
