@@ -25,6 +25,7 @@ end
 
 fish_add_path $DOTFILES/bin
 fish_add_path $GOPATH/bin
+fish_add_path /opt/homebrew/bin
 
 if status is-interactive
   brew shellenv fish | source
