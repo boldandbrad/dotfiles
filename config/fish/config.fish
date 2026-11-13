@@ -26,6 +26,11 @@ fish_add_path $GOPATH/bin
 fish_add_path /opt/homebrew/bin
 
 if status is-interactive
+  fish_config theme choose catppuccin-mocha
+  set -g fish_key_bindings fish_vi_key_bindings
+  set -g fish_cursor_default block
+  set -g fish_cursor_insert block
+
   if type -q brew
     brew shellenv fish | source
   end
