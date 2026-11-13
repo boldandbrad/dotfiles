@@ -1,3 +1,6 @@
 # os files
 .DS_Store
 
+# generated app bundles
+*.app/
+

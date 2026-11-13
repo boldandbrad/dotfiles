@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+#
+# bldnvim - build NeovimLauncher.app, a file opener that launches Neovim in Ghostty
+
+set -euo pipefail
+
+APP_NAME="NeovimLauncher"
+BUNDLE_ID="com.boldandbrad.${APP_NAME}"
+NVIM="${NVIM:-$(command -v nvim || echo /opt/homebrew/bin/nvim)}"
+OUT_DIR="/Applications"
+
+# Keep this list in sync with the utis list in chedit. Declaring these makes
+# the app an eligible default handler for each type.
+UTIS=(
+  public.source-code
+  public.json
+  net.daringfireball.markdown
+  public.python-script
+  public.yaml
+  public.xml
+  public.shell-script
+  public.bash-script
+  public.zsh-script
+  public.csh-script
+  public.ksh-script
+  public.tcsh-script
+  public.c-source
+  public.c-plus-plus-source
+  public.c-header
+  public.c-plus-plus-header
+  public.swift-source
+  public.objective-c-source
+  public.objective-c-plus-plus-source
+  public.ruby-script
+  public.perl-script
+  public.php-script
+  public.make-source
+  public.script
+  public.assembly-source
+  public.nasm-assembly-source
+  com.netscape.javascript-source
+  public.plain-text
+)
+
+help() {
+  cat <<EOF
+bldnvim - build ${APP_NAME}.app
+
+Usage: bldnvim [-o DIR]
+
+Options:
+  -o DIR  Write the app bundle to DIR (default: $OUT_DIR)
+  -h      Show this help
+
+Environment:
+  NVIM    Path to nvim (default: $NVIM)
+
+The app is installed in a stable location so LaunchServices and chedit can
+find it. Use -o DIR to build it somewhere else.
+EOF
+}
+
+while getopts ":o:h" opt; do
+  case "$opt" in
+    o) OUT_DIR="$OPTARG" ;;
+    h) help; exit 0 ;;
+    *) help >&2; exit 1 ;;
+  esac
+done
+
+[[ -x "$NVIM" ]] || { echo "error: nvim not found or not executable: $NVIM" >&2; exit 1; }
+
+mkdir -p "$OUT_DIR"
+OUT_DIR="$(cd "$OUT_DIR" && pwd)"
+APP="$OUT_DIR/${APP_NAME}.app"
+
+build_dir="$(mktemp -d)"
+trap 'rm -rf "$build_dir"' EXIT
+
+# An applet needs an "on open" handler so Finder can hand it the selected
+# files. A plain script executable (e.g. #!/usr/bin/osascript) is launched
+# without any file arguments, so it cannot work as a file opener.
+cat > "$build_dir/main.applescript" <<EOF
+on run
+	launchNeovim({})
+end run
+
+on open theFiles
+	launchNeovim(theFiles)
+end open
+
+on launchNeovim(theFiles)
+	set nvimCommand to "${NVIM}"
+	repeat with f in theFiles
+		set nvimCommand to nvimCommand & " " & quoted form of (POSIX path of f)
+	end repeat
+	tell application "Ghostty"
+		activate
+		new window with configuration {command:nvimCommand, wait after command:false}
+	end tell
+end launchNeovim
+EOF
+
+osacompile -o "$build_dir/${APP_NAME}.app" "$build_dir/main.applescript"
+
+plist="$build_dir/${APP_NAME}.app/Contents/Info.plist"
+plistbuddy=/usr/libexec/PlistBuddy
+"$plistbuddy" -c "Add :CFBundleIdentifier string $BUNDLE_ID" "$plist"
+"$plistbuddy" -c "Set :CFBundleName $APP_NAME" "$plist"
+"$plistbuddy" -c "Add :CFBundleDisplayName string $APP_NAME" "$plist"
+"$plistbuddy" -c "Add :CFBundleShortVersionString string 1.0" "$plist"
+"$plistbuddy" -c "Add :CFBundleVersion string 1" "$plist"
+"$plistbuddy" -c "Add :LSUIElement bool true" "$plist"
+
+# Replace osacompile's document types with:
+#   0. the specific text UTIs chedit sets as default
+#   1. a catch-all so the app also appears in Finder's "Open With" menu
+"$plistbuddy" -c "Delete :CFBundleDocumentTypes" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes array" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:0 dict" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeName string Text Files" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:0:CFBundleTypeRole string Editor" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:0:LSItemContentTypes array" "$plist"
+for i in "${!UTIS[@]}"; do
+  "$plistbuddy" -c "Add :CFBundleDocumentTypes:0:LSItemContentTypes:$i string ${UTIS[$i]}" "$plist"
+done
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1 dict" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeName string All Files" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeRole string Editor" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeExtensions array" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeExtensions:0 string *" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeOSTypes array" "$plist"
+"$plistbuddy" -c "Add :CFBundleDocumentTypes:1:CFBundleTypeOSTypes:0 string ****" "$plist"
+
+"$plistbuddy" -c "Set :NSAppleEventsUsageDescription ${APP_NAME} needs permission to control Ghostty in order to open files in Neovim." "$plist"
+
+# Editing Info.plist invalidates osacompile's ad-hoc signature; re-sign it.
+codesign --force --sign - "$build_dir/${APP_NAME}.app"
+
+rm -rf "$APP"
+ditto "$build_dir/${APP_NAME}.app" "$APP"
+
+LSREGISTER="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
+"$LSREGISTER" -f "$APP" || echo "warning: could not re-register $APP with LaunchServices" >&2
+
+echo "Built $APP"

@@ -9,6 +9,8 @@ Invoke these from anywhere.
 
 | Executable                            | Description                                                                                                  |
 | :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
+| [`bldnvim`](../bin/bldnvim)           | Build `NeovimLauncher.app`, a Finder file opener that launches Neovim in Ghostty                             |
+| [`chedit`](../bin/chedit)             | Set the macOS default editor for common text and source file types                                           |
 | [`clonerepos`](../bin/clonerepos)     | Clone user GitHub repos                                                                                      |
 | [`fixpics`](../bin/fixpics)           | Update the created and modified date for all images in the current directory to match their exif create date |
 | [`flushdns`](../bin/flushdns)         | Flush macOS dns records                                                                                      |

@@ -1,0 +1,89 @@
+#!/usr/bin/env swift
+//
+// change the macOS default text editor
+// credit: https://github.com/dev-toolings/macos-default-editor
+
+import Foundation
+import CoreServices
+import AppKit
+
+let utis: [String] = [
+    "public.source-code",
+    "public.json",
+    "net.daringfireball.markdown",
+    "public.python-script",
+    "public.yaml",
+    "public.xml",
+    "public.shell-script", "public.bash-script", "public.zsh-script",
+    "public.csh-script", "public.ksh-script", "public.tcsh-script",
+    "public.c-source", "public.c-plus-plus-source",
+    "public.c-header", "public.c-plus-plus-header",
+    "public.swift-source",
+    "public.objective-c-source", "public.objective-c-plus-plus-source",
+    "public.ruby-script", "public.perl-script", "public.php-script",
+    "public.make-source", "public.script", "public.assembly-source",
+    "public.nasm-assembly-source", "com.netscape.javascript-source",
+    "public.plain-text",
+]
+
+func appName(forBundleID id: String) -> String {
+    if let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: id) {
+        return url.deletingPathExtension().lastPathComponent
+    }
+    return id
+}
+
+func currentDefault(for uti: String) -> String {
+    if let h = LSCopyDefaultRoleHandlerForContentType(uti as CFString, .all)?
+        .takeRetainedValue() as String? {
+        return appName(forBundleID: h)
+    }
+    return "—"
+}
+
+func resolveTarget(_ raw: String) -> String? {
+    if raw.hasSuffix(".app") {
+        let path = (raw as NSString).expandingTildeInPath
+        return Bundle(path: path)?.bundleIdentifier
+    }
+    return nil
+}
+
+let dryRun = false
+let targetPath = CommandLine.arguments.count > 1
+    ? CommandLine.arguments[1]
+    : "/Applications/NeovimLauncher.app"
+guard let bundleID = resolveTarget(targetPath) else {
+    fputs("error: could not resolve '\(targetPath)' to a bundle id.\n" +
+          "       Usage: chedit [/path/to/App.app]\n", stderr)
+    exit(1)
+}
+let targetName = appName(forBundleID: bundleID)
+
+print("Target editor: \(targetName) (\(bundleID))")
+print(dryRun ? "Mode: DRY-RUN (no changes applied)\n" : "Applying \(utis.count) file types...\n")
+
+var ok = 0, fail = 0
+for uti in utis {
+    let before = currentDefault(for: uti)
+    if dryRun {
+        print(String(format: "  %-32@ %@ -> %@", uti as NSString, before, targetName))
+        continue
+    }
+    let status = LSSetDefaultRoleHandlerForContentType(uti as CFString, .all, bundleID as CFString)
+    if status == 0 {
+        ok += 1
+    } else {
+        fail += 1
+        fputs("  ✗ \(uti) (OSStatus \(status))\n", stderr)
+    }
+}
+
+if dryRun {
+    print("\nDry-run complete. Re-run without --dry-run to apply.")
+} else {
+    print("\nDone: \(ok) types now default to \(targetName), \(fail) failed.")
+    if fail == 0 {
+        print("Tip: if a file still opens in the old app, run `killall Finder`.")
+    }
+}

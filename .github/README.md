@@ -112,6 +112,16 @@ Change the default shell to fish (optional):
 3. Change the default user shell: `chsh -s $(which fish)`
 4. Restart terminal session
 
+Make neovim (launched in Ghostty) the default application for text files (optional):
+
+1. Build and place NeovimLauncher application in /Applications: `bldnvim`
+2. Register NeovimLauncher as a default application: `chedit`
+3. Relaunch Finder: `killall Finder`
+
+> First launch will prompt to allow NeovimLauncher to control Ghostty. If you
+> deny or rebuild the app and don't get reprompted: `tccutil reset AppleEvents com.boldandbrad.NeovimLauncher`
+> Uninstall: `chedit /System/Applications/TextEdit.app`
+
 ---
 
 <a id="maintain"></a>
