@@ -160,15 +160,15 @@ end
 
 -- Mode icons
 local mode_icons = {
-  n = "NORMAL",
-  c = "COMMAND",
-  t = "TERMINAL",
-  i = "INSERT",
-  R = "REPLACE",
-  V = "V-LINE",
-  [""] = "V-BLOCK", -- Visual Block
-  r = "R-PENDING",
-  v = "VISUAL",
+  n = "NRM",
+  c = "CMD",
+  t = "TRM",
+  i = "INS",
+  R = "REP",
+  V = "VLN",
+  [""] = "VBK", -- Visual Block
+  r = "RPD",
+  v = "VIS",
 }
 
 -- 4) Build statusline
