@@ -61,5 +61,6 @@ if status is-interactive
     abbr -a netspeed "NetworkQuality"
     abbr -a ql "qlmanage -p"
     abbr -c cd -c ls -c cp -c mv icloud ~"/Library/Mobile\ Documents/com~apple~CloudDocs"
+    abbr -c cd -c ls -c cp -c mv obsidian ~"/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
   end
 end
